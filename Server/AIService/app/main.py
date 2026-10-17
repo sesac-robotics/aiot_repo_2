@@ -1,6 +1,7 @@
 '''
 FastAPI 애플리케이션을 생성하는 진입점
 '''
+import os
 
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
@@ -10,15 +11,15 @@ from app.inference.yolo_pose import YOLOPoseEstimator
 from app.inference.mediapipe_pose import MediapipePoseEstimator
 from app.streaming.output import encode_jpeg
 
+from dotenv import load_dotenv
+
 app = FastAPI()
+load_dotenv()  # .env 파일에서 환경 변수 로드
 
-ESP32_STREAM_URL = 'http://'
-
-# POSE_MODEL = 'yolo'
-POSE_MODEL = 'mediapipe'
-
-YOLO_MODEL_PATH = 'models/YOLO/yolo26m-pose.pt'
-MEDIAPIPE_MODEL_PATH = 'models/MediaPipe/pose_landmarker_full.task'
+ESP32_STREAM_URL = os.getenv('ESP32_STREAM_URL')
+POSE_MODEL = os.getenv('POSE_MODEL', 'yolo')  # 기본값은 'yolo'로 설정
+YOLO_MODEL_PATH = os.getenv('YOLO_MODEL_PATH', 'models/YOLO/yolo26m-pose.pt')
+MEDIAPIPE_MODEL_PATH = os.getenv('MEDIAPIPE_MODEL_PATH', 'models/MediaPipe/pose_landmarker_full.task')
 
 def create_pose_estimator():
     if POSE_MODEL == 'yolo':
