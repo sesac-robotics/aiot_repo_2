@@ -27,6 +27,7 @@ MEDIAPIPE_MODEL_PATH = os.getenv(
     "MEDIAPIPE_MODEL_PATH",
     "models/MediaPipe/pose_landmarker_full.task"
 )
+MEDIAPIPE_DELEGATE = os.getenv('MEDIAPIPE_DELEGATE', 'cpu').lower()
 
 
 def create_pose_estimator():
@@ -46,7 +47,9 @@ def create_pose_estimator():
             model_path=MEDIAPIPE_MODEL_PATH,
             min_pose_detection_confidence=0.5,
             min_pose_presence_confidence=0.5,
-            min_tracking_confidence=0.5
+            min_tracking_confidence=0.5,
+            min_visibility=0.35,
+            delegate=MEDIAPIPE_DELEGATE,
         )
 
     else:

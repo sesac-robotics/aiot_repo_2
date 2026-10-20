@@ -56,13 +56,21 @@ class PoseStreamService:
         print("[AI Service] Pose 추론 워커 시작")
 
     # CUDA 연산 동기화
-    def _sync_gpu(self):
+    def _sync_inferecnce(self):
         # CUDA 비동기 연산 완료까지 측정
         if (
             self.model_name == "yolo"
             and torch.cuda.is_available()
         ):
             torch.cuda.synchronize()
+        elif self.model_name == 'mediapipe':
+            '''
+            detect_for_video()는 동기식 함수
+            함수가 반환되면 해당 프레임의 추론이 완료됨
+            MediaPipe GPU delegate는 PyTorch CUDA와 별도이기 때문에
+            torch.cuda.synchronize()를 호출하지 않음
+            '''
+            pass
 
     def _inference_loop(self):
         # 최근 30프레임 기준 성능 측정
@@ -85,14 +93,14 @@ class PoseStreamService:
                 ) * 1000
 
                 # 2. Pose Estimation
-                self._sync_gpu()
+                self._sync_inferecnce()
                 infer_start = time.perf_counter()
 
                 annotated_frame, result = (
                     self.pose_estimator.predict(frame)
                 )
 
-                self._sync_gpu()
+                self._sync_inferecnce()
                 infer_ms = (
                     time.perf_counter() - infer_start
                 ) * 1000
@@ -238,5 +246,11 @@ class PoseStreamService:
                 print("[AI Service] 추론 워커 종료 지연")
             else:
                 self.worker = None
+
+        if self.worker is None or not self.worker.is_alive():
+            close_fn = getattr(self.pose_estimator, 'close', None)
+
+            if callable(close_fn):
+                close_fn()
 
         print("[AI Service] 종료 요청 완료")
