@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>운동 데이터셋 테스트</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header><div><span class="eyebrow">QEVD + SHOULDER</span><h1>운동 데이터셋 테스트</h1><p>영상을 재생하고 자세 라벨과 교정 문구를 확인하세요. <a href="/five_exercises.html">5종목 라벨 유형 전체 보기</a></p></div><button id="validate" class="primary">데이터 검증 실행</button></header>
+  <main>
+    <section class="stats" id="stats" aria-label="데이터셋 통계"></section>
+    <nav class="exercise-shortcuts" aria-label="운동 예시 바로가기" id="exercise-shortcuts"></nav>
+    <p class="notice">현재 화면은 <b>저장된 라벨을 확인하는 테스트</b>입니다. 영상에서 자세를 자동 판별하는 모델은 아직 연결하지 않았습니다. 어깨 라벨은 검수 전 초안입니다.</p>
+    <section class="filters" aria-label="영상 필터">
+      <label>자료<select id="dataset" aria-label="자료"><option value="shoulder">어깨 데이터셋</option><option value="qevd">QEVD</option><option value="">전체 자료</option></select></label>
+      <label>운동<select id="exercise"><option value="">전체 종목</option></select></label>
+      <label>분할<select id="split"><option value="">train + test</option><option value="train">train</option><option value="test">test</option></select></label>
+      <label class="wide">라벨<select id="label"><option value="">전체 라벨</option></select></label>
+      <label class="wide">검색<input id="search" placeholder="예: subject_023, 전완, 90000006" autocomplete="off"></label>
+      <label class="check"><input id="evidence" type="checkbox">상세 비교 사례만</label>
+    </section>
+    <section id="validation" class="validation hidden" aria-live="polite"></section>
+    <div class="layout">
+      <aside class="panel"><div class="list-header"><h2>영상 목록</h2><span id="count"></span></div><div id="clips" aria-live="polite"></div><div class="pagination"><button id="prev">이전</button><span id="page"></span><button id="next">다음</button></div></aside>
+      <section class="panel detail" id="detail"><div class="empty">목록에서 영상을 선택하세요.</div></section>
+    </div>
+  </main>
+  <footer>원본 QEVD는 유지됩니다. 어깨 미확정 40개와 보류 10개는 라벨 목록에서 제외했습니다.</footer>
+  <script src="/app.js"></script>
+</body>
+</html>

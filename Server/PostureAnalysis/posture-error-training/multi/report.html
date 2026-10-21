@@ -1,0 +1,173 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>5종목 실제 모델 학습 결과</title><style>body{font:15px system-ui;background:#f3f6fb;color:#20334e;margin:0}main{max-width:1200px;margin:auto;padding:24px}p{line-height:1.8;overflow-wrap:anywhere}.notice{background:#fff0ce;padding:18px;border-radius:12px}table{border-collapse:collapse;width:100%;background:white;font-size:14px;display:block;overflow:auto}td,th{padding:10px;border:1px solid #ddd;white-space:nowrap}article{padding:20px;background:white;border:1px solid #dae2ee;margin:16px 0;border-radius:12px}video{width:100%;max-height:340px;background:#111}section{margin-top:40px}pre{overflow:auto}nav{display:flex;gap:20px;flex-wrap:wrap}a{color:#245bc1}</style><main><h1>5종목 실제 모델 학습 결과</h1><p>학습 완료 5/5종목. 나머지 4종목 모델 저장 완료.</p><h2>모델 평가 요약</h2><table><tr><th>종목</th><th>모델</th><th>Macro F1</th><th>test</th><th>범위</th></tr><tr><td>스쿼트</td><td>CNN</td><td>0.726</td><td>60</td><td>2/2</td></tr><tr><td>푸시업</td><td>CNN</td><td>0.418</td><td>243</td><td>6/6</td></tr><tr><td>엘보 플랭크</td><td>CNN</td><td>0.587</td><td>203</td><td>8/8</td></tr><tr><td>YTW</td><td>CNN</td><td>0.706</td><td>214</td><td>4/4</td></tr><tr><td>숄더 프레스</td><td>GRU</td><td>평가 불가</td><td>9</td><td>1/6</td></tr></table><p>범위는 전체 대상 중 독립 테스트로 평가 가능한 오류 수입니다. 종목별 대상이 달라 점수를 단순 우열로 비교하면 안 됩니다.</p><p>스쿼트 기존 모델과 종목별 CNN/GRU. 피험자를 분리하고 원본 test를 유지했습니다.</p><p class="notice">아래 예측은 학습된 모델로 영상 전체를 미리 계산한 결과입니다. 재생 시점별 실시간 판정이 아닙니다. 선택 오류가 검출되지 않아도 전체 자세가 정상이라는 뜻은 아닙니다. 어깨는 초안 100개 중 가시성 기준을 통과한 74개를 사용한 작은 실험이며, YTW는 몸통 변형 검수가 남아 있습니다. 지지가 없는 오류의 F1은 평가 불가로 표시합니다.</p><nav><a href="#pushups">푸시업</a><a href="#elbow_plank">엘보 플랭크</a><a href="#ytw">YTW</a><a href="#shoulder_press">숄더 프레스</a><a href="/training_result.html">기존 스쿼트 결과</a></nav><section id="pushups"><h2>푸시업</h2><p>Six selected QEVD error annotations; absent labels do not certify normal form.</p><p>학습/검증/test: {'train': 2577, 'validation': 639, 'test': 243}. 피험자 겹침 0. test 중 선택 오류 양성 75개.</p><table><tr><th>모델</th><th>선택 오류/기타 정확도</th><th>전체 오류 Macro F1</th><th>평가 가능 오류 Macro F1</th><th>오류 평가 범위</th></tr><tr><td>cnn</td><td>0.737</td><td>0.418</td><td>0.418</td><td>6/6</td></tr><tr><td>gru</td><td>0.761</td><td>0.401</td><td>0.401</td><td>6/6</td></tr><tr><td>majority_train</td><td>0.691</td><td>0.000</td><td>0.000</td><td>6/6</td></tr></table><h3>선택 모델 CNN의 유형별 평가</h3><table><tr><th>유형</th><th>학습 양성</th><th>검증 양성</th><th>test 양성</th><th>Precision</th><th>Recall</th><th>F1</th></tr><tr><td>shallow</td><td>356</td><td>92</td><td>31</td><td>0.269</td><td>0.677</td><td>0.385</td></tr><tr><td>butt sinking</td><td>59</td><td>27</td><td>15</td><td>0.087</td><td>0.133</td><td>0.105</td></tr><tr><td>elevated hips</td><td>142</td><td>18</td><td>8</td><td>0.429</td><td>0.750</td><td>0.545</td></tr><tr><td>head down</td><td>41</td><td>10</td><td>8</td><td>0.308</td><td>0.500</td><td>0.381</td></tr><tr><td>moving head</td><td>32</td><td>5</td><td>7</td><td>0.154</td><td>0.286</td><td>0.200</td></tr><tr><td>side to side</td><td>273</td><td>71</td><td>18</td><td>0.889</td><td>0.889</td><td>0.889</td></tr></table><article><h4>원본 test 00283116</h4><video controls preload="metadata" src="/media/qevd/raw/fit/part4/00283116.mp4"></video><p>원본 대상 라벨: [&#x27;shallow&#x27;]</p><p>실제 모델 예측: []</p><p></p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;pushups&quot;,
+  &quot;scores&quot;: {
+    &quot;shallow&quot;: 0.03381729871034622,
+    &quot;butt sinking&quot;: 1.3649661013914738e-05,
+    &quot;elevated hips&quot;: 0.0019227160373702645,
+    &quot;head down&quot;: 2.0497780894856987e-07,
+    &quot;moving head&quot;: 2.4209406547015533e-05,
+    &quot;side to side&quot;: 0.011722350493073463
+  },
+  &quot;detected_errors&quot;: [],
+  &quot;feedbacks&quot;: [],
+  &quot;any_selected_error_score&quot;: 0.11955313384532928,
+  &quot;any_selected_error&quot;: false,
+  &quot;valid_frame_ratio&quot;: 1.0,
+  &quot;normal_assessment&quot;: &quot;unavailable&quot;,
+  &quot;scope&quot;: &quot;Six selected QEVD error annotations; absent labels do not certify normal form.&quot;
+}</pre></details></article><article><h4>원본 test 00281820</h4><video controls preload="metadata" src="/media/qevd/raw/fit/part4/00281820.mp4"></video><p>원본 대상 라벨: []</p><p>실제 모델 예측: []</p><p></p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;pushups&quot;,
+  &quot;scores&quot;: {
+    &quot;shallow&quot;: 0.026965776458382607,
+    &quot;butt sinking&quot;: 0.0010905660456046462,
+    &quot;elevated hips&quot;: 0.0012919361470267177,
+    &quot;head down&quot;: 0.00021139961609151214,
+    &quot;moving head&quot;: 7.991094025783241e-05,
+    &quot;side to side&quot;: 0.02301033027470112
+  },
+  &quot;detected_errors&quot;: [],
+  &quot;feedbacks&quot;: [],
+  &quot;any_selected_error_score&quot;: 0.09091610461473465,
+  &quot;any_selected_error&quot;: false,
+  &quot;valid_frame_ratio&quot;: 1.0,
+  &quot;normal_assessment&quot;: &quot;unavailable&quot;,
+  &quot;scope&quot;: &quot;Six selected QEVD error annotations; absent labels do not certify normal form.&quot;
+}</pre></details></article></section><section id="elbow_plank"><h2>엘보 플랭크</h2><p>Eight selected QEVD errors; other annotations include supported variants and timing, not verified normal controls.</p><p>학습/검증/test: {'train': 4064, 'validation': 1030, 'test': 203}. 피험자 겹침 0. test 중 선택 오류 양성 170개.</p><table><tr><th>모델</th><th>선택 오류/기타 정확도</th><th>전체 오류 Macro F1</th><th>평가 가능 오류 Macro F1</th><th>오류 평가 범위</th></tr><tr><td>cnn</td><td>0.837</td><td>0.587</td><td>0.587</td><td>8/8</td></tr><tr><td>gru</td><td>0.837</td><td>0.605</td><td>0.605</td><td>8/8</td></tr><tr><td>majority_train</td><td>0.837</td><td>0.000</td><td>0.000</td><td>8/8</td></tr></table><h3>선택 모델 CNN의 유형별 평가</h3><table><tr><th>유형</th><th>학습 양성</th><th>검증 양성</th><th>test 양성</th><th>Precision</th><th>Recall</th><th>F1</th></tr><tr><td>arms facing inward</td><td>834</td><td>213</td><td>43</td><td>0.946</td><td>0.814</td><td>0.875</td></tr><tr><td>arms too wide</td><td>256</td><td>65</td><td>9</td><td>0.333</td><td>0.667</td><td>0.444</td></tr><tr><td>butt sinking</td><td>373</td><td>87</td><td>17</td><td>0.316</td><td>0.706</td><td>0.436</td></tr><tr><td>head down</td><td>358</td><td>89</td><td>27</td><td>0.606</td><td>0.741</td><td>0.667</td></tr><tr><td>head up</td><td>346</td><td>95</td><td>23</td><td>0.737</td><td>0.609</td><td>0.667</td></tr><tr><td>high hips</td><td>367</td><td>93</td><td>24</td><td>0.536</td><td>0.625</td><td>0.577</td></tr><tr><td>legs and hips on the floor</td><td>570</td><td>143</td><td>24</td><td>0.400</td><td>0.667</td><td>0.500</td></tr><tr><td>shoulders shrugged up toward the ears</td><td>378</td><td>93</td><td>15</td><td>0.474</td><td>0.600</td><td>0.529</td></tr></table><article><h4>원본 test 00281704</h4><video controls preload="metadata" src="/media/qevd/raw/fit/part4/00281704.mp4"></video><p>원본 대상 라벨: [&#x27;high hips&#x27;]</p><p>실제 모델 예측: [&#x27;head down&#x27;, &#x27;high hips&#x27;]</p><p>Bring your head into line with your torso, following the reference neck position. Lower your hips toward the straight body line shown in the reference.</p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;elbow_plank&quot;,
+  &quot;scores&quot;: {
+    &quot;arms facing inward&quot;: 0.0007456365856342018,
+    &quot;arms too wide&quot;: 0.28715479373931885,
+    &quot;butt sinking&quot;: 0.433749794960022,
+    &quot;head down&quot;: 0.7732943892478943,
+    &quot;head up&quot;: 7.028072104731109e-06,
+    &quot;high hips&quot;: 0.9140298962593079,
+    &quot;legs and hips on the floor&quot;: 1.4753071809536777e-05,
+    &quot;shoulders shrugged up toward the ears&quot;: 0.12398172914981842
+  },
+  &quot;detected_errors&quot;: [
+    &quot;head down&quot;,
+    &quot;high hips&quot;
+  ],
+  &quot;feedbacks&quot;: [
+    &quot;Bring your head into line with your torso, following the reference neck position.&quot;,
+    &quot;Lower your hips toward the straight body line shown in the reference.&quot;
+  ],
+  &quot;any_selected_error_score&quot;: 0.6028034687042236,
+  &quot;any_selected_error&quot;: true,
+  &quot;valid_frame_ratio&quot;: 1.0,
+  &quot;normal_assessment&quot;: &quot;unavailable&quot;,
+  &quot;scope&quot;: &quot;Eight selected QEVD errors; other annotations include supported variants and timing, not verified normal controls.&quot;
+}</pre></details></article><article><h4>원본 test 00282825</h4><video controls preload="metadata" src="/media/qevd/raw/fit/part4/00282825.mp4"></video><p>원본 대상 라벨: []</p><p>실제 모델 예측: [&#x27;butt sinking&#x27;]</p><p>Lift your hips toward the straight body line shown in the reference.</p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;elbow_plank&quot;,
+  &quot;scores&quot;: {
+    &quot;arms facing inward&quot;: 9.217407932737842e-05,
+    &quot;arms too wide&quot;: 0.005217981990426779,
+    &quot;butt sinking&quot;: 0.8849449157714844,
+    &quot;head down&quot;: 8.74270117492415e-05,
+    &quot;head up&quot;: 0.1438124179840088,
+    &quot;high hips&quot;: 0.029695801436901093,
+    &quot;legs and hips on the floor&quot;: 6.07190522714518e-05,
+    &quot;shoulders shrugged up toward the ears&quot;: 0.6893817186355591
+  },
+  &quot;detected_errors&quot;: [
+    &quot;butt sinking&quot;
+  ],
+  &quot;feedbacks&quot;: [
+    &quot;Lift your hips toward the straight body line shown in the reference.&quot;
+  ],
+  &quot;any_selected_error_score&quot;: 0.34752804040908813,
+  &quot;any_selected_error&quot;: true,
+  &quot;valid_frame_ratio&quot;: 1.0,
+  &quot;normal_assessment&quot;: &quot;unavailable&quot;,
+  &quot;scope&quot;: &quot;Eight selected QEVD errors; other annotations include supported variants and timing, not verified normal controls.&quot;
+}</pre></details></article></section><section id="ytw"><h2>YTW</h2><p>Exploratory source-label reproduction. Upright/bent torso variants not reviewed; no verified upright normal controls.</p><p>학습/검증/test: {'train': 2398, 'validation': 730, 'test': 214}. 피험자 겹침 0. test 중 선택 오류 양성 136개.</p><table><tr><th>모델</th><th>선택 오류/기타 정확도</th><th>전체 오류 Macro F1</th><th>평가 가능 오류 Macro F1</th><th>오류 평가 범위</th></tr><tr><td>cnn</td><td>0.836</td><td>0.706</td><td>0.706</td><td>4/4</td></tr><tr><td>gru</td><td>0.729</td><td>0.677</td><td>0.677</td><td>4/4</td></tr><tr><td>majority_train</td><td>0.636</td><td>0.000</td><td>0.000</td><td>4/4</td></tr></table><h3>선택 모델 CNN의 유형별 평가</h3><table><tr><th>유형</th><th>학습 양성</th><th>검증 양성</th><th>test 양성</th><th>Precision</th><th>Recall</th><th>F1</th></tr><tr><td>arms too low</td><td>196</td><td>61</td><td>16</td><td>0.583</td><td>0.438</td><td>0.500</td></tr><tr><td>wrong order</td><td>915</td><td>273</td><td>83</td><td>0.828</td><td>0.928</td><td>0.875</td></tr><tr><td>too fast</td><td>179</td><td>56</td><td>16</td><td>0.571</td><td>0.750</td><td>0.649</td></tr><tr><td>too slow</td><td>196</td><td>60</td><td>21</td><td>1.000</td><td>0.667</td><td>0.800</td></tr></table><article><h4>원본 test 00282660</h4><video controls preload="metadata" src="/media/qevd/raw/fit/part4/00282660.mp4"></video><p>원본 대상 라벨: [&#x27;too fast&#x27;]</p><p>실제 모델 예측: [&#x27;wrong order&#x27;, &#x27;too fast&#x27;]</p><p>Perform the positions in the intended Y, then T, then W order. Slow down and complete each Y, T, and W position at the demonstrated tempo.</p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;ytw&quot;,
+  &quot;scores&quot;: {
+    &quot;arms too low&quot;: 0.07654032111167908,
+    &quot;wrong order&quot;: 0.7769781351089478,
+    &quot;too fast&quot;: 0.883432924747467,
+    &quot;too slow&quot;: 9.290334723743854e-09
+  },
+  &quot;detected_errors&quot;: [
+    &quot;wrong order&quot;,
+    &quot;too fast&quot;
+  ],
+  &quot;feedbacks&quot;: [
+    &quot;Perform the positions in the intended Y, then T, then W order.&quot;,
+    &quot;Slow down and complete each Y, T, and W position at the demonstrated tempo.&quot;
+  ],
+  &quot;any_selected_error_score&quot;: 0.7561367154121399,
+  &quot;any_selected_error&quot;: true,
+  &quot;valid_frame_ratio&quot;: 1.0,
+  &quot;normal_assessment&quot;: &quot;unavailable&quot;,
+  &quot;scope&quot;: &quot;Exploratory source-label reproduction. Upright/bent torso variants not reviewed; no verified upright normal controls.&quot;
+}</pre></details></article><article><h4>원본 test 00282989</h4><video controls preload="metadata" src="/media/qevd/raw/fit/part4/00282989.mp4"></video><p>원본 대상 라벨: []</p><p>실제 모델 예측: []</p><p></p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;ytw&quot;,
+  &quot;scores&quot;: {
+    &quot;arms too low&quot;: 0.0006976852891966701,
+    &quot;wrong order&quot;: 0.0472339503467083,
+    &quot;too fast&quot;: 0.7880706191062927,
+    &quot;too slow&quot;: 9.03102700249292e-05
+  },
+  &quot;detected_errors&quot;: [],
+  &quot;feedbacks&quot;: [],
+  &quot;any_selected_error_score&quot;: 0.25992119312286377,
+  &quot;any_selected_error&quot;: false,
+  &quot;valid_frame_ratio&quot;: 0.9722222222222222,
+  &quot;normal_assessment&quot;: &quot;unavailable&quot;,
+  &quot;scope&quot;: &quot;Exploratory source-label reproduction. Upright/bent torso variants not reviewed; no verified upright normal controls.&quot;
+}</pre></details></article></section><section id="shoulder_press"><h2>숄더 프레스</h2><p>Unverified visual/source-binary drafts; small pilot only. Source test has one positive video.</p><p>학습/검증/test: {'train': 53, 'validation': 12, 'test': 9}. 피험자 겹침 0. test 중 선택 오류 양성 1개.</p><table><tr><th>모델</th><th>선택 오류/기타 정확도</th><th>전체 오류 Macro F1</th><th>평가 가능 오류 Macro F1</th><th>오류 평가 범위</th></tr><tr><td>cnn</td><td>0.444</td><td>평가 불가</td><td>0.000</td><td>1/6</td></tr><tr><td>gru</td><td>0.333</td><td>평가 불가</td><td>0.000</td><td>1/6</td></tr><tr><td>majority_train</td><td>0.889</td><td>평가 불가</td><td>0.000</td><td>1/6</td></tr></table><h3>선택 모델 GRU의 유형별 평가</h3><table><tr><th>유형</th><th>학습 양성</th><th>검증 양성</th><th>test 양성</th><th>Precision</th><th>Recall</th><th>F1</th></tr><tr><td>arms too wide at the top</td><td>4</td><td>2</td><td>0</td><td>평가 불가</td><td>평가 불가</td><td>평가 불가</td></tr><tr><td>incomplete upward range</td><td>2</td><td>0</td><td>1</td><td>0.000</td><td>0.000</td><td>0.000</td></tr><tr><td>hands move behind the head</td><td>1</td><td>0</td><td>0</td><td>평가 불가</td><td>평가 불가</td><td>평가 불가</td></tr><tr><td>forearms tilt inward</td><td>8</td><td>2</td><td>0</td><td>평가 불가</td><td>평가 불가</td><td>평가 불가</td></tr><tr><td>elbow path narrower than reference</td><td>6</td><td>0</td><td>0</td><td>평가 불가</td><td>평가 불가</td><td>평가 불가</td></tr><tr><td>uneven arm height and timing</td><td>1</td><td>0</td><td>0</td><td>평가 불가</td><td>평가 불가</td><td>평가 불가</td></tr></table><article><h4>원본 test 90000139</h4><video controls preload="metadata" src="/media/shoulder/raw/fit/part1/90000139.mp4"></video><p>원본 대상 라벨: [&#x27;incomplete upward range&#x27;]</p><p>실제 모델 예측: [&#x27;hands move behind the head&#x27;, &#x27;forearms tilt inward&#x27;]</p><p>Follow the reference press path from beside your shoulders rather than folding the weights behind your head. Avoid moving only your hands inward as you lower; match wrist and elbow alignment to the reference.</p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;shoulder_press&quot;,
+  &quot;scores&quot;: {
+    &quot;arms too wide at the top&quot;: 0.4578568637371063,
+    &quot;incomplete upward range&quot;: 0.1696251481771469,
+    &quot;hands move behind the head&quot;: 0.6291795372962952,
+    &quot;forearms tilt inward&quot;: 0.682067334651947,
+    &quot;elbow path narrower than reference&quot;: 0.33793380856513977,
+    &quot;uneven arm height and timing&quot;: 0.3642106354236603
+  },
+  &quot;detected_errors&quot;: [
+    &quot;hands move behind the head&quot;,
+    &quot;forearms tilt inward&quot;
+  ],
+  &quot;feedbacks&quot;: [
+    &quot;Follow the reference press path from beside your shoulders rather than folding the weights behind your head.&quot;,
+    &quot;Avoid moving only your hands inward as you lower; match wrist and elbow alignment to the reference.&quot;
+  ],
+  &quot;any_selected_error_score&quot;: 0.45705389976501465,
+  &quot;any_selected_error&quot;: true,
+  &quot;valid_frame_ratio&quot;: 1.0,
+  &quot;normal_assessment&quot;: &quot;unverified_draft_candidate_only&quot;,
+  &quot;scope&quot;: &quot;Unverified visual/source-binary drafts; small pilot only. Source test has one positive video.&quot;,
+  &quot;normal_candidate&quot;: false
+}</pre></details></article><article><h4>원본 test 90000003</h4><video controls preload="metadata" src="/media/shoulder/raw/fit/part1/90000003.mp4"></video><p>원본 대상 라벨: []</p><p>실제 모델 예측: [&#x27;forearms tilt inward&#x27;]</p><p>Avoid moving only your hands inward as you lower; match wrist and elbow alignment to the reference.</p><details><summary>확률 및 상태</summary><pre>{
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;exercise&quot;: &quot;shoulder_press&quot;,
+  &quot;scores&quot;: {
+    &quot;arms too wide at the top&quot;: 0.55403071641922,
+    &quot;incomplete upward range&quot;: 0.37638038396835327,
+    &quot;hands move behind the head&quot;: 0.37162137031555176,
+    &quot;forearms tilt inward&quot;: 0.509511411190033,
+    &quot;elbow path narrower than reference&quot;: 0.4109894037246704,
+    &quot;uneven arm height and timing&quot;: 0.28103822469711304
+  },
+  &quot;detected_errors&quot;: [
+    &quot;forearms tilt inward&quot;
+  ],
+  &quot;feedbacks&quot;: [
+    &quot;Avoid moving only your hands inward as you lower; match wrist and elbow alignment to the reference.&quot;
+  ],
+  &quot;any_selected_error_score&quot;: 0.5175110697746277,
+  &quot;any_selected_error&quot;: true,
+  &quot;valid_frame_ratio&quot;: 1.0,
+  &quot;normal_assessment&quot;: &quot;unverified_draft_candidate_only&quot;,
+  &quot;scope&quot;: &quot;Unverified visual/source-binary drafts; small pilot only. Source test has one positive video.&quot;,
+  &quot;normal_candidate&quot;: false
+}</pre></details></article></section></main></html>

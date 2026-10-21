@@ -1,0 +1,16 @@
+{
+  "short_clips": "Custom subject-disjoint train/test split for the shoulder extension. This is not an official QEVD split.",
+  "workers": "worker_id = 900000 + source subject number; same subject stays in one split across all views and qualities. No claim that people are disjoint across source datasets.",
+  "paths": "Manifest video_path is relative to shoulder-qevd root; JSON ./ID.mp4 resolves by basename via the manifest, exactly as in qevd-selected.",
+  "test_subject_ids": [
+    "subject_001",
+    "subject_006",
+    "subject_011",
+    "subject_018",
+    "subject_024"
+  ],
+  "annotation_status": "All 100 labeled rows are draft. Source-good weak labels and visual-error candidates are distinguished in annotation_review.json. No rows are expert-verified.",
+  "pending": "40 unresolved clips are outside raw/coach and short_clips.csv.",
+  "quarantine": "10 duplicate-conflict/exercise-identity clips are outside raw/coach and short_clips.csv. No source files were deleted.",
+  "rare_classes": "ARM_ASYMMETRY has only one draft example. Do not infer class-level evaluation validity from this pilot split."
+}
