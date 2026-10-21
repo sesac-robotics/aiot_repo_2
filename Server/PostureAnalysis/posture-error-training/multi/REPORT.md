@@ -105,4 +105,3 @@ Macro F1 전체값은 모든 대상에 양성·음성 테스트 지지가 있을
 - Only 25 source subjects and 30 draft error videos; multiple views are correlated.
 - Source test contains only one positive error clip, so headline accuracy can be misleading.
 - Some errors occur in only one or two subjects; independent train/validation/test error evaluation is impossible.
-
