@@ -4,13 +4,16 @@ FastAPI AI Server
 """
 
 import os
+
+from dotenv import load_dotenv
+from datetime import datetime, timezone
 # FastAPI의 시작과 종료 시점에 특정 작업을 수행할 수 있도록 도와주는 데코레이터
 from contextlib import asynccontextmanager
 
-from dotenv import load_dotenv
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import StreamingResponse
 
+from app.schemas.pose import PoseResponse
 from app.inference.yolo_pose import YOLOPoseEstimator
 from app.inference.mediapipe_pose import MediapipePoseEstimator
 from app.streaming.pose_stream import PoseStreamService
@@ -73,7 +76,9 @@ async def lifespan(app: FastAPI):
     pose_stream = PoseStreamService(
         stream_url=ESP32_STREAM_URL,
         pose_estimator=pose_estimator,
-        model_name=POSE_MODEL
+        model_name=POSE_MODEL,
+        # 로그 주기만 환경변수로 조절하며 FPS 측정 구간은 5초입니다.
+        metrics_log_interval=float(os.getenv("METRICS_LOG_INTERVAL_SECONDS", "5"))
     )
 
     '''
@@ -109,3 +114,53 @@ def stream_video(request: Request):
             "Cache-Control": "no-cache, no-store, must-revalidate"
         }
     )
+
+@app.get('/health')
+def health_check(request: Request):
+    pose_stream = request.app.state.pose_stream
+    latest = pose_stream.get_latest_pose()
+
+    if latest is None:
+        return {
+            'status': 'starting',
+            'model': POSE_MODEL,
+            'stream_ready': False
+        }
+
+    age_sec = (
+        datetime.now(timezone.utc) - datetime.fromisoformat(latest['processed_at'])
+    ).total_seconds()
+
+    ready = age_sec < 3.0
+
+    return {
+        'status': 'ok' if ready else 'degraded',
+        'model': POSE_MODEL,
+        'stream_ready': ready,
+        'frame_id': latest['frame_id'],
+        'last_frame_age_sec': round(age_sec, 3)
+    }
+
+@app.get('/pose/latest', response_model=PoseResponse)
+def get_latest_pose(request: Request):
+    pose_stream = request.app.state.pose_stream
+
+    result = pose_stream.get_latest_pose()
+
+    if result is None:
+        raise HTTPException(status_code=503, detail='아직 Pose 추론 결과가 없습니다.')
+
+    # 오래된 프레임은 최신 결과로 반환하지 않음
+    age_sec = (
+        datetime.now(timezone.utc) - datetime.fromisoformat(result['processed_at'])
+    ).total_seconds()
+
+    if age_sec > 3.0:
+        raise HTTPException(status_code=503, detail='Pose 스트림이 갱신되지 않고 있습니다.')
+
+    return result
+
+@app.get('/metrics')
+def get_metrics(request: Request):
+    # 기존 서비스의 스냅샷만 반환하므로 요청마다 추론하지 않습니다.
+    return request.app.state.pose_stream.get_metrics()

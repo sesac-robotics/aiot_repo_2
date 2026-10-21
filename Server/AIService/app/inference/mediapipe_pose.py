@@ -17,6 +17,8 @@ LINE_COLORS = {
     'lower': (40, 150, 40)
 }
 
+FACE_LANDMARK_IDS = set(range(11))
+
 class MediapipePoseEstimator:
     def __init__(
         self,
@@ -27,6 +29,8 @@ class MediapipePoseEstimator:
         min_visibility=0.35,
         delegate='gpu'
     ):
+        # 서비스가 주입하는 계측기이며 GPU 객체 생성과는 무관합니다.
+        self.metrics = None
         self.min_visibility = min_visibility
         self.last_timestamp_ms = -1
 
@@ -110,6 +114,9 @@ class MediapipePoseEstimator:
         for idx, landmark in enumerate(landmarks):
             if not self._is_valid_landmark(landmark):
                 continue
+            # 얼굴 Keypoin 제외
+            if idx in FACE_LANDMARK_IDS:
+                continue
 
             x = min(int(landmark.x * width), width - 1)
             y = min(int(landmark.y * height), height - 1)
@@ -122,6 +129,9 @@ class MediapipePoseEstimator:
             end = connection.end
 
             if start not in points or end not in points:
+                continue
+            # 얼굴과 연결된 선은 표시하지 않음
+            if start in FACE_LANDMARK_IDS or end in FACE_LANDMARK_IDS:
                 continue
 
             part = self._get_connection_part(start, end)
@@ -175,7 +185,13 @@ class MediapipePoseEstimator:
         self.last_timestamp_ms = timestamp_ms
     
         # OpenCV로 한 프레임씩 가져오고 있기 때문에 동기식 추론
+        # 동기식 MediaPipe 호출만 측정: 색 변환/스켈레톤 그리기는 제외합니다.
+        detect_start = time.perf_counter()
         result = self.landmarker.detect_for_video(mp_image, timestamp_ms)
+        if self.metrics is not None:
+            self.metrics.record_duration(
+                "mediapipe_inference", (time.perf_counter() - detect_start) * 1000
+            )
         # 원본 프레임을 복사해서 시각화
         annotated_frame = frame.copy()
 

@@ -3,16 +3,31 @@ import cv2
 import time
 import torch
 import threading
+import json
+import logging
+import math
 
+from copy import deepcopy
+from datetime import datetime, timezone
 from collections import deque
 
+from app.metrics import PipelineMetrics
 from app.camera.stream import CameraStream
 from app.streaming.output import encode_jpeg
+from app.analysis.keypoints import extract_mediapipe_keypoints
 
 
 class PoseStreamService:
-    def __init__(self, stream_url, pose_estimator, model_name):
-        self.camera = CameraStream(stream_url)
+    def __init__(self, stream_url, pose_estimator, model_name, metrics_log_interval=5.0):
+        # 잘못된 간격은 워커 시작 전에 검증합니다.
+        if not math.isfinite(metrics_log_interval) or metrics_log_interval <= 0:
+            raise ValueError("METRICS_LOG_INTERVAL_SECONDS는 양수여야 합니다.")
+        self.metrics = PipelineMetrics()
+        self.metrics_log_interval = metrics_log_interval
+        self.metrics_worker = None
+        self.camera = CameraStream(stream_url, metrics=self.metrics)
+        if model_name == "mediapipe":
+            pose_estimator.metrics = self.metrics
         self.pose_estimator = pose_estimator
         self.model_name = model_name
 
@@ -21,6 +36,9 @@ class PoseStreamService:
 
         # 추론이 완료된 프레임 번호
         self.frame_id = 0
+
+        # 최근 추론 결과를 JSON 형태로 보관
+        self.latest_pose = None
 
         # 클라이언트 간 최신 프레임 공유 및 동기화
         self.condition = threading.Condition()
@@ -39,6 +57,7 @@ class PoseStreamService:
         # 이전에 처리했던 영상 결과 초기화
         with self.condition:
             self.latest_jpeg = None
+            self.latest_pose = None
             self.frame_id = 0
 
         # ESP32-CAM 수신 스레드 실행
@@ -52,6 +71,12 @@ class PoseStreamService:
         )
 
         self.worker.start()
+
+        # 추론 정지/카메라 단절 중에도 로그를 남기는 계측 전용 워커입니다.
+        self.metrics_worker = threading.Thread(
+            target=self._metrics_loop, daemon=True, name="metrics-logger"
+        )
+        self.metrics_worker.start()
 
         print("[AI Service] Pose 추론 워커 시작")
 
@@ -75,22 +100,14 @@ class PoseStreamService:
     def _inference_loop(self):
         # 최근 30프레임 기준 성능 측정
         frame_times = deque(maxlen=31)
-        metrics = deque(maxlen=30)
-        frame_count = 0
 
         while not self.stop_event.is_set():
             try:
-                total_start = time.perf_counter()
-
                 # 1. ESP32-CAM 최신 프레임 가져오기
                 frame = self.camera.read()
 
                 if frame is None:
                     continue
-
-                read_ms = (
-                    time.perf_counter() - total_start
-                ) * 1000
 
                 # 2. Pose Estimation
                 self._sync_inferecnce()
@@ -100,10 +117,17 @@ class PoseStreamService:
                     self.pose_estimator.predict(frame)
                 )
 
+                # MediaPipe 추론 결과에서 33개 관절 추출
+                keypoints = extract_mediapipe_keypoints(result)
+
                 self._sync_inferecnce()
                 infer_ms = (
                     time.perf_counter() - infer_start
                 ) * 1000
+
+                # 전체 추론 단계에는 전처리/그리기/관절 추출도 포함됩니다.
+                self.metrics.record_duration("inference", infer_ms)
+                self.metrics.record_event("inference")
 
                 # 3. 최근 처리 FPS 계산
                 frame_times.append(time.perf_counter())
@@ -140,46 +164,33 @@ class PoseStreamService:
                     time.perf_counter() - encode_start
                 ) * 1000
 
+                # encode_jpeg의 압축 및 bytes 복사 시간을 함께 측정합니다.
+                self.metrics.record_duration("jpeg_encoding", encode_ms)
+
                 if jpeg_bytes is None:
                     continue
-
-                total_ms = (
-                    time.perf_counter() - total_start
-                ) * 1000
 
                 # 6. 최신 추론 결과 공유
                 with self.condition:
                     self.latest_jpeg = jpeg_bytes
                     self.frame_id += 1
 
+                    # API 반환용 MediaPipe 추론 데이터
+                    self.latest_pose = {
+                        "frame_id": self.frame_id,
+                        "processed_at": datetime.now(
+                            timezone.utc
+                        ).isoformat(),
+                        "model": self.model_name,
+                        "person_detected": bool(keypoints),
+                        "keypoints": keypoints
+                    }
+
                     # 대기 중인 모든 클라이언트에 알림
                     self.condition.notify_all()
 
-                # 7. 성능 측정값 기록
-                frame_count += 1
-
-                metrics.append({
-                    "read": read_ms,
-                    "infer": infer_ms,
-                    "encode": encode_ms,
-                    "total": total_ms
-                })
-
-                # 8. 30프레임마다 성능 로그
-                if frame_count % 30 == 0:
-                    def avg(key):
-                        return sum(
-                            m[key] for m in metrics
-                        ) / len(metrics)
-
-                    print(
-                        f"[Performance] "
-                        f"FPS: {fps:.2f} | "
-                        f"Read: {avg('read'):.1f}ms | "
-                        f"Inference: {avg('infer'):.1f}ms | "
-                        f"Encode: {avg('encode'):.1f}ms | "
-                        f"Server: {avg('total'):.1f}ms"
-                    )
+                # 성공적으로 게시한 결과만 전체 처리 FPS에 반영합니다.
+                self.metrics.record_event("processed")
 
             except Exception as e:
                 print(f"[AI Service] 추론 오류: {e}")
@@ -189,6 +200,16 @@ class PoseStreamService:
             self.condition.notify_all()
 
         print("[AI Service] 추론 워커 종료")
+
+    def get_metrics(self):
+        # 조회는 공유 표본만 읽으며 카메라/모델을 실행하지 않습니다.
+        return self.metrics.snapshot()
+
+    def _metrics_loop(self):
+        # Event.wait를 사용해 종료 요청에 즉시 반응합니다.
+        logger = logging.getLogger("uvicorn.error")
+        while not self.stop_event.wait(self.metrics_log_interval):
+            logger.info("[Performance] %s", json.dumps(self.get_metrics()))
 
     # 여러 클라이언트에 영상 전송
     def generate_frames(self):
@@ -227,6 +248,13 @@ class PoseStreamService:
                 + b"\r\n"
             )
 
+    def get_latest_pose(self):
+        with self.condition:
+            if self.latest_pose is None:
+                return None
+
+            return deepcopy(self.latest_pose)
+
     def stop(self):
         # 추론 워커 종료 요청
         self.stop_event.set()
@@ -234,6 +262,10 @@ class PoseStreamService:
         # 프레임을 기다리는 클라이언트 깨우기
         with self.condition:
             self.condition.notify_all()
+
+        # 로거도 같은 종료 신호를 사용하며 모델 객체에는 접근하지 않습니다.
+        if self.metrics_worker is not None:
+            self.metrics_worker.join(timeout=1.0)
 
         # 카메라 수신 스레드 종료
         self.camera.release()

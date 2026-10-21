@@ -12,10 +12,12 @@ import cv2
 import threading
 
 class CameraStream:
-    def __init__(self, stream_url: str):
+    def __init__(self, stream_url: str, metrics=None):
         if not stream_url:
             raise ValueError("카메라 스트림 URL이 없습니다.")
 
+        # 서비스가 소유한 계측기만 공유하며 별도 연결은 생성하지 않습니다.
+        self.metrics = metrics
         self.stream_url = stream_url
         self.capture = None
 
@@ -111,6 +113,13 @@ class CameraStream:
 
                         # 가장 최근 프레임만 보관
                         with self.condition:
+                            # 아직 읽지 않은 슬롯을 덮어쓸 때만 누락으로 집계합니다.
+                            if self.metrics is not None:
+                                self.metrics.record_event(
+                                    "capture",
+                                    skipped=int(self.latest_frame is not None
+                                                and self.frame_id > self.last_read_id),
+                                )
                             self.latest_frame = frame
                             self.frame_id += 1
 
