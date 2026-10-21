@@ -14,6 +14,8 @@ from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import StreamingResponse
 
 from app.schemas.pose import PoseResponse
+from app.session import SessionManager
+from app.routers.internal_sessions import router as internal_sessions_router
 from app.inference.yolo_pose import YOLOPoseEstimator
 from app.inference.mediapipe_pose import MediapipePoseEstimator
 from app.streaming.pose_stream import PoseStreamService
@@ -68,14 +70,17 @@ yield 이후는 종료시 실행되는 구조
 '''
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # AI 모델 로드 (서버 시작 시 1회)
-    # 클라이언트가 접속할 때마다 모델을 다시 로딩하지 않음
-    pose_estimator = create_pose_estimator()
+    # 프로세스당 하나를 생성하여 API와 향후 추론 워커가 공유합니다.
+    app.state.session_manager = SessionManager()
+    app.state.internal_api_key = os.getenv("INTERNAL_API_KEY")
+    # 모델 팩터리만 전달하여 생성/추론/종료가 같은 워커에서 실행되게 합니다.
 
     # 새로운 스트리밍 서비스 객체 생성
     pose_stream = PoseStreamService(
         stream_url=ESP32_STREAM_URL,
-        pose_estimator=pose_estimator,
+        pose_estimator=None,
+        estimator_factory=create_pose_estimator,
+        session_manager=app.state.session_manager,
         model_name=POSE_MODEL,
         # 로그 주기만 환경변수로 조절하며 FPS 측정 구간은 5초입니다.
         metrics_log_interval=float(os.getenv("METRICS_LOG_INTERVAL_SECONDS", "5"))
@@ -100,6 +105,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+app.include_router(internal_sessions_router)
 
 
 @app.get("/stream")

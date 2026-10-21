@@ -1,5 +1,6 @@
 import cv2
 import time
+import threading
 import numpy as np
 import mediapipe as mp
 
@@ -31,6 +32,9 @@ class MediapipePoseEstimator:
     ):
         # 서비스가 주입하는 계측기이며 GPU 객체 생성과는 무관합니다.
         self.metrics = None
+        # 잘못된 외부 호출은 네이티브 GPU 코드 진입 전에 거부합니다.
+        self._owner_thread = threading.current_thread()
+        self._closed = False
         self.min_visibility = min_visibility
         self.last_timestamp_ms = -1
 
@@ -173,7 +177,14 @@ class MediapipePoseEstimator:
 
         return frame
 
+    def _check_owner(self):
+        if threading.current_thread() is not self._owner_thread:
+            raise RuntimeError("MediaPipe 생성/추론/종료는 동일한 소유 스레드에서 실행해야 합니다.")
+
     def predict(self, frame):
+        self._check_owner()
+        if self._closed:
+            raise RuntimeError("이미 종료한 MediaPipe 모델입니다.")
         # OpenCV는 BGR 형식이므로 MediaPipe Pose가 요구하는 RGB 형식으로 변환
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         rgb_frame = np.ascontiguousarray(rgb_frame)
@@ -212,5 +223,10 @@ class MediapipePoseEstimator:
     #         cv2.circle(frame, (x, y), 4, (0, 255, 0), -1)
 
     def close(self):
+        self._check_owner()
+        # 중복 종료는 허용하되 다른 스레드의 종료는 허용하지 않습니다.
+        if self._closed:
+            return
         self.landmarker.close()
+        self._closed = True
         print('[MediaPipe] 모델 종료')

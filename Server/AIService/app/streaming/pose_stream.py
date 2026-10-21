@@ -15,21 +15,38 @@ from app.metrics import PipelineMetrics
 from app.camera.stream import CameraStream
 from app.streaming.output import encode_jpeg
 from app.analysis.keypoints import extract_mediapipe_keypoints
+from app.analysis.exercise import ExerciseAnalysisBridge
+from app.analysis.registry import RegisteredExerciseAnalyzer
 
 
 class PoseStreamService:
-    def __init__(self, stream_url, pose_estimator, model_name, metrics_log_interval=5.0):
+    def __init__(self, stream_url, pose_estimator, model_name, metrics_log_interval=5.0,
+                 *, estimator_factory=None, session_manager=None, exercise_analyzer=None):
         # 잘못된 간격은 워커 시작 전에 검증합니다.
         if not math.isfinite(metrics_log_interval) or metrics_log_interval <= 0:
             raise ValueError("METRICS_LOG_INTERVAL_SECONDS는 양수여야 합니다.")
+        # 실제 서버는 팩터리를 전달하여 모델 생명주기를 추론 워커에 귀속시킵니다.
+        if (pose_estimator is None) == (estimator_factory is None):
+            raise ValueError("pose_estimator와 estimator_factory 중 하나만 지정해야 합니다.")
+        self.estimator_factory = estimator_factory
+        self._lifecycle_lock = threading.Lock()
+        self._ready = threading.Event()
+        self._startup_error = None
         self.metrics = PipelineMetrics()
         self.metrics_log_interval = metrics_log_interval
         self.metrics_worker = None
         self.camera = CameraStream(stream_url, metrics=self.metrics)
-        if model_name == "mediapipe":
+        if model_name == "mediapipe" and pose_estimator is not None:
             pose_estimator.metrics = self.metrics
         self.pose_estimator = pose_estimator
         self.model_name = model_name
+        # FastAPI와 같은 객체를 주입받으며 별도 관리자/분석 스레드는 생성하지 않습니다.
+        self.session_manager = session_manager
+        self.exercise_analysis = (
+            ExerciseAnalysisBridge(session_manager, exercise_analyzer if exercise_analyzer is not None
+                                   else RegisteredExerciseAnalyzer())
+            if session_manager is not None else None
+        )
 
         # 모든 클라이언트가 공유할 최신 추론 영상
         self.latest_jpeg = None
@@ -48,37 +65,75 @@ class PoseStreamService:
         self.worker = None
 
     def start(self):
-        # 추론 워커 중복 실행 방지
-        if self.worker is not None and self.worker.is_alive():
-            return
-
-        self.stop_event.clear()
-
-        # 이전에 처리했던 영상 결과 초기화
-        with self.condition:
-            self.latest_jpeg = None
-            self.latest_pose = None
-            self.frame_id = 0
-
-        # ESP32-CAM 수신 스레드 실행
-        self.camera.connect()
-
-        # 단일 Pose 추론 워커 생성
-        self.worker = threading.Thread(
-            target=self._inference_loop,
-            daemon=True,
-            name="pose-inference-worker"
-        )
-
-        self.worker.start()
-
-        # 추론 정지/카메라 단절 중에도 로그를 남기는 계측 전용 워커입니다.
-        self.metrics_worker = threading.Thread(
-            target=self._metrics_loop, daemon=True, name="metrics-logger"
-        )
-        self.metrics_worker.start()
-
+        # 동시 start/stop에서도 워커를 두 번 만들지 않습니다.
+        with self._lifecycle_lock:
+            if self.worker is not None and self.worker.is_alive():
+                if self.stop_event.is_set():
+                    raise RuntimeError("추론 워커가 아직 종료 중입니다.")
+                return
+            if self.worker is not None and self.estimator_factory is None:
+                raise RuntimeError("종료한 모델 재사용 대신 새 estimator_factory를 지정하세요.")
+            # 종료한 이전 로거가 새 실행의 Event.clear를 보지 않도록 먼저 회수합니다.
+            if self.metrics_worker is not None:
+                self.metrics_worker.join(timeout=1.0)
+                if self.metrics_worker.is_alive():
+                    raise RuntimeError("성능 로그 워커가 아직 종료 중입니다.")
+            self.stop_event.clear()
+            self._ready.clear()
+            self._startup_error = None
+            with self.condition:
+                self.latest_jpeg = None
+                self.latest_pose = None
+                self.frame_id = 0
+            self.worker = threading.Thread(
+                target=self._run_worker, daemon=True, name="pose-inference-worker"
+            )
+            self.worker.start()
+            # GPU 초기화 실패를 ASGI startup 실패로 전달합니다.
+            if not self._ready.wait(timeout=30.0):
+                self.stop_event.set()
+                raise TimeoutError("Pose 모델 초기화가 30초 안에 완료되지 않았습니다.")
+            if self._startup_error is not None:
+                self.worker.join(timeout=10.0)
+                raise RuntimeError("Pose 추론 워커 초기화 실패") from self._startup_error
+            self.metrics_worker = threading.Thread(
+                target=self._metrics_loop, daemon=True, name="metrics-logger"
+            )
+            self.metrics_worker.start()
         print("[AI Service] Pose 추론 워커 시작")
+
+    def _run_worker(self):
+        # 생성/추론/close를 모두 같은 Python 워커에서 수행합니다.
+        # MediaPipe 내부 GL 스레드의 Tensor 재사용 문제를 고치는 코드는 아닙니다.
+        estimator = None
+        try:
+            estimator = (self.estimator_factory() if self.estimator_factory is not None
+                         else self.pose_estimator)
+            self.pose_estimator = estimator
+            if self.model_name == "mediapipe":
+                estimator.metrics = self.metrics
+            if not self.stop_event.is_set():
+                self.camera.connect()
+            self._ready.set()
+            self._inference_loop()
+        except BaseException as error:
+            if not self._ready.is_set():
+                self._startup_error = error
+            logging.getLogger("uvicorn.error").exception("Pose 워커 실패")
+        finally:
+            self.stop_event.set()
+            try:
+                self.camera.release()
+            finally:
+                try:
+                    close_fn = getattr(estimator, "close", None)
+                    if callable(close_fn):
+                        close_fn()
+                finally:
+                    # 초기화 실패나 close 예외가 있어도 시작/구독 대기를 해제합니다.
+                    self._ready.set()
+                    with self.condition:
+                        self.condition.notify_all()
 
     # CUDA 연산 동기화
     def _sync_inferecnce(self):
@@ -100,6 +155,12 @@ class PoseStreamService:
     def _inference_loop(self):
         # 최근 30프레임 기준 성능 측정
         frame_times = deque(maxlen=31)
+        # 워커 재시작 시에도 이전 부분 동작을 이어서 처리하지 않습니다.
+        if self.exercise_analysis is not None:
+            try:
+                self.exercise_analysis.reset()
+            except Exception:
+                logging.getLogger('uvicorn.error').exception('운동 분석기 시작 초기화 실패')
 
         while not self.stop_event.is_set():
             try:
@@ -108,6 +169,14 @@ class PoseStreamService:
 
                 if frame is None:
                     continue
+
+                # 문맥만 잠깐 읽고 잠금을 해제한 뒤 GPU 추론을 실행합니다.
+                analysis_context = (
+                    self.session_manager.get_analysis_context()
+                    if self.session_manager is not None and self.model_name == 'mediapipe' else None
+                )
+                # 분석 입력 시각만 기록합니다. GPU 호출/전송 지연을 동작 시간으로 더하지 않습니다.
+                analysis_timestamp = time.monotonic()
 
                 # 2. Pose Estimation
                 self._sync_inferecnce()
@@ -191,6 +260,12 @@ class PoseStreamService:
 
                 # 성공적으로 게시한 결과만 전체 처리 FPS에 반영합니다.
                 self.metrics.record_event("processed")
+                # JPEG/API 게시 후 같은 워커에서 분석하며 오래된 결과는 반영하지 않습니다.
+                if self.exercise_analysis is not None and self.model_name == 'mediapipe':
+                    self.exercise_analysis.process(
+                        analysis_context, keypoints, frame_size=(frame.shape[1], frame.shape[0]),
+                        timestamp=analysis_timestamp,
+                    )
 
             except Exception as e:
                 print(f"[AI Service] 추론 오류: {e}")
@@ -208,8 +283,8 @@ class PoseStreamService:
     def _metrics_loop(self):
         # Event.wait를 사용해 종료 요청에 즉시 반응합니다.
         logger = logging.getLogger("uvicorn.error")
-        while not self.stop_event.wait(self.metrics_log_interval):
-            logger.info("[Performance] %s", json.dumps(self.get_metrics()))
+        # while not self.stop_event.wait(self.metrics_log_interval):
+            # logger.info("[Performance] %s", json.dumps(self.get_metrics()))
 
     # 여러 클라이언트에 영상 전송
     def generate_frames(self):
@@ -256,33 +331,21 @@ class PoseStreamService:
             return deepcopy(self.latest_pose)
 
     def stop(self):
-        # 추론 워커 종료 요청
-        self.stop_event.set()
-
-        # 프레임을 기다리는 클라이언트 깨우기
-        with self.condition:
-            self.condition.notify_all()
-
-        # 로거도 같은 종료 신호를 사용하며 모델 객체에는 접근하지 않습니다.
-        if self.metrics_worker is not None:
-            self.metrics_worker.join(timeout=1.0)
-
-        # 카메라 수신 스레드 종료
-        self.camera.release()
-
-        # 추론 워커 종료 대기
-        if self.worker is not None:
-            self.worker.join(timeout=3.0)
-
-            if self.worker.is_alive():
-                print("[AI Service] 추론 워커 종료 지연")
-            else:
-                self.worker = None
-
-        if self.worker is None or not self.worker.is_alive():
-            close_fn = getattr(self.pose_estimator, 'close', None)
-
-            if callable(close_fn):
-                close_fn()
-
+        with self._lifecycle_lock:
+            self.stop_event.set()
+            # read 대기를 깨우되 GPU 객체는 여기서 close하지 않습니다.
+            self.camera.stop_event.set()
+            with self.camera.condition:
+                self.camera.condition.notify_all()
+            with self.condition:
+                self.condition.notify_all()
+            if self.metrics_worker is not None:
+                self.metrics_worker.join(timeout=1.0)
+            if self.worker is not None:
+                self.worker.join(timeout=10.0)
+                if self.worker.is_alive():
+                    # 늦은 추론과 close의 경합을 피하고 재시작도 차단합니다.
+                    logging.getLogger("uvicorn.error").error(
+                        "Pose 워커 종료 지연: GPU 정리는 소유 워커 완료 시 수행됩니다."
+                    )
         print("[AI Service] 종료 요청 완료")
