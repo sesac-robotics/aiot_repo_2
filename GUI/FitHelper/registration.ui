@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>520</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Fitness Hub - Create Account &amp; User Info</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#registerTitle { font-size: 24px; font-weight: 900; color: #0284C7; }
+#regCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 20px; }
+QLabel { font-size: 13px; font-weight: 700; color: #334155; background: transparent; }
+QLineEdit, QComboBox { background-color: #F8FAFC; border: 2px solid #E2E8F0; border-radius: 10px; padding: 6px 12px; color: #0F172A; font-size: 14px; min-height: 28px; }
+QLineEdit:focus, QComboBox:focus { border: 2px solid #0284C7; background-color: #FFFFFF; }
+#errorMsgLabel { color: #EF4444; font-size: 12px; font-weight: 700; background: transparent; }
+#registerButton { background-color: #0284C7; color: #FFFFFF; font-size: 15px; font-weight: 800; border-radius: 14px; min-height: 48px; }
+#registerButton:hover { background-color: #0369A1; }
+#backButton { background-color: #FFFFFF; color: #64748B; font-size: 13px; font-weight: 700; border: 1px solid #CBD5E1; border-radius: 14px; min-height: 40px; }
+#backButton:hover { background-color: #F1F5F9; color: #0F172A; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="registerTitle">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>18</y>
+      <width>460</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>🔥 Create Account &amp; Profile</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="regCard">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>460</width>
+      <height>625</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="labelUser">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>15</y>
+       <width>410</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Username (Login ID)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="regUsernameEdit">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>38</y>
+       <width>410</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Enter username</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelEmail">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>88</y>
+       <width>410</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Email Address</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="regEmailEdit">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>111</y>
+       <width>410</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>name@example.com</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelPass">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>161</y>
+       <width>410</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="regPasswordEdit">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>184</y>
+       <width>410</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelRePass">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>234</y>
+       <width>410</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Re-Enter Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="regPasswordEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>257</y>
+       <width>410</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Confirm password</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelNickname">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>307</y>
+       <width>190</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nickname</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelGender">
+     <property name="geometry">
+      <rect>
+       <x>235</x>
+       <y>307</y>
+       <width>200</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Gender</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editNickname">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>330</y>
+       <width>190</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Nickname</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboGender">
+     <property name="geometry">
+      <rect>
+       <x>235</x>
+       <y>330</y>
+       <width>200</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Male</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Female</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Other</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="labelAge">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>380</y>
+       <width>125</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Age</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelHeight">
+     <property name="geometry">
+      <rect>
+       <x>168</x>
+       <y>380</y>
+       <width>125</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Height (cm)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelWeight">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>380</y>
+       <width>125</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Weight (kg)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editAge">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>403</y>
+       <width>125</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Age</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editHeight">
+     <property name="geometry">
+      <rect>
+       <x>168</x>
+       <y>403</y>
+       <width>125</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>cm</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editWeight">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>403</y>
+       <width>125</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>kg</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="errorMsgLabel">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>452</y>
+       <width>410</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="registerButton">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>482</y>
+       <width>410</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>✨ Complete Registration</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="backButton">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>538</y>
+       <width>410</width>
+       <height>42</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Back to Login</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

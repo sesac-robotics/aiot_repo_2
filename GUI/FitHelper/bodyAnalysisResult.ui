@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>520</width><height>540</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Fitness Hub - Body Analysis Report</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#resultTitle { font-size: 22px; font-weight: 800; color: #0284C7; }
+#summaryCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 20px; }
+#summaryCard QLabel { color: #334155; font-size: 14px; font-weight: 700; }
+#viewRoutineButton { background-color: #0284C7; color: #FFFFFF; font-size: 14px; font-weight: bold; border-radius: 14px; min-height: 52px; }
+#viewRoutineButton:hover { background-color: #0369A1; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="resultTitle">
+    <property name="geometry"><rect><x>30</x><y>25</y><width>460</width><height>40</height></rect></property>
+    <property name="text"><string>Your Body Analysis Report</string></property>
+    <property name="alignment"><set>Qt::AlignCenter</set></property>
+   </widget>
+   <widget class="QFrame" name="summaryCard">
+    <property name="geometry"><rect><x>40</x><y>85</y><width>440</width><height>250</height></rect></property>
+    <widget class="QLabel" name="bodyTypeLabel">
+     <property name="geometry"><rect><x>25</x><y>22</y><width>390</width><height>35</height></rect></property>
+     <property name="text"><string>Detected Body Type: 마른 비만 (Skinny Fat)</string></property>
+    </widget>
+    <widget class="QLabel" name="weaknessLabel">
+     <property name="geometry"><rect><x>25</x><y>72</y><width>390</width><height>55</height></rect></property>
+     <property name="text"><string>Weakest Area: Shoulders &amp; Upper Back
+Posture Imbalance: Forward Head Posture</string></property>
+    </widget>
+    <widget class="QLabel" name="recommendLabel">
+     <property name="text"><string>💡 Custom AI Prescription: Upper body mobility &amp; core strengthening routine recommended.</string></property>
+     <property name="geometry"><rect><x>25</x><y>138</y><width>390</width><height>85</height></rect></property>
+     <property name="wordWrap"><bool>true</bool></property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="viewRoutineButton">
+    <property name="geometry"><rect><x>40</x><y>355</y><width>440</width><height>52</height></rect></property>
+    <property name="text"><string>View 7-Day Recommended Routine</string></property>
+   </widget>
+  </widget>
+ </widget>
+</ui>
