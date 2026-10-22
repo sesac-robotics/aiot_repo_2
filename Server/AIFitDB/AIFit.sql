@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS UserBodyInfo (
     routine_id       INTEGER,                -- AI가 추천한 루틴 (분석 직후에는 NULL)
     front_photo_ref  TEXT    NOT NULL,       -- 사진 파일 경로 (파일 자체는 폴더에 저장)
     back_photo_ref   TEXT    NOT NULL,
-    side1_photo_ref  TEXT    NOT NULL,
-    side2_photo_ref  TEXT    NOT NULL,
+    right_photo_ref  TEXT    NOT NULL,
+    left_photo_ref   TEXT    NOT NULL,
     chest_status     TEXT,
     shoulder_status  TEXT,
     arm_status       TEXT,
