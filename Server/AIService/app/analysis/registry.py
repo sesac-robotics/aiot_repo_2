@@ -73,7 +73,8 @@ class RegisteredExerciseAnalyzer:
     def analyze(self, keypoints, context):
         if self._context != context:
             self.reset()
-            analyzer = self._factory(context.exercise_name)
+            analyzer = (self._factory(context.exercise_name,target_duration_sec=context.target_duration_sec)
+                        if context.target_duration_sec is not None else self._factory(context.exercise_name))
             analyzer.reset()
             self._analyzer = analyzer
             self._context = context

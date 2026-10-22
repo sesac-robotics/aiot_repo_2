@@ -17,6 +17,8 @@ from app.streaming.output import encode_jpeg
 from app.analysis.keypoints import extract_mediapipe_keypoints
 from app.analysis.exercise import ExerciseAnalysisBridge
 from app.analysis.registry import RegisteredExerciseAnalyzer
+from app.analysis.shoulder_debug import ShoulderPressDebug, session_fields
+from app.analysis.frame_debug import FrameDebug
 
 
 class PoseStreamService:
@@ -42,6 +44,8 @@ class PoseStreamService:
         self.model_name = model_name
         # FastAPI와 같은 객체를 주입받으며 별도 관리자/분석 스레드는 생성하지 않습니다.
         self.session_manager = session_manager
+        self._shoulder_debug = ShoulderPressDebug()
+        self._frame_debug = FrameDebug()
         self.exercise_analysis = (
             ExerciseAnalysisBridge(session_manager, exercise_analyzer if exercise_analyzer is not None
                                    else RegisteredExerciseAnalyzer())
@@ -152,6 +156,15 @@ class PoseStreamService:
             '''
             pass
 
+    def _debug_analysis_pipeline(self, stage):
+        # 분석기 호출/프레임이 없어도 기존 워커의 대기 루프에서 1초 간격으로 상태를 읽습니다.
+        self._shoulder_debug.emit('pipeline', lambda: {
+            'stage': stage, 'pose_model': self.model_name,
+            'bridge_configured': self.exercise_analysis is not None,
+            'mediapipe_selected': self.model_name == 'mediapipe',
+            **session_fields(self.session_manager),
+        })
+
     def _inference_loop(self):
         # 최근 30프레임 기준 성능 측정
         frame_times = deque(maxlen=31)
@@ -164,10 +177,12 @@ class PoseStreamService:
 
         while not self.stop_event.is_set():
             try:
+                self._debug_analysis_pipeline('waiting_for_frame')
                 # 1. ESP32-CAM 최신 프레임 가져오기
                 frame = self.camera.read()
 
                 if frame is None:
+                    self._debug_analysis_pipeline('no_camera_frame')
                     continue
 
                 # 문맥만 잠깐 읽고 잠금을 해제한 뒤 GPU 추론을 실행합니다.
@@ -188,6 +203,19 @@ class PoseStreamService:
 
                 # MediaPipe 추론 결과에서 33개 관절 추출
                 keypoints = extract_mediapipe_keypoints(result)
+                # JPEG 게시 번호와 분석 번호를 동일하게 예약합니다. 인코딩 실패 시 게시/분석하지 않습니다.
+                output_frame_id = self.frame_id + 1
+                frame_trace = None
+                if self._frame_debug.enabled and self.model_name == 'mediapipe':
+                    from app.analysis.exercises.ytw_raise import YTWRaiseConfig
+                    analyzer = self.exercise_analysis.analyzer if self.exercise_analysis else None
+                    analyzer = getattr(analyzer,'_analyzer',analyzer)
+                    config = getattr(analyzer,'config',None)
+                    config_source = 'active_ytw_analyzer' if isinstance(config,YTWRaiseConfig) else 'ytw_defaults'
+                    config = config if isinstance(config,YTWRaiseConfig) else YTWRaiseConfig()
+                    frame_trace = self._frame_debug.capture(result,keypoints,
+                        frame_id=output_frame_id,timestamp=analysis_timestamp,size=(frame.shape[1],frame.shape[0]),
+                        estimator=self.pose_estimator,config=config,config_source=config_source)
 
                 self._sync_inferecnce()
                 infer_ms = (
@@ -225,6 +253,7 @@ class PoseStreamService:
                 )
 
                 # 5. JPEG 인코딩
+                self._frame_debug.overlay(annotated_frame,frame_trace)
                 encode_start = time.perf_counter()
 
                 jpeg_bytes = encode_jpeg(annotated_frame)
@@ -237,12 +266,13 @@ class PoseStreamService:
                 self.metrics.record_duration("jpeg_encoding", encode_ms)
 
                 if jpeg_bytes is None:
+                    self._debug_analysis_pipeline('jpeg_encoding_failed')
                     continue
 
                 # 6. 최신 추론 결과 공유
                 with self.condition:
                     self.latest_jpeg = jpeg_bytes
-                    self.frame_id += 1
+                    self.frame_id = output_frame_id
 
                     # API 반환용 MediaPipe 추론 데이터
                     self.latest_pose = {
@@ -260,11 +290,13 @@ class PoseStreamService:
 
                 # 성공적으로 게시한 결과만 전체 처리 FPS에 반영합니다.
                 self.metrics.record_event("processed")
+                self._frame_debug.publish(frame_trace)
                 # JPEG/API 게시 후 같은 워커에서 분석하며 오래된 결과는 반영하지 않습니다.
                 if self.exercise_analysis is not None and self.model_name == 'mediapipe':
                     self.exercise_analysis.process(
                         analysis_context, keypoints, frame_size=(frame.shape[1], frame.shape[0]),
                         timestamp=analysis_timestamp,
+                        frame_id=output_frame_id,frame_trace=frame_trace,
                     )
 
             except Exception as e:

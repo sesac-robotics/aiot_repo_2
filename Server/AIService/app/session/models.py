@@ -10,6 +10,7 @@ class AnalysisContext:
     exercise_id: int
     exercise_name: str
     revision: int
+    target_duration_sec: float | None = None
 
 
 class SessionError(Exception):
@@ -52,3 +53,12 @@ class ExerciseState:
     rep_count: int = 0
     # Pause는 세션 상태로 표현하며 현재 운동은 종료 전까지 running입니다.
     exercise_status: Literal['running', 'finished'] = 'running'
+
+
+@dataclass
+class HoldState:
+    """플랭크에만 붙이는 추가 Snapshot. 세션 활동 시간과 분리합니다."""
+    current_hold_sec: float = 0.
+    target_duration_sec: float | None = None
+    hold_status: Literal['waiting','stabilizing','holding','interrupted','completed'] = 'waiting'
+    hold_completed: bool = False

@@ -10,11 +10,12 @@ from dataclasses import asdict
 from datetime import datetime, timezone
 import threading
 import time
+import math
 from typing import Callable
 
 from app.session.models import (
     AnalysisContext, ExerciseNotFound, ExerciseState, InvalidSessionInput,
-    SessionConflict, SessionNotFound, SessionState,
+    SessionConflict, SessionNotFound, SessionState, HoldState,
 )
 
 
@@ -35,6 +36,8 @@ class SessionManager:
         self._exercise_ids: set[int] = set()
         # 실제 상태 전이마다 증가시켜 Pause→Resume 사이의 오래된 결과도 거부합니다.
         self._analysis_revision = 0
+        self._hold_state = None
+        self._hold_timestamp = None
 
     @staticmethod
     def _positive_int(name, value):
@@ -64,8 +67,10 @@ class SessionManager:
                 paused += end - self._paused_since
             session['paused_duration_sec'] = paused
             session['active_duration_sec'] = end - self._started_mono - paused
-        return {'session': session,
-                'exercise': asdict(self._exercise) if self._exercise is not None else None}
+        exercise=asdict(self._exercise) if self._exercise is not None else None
+        if exercise is not None and self._hold_state is not None:
+            exercise.update(asdict(self._hold_state))
+        return {'session': session,'exercise': exercise}
 
     def start_session(self, session_id):
         self._positive_int('session_id', session_id)
@@ -78,6 +83,7 @@ class SessionManager:
             self._session = SessionState(session_id=session_id, session_status='running',
                                          started_at=timestamp)
             self._exercise = None
+            self._hold_state,self._hold_timestamp = None,None
             self._started_mono, self._ended_mono = now, None
             self._paused_since, self._pause_total = None, 0.0
             self._rep_event_ids.clear()
@@ -85,7 +91,7 @@ class SessionManager:
             self._analysis_revision += 1
             return self._snapshot(now)
 
-    def start_exercise(self, exercise_id, exercise_name, order_no, target_reps=None):
+    def start_exercise(self, exercise_id, exercise_name, order_no, target_reps=None, *, target_duration_sec=None):
         self._positive_int('exercise_id', exercise_id)
         self._positive_int('order_no', order_no)
         if target_reps is not None:
@@ -95,6 +101,9 @@ class SessionManager:
         # 분석 등록표와 같은 이름 검증을 사용합니다. 실패 시 상태는 변경하지 않습니다.
         from app.analysis.registry import get_exercise_definition
         exercise_name = get_exercise_definition(exercise_name.strip()).exercise_name
+        if target_duration_sec is not None and (exercise_name!='plank' or type(target_duration_sec) not in (int,float)
+                or not math.isfinite(target_duration_sec) or target_duration_sec<=0):
+            raise InvalidSessionInput('target_duration_sec는 Hold 운동의 양의 유한한 초 값이어야 합니다.')
         with self._lock:
             self._require_active()
             if self._session.session_status != 'running':
@@ -105,6 +114,8 @@ class SessionManager:
             if exercise_id in self._exercise_ids:
                 raise SessionConflict('이 세션에서 이미 사용한 운동 ID입니다.')
             self._exercise = ExerciseState(exercise_id, exercise_name.strip(), order_no, target_reps)
+            self._hold_state=HoldState(target_duration_sec=target_duration_sec) if exercise_name=='plank' else None
+            self._hold_timestamp=None
             self._exercise_ids.add(exercise_id)
             self._rep_event_ids.clear()
             self._analysis_revision += 1
@@ -120,6 +131,11 @@ class SessionManager:
                 self._session.paused_at = timestamp
                 self._paused_since = now
                 self._analysis_revision += 1
+                if self._hold_state is not None and not self._hold_state.hold_completed:
+                    # Pause는 연속 유지 구간을 끊습니다. Resume 후 새 안정화를 요구합니다.
+                    self._hold_state.current_hold_sec=0.
+                    self._hold_state.hold_status='waiting'
+                    self._hold_timestamp=None
             # 중복 Pause에서는 최초 paused_at 및 시작 시각을 보존합니다.
             return self._snapshot(now)
 
@@ -145,6 +161,8 @@ class SessionManager:
                 raise SessionConflict('이미 종료한 운동입니다.')
             # Pause 중에도 명시적 종료는 허용합니다. 세션 상태는 그대로 유지합니다.
             self._exercise.exercise_status = 'finished'
+            if self._hold_state is not None and not self._hold_state.hold_completed:
+                self._hold_state.hold_status='interrupted'
             self._analysis_revision += 1
             return self._snapshot(self._clock())
 
@@ -196,10 +214,38 @@ class SessionManager:
         """짧은 잠금으로 분석 가능 문맥만 반환하며 추론/분석 중에는 잠금을 유지하지 않습니다."""
         with self._lock:
             if (self._session.session_status != 'running' or self._exercise is None
-                    or self._exercise.exercise_status != 'running'):
+                    or self._exercise.exercise_status != 'running'
+                    or self._hold_state is not None and self._hold_state.hold_completed):
                 return None
             return AnalysisContext(self._session.session_id, self._exercise.exercise_id,
-                                   self._exercise.exercise_name, self._analysis_revision)
+                                   self._exercise.exercise_name, self._analysis_revision,
+                                   self._hold_state.target_duration_sec if self._hold_state else None)
+
+    def record_analysis_hold(self,context,*,current_hold_sec,target_duration_sec,hold_status,timestamp,
+                             completion_event_id=None):
+        """유효 분석 시간만 저장합니다. 조회 시 시계로 외삽하거나 반복 횟수로 환산하지 않습니다."""
+        if (type(current_hold_sec) not in (int,float) or not math.isfinite(current_hold_sec) or current_hold_sec<0
+                or type(timestamp) not in (int,float) or not math.isfinite(timestamp)
+                or target_duration_sec is not None and (type(target_duration_sec) not in (int,float)
+                    or not math.isfinite(target_duration_sec) or target_duration_sec<=0)
+                or hold_status not in ('waiting','stabilizing','holding','interrupted','completed')):
+            raise InvalidSessionInput('Hold 분석 결과가 올바르지 않습니다.')
+        with self._lock:
+            if context is None or context!=self.get_analysis_context() or self._hold_state is None:
+                return False
+            if target_duration_sec!=self._hold_state.target_duration_sec:
+                raise InvalidSessionInput('Hold 목표가 현재 운동과 다릅니다.')
+            if self._hold_timestamp is not None and timestamp<=self._hold_timestamp:return False
+            if hold_status=='completed' and (target_duration_sec is None or current_hold_sec<target_duration_sec
+                    or not isinstance(completion_event_id,str) or not completion_event_id.strip()):
+                raise InvalidSessionInput('Hold 완료 결과가 올바르지 않습니다.')
+            if completion_event_id is not None and hold_status!='completed':
+                raise InvalidSessionInput('완료 이벤트와 Hold 상태가 다릅니다.')
+            self._hold_timestamp=timestamp
+            self._hold_state.current_hold_sec=current_hold_sec
+            self._hold_state.hold_status=hold_status
+            self._hold_state.hold_completed=hold_status=='completed'
+            return True
 
     def record_analysis_rep(self, context: AnalysisContext, event_id: str) -> bool:
         """세대·세션·운동·상태 재검증과 반복 반영을 하나의 잠금 안에서 수행합니다."""

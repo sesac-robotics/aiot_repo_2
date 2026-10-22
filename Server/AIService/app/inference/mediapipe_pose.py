@@ -36,6 +36,7 @@ class MediapipePoseEstimator:
         self._owner_thread = threading.current_thread()
         self._closed = False
         self.min_visibility = min_visibility
+        self.num_poses = 1  # 실제 옵션값을 진단에 노출합니다. 선택 정책은 변경하지 않습니다.
         self.last_timestamp_ms = -1
 
         delegate = delegate.lower()
@@ -55,7 +56,7 @@ class MediapipePoseEstimator:
             base_options=base_options,
             running_mode=mp.tasks.vision.RunningMode.VIDEO,
             # 사람 한 명만 추적하도록 설정
-            num_poses=1,
+            num_poses=self.num_poses,
             min_pose_detection_confidence=min_pose_detection_confidence,
             min_pose_presence_confidence=min_pose_presence_confidence,
             min_tracking_confidence=min_tracking_confidence,

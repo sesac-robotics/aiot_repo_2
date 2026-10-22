@@ -15,8 +15,8 @@ from app.analysis.exercise import AnalysisResult, RepCompleted
 class SquatConfig:
     standing_enter_deg: float = 165.0
     standing_exit_deg: float = 150.0
-    bottom_enter_deg: float = 95.0
-    bottom_exit_deg: float = 110.0
+    bottom_enter_deg: float = 120.0
+    bottom_exit_deg: float = 135.0
     min_visibility: float = .6
     min_presence: float = .5
     max_leg_difference_deg: float = 25.0

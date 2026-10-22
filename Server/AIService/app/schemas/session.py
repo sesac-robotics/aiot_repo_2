@@ -9,6 +9,7 @@ class ExerciseStartRequest(BaseModel):
     exercise_name: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
     order_no: Annotated[int, Field(strict=True, gt=0)]
     target_reps: Annotated[int, Field(strict=True, gt=0)] | None = None
+    target_duration_sec: Annotated[float, Field(strict=True,gt=0,allow_inf_nan=False)] | None = None
 
 
 class SessionSnapshot(BaseModel):
@@ -30,6 +31,13 @@ class ExerciseSnapshot(BaseModel):
     exercise_status: Literal['running', 'finished']
 
 
+class HoldExerciseSnapshot(ExerciseSnapshot):
+    current_hold_sec: float
+    target_duration_sec: float | None
+    hold_status: Literal['waiting','stabilizing','holding','interrupted','completed']
+    hold_completed: bool
+
+
 class SessionLiveResponse(BaseModel):
     session: SessionSnapshot
-    exercise: ExerciseSnapshot | None
+    exercise: HoldExerciseSnapshot | ExerciseSnapshot | None
