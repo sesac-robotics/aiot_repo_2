@@ -1,52 +1,52 @@
-"""HTTP client for AIFit body-analysis endpoints; reuses the existing login JWT."""
+"""Desktop client for the AIFit body-analysis API."""
 import os
-import requests
-import login_client
+from pathlib import Path
 
-SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
+import requests
+
+AIFIT_SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
 TIMEOUT_SECONDS = 30
+_access_token: str | None = None
 
 
 class BodyAnalysisAPIError(Exception):
-    pass
+    def __init__(self, message, status_code=None):
+        super().__init__(message)
+        self.status_code = status_code
 
 
-def _headers():
-    token = getattr(login_client, "_access_token", None)
+def set_access_token(token: str | None) -> None:
+    """Call after login succeeds; pass None on logout."""
+    global _access_token
+    _access_token = token
+
+
+def _request(method: str, path: str, **kwargs):
+    token = _access_token
     if not token:
-        raise BodyAnalysisAPIError(
-            "로그인 토큰을 찾을 수 없습니다. 로그인 후 login_client.py가 "
-            "access_token을 저장하는지 확인해 주세요."
-        )
-    return {"Authorization": f"Bearer {token}"}
-
-
-def _request(method, path, **kwargs):
+        try:
+            import login_client
+            token = getattr(login_client, "_access_token", None)
+        except ImportError:
+            token = None
+    if not token:
+        raise BodyAnalysisAPIError("로그인이 필요합니다. 로그인 후 다시 시도해 주세요.")
+    headers = kwargs.pop("headers", {})
+    headers["Authorization"] = f"Bearer {token}"
     try:
-        response = requests.request(
-            method, f"{SERVER_URL}{path}",
-            headers={**_headers(), **kwargs.pop("headers", {})},
-            timeout=kwargs.pop("timeout", TIMEOUT_SECONDS),
-            **kwargs,
-        )
+        response = requests.request(method, AIFIT_SERVER_URL + path,
+                                    headers=headers, timeout=kwargs.pop("timeout", TIMEOUT_SECONDS), **kwargs)
     except requests.Timeout as exc:
         raise BodyAnalysisAPIError("AIFit Server 응답 시간이 초과되었습니다.") from exc
-    except requests.ConnectionError as exc:
-        raise BodyAnalysisAPIError(f"AIFit Server에 연결할 수 없습니다: {SERVER_URL}") from exc
     except requests.RequestException as exc:
-        raise BodyAnalysisAPIError(f"통신 오류: {exc}") from exc
-
+        raise BodyAnalysisAPIError(f"AIFit Server 통신 오류: {exc}") from exc
     try:
         data = response.json()
     except ValueError:
         data = {}
     if not response.ok:
-        detail = data.get("detail") or data.get("message") or f"HTTP {response.status_code}"
-        if isinstance(detail, list):
-            detail = "; ".join(str(x.get("msg", x)) for x in detail)
-        if response.status_code == 401:
-            raise BodyAnalysisAPIError("인증 토큰이 만료되었거나 유효하지 않습니다. 다시 로그인해 주세요.")
-        raise BodyAnalysisAPIError(f"서버 오류 (HTTP {response.status_code}): {detail}")
+        detail = data.get("detail", f"HTTP {response.status_code}")
+        raise BodyAnalysisAPIError(str(detail), response.status_code)
     return data
 
 
@@ -54,21 +54,19 @@ def get_status():
     return _request("GET", "/body-analysis/status")
 
 
-def upload_photos(photo_paths):
-    """Multipart keys must match server: front_photo, left_photo, right_photo, back_photo."""
+def upload_photos(photo_paths: dict[str, str]):
     sides = ("front", "left", "right", "back")
     missing = [side for side in sides if not photo_paths.get(side)]
     if missing:
-        raise BodyAnalysisAPIError("사진이 누락되었습니다: " + ", ".join(missing))
-
+        raise BodyAnalysisAPIError("사진을 모두 선택해 주세요. 누락: " + ", ".join(missing))
     files, opened = {}, []
     try:
         for side in sides:
-            path = photo_paths[side]
-            handle = open(path, "rb")
+            path = Path(photo_paths[side])
+            handle = path.open("rb")
             opened.append(handle)
-            mime = "image/png" if path.lower().endswith(".png") else "image/jpeg"
-            files[f"{side}_photo"] = (os.path.basename(path), handle, mime)
+            mime = {".png": "image/png", ".webp": "image/webp"}.get(path.suffix.lower(), "image/jpeg")
+            files[f"{side}_photo"] = (path.name, handle, mime)
         return _request("POST", "/body-analysis", files=files)
     except OSError as exc:
         raise BodyAnalysisAPIError(f"사진 파일을 열 수 없습니다: {exc}") from exc
@@ -77,5 +75,5 @@ def upload_photos(photo_paths):
             handle.close()
 
 
-def get_analysis(body_id):
+def get_analysis(body_id: str):
     return _request("GET", f"/body-analysis/{body_id}")
