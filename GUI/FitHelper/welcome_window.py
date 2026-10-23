@@ -1,7 +1,33 @@
 import os
 import datetime
-from PyQt6.QtWidgets import QMainWindow, QPushButton, QFileDialog
+import sys
+from pathlib import Path
+from PyQt6.QtCore import QThread, pyqtSignal
+from PyQt6.QtWidgets import QMainWindow, QPushButton
 from PyQt6 import uic
+
+# The shared authenticated API client is stored beside this project folder.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import body_analysis_client as body_api
+from body_analysis_cache import clear_body_id, format_area_summary, load_body_id, save_body_id
+from body_analysis_client import BodyAnalysisAPIError
+
+
+class _LatestAnalysisThread(QThread):
+    succeeded = pyqtSignal(object)
+    failed = pyqtSignal(str, object)
+
+    def __init__(self, body_id, parent=None):
+        super().__init__(parent)
+        self.body_id = body_id
+
+    def run(self):
+        try:
+            self.succeeded.emit(body_api.get_analysis(self.body_id))
+        except BodyAnalysisAPIError as exc:
+            self.failed.emit(str(exc), exc.status_code)
+        except Exception as exc:
+            self.failed.emit(str(exc), None)
 
 class WelcomeWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -15,6 +41,13 @@ class WelcomeWindow(QMainWindow):
         """대시보드 UI(welcomeBack.ui)를 현재 창에 로드하고 시그널을 연결합니다."""
         ui_path = os.path.join(os.path.dirname(__file__), "welcomeBack.ui")
         uic.loadUi(ui_path, self)
+        self.completed_body_id = load_body_id(self.login_window)
+        self.latest_routine = None
+        # Show the analysis card only after the server confirms a completed record.
+        self.has_completed_analysis = False
+        self._latest_analysis_thread = None
+        self.analysisNudgeCard.show()
+        self.bodyAnalysisSummaryCard.hide()
 
         # 1. 오늘의 요일에 맞는 루틴 동적 설정 ("요일: 운동" 형식)
         self.setup_today_routine_text()
@@ -33,17 +66,8 @@ class WelcomeWindow(QMainWindow):
                 getattr(self, analyze_btn).clicked.connect(self.switch_to_body_upload)
                 break
         
-        for btn in self.findChildren(QPushButton):
-            if 'analyze' in btn.text().lower() or '분석' in btn.text():
-                btn.clicked.connect(self.switch_to_body_upload)
-                break
-
         if hasattr(self, 'historyButton'):
             self.historyButton.clicked.connect(self.go_to_history_detail)
-
-        # 📊 My Body Analysis 버튼 클릭 시 리포트 창 오픈 연결
-        if hasattr(self, 'myAnalysisButton'):
-            self.myAnalysisButton.clicked.connect(self.go_to_body_analysis_report)
 
         for profile_btn in ['profileButton', 'btn_profile']:
             if hasattr(self, profile_btn):
@@ -60,24 +84,55 @@ class WelcomeWindow(QMainWindow):
                 btn.clicked.connect(self.logout)
                 break
 
+        if self.completed_body_id:
+            self._latest_analysis_thread = _LatestAnalysisThread(self.completed_body_id, self)
+            self._latest_analysis_thread.succeeded.connect(
+                lambda response: self.display_completed_analysis(response, self.completed_body_id)
+            )
+            self._latest_analysis_thread.failed.connect(self._latest_analysis_failed)
+            self._latest_analysis_thread.start()
+
     def setup_today_routine_text(self):
-        """오늘 요일에 맞춰 todayDescLabel에 '요일: 운동' 형태로 텍스트를 구성합니다."""
+        """Display today's entry from the most recently fetched server routine."""
         if not hasattr(self, 'todayDescLabel'):
             return
+        today_no = datetime.date.today().isoweekday()
+        self.todayDescLabel.setText(self._format_routine_day(today_no))
 
-        routine_schedule = {
-            'Wednesday': 'Wednesday: [Day 1] Shoulder Mobility & Release',
-            'Thursday': 'Thursday: [Day 2] Core Stability & Balance',
-            'Friday': 'Friday: [Day 3] Lower Body Strength & Posture',
-            'Saturday': 'Saturday: [Day 4] Active Recovery & Stretching',
-            'Sunday': 'Sunday: [Day 5] Upper Body Posture Correction',
-            'Monday': 'Monday: [Day 6] Full Body HIIT & Cardio',
-            'Tuesday': 'Tuesday: [Day 7] Weekly Review & Flexibility Test'
-        }
+    def _format_routine_day(self, day_no):
+        day_names = {1: "월요일", 2: "화요일", 3: "수요일", 4: "목요일", 5: "금요일", 6: "토요일", 7: "일요일"}
+        routine = self.latest_routine
+        days = routine.get("days") if isinstance(routine, dict) else None
+        day = next((item for item in days or [] if isinstance(item, dict) and item.get("day_no") == day_no), None)
+        if day is None:
+            return f"{day_names[day_no]} · 서버 루틴 정보 없음"
+        exercises = day.get("exercises", [])
+        if not exercises:
+            return f"{day_names[day_no]} · 휴식"
+        entries = []
+        for exercise in exercises:
+            if not isinstance(exercise, dict):
+                continue
+            name = exercise.get("exercise_name") or "운동"
+            sets = exercise.get("sets")
+            reps = exercise.get("reps")
+            duration = exercise.get("target_duration_sec")
+            details = []
+            if sets is not None:
+                details.append(f"{sets}세트")
+            if duration is not None:
+                details.append(f"{duration}초 유지")
+            elif reps is not None:
+                details.append(f"{reps}회")
+            entries.append(str(name) + (" · " + " · ".join(details) if details else ""))
+        return f"{day_names[day_no]} · " + (" / ".join(entries) if entries else "운동 정보 없음")
 
-        current_day_str = datetime.datetime.now().strftime('%A')
-        today_text = routine_schedule.get(current_day_str, 'Wednesday: [Day 1] Shoulder Mobility & Release')
-        self.todayDescLabel.setText(today_text)
+    def _apply_routine_to_dashboard(self):
+        for day_no in range(1, 8):
+            label = getattr(self, f"day{day_no}Item", None)
+            if label is not None:
+                label.setText(self._format_routine_day(day_no))
+        self.setup_today_routine_text()
 
     def on_toggle_routine_view(self):
         """토글 버튼이 클릭되었을 때 호출되어 7일 전체 보기 모드를 켜거나 끕니다."""
@@ -90,94 +145,88 @@ class WelcomeWindow(QMainWindow):
             self.set_routine_view_mode(is_all_visible=False)
 
     def set_routine_view_mode(self, is_all_visible: bool):
-        """토글 상태에 따라 오늘 요일 운동 / 7일 전체 운동 목록의 가시성, 카드 높이, 하단 버튼 위치를 동적으로 조절합니다."""
+        """Show routine controls only after a completed body analysis exists."""
         day_items = ['day1Item', 'day2Item', 'day3Item', 'day4Item', 'day5Item', 'day6Item', 'day7Item']
-        
+        dashboard_top = 90 if self.has_completed_analysis else 185
+
+        if hasattr(self, 'toggleRoutineButton'):
+            self.toggleRoutineButton.setVisible(self.has_completed_analysis)
+        if not self.has_completed_analysis:
+            is_all_visible = False
+            if hasattr(self, 'toggleRoutineButton'):
+                self.toggleRoutineButton.setChecked(False)
+
         if is_all_visible:
-            # 토글 켜짐: 카드 높이 310, 전체 목록 표시, 하단 버튼들을 스크린샷 원본 위치(Y=510, Y=562)로 배치
-            if hasattr(self, 'todayRoutineCard'):
-                self.todayRoutineCard.setFixedHeight(310)
-            if hasattr(self, 'allDaysContainerLabel'):
-                self.allDaysContainerLabel.show()
+            self.toggleRoutineButton.setText("📅 View All Days (On)")
+            self.todayRoutineCard.setFixedHeight(310)
+            self.todayRoutineCard.move(30, dashboard_top)
+            self.allDaysContainerLabel.show()
             for item_name in day_items:
-                if hasattr(self, item_name):
-                    getattr(self, item_name).show()
-            
-            if hasattr(self, 'historyButton'):
-                self.historyButton.setGeometry(30, 510, 460, 44)
-            if hasattr(self, 'myAnalysisButton'):
-                self.myAnalysisButton.setGeometry(30, 562, 460, 44)
+                getattr(self, item_name).show()
+            history_y = 415 if self.has_completed_analysis else 510
+            summary_y = 467 if self.has_completed_analysis else 562
         else:
-            # 토글 꺼짐: 카드 높이 140, 전체 목록 숨김, 하단 버튼들을 오늘의 운동 카드 바로 밑(Y=340, Y=394)으로 밀착
-            if hasattr(self, 'todayRoutineCard'):
-                self.todayRoutineCard.setFixedHeight(140)
-            if hasattr(self, 'allDaysContainerLabel'):
-                self.allDaysContainerLabel.hide()
+            self.toggleRoutineButton.setText("📅 View All Days (Off)")
+            self.todayRoutineCard.setFixedHeight(140)
+            self.todayRoutineCard.move(30, dashboard_top)
+            self.allDaysContainerLabel.hide()
             for item_name in day_items:
-                if hasattr(self, item_name):
-                    getattr(self, item_name).hide()
-            
-            if hasattr(self, 'historyButton'):
-                self.historyButton.setGeometry(30, 340, 460, 44)
-            if hasattr(self, 'myAnalysisButton'):
-                self.myAnalysisButton.setGeometry(30, 394, 460, 44)
+                getattr(self, item_name).hide()
+            history_y = 245 if self.has_completed_analysis else 340
+            summary_y = 297 if self.has_completed_analysis else 394
+
+        self.historyButton.move(30, history_y)
+        self.bodyAnalysisSummaryCard.setGeometry(30, summary_y, 460, 120)
+        if self.has_completed_analysis:
+            self.bodyAnalysisSummaryCard.show()
+        else:
+            self.bodyAnalysisSummaryCard.hide()
+
+    def display_completed_analysis(self, response, body_id=None):
+        if isinstance(response, dict) and isinstance(response.get("result"), dict):
+            data = dict(response)
+            data.update(response["result"])
+        else:
+            data = response if isinstance(response, dict) else {}
+        if data.get("status") != "completed":
+            clear_body_id(self.login_window, body_id)
+            self.completed_body_id = None
+            self.has_completed_analysis = False
+            self.latest_routine = None
+            self._apply_routine_to_dashboard()
+            self.bodyAnalysisSummaryCard.hide()
+            self.analysisNudgeCard.show()
+            self.set_routine_view_mode(self.toggleRoutineButton.isChecked())
+            return
+        if body_id:
+            self.completed_body_id = body_id
+            self.has_completed_analysis = True
+            try:
+                save_body_id(self.login_window, body_id)
+            except (OSError, ValueError) as exc:
+                print(f"[체형 분석 캐시 저장 실패] {exc}", flush=True)
+        self.latest_routine = data.get("routine") if isinstance(data.get("routine"), dict) else None
+        self._apply_routine_to_dashboard()
+        self.analysisNudgeCard.hide()
+        self.bodyAnalysisSummaryLabel.setText(format_area_summary(data))
+        self.set_routine_view_mode(self.toggleRoutineButton.isChecked())
+
+    def _latest_analysis_failed(self, message, status_code=None):
+        if status_code == 404:
+            clear_body_id(self.login_window, self.completed_body_id)
+            self.completed_body_id = None
+            self.has_completed_analysis = False
+            self.bodyAnalysisSummaryCard.hide()
+            self.analysisNudgeCard.show()
+            self.set_routine_view_mode(self.toggleRoutineButton.isChecked())
+            return
+        self.bodyAnalysisSummaryLabel.setText("최근 체형 분석 결과를 불러오지 못했습니다.")
+        print(f"[최근 체형 분석 조회 실패] {message}", flush=True)
 
     def switch_to_body_upload(self):
-        ui_path = os.path.join(os.path.dirname(__file__), "bodyUpload.ui")
-        uic.loadUi(ui_path, self)
-
-        self.uploaded_photos = {1: None, 2: None, 3: None, 4: None}
-
-        if hasattr(self, 'uploadPhoto1Button'):
-            self.uploadPhoto1Button.clicked.connect(lambda: self.select_photo(1, self.uploadPhoto1Button))
-        if hasattr(self, 'uploadPhoto2Button'):
-            self.uploadPhoto2Button.clicked.connect(lambda: self.select_photo(2, self.uploadPhoto2Button))
-        if hasattr(self, 'uploadPhoto3Button'):
-            self.uploadPhoto3Button.clicked.connect(lambda: self.select_photo(3, self.uploadPhoto3Button))
-        if hasattr(self, 'uploadPhoto4Button'):
-            self.uploadPhoto4Button.clicked.connect(lambda: self.select_photo(4, self.uploadPhoto4Button))
-
-        if hasattr(self, 'submitAnalysisButton'):
-            self.submitAnalysisButton.clicked.connect(self.submit_analysis)
-
-        if hasattr(self, 'backDashboardButton'):
-            self.backDashboardButton.clicked.connect(self.load_dashboard_ui)
-
-    def select_photo(self, photo_index, button_widget):
-        file_name, _ = QFileDialog.getOpenFileName(self, "Select Body Photo", "", "Image Files (*.png *.jpg *.jpeg)")
-        if file_name:
-            self.uploaded_photos[photo_index] = file_name
-            base_name = os.path.basename(file_name)
-            if photo_index == 1:
-                button_widget.setText(f"✔ Front\n({base_name[:10]}...)")
-            elif photo_index == 2:
-                button_widget.setText(f"✔ Left Side\n({base_name[:10]}...)")
-            elif photo_index == 3:
-                button_widget.setText(f"✔ Right Side\n({base_name[:10]}...)")
-            elif photo_index == 4:
-                button_widget.setText(f"✔ Back\n({base_name[:10]}...)")
-
-    def submit_analysis(self):
-        missing_photos = [idx for idx, path in self.uploaded_photos.items() if path is None]
-        
-        if missing_photos:
-            if hasattr(self, 'errorMsgLabel'):
-                self.errorMsgLabel.setText("⚠️ Please upload all 4 photos for precise AI assessment.")
-            return
-
-        if hasattr(self, 'errorMsgLabel'):
-            self.errorMsgLabel.setText("")
-        
-        # 🚀 수정 완료: 단순히 ui 로드만 하던 것을 BodyAnalysisLoadingWindow 창을 띄우도록 연동합니다.
-        from bodyAnalysisLoading import BodyAnalysisLoadingWindow
-        self.loading_window = BodyAnalysisLoadingWindow(self)
-        self.loading_window.show()
-        self.hide()
-
-    def go_to_body_analysis_report(self):
-        from body_analysis_report import BodyAnalysisReportWindow
-        self.report_window = BodyAnalysisReportWindow(self)
-        self.report_window.show()
+        from body_upload_window import BodyUploadWindow
+        self.body_upload_window = BodyUploadWindow(self)
+        self.body_upload_window.show()
         self.hide()
 
     def go_to_workout(self):
@@ -199,6 +248,11 @@ class WelcomeWindow(QMainWindow):
         self.hide()
 
     def logout(self):
+        try:
+            import login_client
+            login_client.logout()
+        except (ImportError, AttributeError):
+            pass
         if self.login_window is not None:
             self.login_window.show()
         else:

@@ -25,24 +25,16 @@ QMainWindow { background-color: #F8FAFC; }
     <property name="alignment"><set>Qt::AlignCenter</set></property>
    </widget>
    <widget class="QFrame" name="summaryCard">
-    <property name="geometry"><rect><x>40</x><y>85</y><width>440</width><height>250</height></rect></property>
-    <widget class="QLabel" name="bodyTypeLabel">
-     <property name="geometry"><rect><x>25</x><y>22</y><width>390</width><height>35</height></rect></property>
-     <property name="text"><string>Detected Body Type: 마른 비만 (Skinny Fat)</string></property>
-    </widget>
+    <property name="geometry"><rect><x>40</x><y>85</y><width>440</width><height>330</height></rect></property>
     <widget class="QLabel" name="weaknessLabel">
-     <property name="geometry"><rect><x>25</x><y>72</y><width>390</width><height>55</height></rect></property>
+     <property name="geometry"><rect><x>25</x><y>25</y><width>390</width><height>280</height></rect></property>
      <property name="text"><string>Weakest Area: Shoulders &amp; Upper Back
 Posture Imbalance: Forward Head Posture</string></property>
-    </widget>
-    <widget class="QLabel" name="recommendLabel">
-     <property name="text"><string>💡 Custom AI Prescription: Upper body mobility &amp; core strengthening routine recommended.</string></property>
-     <property name="geometry"><rect><x>25</x><y>138</y><width>390</width><height>85</height></rect></property>
-     <property name="wordWrap"><bool>true</bool></property>
+    <property name="wordWrap"><bool>true</bool></property>
     </widget>
    </widget>
    <widget class="QPushButton" name="viewRoutineButton">
-    <property name="geometry"><rect><x>40</x><y>355</y><width>440</width><height>52</height></rect></property>
+    <property name="geometry"><rect><x>40</x><y>435</y><width>440</width><height>52</height></rect></property>
     <property name="text"><string>View 7-Day Recommended Routine</string></property>
    </widget>
   </widget>

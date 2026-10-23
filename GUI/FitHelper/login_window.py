@@ -18,7 +18,7 @@ AIFIT_SERVER_URL = os.getenv(
     "http://192.168.15.118:8000"
 ).rstrip("/")
 
-REGISTER_URL = f"{AIFIT_SERVER_URL}/api/register"
+REGISTER_URL = f"{AIFIT_SERVER_URL}/api/auth/register"
 
 
 # ============================================================
@@ -241,12 +241,11 @@ class RegistrationWindow(QMainWindow):
         # ----------------------------------------------------
 
         payload = {
-            "userID": username,
-            "email": email,
+            "username": username,
+            "email_address": email,
             "password": password,
-            "confirmPassword": re_password,
             "nickname": nickname,
-            "gender": gender,
+            "gender": gender.lower(),
             "age": age,
             "height": height,
             "weight": weight,
@@ -433,48 +432,77 @@ class LoginWindow(QMainWindow):
             flush=True
         )
 
+        # Keep the original .ui design while exercising the temporary JWT API.
         try:
-            # login_client.py에서 서버 로그인 API 호출
-            is_success = login_client.login(
-                username,
-                password
+            import importlib.util
+            from pathlib import Path
+
+            jwt_helper = (
+                Path(__file__).resolve().parent
+                / "jwt요청용 코드 (절대지우지마셈)"
+                / "login.py"
             )
+            spec = importlib.util.spec_from_file_location(
+                "aifit_jwt_request_helper", jwt_helper
+            )
+            if spec is None or spec.loader is None:
+                raise ImportError(f"JWT 요청 모듈을 찾을 수 없습니다: {jwt_helper}")
+            jwt_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(jwt_module)
+            request_json = jwt_module.request_json
+            response_message = jwt_module.response_message
+
+            code, body = request_json(
+                "POST", "/api/auth/login",
+                {"username": username, "password": password},
+            )
+            if code != 200 or not body.get("success"):
+                message = response_message(body)
+                raise ValueError(message)
+
+            token = body.get("access_token")
+            if not token:
+                raise ValueError("로그인 응답에 access_token이 없습니다.")
+
+            profile_code, profile = request_json(
+                "GET", "/api/me", token=token
+            )
+            if profile_code != 200 or not profile.get("success"):
+                raise ValueError(
+                    "JWT 인증 확인 실패: " + response_message(profile)
+                )
+
+            login_client._access_token = token
+            login_client._user = body.get("user")
+            try:
+                import body_analysis_client
+                body_analysis_client.set_access_token(token)
+            except ImportError:
+                pass
 
         except Exception as e:
-            print(
-                f"[로그인 오류] {type(e).__name__}: {e}",
-                flush=True
-            )
-
+            print(f"[JWT 로그인/검증 실패] {type(e).__name__}: {e}", flush=True)
             if hasattr(self, "errorMsgLabel"):
-                self.errorMsgLabel.setText(
-                    "로그인 중 오류가 발생했습니다. "
-                    "서버 연결 및 클라이언트 코드를 확인해 주세요."
-                )
+                if isinstance(e, ConnectionError):
+                    message = str(e)
+                else:
+                    message = str(e) or "로그인 또는 JWT 검증에 실패했습니다."
+                self.errorMsgLabel.setText(message)
             return
 
-        if is_success:
-            print("[로그인 성공] 인증 완료", flush=True)
+        verified_user = profile.get("user", {})
+        display_name = verified_user.get("nickname") or username
+        print(
+            f"[JWT 로그인 성공] 사용자: {display_name}; GET /api/me 인증 성공",
+            flush=True,
+        )
+        if hasattr(self, "errorMsgLabel"):
+            self.errorMsgLabel.clear()
 
-            if hasattr(self, "errorMsgLabel"):
-                self.errorMsgLabel.clear()
-
-            from welcome_window import WelcomeWindow
-
-            self.welcome_window = WelcomeWindow(self)
-            self.welcome_window.show()
-            self.hide()
-
-        else:
-            print(
-                "[로그인 실패] 인증에 실패했습니다.",
-                flush=True
-            )
-
-            if hasattr(self, "errorMsgLabel"):
-                self.errorMsgLabel.setText(
-                    "아이디 또는 비밀번호가 올바르지 않습니다."
-                )
+        from welcome_window import WelcomeWindow
+        self.welcome_window = WelcomeWindow(self)
+        self.welcome_window.show()
+        self.hide()
 
     # --------------------------------------------------------
     # 회원가입 화면으로 이동

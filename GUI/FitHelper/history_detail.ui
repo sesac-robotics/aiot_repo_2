@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>660</height>
+      <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,22 +107,23 @@ QMainWindow { background-color: #F8FAFC; }
       <x>25</x>
       <y>371</y>
       <width>450</width>
-      <height>125</height>
+      <height>225</height>
      </rect>
     </property>
-    <widget class="QLabel" name="analysisContent">
+    <widget class="QPlainTextEdit" name="analysisContent">
      <property name="geometry">
       <rect>
        <x>12</x>
        <y>10</y>
        <width>426</width>
-       <height>105</height>
+       <height>205</height>
       </rect>
      </property>
-     <property name="text">
-      <string>📊 Posture Breakdown &amp; Joint Stability:
-- Left/Right Balance: 96% (Optimal)
-- Average Joint Angle Stability: Excellent</string>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string>달력에서 날짜를 선택하고 확인을 누르면 운동 리포트가 여기에 표시됩니다.</string>
      </property>
     </widget>
    </widget>
@@ -130,7 +131,7 @@ QMainWindow { background-color: #F8FAFC; }
     <property name="geometry">
      <rect>
       <x>25</x>
-      <y>504</y>
+      <y>606</y>
       <width>450</width>
       <height>44</height>
      </rect>

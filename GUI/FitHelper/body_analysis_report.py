@@ -5,9 +5,10 @@ from PyQt6 import uic
 from routine_window import FullRoutineWindow
 
 class BodyAnalysisReportWindow(QMainWindow):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, analysis_data=None):
         super().__init__()
         self.welcome_window = parent
+        self.analysis_data = analysis_data if isinstance(analysis_data, dict) else {}
         
         ui_path = os.path.join(os.path.dirname(__file__), "bodyAnalysisResult.ui")
         uic.loadUi(ui_path, self)
@@ -25,7 +26,10 @@ class BodyAnalysisReportWindow(QMainWindow):
 
     def open_full_routine(self):
         """7-Day Recommended Routine 버튼 클릭 시 대시보드를 다시 띄우지 않고 FullRoutineWindow만 단독 오픈"""
-        self.full_routine_window = FullRoutineWindow(self.welcome_window)
+        self.full_routine_window = FullRoutineWindow(
+            self.welcome_window,
+            analysis_data=self.analysis_data,
+        )
         self.full_routine_window.show()
         # 대시보드가 중복으로 뜨지 않도록 현재 리포트 창만 깔끔하게 닫기
         self.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose, True)
