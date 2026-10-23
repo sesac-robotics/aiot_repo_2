@@ -38,6 +38,20 @@ class HoldExerciseSnapshot(ExerciseSnapshot):
     hold_completed: bool
 
 
+class PostureAnalysisSnapshot(BaseModel):
+    # 패키지 원시 분류/피드백의 실제 class mapping을 보존합니다.
+    model_config = ConfigDict(extra='allow')
+    status: Literal['warming_up', 'ready', 'insufficient_pose', 'unavailable', 'paused', 'inactive']
+    reason: str | None = None
+    is_correct: bool | None = None
+    form_score: float | None = None
+    posture_errors: list[dict] = Field(default_factory=list)
+    predicted_at: float | None = None
+    classification: dict | None = None
+    display_feedback: dict | None = None
+
+
 class SessionLiveResponse(BaseModel):
     session: SessionSnapshot
     exercise: HoldExerciseSnapshot | ExerciseSnapshot | None
+    posture_analysis: PostureAnalysisSnapshot | None = None

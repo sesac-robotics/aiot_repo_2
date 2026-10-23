@@ -4,6 +4,7 @@ FastAPI AI Server
 """
 
 import os
+from urllib.parse import urlsplit
 
 from dotenv import load_dotenv
 from datetime import datetime, timezone
@@ -19,10 +20,10 @@ from app.routers.internal_sessions import router as internal_sessions_router
 from app.inference.yolo_pose import YOLOPoseEstimator
 from app.inference.mediapipe_pose import MediapipePoseEstimator
 from app.streaming.pose_stream import PoseStreamService
+from app.debug_logging import debug_log_files
 
 load_dotenv()
 
-ESP32_STREAM_URL = os.getenv("ESP32_STREAM_URL")
 POSE_MODEL = os.getenv("POSE_MODEL", "yolo")
 YOLO_MODEL_PATH = os.getenv(
     "YOLO_MODEL_PATH", 
@@ -33,6 +34,31 @@ MEDIAPIPE_MODEL_PATH = os.getenv(
     "models/MediaPipe/pose_landmarker_full.task"
 )
 MEDIAPIPE_DELEGATE = os.getenv('MEDIAPIPE_DELEGATE', 'cpu').lower()
+
+
+def read_camera_settings(environ=None):
+    """.env에서 로드한 환경변수로 입력을 선택하고 선택된 URL만 검증합니다."""
+    # lifespan에서 호출하여 설정 오류를 모델 생성보다 먼저 발견합니다.
+    env = os.environ if environ is None else environ
+    source = env.get("CAMERA_SOURCE_TYPE", "http").strip().lower()
+    if source not in ("http", "rtsp"):
+        raise ValueError("CAMERA_SOURCE_TYPE은 http 또는 rtsp여야 합니다.")
+    key = "ESP32_STREAM_URL" if source == "http" else "RTSP_STREAM_URL"
+    url = env.get(key, "").strip()
+    if not url:
+        raise ValueError(f"{source} 입력에 필요한 {key}가 없습니다.")
+    try:
+        parsed = urlsplit(url)
+        valid = parsed.scheme in (("http", "https") if source == "http" else ("rtsp", "rtsps")) and parsed.hostname
+        parsed.port  # 잘못된 포트도 URL 원문 없이 보고합니다.
+    except ValueError:
+        valid = False
+    if not valid:
+        raise ValueError(f"{key}의 URL 형식이 올바르지 않습니다.")
+    transport = env.get("RTSP_TRANSPORT", "tcp").strip().lower() if source == "rtsp" else "tcp"
+    if transport not in ("tcp", "udp"):
+        raise ValueError("RTSP_TRANSPORT는 tcp 또는 udp여야 합니다.")
+    return source, url, transport
 
 
 def create_pose_estimator():
@@ -70,14 +96,36 @@ yield 이후는 종료시 실행되는 구조
 '''
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # 생성/종료 과정의 디버그 로그까지 파일에 기록하고 일반 서버 로그는 유지합니다.
+    with debug_log_files():
+        async with _service_lifespan(app):
+            yield
+
+
+@asynccontextmanager
+async def _service_lifespan(app: FastAPI):
+    # 선택한 카메라 설정만 검증하며 잘못된 설정이면 GPU 생성 전에 실패합니다.
+    camera_source_type, stream_url, rtsp_transport = read_camera_settings()
     # 프로세스당 하나를 생성하여 API와 향후 추론 워커가 공유합니다.
     app.state.session_manager = SessionManager()
     app.state.internal_api_key = os.getenv("INTERNAL_API_KEY")
+    # OFF일 때는 자세 모델/torch 모듈도 추가 import/생성하지 않습니다.
+    posture_service = None
+    # 명시적 off는 기존 ENABLED=true보다 우선합니다.
+    evaluation_mode = os.getenv('POSTURE_EVALUATION_MODE')
+    if ((evaluation_mode is not None and evaluation_mode.strip().lower() != 'off')
+            or (evaluation_mode is None and os.getenv('POSTURE_MODEL_ENABLED','false').strip().lower() not in ('false','0'))):
+        from app.analysis.posture.service import PostureService
+        posture_service = PostureService.from_env(app.state.session_manager)
+    app.state.posture_service = posture_service
     # 모델 팩터리만 전달하여 생성/추론/종료가 같은 워커에서 실행되게 합니다.
 
     # 새로운 스트리밍 서비스 객체 생성
     pose_stream = PoseStreamService(
-        stream_url=ESP32_STREAM_URL,
+        stream_url=stream_url,
+        camera_source_type=camera_source_type,
+        rtsp_transport=rtsp_transport,
+        posture_service=posture_service,
         pose_estimator=None,
         estimator_factory=create_pose_estimator,
         session_manager=app.state.session_manager,
@@ -94,13 +142,19 @@ async def lifespan(app: FastAPI):
     app.state.pose_stream = pose_stream
 
     try:
+        if posture_service is not None:
+            posture_service.start()
         pose_stream.start()
         print("[AI Service] 스트리밍 서비스 시작")
 
         yield
     # finally를 사용하는 이유는 종료 과정에서 예외가 발생해도 정리 작어븡ㄹ 수행하도록 하기 위해서
     finally:
-        pose_stream.stop()
+        try:
+            if posture_service is not None:
+                posture_service.stop()
+        finally:
+            pose_stream.stop()
         print("[AI Service] 스트리밍 서비스 종료")
 
 

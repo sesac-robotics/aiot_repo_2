@@ -68,12 +68,12 @@ Manager = Annotated[SessionManager, Depends(get_session_manager)]
 PositiveID = Annotated[int, Path(gt=0)]
 
 
-@router.post('/{session_id}/start', response_model=SessionLiveResponse)
+@router.post('/{session_id}/start', response_model=SessionLiveResponse, response_model_exclude_unset=True)
 def start_session(session_id: PositiveID, manager: Manager):
     return manager.start_session(session_id)
 
 
-@router.post('/{session_id}/exercises/{exercise_id}/start', response_model=SessionLiveResponse)
+@router.post('/{session_id}/exercises/{exercise_id}/start', response_model=SessionLiveResponse, response_model_exclude_unset=True)
 def start_exercise(session_id: PositiveID, exercise_id: PositiveID,
                    body: ExerciseStartRequest, manager: Manager):
     with manager.target_session(session_id):
@@ -81,31 +81,31 @@ def start_exercise(session_id: PositiveID, exercise_id: PositiveID,
                                       target_duration_sec=body.target_duration_sec)
 
 
-@router.post('/{session_id}/pause', response_model=SessionLiveResponse)
+@router.post('/{session_id}/pause', response_model=SessionLiveResponse, response_model_exclude_unset=True)
 def pause_session(session_id: PositiveID, manager: Manager):
     with manager.target_session(session_id):
         return manager.pause_session()
 
 
-@router.post('/{session_id}/resume', response_model=SessionLiveResponse)
+@router.post('/{session_id}/resume', response_model=SessionLiveResponse, response_model_exclude_unset=True)
 def resume_session(session_id: PositiveID, manager: Manager):
     with manager.target_session(session_id):
         return manager.resume_session()
 
 
-@router.post('/{session_id}/exercises/{exercise_id}/finish', response_model=SessionLiveResponse)
+@router.post('/{session_id}/exercises/{exercise_id}/finish', response_model=SessionLiveResponse, response_model_exclude_unset=True)
 def finish_exercise(session_id: PositiveID, exercise_id: PositiveID, manager: Manager):
     with manager.target_session(session_id, exercise_id):
         return manager.finish_exercise()
 
 
-@router.post('/{session_id}/finish', response_model=SessionLiveResponse)
+@router.post('/{session_id}/finish', response_model=SessionLiveResponse, response_model_exclude_unset=True)
 def finish_session(session_id: PositiveID, manager: Manager):
     with manager.target_session(session_id):
         return manager.finish_session()
 
 
-@router.get('/{session_id}/live', response_model=SessionLiveResponse)
+@router.get('/{session_id}/live', response_model=SessionLiveResponse, response_model_exclude_unset=True)
 def live_session(session_id: PositiveID, manager: Manager):
     with manager.target_session(session_id):
         return manager.get_snapshot()

@@ -12,15 +12,15 @@ from app.analysis.exercise import AnalysisResult, RepCompleted
 
 @dataclass(frozen=True)
 class YTWRaiseConfig:
-    extended_elbow_min_deg: float = 145.
+    extended_elbow_min_deg: float = 140.
     y_min_direction_deg: float = 30.
-    y_max_direction_deg: float = 75.
-    t_max_direction_deg: float = 25.
-    w_min_elbow_deg: float = 60.
-    w_max_elbow_deg: float = 130.
+    y_max_direction_deg: float = 85.
+    t_max_direction_deg: float = 28.
+    w_min_elbow_deg: float = 55.
+    w_max_elbow_deg: float = 135.
     # 위치는 각 어깨 기준, 어깨 폭 단위입니다. 위쪽과 각 팔의 바깥쪽이 양수입니다.
-    min_extended_outward: float = .6
-    w_min_elbow_outward: float = .12
+    min_extended_outward: float = .45
+    w_min_elbow_outward: float = .08
     w_min_elbow_height: float = -.85
     w_max_elbow_height: float = .25
     w_min_wrist_above_elbow: float = .15
@@ -28,7 +28,7 @@ class YTWRaiseConfig:
     w_max_wrist_height: float = 1.4
     min_visibility: float = .6
     min_presence: float = .5
-    transition_duration_sec: float = .15
+    transition_duration_sec: float = .10
     transition_samples: int = 2
     occlusion_grace_sec: float = .6
     max_frame_gap_sec: float = .75

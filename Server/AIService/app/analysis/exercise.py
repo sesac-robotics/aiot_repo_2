@@ -17,6 +17,7 @@ from app.session.manager import SessionManager
 from app.session.models import AnalysisContext
 from app.analysis.shoulder_debug import ShoulderPressDebug, context_fields, session_fields
 from app.analysis.frame_debug import FrameDebug
+from app.analysis.squat_debug import SquatDebug
 
 
 @dataclass(frozen=True)
@@ -113,14 +114,26 @@ class ExerciseAnalysisBridge:
         self._ytw_debug_change = None
         self._frame_debug = FrameDebug()
         self._frame_id = None
+        # 자세 평가에 같은 프레임의 결과를 전달할 뿐 이벤트/상태 머신을 변경하지 않습니다.
+        self.last_result = None
+        self._squat_debug = SquatDebug()
+        self._squat_input = []
+        self._squat_size = None
+        self._squat_previous_phase = self._squat_previous_timestamp = self._squat_previous_cycle = None
 
     def reset(self):
         # 실패한 분석기 상태로 다음 프레임을 처리하지 않도록 문맥부터 무효화합니다.
         self._context = None
+        self.last_result = None
         self.analyzer.reset()
 
     def _debug_report(self, context, reason, *, frame_timestamp, analyzer_called=False,
                       event=None, manager_called=False, accepted=None, detail=None):
+        self._squat_debug.emit(self.manager,context,self.analyzer,self._squat_input,
+            frame_id=self._frame_id,timestamp=frame_timestamp,frame_size=self._squat_size,
+            previous_phase=self._squat_previous_phase,previous_timestamp=self._squat_previous_timestamp,
+            previous_cycle_started=self._squat_previous_cycle,
+            reason=reason,analyzer_called=analyzer_called,event=event,manager_called=manager_called,accepted=accepted)
         if self._ytw_debug:
             self._report_ytw(context,reason,frame_timestamp=frame_timestamp,analyzer_called=analyzer_called,
                              event=event,manager_called=manager_called,accepted=accepted,detail=detail)
@@ -196,10 +209,18 @@ class ExerciseAnalysisBridge:
 
     def process(self, context: AnalysisContext | None, keypoints: list[dict], *,
                 frame_size=None, timestamp=None, frame_id=None, frame_trace=None) -> bool:
+        self.last_result = None
         analyzer_called = False
         event_for_debug = None
         frame_timestamp = timestamp if timestamp is not None else getattr(keypoints, 'timestamp', None)
         self._frame_id = frame_id if frame_id is not None else getattr(keypoints,'frame_id',None)
+        # 읽기 진단용 입력만 참조합니다. 기존 분석기 호출/반영 조건은 유지합니다.
+        self._squat_input = keypoints
+        self._squat_size = frame_size if frame_size is not None else getattr(keypoints,'frame_size',None)
+        active = getattr(self.analyzer,'_analyzer',self.analyzer)
+        self._squat_previous_phase = getattr(active,'phase',None)
+        self._squat_previous_timestamp = getattr(active,'_last_timestamp',None)
+        self._squat_previous_cycle = getattr(active,'_cycle_started',None)
         try:
             current = self.manager.get_analysis_context()
             if context is None or context != current:
@@ -246,6 +267,7 @@ class ExerciseAnalysisBridge:
                 if (result.exercise_name != context.exercise_name
                         or result.exercise_type != definition.exercise_type):
                     raise ValueError('현재 운동과 분석 결과의 메타데이터가 다릅니다.')
+                self.last_result = result
                 event = result.repetition_event
             elif isinstance(result, RepCompleted):
                 event = result  # 기존 분석기/테스트 대역과 호환

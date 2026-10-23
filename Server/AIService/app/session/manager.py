@@ -5,6 +5,8 @@ API/추론 워커가 같은 인스턴스를 주입받아야 합니다. 프로세
 active_duration_sec는 운동 사이 대기를 포함한 세션의 running 시간입니다.
 Snapshot은 {'session': {...}, 'exercise': {...} 또는 None} 구조의 독립 복사본입니다.
 """
+from copy import deepcopy
+import json
 from contextlib import contextmanager
 from dataclasses import asdict
 from datetime import datetime, timezone
@@ -38,6 +40,12 @@ class SessionManager:
         self._analysis_revision = 0
         self._hold_state = None
         self._hold_timestamp = None
+        # 자세 평가는 opt-in이며 OFF에서는 기존 Snapshot 형식을 유지합니다.
+        self._posture_enabled = False
+        self._posture_unavailable = None
+        self._posture_result = None
+        self._posture_context = None
+        self._posture_updated_at = None
 
     @staticmethod
     def _positive_int(name, value):
@@ -70,7 +78,23 @@ class SessionManager:
         exercise=asdict(self._exercise) if self._exercise is not None else None
         if exercise is not None and self._hold_state is not None:
             exercise.update(asdict(self._hold_state))
-        return {'session': session,'exercise': exercise}
+        snapshot = {'session': session, 'exercise': exercise}
+        if self._posture_enabled:
+            # 전이 직후에도 과거 예측을 노출하지 않습니다. 모델/워커 종료를 기다리지 않습니다.
+            from app.analysis.posture_state import posture_state
+            context = self.get_analysis_context()
+            if session['session_status'] != 'running' or context is None:
+                status = 'paused' if session['session_status'] == 'paused' else 'inactive'
+                snapshot['posture_analysis'] = posture_state(status, 'session_or_exercise_not_running')
+            elif self._posture_unavailable is not None:
+                snapshot['posture_analysis'] = posture_state('unavailable', self._posture_unavailable)
+            elif self._posture_context != context or self._posture_result is None:
+                snapshot['posture_analysis'] = posture_state('warming_up', 'new_analysis_context')
+            elif now - self._posture_updated_at > 1.0:
+                snapshot['posture_analysis'] = posture_state('insufficient_pose', 'stale_prediction')
+            else:
+                snapshot['posture_analysis'] = deepcopy(self._posture_result)
+        return snapshot
 
     def start_session(self, session_id):
         self._positive_int('session_id', session_id)
@@ -204,6 +228,26 @@ class SessionManager:
                 return False
             self._rep_event_ids.add(event_id)
             self._exercise.rep_count += 1
+            return True
+
+    def enable_posture_analysis(self, *, unavailable_reason=None):
+        """프로세스 초기화 시에만 켭니다. 모델을 SessionManager 안에서 로드하지 않습니다."""
+        with self._lock:
+            self._posture_enabled = True
+            self._posture_unavailable = unavailable_reason
+
+    def record_posture_analysis(self, context, result):
+        """같은 세대의 JSON 결과만 반영하며 Reps/Hold에는 접근하지 않습니다."""
+        # JSON 검증과 복사는 잠금 밖에서 수행합니다. NaN/Tensor는 저장하지 않습니다.
+        json.dumps(result, allow_nan=False)
+        result = deepcopy(result)
+        with self._lock:
+            if (not self._posture_enabled or context is None
+                    or context != self.get_analysis_context()):
+                return False
+            self._posture_context = context
+            self._posture_result = result
+            self._posture_updated_at = self._clock()
             return True
 
     def get_snapshot(self):

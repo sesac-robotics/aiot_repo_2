@@ -23,7 +23,8 @@ from app.analysis.frame_debug import FrameDebug
 
 class PoseStreamService:
     def __init__(self, stream_url, pose_estimator, model_name, metrics_log_interval=5.0,
-                 *, estimator_factory=None, session_manager=None, exercise_analyzer=None):
+                 *, estimator_factory=None, session_manager=None, exercise_analyzer=None,
+                 camera_source_type="http", rtsp_transport="tcp", posture_service=None):
         # 잘못된 간격은 워커 시작 전에 검증합니다.
         if not math.isfinite(metrics_log_interval) or metrics_log_interval <= 0:
             raise ValueError("METRICS_LOG_INTERVAL_SECONDS는 양수여야 합니다.")
@@ -37,13 +38,19 @@ class PoseStreamService:
         self.metrics = PipelineMetrics()
         self.metrics_log_interval = metrics_log_interval
         self.metrics_worker = None
-        self.camera = CameraStream(stream_url, metrics=self.metrics)
+        # 입력만 선택하며 이후 추론/분석/출력 경로는 동일합니다.
+        self.camera = CameraStream(stream_url, metrics=self.metrics,
+                                   source_type=camera_source_type, rtsp_transport=rtsp_transport)
         if model_name == "mediapipe" and pose_estimator is not None:
             pose_estimator.metrics = self.metrics
         self.pose_estimator = pose_estimator
         self.model_name = model_name
         # FastAPI와 같은 객체를 주입받으며 별도 관리자/분석 스레드는 생성하지 않습니다.
         self.session_manager = session_manager
+        # 자세 추론은 별도 단일 슬롯 워커에 맡기고 기존 Rule-based 계산을 기다리게 하지 않습니다.
+        self.posture_service = posture_service
+        if posture_service is not None:
+            posture_service.pipeline_metrics = self.metrics
         self._shoulder_debug = ShoulderPressDebug()
         self._frame_debug = FrameDebug()
         self.exercise_analysis = (
@@ -183,6 +190,8 @@ class PoseStreamService:
 
                 if frame is None:
                     self._debug_analysis_pipeline('no_camera_frame')
+                    if self.exercise_analysis is not None:
+                        self.exercise_analysis._squat_debug.pipeline(self.session_manager,'no_camera_frame')
                     continue
 
                 # 문맥만 잠깐 읽고 잠금을 해제한 뒤 GPU 추론을 실행합니다.
@@ -297,6 +306,13 @@ class PoseStreamService:
                         analysis_context, keypoints, frame_size=(frame.shape[1], frame.shape[0]),
                         timestamp=analysis_timestamp,
                         frame_id=output_frame_id,frame_trace=frame_trace,
+                    )
+                if self.posture_service is not None and self.model_name == 'mediapipe':
+                    self.posture_service.submit(
+                        analysis_context, keypoints, frame_id=output_frame_id,
+                        timestamp=analysis_timestamp, frame_size=(frame.shape[1], frame.shape[0]),
+                        analysis_started_at=infer_start,
+                        analysis_result=getattr(self.exercise_analysis,'last_result',None),
                     )
 
             except Exception as e:
