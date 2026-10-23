@@ -7,9 +7,9 @@ from models.auth_models import (
     PasswordChangeRequest,
     ProfileUpdateRequest,
 )
-from repositories import user_repository
-from services.auth_service import hash_password, verify_password
-from services.token_service import get_current_user
+from Server.AIFitService.repositories import user_repository
+from Server.AIFitService.services.auth_service import hash_password, verify_password
+from Server.AIFitService.services.token_service import get_current_user
 
 router = APIRouter(prefix="/api", tags=["Authenticated"])
 
