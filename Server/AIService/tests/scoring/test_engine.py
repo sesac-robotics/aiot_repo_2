@@ -205,3 +205,24 @@ class EngineTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TrainingSupportTest(unittest.TestCase):
+    """점수와 별도로 부족한 등급의 학습 근거를 표시하는지 검사한다."""
+
+    def test_missing_grades_are_visible_without_fabricated_examples(
+        self,
+    ) -> None:
+        """정상 등급만 배운 하단 복귀의 오류 사례 수를 0 그대로 공개한다."""
+        result = engine.ScoringEngine().score(
+            "shoulder", demo_sequence(), view="front", complete_attempt=True
+        )
+        item = next(
+            row for row in result["items"] if row["id"] == "lower_return"
+        )
+        self.assertEqual(item["training_grade_counts"]["0"], 0)
+        self.assertEqual(item["training_grade_counts"]["1"], 0)
+        self.assertGreater(item["training_grade_counts"]["2"], 0)
+        self.assertEqual(item["unseen_training_grades"], [0, 1])
+        self.assertIsNotNone(item["ai_grade"])
+        self.assertTrue(item["single_grade_training"])

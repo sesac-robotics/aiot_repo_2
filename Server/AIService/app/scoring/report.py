@@ -162,6 +162,8 @@ def write_html(
                 r["rule_grade"],
                 r["ai_minus_rule"],
                 ", ".join(r["reasons"]),
+                r.get("training_grade_counts", "기록 없음"),
+                r.get("unseen_training_grades", "기록 없음"),
             ]
         )
         + "</tr>"
@@ -187,6 +189,8 @@ def write_html(
     text += (
         "<p>검토된 구간·구도 기준입니다. 전문가 정답·독립 최종 시험 정확도가 아니며 "
         "미관측 항목은 환산하지 않습니다.</p>"
+        "<p>학습 등급별 수는 구간 수이며 참여자 수·예측 신뢰도가 아닙니다. "
+        "미학습 등급의 오류 구분 성능은 검증되지 않았습니다.</p>"
     )
     if video_name:
         text += (
@@ -196,7 +200,8 @@ def write_html(
         )
     text += (
         "<table><tr><th>항목</th><th>배점</th><th>AI /2</th>"
-        "<th>Rule /2</th><th>차이</th><th>미판정 근거</th></tr>"
+        "<th>Rule /2</th><th>차이</th><th>판정 근거·학습 제약</th>"
+        "<th>학습 등급별 구간 수</th><th>미학습 등급</th></tr>"
         + rows
         + "</table><ul>"
     )

@@ -9,7 +9,8 @@ def rule_grade(note: dict, boundaries: tuple[float, ...]) -> int | None:
     Args:
         note: three_items.describe의 항목 기록. 각도는 도, 거리는 몸통 비율.
         boundaries: 만점·부분 경계. 무릎·발은 뒤꿈치 경계 두 개도 뒤에 둔다.
-            뒤꿈치 들림 변화는 몸통 길이 대비 비율이다.
+            기존 뒤꿈치는 몸통 길이 비율이며 side_foot 계열의 마지막
+            특징은 고정 발 길이 대비 상단→하단 뒤꿈치 들림 변화 비율이다.
 
     Returns:
         int | None: 관측된 등급 또는 미판정. 무릎·발은 뒤꿈치 보조 조건도 적용.

@@ -102,7 +102,8 @@ class ScoringEngine:
 
         Returns:
             dict: 0~2 항목 등급과 0~100 가중 총점 또는 None, AI-Rule 차이,
-            판정 근거·모델 버전·밀리초 처리 시간. 미판정은 환산하지 않는다.
+            판정 근거·학습 등급별 구간 수·미학습 등급·모델 버전·밀리초 처리 시간.
+            구간 수는 참여자 수나 예측 신뢰도가 아니다. 미판정은 환산하지 않는다.
             동일 입력은 항상 같은 결과이며 시간 값만 실행마다 달라진다.
 
         Raises:
@@ -237,6 +238,25 @@ class ScoringEngine:
                 note["holds"].append(
                     "single_grade_training_error_discrimination_unverified"
                 )
+            counts = head.get("grade_counts") if head is not None else None
+            grade_counts = (
+                {
+                    str(g): int(counts.get(str(g), counts.get(g, 0)))
+                    for g in range(3)
+                }
+                if counts is not None
+                else None
+            )
+            unseen_grades = (
+                [g for g in range(3) if grade_counts[str(g)] == 0]
+                if grade_counts is not None
+                else None
+            )
+            if unseen_grades and not single_grade_training:
+                note["holds"].append(
+                    "training_grades_missing_"
+                    + "_".join(map(str, unseen_grades))
+                )
             ai.append(a)
             rule.append(b)
             items.append(
@@ -252,6 +272,8 @@ class ScoringEngine:
                     feature=note.get("feature") if note["eligible"] else None,
                     reasons=note["holds"],
                     single_grade_training=single_grade_training,
+                    training_grade_counts=grade_counts,
+                    unseen_training_grades=unseen_grades,
                     window=note.get("window"),
                 )
             )
