@@ -1,0 +1,82 @@
+--- movement.before.py
++++ movement.py
+@@ -40,12 +40,17 @@
+         self.phase = '준비 자세 확인 중'
+         self.count = 0
+         self.uncertain_attempts = []
++        self.completion_receipts = []
++        self.bottom_confirmed_tick = None
++        self.return_first_tick = None
+         self.ready = 0
+         self.bottom = 0
+         self.returned = 0
+         self.missing = 0
+         self.active = False
+         self.has_bottom = False
++        self.bottom_confirmed_tick = None
++        self.return_first_tick = None
+         self.buffer = []
+         self.pre = deque(maxlen=8)
+         self.last_tick = None
+@@ -63,6 +68,8 @@
+         self.active = False
+         self.ready = self.bottom = self.returned = 0
+         self.has_bottom = False
++        self.bottom_confirmed_tick = None
++        self.return_first_tick = None
+         self.buffer = []
+         self.pre.clear()
+         self.base_hip = self.base_feet = None
+@@ -195,10 +202,19 @@
+         if tick-self.buffer[0][0] > 150:
+             self.reset_attempt('동작 구간 초과 · 준비 자세 재확인')
+             return None
++        had_bottom = self.has_bottom
+         self.bottom = self.bottom+1 if at_bottom else 0
+         if self.bottom >= 2:
+             self.has_bottom = True
+             self.phase = '하강 확인 · 복귀 대기' if self.exercise != 'shoulder' else '상승 확인 · 하단 복귀 대기'
++        front_squat = self.exercise=='squats' and self.view=='front'
++        just_confirmed_bottom = front_squat and self.has_bottom and not had_bottom
++        if just_confirmed_bottom:
++            self.bottom_confirmed_tick = int(tick)
++        if front_squat and self.has_bottom:
++            # Use the confirmed-bottom return range. The bottom confirmation
++            # sample cannot also be evidence of a subsequent return.
++            at_start = -.35 < drop < .07 and upright
+         # 미완료 작은 시도를 서기 복귀에서 닫아 대기 시간을 다음 회차와 합치지 않는다.
+         if self.exercise=='squats' and self.view=='front' and not self.has_bottom:
+             self.returned=self.returned+1 if at_start else 0
+@@ -209,13 +225,22 @@
+                 self.ready=6
+                 return None
+         else:
+-            self.returned = self.returned+1 if self.has_bottom and at_start else 0
++            return_now = self.has_bottom and at_start and not just_confirmed_bottom
++            self.returned = self.returned+1 if return_now else 0
++            if front_squat:
++                if not return_now:self.return_first_tick = None
++                elif self.returned == 1:self.return_first_tick = int(tick)
+         if self.returned >= 3 and tick-self.buffer[0][0] >= 8:
+             segment = self.buffer[:]
+             self.last_completion_coverage = segment_coverage(segment)
+             if self.last_completion_coverage < MINIMUM_COVERAGE:
+                 self.reset_attempt('관측 부족 · 동작 구간의 유효 관절이 80% 미만입니다. 구도를 맞추고 다시 시작하세요.')
+                 return None
++            if front_squat:
++                self.completion_receipts.append(dict(number=self.count+1,
++                    bottom_confirmed_tick=self.bottom_confirmed_tick,
++                    return_first_tick=self.return_first_tick,
++                    completed_tick=int(tick)))
+             self.count += 1
+             self.movement_seconds += (segment[-1][0]-segment[0][0])/10
+             baseline = (self.base_hip,self.base_center,self.base_scale,self.base_feet,self.standing_reference)
+@@ -229,7 +254,7 @@
+ 
+     def status(self):
+         """표시용 상태를 반환한다. 반복 미지원 종목은 횟수를 None으로 둔다."""
+-        return dict(detection_version='front-hysteresis-v3-border-contract',observation_version=OBSERVATION_VERSION,observation=self.observation,standing_state_version='initial-standing-state-v1',uncertain_attempts=list(self.uncertain_attempts),phase=self.phase, count=None if self.exercise in ('ytw','plank') else self.count,
++        return dict(detection_version='front-hysteresis-v4-exclusive-return',observation_version=OBSERVATION_VERSION,observation=self.observation,standing_state_version='initial-standing-state-v1',uncertain_attempts=list(self.uncertain_attempts),completion_receipts=list(self.completion_receipts),phase=self.phase, count=None if self.exercise in ('ytw','plank') else self.count,
+                     completion_observation_coverage=self.last_completion_coverage,
+                     angle=self.angle, hip_drop=self.hip_drop, active=self.active,
+                     movement_seconds=round(self.movement_seconds,1),

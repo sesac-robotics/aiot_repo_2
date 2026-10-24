@@ -1,0 +1,72 @@
+{
+  "schema": "posture-score-validation-v1",
+  "evaluation_scope": "reused_development_clips",
+  "expert_reference": false,
+  "independent_final_test": false,
+  "validation_informed_candidate_acceptance": true,
+  "exercises": [
+    {
+      "exercise": "pushups",
+      "submitted": 19,
+      "paired_totals": 6,
+      "ai_MAE_points": 14.788414640197987,
+      "rule_MAE_points": 15.833333333333334,
+      "ai_totals_available": 8,
+      "rule_totals_available": 8
+    },
+    {
+      "exercise": "squats",
+      "submitted": 18,
+      "paired_totals": 5,
+      "ai_MAE_points": 13.376495295357199,
+      "rule_MAE_points": 9.0,
+      "ai_totals_available": 5,
+      "rule_totals_available": 5
+    },
+    {
+      "exercise": "shoulder",
+      "submitted": 11,
+      "paired_totals": 5,
+      "ai_MAE_points": 8.700717745148921,
+      "rule_MAE_points": 10.0,
+      "ai_totals_available": 5,
+      "rule_totals_available": 5
+    },
+    {
+      "exercise": "plank",
+      "submitted": 4,
+      "paired_totals": 2,
+      "ai_MAE_points": 10.255710323798453,
+      "rule_MAE_points": 6.25,
+      "ai_totals_available": 2,
+      "rule_totals_available": 2
+    },
+    {
+      "exercise": "ytw",
+      "submitted": 4,
+      "paired_totals": 3,
+      "ai_MAE_points": 10.845977149621108,
+      "rule_MAE_points": 21.666666666666668,
+      "ai_totals_available": 3,
+      "rule_totals_available": 3
+    }
+  ],
+  "engineering_verification": {
+    "portability_cases": 91,
+    "identical_score_outputs": 91,
+    "unit_and_contract_tests": 28,
+    "mypy_checked_modules": 21,
+    "pylint_scope": "errors-only; style warnings remain",
+    "fresh_environment_installation": true,
+    "raw_video_cpu_pipeline_exercises": 5,
+    "raw_video_gpu_pipeline_exercises": 5,
+    "overlay_files_decoded": true,
+    "browser_playback_verified": false,
+    "accuracy_test": false
+  },
+  "extractor_domain_check": {
+    "same_squat_segment_gpu_total_available": true,
+    "same_squat_segment_cpu_total_available": false,
+    "interpretation": "GPU caches and CPU tracking differ; no equivalence guarantee"
+  }
+}

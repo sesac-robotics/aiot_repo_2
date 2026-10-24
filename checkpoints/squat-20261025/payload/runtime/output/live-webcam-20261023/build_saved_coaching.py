@@ -1,0 +1,15 @@
+"""추가 촬영 없이 기존 5회 점수·관측 안내를 웹 결과로 생성한다."""
+import json,html
+from pathlib import Path
+import numpy as np
+from front_candidate import predict
+from squat_coach import completed_feedback,SOURCES
+R=Path(__file__).parent;P=R/'recordings/20261023-110200-964840';z=np.load(P/'pose.npz');labels=json.loads((P/'labels.frozen.json').read_text());rows=[]
+for rep in labels['repetitions']:
+ xy=z['image_xy'][rep['start_frame']:rep['end_frame']+1];c=predict(xy);f=completed_feedback(xy,c);rows.append(dict(number=rep['number'],score=c,coaching=f))
+(R/'front-candidate/saved-coaching.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+trs=''.join(f"<tr><td>{r['number']}회</td><td>{r['score']['ai_assisted_points']} /70</td><td>{r['score']['rule_points']} /70</td><td>{html.escape(' / '.join(r['coaching']['messages']))}</td></tr>" for r in rows)
+avg=sum(r['score']['ai_assisted_points'] for r in rows)/len(rows);rule=sum(r['score']['rule_points'] for r in rows)/len(rows)
+page=f'''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>스쿼트 점수·교정 안내</title><style>body{{font:16px/1.7 sans-serif;max-width:1120px;margin:30px auto;padding:20px;background:#eff4f6;color:#183748}}section{{background:white;border-radius:14px;padding:24px;margin:20px 0}}table{{border-collapse:collapse;width:100%}}th,td{{padding:12px;border-bottom:1px solid #ddd;text-align:left}}h1{{font-size:28px}}a{{color:#08776f}}.note{{color:#826018}}</style><h1>스쿼트 5회 · 점수와 교정 안내</h1><p>저장 영상 재분석 · 추가 촬영 없음 · 정면 관측 실험 후보</p><section><h2>운동 결과</h2><p><b>완료 5회 · AI 보조 평균 {avg:.1f}/70 · 규칙 평균 {rule:.1f}/70</b></p><table><tr><th>회차</th><th>AI 보조</th><th>규칙</th><th>관측 기반 안내</th></tr>{trs}</table><p class="note">AI 보조는 AI 하강+규칙 복귀·몸통이다. 순수 AI 총점이 아니며 /100으로 환산하지 않는다. 양 무릎 관측 부족은 자세 오류 감점과 구분한다.</p></section><section><h2>실시간 화면에 추가한 내용</h2><ul><li>운동 중: 최근 6초 잠정 점수, 실제 완료 횟수, 준비 자세 대비 무릎 간격·몸통 기울기 안내</li><li>반복 완료: 해당 회차 점수와 관측 근거별 교정 안내</li><li>운동 종료: 계산된 회차 수·평균 점수·회차별 안내 목록. 관측 부족과 정상 신호를 구분</li></ul><p>정면 안내 규칙: 시작 대비 무릎 간격/골반 폭이 25% 이상 감소하거나 몸통 각도가 10도 이상 바뀐 상태가 0.5초 지속될 때 확인 안내를 낸다. 이 수치는 임상 기준이 아니라 검증 중인 공학 문턱이다. 관절 누락 시 해당 안내를 보류한다. 안내를 추가 점수 감점에 중복 적용하지 않는다.</p><p><a href="/">실시간 점수·교정 테스트 열기 →</a> · <a href="/candidate/torso">복귀·몸통 보강 분석</a></p></section><section><h2>스쿼트 기준과 정면 관측의 범위</h2><p>무릎이 발 방향을 따라 움직이는지, 몸통을 제어하며 하강·복귀하는지를 확인한다. 무릎 간격 감소만으로 실제 무릎 안쪽 붕괴를 확정하지 않는다. 발이 보이지 않으면 발 방향 확인은 할 수 없다. 무릎이 발끝을 넘었다는 사실만으로 감점하지 않는다.</p><p>정면에서 실제 깊이·앞뒤 무릎 이동·뒤꿈치 들림을 확정하지 않는다. 하강 추정 점수가 낮아도 무조건 더 굽히라는 지시를 내지 않고 구도와 동작 범위를 함께 확인하도록 안내한다.</p><p>기존 3D 교정 모델은 world 좌표·발 관절을 입력으로 사용한다. 현재 저장본은 2D 픽셀 관절이므로 그대로 연결하지 않고 별도 관측 규칙으로 표시했다. 근육 약화나 질환을 진단하지 않는다.</p><p>추가 촬영은 쉬고 난 뒤 정상 반복과 편안한 범위의 동작 차이를 구분해 확인하는 데 도움이 된다. 일부러 무릎을 안으로 무너뜨리거나 통증 나는 자세를 만들도록 요청하지 않는다.</p><p>기준 참고: '''+ ' · '.join(f'<a href="{s["url"]}">{s["title"]}</a>' for s in SOURCES)+'''</p></section></html>'''
+(R/'front-candidate/saved-coaching.html').write_text(page)
+print(json.dumps([dict(number=r['number'],messages=r['coaching']['messages']) for r in rows],ensure_ascii=False))

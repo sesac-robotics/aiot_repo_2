@@ -1,0 +1,232 @@
+{
+  "schema": "squat-observation-checklist-v2",
+  "reviewed_repetitions": 20,
+  "train_repetitions": 15,
+  "validation_repetitions": 5,
+  "train_people": [
+    "Petra",
+    "Terka",
+    "Vasil"
+  ],
+  "validation_people": [
+    "Mima"
+  ],
+  "test_opened": false,
+  "expert_validated": false,
+  "source_preserved": true,
+  "model_sha256": "223f54eb638ecda4094b2cd351598619d42e7fde4c426ffdcafc8a1609145e6d",
+  "items": {
+    "knee_inward": {
+      "trained": true,
+      "train_support": {
+        "0": 3,
+        "1": 0,
+        "2": 11
+      },
+      "observed_train": 14,
+      "validation_cases": 5,
+      "error_people": [
+        "Petra",
+        "Terka",
+        "Vasil"
+      ],
+      "boundaries": [
+        0.8929185525450496,
+        0.8748053564315995
+      ],
+      "ai_grade_MAE": 0.869740833434823,
+      "rule_grade_MAE": 0.0,
+      "predictions": [
+        {
+          "id": "Mima_01",
+          "target": 2,
+          "ai": 0.9864880191206921,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_02",
+          "target": 0,
+          "ai": 1.1734679038281977,
+          "rule": 0,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_03",
+          "target": 2,
+          "ai": 1.202591153127918,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_04",
+          "target": 2,
+          "ai": 1.455868464052288,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_05",
+          "target": 2,
+          "ai": 1.1798161003531844,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        }
+      ]
+    },
+    "descent_range": {
+      "trained": false,
+      "train_support": {
+        "0": 1,
+        "1": 9,
+        "2": 4
+      },
+      "reason": "관측된 정상·오류 각각 2명 이상 필요",
+      "observed_train": 14,
+      "observed_validation": 5
+    },
+    "standing_return": {
+      "trained": false,
+      "train_support": {
+        "0": 0,
+        "1": 0,
+        "2": 15
+      },
+      "reason": "관측된 정상·오류 각각 2명 이상 필요",
+      "observed_train": 15,
+      "observed_validation": 5
+    },
+    "trunk_balance": {
+      "trained": true,
+      "train_support": {
+        "0": 2,
+        "1": 1,
+        "2": 12
+      },
+      "observed_train": 15,
+      "validation_cases": 5,
+      "error_people": [
+        "Petra",
+        "Terka",
+        "Vasil"
+      ],
+      "boundaries": [
+        2.387422891665951,
+        6.180989097551315
+      ],
+      "ai_grade_MAE": 0.5842271062271063,
+      "rule_grade_MAE": 0.6,
+      "predictions": [
+        {
+          "id": "Mima_01",
+          "target": 2,
+          "ai": 1.95,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_02",
+          "target": 2,
+          "ai": 1.136483516483517,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_03",
+          "target": 1,
+          "ai": 0.06945054945054943,
+          "rule": 0,
+          "baseline_observation_rule": 1
+        },
+        {
+          "id": "Mima_04",
+          "target": 2,
+          "ai": 1.7005494505494498,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_05",
+          "target": 2,
+          "ai": 1.2223809523809523,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        }
+      ]
+    },
+    "heel_support": {
+      "trained": true,
+      "train_support": {
+        "0": 2,
+        "1": 0,
+        "2": 3
+      },
+      "observed_train": 5,
+      "validation_cases": 5,
+      "error_people": [
+        "Petra",
+        "Vasil"
+      ],
+      "boundaries": [
+        0.05658326774418531,
+        0.1330275654694298
+      ],
+      "ai_grade_MAE": 0.26152380952380955,
+      "rule_grade_MAE": 0.8,
+      "predictions": [
+        {
+          "id": "Mima_01",
+          "target": 2,
+          "ai": 1.9511904761904761,
+          "rule": 1,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_02",
+          "target": 2,
+          "ai": 1.6178571428571429,
+          "rule": 1,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_03",
+          "target": 2,
+          "ai": 1.99,
+          "rule": 2,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_04",
+          "target": 2,
+          "ai": 1.167857142857143,
+          "rule": 0,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_05",
+          "target": 0,
+          "ai": 0.034523809523809526,
+          "rule": 0,
+          "baseline_observation_rule": null
+        }
+      ]
+    },
+    "spine_control": {
+      "trained": false,
+      "train_support": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "reason": "관측된 정상·오류 각각 2명 이상 필요",
+      "observed_train": 0,
+      "observed_validation": 0
+    }
+  },
+  "limitations": [
+    "기존 개발 자료 재사용 검증이며 독립 최종 시험이 아님",
+    "정면·측면 시각 표본 초안이며 제공자 오류명을 직접 정답으로 쓰지 않음",
+    "새 항목은 합산 배점·총점 없음",
+    "검증 한 사람·항목별 최대5사례로 일반화 성능 확정 불가"
+  ]
+}

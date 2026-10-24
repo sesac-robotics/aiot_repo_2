@@ -1,0 +1,86 @@
+{
+  "created_at_utc": "2026-10-24T13:13:01.034751+00:00",
+  "scope": "기능 회귀 및 관측 조건 재생 검증; 정확도/실제 수행 정답 검증 아님",
+  "sessions": [
+    {
+      "session": "1792846159556060119",
+      "exercise": "squats",
+      "before_count": 5,
+      "after_count": 5,
+      "rescored": [
+        {
+          "ai": 69.3,
+          "rule": 75.0
+        },
+        {
+          "ai": 74.7,
+          "rule": 85.0
+        },
+        {
+          "ai": 74.9,
+          "rule": 85.0
+        },
+        {
+          "ai": 75.0,
+          "rule": 75.0
+        },
+        {
+          "ai": 75.6,
+          "rule": 75.0
+        }
+      ],
+      "raw_sha256": "feca286bae8b97244722ac28b345519480e3e9d9b7574da50a09ee351c2bb910"
+    },
+    {
+      "session": "1792846279497155109",
+      "exercise": "shoulder",
+      "before_count": 1,
+      "after_count": 0,
+      "rescored": [],
+      "raw_sha256": "af5600d97dc1ce7e1beb63fbb5f63bb1ec9d68b80bec72a80cd46b960c821706"
+    },
+    {
+      "session": "1792846306613620500",
+      "exercise": "pushups",
+      "before_count": 0,
+      "after_count": 0,
+      "rescored": [],
+      "raw_sha256": "3d588ecc5fc7ea4ce4b1f019dd814c08df5a2a5d894eb6f5ca84fbc8f6d8cc55"
+    },
+    {
+      "session": "1792846426614521826",
+      "exercise": "ytw",
+      "before_count": null,
+      "after_count": null,
+      "rescored": [],
+      "raw_sha256": "5525f4fcebd04cfc40c4e9d61635b1ab6d945e79ec5f012498e8e0a00e226bcd"
+    }
+  ],
+  "loaded_source_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "current_source_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "model_hashes": {
+    "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/standing-state/model.joblib": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+    "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/front-candidate/model.joblib": "07929a6bb83df1aba104de972815af0f8ab6ad15582e977ef0fe8ae49511b6e7",
+    "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/front-candidate/torso-model.joblib": "61180b4bfb80eb9ac9ca58b09579c2888e776b161e2bf410d2e74fda1091bcdf",
+    "/home/jayden/SeSACPAI-Mid/output/squat-relabel-20261023/candidate.joblib": "223f54eb638ecda4094b2cd351598619d42e7fde4c426ffdcafc8a1609145e6d",
+    "/home/jayden/SeSACPAI-Mid/output/squat-relabel-expanded-20261023/candidate.joblib": "a9a6eddc58305acec521944e8a55cf7cd1232f439d76c055eb2b9909274e732c"
+  },
+  "tests_passed": 46,
+  "source_models_unchanged": true,
+  "limitations": [
+    "실제 사용자 재테스트 대기",
+    "모델·학습·라벨·분할 변경 없음",
+    "YTW 자동반복 및 측면 푸시업 관측요구 변경 안 함",
+    "횟수 검출은 점수 보장 아님: 항목별 관측률·학습지원 조건 별도"
+  ],
+  "deployed_check": {
+    "loaded_code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+    "live_observation_version": "live-observation-border2-v1",
+    "collecting": false,
+    "source_check_error": null,
+    "update_available": false,
+    "model_hashes_preserved": true,
+    "actual_user_retest_completed": false
+  },
+  "updated_at_utc": "2026-10-24T13:13:41.599026+00:00"
+}

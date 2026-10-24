@@ -1,0 +1,111 @@
+{
+  "rubric_version": "front-squat-visual-draft-v1",
+  "label_origin": "direct_visual_draft",
+  "expert_validated": false,
+  "frozen": true,
+  "model_outputs_accessed_before_freeze": false,
+  "video_sha256": "c95f25a3765a3e4d2ffe681a12d234b29ea7b92e199491e838acd5157dd2e67b",
+  "inspection": "전체 1초 및 주 비교 2회 0.5초 간격 표본 직접 검토; 연속 재생 아님",
+  "repetitions": [
+    {
+      "number": 1,
+      "start_frame": 0,
+      "end_frame": 55,
+      "bottom_frame_range": [
+        25,
+        35
+      ],
+      "boundary_tolerance_frames": 5,
+      "complete_attempt": true,
+      "intended_condition": "얕게",
+      "visual_condition": "하강·서기 복귀 확인. 두 회의 영상상 하강 폭 차이는 표본만으로 뚜렷하게 확정하기 어려움.",
+      "items": {
+        "lateral_trunk": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강·복귀 중 서기 대비 뚜렷한 옆 기울임이 확인되지 않음. 앞뒤 굽힘은 평가하지 않음."
+        },
+        "bilateral_motion": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "양 무릎의 굽힘·펴기가 함께 보이며 뚜렷한 한쪽 지연이나 안쪽 간격 붕괴는 확인되지 않음. 발 방향에 대한 판정 아님."
+        },
+        "standing_return": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강 후 처음 선 골반 높이·몸통 자세로 복귀하며 팔을 내려 쉼. 무릎 완전 신전 각도는 판정하지 않음."
+        },
+        "motion_control": {
+          "grade": null,
+          "confidence": "insufficient",
+          "evidence": "큰 무너짐·재시도는 표본에서 보이지 않지만 미세 반동·전환 제어는 0.5초 표본으로 확정하지 않음."
+        }
+      },
+      "legacy_depth_grade": null,
+      "whole_squat_normal_approved": false,
+      "training_eligible": false,
+      "approval_reason": "정면 관측 초안; 전체 정상·실제 깊이 정답 미확정"
+    },
+    {
+      "number": 2,
+      "start_frame": 50,
+      "end_frame": 105,
+      "bottom_frame_range": [
+        70,
+        85
+      ],
+      "boundary_tolerance_frames": 5,
+      "complete_attempt": true,
+      "intended_condition": "평소 범위",
+      "visual_condition": "하강·서기 복귀 확인. 두 회의 영상상 하강 폭 차이는 표본만으로 뚜렷하게 확정하기 어려움.",
+      "items": {
+        "lateral_trunk": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강·복귀 중 서기 대비 뚜렷한 옆 기울임이 확인되지 않음. 앞뒤 굽힘은 평가하지 않음."
+        },
+        "bilateral_motion": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "양 무릎의 굽힘·펴기가 함께 보이며 뚜렷한 한쪽 지연이나 안쪽 간격 붕괴는 확인되지 않음. 발 방향에 대한 판정 아님."
+        },
+        "standing_return": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강 후 처음 선 골반 높이·몸통 자세로 복귀하며 팔을 내려 쉼. 무릎 완전 신전 각도는 판정하지 않음."
+        },
+        "motion_control": {
+          "grade": null,
+          "confidence": "insufficient",
+          "evidence": "큰 무너짐·재시도는 표본에서 보이지 않지만 미세 반동·전환 제어는 0.5초 표본으로 확정하지 않음."
+        }
+      },
+      "legacy_depth_grade": null,
+      "whole_squat_normal_approved": false,
+      "training_eligible": false,
+      "approval_reason": "정면 관측 초안; 전체 정상·실제 깊이 정답 미확정"
+    }
+  ],
+  "visual_completed_repetitions": 5,
+  "additional_complete_frames": [
+    [
+      100,
+      155
+    ],
+    [
+      155,
+      210
+    ],
+    [
+      205,
+      255
+    ]
+  ],
+  "excluded_incomplete_frames": [
+    255,
+    290
+  ],
+  "additional_repetitions_not_adopted": true,
+  "relative_range_truth": "indeterminate",
+  "training_use": "전체 촬영을 이번 비교의 학습에 사용하지 않음"
+}

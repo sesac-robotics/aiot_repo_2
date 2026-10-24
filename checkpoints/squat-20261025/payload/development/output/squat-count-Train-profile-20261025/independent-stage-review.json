@@ -1,0 +1,126 @@
+{
+  "reviewed_at_utc": "2026-10-24T16:14:14.172991+00:00",
+  "candidate_path": "/home/jayden/SeSACPAI-Mid/project-documents/squat-motion-recovery-20261025/movement_stage_candidate.py",
+  "candidate_sha256": "c34da23889a228816a3c70cc1b65c3a6ffb7ab27ff736fca00c998f53e95f731",
+  "results": [
+    {
+      "source_id": "V10",
+      "split": "train",
+      "count": 4,
+      "segments": [
+        {
+          "start_tick": 2,
+          "end_tick": 27,
+          "samples": 26,
+          "missing_knee_samples": 0,
+          "receipt": {
+            "number": 1,
+            "bottom_confirmed_tick": 11,
+            "return_first_tick": 25,
+            "completed_tick": 27,
+            "observation": {
+              "policy_version": "front-squat-stage-observation-v1-candidate",
+              "detector_core_coverage": 1.0,
+              "actual_time_slot_coverage": 1.0,
+              "knee_phase_evidence_coverage": 1.0,
+              "phase_evidence_requires_actual_one_knee": true,
+              "score_observation_policy_unchanged": true
+            }
+          }
+        },
+        {
+          "start_tick": 31,
+          "end_tick": 55,
+          "samples": 25,
+          "missing_knee_samples": 1,
+          "receipt": {
+            "number": 2,
+            "bottom_confirmed_tick": 44,
+            "return_first_tick": 53,
+            "completed_tick": 55,
+            "observation": {
+              "policy_version": "front-squat-stage-observation-v1-candidate",
+              "detector_core_coverage": 1.0,
+              "actual_time_slot_coverage": 1.0,
+              "knee_phase_evidence_coverage": 0.96,
+              "phase_evidence_requires_actual_one_knee": true,
+              "score_observation_policy_unchanged": true
+            }
+          }
+        },
+        {
+          "start_tick": 56,
+          "end_tick": 81,
+          "samples": 26,
+          "missing_knee_samples": 5,
+          "receipt": {
+            "number": 3,
+            "bottom_confirmed_tick": 72,
+            "return_first_tick": 79,
+            "completed_tick": 81,
+            "observation": {
+              "policy_version": "front-squat-stage-observation-v1-candidate",
+              "detector_core_coverage": 1.0,
+              "actual_time_slot_coverage": 1.0,
+              "knee_phase_evidence_coverage": 0.8076923076923077,
+              "phase_evidence_requires_actual_one_knee": true,
+              "score_observation_policy_unchanged": true
+            }
+          }
+        },
+        {
+          "start_tick": 108,
+          "end_tick": 134,
+          "samples": 27,
+          "missing_knee_samples": 5,
+          "receipt": {
+            "number": 4,
+            "bottom_confirmed_tick": 125,
+            "return_first_tick": 132,
+            "completed_tick": 134,
+            "observation": {
+              "policy_version": "front-squat-stage-observation-v1-candidate",
+              "detector_core_coverage": 1.0,
+              "actual_time_slot_coverage": 1.0,
+              "knee_phase_evidence_coverage": 0.8148148148148148,
+              "phase_evidence_requires_actual_one_knee": true,
+              "score_observation_policy_unchanged": true
+            }
+          }
+        }
+      ],
+      "actual_phase_causality_and_original_nan_values_verified": true
+    },
+    {
+      "source_id": "V18",
+      "split": "train",
+      "count": 1,
+      "segments": [
+        {
+          "start_tick": 16,
+          "end_tick": 67,
+          "samples": 51,
+          "missing_knee_samples": 5,
+          "receipt": {
+            "number": 1,
+            "bottom_confirmed_tick": 34,
+            "return_first_tick": 65,
+            "completed_tick": 67,
+            "observation": {
+              "policy_version": "front-squat-stage-observation-v1-candidate",
+              "detector_core_coverage": 0.9807692307692307,
+              "actual_time_slot_coverage": 0.9807692307692307,
+              "knee_phase_evidence_coverage": 0.8846153846153846,
+              "phase_evidence_requires_actual_one_knee": true,
+              "score_observation_policy_unchanged": true
+            }
+          }
+        }
+      ],
+      "actual_phase_causality_and_original_nan_values_verified": true
+    }
+  ],
+  "source_roles_changed": false,
+  "new_fit": 0,
+  "independent_final_accuracy": false
+}

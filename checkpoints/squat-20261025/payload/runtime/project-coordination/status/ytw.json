@@ -1,0 +1,226 @@
+{
+  "updated_at_utc": "2026-10-24T16:09:43.183353+00:00",
+  "owner_thread_id": "01a16e10-2508-74c3-a737-31eb1a009558",
+  "state": "paused_by_user_squat_only",
+  "summary": "직접 인간 지시 지금은 스쿼트만 진행을 확인해 YTW 추가 개발·검증·촬영·통합 일시중단. 기존 후보/검증/원본/한계 보존.",
+  "evidence": [
+    "output/ytw-work-20261024/RESULTS.txt",
+    "output/ytw-work-20261024/verification.json",
+    "output/ytw-work-20261024/replay.json",
+    "output/ytw-work-20261024/INTEGRATION.txt",
+    "output/live-webcam-20261023/ytw_candidate.py",
+    "output/live-webcam-20261023/test_ytw_candidate.py",
+    "output/ytw-work-20261024/logo-v1/RESULTS.txt",
+    "output/ytw-work-20261024/logo-v1/plan.frozen.json",
+    "output/ytw-work-20261024/logo-v1/verification.json",
+    "output/ytw-work-20261024/logo-v1/video-hold-review-v1.frozen.json",
+    "tools/ytw-work/auto_contract_v1.py",
+    "output/ytw-work-20261024/boundary-v2/RESULTS.txt",
+    "output/ytw-work-20261024/boundary-v2/references-v2.frozen.json",
+    "output/ytw-work-20261024/boundary-v2/evaluation-audited.json",
+    "output/ytw-work-20261024/boundary-v2/verification.json",
+    "output/ytw-work-20261024/boundary-v2/CAPTURE_PLAN.txt",
+    "output/ytw-work-20261024/y-entry-v3/selection.frozen.json",
+    "output/ytw-work-20261024/y-entry-v3/recheck.json",
+    "output/ytw-work-20261024/y-entry-v4.1/RESULTS.txt",
+    "output/ytw-work-20261024/y-entry-v4.1/verification.json",
+    "output/ytw-work-20261024/y-entry-v4.1/INTEGRATION.txt",
+    "output/ytw-work-20261024/y-entry-v4.1/saved-session.json",
+    "output/ytw-work-20261024/readiness-v5-20261025/RESULTS.txt",
+    "output/ytw-work-20261024/readiness-v5-20261025/verification.json",
+    "output/ytw-work-20261024/readiness-v5-20261025/INTEGRATION.txt",
+    "output/ytw-work-20261024/readiness-v5-20261025/timing-receipts.csv"
+  ],
+  "limitations": [
+    "별도개발상태bundle/fold는미배포/현라이브YTW미지원",
+    "v4는v3재검증실패를본뒤설계:전체노출개발회귀/독립검증아님",
+    "Y조기3→0이나V39최소.3초지연1/단계19/30·완료7/10으로게이트미달",
+    "자연비완료대기13<20/유형부족/전체bundle미학습사람0",
+    "참조는AI보조불확실범위/전문가정답아님/상태와품질·등급별도",
+    "497표본은영상없어횟수·경계·품질정답아님/AI실험값변화는정확도개선아님",
+    "v5는현재준비/과거증거/확인시각계약 보강이며검출경계정확도향상실험아님",
+    "입력계약적격은모델/품질/총점지원승인이아님/수동승인False 유지"
+  ],
+  "next_action": "사용자의 새로운 YTW 재개 지시를 기다림. 재개 전 추가 개발/검증/촬영/통합/후속 실행 없음.",
+  "modified_files": [
+    "output/live-webcam-20261023/ytw_candidate.py",
+    "output/live-webcam-20261023/test_ytw_candidate.py",
+    "tools/ytw-work/replay.py",
+    "output/ytw-work-20261024/",
+    "project-coordination/status/ytw.json",
+    "tools/ytw-work/boundary_review.py",
+    "tools/ytw-work/negative_detail.py",
+    "tools/ytw-work/freeze_boundary_v2.py",
+    "tools/ytw-work/evaluate_boundary_v2.py",
+    "tools/ytw-work/audit_boundary_v2.py",
+    "tools/ytw-work/ytw_ready_fix_v2.py",
+    "tools/ytw-work/ytw_stable_entry_v3.py",
+    "tools/ytw-work/ytw_hold_onset_v4.py",
+    "tools/ytw-work/entry_v3_replay.py",
+    "tools/ytw-work/entry_v4_replay.py",
+    "tools/ytw-work/test_ytw_entry_v4.py",
+    "tools/ytw-work/entry_saved_session.py",
+    "tools/ytw-work/finalize_entry_v4.py",
+    "tools/ytw-work/ytw_readiness_v5.py",
+    "tools/ytw-work/test_readiness_v5.py",
+    "tools/ytw-work/replay_readiness_v5.py",
+    "tools/ytw-work/saved_readiness_v5.py"
+  ],
+  "production_changes": false,
+  "authorization_verified": {
+    "source_thread_id": "01a16de6-a0bd-78b2-a14a-8169128b27d3",
+    "direct_human_turn": "01a16e0e-aa3f-7080-aae7-62364cc9a87f",
+    "scope": "registered_project_status_coordination"
+  },
+  "latest_summary": {
+    "Train_source_count": 7,
+    "Train_ordered_attempts": 21,
+    "whole_source_event_and_dense_input_parity": true,
+    "prefix_event_and_receipt_checks": 21,
+    "required_unobserved_Train_frames": 22,
+    "current_ready_on_unobserved_Train_frames": 0,
+    "saved_live_samples": 497,
+    "saved_live_unobserved_frames": 293,
+    "saved_live_current_ready_on_unobserved_frames": 0,
+    "saved_live_ordered_attempts": 1,
+    "new_functional_tests": 15,
+    "Y_model_ready_confirmation_delay_slots": [
+      4
+    ],
+    "Y_stability_confirmation_delay_slots": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "T_confirmation_delay_slots": [
+      4
+    ],
+    "W_confirmation_delay_slots": [
+      4
+    ],
+    "previous_boundary_metrics_unchanged": true,
+    "phase_boundary_definite_within_0_2": "19/30",
+    "completion_boundary_definite_within_0_2": "7/10",
+    "remaining_Y_late_cases": 1,
+    "independent_accuracy_claim": false,
+    "production_changed": false
+  },
+  "previous_y_entry_summary": {
+    "baseline": {
+      "summary": {
+        "withheld_auto_boundaries": 0,
+        "reference_attempts": 10,
+        "matched_attempts": 10,
+        "natural_negative_episodes": 13,
+        "false_completions": 0,
+        "invalid_phase_windows": 1,
+        "Y_definite_within_0_2": 2,
+        "Y_worst_error_sum": 3.3,
+        "Y_minimum_error_gt_0_2": 3,
+        "phase_definite_within_0_2": 16,
+        "phase_comparisons": 30,
+        "terminal_definite_within_0_2": 7,
+        "terminal_comparisons": 10,
+        "source_event_counts": {
+          "V37": 4,
+          "V38": 0,
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "timing": {
+        "Y_early_more_than_0_2": 3,
+        "Y_late_more_than_0_2": 0,
+        "Y_definitely_within_0_2": 2,
+        "Y_observations": 10
+      }
+    },
+    "ready_origin_fix": {
+      "summary": {
+        "withheld_auto_boundaries": 0,
+        "reference_attempts": 10,
+        "matched_attempts": 10,
+        "natural_negative_episodes": 13,
+        "false_completions": 0,
+        "invalid_phase_windows": 0,
+        "Y_definite_within_0_2": 2,
+        "Y_worst_error_sum": 3.2,
+        "Y_minimum_error_gt_0_2": 2,
+        "phase_definite_within_0_2": 16,
+        "phase_comparisons": 30,
+        "terminal_definite_within_0_2": 7,
+        "terminal_comparisons": 10,
+        "source_event_counts": {
+          "V37": 4,
+          "V38": 0,
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "timing": {
+        "Y_early_more_than_0_2": 2,
+        "Y_late_more_than_0_2": 0,
+        "Y_definitely_within_0_2": 2,
+        "Y_observations": 10
+      }
+    },
+    "hold_onset_v4": {
+      "summary": {
+        "withheld_auto_boundaries": 0,
+        "reference_attempts": 10,
+        "matched_attempts": 10,
+        "natural_negative_episodes": 13,
+        "false_completions": 0,
+        "invalid_phase_windows": 0,
+        "Y_definite_within_0_2": 5,
+        "Y_worst_error_sum": 2.9,
+        "Y_minimum_error_gt_0_2": 1,
+        "phase_definite_within_0_2": 19,
+        "phase_comparisons": 30,
+        "terminal_definite_within_0_2": 7,
+        "terminal_comparisons": 10,
+        "source_event_counts": {
+          "V37": 4,
+          "V38": 0,
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "timing": {
+        "Y_early_more_than_0_2": 0,
+        "Y_late_more_than_0_2": 1,
+        "Y_definitely_within_0_2": 5,
+        "Y_observations": 10
+      }
+    }
+  },
+  "state_before_pause": "current_readiness_and_confirmation_receipts_verified_candidate_only",
+  "pause": {
+    "human_request_verified": true,
+    "source_thread_id": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "human_turn_id": "01a16eab-d989-7061-9baf-2aec4967a0cb",
+    "human_message_id": "01a16eab-d9aa-7bc3-914e-2ad3a9a31885",
+    "human_quote": "숄더 프레스는 일단 작업을 중단한다. 지금은 스쿼트만 진행",
+    "coordination_source_thread_id": "01a16de6-a0bd-78b2-a14a-8169128b27d3",
+    "scope": [
+      "YTW development",
+      "validation",
+      "capture",
+      "integration",
+      "follow-up work"
+    ],
+    "artifacts_preserved": true,
+    "common_files_changed": false,
+    "resume_requires_new_human_instruction": true
+  }
+}

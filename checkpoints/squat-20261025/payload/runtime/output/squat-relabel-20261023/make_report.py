@@ -1,0 +1,13 @@
+from pathlib import Path
+import json, html
+P=Path(__file__).parent
+r=json.loads((P/'report.json').read_text())
+names={'knee_inward':'무릎 안쪽 모임','trunk_balance':'몸통 좌우 기울기','heel_support':'뒤꿈치·발 지지'}
+rows=''
+for key,name in names.items():
+ a=r['items'][key];pr=a['predictions'];base=[abs(v['baseline_observation_rule']-v['target']) for v in pr if v['baseline_observation_rule'] is not None]
+ baseline=f'{sum(base)/len(base):.2f}' if base else '비교 항목 없음'
+ rows+=f'<tr><td>{name}</td><td>{a["observed_train"]}회</td><td>{baseline}</td><td>{a["ai_grade_MAE"]:.2f}</td><td>{a["rule_grade_MAE"]:.2f}</td></tr>'
+page='''<!doctype html><html lang="ko"><meta charset="utf-8"><title>새 기준 재라벨링 · 후보 학습 결과</title><style>body{margin:0;background:#eff4f7;color:#20374b;font:18px/1.65 system-ui}main{max-width:1080px;margin:45px auto}h1{font-size:34px}section{background:white;border-radius:18px;padding:25px 30px;margin:22px 0}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:12px;border-bottom:1px solid #dce5ec}.badge{background:#fff1cc;padding:7px 14px;border-radius:20px}small{color:#526679}strong{color:#155e75}</style><main><span class="badge">중간 결과 · 기존 모델 유지</span><h1>새 스쿼트 기준으로 다시 라벨링하고 학습했습니다</h1><section><h2>20회 검토 → 15회 학습 / 5회 검증</h2><p>기존 영상 4명의 20회분을 정면·측면 각 9프레임으로 검토했습니다. 실제 촬영 방향을 확인하고, AI 예측을 보기 전에 항목별 라벨을 고정했습니다.</p><p>제공된 ‘정상/오류’ 이름을 그대로 정답으로 쓰지 않았습니다. 무릎 모임·하강 범위·서기 복귀·몸통 기울기·발 지지·허리/반동을 분리했습니다.</p><small>출처 유형을 알고 검토한 시각 라벨 초안이며 전문가 확정 라벨은 아닙니다. 연속 영상 전체 판독을 대신하지 않습니다.</small></section><section><h2>항목별 후보 비교</h2><p>0~2 등급의 평균 절대 오차입니다. 작을수록 초안 라벨과 가깝습니다.</p><table><tr><th>항목</th><th>관측 학습 수</th><th>비교용 관측 규칙</th><th>새 AI 후보</th><th>새 규칙 후보</th></tr>ROWS</table><p><strong>무릎 규칙은 개선 가능성을 보였지만 AI까지 좋아진 것은 아닙니다.</strong> 몸통 후보는 비교 규칙보다 나빠 교체하지 않습니다. 발 지지는 유효 학습 5회뿐이라 실험용으로만 보관합니다.</p><small>비교용 관측 규칙은 특징에 적용한 단순 기준입니다. 기존 팀 AI 전체나 현재 실시간 교정 전체의 성능 비교가 아닙니다. 검증은 한 사람·5회이며 독립 최종 시험이 아닙니다.</small></section><section><h2>억지로 학습하지 않은 항목</h2><p>하강 범위: 깊은 동작 라벨이 한 사람에 치우쳐 있습니다.<br>서기 복귀: 미복귀 오류 사례가 없습니다.<br>허리 정렬·반동: 표본 이미지로 확정할 수 없어 라벨을 비워 두었습니다.</p><p>모르는 항목을 정상으로 채우거나 오류를 만들어 넣지 않았습니다. 발이 안 보이면 발 지지만 미관측으로 처리하며 무릎·몸통 평가를 함께 막지 않습니다.</p></section><section><h2>적용 상태와 다음 단계</h2><p>새 AI 3개 항목과 데이터 기반 규칙 후보를 별도 파일로 학습·저장하고 추론 경로를 만들었습니다. <strong>기존 팀 모델·규칙과 실시간 기본 평가는 보존했습니다.</strong> 새 항목에 임의 총점은 부여하지 않았습니다.</p><p>다음은 기존 자료에서 부족한 사람·오류 유형을 찾아 동일 기준으로 재라벨링하고, 사람별 분리 검증과 최종 시험을 거쳐 항목별로 교체하는 단계입니다. 지금 결과만으로 전체 자료 재라벨링 완료나 성능 향상을 확정하지 않습니다.</p><small>미관측 처리·좌표 이동/배율 불변·사람별 학습/검증 분리 검사 3개 통과. 최종 시험 데이터는 열지 않았습니다.</small></section></main></html>'''.replace('ROWS',rows)
+(P/'index.html').write_text(page)
+(P.parent/'live-webcam-20261023/front-candidate/last-live-test.html').write_text(page)

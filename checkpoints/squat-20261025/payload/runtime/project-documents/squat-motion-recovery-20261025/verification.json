@@ -1,0 +1,41 @@
+{
+  "updated_at_utc": "2026-10-24T16:14:36.098685+00:00",
+  "stage_and_pipeline_tests": 91,
+  "ui_tests": 24,
+  "saved_sessions": 13,
+  "unchanged_saved_sessions": 12,
+  "latest_count_before": 2,
+  "latest_count_candidate": 1,
+  "existing_continuous_Train_sources": 7,
+  "existing_continuous_Train_counts_before_and_candidate": 63,
+  "team_Train_sources": 17,
+  "V10_counts": {
+    "before": 2,
+    "candidate": 4,
+    "exposed_visual_reference": 5
+  },
+  "V18_counts": {
+    "before": 1,
+    "candidate": 1,
+    "exposed_visual_reference": 4
+  },
+  "candidate_sha256": {
+    "movement_stage_candidate.py": "c34da23889a228816a3c70cc1b65c3a6ffb7ab27ff736fca00c998f53e95f731",
+    "checklist_comparison_candidate.py": "d5d51c4803ff6602526ea23630d1533c04718d8b2c097ee975306f8425e743d2",
+    "live_observation_candidate.py": "0e6c5d6ac6b97a6c6fefacf2e62454edf84769e271abcfb20df6f69858601a7b",
+    "index_candidate.html": "7ce9b726e7056aa969c70146ad76100cbce6ec433242b49a7447b264c73d686e",
+    "server_candidate.py": "065cb830dda7da16e7744d75b050840cd933d1661ef5aa5a1932f65be5ba3f9e"
+  },
+  "model_fit": 0,
+  "labels_or_splits_changed": false,
+  "final_Test_opened": false,
+  "deployed": true,
+  "limitations": [
+    "V10의 7슬롯 누락 1회는 미복구",
+    "V18 얕은 4회 중 1회만 검출, 미해결",
+    "최신 짧은 저장 회차는 영상 없어 확정 오검출 라벨 불가",
+    "단계별 검출 관측 계약으로 개정, 기존 전체구간 one-knee 80%와 동일한 계약 아님",
+    "AI 보조 Train 개발 참조이며 독립 최종 정확도 아님"
+  ],
+  "deployment_evidence": "deployment.json"
+}

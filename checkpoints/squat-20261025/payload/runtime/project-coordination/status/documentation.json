@@ -1,0 +1,743 @@
+{
+  "updated_at_utc": "2026-10-24T16:21:53.259248+00:00",
+  "owner_thread_id": "01a16de6-a0bd-78b2-a14a-8169128b27d3",
+  "state": "squat_retest_ended_7_cycles_scores_reproduced",
+  "summary": "이전 운동 결과 잔류 수정: 종목/방향/재시작 즉시 초기화, 세대·지연응답 차단. 21+7검사 및 실제UI 확인, 기존모델/세션보존. 스쿼트 예약 대기.",
+  "authorization_verified": {
+    "source_thread_id": "01a167e8-603b-7862-b7b1-80b8f557f8df",
+    "human_turn_id": "01a16de3-d5cc-7932-8eb5-1f762ed9c16c",
+    "scope": "두 프로젝트 스레드 간 현황 교환"
+  },
+  "authoritative_pointers": [
+    "output/CURRENT_FIVE_EXERCISE_RUN.json",
+    "output/CURRENT_INITIAL_POSE_RETURN_RUN.json"
+  ],
+  "evidence": [
+    "output/squat-fixed-reference-combined-v3-20261024/RESULTS.txt",
+    "output/squat-fixed-reference-combined-v3-20261024/verification.json",
+    "output/initial-pose-return-v7-20261024/RESULTS.txt",
+    "project-coordination/PARALLEL_WORK.txt"
+  ],
+  "document_sources": [
+    {
+      "path": "aiot_repo_2/README.md",
+      "use": "기존 설계/문서 구조 안내. 10월13~14일 설계 범위이며 현재 5종 평가 결과의 근거가 아님."
+    },
+    {
+      "path": "team-posture-scoring/README.md",
+      "use": "팀 코드 루트 안내"
+    },
+    {
+      "path": "mediapipe-pilot/README.md",
+      "use": "과거 파일럿 실행/교정 분류기 안내"
+    },
+    {
+      "path": "mediapipe-pilot/RESULTS.md",
+      "use": "과거 파일럿 검증 결과"
+    },
+    {
+      "path": "output/presentation-additions-20261022/design-catalog.md",
+      "use": "기존 발표 디자인 참고"
+    },
+    {
+      "path": "THREAD_HANDOFF_SQUAT_20261023.md",
+      "use": "과거 스쿼트 인계. 최신 측정 권위가 아님."
+    },
+    {
+      "path": "data/return-recheck-20261024/CAPTURE_PLAN.txt",
+      "use": "추가 확보 계획. 확보 완료 수량이 아님."
+    }
+  ],
+  "limitations": [
+    "5종 신뢰성목표미달. 최신오프라인학습후보미배포. 숄더규칙분절앱통합은점수모델개선아님.",
+    "스쿼트동일한사람 개발5/6 FP0/13이나개발사람부족게이트실패. 이전잘린입력4/6정정유지.",
+    "스쿼트Train그룹CV검출10/10→8/10, FP5/105→2/105 절충.",
+    "기존노출진단Test51행163항목. 스쿼트복귀Test정상6/오류0, 독립최종Test미개봉.",
+    "80칸중37빈칸/정확한80/20미달. 기존분할보존. 새확정스쿼트실패/심한0점추가0.",
+    "YTW독립후보는별도개발상태모델요구로라이브미활성화.",
+    "실제재테스트대기. 비활성상시동기화없음."
+  ],
+  "next_action": "사용자에게이번원시7회판단/점수계산일치와6회무릎간격감점원인보고. 새촬영/재시작/모델변경없음.",
+  "live_test": {
+    "url": "http://127.0.0.1:8791/",
+    "exercise": "squats",
+    "view": "front",
+    "loaded_code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+    "standing_state_model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+    "started_at_utc": "2026-10-24T12:47:21+00:00"
+  },
+  "live_test_analysis_evidence": [
+    "project-documents/live-test-20261024/index.html",
+    "project-documents/live-test-20261024/analysis.json"
+  ],
+  "live_test_analysis_limitations": [
+    "영상 없음: 실제 육안 횟수 및 자세 정답 검증 불가",
+    "스쿼트 기립 신뢰도×20은 검증된 복귀 실패 심각도 점수가 아님",
+    "플랭크 저장세션 없음",
+    "모델/라벨/분할/실서비스 수정 없음"
+  ],
+  "model_thread_update_received": {
+    "source_thread_id": "01a167e8-603b-7862-b7b1-80b8f557f8df",
+    "state": "current_reports_read",
+    "run": "output/return-cycle-aligned-v1-20261024",
+    "summary": "푸시업 복귀 시점 수정: 동일36Train 그룹CV 오류1/6→6/6, 정상오판4/30→0/30. 개발0행으로 채택게이트실패. 기존진단156항목예측유지+정상복귀7=163항목, 추가AI/Rule오판0/7/오류Test0. 스쿼트개발1/6유지. 미배포.",
+    "service_coordination": "라이브 테스트 보고서는 당시 배포 버전의 별도 결과로 보존."
+  },
+  "observation_fix": {
+    "evidence": [
+      "project-documents/observation-fix-20261024/RESULTS.txt",
+      "project-documents/observation-fix-20261024/verification.json",
+      "project-documents/observation-fix-20261024/tests.log",
+      "project-documents/observation-fix-20261024/app.patch"
+    ],
+    "files": [
+      "output/live-webcam-20261023/live_observation.py",
+      "output/live-webcam-20261023/movement.py",
+      "output/live-webcam-20261023/server.py",
+      "output/live-webcam-20261023/index.html"
+    ],
+    "model_changes": false,
+    "actual_user_retest_completed": false
+  },
+  "parallel_coordination": "project-coordination/PARALLEL_WORK.txt",
+  "parallel_threads": {
+    "shoulder": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "ytw": "01a16e10-2508-74c3-a737-31eb1a009558"
+  },
+  "pending_model_checkpoint": {
+    "source_thread_id": "01a167e8-603b-7862-b7b1-80b8f557f8df",
+    "run": "output/squat-fixed-reference-combined-v3-20261024",
+    "state": "current_pointer_reports_verified",
+    "summary": "같은1명19개개발 AI검출5/6 FP0/13, Rule1/6 FP0/13. 계산만바꾼통제2/6과재학습결합5/6구분. Train그룹CV검출10/10→8/10 FP5/105→2/105절충. 개발사람부족게이트실패/미배포.",
+    "production_replacement": false,
+    "ownership_confirmed": "원본담당은라이브/숄더/YTW미수정"
+  },
+  "exercise_integration": {
+    "evidence": [
+      "project-documents/exercise-integration-20261024/RESULTS.txt",
+      "project-documents/exercise-integration-20261024/verification.json",
+      "project-documents/exercise-integration-20261024/tests.log"
+    ],
+    "shoulder_rule_candidate_enabled": true,
+    "new_model_deployed": false,
+    "ytw_model_enabled": false,
+    "actual_user_retest_completed": false
+  },
+  "ytw_candidate_review": {
+    "state": "final_reports_read_deployment_held",
+    "evidence": [
+      "output/ytw-work-20261024/RESULTS.txt",
+      "output/ytw-work-20261024/verification.json",
+      "output/ytw-work-20261024/INTEGRATION.txt"
+    ],
+    "functional_tests": 17,
+    "scope": "Y→T→W 시간순서/관측/dense동일입력 어댑터 독립후보. 합성검사는정확도아님.",
+    "limits": [
+      "현재배포외 개발상태모델 신규활성화필요",
+      "영상없는497표본의 순서시도1개는실제횟수정답아님",
+      "기존Train재생은독립검증아님",
+      "자동창을수동승인으로넘기지않음. 총점보류.",
+      "현라이브YTW미지원유지"
+    ],
+    "next_action": "영상동반 미학습사람의 연속경계검증 및 자동시도 점수계약 검토. 모델담당과조율.",
+    "model_review_gate": {
+      "path": "project-coordination/model-review/YTW_VALIDATION_GATES_20261024.txt",
+      "status": "proposed_engineering_criteria_not_results_or_clinical_standards",
+      "proposal": "미학습2명/영상동반정상10회·음성20구간, 완료90%·허위5%·경계90%±2슬롯. 결과전동결·자동창별도계약검토필요.",
+      "immediate_work": "기존Train사람제외모델+연속영상정답개발실험을YTW/모델담당이조율",
+      "integration": "개발상태bundle미활성화유지/공통서비스변경없음"
+    }
+  },
+  "shoulder_live_retest": {
+    "authorization_source_thread": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "authorization_human_turn": "01a16e15-c95c-7ff3-9f31-f8143eff3884",
+    "started_at_utc": "2026-10-24T13:25:13.353469+00:00",
+    "generation": 1,
+    "exercise": "shoulder",
+    "view": "front",
+    "detector": "shoulder-bilateral-overhead-v1-candidate",
+    "collecting": false,
+    "saved_session_folder": "output/live-webcam-20261023/sessions/1792848383011095301",
+    "samples": 762,
+    "system_count": 0,
+    "finalization_verified": true,
+    "video_saved": false
+  },
+  "readiness_gate": {
+    "evidence": [
+      "project-documents/readiness-gate-20261024/RESULTS.txt",
+      "project-documents/readiness-gate-20261024/verification.json",
+      "project-documents/readiness-gate-20261024/tests.log"
+    ],
+    "tests_passed": 65,
+    "model_changes": false,
+    "new_capture_started": false
+  },
+  "ytw_followup_received": {
+    "run": "output/ytw-work-20261024/logo-v1",
+    "state": "RESULTS_and_verification_read",
+    "scope": "기존설정고정 사람전체제외 개발실험/독립평가아님",
+    "gates_passed": false,
+    "limitations": [
+      "설정선택은전체4명노출",
+      "자연음성1개뿐",
+      "정밀경계/정상품질정답없음",
+      "시간경계및검출정확도수치미계산",
+      "점수모델평가/배포없음"
+    ],
+    "next_action": "YTW담당boundary-v2추가원본/정밀경계검토진행"
+  },
+  "shoulder_restart_request": {
+    "source_thread_id": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "human_turn_id": "01a16e19-f5c2-7882-922c-a3a7160e40ea",
+    "authorized": true,
+    "collecting": false,
+    "readiness": "capture_interrupted_by_server_termination_not_normally_saved",
+    "generation": 1,
+    "started_at_utc": "2026-10-24T13:35:13.750069+00:00"
+  },
+  "ytw_followup_in_progress": {
+    "run": "output/ytw-work-20261024/boundary-v2",
+    "state": "RESULTS_read_completed",
+    "evidence": "output/ytw-work-20261024/boundary-v2/RESULTS.txt",
+    "limitations": [
+      "노출개발자연음성13개/정밀경계불확실초안",
+      "±0.2초확실16/30·가능27/30구분",
+      "미학습사람0/모델미배포",
+      "추가촬영안은계획이며미실행"
+    ],
+    "next_action": "영상동반미학습2명및음성유형보강과경계오차개선검토"
+  },
+  "squat_remaining_diagnostic": {
+    "evidence": "output/squat-remaining-diagnostic-v4-20261024/RESULTS.txt",
+    "state": "diagnostic_report_read_pointer_unchanged",
+    "summary": "잔여r09와정상높이특징중첩/문턱단독조정시정상r12오판절충확인. 모델·문턱·라벨미변경. 추가QEVD8Train원본검토후확정실패/학습추가0.",
+    "limitations": [
+      "독립성능근거아님/5종목표미달/미배포",
+      "다른사람완결미세실패와몸통전경만있는정상복귀구별정답필요",
+      "기존분할37빈칸/동일진단Test보존/최종Test미개봉"
+    ]
+  },
+  "live_incident": {
+    "evidence": [
+      "project-documents/live-incident-20261024/incident.txt",
+      "project-documents/live-incident-20261024/verification.json",
+      "project-documents/live-incident-20261024/tests.log",
+      "project-documents/live-incident-20261024/server-recovered.log"
+    ],
+    "previous_capture_saved": false,
+    "collecting": false,
+    "server_pid": 111924
+  },
+  "start_reservation": {
+    "evidence": [
+      "project-documents/start-reservation-20261024/RESULTS.txt",
+      "project-documents/start-reservation-20261024/verification.json",
+      "project-documents/start-reservation-20261024/tests.log"
+    ],
+    "server_pid": 118001,
+    "state": {
+      "state": "started",
+      "request_id": null,
+      "exercise": null,
+      "view": null,
+      "remaining": null,
+      "reason": null
+    },
+    "collecting": false,
+    "model_changes": false,
+    "system_count_at_check": 7,
+    "finalized_session": "output/live-webcam-20261023/sessions/1792849624147364792",
+    "live_verification": "project-documents/start-reservation-20261024/live-session-verification.json"
+  },
+  "ytw_v3_update": {
+    "run": "output/ytw-work-20261024/y-entry-v3",
+    "state": "model_owner_intermediate_review_received_pending_direct_artifact_read",
+    "evidence": [
+      "output/ytw-work-20261024/y-entry-v3/selection.frozen.json",
+      "output/ytw-work-20261024/y-entry-v3/recheck.json"
+    ],
+    "limitation": "경계후보의전체검출손실보고/채택보류. 후속v4는노출재검증후설계로독립평가아님. 미배포/공통파일미변경."
+  },
+  "shoulder_success_review": {
+    "evidence": "output/shoulder-work-20261024/success-1792849624147364792/RESULTS.txt",
+    "state": "independent_replay_report_read",
+    "counts": "저장7/평가7/재생7일치",
+    "observation": "완료7구간비중복/각100%실제슬롯및필요8관절유효",
+    "AI": "평균48.0/55부분합. 복귀25+몸통20정상한등급학습으로미평가/전체총점null",
+    "Rule": "평균89.3/100; 부분합AI와직접비교불가",
+    "remaining": "검출하단과점수하단정의/끝창전환영향가능성추가검토. 실제점수정답/육안7회검증아님.",
+    "production_model_changed": false
+  },
+  "shoulder_missing_AI_work": {
+    "state": "full_review_done_normal_reference_fit_grade_support_unmet",
+    "source_thread_id": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "user_intent_reported": "숄더AI누락lower_return/몸통도평가가능하도록개선·통합/모델담당과협업·결과공유",
+    "scope": "숄더담당이항목별지원/라벨/특징감사와독립후보. 통합담당은후보수령후입력계약/검증/표시검토. 현재배포앱유지.",
+    "limits": [
+      "정상만학습한45점지원미완료",
+      "새특징을기존정상전용모델에입력하지않음",
+      "추가촬영vs기존자료검토사용자선택은숄더스레드에서질문중",
+      "촬영계획은미실행/중복질문·자동카메라시작없음"
+    ],
+    "evidence": [
+      "output/shoulder-work-20261024/phase-model-v1/RESULTS.txt",
+      "output/shoulder-work-20261024/phase-model-v1/INTEGRATION.txt",
+      "output/shoulder-common-support-audit-20261024/RESULTS.txt"
+    ],
+    "result": "초기준비/실제상승/첫복귀 입력v2+guarded어댑터21기능검사. 팀Train25/31특징/실제7회특징. 오류학습모델없어미활성화."
+  },
+  "ytw_latest_review": {
+    "run": "output/ytw-work-20261024/y-entry-v4.1",
+    "state": "RESULTS_read_activation_held",
+    "scope": "기존전체노출개발/전문가미확정참조",
+    "result": "음수창0/전체21시도유지. 단계경계확실19/30,Y조기3→0이나지연0→1절충. 자연음성허위0/13.",
+    "limits": [
+      "독립검증아님",
+      "경계/완료/음성수/미학습사람기준미달",
+      "13기능검사통과는정확도아님",
+      "개발상태bundle라이브미활성화"
+    ],
+    "integration": "공통앱변경없이보류. 숄더누락AI개선과소유권분리유지."
+  },
+  "shoulder_common_support_audit": {
+    "evidence": "output/shoulder-common-support-audit-20261024/RESULTS.txt",
+    "state": "report_read_support_missing",
+    "scope": "현재혼합오프라인입력/배포학습건수와구분",
+    "support": "하단front104정상/오류0,몸통front75+앉은35정상/오류0",
+    "review": "추가원본검토확정몸통오류0/학습0,기존Test/라벨/역할보존",
+    "limits": [
+      "스쿼트오류로학습한공유몸통후보를숄더지원근거로쓰지않음",
+      "팀Train특징추출11/31→25/31은오류등급학습아님",
+      "45점미평가를Rule/기립확률로대체하지않음"
+    ],
+    "next_action": "숄더담당입력특징개선과실제숄더오류정답보강을분리해후보근거수령. 현재라이브미지원계약유지"
+  },
+  "shoulder_full_review": {
+    "state": "full150_disposition_merge_and_source_role_audit_complete_scoring_unmet",
+    "source_thread_id": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "reported_inventory_videos": 150,
+    "scope": "전체영상선별+선택회차검토완료/모든반복·프레임전문가확정아님",
+    "proposed_ownership": {
+      "model_evaluation": "subject001~012",
+      "shoulder": "subject013~026",
+      "documentation_integration": "검토결과·실모델·검증근거수령후입력계약검토및통합"
+    },
+    "new_artifacts": "full-review-v1 (담당별독립경로/최종보고대기)",
+    "policy": [
+      "추가촬영우선요청중단",
+      "기존라벨/원본역할/분할불변",
+      "해시/뷰/관측/항목라벨/사용미사용사유기록",
+      "검토완료·학습완료·개발/진단/최종검증·배포를구분",
+      "현재카메라/서비스/공통앱변경없음"
+    ],
+    "evidence": [
+      "output/shoulder-work-20261024/full-review-v1/REVIEW_RESULTS.txt",
+      "output/shoulder-work-20261024/full-review-v1/full150-verification.frozen.json",
+      "output/shoulder-work-20261024/full-review-v1/source-dispositions.csv"
+    ],
+    "inventory_verified": 150,
+    "reviewed_by_shoulder": 78,
+    "model_owner_merge_pending": 0,
+    "split_counts": {
+      "train": 90,
+      "validation": 30,
+      "historically_designated_test": 30
+    },
+    "new_fit_completed": false,
+    "production_changed": false,
+    "limits": [
+      "18항목행은18원본아님/150전체학습아님",
+      "정상참조모델일반화미달/등급·점수·오류확률비활성화",
+      "모델72라벨은v3입력동결후전달되어그후보미편입",
+      "측면근측팔20라벨을양팔등급으로확대하지않음",
+      "validation부분1점초안학습미편입",
+      "하단/몸통0·1·2채점·독립검증·서비스통합미완료"
+    ],
+    "screening_vs_detailed": "전체선별완료보고/72개정밀라벨완결및병합은진행중",
+    "reviewed_by_model_owner": 72,
+    "source_disposition_merge": "150통합사유표/선택라벨동결완료",
+    "actual_reference_v3_fit_Train_item_rows": 18
+  },
+  "shoulder_normal_reference": {
+    "evidence": "output/shoulder-work-20261024/normal-reference-v1/RESULTS.txt",
+    "state": "actual_normal_only_training_done_generalization_failed_deployment_held",
+    "scope": "정상참조OneClassSVM/등급·점수·오류확률출력안함",
+    "training_rows": "하단2/준비대비몸통2/독립4관절몸통6",
+    "person_excluded_normal_inliers": "0/2,0/2,2/6",
+    "limits": [
+      "오류0/1학습확정0/AI45점미활성화",
+      "캐시미포함·시각불일치는원본사용불가판정이아님",
+      "시간일치validation입력0/최종Test미개봉",
+      "phase-v2 25/31은특징산출수이며정확복귀시각일치수아님",
+      "v3별도복귀계약보강/15기능검사는정확도아님"
+    ],
+    "production_changed": false
+  },
+  "shoulder_validation_partial_draft": {
+    "evidence": "output/shoulder-common-support-audit-20261024/full-review-v1/dense-visual-labels.journal.json",
+    "source": "subject_012_shoulder_bad_front",
+    "split": "validation",
+    "observed_interval_seconds": [
+      1.8,
+      2.4
+    ],
+    "status": "AI보조부분하단복귀1점초안/전문가미확정/미학습",
+    "comparison": "같은사람good_front1.6~2.0초정상복귀초안대조",
+    "limits": [
+      "초기top시작으로준비기준필요특징보류",
+      "validation을Train으로이동하지않음",
+      "오류초안발견을실제학습오류지원완료로보지않음",
+      "기존라벨/분할/배포모델불변"
+    ]
+  },
+  "shoulder_model72_review": {
+    "evidence": "output/shoulder-common-support-audit-20261024/full-review-v1/REVIEW_RESULTS.txt",
+    "lower_return_drafts": {
+      "normal": 65,
+      "partial": 1,
+      "held": 6
+    },
+    "frontal_trunk_drafts": {
+      "normal": 24,
+      "other_projection_held": 48
+    },
+    "fitted_rows": 0,
+    "new_Train_errors": 0,
+    "validation_partial_held_from_fit": true,
+    "protocol_correction": "005badside press초안철회/nonpress정정/해당라벨fit없음",
+    "limits": [
+      "AI보조선택구간초안/모든반복정답아님",
+      "기존분할·라벨보존/37빈칸미해결/최종Test미개봉",
+      "실제fit·점수지원·배포와구분"
+    ]
+  },
+  "squat_pose_alignment_v5": {
+    "evidence": "output/squat-pose-alignment-v5-20261024/RESULTS.txt",
+    "state": "report_read_diagnostic_only",
+    "review": "r09/r05/r12 원본-사용좌표 정렬 검토,기존Train9원본추가선별",
+    "new_partial_draft": 1,
+    "eligible_new_training_failures": 0,
+    "fitted_rows": 0,
+    "limits": [
+      "선택r09큰오연결미확인/r05정상과목표경계추가검토필요",
+      "005부분초안은초기기립없어training_grade=null",
+      "원래라벨/개발6오류분모/기존분할37빈칸/같은Test163보존",
+      "새학습·성능향상·배포로보고하지않음"
+    ]
+  },
+  "shoulder_observation_return_v4": {
+    "state": "causal_return_queue_reviewed_and_independently_replayed",
+    "run": "output/shoulder-work-20261024/observation-return-v4-20261025",
+    "owners": {
+      "shoulder": "어깨오연결품질보류/첫하단복귀경계/팔누락과독립적인4관절몸통특징",
+      "model_evaluation": "초기준비없는부분복귀의목표/학습적합성독립계약",
+      "documentation": "결과·검증·인터페이스수령후통합조율"
+    },
+    "input_scope": "기존34개관절캐시우선/중복GPU추출없음",
+    "policy": [
+      "원본/기존라벨/분할/모델불변",
+      "012badfront validation을Train으로이동하지않음",
+      "카메라/라이브변경없음",
+      "관측보류를오류등급으로변경하지않음"
+    ],
+    "evidence": [
+      "output/shoulder-work-20261024/observation-return-v4-20261025/final-v1/INTEGRATION.txt",
+      "project-documents/shoulder-v4-integration-20261025/RESULTS.txt",
+      "project-documents/shoulder-v4-integration-20261025/verification.json"
+    ],
+    "body_features_ready": 7,
+    "lower_features_ready": 0,
+    "attempts": 7,
+    "all_arms_removed_body_identical": true,
+    "live_changed": false,
+    "score_enabled": false,
+    "suffix_context_evidence": "project-documents/shoulder-v4-integration-20261025/context-verification.json",
+    "lower_features_ready_with_actual3_slot_suffix": 7,
+    "body_features_ready_with_original_window": 7,
+    "context_provenance": "동일원시기록의실제후속3슬롯/다음구간미사용/원시sha불변",
+    "queue_evidence": "project-documents/shoulder-v4-integration-20261025/queue-verification.json",
+    "causal_ready": 7,
+    "replayed_count": 7,
+    "delay_slots": [
+      1,
+      2
+    ],
+    "early_end_held_without_future": true,
+    "body_window_preserved": true,
+    "independent_model_owner_contract_review": {
+      "evidence": "project-coordination/model-review/shoulder-context-v1-20261025.json",
+      "scope": "시간순서/3슬롯상한/원래peak/몸통창유지/점수보류계약검토",
+      "interpretation": "같은노출7회관절진단. 영상정답/정확도/45점모델지원/라이브배포승인아님"
+    }
+  },
+  "missing_ready_target_contract": {
+    "evidence": "output/return-target-contract-v1-20261025/CONTRACT.txt",
+    "state": "contract_read_not_a_trained_scoring_model",
+    "criteria": [
+      "observed_ready_relative_lower_return:동일원본선행준비필수",
+      "observed_anatomical_lower_turn:초기준비없어도관측상단→하강→하단반전→다음상승시각초안허용/별도schema은행필요"
+    ],
+    "actual_validation_events": 2,
+    "fitted_rows": 0,
+    "limitations": [
+      "새해부학적extractor미등록/추적QA필요",
+      "012validation역할유지/기존head재사용금지",
+      "quality.passed를원본추적QA로승격하지않음",
+      "45점지원완료/배포허가아님"
+    ]
+  },
+  "shoulder_grade_completion_request": {
+    "source_thread_id": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "state": "human_authorized_continued_model_work_and_integration_reported",
+    "owners": {
+      "shoulder": "anatomical_lower_turn추출기/원본QA/기존Train선택검토",
+      "model_evaluation": "실제Train오류회차정밀검토/등급지원/학습/사람제외검증",
+      "documentation_integration": "모델수령후API/후속queue/점수표시/세션저장·재생검증/라이브통합"
+    },
+    "notify_when": "검증모델라이브적용및실제재테스트준비가완료됐을때",
+    "current_status": "45점채점미지원유지/신규모델및카메라수집없음",
+    "background_sync": "별도상시감시예약없음. 담당의의미있는상태메시지와현재작업중파일확인으로조율.",
+    "owner_followup_mechanism_reported": {
+      "owner": "shoulder",
+      "kind": "15분간격후속실행",
+      "automation_id_reported": "45",
+      "status": "담당메시지및RESULTS설정완료보고/통합스레드별도중복예약생성안함",
+      "notification_intent": "준비완료·중요차단외반복알림억제"
+    }
+  },
+  "shoulder_anatomical_grade_support_v1": {
+    "evidence": "output/shoulder-work-20261024/grade-support-v1-20261025/RESULTS.txt",
+    "state": "feature_and_causal_event_path_verified_no_grade_model",
+    "functional_tests": 22,
+    "actual_validation_events_eligible": 2,
+    "fitted_rows": 0,
+    "new_Train_error_labels": 0,
+    "limits": [
+      "60사건문맥프레임QA는AI보조검토/전문가정답아님",
+      "validation2는학습이동안함",
+      "같은노출2개사건검출은독립경계/등급정확도아님",
+      "최종후속상승없는반전사건한계유지",
+      "019추가의심구간경계보류/정상등급변경안함",
+      "호환다등급모델없어45점미지원"
+    ],
+    "production_changed": false
+  },
+  "latest_shoulder_test_request": {
+    "human_source_thread": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "human_turn": "01a16e8e-2784-7100-8b5f-6ccadab79062",
+    "reservation": {
+      "state": "started",
+      "request_id": null,
+      "exercise": null,
+      "view": null,
+      "remaining": null,
+      "reason": null
+    },
+    "collecting": false,
+    "scope": "기존지원항목/횟수/관측/저장,AI45점미지원유지",
+    "generation": 3,
+    "system_count_at_check": 8,
+    "finalized_session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792856314599071156",
+    "verification": "project-documents/shoulder-live-20261025/session-1792856314599071156-verification.json"
+  },
+  "squat_source_alias_audit_v6": {
+    "evidence": "output/squat-source-alias-audit-v6-20261025/RESULTS.txt",
+    "state": "report_read_correction_applied",
+    "inventory": "150파일/145고유/5중복쌍",
+    "correction": "이전15Train측면파일검토는14고유영상",
+    "leakage_guard": "026badside_train=015goodside_validation중복hash를향후Train격리. 현적격Train에는없음/기존배정불변",
+    "model_or_fit_changed": false,
+    "scope": "스쿼트자료무결성감사/정확도추가개선아님/숄더이미지근거아님"
+  },
+  "latest_squat_live_test": {
+    "authorization_thread": "01a167e8-603b-7862-b7b1-80b8f557f8df",
+    "human_turn": "01a16e92-f908-74f3-ae1f-ded31951227b",
+    "preflight": "project-documents/squat-live-20261025/preflight.json",
+    "state": {
+      "collecting": false,
+      "exercise": "shoulder",
+      "view": "front",
+      "generation": 3,
+      "loaded_code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+      "standing_state_model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+      "start_reservation": {
+        "state": "waiting",
+        "request_id": "ec60d861b6de48f5b417b4935dd07d6a",
+        "exercise": "squats",
+        "view": "front",
+        "remaining": null,
+        "reason": null
+      },
+      "finalizing": false,
+      "saved_session_folder": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792856314599071156"
+    },
+    "limitations": "모델 후보 미배포, 준비 관측 후 자동 시작, 실제 촬영 여부는 collecting으로 확인"
+  },
+  "session_reset_fix": {
+    "evidence": "project-documents/session-reset-20261025/verification.json",
+    "report": "project-documents/session-reset-20261025/RESULTS.txt",
+    "modified_files": [
+      "output/live-webcam-20261023/index.html"
+    ],
+    "limitations": "새 실제 운동의 횟수/점수는 사용자 수행 후 확인. UI 회귀검사는 합성 응답이며 정확도 검증이 아님.",
+    "state": {
+      "collecting": false,
+      "finalizing": false,
+      "generation": 3,
+      "exercise": "shoulder",
+      "start_reservation": {
+        "state": "waiting",
+        "request_id": "90e00f0c1a4f45cf84eda878f4647ffd",
+        "exercise": "squats",
+        "view": "front",
+        "remaining": null,
+        "reason": null
+      },
+      "loaded_code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+      "standing_state_model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+      "saved_session_folder": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792856314599071156"
+    }
+  },
+  "shoulder_source_alias_audit": {
+    "report": "output/shoulder-work-20261024/source-alias-audit-v1-20261025/RESULTS.txt",
+    "files": 150,
+    "unique_byte_videos": 147,
+    "duplicate_pairs": 3,
+    "cross_split_exact_hash_duplicates": 0,
+    "training_files": 90,
+    "training_unique_byte_videos": 87,
+    "limitations": "정확한 해시 중복만 검사. 재인코딩·시각적 동일성은 미검증. 150독립 영상/반복/학습 건수로 표현하지 않음. 45점 AI 검증 모델 미완성.",
+    "source_group_policy": "동일 해시는 동일 원본 그룹. 023bad_diagonal/good_front 구도는 실제 영상 QA 필요.",
+    "live_model_or_capture_changed": false
+  },
+  "latest_squat_reservation_observation": {
+    "collecting": false,
+    "reason": "3분 동안 준비되지 않아 시작 예약 자동 취소",
+    "new_squat_session_created": false
+  },
+  "ytw_readiness_v5": {
+    "report": "output/ytw-work-20261024/readiness-v5-20261025/RESULTS.txt",
+    "integration": "output/ytw-work-20261024/readiness-v5-20261025/INTEGRATION.txt",
+    "status": "isolated_candidate_not_deployed",
+    "new_function_tests": 15,
+    "preserved_development_attempts": 21,
+    "development_sources": 7,
+    "prefix_causality_checked_events": 21,
+    "unobserved_false_ready": {
+      "Train_frames": 22,
+      "saved_session_frames": 293,
+      "current_ready_true": 0
+    },
+    "unchanged_limits": {
+      "phase_boundary_definite": "19/30",
+      "completion_boundary_definite": "7/10",
+      "Y_late_cases": 1,
+      "natural_noncompletion_episodes": 13,
+      "unseen_people": 0
+    },
+    "scope": "현재 관측/준비와 과거 시도 증거 분리. 후보/확인 시각 분리. 기존 dense 점수 입력 동일. 모델/등급/총점 지원 승인 아님. 영상 없는 저장 세션 재생은 실제 횟수 정답 평가 아님.",
+    "production_enabled": false,
+    "model_fit_or_live_capture_changed": false
+  },
+  "latest_squat_diagnosis": {
+    "report": "project-documents/squat-live-20261025/session-1792857230761398358/RESULTS.txt",
+    "evidence": "project-documents/squat-live-20261025/session-1792857230761398358/analysis.json",
+    "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792857230761398358",
+    "sample_count": 972,
+    "seconds": 97.1,
+    "system_count": 2,
+    "replay_count": 2,
+    "observation_ready_frames": 405,
+    "uncertain_attempts": 2,
+    "runtime_integrity": {
+      "loaded": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+      "current_source": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+      "fixed_snapshot": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+      "initial_squat_loaded": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+      "standing_state": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+      "first_test_standing_state": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57"
+    },
+    "limitations": [
+      "영상 없음: 실제 수행 횟수/깊이/복귀 정답 확인 불가",
+      "관측 중단을 실제 복귀 실패로 라벨링하지 않음",
+      "원시 재생 일치는 정확도 검증이 아님",
+      "학습 데이터 혼입 여부는 모델 담당 원본 감사와 구분"
+    ],
+    "rep2_trace": {
+      "evidence": "project-documents/squat-live-20261025/session-1792857230761398358/rep2-tick-trace.json",
+      "overlap_tick": 60425,
+      "drop": 0.08854,
+      "bottom_confirmation_and_return_first_slot_same_sample": true,
+      "baseline_or_scale_updated": false,
+      "common_code_modified": false,
+      "limitation": "실제 자세 정답/오검출 여부는 영상없어 미확정"
+    }
+  },
+  "squat_transition_fix": {
+    "report": "project-documents/squat-transition-fix-20261025/RESULTS.txt",
+    "replay": "project-documents/squat-transition-fix-20261025/replay.json",
+    "tests": "project-documents/squat-transition-fix-20261025/tests.log",
+    "function_regression_tests": 51,
+    "saved_sessions_replayed": 13,
+    "counts_all_equal": true,
+    "changed_sessions": [
+      "1792857230761398358"
+    ],
+    "deployed": true,
+    "limitations": "영상없는진단,실제횟수정답/정확도미확정. 최신짧은회차는제거아닌1tick지연. 모델/문턱불변.",
+    "deployment": "project-documents/squat-transition-fix-20261025/deployment.json",
+    "ui_tests": 24
+  },
+  "squat_motion_recovery": {
+    "candidate": "project-documents/squat-motion-recovery-20261025/movement_candidate.py",
+    "replay": "project-documents/squat-motion-recovery-20261025/replay.json",
+    "train_replay": "project-documents/squat-motion-recovery-20261025/train-replay.json",
+    "synthetic_tests": "project-documents/squat-motion-recovery-20261025/test_motion_recovery.py",
+    "saved_sessions": 13,
+    "unchanged_saved_sessions": 12,
+    "latest_stored_replay_count_change": "2→1",
+    "Train_continuous_sources": 7,
+    "Train_count_before_and_candidate": 63,
+    "new_capture_started": false,
+    "deployed": true,
+    "limitations": "짧은회차가실제FP인지영상없어확정불가. 6슬롯무릎누락유예는아직공학후보/자연Train누락검토대기. Train88기존복귀라벨을횟수정답으로쓰지않음.",
+    "report": "project-documents/squat-motion-recovery-20261025/RESULTS.txt",
+    "verification": "project-documents/squat-motion-recovery-20261025/verification.json",
+    "stage_regression_tests": 91,
+    "ui_tests": 24,
+    "team_Train_sources": 17,
+    "V10": "2→4/영상참조5",
+    "V18": "1→1/얕은영상참조4",
+    "limits": "7slot장기누락과얕은일부시도미해결/관측창별점수분모구분/독립Test아님",
+    "deployment": "project-documents/squat-motion-recovery-20261025/deployment.json",
+    "live_test": "project-documents/squat-motion-recovery-20261025/live-test-state.json"
+  },
+  "squat_only_human_request": {
+    "source_thread": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+    "human_turn": "01a16eab-d989-7061-9baf-2aec4967a0cb",
+    "quote": "숄더 프레스는 일단 작업을 중단한다. 지금은 스쿼트만 진행"
+  },
+  "latest_squat_retest": {
+    "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792858741575615610",
+    "report": "project-documents/squat-retest-20261025/1792858741575615610/RESULTS.txt",
+    "analysis": "project-documents/squat-retest-20261025/1792858741575615610/analysis.json",
+    "samples": 690,
+    "seconds": 68.9,
+    "saved_count": 7,
+    "replay_count": 7,
+    "scores_reproduced": true,
+    "arithmetic_passed": true,
+    "mean_ai": 73.4,
+    "mean_rule": 73.6,
+    "knee_recoveries": 0,
+    "uncertain_attempts": 1,
+    "human_actual_count_confirmed": false,
+    "judgment": "원시 관절 기록상 7개의 구분되는 하강-복귀 주기로 판단. 영상 육안 정답과 동치 아님.",
+    "limitations": [
+      "영상 없음: 원시 관절에 근거한 7회 판단이며 실제 영상 육안 정답 검증은 불가",
+      "동일 원시 재생/산술 일치는 실제 자세 평가 정확도의 증거가 아님",
+      "이번 완료 구간은 무릎 추적이 유지되어 짧은 누락 복구의 실사용 검증 사례는 없음"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+서버 접속 단절 조사 — 2026-10-24
+Chrome ERR_CONNECTION_REFUSED / 8791 리스너 및 서버 프로세스 없음.
+이전 실행 세션21181 종료코드143(SIGTERM). 발신 주체 미확인.
+로그: [ WARN:0@437.275] cap_v4l.cpp requestBuffers VIDEOIO USB webcam: failed VIDIOC_REQBUFS: errno=19 (No such device)
+이어 새 inference_feedback_manager 로그로 카메라 재연결 시도 확인.
+SIGTERM과 USB 단절의 인과는 확정하지 않는다.
+대리 시작한 새 숄더 측정의 정상 저장 세션 없음. 마지막 정상 저장1792848383011095301(이전762표본0회).
+기존 camera_loop는 오류 후 STATE.samples를 저장 없이 초기화하고 있었음.
+현재 서비스 종료 상태에서 복구 및 이후 중단 보존 보호 구현. 새 운동은 자동 시작하지 않음.
