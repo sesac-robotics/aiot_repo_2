@@ -13,5 +13,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install Qt system runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libgl1 libopengl0 libxkbcommon0
       - run: python -m pip install pytest==9.1.1 -r GUI/FitHelper/requirements-desktop.txt
       - run: python -m pytest -q tests/integration/test_gui.py tests/integration/test_evaluation_gui.py
