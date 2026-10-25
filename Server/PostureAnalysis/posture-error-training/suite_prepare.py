@@ -33,12 +33,13 @@ _worker_resources = (
 
 
 def init_worker():
-    import atexit
+    from multiprocessing.util import Finalize
 
     import cv2
     import mediapipe as mp
 
-    atexit.register(_worker_resources.close)
+    # multiprocessing workers use their own finalizer path, including fork exits.
+    Finalize(None, _worker_resources.close, exitpriority=10)
     cv2.setNumThreads(1)
     _worker_resources.pose = mp.solutions.pose.Pose(
         model_complexity=1,
