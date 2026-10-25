@@ -69,3 +69,8 @@ g++ -std=c++17 -Wall -Wextra -Werror -pedantic -I . tests/firmware/test_connecti
 ```
 
 새 브랜치에서 검증하고 Draft PR로 검토합니다. 통합은 기능 완성이나 전체 하드웨어 검증과 같지 않습니다. AI→백엔드 반복 결과 callback, 분산 상태 변경의 완전한 원자성, 실제 카메라·GPU·다중 PC 검증은 별도 항목입니다. 메인 반영 전에는 소유 담당자의 API/DB/하드웨어 검토가 필요합니다.
+
+
+## 원본 브랜치별 변경 기록
+
+[브랜치 통합·수정 기록](branch-change-records/README.md)에서 원본 8개 기능 브랜치와 main의 고정 커밋, 병합 방식, 통합 후 직접 수정, 적용 규칙 원문과 남은 불일치를 확인할 수 있습니다.
