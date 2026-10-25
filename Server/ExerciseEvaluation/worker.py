@@ -31,7 +31,18 @@ def final_response(adapter, kind, epoch, meta):
     if adapter and kind == "score" and epoch == meta["epoch"]:
         with contextlib.redirect_stdout(sys.stderr):
             response["repetitions"] = adapter.flush()
-            response["movement"] = adapter.snapshot()["movement"]
+            if hasattr(adapter, "finalize_recording"):
+                adapter.finalize_recording()
+            snapshot = adapter.snapshot()
+            response["movement"] = snapshot["movement"]
+            for key in (
+                "assessment_summary",
+                "recording",
+                "joint_quality",
+                "scoring_readiness",
+            ):
+                if key in snapshot:
+                    response[key] = snapshot[key]
     return response
 
 
@@ -57,6 +68,23 @@ def main():
                 )
                 output.flush()
                 break
+            if meta.get("command") == "reset_motion":
+                with contextlib.redirect_stdout(sys.stderr):
+                    if adapter and kind == "score" and epoch == meta["epoch"]:
+                        adapter.reset_motion()
+                        snapshot = adapter.snapshot()
+                    else:
+                        snapshot = {}
+                output.write(
+                    json.dumps(
+                        {**meta, **snapshot, "motion_reset": True},
+                        ensure_ascii=False,
+                        allow_nan=False,
+                    )
+                    + "\n"
+                )
+                output.flush()
+                continue
             try:
                 with contextlib.redirect_stdout(sys.stderr):
                     import numpy as np
@@ -71,7 +99,18 @@ def main():
                             if kind == "score":
                                 from .score_adapter import ScoreAdapter
 
-                                adapter = ScoreAdapter(exercise)
+                                adapter = ScoreAdapter(
+                                    exercise,
+                                    session_context={
+                                        "session_id": meta.get("session_id")
+                                        or __import__("uuid").uuid4().hex,
+                                        "generation": meta["generation"],
+                                        "epoch": meta["epoch"],
+                                    },
+                                )
+                                adapter.live_enabled = meta.get(
+                                    "provisional_scores", True
+                                )
                             elif kind == "correction":
                                 from .correction_adapter import (
                                     CorrectionAdapter,
@@ -85,7 +124,11 @@ def main():
                     if load_error:
                         raise RuntimeError(load_error)
                     frame = np.frombuffer(raw, np.uint8).reshape(meta["shape"])
-                    result = adapter.process(frame, meta["timestamp"])
+                    result = (
+                        adapter.process(frame, meta["timestamp"], meta)
+                        if kind == "score"
+                        else adapter.process(frame, meta["timestamp"])
+                    )
                 if result is None:
                     continue
                 response = {

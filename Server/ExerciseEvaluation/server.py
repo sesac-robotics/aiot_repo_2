@@ -1,16 +1,16 @@
-"""측정 시작을 명시적으로 요청하는 로컬 통합 화면과 HTTP API를 제공합니다."""
+"""기본 GUI의 자세 점수 모드를 위한 로컬 HTTP API를 제공합니다."""
 
 import argparse
 import json
 import os
+import signal
 import sys
+import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 from .coordinator import Coordinator
-
-WEB = Path(__file__).with_name("web")
+from .score_recording import ScoreRecordingReader
 
 
 def make_server(port, coordinator):
@@ -36,7 +36,25 @@ def make_server(port, coordinator):
             )
 
         def do_GET(self):
-            if self.path == "/api/state":
+            parsed = urlsplit(self.path)
+            if parsed.path == "/api/recordings":
+                self.json(200, {"recordings": ScoreRecordingReader().list()})
+            elif parsed.path.startswith("/api/recordings/"):
+                try:
+                    query = parse_qs(parsed.query)
+                    self.json(
+                        200,
+                        ScoreRecordingReader().read(
+                            parsed.path[len("/api/recordings/") :],
+                            offset=int(query.get("offset", ["0"])[0]),
+                            verify=query.get("verify", ["0"])[0] == "1",
+                        ),
+                    )
+                except FileNotFoundError:
+                    self.json(404, {"error": "기록을 찾을 수 없습니다."})
+                except (OSError, ValueError) as exc:
+                    self.json(400, {"error": str(exc)})
+            elif self.path == "/api/state":
                 self.json(200, coordinator.snapshot())
             elif self.path == "/api/config":
                 self.json(200, {"fixed_mode": coordinator.fixed_mode})
@@ -48,18 +66,14 @@ def make_server(port, coordinator):
                     if data
                     else self.json(404, {"error": "카메라 대기 중입니다."})
                 )
-            elif self.path in ("/", "/app.js", "/style.css"):
-                name = {
-                    "/": "index.html",
-                    "/app.js": "app.js",
-                    "/style.css": "style.css",
-                }[self.path]
-                mime = {
-                    "/": "text/html; charset=utf-8",
-                    "/app.js": "text/javascript; charset=utf-8",
-                    "/style.css": "text/css; charset=utf-8",
-                }[self.path]
-                self.send(200, (WEB / name).read_bytes(), mime)
+            elif self.path == "/":
+                self.json(
+                    200,
+                    {
+                        "mode": "score",
+                        "message": "기본 GUI의 자세 점수 모드에서 실행합니다.",
+                    },
+                )
             else:
                 self.json(404, {"error": "없는 경로입니다."})
 
@@ -102,25 +116,27 @@ def make_server(port, coordinator):
     return ThreadingHTTPServer(("127.0.0.1", port), Handler)
 
 
-def main(fixed_mode=None):
+def main(fixed_mode="score"):
     """화면만 먼저 열고 사용자가 시작하기 전에는 카메라·모델을 열지 않습니다."""
     parser = argparse.ArgumentParser(
-        description="ESP32·웹캠 운동 교정·점수 실행"
+        description="기본 GUI용 자세 점수 전용 서버"
     )
     parser.add_argument("--port", type=int, default=8790)
-    parser.add_argument(
-        "--correction-python",
-        default=os.environ.get("CORRECTION_PYTHON", sys.executable),
-    )
     parser.add_argument(
         "--score-python", default=os.environ.get("SCORE_PYTHON", sys.executable)
     )
     args = parser.parse_args()
     coordinator = Coordinator(
-        {"correction": args.correction_python, "score": args.score_python},
+        {"score": args.score_python},
         fixed_mode=fixed_mode,
     )
     server = make_server(args.port, coordinator)
+    signal.signal(
+        signal.SIGTERM,
+        lambda *_: threading.Thread(
+            target=server.shutdown, daemon=True
+        ).start(),
+    )
     print(
         f"http://127.0.0.1:{server.server_port} · 시작 버튼을 누르기 전에는 촬영하지 않습니다.",
         flush=True,

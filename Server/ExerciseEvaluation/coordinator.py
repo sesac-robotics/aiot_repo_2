@@ -1,5 +1,6 @@
 """카메라 한 대의 실제 관측을 독립된 교정·점수 프로세스에 전달합니다."""
 
+import base64
 import copy
 import json
 import queue
@@ -63,6 +64,10 @@ class EvaluationWorker:
                     frame, meta = self.queue.get(timeout=0.1)
                 except queue.Empty:
                     continue
+                if hasattr(self, "provisional_scores"):
+                    meta = dict(
+                        meta, provisional_scores=self.provisional_scores
+                    )
                 packet = (
                     json.dumps(meta).encode()
                     + b"\n"
@@ -99,6 +104,24 @@ class EvaluationWorker:
                         "error": "평가 프로세스가 종료됐습니다. 실행 환경과 터미널 로그를 확인하십시오.",
                     },
                 )
+
+    def reset_motion(self):
+        """입력 순서를 유지한 제어 패킷으로 진행 중 동작만 초기화합니다."""
+        if self.last_meta and self.process.poll() is None:
+            try:
+                self.queue.get_nowait()
+            except queue.Empty:
+                pass
+            self.queue.put_nowait(
+                (
+                    None,
+                    {
+                        **self.last_meta,
+                        "timestamp": time.monotonic(),
+                        "command": "reset_motion",
+                    },
+                )
+            )
 
     def close(self):
         """처리 중인 프레임과 무관하게 제한 시간 안에 프로세스를 종료합니다."""
@@ -185,6 +208,16 @@ class Coordinator:
             ):
                 previous = self.state.get(kind, {}).get("timestamp", -1)
                 if result.get("timestamp", -1) >= previous:
+                    result = dict(result)
+                    preview = result.pop("preview_jpeg_b64", None)
+                    if kind == "score" and preview is not None:
+                        try:
+                            self.jpeg = base64.b64decode(preview, validate=True)
+                            self.state["face_mosaic"] = result.get(
+                                "face_mosaic"
+                            )
+                        except (ValueError, TypeError):
+                            self.jpeg = None
                     self.state[kind] = result
 
     def start(self, options):
@@ -236,13 +269,10 @@ class Coordinator:
                 raise
 
     def _run(self):
-        import cv2
-
         seen = None
         last_source = None
         last_shape = None
         effective_epoch = 0
-        last_preview = 0.0
         try:
             while not self.stop_event.is_set():
                 seq, epoch, item, connected, error, fps = self.camera.snapshot()
@@ -274,6 +304,7 @@ class Coordinator:
                     if time.monotonic() - stamp <= 0.35:
                         seen = (epoch, seq)
                         meta = {
+                            "session_id": self.state["session_id"],
                             "generation": self.generation,
                             "epoch": epoch,
                             "frame_id": seq,
@@ -281,13 +312,7 @@ class Coordinator:
                         }
                         for worker in self.workers.values():
                             worker.submit(frame, meta)
-                        # 미리보기만 JPEG로 만들며 모델 입력은 원시 BGR 그대로입니다.
-                        if stamp - last_preview >= 0.2:
-                            ok, jpg = cv2.imencode(".jpg", frame)
-                            if ok:
-                                last_preview = stamp
-                                with self.lock:
-                                    self.jpeg = jpg.tobytes()
+                        # 미리보기는 점수 작업자가 같은 프레임의 관절로 모자이크한 것만 게시합니다.
                     else:
                         with self.lock:
                             self.jpeg = None
@@ -298,7 +323,7 @@ class Coordinator:
                 self.state.update(status="failed", camera_error=str(error))
 
     def stop(self):
-        """촬영과 두 평가를 함께 종료합니다."""
+        """촬영과 선택된 평가를 종료합니다."""
         with self.control:
             self._stop()
 

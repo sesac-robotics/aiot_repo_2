@@ -8,6 +8,11 @@ FROZEN = REPO / "checkpoints/squat-20261025/payload/runtime"
 SCORE_LIVE = FROZEN / "output/live-webcam-20261023"
 SCORE_APP = FROZEN / "team-posture-scoring/Server/AIService"
 CORRECTION = REPO / "Server/PostureAnalysis/posture-error-training"
+DATA_ROOT = (
+    Path(os.environ.get("AIFIT_DATA_DIR", REPO / ".aifit-local"))
+    .expanduser()
+    .absolute()
+)
 
 
 def worker_environment(kind):

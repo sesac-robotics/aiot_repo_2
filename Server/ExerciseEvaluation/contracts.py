@@ -9,7 +9,6 @@ EXERCISES = {
 }
 CORRECTION_CODES = {"shoulder": "shoulder_press", "plank": "elbow_plank"}
 MODES = {
-    "combined": ("correction", "score"),
     "correction": ("correction",),
     "score": ("score",),
 }
@@ -36,10 +35,10 @@ class ObservedCadence:
 
 
 def validate(options, fixed_mode=None):
-    """지원 옵션만 허용하고 동시 실행 전용 진입점의 모드 변경을 차단합니다."""
+    """독립 모드만 허용하고 전용 서버의 모드 변경을 차단합니다."""
     result = dict(options)
     result.setdefault("exercise", "squats")
-    result.setdefault("mode", fixed_mode or "combined")
+    result.setdefault("mode", fixed_mode or "score")
     result.setdefault("camera", "webcam")
     result.setdefault("esp32", "http://192.168.15.208:81/stream")
     result.setdefault("webcam", "0")
@@ -47,7 +46,7 @@ def validate(options, fixed_mode=None):
     if result["exercise"] not in EXERCISES or result["mode"] not in MODES:
         raise ValueError("지원하지 않는 운동 또는 실행 모드입니다.")
     if fixed_mode and result["mode"] != fixed_mode:
-        raise ValueError("이 실행 파일은 교정·점수 동시 실행 전용입니다.")
+        raise ValueError(f"이 실행 파일은 {fixed_mode} 모드 전용입니다.")
     if result["camera"] not in ("esp32", "webcam", "auto"):
         raise ValueError("카메라는 esp32, webcam, auto 중 선택합니다.")
     from urllib.parse import urlsplit
@@ -57,5 +56,5 @@ def validate(options, fixed_mode=None):
     if not str(result["webcam"]).isdigit():
         raise ValueError("웹캠은 0 이상의 장치 번호를 입력합니다.")
     if result["view"] != "front":
-        raise ValueError("통합 실행은 현재 정면 구도만 지원합니다.")
+        raise ValueError("자세 평가는 현재 정면 구도만 지원합니다.")
     return result

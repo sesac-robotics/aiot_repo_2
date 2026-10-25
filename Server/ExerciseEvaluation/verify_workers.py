@@ -52,7 +52,7 @@ def main():
                     and all(r.get("epoch") == epoch for r in results.values()),
                     timeout=30,
                 ), results
-                assert results["score"]["status"] == "collecting", results
+                assert results["score"]["status"] == "preparing", results
                 assert results["score"]["movement"]["count"] == 0
                 assert results["score"]["repetitions"] == []
                 assert (

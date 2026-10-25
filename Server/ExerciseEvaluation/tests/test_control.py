@@ -105,7 +105,6 @@ class ControlTests(unittest.TestCase):
             for mode, expected in [
                 ("score", {"score"}),
                 ("correction", {"correction"}),
-                ("combined", {"score", "correction"}),
             ]:
                 old = list(c.workers.values())
                 generation = c.generation
@@ -124,7 +123,7 @@ class ControlTests(unittest.TestCase):
             self.assertTrue(camera.closed)
             self.assertTrue(all(w.closed for w in workers))
 
-    def test_one_engine_failure_does_not_disable_the_other(self):
+    def test_failed_mode_can_be_replaced_by_another_single_mode(self):
         def factory(kind, *args):
             if kind == "correction":
                 raise FileNotFoundError("missing runtime")
@@ -132,11 +131,13 @@ class ControlTests(unittest.TestCase):
 
         c = self.make_coordinator(factory)
         try:
-            c.start({"mode": "combined"})
-            self.assertEqual(set(c.workers), {"score"})
+            c.start({"mode": "correction"})
+            self.assertEqual(set(c.workers), set())
             self.assertEqual(
                 c.snapshot()["correction"]["status"], "unavailable"
             )
+            c.start({"mode": "score"})
+            self.assertEqual(set(c.workers), {"score"})
         finally:
             c.stop()
 
@@ -171,9 +172,10 @@ class ControlTests(unittest.TestCase):
         self.assertEqual(c.snapshot()["score"]["status"], "stale")
 
     def test_fixed_mode_and_invalid_options(self):
-        self.assertEqual(validate({}, "combined")["mode"], "combined")
+        self.assertEqual(validate({}, "score")["mode"], "score")
         for options in (
-            {"mode": "score"},
+            {"mode": "correction"},
+            {"mode": "combined"},
             {"exercise": "invalid"},
             {"camera": "other"},
             {"webcam": "-1"},
@@ -181,7 +183,7 @@ class ControlTests(unittest.TestCase):
             {"view": "side"},
         ):
             with self.assertRaises(ValueError):
-                validate(options, "combined")
+                validate(options, "score")
 
     def test_auto_fallback_uses_new_epoch_and_closes_esp32(self):
         readers = []
@@ -222,7 +224,7 @@ class ControlTests(unittest.TestCase):
         base = f"http://127.0.0.1:{server.server_port}"
         try:
             with urllib.request.urlopen(base) as response:
-                self.assertIn("운동 교정", response.read().decode())
+                self.assertEqual(json.load(response)["mode"], "score")
             with urllib.request.urlopen(base + "/api/state") as response:
                 self.assertFalse(json.load(response)["running"])
             self.assertIsNone(c.camera)
