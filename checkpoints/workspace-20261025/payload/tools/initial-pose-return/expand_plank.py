@@ -1,0 +1,11 @@
+import json,sys,copy
+from pathlib import Path
+B=Path('/home/jayden/SeSACPAI-Mid');D=B/'output/initial-pose-return-v2-20261024';O=B/'output/initial-pose-return-v3-20261024';O.mkdir(exist_ok=True);sys.path.insert(0,str(B/'tools/error-enrichment'))
+from common import sha
+from split_guard import POLICY,assert_training_allowed
+x=json.loads((D/'state-labels-v2.frozen.json').read_text());uncertain=[r for r in x['labels'] if r['source_id']=='V47'];x['labels']=[r for r in x['labels'] if r['source_id']!='V47'];x['held_plank_contact_anchors']=uncertain;x['supersedes']=str(D/'state-labels-v2.frozen.json');x['revision_reason']='V47 ground contact remains uncertain in reviewed team labels. Hold rather than force nonready. Add directly visible high-hip/sag Train sources for P02/P04; person is never a target label.';inv={r['id']:r for r in json.loads((B/'output/r2d2-review-20261024/inventory.json').read_text())};policy=json.loads(POLICY.read_text());sources=json.loads((D/'source-intake.frozen.json').read_text())
+for sid,person in [('V52','P02'),('V56','P04'),('V57','P04')]:
+ s=inv[sid];assert policy['assignments'][sid]=='train';sheet=B/'output/r2d2-review-20261024'/(sid+'-dense-01.jpg');source=dict(id=sid,person=person,exercise='plank',split='train',source=s['copy'],source_sha256=s['sha256'],fps=s['fps'],duration=s['duration'],review_start=0,review_end=4.25);sources.append(source)
+ for t in [0,.25,.5,1.,2.,3.]:
+  x['labels'].append(dict(id=f'{sid}_{round(t*1000):06}',source_id=sid,exercise='plank',person='r2d2_'+person,group='r2d2_'+person,split='train',sources=[s['sha256']],target=0,phase=None,review_time=t,source_sha256=s['sha256'],review_sheet=str(sheet),review_sheet_sha256=sha(sheet),review_status='direct_sampled_visual_draft_not_expert_verified',not_ready_frame_is_not_repetition_failure=True,overall_quality_grade=None,reason='Visibly raised hips or collapsed trunk; not classified by person identity.'))
+x['labels']=sorted(x['labels'],key=lambda r:(r['source_id'],r['review_time']));assert_training_allowed(x['labels']);(O/'state-labels-v3.frozen.json').write_text(json.dumps(x,ensure_ascii=False,indent=2));(O/'source-intake.frozen.json').write_text(json.dumps(sources,indent=2));print('REVIEWED_STATES',len(x['labels']),'sources',len(sources),flush=True)

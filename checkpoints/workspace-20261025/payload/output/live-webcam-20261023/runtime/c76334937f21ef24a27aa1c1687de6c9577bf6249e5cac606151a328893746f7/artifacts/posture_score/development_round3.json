@@ -1,0 +1,231 @@
+{
+  "schema": "posture-score-development-round-v1",
+  "date": "2026-10-23",
+  "label_origin": "direct_visual_draft",
+  "expert_validated": false,
+  "external_discovery": false,
+  "qualification": {
+    "direct_draft_rows": 25,
+    "tracking_reviewed_rows": 25,
+    "effective_new_training_rows": {
+      "squats": 7,
+      "ytw": 5,
+      "shoulder": 4,
+      "pushups": 3,
+      "plank": 2
+    },
+    "full_reference_and_input_rows": {
+      "ytw": 1,
+      "shoulder": 3,
+      "pushups": 2
+    },
+    "plank_new_core_labels": 2,
+    "plank_complete_3s_windows": 0,
+    "plank_support_contrast_rows": 1,
+    "plank_short_hold_rows": 1,
+    "screened_original_candidates": 43,
+    "independent_final_test": false,
+    "external_discovery": false
+  },
+  "final_test_reservation": {
+    "candidate_count": 991,
+    "counts": {
+      "pushups": 263,
+      "squats": 325,
+      "plank": 260,
+      "ytw": 143,
+      "shoulder": 0
+    },
+    "source_hashes_verified": true,
+    "person_identity_verified": false,
+    "pixels_or_score_targets_opened": false,
+    "final_test_executed": false
+  },
+  "selection": {
+    "fitting": "train_only_group_balanced_cv",
+    "promotion_uses_reused_development_validation": true,
+    "minimum_total_mae_improvement_points": 1,
+    "error_item_mae_must_not_increase": true,
+    "independent_performance_estimate": false
+  },
+  "exercises": [
+    {
+      "exercise": "pushups",
+      "baseline": {
+        "total_cases": 6,
+        "AI_MAE": 14.788414640197987,
+        "Rule_MAE": 15.833333333333334,
+        "item_MAE": 0.263169530646097,
+        "error_item_MAE": 0.6938246558854436
+      },
+      "raw_refit": {
+        "total_cases": 6,
+        "AI_MAE": 19.522453892523018,
+        "Rule_MAE": 15.833333333333334,
+        "item_MAE": 0.3941627372235693,
+        "error_item_MAE": 0.8144600321079105
+      },
+      "accepted": {
+        "total_cases": 6,
+        "AI_MAE": 14.788414640197987,
+        "Rule_MAE": 15.833333333333334,
+        "item_MAE": 0.263169530646097,
+        "error_item_MAE": 0.6938246558854436
+      },
+      "ai_adopted": false,
+      "rule_adopted": false
+    },
+    {
+      "exercise": "squats",
+      "baseline": {
+        "total_cases": 5,
+        "AI_MAE": 13.376495295357199,
+        "Rule_MAE": 9.0,
+        "item_MAE": 0.18114180773097865,
+        "error_item_MAE": 0.6460533056960037
+      },
+      "raw_refit": {
+        "total_cases": 5,
+        "AI_MAE": 24.53924416786418,
+        "Rule_MAE": 9.0,
+        "item_MAE": 0.24694035588040644,
+        "error_item_MAE": 0.8666441149183406
+      },
+      "accepted": {
+        "total_cases": 5,
+        "AI_MAE": 13.376495295357199,
+        "Rule_MAE": 9.0,
+        "item_MAE": 0.18114180773097865,
+        "error_item_MAE": 0.6460533056960037
+      },
+      "ai_adopted": false,
+      "rule_adopted": false
+    },
+    {
+      "exercise": "shoulder",
+      "baseline": {
+        "total_cases": 5,
+        "AI_MAE": 8.700717745148921,
+        "Rule_MAE": 10.0,
+        "item_MAE": 0.12569729770874502,
+        "error_item_MAE": 0.4682467882694689
+      },
+      "raw_refit": {
+        "total_cases": 5,
+        "AI_MAE": 10.156493740807743,
+        "Rule_MAE": 10.0,
+        "item_MAE": 0.1370007580280319,
+        "error_item_MAE": 0.3605341712172907
+      },
+      "accepted": {
+        "total_cases": 5,
+        "AI_MAE": 8.700717745148921,
+        "Rule_MAE": 10.0,
+        "item_MAE": 0.12569729770874502,
+        "error_item_MAE": 0.4682467882694689
+      },
+      "ai_adopted": false,
+      "rule_adopted": false
+    },
+    {
+      "exercise": "plank",
+      "baseline": {
+        "total_cases": 2,
+        "AI_MAE": 10.255710323798453,
+        "Rule_MAE": 6.25,
+        "item_MAE": 0.282357451826858,
+        "error_item_MAE": 0.4479459921508462
+      },
+      "raw_refit": {
+        "total_cases": 2,
+        "AI_MAE": 19.91421166843132,
+        "Rule_MAE": 6.25,
+        "item_MAE": 0.37752162263765565,
+        "error_item_MAE": 0.186800822614859
+      },
+      "accepted": {
+        "total_cases": 2,
+        "AI_MAE": 10.255710323798453,
+        "Rule_MAE": 6.25,
+        "item_MAE": 0.282357451826858,
+        "error_item_MAE": 0.4479459921508462
+      },
+      "ai_adopted": false,
+      "rule_adopted": false
+    },
+    {
+      "exercise": "ytw",
+      "baseline": {
+        "total_cases": 3,
+        "AI_MAE": 10.845977149621108,
+        "Rule_MAE": 21.666666666666668,
+        "item_MAE": 0.4471533790264644,
+        "error_item_MAE": 0.43646421556482784
+      },
+      "raw_refit": {
+        "total_cases": 3,
+        "AI_MAE": 11.654238332574627,
+        "Rule_MAE": 21.666666666666668,
+        "item_MAE": 0.42157492452872153,
+        "error_item_MAE": 0.3721547788960057
+      },
+      "accepted": {
+        "total_cases": 3,
+        "AI_MAE": 10.845977149621108,
+        "Rule_MAE": 21.666666666666668,
+        "item_MAE": 0.4471533790264644,
+        "error_item_MAE": 0.43646421556482784
+      },
+      "ai_adopted": false,
+      "rule_adopted": false
+    }
+  ],
+  "rejected_plank_geometry_trials": {
+    "plank_shoulder_trial": {
+      "baseline": {
+        "total_cases": 2,
+        "AI_MAE": 10.255710323798453,
+        "Rule_MAE": 6.25,
+        "item_MAE": 0.282357451826858,
+        "error_item_MAE": 0.4479459921508462
+      },
+      "candidate": {
+        "total_cases": 2,
+        "AI_MAE": 10.483241984662293,
+        "Rule_MAE": 6.25,
+        "item_MAE": 0.2951162920537764,
+        "error_item_MAE": 0.4954569761684858
+      },
+      "adopted": false
+    },
+    "plank_compact_trial": {
+      "baseline": {
+        "total_cases": 2,
+        "AI_MAE": 10.255710323798453,
+        "Rule_MAE": 6.25,
+        "item_MAE": 0.282357451826858,
+        "error_item_MAE": 0.4479459921508462
+      },
+      "candidate": {
+        "total_cases": 2,
+        "AI_MAE": 2.8151108625062946,
+        "Rule_MAE": 6.25,
+        "item_MAE": 0.2331808653489807,
+        "error_item_MAE": 0.7409066034293464
+      },
+      "adopted": false
+    }
+  },
+  "release_weights_changed": false,
+  "release_rules_changed": false,
+  "validation": {
+    "pytest_passed": 40,
+    "pytest_subtests_passed": 13,
+    "mypy_source_files": 25,
+    "black_checked_files": 25,
+    "pylint_errors_only": true,
+    "numeric_parity_cases": 91,
+    "numeric_parity_matches": 91,
+    "parity_is_training_replay_not_accuracy_test": true
+  }
+}

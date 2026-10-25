@@ -1,0 +1,622 @@
+{
+  "schema": "within_person_quality_stratified_whole_source_80_20_v1",
+  "requested_train_fraction": 0.8,
+  "quality_definition": "Any observed primary item grade <2 => error; all four primary grades 2 => normal; otherwise unknown. Uses documented visual label corrections.",
+  "assignments": {
+    "V01": "test",
+    "V02": "train",
+    "V03": "train",
+    "V04": "train",
+    "V05": "test",
+    "V15": "test",
+    "V16": "train",
+    "V20": "train",
+    "V21": "train",
+    "V28": "test",
+    "V29": "train",
+    "V37": "train",
+    "V38": "train",
+    "V45": "train",
+    "V49": "test",
+    "V50": "train",
+    "V06": "train",
+    "V07": "train",
+    "V08": "train",
+    "V09": "train",
+    "V22": "test",
+    "V23": "test",
+    "V30": "train",
+    "V31": "train",
+    "V32": "train",
+    "V39": "train",
+    "V40": "train",
+    "V46": "train",
+    "V51": "test",
+    "V52": "train",
+    "V10": "train",
+    "V11": "test",
+    "V12": "test",
+    "V13": "test",
+    "V14": "train",
+    "V24": "train",
+    "V25": "train",
+    "V35": "test",
+    "V36": "train",
+    "V41": "train",
+    "V42": "train",
+    "V47": "train",
+    "V53": "train",
+    "V54": "train",
+    "V17": "train",
+    "V18": "train",
+    "V19": "train",
+    "V26": "train",
+    "V27": "train",
+    "V33": "test",
+    "V34": "test",
+    "V43": "train",
+    "V44": "train",
+    "V48": "train",
+    "V55": "test",
+    "V56": "train",
+    "V57": "train"
+  },
+  "people": [
+    {
+      "person": "P01",
+      "total_clips": 70,
+      "train_clips": 56,
+      "test_clips": 14,
+      "classes": {
+        "normal": {
+          "total": 35,
+          "train": 28,
+          "test": 7,
+          "test_fraction": 0.2
+        },
+        "error": {
+          "total": 28,
+          "train": 22,
+          "test": 6,
+          "test_fraction": 0.21428571428571427
+        },
+        "unknown": {
+          "total": 7,
+          "train": 6,
+          "test": 1,
+          "test_fraction": 0.14285714285714285
+        }
+      },
+      "exercise_class_counts": [
+        {
+          "exercise": "plank",
+          "quality": "error",
+          "total": 6,
+          "train": 3,
+          "test": 3
+        },
+        {
+          "exercise": "plank",
+          "quality": "normal",
+          "total": 10,
+          "train": 10,
+          "test": 0
+        },
+        {
+          "exercise": "pushups",
+          "quality": "error",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "pushups",
+          "quality": "normal",
+          "total": 5,
+          "train": 0,
+          "test": 5
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "error",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "normal",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "squats",
+          "quality": "error",
+          "total": 7,
+          "train": 4,
+          "test": 3
+        },
+        {
+          "exercise": "squats",
+          "quality": "normal",
+          "total": 11,
+          "train": 9,
+          "test": 2
+        },
+        {
+          "exercise": "ytw",
+          "quality": "error",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "ytw",
+          "quality": "normal",
+          "total": 4,
+          "train": 4,
+          "test": 0
+        }
+      ],
+      "test_source_ids": [
+        "V01",
+        "V05",
+        "V15",
+        "V28",
+        "V49"
+      ],
+      "train_sources": 11,
+      "test_sources": 5
+    },
+    {
+      "person": "P02",
+      "total_clips": 73,
+      "train_clips": 59,
+      "test_clips": 14,
+      "classes": {
+        "normal": {
+          "total": 30,
+          "train": 25,
+          "test": 5,
+          "test_fraction": 0.16666666666666666
+        },
+        "error": {
+          "total": 31,
+          "train": 25,
+          "test": 6,
+          "test_fraction": 0.1935483870967742
+        },
+        "unknown": {
+          "total": 12,
+          "train": 9,
+          "test": 3,
+          "test_fraction": 0.25
+        }
+      },
+      "exercise_class_counts": [
+        {
+          "exercise": "plank",
+          "quality": "error",
+          "total": 3,
+          "train": 3,
+          "test": 0
+        },
+        {
+          "exercise": "plank",
+          "quality": "normal",
+          "total": 10,
+          "train": 10,
+          "test": 0
+        },
+        {
+          "exercise": "pushups",
+          "quality": "error",
+          "total": 8,
+          "train": 8,
+          "test": 0
+        },
+        {
+          "exercise": "pushups",
+          "quality": "normal",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "error",
+          "total": 6,
+          "train": 0,
+          "test": 6
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "normal",
+          "total": 5,
+          "train": 0,
+          "test": 5
+        },
+        {
+          "exercise": "squats",
+          "quality": "error",
+          "total": 9,
+          "train": 9,
+          "test": 0
+        },
+        {
+          "exercise": "squats",
+          "quality": "normal",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "ytw",
+          "quality": "error",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "ytw",
+          "quality": "normal",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        }
+      ],
+      "test_source_ids": [
+        "V22",
+        "V23",
+        "V51"
+      ],
+      "train_sources": 11,
+      "test_sources": 3
+    },
+    {
+      "person": "P03",
+      "total_clips": 70,
+      "train_clips": 55,
+      "test_clips": 15,
+      "classes": {
+        "normal": {
+          "total": 19,
+          "train": 15,
+          "test": 4,
+          "test_fraction": 0.21052631578947367
+        },
+        "error": {
+          "total": 30,
+          "train": 24,
+          "test": 6,
+          "test_fraction": 0.2
+        },
+        "unknown": {
+          "total": 21,
+          "train": 16,
+          "test": 5,
+          "test_fraction": 0.23809523809523808
+        }
+      },
+      "exercise_class_counts": [
+        {
+          "exercise": "plank",
+          "quality": "error",
+          "total": 3,
+          "train": 3,
+          "test": 0
+        },
+        {
+          "exercise": "pushups",
+          "quality": "error",
+          "total": 14,
+          "train": 9,
+          "test": 5
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "error",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "normal",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "squats",
+          "quality": "error",
+          "total": 4,
+          "train": 3,
+          "test": 1
+        },
+        {
+          "exercise": "squats",
+          "quality": "normal",
+          "total": 9,
+          "train": 5,
+          "test": 4
+        },
+        {
+          "exercise": "ytw",
+          "quality": "error",
+          "total": 4,
+          "train": 4,
+          "test": 0
+        },
+        {
+          "exercise": "ytw",
+          "quality": "normal",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        }
+      ],
+      "test_source_ids": [
+        "V11",
+        "V12",
+        "V13",
+        "V35"
+      ],
+      "train_sources": 10,
+      "test_sources": 4
+    },
+    {
+      "person": "P04",
+      "total_clips": 68,
+      "train_clips": 55,
+      "test_clips": 13,
+      "classes": {
+        "normal": {
+          "total": 26,
+          "train": 21,
+          "test": 5,
+          "test_fraction": 0.19230769230769232
+        },
+        "error": {
+          "total": 41,
+          "train": 33,
+          "test": 8,
+          "test_fraction": 0.1951219512195122
+        },
+        "unknown": {
+          "total": 1,
+          "train": 1,
+          "test": 0,
+          "test_fraction": 0.0
+        }
+      },
+      "exercise_class_counts": [
+        {
+          "exercise": "plank",
+          "quality": "error",
+          "total": 8,
+          "train": 5,
+          "test": 3
+        },
+        {
+          "exercise": "plank",
+          "quality": "normal",
+          "total": 10,
+          "train": 10,
+          "test": 0
+        },
+        {
+          "exercise": "pushups",
+          "quality": "error",
+          "total": 5,
+          "train": 0,
+          "test": 5
+        },
+        {
+          "exercise": "pushups",
+          "quality": "normal",
+          "total": 5,
+          "train": 0,
+          "test": 5
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "error",
+          "total": 9,
+          "train": 9,
+          "test": 0
+        },
+        {
+          "exercise": "shoulder",
+          "quality": "normal",
+          "total": 2,
+          "train": 2,
+          "test": 0
+        },
+        {
+          "exercise": "squats",
+          "quality": "error",
+          "total": 14,
+          "train": 14,
+          "test": 0
+        },
+        {
+          "exercise": "squats",
+          "quality": "normal",
+          "total": 4,
+          "train": 4,
+          "test": 0
+        },
+        {
+          "exercise": "ytw",
+          "quality": "error",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        },
+        {
+          "exercise": "ytw",
+          "quality": "normal",
+          "total": 5,
+          "train": 5,
+          "test": 0
+        }
+      ],
+      "test_source_ids": [
+        "V33",
+        "V34",
+        "V55"
+      ],
+      "train_sources": 10,
+      "test_sources": 3
+    }
+  ],
+  "protected_people": [],
+  "protected_clip_ids": [
+    "V01_000000_003150",
+    "V05_000000_003650",
+    "V11_000000_002250",
+    "V11_002250_004750",
+    "V11_004750_007250",
+    "V11_007250_010000",
+    "V11_010000_012750",
+    "V12_000750_004000",
+    "V12_006000_008500",
+    "V12_008750_010750",
+    "V13_000000_002250",
+    "V13_002500_004750",
+    "V15_000000_003250",
+    "V15_003250_006750",
+    "V15_007250_010500",
+    "V15_014000_015950",
+    "V22_000000_003250",
+    "V22_003250_006250",
+    "V22_006250_009000",
+    "V22_009000_012000",
+    "V22_012000_014650",
+    "V23_001250_006750",
+    "V23_007000_011250",
+    "V23_011250_015250",
+    "V23_015250_019250",
+    "V23_019250_021250",
+    "V23_021250_023900",
+    "V28_001000_004250",
+    "V28_004250_007000",
+    "V28_007000_010000",
+    "V28_010000_012750",
+    "V28_012750_015500",
+    "V33_000000_003000",
+    "V33_003000_005250",
+    "V33_005250_007250",
+    "V33_007250_009500",
+    "V33_009500_011750",
+    "V34_003000_006500",
+    "V34_006500_010000",
+    "V34_010000_013750",
+    "V34_013750_016500",
+    "V34_016500_019750",
+    "V35_000000_002250",
+    "V35_002250_004750",
+    "V35_004750_006750",
+    "V35_006750_009500",
+    "V35_009500_012100",
+    "V49_000500_003500",
+    "V49_003500_006500",
+    "V49_006500_009500",
+    "V51_000500_003500",
+    "V51_003500_006500",
+    "V51_007000_010000",
+    "V55_000500_003500",
+    "V55_003500_006500",
+    "V55_006500_008500",
+    "r2d2_V01_000000_003150",
+    "r2d2_V05_000000_003650",
+    "r2d2_V11_000000_002250",
+    "r2d2_V11_002250_004750",
+    "r2d2_V11_004750_007250",
+    "r2d2_V11_007250_010000",
+    "r2d2_V11_010000_012750",
+    "r2d2_V12_000750_004000",
+    "r2d2_V12_006000_008500",
+    "r2d2_V12_008750_010750",
+    "r2d2_V13_000000_002250",
+    "r2d2_V13_002500_004750",
+    "r2d2_V15_000000_003250",
+    "r2d2_V15_003250_006750",
+    "r2d2_V15_007250_010500",
+    "r2d2_V15_014000_015950",
+    "r2d2_V22_000000_003250",
+    "r2d2_V22_003250_006250",
+    "r2d2_V22_006250_009000",
+    "r2d2_V22_009000_012000",
+    "r2d2_V22_012000_014650",
+    "r2d2_V23_001250_006750",
+    "r2d2_V23_007000_011250",
+    "r2d2_V23_011250_015250",
+    "r2d2_V23_015250_019250",
+    "r2d2_V23_019250_021250",
+    "r2d2_V23_021250_023900",
+    "r2d2_V28_001000_004250",
+    "r2d2_V28_004250_007000",
+    "r2d2_V28_007000_010000",
+    "r2d2_V28_010000_012750",
+    "r2d2_V28_012750_015500",
+    "r2d2_V33_000000_003000",
+    "r2d2_V33_003000_005250",
+    "r2d2_V33_005250_007250",
+    "r2d2_V33_007250_009500",
+    "r2d2_V33_009500_011750",
+    "r2d2_V34_003000_006500",
+    "r2d2_V34_006500_010000",
+    "r2d2_V34_010000_013750",
+    "r2d2_V34_013750_016500",
+    "r2d2_V34_016500_019750",
+    "r2d2_V35_000000_002250",
+    "r2d2_V35_002250_004750",
+    "r2d2_V35_004750_006750",
+    "r2d2_V35_006750_009500",
+    "r2d2_V35_009500_012100",
+    "r2d2_V49_000500_003500",
+    "r2d2_V49_003500_006500",
+    "r2d2_V49_006500_009500",
+    "r2d2_V51_000500_003500",
+    "r2d2_V51_003500_006500",
+    "r2d2_V51_007000_010000",
+    "r2d2_V55_000500_003500",
+    "r2d2_V55_003500_006500",
+    "r2d2_V55_006500_008500"
+  ],
+  "protected_source_sha256": [
+    "b04517338a6368b06b6f6ae275c22562c513ccd6eb34f6085ef15789795d0817",
+    "86ddd8a3aba8a85ce79e165d1f41516f405cd6272187f525b521b39cde8f0219",
+    "136247485edc81b6b58487472e0e45e3e476fcec05f12accbfd09f44ec7738a7",
+    "018e1cc71b8adfe43e5987a872f681aaf068af0c4de8bbe8074a7e22ad64e837",
+    "74ccd6a5ec2cd1b05986e6532de03f717d8aeec43e7fc31f2b2b4835702209fc",
+    "f9f630071ec209fbacd8a6b3e6e579eca4fc44d00792149afd3ee405a3fd921b",
+    "2683701446287ca491bad8117022c7b047c275875fa64c2ca384925ce21470e3",
+    "bbd39cfa1716f05dff743d2e7e89ee5f7c776845b1a45a700f1b24c94d4ce400",
+    "23c311660da402898a6b596cd0288070ba5789b40492ab64a3527a00ed8a1d70",
+    "3857e38025077ae4b2d89049d74acb602b0c50a2b23bd6c0dcfe4868152d27a6",
+    "846306f6da18c72bf7fb8df1f9d374077db2b132573514daa50406a3ac3b70e1",
+    "9ee521a8baf6ddfedcc36b2eda73fcb31a4ae1204d8caf627df544e49e7b7bb7",
+    "866a4b4266008dc76a155f549c7294c9fcb6183ad454d1048290f44e7b4efd23",
+    "e0a4f7a100f29722646793c4f441fdb4241dd4479ac0e5eb3f63212496b73872",
+    "197b38e276f64637aeb4d2004d4e4c35a60c8057e620745beb90349aad941604"
+  ],
+  "test_exercises": [
+    "plank",
+    "pushups",
+    "shoulder",
+    "squats"
+  ],
+  "normal_error_nonempty_in_both_sides_for_each_person": true,
+  "selection_used_predictions": false,
+  "selection_used_label_strata": true,
+  "split_deviations_expected_because_source_videos_are_indivisible": true,
+  "same_person_allowed_across_train_test": true,
+  "same_source_allowed_across_train_test": false,
+  "historical_exposure": "Previously reviewed data, some previously used to fit old models. New models must fit from scratch without these source videos.",
+  "final_independent_test_claim_allowed": false,
+  "supersedes": "/home/jayden/SeSACPAI-Mid/data/r2d2-team-20261023/annotations/per-person-80-20.frozen.json"
+}

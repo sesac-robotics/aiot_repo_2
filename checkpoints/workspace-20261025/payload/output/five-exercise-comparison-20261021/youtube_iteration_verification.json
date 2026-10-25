@@ -1,0 +1,61 @@
+{
+  "updated_at": "2026-10-21T18:08:58.944190+09:00",
+  "retained_CC_sources": 3,
+  "exported_segments": 9,
+  "source_crop_pixel_checks": 27,
+  "all_frames_pixel_checked": false,
+  "heavy_extracted_segments": 9,
+  "direct_nonexpert_full_plank_drafts_added": 1,
+  "plank_eligible_train_records": 7,
+  "plank_train_people": 6,
+  "plank_score_distribution": {
+    "100": 6,
+    "40": 1
+  },
+  "new_plank_error_drafts": 0,
+  "independent_final_tests": 0,
+  "expert_labels": 0,
+  "full_plank_AI_available": false,
+  "new_QEVD_view_screened": 15,
+  "new_W_direct_reviews": 3,
+  "new_W_grade_zero_drafts": 1,
+  "W_automatic_grade_zero_matches": 1,
+  "W_manual_window_grade_for_same_case": 1,
+  "W_common_policy_changed": false,
+  "all_five_models_completed": false,
+  "direct_reviews": "youtube_direct_labels.json",
+  "segments": "youtube_segment_exports.json",
+  "heavy_results": "youtube_joint_results.json",
+  "integration": "youtube_plank_integration.json",
+  "W_diagnostic": "next_w_results.json",
+  "web": "youtube_review.html",
+  "checks": {
+    "unit_tests_passed": 48,
+    "black_files": 106,
+    "compileall_passed": true,
+    "structural_audit_passed": true,
+    "html_local_links": {
+      "index.html": {
+        "local_references": 27,
+        "missing": []
+      },
+      "youtube_review.html": {
+        "local_references": 26,
+        "missing": []
+      }
+    },
+    "joint_thumbnails_direct_viewed": [
+      "youtube_paul_y_side",
+      "youtube_paul_t_front",
+      "youtube_chris_basic"
+    ],
+    "local_web_browser_visual_check": false
+  },
+  "limitations_ko": [
+    "정면·측면은 다른 시범으로 합성 총점을 만들지 않음",
+    "정상 플랭크만 1개 추가되어 오류·참여자 불균형 미해결",
+    "CC 표기 영상 중 제삼자 스톡 표시 후보는 제외하고 원본 삭제",
+    "W는 구간 경계에 따른 등급 차이가 남음",
+    "Heavy는 관절 추출기이며 별도 점수 AI 모델이 아님"
+  ]
+}

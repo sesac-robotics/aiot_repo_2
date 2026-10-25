@@ -1,0 +1,2727 @@
+{
+  "reports": [
+    {
+      "item": "knee_inward",
+      "before": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 8,
+        "MAE": 0.34991846246790786,
+        "error_MAE": 1.2229467256012103,
+        "balanced_MAE": 0.7436370909397894
+      },
+      "after": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 10,
+        "MAE": 0.36290058135035697,
+        "error_MAE": 1.2198758373972318,
+        "balanced_MAE": 0.7493796183911045
+      },
+      "improved": false,
+      "folds": [
+        {
+          "fold": 0,
+          "train_people": [
+            "qevd_1213",
+            "qevd_1396",
+            "qevd_1517",
+            "qevd_1531",
+            "qevd_1641",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_2362",
+            "qevd_2471",
+            "qevd_2741",
+            "qevd_905",
+            "rehab26_Mima",
+            "rehab26_Petra",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_129",
+            "qevd_166",
+            "rehab26_Terka"
+          ],
+          "selected_error_weight": 1,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 1.3211433087150672,
+              "metrics": {
+                "n": 44,
+                "error_n": 4,
+                "normal_n": 40,
+                "missed_errors": 2,
+                "normal_flagged": 17,
+                "MAE": 0.6136325898861217,
+                "error_MAE": 1.3942119650615568,
+                "balanced_MAE": 0.9648933087150674
+              }
+            },
+            {
+              "mult": 2,
+              "score": 1.3837273830050656,
+              "metrics": {
+                "n": 44,
+                "error_n": 4,
+                "normal_n": 40,
+                "missed_errors": 2,
+                "normal_flagged": 22,
+                "MAE": 0.6639711040567445,
+                "error_MAE": 1.4023183906085697,
+                "balanced_MAE": 0.9962273830050657
+              }
+            },
+            {
+              "mult": 4,
+              "score": 1.4097434034819512,
+              "metrics": {
+                "n": 44,
+                "error_n": 4,
+                "normal_n": 40,
+                "missed_errors": 2,
+                "normal_flagged": 19,
+                "MAE": 0.6840443424199104,
+                "error_MAE": 1.4772644781133346,
+                "balanced_MAE": 1.0409934034819512
+              }
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "train_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1517",
+            "qevd_1531",
+            "qevd_166",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_2362",
+            "qevd_2471",
+            "qevd_2741",
+            "qevd_905",
+            "rehab26_Petra",
+            "rehab26_Terka",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_1641",
+            "rehab26_Mima"
+          ],
+          "selected_error_weight": 4,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 1.2408375817233468,
+              "metrics": {
+                "n": 45,
+                "error_n": 4,
+                "normal_n": 41,
+                "missed_errors": 2,
+                "normal_flagged": 15,
+                "MAE": 0.5033741467915697,
+                "error_MAE": 1.3809958133971296,
+                "balanced_MAE": 0.8993741670892004
+              }
+            },
+            {
+              "mult": 2,
+              "score": 1.2594733641835365,
+              "metrics": {
+                "n": 45,
+                "error_n": 4,
+                "normal_n": 41,
+                "missed_errors": 2,
+                "normal_flagged": 16,
+                "MAE": 0.5562099431554965,
+                "error_MAE": 1.3445234708392608,
+                "balanced_MAE": 0.9119123885737804
+              }
+            },
+            {
+              "mult": 4,
+              "score": 1.217374833686987,
+              "metrics": {
+                "n": 45,
+                "error_n": 4,
+                "normal_n": 41,
+                "missed_errors": 2,
+                "normal_flagged": 10,
+                "MAE": 0.48603395553241663,
+                "error_MAE": 1.417654280091194,
+                "balanced_MAE": 0.9063992239308893
+              }
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "train_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1517",
+            "qevd_1641",
+            "qevd_166",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_2362",
+            "qevd_2741",
+            "qevd_905",
+            "rehab26_Mima",
+            "rehab26_Petra",
+            "rehab26_Terka"
+          ],
+          "held_people": [
+            "qevd_1531",
+            "qevd_2471",
+            "rehab26_Vasil"
+          ],
+          "selected_error_weight": 4,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 0.4752716771574531,
+              "metrics": {
+                "n": 45,
+                "error_n": 3,
+                "normal_n": 42,
+                "missed_errors": 0,
+                "normal_flagged": 4,
+                "MAE": 0.17641432524478506,
+                "error_MAE": 0.7688250319284803,
+                "balanced_MAE": 0.4514621533479293
+              }
+            },
+            {
+              "mult": 2,
+              "score": 0.45157092923880593,
+              "metrics": {
+                "n": 45,
+                "error_n": 3,
+                "normal_n": 42,
+                "missed_errors": 0,
+                "normal_flagged": 4,
+                "MAE": 0.1798113418924066,
+                "error_MAE": 0.7138576325872154,
+                "balanced_MAE": 0.4277614054292821
+              }
+            },
+            {
+              "mult": 4,
+              "score": 0.44635264860860324,
+              "metrics": {
+                "n": 45,
+                "error_n": 3,
+                "normal_n": 42,
+                "missed_errors": 0,
+                "normal_flagged": 4,
+                "MAE": 0.17843324305519614,
+                "error_MAE": 0.7042083729650986,
+                "balanced_MAE": 0.42254312479907946
+              }
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "train_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1531",
+            "qevd_1641",
+            "qevd_166",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_2471",
+            "qevd_2741",
+            "qevd_905",
+            "rehab26_Mima",
+            "rehab26_Terka",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_1517",
+            "qevd_2362",
+            "rehab26_Petra"
+          ],
+          "selected_error_weight": 1,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 1.37346019566655,
+              "metrics": {
+                "n": 45,
+                "error_n": 4,
+                "normal_n": 41,
+                "missed_errors": 2,
+                "normal_flagged": 24,
+                "MAE": 0.6260297713981924,
+                "error_MAE": 1.404118819776715,
+                "balanced_MAE": 0.9771187322519159
+              }
+            },
+            {
+              "mult": 2,
+              "score": 1.3938440673784949,
+              "metrics": {
+                "n": 45,
+                "error_n": 4,
+                "normal_n": 41,
+                "missed_errors": 2,
+                "normal_flagged": 24,
+                "MAE": 0.6447951933438925,
+                "error_MAE": 1.4264710763394979,
+                "balanced_MAE": 0.9975026039638608
+              }
+            },
+            {
+              "mult": 4,
+              "score": 1.3860116322010911,
+              "metrics": {
+                "n": 45,
+                "error_n": 4,
+                "normal_n": 41,
+                "missed_errors": 2,
+                "normal_flagged": 19,
+                "MAE": 0.6218477979667109,
+                "error_MAE": 1.5045892684320943,
+                "balanced_MAE": 1.0201579736645057
+              }
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "train_people": [
+            "qevd_129",
+            "qevd_1517",
+            "qevd_1531",
+            "qevd_1641",
+            "qevd_166",
+            "qevd_2362",
+            "qevd_2471",
+            "rehab26_Mima",
+            "rehab26_Petra",
+            "rehab26_Terka",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_1213",
+            "qevd_1396",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_2741",
+            "qevd_905"
+          ],
+          "selected_error_weight": 4,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 1.1495629126406146,
+              "metrics": {
+                "n": 45,
+                "error_n": 5,
+                "normal_n": 40,
+                "missed_errors": 2,
+                "normal_flagged": 16,
+                "MAE": 0.5344668311771265,
+                "error_MAE": 1.2546864459508138,
+                "balanced_MAE": 0.8495629126406146
+              }
+            },
+            {
+              "mult": 2,
+              "score": 1.1154855485127357,
+              "metrics": {
+                "n": 45,
+                "error_n": 5,
+                "normal_n": 40,
+                "missed_errors": 2,
+                "normal_flagged": 14,
+                "MAE": 0.5242176928919254,
+                "error_MAE": 1.2185442200252066,
+                "balanced_MAE": 0.8279855485127359
+              }
+            },
+            {
+              "mult": 4,
+              "score": 1.098753746073453,
+              "metrics": {
+                "n": 45,
+                "error_n": 5,
+                "normal_n": 40,
+                "missed_errors": 2,
+                "normal_flagged": 15,
+                "MAE": 0.5092556866279518,
+                "error_MAE": 1.1852512510748119,
+                "balanced_MAE": 0.8050037460734532
+              }
+            }
+          ]
+        }
+      ],
+      "before_predictions": [
+        {
+          "id": "Terka_01",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9550865800865802
+        },
+        {
+          "id": "Terka_02",
+          "person": "rehab26_Terka",
+          "target": 0,
+          "fold": 0,
+          "pred": 0.1874819624819624
+        },
+        {
+          "id": "Terka_03",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 0.21709956709956707
+        },
+        {
+          "id": "Terka_04",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9702380952380953
+        },
+        {
+          "id": "Terka_05",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9583333333333333
+        },
+        {
+          "id": "Terka_06",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9702380952380953
+        },
+        {
+          "id": "Terka_07",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.7586580086580093
+        },
+        {
+          "id": "Terka_08",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.7505050505050508
+        },
+        {
+          "id": "Terka_09",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.970959595959596
+        },
+        {
+          "id": "Terka_10",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9563492063492063
+        },
+        {
+          "id": "priority_00217444",
+          "person": "qevd_166",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.5946109446109455
+        },
+        {
+          "id": "priority_00248946",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.76453823953824
+        },
+        {
+          "id": "Mima_01",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.588369983652376
+        },
+        {
+          "id": "Mima_02",
+          "person": "rehab26_Mima",
+          "target": 0,
+          "fold": 1,
+          "pred": 1.1085271317829448
+        },
+        {
+          "id": "Mima_03",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 0.49979328165374687
+        },
+        {
+          "id": "Mima_04",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.8902569916855634
+        },
+        {
+          "id": "Mima_05",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.5307300181054335
+        },
+        {
+          "id": "Mima_06",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.8295851570602402
+        },
+        {
+          "id": "Mima_07",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.673115892351773
+        },
+        {
+          "id": "Mima_08",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.6420392342983707
+        },
+        {
+          "id": "Mima_09",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.6992836928052877
+        },
+        {
+          "id": "Mima_10",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.9674418604651163
+        },
+        {
+          "id": "priority_00240934",
+          "person": "qevd_1641",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.9848148148148148
+        },
+        {
+          "id": "Vasil_01",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.9375
+        },
+        {
+          "id": "Vasil_02",
+          "person": "rehab26_Vasil",
+          "target": 0,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_03",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_04",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.9708333333333334
+        },
+        {
+          "id": "Vasil_05",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_07",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_08",
+          "person": "rehab26_Vasil",
+          "target": 0,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_10",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_11",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.89375
+        },
+        {
+          "id": "priority_00113680",
+          "person": "qevd_2471",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00258012",
+          "person": "qevd_1531",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_01",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8531065759637189
+        },
+        {
+          "id": "Petra_02",
+          "person": "rehab26_Petra",
+          "target": 0,
+          "fold": 3,
+          "pred": 0.8187245337411448
+        },
+        {
+          "id": "Petra_03",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8264550264550266
+        },
+        {
+          "id": "Petra_05",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9265532879818597
+        },
+        {
+          "id": "Petra_06",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8986621315192744
+        },
+        {
+          "id": "Petra_07",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_08",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_09",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8834769463340892
+        },
+        {
+          "id": "Petra_10",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.869531368102797
+        },
+        {
+          "id": "priority_00043454",
+          "person": "qevd_1517",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00077809",
+          "person": "qevd_2362",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.443164759443829
+        },
+        {
+          "id": "priority_00129371",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 4,
+          "pred": 0.6662091503267981
+        },
+        {
+          "id": "priority_00095741",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.3542265795206985
+        },
+        {
+          "id": "priority_00205365",
+          "person": "qevd_1396",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9538126361655774
+        },
+        {
+          "id": "priority_00088598",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 4,
+          "pred": 0.9192295504060223
+        },
+        {
+          "id": "priority_00068378",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.592527233115469
+        },
+        {
+          "id": "priority_00083159",
+          "person": "qevd_2741",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.3088453159041398
+        },
+        {
+          "id": "priority_00113178",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.971851851851852
+        },
+        {
+          "id": "priority_00033517",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8786056644880176
+        },
+        {
+          "id": "priority_00117375",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8799782135076257
+        },
+        {
+          "id": "priority_00041272",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.41967320261438
+        },
+        {
+          "id": "priority_00203366",
+          "person": "qevd_1769",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8992592592592596
+        }
+      ],
+      "after_predictions": [
+        {
+          "id": "Terka_01",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9550865800865802
+        },
+        {
+          "id": "Terka_02",
+          "person": "rehab26_Terka",
+          "target": 0,
+          "fold": 0,
+          "pred": 0.1874819624819624
+        },
+        {
+          "id": "Terka_03",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 0.21709956709956707
+        },
+        {
+          "id": "Terka_04",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9702380952380953
+        },
+        {
+          "id": "Terka_05",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9583333333333333
+        },
+        {
+          "id": "Terka_06",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9702380952380953
+        },
+        {
+          "id": "Terka_07",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.7586580086580093
+        },
+        {
+          "id": "Terka_08",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.7505050505050508
+        },
+        {
+          "id": "Terka_09",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.970959595959596
+        },
+        {
+          "id": "Terka_10",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.9563492063492063
+        },
+        {
+          "id": "priority_00217444",
+          "person": "qevd_166",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.5946109446109455
+        },
+        {
+          "id": "priority_00248946",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.76453823953824
+        },
+        {
+          "id": "Mima_01",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.4881191432396252
+        },
+        {
+          "id": "Mima_02",
+          "person": "rehab26_Mima",
+          "target": 0,
+          "fold": 1,
+          "pred": 1.0931726907630515
+        },
+        {
+          "id": "Mima_03",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 0.747949605731897
+        },
+        {
+          "id": "Mima_04",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.8676611206731688
+        },
+        {
+          "id": "Mima_05",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.538894337038075
+        },
+        {
+          "id": "Mima_06",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.7198556129279021
+        },
+        {
+          "id": "Mima_07",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.5383151654235994
+        },
+        {
+          "id": "Mima_08",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.4722509083954871
+        },
+        {
+          "id": "Mima_09",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.5393096194301015
+        },
+        {
+          "id": "Mima_10",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.8517928858290307
+        },
+        {
+          "id": "priority_00240934",
+          "person": "qevd_1641",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_01",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.9505747126436783
+        },
+        {
+          "id": "Vasil_02",
+          "person": "rehab26_Vasil",
+          "target": 0,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_03",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_04",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.967816091954023
+        },
+        {
+          "id": "Vasil_05",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_07",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_08",
+          "person": "rehab26_Vasil",
+          "target": 0,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_10",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_11",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.9022988505747125
+        },
+        {
+          "id": "priority_00113680",
+          "person": "qevd_2471",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00258012",
+          "person": "qevd_1531",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_01",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8531065759637189
+        },
+        {
+          "id": "Petra_02",
+          "person": "rehab26_Petra",
+          "target": 0,
+          "fold": 3,
+          "pred": 0.8187245337411448
+        },
+        {
+          "id": "Petra_03",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8264550264550266
+        },
+        {
+          "id": "Petra_05",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9265532879818597
+        },
+        {
+          "id": "Petra_06",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8986621315192744
+        },
+        {
+          "id": "Petra_07",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_08",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_09",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.8834769463340892
+        },
+        {
+          "id": "Petra_10",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.869531368102797
+        },
+        {
+          "id": "priority_00043454",
+          "person": "qevd_1517",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00077809",
+          "person": "qevd_2362",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.443164759443829
+        },
+        {
+          "id": "priority_00129371",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 4,
+          "pred": 0.7032688879747706
+        },
+        {
+          "id": "priority_00095741",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.3285342108871527
+        },
+        {
+          "id": "priority_00205365",
+          "person": "qevd_1396",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00088598",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 4,
+          "pred": 0.9550797568444636
+        },
+        {
+          "id": "priority_00068378",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.675186708716121
+        },
+        {
+          "id": "priority_00083159",
+          "person": "qevd_2741",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.0730663777298104
+        },
+        {
+          "id": "priority_00113178",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00033517",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8692074592074595
+        },
+        {
+          "id": "priority_00117375",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8048174048174053
+        },
+        {
+          "id": "priority_00041272",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.3118753142282562
+        },
+        {
+          "id": "priority_00203366",
+          "person": "qevd_1769",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9035056446821155
+        }
+      ],
+      "final_train_inner": [
+        {
+          "mult": 1,
+          "score": 1.177342125757046,
+          "metrics": {
+            "n": 46,
+            "error_n": 4,
+            "normal_n": 42,
+            "missed_errors": 2,
+            "normal_flagged": 13,
+            "MAE": 0.45277663497789467,
+            "error_MAE": 1.3307635093318082,
+            "balanced_MAE": 0.8499611733760937
+          }
+        },
+        {
+          "mult": 2,
+          "score": 1.1753508542761582,
+          "metrics": {
+            "n": 46,
+            "error_n": 4,
+            "normal_n": 42,
+            "missed_errors": 2,
+            "normal_flagged": 13,
+            "MAE": 0.4870421717415261,
+            "error_MAE": 1.2848824173443971,
+            "balanced_MAE": 0.8479699018952058
+          }
+        },
+        {
+          "mult": 4,
+          "score": 1.2616316218895922,
+          "metrics": {
+            "n": 46,
+            "error_n": 4,
+            "normal_n": 42,
+            "missed_errors": 2,
+            "normal_flagged": 14,
+            "MAE": 0.47680948678839846,
+            "error_MAE": 1.474837364380511,
+            "balanced_MAE": 0.928298288556259
+          }
+        }
+      ]
+    },
+    {
+      "item": "trunk_balance",
+      "before": {
+        "n": 75,
+        "error_n": 4,
+        "normal_n": 71,
+        "missed_errors": 1,
+        "normal_flagged": 2,
+        "MAE": 0.11562961315887137,
+        "error_MAE": 1.0374036052728677,
+        "balanced_MAE": 0.7128352981904746
+      },
+      "after": {
+        "n": 75,
+        "error_n": 4,
+        "normal_n": 71,
+        "missed_errors": 1,
+        "normal_flagged": 2,
+        "MAE": 0.11460937949039483,
+        "error_MAE": 1.0597020323305255,
+        "balanced_MAE": 0.7269229292178035
+      },
+      "improved": false,
+      "folds": [
+        {
+          "fold": 0,
+          "train_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1463",
+            "qevd_1531",
+            "qevd_1641",
+            "qevd_166",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_1848",
+            "qevd_2072",
+            "qevd_2102",
+            "qevd_240",
+            "qevd_2434",
+            "qevd_2471",
+            "qevd_2666",
+            "qevd_2741",
+            "qevd_905",
+            "rehab26_Mima",
+            "rehab26_Petra",
+            "rehab26_Terka"
+          ],
+          "held_people": [
+            "qevd_1517",
+            "qevd_1802",
+            "qevd_2362",
+            "rehab26_Vasil"
+          ],
+          "selected_error_weight": 1,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 1.2708721107514969,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 2,
+                "normal_flagged": 6,
+                "MAE": 0.15471609409109413,
+                "error_MAE": 1.1603235653235653,
+                "balanced_MAE": 0.9112229879444792
+              }
+            },
+            {
+              "mult": 2,
+              "score": 1.2736701450710741,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 2,
+                "normal_flagged": 7,
+                "MAE": 0.1762690223719636,
+                "error_MAE": 1.1399066075536668,
+                "balanced_MAE": 0.9096350573517759
+              }
+            },
+            {
+              "mult": 4,
+              "score": 1.2709572986916542,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 2,
+                "normal_flagged": 6,
+                "MAE": 0.1791537483419112,
+                "error_MAE": 1.1390418094709325,
+                "balanced_MAE": 0.9113081758846366
+              }
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "train_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1517",
+            "qevd_1531",
+            "qevd_1641",
+            "qevd_166",
+            "qevd_1679",
+            "qevd_1802",
+            "qevd_1848",
+            "qevd_2072",
+            "qevd_2102",
+            "qevd_2362",
+            "qevd_240",
+            "qevd_2434",
+            "qevd_2471",
+            "qevd_2666",
+            "qevd_2741",
+            "rehab26_Mima",
+            "rehab26_Petra",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_1463",
+            "qevd_1769",
+            "qevd_905",
+            "rehab26_Terka"
+          ],
+          "selected_error_weight": 1,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 0.94142941447766,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.11988867151367152,
+                "error_MAE": 1.1653157028157026,
+                "balanced_MAE": 0.7703767828987127
+              }
+            },
+            {
+              "mult": 2,
+              "score": 0.9435333910824109,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.12825977943625003,
+                "error_MAE": 1.1629309688133223,
+                "balanced_MAE": 0.7724807595034635
+              }
+            },
+            {
+              "mult": 4,
+              "score": 0.9593471509779238,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.13203413077987167,
+                "error_MAE": 1.1927035999585025,
+                "balanced_MAE": 0.7882945193989764
+              }
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "train_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1463",
+            "qevd_1517",
+            "qevd_1531",
+            "qevd_166",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_1802",
+            "qevd_1848",
+            "qevd_2072",
+            "qevd_2362",
+            "qevd_240",
+            "qevd_2434",
+            "qevd_2471",
+            "qevd_905",
+            "rehab26_Mima",
+            "rehab26_Terka",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_1641",
+            "qevd_2102",
+            "qevd_2666",
+            "qevd_2741",
+            "rehab26_Petra"
+          ],
+          "selected_error_weight": 1,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 0.8820687828253617,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 0,
+                "MAE": 0.07818099493099494,
+                "error_MAE": 0.9213156750656749,
+                "balanced_MAE": 0.7154021161586951
+              }
+            },
+            {
+              "mult": 2,
+              "score": 0.9382467105764319,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.10554396311749252,
+                "error_MAE": 1.0063871857989506,
+                "balanced_MAE": 0.7671940789974846
+              }
+            },
+            {
+              "mult": 4,
+              "score": 0.9473608586175271,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.11422457606711049,
+                "error_MAE": 1.0106057069292365,
+                "balanced_MAE": 0.7763082270385797
+              }
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "train_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1463",
+            "qevd_1517",
+            "qevd_1641",
+            "qevd_1679",
+            "qevd_1769",
+            "qevd_1802",
+            "qevd_1848",
+            "qevd_2102",
+            "qevd_2362",
+            "qevd_240",
+            "qevd_2434",
+            "qevd_2666",
+            "qevd_2741",
+            "qevd_905",
+            "rehab26_Petra",
+            "rehab26_Terka",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_1531",
+            "qevd_166",
+            "qevd_2072",
+            "qevd_2471",
+            "rehab26_Mima"
+          ],
+          "selected_error_weight": 2,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 0.7333102290010188,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 3,
+                "MAE": 0.11212105487105492,
+                "error_MAE": 0.8648440910940917,
+                "balanced_MAE": 0.5534856675975101
+              }
+            },
+            {
+              "mult": 2,
+              "score": 0.6599994662868758,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 4,
+                "MAE": 0.12429093509975858,
+                "error_MAE": 0.6920478269007678,
+                "balanced_MAE": 0.47578893997108623
+              }
+            },
+            {
+              "mult": 4,
+              "score": 0.6721727149696208,
+              "metrics": {
+                "n": 60,
+                "error_n": 3,
+                "normal_n": 57,
+                "missed_errors": 1,
+                "normal_flagged": 4,
+                "MAE": 0.12959602306763907,
+                "error_MAE": 0.7030446133972389,
+                "balanced_MAE": 0.48796218865383145
+              }
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "train_people": [
+            "qevd_1463",
+            "qevd_1517",
+            "qevd_1531",
+            "qevd_1641",
+            "qevd_166",
+            "qevd_1769",
+            "qevd_1802",
+            "qevd_2072",
+            "qevd_2102",
+            "qevd_2362",
+            "qevd_2471",
+            "qevd_2666",
+            "qevd_2741",
+            "qevd_905",
+            "rehab26_Mima",
+            "rehab26_Petra",
+            "rehab26_Terka",
+            "rehab26_Vasil"
+          ],
+          "held_people": [
+            "qevd_1213",
+            "qevd_129",
+            "qevd_1396",
+            "qevd_1679",
+            "qevd_1848",
+            "qevd_240",
+            "qevd_2434"
+          ],
+          "selected_error_weight": 1,
+          "inner_results": [
+            {
+              "mult": 1,
+              "score": 0.7583859574224017,
+              "metrics": {
+                "n": 60,
+                "error_n": 4,
+                "normal_n": 56,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.12448495635027328,
+                "error_MAE": 0.9091642913513618,
+                "balanced_MAE": 0.628921671708116
+              }
+            },
+            {
+              "mult": 2,
+              "score": 0.7698436274982329,
+              "metrics": {
+                "n": 60,
+                "error_n": 4,
+                "normal_n": 56,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.12893000789415268,
+                "error_MAE": 0.9245178606116108,
+                "balanced_MAE": 0.6403793417839472
+              }
+            },
+            {
+              "mult": 4,
+              "score": 0.786962215391583,
+              "metrics": {
+                "n": 60,
+                "error_n": 4,
+                "normal_n": 56,
+                "missed_errors": 1,
+                "normal_flagged": 1,
+                "MAE": 0.13422962595207302,
+                "error_MAE": 0.9482025428579774,
+                "balanced_MAE": 0.6574979296772973
+              }
+            }
+          ]
+        }
+      ],
+      "before_predictions": [
+        {
+          "id": "Vasil_01",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_02",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_03",
+          "person": "rehab26_Vasil",
+          "target": 0,
+          "fold": 0,
+          "pred": 1.4423683440520685
+        },
+        {
+          "id": "Vasil_04",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_05",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_06",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_07",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_08",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_09",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_10",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_11",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00086027",
+          "person": "qevd_1802",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00043454",
+          "person": "qevd_1517",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.952750764101139
+        },
+        {
+          "id": "priority_00181657",
+          "person": "qevd_1517",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.855418291479434
+        },
+        {
+          "id": "priority_00077809",
+          "person": "qevd_2362",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_01",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_02",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_03",
+          "person": "rehab26_Terka",
+          "target": 1,
+          "fold": 1,
+          "pred": 1.7828294392286566
+        },
+        {
+          "id": "Terka_04",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_05",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_06",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_07",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_08",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_09",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_10",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00088344",
+          "person": "qevd_1463",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.950713520358465
+        },
+        {
+          "id": "priority_00129371",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00088598",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00041650",
+          "person": "qevd_1463",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00203366",
+          "person": "qevd_1769",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_01",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_02",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_03",
+          "person": "rehab26_Petra",
+          "target": 0,
+          "fold": 2,
+          "pred": 1.0950754468243185
+        },
+        {
+          "id": "Petra_04",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.9437555690757011
+        },
+        {
+          "id": "Petra_05",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_06",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_07",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_08",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_09",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_10",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00061746",
+          "person": "qevd_2102",
+          "target": 2,
+          "fold": 2,
+          "pred": 0.5678147480776469
+        },
+        {
+          "id": "priority_00240934",
+          "person": "qevd_1641",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00204621",
+          "person": "qevd_2666",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00192086",
+          "person": "qevd_2666",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.6415786925699876
+        },
+        {
+          "id": "priority_00083159",
+          "person": "qevd_2741",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_01",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_02",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.6832310539645428
+        },
+        {
+          "id": "Mima_03",
+          "person": "rehab26_Mima",
+          "target": 1,
+          "fold": 3,
+          "pred": 0.1706588090135727
+        },
+        {
+          "id": "Mima_04",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_05",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.5526032534580165
+        },
+        {
+          "id": "Mima_06",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_07",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.642143970387687
+        },
+        {
+          "id": "Mima_08",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_09",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.959468147282291
+        },
+        {
+          "id": "Mima_10",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9918103448275863
+        },
+        {
+          "id": "priority_00197159",
+          "person": "qevd_2072",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00113680",
+          "person": "qevd_2471",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.894228521332554
+        },
+        {
+          "id": "priority_00258012",
+          "person": "qevd_1531",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00217444",
+          "person": "qevd_166",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9919491525423727
+        },
+        {
+          "id": "priority_00074550",
+          "person": "qevd_166",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00167392",
+          "person": "qevd_240",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00175523",
+          "person": "qevd_2434",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8217725347852392
+        },
+        {
+          "id": "priority_00214743",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9516959064327486
+        },
+        {
+          "id": "priority_00117491",
+          "person": "qevd_1848",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00124394",
+          "person": "qevd_240",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8370457753579355
+        },
+        {
+          "id": "priority_00220755",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.4565295422464208
+        },
+        {
+          "id": "priority_00095741",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00205365",
+          "person": "qevd_1396",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00083091",
+          "person": "qevd_240",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00068378",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9608429118773947
+        },
+        {
+          "id": "priority_00113178",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8792337164750959
+        },
+        {
+          "id": "priority_00033517",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00117375",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9922222222222221
+        },
+        {
+          "id": "priority_00041272",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00248946",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9505847953216375
+        }
+      ],
+      "after_predictions": [
+        {
+          "id": "Vasil_01",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_02",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_03",
+          "person": "rehab26_Vasil",
+          "target": 0,
+          "fold": 0,
+          "pred": 1.4423683440520683
+        },
+        {
+          "id": "Vasil_04",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_05",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_06",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_07",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_08",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_09",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_10",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Vasil_11",
+          "person": "rehab26_Vasil",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00086027",
+          "person": "qevd_1802",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00043454",
+          "person": "qevd_1517",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.952750764101139
+        },
+        {
+          "id": "priority_00181657",
+          "person": "qevd_1517",
+          "target": 2,
+          "fold": 0,
+          "pred": 1.855418291479434
+        },
+        {
+          "id": "priority_00077809",
+          "person": "qevd_2362",
+          "target": 2,
+          "fold": 0,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_01",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_02",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_03",
+          "person": "rehab26_Terka",
+          "target": 1,
+          "fold": 1,
+          "pred": 1.7828294392286568
+        },
+        {
+          "id": "Terka_04",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_05",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_06",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_07",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_08",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_09",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Terka_10",
+          "person": "rehab26_Terka",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00088344",
+          "person": "qevd_1463",
+          "target": 2,
+          "fold": 1,
+          "pred": 1.950713520358465
+        },
+        {
+          "id": "priority_00129371",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00088598",
+          "person": "qevd_905",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00041650",
+          "person": "qevd_1463",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00203366",
+          "person": "qevd_1769",
+          "target": 2,
+          "fold": 1,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_01",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_02",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_03",
+          "person": "rehab26_Petra",
+          "target": 0,
+          "fold": 2,
+          "pred": 1.0950754468243185
+        },
+        {
+          "id": "Petra_04",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.9437555690757011
+        },
+        {
+          "id": "Petra_05",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_06",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_07",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_08",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_09",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Petra_10",
+          "person": "rehab26_Petra",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00061746",
+          "person": "qevd_2102",
+          "target": 2,
+          "fold": 2,
+          "pred": 0.5678147480776469
+        },
+        {
+          "id": "priority_00240934",
+          "person": "qevd_1641",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00204621",
+          "person": "qevd_2666",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00192086",
+          "person": "qevd_2666",
+          "target": 2,
+          "fold": 2,
+          "pred": 1.6415786925699878
+        },
+        {
+          "id": "priority_00083159",
+          "person": "qevd_2741",
+          "target": 2,
+          "fold": 2,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_01",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_02",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.687223888055972
+        },
+        {
+          "id": "Mima_03",
+          "person": "rehab26_Mima",
+          "target": 1,
+          "fold": 3,
+          "pred": 0.08146510078294202
+        },
+        {
+          "id": "Mima_04",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_05",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.630041229385308
+        },
+        {
+          "id": "Mima_06",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "Mima_07",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.6874375312343834
+        },
+        {
+          "id": "Mima_08",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9917391304347827
+        },
+        {
+          "id": "Mima_09",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9835494752623688
+        },
+        {
+          "id": "Mima_10",
+          "person": "rehab26_Mima",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9917391304347827
+        },
+        {
+          "id": "priority_00197159",
+          "person": "qevd_2072",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00113680",
+          "person": "qevd_2471",
+          "target": 2,
+          "fold": 3,
+          "pred": 1.9094152923538232
+        },
+        {
+          "id": "priority_00258012",
+          "person": "qevd_1531",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00217444",
+          "person": "qevd_166",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00074550",
+          "person": "qevd_166",
+          "target": 2,
+          "fold": 3,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00167392",
+          "person": "qevd_240",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00175523",
+          "person": "qevd_2434",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8217725347852392
+        },
+        {
+          "id": "priority_00214743",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9516959064327486
+        },
+        {
+          "id": "priority_00117491",
+          "person": "qevd_1848",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00124394",
+          "person": "qevd_240",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8370457753579355
+        },
+        {
+          "id": "priority_00220755",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.4565295422464208
+        },
+        {
+          "id": "priority_00095741",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00205365",
+          "person": "qevd_1396",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00083091",
+          "person": "qevd_240",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00068378",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9608429118773947
+        },
+        {
+          "id": "priority_00113178",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.8792337164750959
+        },
+        {
+          "id": "priority_00033517",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00117375",
+          "person": "qevd_1679",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9922222222222221
+        },
+        {
+          "id": "priority_00041272",
+          "person": "qevd_1213",
+          "target": 2,
+          "fold": 4,
+          "pred": 2.0
+        },
+        {
+          "id": "priority_00248946",
+          "person": "qevd_129",
+          "target": 2,
+          "fold": 4,
+          "pred": 1.9505847953216375
+        }
+      ],
+      "final_train_inner": [
+        {
+          "mult": 1,
+          "score": 0.7290465223431158,
+          "metrics": {
+            "n": 65,
+            "error_n": 3,
+            "normal_n": 62,
+            "missed_errors": 1,
+            "normal_flagged": 3,
+            "MAE": 0.12167020654685685,
+            "error_MAE": 0.8275719374894873,
+            "balanced_MAE": 0.5502830814829008
+          }
+        },
+        {
+          "mult": 2,
+          "score": 0.6598982799076217,
+          "metrics": {
+            "n": 65,
+            "error_n": 3,
+            "normal_n": 62,
+            "missed_errors": 1,
+            "normal_flagged": 5,
+            "MAE": 0.13641794711003397,
+            "error_MAE": 0.6591472104183498,
+            "balanced_MAE": 0.4730703229183744
+          }
+        },
+        {
+          "mult": 4,
+          "score": 0.6645867072709186,
+          "metrics": {
+            "n": 65,
+            "error_n": 3,
+            "normal_n": 62,
+            "missed_errors": 1,
+            "normal_flagged": 5,
+            "MAE": 0.14273051119192556,
+            "error_MAE": 0.6652338639647238,
+            "balanced_MAE": 0.4777587502816713
+          }
+        }
+      ]
+    }
+  ],
+  "criterion_unchanged": true,
+  "new_normal_training_rows": 0,
+  "new_error_training_rows": 0,
+  "baseline": "Previous geometry-context candidate recipe refit in identical outer folds",
+  "threshold_note": "1.5 is the existing internal diagnostic boundary, not an athlete score or clinical cutoff",
+  "independent_final_test": false,
+  "runtime_models_changed": false,
+  "limitations": [
+    "기존 개발 자료를 재사용한 추가 실험이며 독립 최종 검증이 아님",
+    "이번 원본 검토에서 새 학습 라벨을 확보하지 못해 새 자료로 재학습한 결과가 아님"
+  ]
+}

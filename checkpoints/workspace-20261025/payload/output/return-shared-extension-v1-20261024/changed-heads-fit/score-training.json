@@ -1,0 +1,1733 @@
+{
+  "heads": [
+    {
+      "key": [
+        "pushups",
+        "return_extension",
+        "observed_arm_extension_shared_v1"
+      ],
+      "train_count": 152,
+      "validation_count": 15,
+      "grade_counts": {
+        "2": 140,
+        "1": 12
+      },
+      "normal_groups": 61,
+      "error_groups": 10,
+      "source_families": {
+        "MultiView": 45,
+        "QEVD": 70,
+        "R2D2": 37
+      },
+      "feature_dimensions": 8,
+      "fit_and_cv_seconds": 2.5669847469980596,
+      "status": "trained_experimental",
+      "selected": "grade0.1",
+      "group_cv": {
+        "balanced_group_MAE": 0.25934666426469705,
+        "n": 152,
+        "groups": 67,
+        "MAE": 0.2894736842105263,
+        "group_MAE": 0.30383521950686126,
+        "error_n": 12,
+        "normal_n": 140,
+        "error_recall": 0.75,
+        "normal_false_alarm": 0.29285714285714287
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.49999999999999994,
+        "n": 152,
+        "groups": 67,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 12,
+        "normal_n": 140,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.22857142857142856
+      },
+      "fixed_development_validation": {
+        "balanced_group_MAE": 0.3888888888888889,
+        "n": 15,
+        "groups": 9,
+        "MAE": 0.4,
+        "group_MAE": 0.3888888888888889,
+        "error_n": 0,
+        "normal_n": 15,
+        "error_recall": null,
+        "normal_false_alarm": 0.4
+      },
+      "current_saved_model_same_input": null,
+      "candidate_gate_passed": false,
+      "runtime_replacement": false,
+      "acceptance": {
+        "passed": false,
+        "reasons": [
+          "development_requires_at_least_three_normal_and_error_segments",
+          "development_requires_at_least_two_normal_and_error_person_source_groups",
+          "training_group_cv_false_alarm_above_15_percent_or_unknown",
+          "fixed_development_error_recall_below_65_percent_or_unknown",
+          "fixed_development_false_alarm_above_15_percent_or_unknown"
+        ],
+        "validation_support": {
+          "n": 15,
+          "normal_n": 15,
+          "error_n": 0,
+          "normal_groups": 9,
+          "error_groups": 0
+        },
+        "independent_final_test_required": true,
+        "production_replacement": false
+      },
+      "validation_predictions": [
+        {
+          "id": "subject_002_push_up_good_side",
+          "person": "shoulder_002",
+          "group": "2",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_002_push_up_bad_side",
+          "person": "shoulder_002",
+          "group": "2",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_004_push_up_good_side",
+          "person": "shoulder_004",
+          "group": "4",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_004_push_up_bad_side",
+          "person": "shoulder_004",
+          "group": "4",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_012_push_up_good_side",
+          "person": "shoulder_012",
+          "group": "20",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_015_push_up_good_side",
+          "person": "shoulder_015",
+          "group": "23",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_017_push_up_good_side",
+          "person": "shoulder_017",
+          "group": "26",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_012_push_up_bad_side",
+          "person": "shoulder_012",
+          "group": "20",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_015_push_up_bad_side",
+          "person": "shoulder_015",
+          "group": "23",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_017_push_up_bad_side",
+          "person": "shoulder_017",
+          "group": "26",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00109429",
+          "person": "qevd_650",
+          "group": "165",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00127403",
+          "person": "qevd_76",
+          "group": "166",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00053514",
+          "person": "qevd_199",
+          "group": "170",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00253673_existing_review",
+          "person": "qevd_76",
+          "group": "166",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00177677_existing_review",
+          "person": "qevd_2720",
+          "group": "181",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        }
+      ],
+      "current_model_predictions": null,
+      "candidate_cv": [
+        {
+          "name": "tree2",
+          "metrics": {
+            "balanced_group_MAE": 0.41788969926781305,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.1362404033581155,
+            "group_MAE": 0.19172105852783497,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.3333333333333333,
+            "normal_false_alarm": 0.02142857142857143
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "tree4",
+          "metrics": {
+            "balanced_group_MAE": 0.39800619872946114,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.1917244809079863,
+            "group_MAE": 0.24039939007025343,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.05714285714285714
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "tree8",
+          "metrics": {
+            "balanced_group_MAE": 0.40589881958241525,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.2635961795459708,
+            "group_MAE": 0.30362514336588725,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.14285714285714285
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "boost80",
+          "metrics": {
+            "balanced_group_MAE": 0.41776478778543236,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.14792925773780954,
+            "group_MAE": 0.20137126959725102,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.16666666666666666,
+            "normal_false_alarm": 0.07142857142857142
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "ridge1",
+          "metrics": {
+            "balanced_group_MAE": 0.4257256694022138,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.4254386707076329,
+            "group_MAE": 0.42731087423384084,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.75,
+            "normal_false_alarm": 0.35714285714285715
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "ridge10",
+          "metrics": {
+            "balanced_group_MAE": 0.44386905313645036,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.44593900621965266,
+            "group_MAE": 0.44815668338752584,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.75,
+            "normal_false_alarm": 0.32857142857142857
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "ordinal0.1",
+          "metrics": {
+            "balanced_group_MAE": 0.4506565623522848,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.45967747564291106,
+            "group_MAE": 0.4592972326240892,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.75,
+            "normal_false_alarm": 0.29285714285714287
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "ordinal1",
+          "metrics": {
+            "balanced_group_MAE": 0.42783162290764476,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.4206739837228929,
+            "group_MAE": 0.4269922483157609,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.75,
+            "normal_false_alarm": 0.3357142857142857
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "ordinal10",
+          "metrics": {
+            "balanced_group_MAE": 0.40626047388818576,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.3882029423848891,
+            "group_MAE": 0.39848186321770107,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.6666666666666666,
+            "normal_false_alarm": 0.32857142857142857
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "grade0.1",
+          "metrics": {
+            "balanced_group_MAE": 0.25934666426469705,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.2894736842105263,
+            "group_MAE": 0.30383521950686126,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.75,
+            "normal_false_alarm": 0.29285714285714287
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "grade1",
+          "metrics": {
+            "balanced_group_MAE": 0.27985798354650815,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.32894736842105265,
+            "group_MAE": 0.3399404078508556,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.75,
+            "normal_false_alarm": 0.3357142857142857
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        },
+        {
+          "name": "grade10",
+          "metrics": {
+            "balanced_group_MAE": 0.3249399507596229,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.32894736842105265,
+            "group_MAE": 0.3459105571045869,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.6666666666666666,
+            "normal_false_alarm": 0.32857142857142857
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.49999999999999994,
+            "n": 152,
+            "groups": 67,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 12,
+            "normal_n": 140,
+            "error_recall": 0.5,
+            "normal_false_alarm": 0.22857142857142856
+          }
+        }
+      ],
+      "selected_oof_predictions": [
+        {
+          "id": "subject_008_push_up_good_side",
+          "person": "shoulder_008",
+          "group": "12",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_008_push_up_bad_side",
+          "person": "shoulder_008",
+          "group": "12",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_014_push_up_good_side",
+          "person": "shoulder_014",
+          "group": "21",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_014_push_up_bad_side",
+          "person": "shoulder_014",
+          "group": "21",
+          "family": "MultiView",
+          "target": 1,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_023_push_up_good_side",
+          "person": "shoulder_023",
+          "group": "29",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_023_push_up_bad_side",
+          "person": "shoulder_023",
+          "group": "29",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00032900",
+          "person": "qevd_1165",
+          "group": "141",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00008445",
+          "person": "qevd_1769",
+          "group": "145",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00020204",
+          "person": "qevd_1775",
+          "group": "152",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00067100",
+          "person": "qevd_103",
+          "group": "156",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00265061",
+          "person": "qevd_1126",
+          "group": "178",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00194717_existing_review",
+          "person": "qevd_2148",
+          "group": "182",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00145723_existing_review",
+          "person": "qevd_787",
+          "group": "161",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_008_push_up_bad_side_recovery_window_8_direct_rep0",
+          "person": "shoulder_008",
+          "group": "12",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_008_push_up_good_side_recovery_window_8_direct_rep6",
+          "person": "shoulder_008",
+          "group": "12",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_014_push_up_bad_side_held3_score",
+          "person": "shoulder_014",
+          "group": "21",
+          "family": "MultiView",
+          "target": 1,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V35_000000_002250",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V35_002250_004750",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V35_004750_006750",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V35_006750_009500",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V35_009500_012100",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V36_001000_004250",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V36_004250_009250",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V36_009250_012750",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V36_012750_015750",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V36_015750_018250",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V36_018250_020500",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V36_020500_023750",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V36_026000_030000",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V36_030000_032750",
+          "person": "r2d2_P03",
+          "group": "589",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00269873",
+          "person": "qevd_2837",
+          "group": "qevd_2837",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00247344",
+          "person": "qevd_2148",
+          "group": "182",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00142075",
+          "person": "qevd_1097",
+          "group": "qevd_1097",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "failure-expansion-F001-00220182",
+          "person": "qevd_1802",
+          "group": "328",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "failure-expansion-F003-00276861",
+          "person": "qevd_2355",
+          "group": "qevd_2355",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "failure-expansion-F006-00231574",
+          "person": "qevd_1396",
+          "group": "461",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "return_more_N003_001250_004140",
+          "person": "qevd_103",
+          "group": "156",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "return_more_N005_000400_001800",
+          "person": "qevd_2355",
+          "group": "qevd_2355",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_009_push_up_good_side",
+          "person": "shoulder_009",
+          "group": "14",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_009_push_up_bad_side",
+          "person": "shoulder_009",
+          "group": "14",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_011_push_up_good_side",
+          "person": "shoulder_011",
+          "group": "18",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_011_push_up_bad_side",
+          "person": "shoulder_011",
+          "group": "18",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00012474",
+          "person": "qevd_246",
+          "group": "140",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00006143",
+          "person": "qevd_862",
+          "group": "144",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00015016",
+          "person": "qevd_1038",
+          "group": "151",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00003772",
+          "person": "qevd_2574",
+          "group": "153",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00032001",
+          "person": "qevd_2362",
+          "group": "160",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00057989_existing_review",
+          "person": "qevd_2435",
+          "group": "179",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00090646_batch1",
+          "person": "qevd_2011",
+          "group": "232",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_011_push_up_good_side_recovery_window_8_direct_rep0",
+          "person": "shoulder_011",
+          "group": "18",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_009_push_up_bad_side_recovery_window_8_direct_rep0",
+          "person": "shoulder_009",
+          "group": "14",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00191345_round1_score",
+          "person": "qevd_764",
+          "group": "314",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00129204_round1_score",
+          "person": "qevd_1531",
+          "group": "315",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_009_push_up_bad_side_held3_score",
+          "person": "shoulder_009",
+          "group": "14",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V30_000000_002750",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V30_002750_005500",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V30_005500_008500",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V30_008500_011250",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V30_011250_014500",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V31_000000_003250",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V31_003250_006250",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V31_006250_009250",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V31_009250_011500",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V31_011500_013750",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V32_003250_006500",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V32_006500_009500",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V32_009500_013500",
+          "person": "r2d2_P02",
+          "group": "571",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "enrich_E052_022",
+          "person": "qevd_2587",
+          "group": "943",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "paired-return-qevd_00126658",
+          "person": "qevd_238",
+          "group": "qevd_238",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00132246",
+          "person": "qevd_1129",
+          "group": "174",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00092063",
+          "person": "qevd_2435",
+          "group": "179",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00059859",
+          "person": "qevd_2011",
+          "group": "232",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00229396",
+          "person": "qevd_2618",
+          "group": "335",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "return_more_N002_001000_003270",
+          "person": "qevd_2574",
+          "group": "153",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "return_v3_E06_000200_001450",
+          "person": "qevd_1531",
+          "group": "315",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "return_v3_E06_001450_002650",
+          "person": "qevd_1531",
+          "group": "315",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_001_push_up_bad_side",
+          "person": "shoulder_001",
+          "group": "0",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_005_push_up_good_side",
+          "person": "shoulder_005",
+          "group": "6",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_005_push_up_bad_side",
+          "person": "shoulder_005",
+          "group": "6",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_006_push_up_good_side",
+          "person": "shoulder_006",
+          "group": "8",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_006_push_up_bad_side",
+          "person": "shoulder_006",
+          "group": "8",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_018_push_up_good_side",
+          "person": "shoulder_018",
+          "group": "27",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_018_push_up_bad_side",
+          "person": "shoulder_018",
+          "group": "27",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00009822",
+          "person": "qevd_2833",
+          "group": "139",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00001357",
+          "person": "qevd_1522",
+          "group": "143",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00022677",
+          "person": "qevd_422",
+          "group": "150",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00085023",
+          "person": "qevd_2100",
+          "group": "158",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00159459",
+          "person": "qevd_1354",
+          "group": "173",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00126616",
+          "person": "qevd_2762",
+          "group": "176",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00056756",
+          "person": "qevd_240",
+          "group": "177",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00281495_batch1",
+          "person": "qevd_115",
+          "group": "198",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_006_push_up_good_side_recovery_window_8_direct_rep0",
+          "person": "shoulder_006",
+          "group": "8",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_001_push_up_bad_side_recovery_window_16_direct_rep24",
+          "person": "shoulder_001",
+          "group": "0",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_005_push_up_bad_side_recovery_window_8_direct_rep24",
+          "person": "shoulder_005",
+          "group": "6",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_006_push_up_bad_side_recovery_window_8_direct_rep24",
+          "person": "shoulder_006",
+          "group": "8",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_018_push_up_bad_side_recovery_window_8_direct_rep6",
+          "person": "shoulder_018",
+          "group": "27",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00211664_round1_score",
+          "person": "qevd_2762",
+          "group": "176",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00165652_held2_score",
+          "person": "qevd_263",
+          "group": "333",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00223586_held2_score",
+          "person": "qevd_2762",
+          "group": "176",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00187954_held2_score",
+          "person": "qevd_1103",
+          "group": "200",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00051575_held2_score",
+          "person": "qevd_240",
+          "group": "177",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V28_001000_004250",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V28_004250_007000",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V28_007000_010000",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V28_010000_012750",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V28_012750_015500",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V29_000000_004500",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V29_004500_008000",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "r2d2_V29_010000_012500",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V29_012500_015500",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "r2d2_V29_015500_018500",
+          "person": "r2d2_P01",
+          "group": "555",
+          "family": "R2D2",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00225156",
+          "person": "qevd_1103",
+          "group": "200",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "return_more_N012_000750_002870",
+          "person": "qevd_1286",
+          "group": "524",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "return_v3_E12_001300_002100",
+          "person": "qevd_1254",
+          "group": "qevd_1254",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_007_push_up_bad_side",
+          "person": "shoulder_007",
+          "group": "10",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_010_push_up_good_side",
+          "person": "shoulder_010",
+          "group": "16",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_010_push_up_bad_side",
+          "person": "shoulder_010",
+          "group": "16",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_016_push_up_good_side",
+          "person": "shoulder_016",
+          "group": "24",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_016_push_up_bad_side",
+          "person": "shoulder_016",
+          "group": "24",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_013_push_up_bad_side",
+          "person": "shoulder_013",
+          "group": "44",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_019_push_up_bad_side",
+          "person": "shoulder_019",
+          "group": "48",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00047479",
+          "person": "qevd_209",
+          "group": "142",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00003041",
+          "person": "qevd_1140",
+          "group": "147",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00064729",
+          "person": "qevd_2072",
+          "group": "155",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00079935",
+          "person": "qevd_1030",
+          "group": "157",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00100481",
+          "person": "qevd_670",
+          "group": "172",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00209182_existing_review",
+          "person": "qevd_129",
+          "group": "184",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00215302_existing_review",
+          "person": "qevd_1813",
+          "group": "185",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00253483_batch1",
+          "person": "qevd_1863",
+          "group": "196",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_013_push_up_bad_side_recovery_window_24_direct_rep0",
+          "person": "shoulder_013",
+          "group": "44",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_016_push_up_bad_side_recovery_window_16_direct_rep0",
+          "person": "shoulder_016",
+          "group": "24",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_016_push_up_bad_side_recovery_window_8_direct_rep24",
+          "person": "shoulder_016",
+          "group": "24",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_010_push_up_bad_side_recovery_window_16_direct_rep24",
+          "person": "shoulder_010",
+          "group": "16",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_013_push_up_bad_side_recovery_window_16_direct_rep24",
+          "person": "shoulder_013",
+          "group": "44",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_010_push_up_good_side_recovery_window_8_direct_rep6",
+          "person": "shoulder_010",
+          "group": "16",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_010_push_up_good_side_recovery_window_24_direct_rep6",
+          "person": "shoulder_010",
+          "group": "16",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_010_push_up_bad_side_recovery_window_8_direct_rep6",
+          "person": "shoulder_010",
+          "group": "16",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "subject_016_push_up_good_side_recovery_window_16_direct_rep6",
+          "person": "shoulder_016",
+          "group": "24",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "qevd_00252077_round1_score",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "qevd_00272558_held2_score",
+          "person": "qevd_1944",
+          "group": "332",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "subject_010_push_up_good_side_held3_score",
+          "person": "shoulder_010",
+          "group": "16",
+          "family": "MultiView",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "enrich_E046_016",
+          "person": "qevd_324",
+          "group": "449",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "enrich_E047_017",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00209100",
+          "person": "qevd_324",
+          "group": "449",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "paired-return-qevd_00175875",
+          "person": "qevd_872",
+          "group": "qevd_872",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "failure-expansion-F002-00132378",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.0
+        },
+        {
+          "id": "failure-expansion-F008-00279851",
+          "person": "qevd_1232",
+          "group": "qevd_1232",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "return_more_N001_000500_003000",
+          "person": "qevd_1030",
+          "group": "157",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "return_more_N004_000500_003000",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        },
+        {
+          "id": "return_more_N010_000500_002370",
+          "person": "qevd_129",
+          "group": "184",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "return_more_N010_002370_004140",
+          "person": "qevd_129",
+          "group": "184",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.0
+        },
+        {
+          "id": "return_more_N014_001300_003800",
+          "person": "qevd_1813",
+          "group": "185",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 2.0
+        }
+      ]
+    }
+  ],
+  "completed": true,
+  "trained_heads": 1,
+  "gate_passed": 0,
+  "final_test_used": false,
+  "validation_is_development": true,
+  "models_promoted_to_live_service": false,
+  "missing_heads_not_filled_by_constant_normal": true
+}

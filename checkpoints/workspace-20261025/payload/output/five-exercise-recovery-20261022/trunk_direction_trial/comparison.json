@@ -1,0 +1,73 @@
+{
+  "code_sha256": "1d4a1639ad1c94b3442b396bbcc3c63f3ddd623fb9dd0a2e188c6ea5cb5aa873",
+  "fit_input_manifest_sha256": "550128ec7c50f3ff2406aaa9947959cf5fc4a707cd99ac8e69717f4b4cf7ee12",
+  "comparison_sha256": "0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a",
+  "train_records": 36,
+  "training_connected_groups": 13,
+  "selection": {
+    "policy": "isotonic",
+    "class_support_floor": 6,
+    "inner_group_folds": 3,
+    "validation_targets_used": false
+  },
+  "inner_selection_MAE_grade": {
+    "angle_floor1": 0.8158865180974313,
+    "angle_floor3": 0.8142370953855441,
+    "angle_floor6": 0.8126129865272909,
+    "direction_floor1": 0.877180998488959,
+    "direction_floor3": 0.858787663750707,
+    "direction_floor6": 0.8753211356644685,
+    "isotonic_floor1": 0.7912705669834855,
+    "isotonic_floor3": 0.7744470148156386,
+    "isotonic_floor6": 0.7564100851308637
+  },
+  "inner_selection_loss_is_not_unbiased_final_performance": true,
+  "fixed_development_trunk_records": 7,
+  "fixed_development_trunk_MAE_grade": 0.5415988951971766,
+  "fixed_development_common_total_records": 6,
+  "fixed_development_baseline_total_MAE_points": 14.788414640197987,
+  "fixed_development_trial_total_MAE_points": 14.788414640197987,
+  "validation_predictions": [
+    {
+      "id": "subject_002_push_up_good_side",
+      "reference": 2,
+      "prediction": 1.4210526315789471
+    },
+    {
+      "id": "subject_002_push_up_bad_side",
+      "reference": 0,
+      "prediction": 0.5549597855227882
+    },
+    {
+      "id": "subject_004_push_up_bad_side",
+      "reference": 1,
+      "prediction": 0.7605633802816901
+    },
+    {
+      "id": "subject_012_push_up_good_side",
+      "reference": 2,
+      "prediction": 1.6857142857142855
+    },
+    {
+      "id": "subject_015_push_up_good_side",
+      "reference": 2,
+      "prediction": 1.1020408163265305
+    },
+    {
+      "id": "subject_015_push_up_bad_side",
+      "reference": 0,
+      "prediction": 0.7605633802816901
+    },
+    {
+      "id": "youtube_0xbZWGGEK3Q_failed_attempt",
+      "reference": 1,
+      "prediction": 0.5549597855227882
+    }
+  ],
+  "excluded": [],
+  "common_model_promoted": false,
+  "rule_unchanged": true,
+  "expert_reference": false,
+  "independent_final_test": false,
+  "geometry_code_sha256": "d3edf295763b2446d93eb28a71eb536c3806a025b880e040afd6696777788a12"
+}

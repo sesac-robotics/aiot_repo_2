@@ -1,0 +1,6484 @@
+[
+  {
+    "i": 0,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 0,
+      "angle": 165.50643632705567,
+      "hip_drop": 0.14820474225755437,
+      "active": true,
+      "movement_seconds": 0.0,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 14.1,
+    "repetitions": []
+  },
+  {
+    "i": 1,
+    "movement": {
+      "phase": "준비 완료 · 다음 동작 대기",
+      "count": 1,
+      "angle": 174.40024596215636,
+      "hip_drop": null,
+      "active": false,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 14.5,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 1,
+      "angle": 178.55497879745053,
+      "hip_drop": -0.03186440534202815,
+      "active": false,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 14.9,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 3,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 1,
+      "angle": 178.0417637079111,
+      "hip_drop": -0.030253696342098547,
+      "active": false,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 15.3,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 1,
+      "angle": 178.72299388763568,
+      "hip_drop": -0.030676258380112998,
+      "active": false,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 15.7,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 1,
+      "angle": 179.20820734971392,
+      "hip_drop": -0.030292724870161457,
+      "active": false,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 16.1,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 6,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 1,
+      "angle": 176.3449076251436,
+      "hip_drop": 0.023132719082620413,
+      "active": false,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 16.5,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 7,
+    "movement": {
+      "phase": "동작 진행 중",
+      "count": 1,
+      "angle": 168.62384202115425,
+      "hip_drop": 0.1039305824101899,
+      "active": true,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 16.9,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 8,
+    "movement": {
+      "phase": "동작 진행 중",
+      "count": 1,
+      "angle": 163.2364467626544,
+      "hip_drop": 0.1869684691680367,
+      "active": true,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 17.3,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 9,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 1,
+      "angle": 162.31180440072166,
+      "hip_drop": 0.20780402178562105,
+      "active": true,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 17.7,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 10,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 1,
+      "angle": 163.64433354845062,
+      "hip_drop": 0.19585396405702568,
+      "active": true,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 18.1,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 11,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 1,
+      "angle": 162.7727425069878,
+      "hip_drop": 0.19784030205489408,
+      "active": true,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 18.5,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 12,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 1,
+      "angle": 162.15125365632983,
+      "hip_drop": 0.21097159029739343,
+      "active": true,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 18.9,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 13,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 1,
+      "angle": 163.36114158211205,
+      "hip_drop": 0.1731191877510467,
+      "active": true,
+      "movement_seconds": 5.4,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 19.3,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 14,
+    "movement": {
+      "phase": "준비 완료 · 다음 동작 대기",
+      "count": 2,
+      "angle": 174.51413175376229,
+      "hip_drop": null,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 19.7,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 15,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 2,
+      "angle": 178.90173148028205,
+      "hip_drop": -0.01573804809470112,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 20.1,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 16,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 2,
+      "angle": 178.44262791149856,
+      "hip_drop": -0.005455019014126149,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 20.5,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 17,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 2,
+      "angle": 178.81901863232838,
+      "hip_drop": -0.004184945078745614,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 20.9,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 18,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 2,
+      "angle": 178.84592301251064,
+      "hip_drop": -0.0014984813970820333,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 21.3,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 19,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 2,
+      "angle": 179.01910253710022,
+      "hip_drop": 0.0018179554242636524,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 21.7,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 20,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 2,
+      "angle": 179.62497219070582,
+      "hip_drop": 0.0033355393920431434,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 22.1,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 21,
+    "movement": {
+      "phase": "준비 완료 · 동작을 시작하세요",
+      "count": 2,
+      "angle": 178.47833758145816,
+      "hip_drop": 0.018890877985116423,
+      "active": false,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 22.6,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 22,
+    "movement": {
+      "phase": "동작 진행 중",
+      "count": 2,
+      "angle": 169.60384046909675,
+      "hip_drop": 0.12182013986835899,
+      "active": true,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 23.0,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 23,
+    "movement": {
+      "phase": "동작 진행 중",
+      "count": 2,
+      "angle": 166.79739828905872,
+      "hip_drop": 0.13834518094032863,
+      "active": true,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 23.4,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 24,
+    "movement": {
+      "phase": "동작 진행 중",
+      "count": 2,
+      "angle": 165.4431130386613,
+      "hip_drop": 0.14814183551611965,
+      "active": true,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 23.8,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 25,
+    "movement": {
+      "phase": "동작 진행 중",
+      "count": 2,
+      "angle": 164.69691157205898,
+      "hip_drop": 0.16834617991401987,
+      "active": true,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 24.2,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 26,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 2,
+      "angle": 162.43789385041558,
+      "hip_drop": 0.20952210040705704,
+      "active": true,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 24.6,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 27,
+    "movement": {
+      "phase": "하강 확인 · 복귀 대기",
+      "count": 2,
+      "angle": 161.2234128164465,
+      "hip_drop": 0.2366880967441786,
+      "active": true,
+      "movement_seconds": 9.1,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "observation": {
+      "visible": 6,
+      "required": 6,
+      "missing": []
+    },
+    "cadence": {
+      "actual_hz": 10.0,
+      "observed_slot_fraction": 1.0,
+      "required_hz": 10,
+      "minimum_observed_fraction": 0.8
+    },
+    "elapsed": 25.0,
+    "repetitions": [
+      {
+        "number": 1,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 5.4,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9974658339387261,
+            "feature": [
+              0.9958018805199546,
+              0.9974658339387261,
+              0.998195529551077,
+              0.9991574162457997,
+              0.9997620475144031,
+              0.9999692426307444,
+              0.999979024536203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 175.17937033143792,
+            "feature": [
+              173.285199861477,
+              173.31344646208504,
+              173.3981862639092,
+              173.92484509936133,
+              174.19020347586027,
+              175.17937033143792,
+              175.50909261663045,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.026457365645459276,
+            "feature": null,
+            "reasons": [
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.889801498160935,
+            "feature": [
+              0.40993907254429984,
+              0.8163815480625684,
+              3.298813291078176,
+              5.175726007590575,
+              5.596649335957988,
+              5.889801498160935,
+              6.185497458100928,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "status": "자동 구간 평가 · 실험",
+        "duration": 3.7,
+        "ai": {
+          "earned": 0.0,
+          "maximum": 30,
+          "full_score": false,
+          "excluded_unvalidated_items": [
+            "return_extension",
+            "trunk_balance"
+          ]
+        },
+        "rule": {
+          "earned": 20.0,
+          "maximum": 20,
+          "full_score": false,
+          "excluded_unvalidated_items": []
+        },
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 0.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.9982902707705679,
+            "feature": [
+              0.997994781747611,
+              0.9982902707705679,
+              0.9985462956249579,
+              0.9990316322751249,
+              0.9996067604077071,
+              0.9998916933905457,
+              0.999949459622909,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 176.7554643435217,
+            "feature": [
+              174.97731709688142,
+              175.04339855076992,
+              175.24164291243545,
+              175.78445803264887,
+              175.95631519066995,
+              176.7554643435217,
+              177.0218473944723,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.0007414260087328492,
+            "feature": null,
+            "reasons": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "item_requires_side_view",
+              "finite_required_geometry_unavailable",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 5.845810848743846,
+            "feature": [
+              2.5530938355349484,
+              2.8375327448727674,
+              4.804269428810815,
+              5.116725192960713,
+              5.624664936673078,
+              5.845810848743846,
+              6.671490217090354,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ]
+      }
+    ]
+  }
+]

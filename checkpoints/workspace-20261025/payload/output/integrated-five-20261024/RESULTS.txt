@@ -1,0 +1,144 @@
+통합 5종 운동 학습 결과 — 2026-10-24
+
+점수 입력: 921구간. 출처별 수는 아래와 같으며 독립 사람 수가 아니다.
+{"MultiView": 177, "other_reviewed": 45, "US_Navy": 53, "QEVD": 237, "REHAB24": 43, "R2D2": 265, "CFRep_reviewed": 101}
+
+실제 점수 학습 항목: 24, 내부 추가 검증 조건 통과: 3. 기존 서비스 모델은 교체하지 않았다.
+QEVD·REHAB26·AI-Hub 원본 라벨 과제는 프로젝트 점수와 구분해서 학습했다.
+
+복귀 신경망 전체 재학습: 18에포크. 교차검증에서는 각 폴드 내부 사람 분리로 조기 종료했다.
+
+운동별 입력·학습 현황:
+[
+  {
+    "exercise": "squats",
+    "segments": 301,
+    "people": 76,
+    "training_segments": 216,
+    "validation_segments": 51,
+    "trained_heads": 5,
+    "gate_passed": 1,
+    "unsupported_heads": [
+      [
+        "knee_gap",
+        "front_gap_v1"
+      ],
+      [
+        "return_extension",
+        "front"
+      ],
+      [
+        "return_extension",
+        "side"
+      ],
+      [
+        "trunk_balance",
+        "front"
+      ]
+    ]
+  },
+  {
+    "exercise": "pushups",
+    "segments": 176,
+    "people": 86,
+    "training_segments": 123,
+    "validation_segments": 25,
+    "trained_heads": 5,
+    "gate_passed": 1,
+    "unsupported_heads": [
+      [
+        "return_extension",
+        "side"
+      ]
+    ]
+  },
+  {
+    "exercise": "shoulder",
+    "segments": 143,
+    "people": 25,
+    "training_segments": 93,
+    "validation_segments": 15,
+    "trained_heads": 2,
+    "gate_passed": 0,
+    "unsupported_heads": [
+      [
+        "bilateral_timing",
+        "front_oblique"
+      ],
+      [
+        "frontal_trunk_hold",
+        "front"
+      ],
+      [
+        "frontal_trunk_hold",
+        "front_seated"
+      ],
+      [
+        "lower_return",
+        "front"
+      ],
+      [
+        "lower_return",
+        "front_oblique"
+      ],
+      [
+        "overhead_reach",
+        "front_oblique"
+      ]
+    ]
+  },
+  {
+    "exercise": "plank",
+    "segments": 152,
+    "people": 24,
+    "training_segments": 121,
+    "validation_segments": 22,
+    "trained_heads": 4,
+    "gate_passed": 0,
+    "unsupported_heads": [
+      [
+        "support_continuity",
+        "front_visible_interruption"
+      ]
+    ]
+  },
+  {
+    "exercise": "ytw",
+    "segments": 149,
+    "people": 87,
+    "training_segments": 132,
+    "validation_segments": 14,
+    "trained_heads": 8,
+    "gate_passed": 1,
+    "unsupported_heads": [
+      [
+        "t_reach",
+        "front_projected"
+      ],
+      [
+        "upright_trunk_hold",
+        "upright_temporal_v1"
+      ],
+      [
+        "w_shape",
+        "front_projected"
+      ],
+      [
+        "y_reach",
+        "front_projected"
+      ]
+    ]
+  }
+]
+
+남은 한계:
+Project score labels remain nonexpert visual drafts.
+All comparisons are development evaluation; no new independent final accuracy claimed.
+AI-Hub training uses supplied 2D joints and conditions; original training-image matching and pixel-network training are not complete.
+No confirmed severe standing-return grade 0 examples.
+Not every criterion has sufficient normal/error participant groups.
+Runtime remains on existing models; candidate gates do not establish prospective performance.
+
+재개: 같은 프로젝트에서 tools/integrated-five/의 준비·학습 스크립트와 summary.json을 읽는다. 캐시와 모델을 보존했다.
+화면: http://127.0.0.1:8801/output/integrated-five-20261024/index.html
+로컬 서버 재시작: python3 -m http.server 8801 --bind 127.0.0.1 --directory /home/jayden/SeSACPAI-Mid

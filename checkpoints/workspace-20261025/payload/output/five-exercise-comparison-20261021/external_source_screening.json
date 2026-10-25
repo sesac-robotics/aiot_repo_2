@@ -1,0 +1,175 @@
+[
+  {
+    "url": "https://github.com/Jacoo-Zhao/3D-Pose-Based-Feedback-For-Physical-Exercises",
+    "status": "not_imported",
+    "reason_ko": "공개 안내에서 2D·3D 좌표 pickle을 확인했으나 RGB 원본과 이용 허락 범위가 확정되지 않아 Heavy RGB 비교 자료로 들여오지 않음."
+  },
+  {
+    "url": "https://github.com/michael-lemarec/free-exercise-db-api",
+    "status": "excluded",
+    "reason_ko": "README Credits에서 영상 원소유자·판매자 출처를 확정하지 못했다고 명시. 코드·메타데이터 MIT를 영상 이용 허락으로 간주하지 않음."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/1000181",
+    "status": "direct_overview_screening_only",
+    "evidence": "review/dvids_1000181_overview.jpg",
+    "reason_ko": "42장 개요와 원본 22초 장면을 직접 확인. 코치가 수행자의 하체·접점을 가리고 손바닥 플랭크로 변형이 바뀌어 기본 팔꿈치 플랭크 총점은 추가하지 않음.",
+    "score_labels_added": 0
+  },
+  {
+    "url": "https://github.com/xinchen03/FLEX_AQA_Dataset",
+    "status": "access_request_required",
+    "reason_ko": "공개 안내에 직접 다운로드 불가·학술 목적 제한·신청 승인 필요. 신청 메시지는 보내지 않았고 데이터를 확보했다고 계산하지 않음."
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/File:How_To_Properly_Dumbbell_Shoulder_Press.webm",
+    "status": "license_verification_pending",
+    "reason_ko": "CC BY 3.0 표시는 있으나 Commons가 원 출처 라이선스 검토 미완료라고 명시. 원 저작자 허락을 확정하기 전 학습 자료로 가져오지 않음.",
+    "author": "Colossus Fitness",
+    "original_url": "https://www.youtube.com/watch?v=vlFGTI5JzjI"
+  },
+  {
+    "url": "https://www.dvidshub.net/video/986473/naval-station-rota-navy-250-plank-challenge",
+    "status": "direct_overview_screening_only",
+    "evidence": "review/dvids_986473_overview.jpg",
+    "reason_ko": "42장 시간순 개요를 직접 검토. 군중·이동 카메라·근접 인터뷰 구도가 주를 이루며 단일 수행자의 팔꿈치부터 발끝까지 측면 연속 관측을 확인하지 못해 총점 라벨을 만들지 않음.",
+    "score_labels_added": 0,
+    "credit": "PO2 Jett Morgan / Naval Station Rota, Spain",
+    "public_domain_marker": true
+  },
+  {
+    "url": "https://www.dvidshub.net/video/828469/new-options-fitness-assessment-test",
+    "status": "reused_source_compilation_not_new_participant",
+    "evidence": "review/dvids_828469_overview.jpg",
+    "reason_ko": "48장 개요를 직접 확인. 기존 825280과 동일한 파란 커튼·공군 복장·수행자의 플랭크 시범을 재편집한 자료로 식별. 독립 참여자·독립 시험 또는 신규 시범 수로 추가하지 않음.",
+    "linked_original_source": "https://www.dvidshub.net/video/825280/forearm-plank",
+    "canonical_group": "dvids_airforce_all_performers",
+    "score_labels_added": 0
+  },
+  {
+    "url": "https://www.dvidshub.net/video/840093/acft-prep-plank",
+    "status": "direct_temporal_review_label_added",
+    "overview_samples": 42,
+    "dense_samples": 24,
+    "source_resolution_checks": 1,
+    "evidence": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_840093_hold.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_840093_f234.jpg"
+    ],
+    "score_labels_added": 1,
+    "score": 100,
+    "expert_validated": false,
+    "independent_final_test": false,
+    "reason_ko": "단일 측면 전신 지지 구간. 기존 시범과 다른 수행자·원본으로 개발 학습 자료에 추가. 정상 예시 한 개이며 오류 사례 부족은 해결되지 않음."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/636933/dumbbell-shoulder-press",
+    "status": "direct_review_variant_mismatch",
+    "evidence": "review/dvids_636933_overview.jpg",
+    "direct_temporal_samples": 36,
+    "score_labels_added": 0,
+    "reason_ko": "36장 시간순 표본을 직접 확인. 앉은 벤치 프레스의 정면·측면 합성 영상이며 현재 선 자세 정면 rubric과 다름. 정상이라는 제공자 문자열을 점수로 바꾸지 않고 현재 모델 학습에서 제외. 향후 앉은 변형 별도 기준 수립 때 재검토 가능."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/859787/acft-plank",
+    "status": "direct_overview_screening_only",
+    "evidence": "review/dvids_859787_overview.jpg",
+    "direct_temporal_samples": 42,
+    "score_labels_added": 0,
+    "reason_ko": "42장 개요를 직접 확인. 인터뷰·정면 상체·하체와 발끝이 잘린 측면 장면이어서 현재 측면 전신 총점 기준에 맞지 않음. 전경의 보조 인물을 운동 수행자로 바꾸거나 미관측 발끝 점수를 채우지 않음."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/753559/7-foundational-movements-plank",
+    "status": "direct_five_sample_screening_only",
+    "direct_samples": 5,
+    "score_labels_added": 0,
+    "credit": "Cpl Quinn Hurt / Marine Corps Base Quantico",
+    "reason_ko": "다섯 표본 직접 확인. 설명자와 손바닥 지지·짐 옮기기 변형 장면이며 기본 팔꿈치 플랭크 총점 자료로 추가하지 않음. 전체 영상의 전 프레임 검토 아님.",
+    "evidence": "external_plank_screen/dvids_753559.jpg"
+  },
+  {
+    "url": "https://www.dvidshub.net/video/873358/army-combat-fitness-test-before-dawn",
+    "status": "direct_five_sample_screening_only",
+    "direct_samples": 5,
+    "score_labels_added": 0,
+    "credit": "Senior Airman William Rio Rosado / CJTF-HOA",
+    "reason_ko": "다섯 표본 직접 확인. 여러 종목과 어두운 장면·인터뷰 위주이며 표본에서 단일 수행자의 측면 전신 팔꿈치 지지를 확인하지 못함. 전체 영상을 부적합으로 확정한 것은 아님.",
+    "evidence": "external_plank_screen/dvids_873358.jpg"
+  },
+  {
+    "url": "https://www.dvidshub.net/video/640237/plank",
+    "status": "direct_temporal_review_label_added",
+    "overview_samples": 36,
+    "dense_side_view_samples": 24,
+    "source_resolution_checks": 1,
+    "score_labels_added": 1,
+    "person": "dvids_gysgt_gates",
+    "performance_group": "dvids_640237_same_hold_both_views",
+    "split": "train",
+    "independent_final_test": false,
+    "spatial_crop_xyxy": [
+      266,
+      294,
+      790,
+      576
+    ],
+    "lineage_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_640237_side_lineage.json",
+    "reason_ko": "합성된 같은 사람의 두 시점 중 측면 하나만 사용. 무손실 파생 영상의 세 표본 픽셀은 원본 자르기와 정확히 같음. 정상 예시만 추가하며 오류 사례 부족은 남음."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/880759",
+    "status": "downloaded_and_direct_temporal_sample_screened",
+    "source_html": "sources/dvids_880759.html",
+    "acquisition_metadata": "sources/dvids_880759_acquisition.json",
+    "score_labels_added": 0,
+    "reason_ko": "다양한 수행자와 자연 수행 오류를 찾기 위한 후보. 구도·가림·준비 동작을 확인해 아직 오류 총점으로 추가하지 않음. targeted_acquisition_review.json 참조."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/805453",
+    "status": "downloaded_and_direct_temporal_sample_screened",
+    "source_html": "sources/dvids_805453.html",
+    "acquisition_metadata": "sources/dvids_805453_acquisition.json",
+    "score_labels_added": 0,
+    "reason_ko": "다양한 수행자와 자연 수행 오류를 찾기 위한 후보. 구도·가림·준비 동작을 확인해 아직 오류 총점으로 추가하지 않음. targeted_acquisition_review.json 참조."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/922120",
+    "status": "downloaded_and_direct_temporal_sample_screened",
+    "source_html": "sources/dvids_922120.html",
+    "acquisition_metadata": "sources/dvids_922120_acquisition.json",
+    "score_labels_added": 0,
+    "reason_ko": "다양한 수행자와 자연 수행 오류를 찾기 위한 후보. 구도·가림·준비 동작을 확인해 아직 오류 총점으로 추가하지 않음. targeted_acquisition_review.json 참조."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/918029",
+    "status": "downloaded_and_direct_temporal_sample_screened",
+    "score_labels_added": 0,
+    "source_html": "sources/dvids_918029.html",
+    "acquisition_metadata": "sources/dvids_918029_acquisition.json",
+    "reason_ko": "공개 shot list로 플랭크 구간을 좁혀 48장 직접 확인했으나 잘림·가림. 여러 사람을 확인한 것을 학습 가능한 독립 참여자 확보로 계산하지 않음."
+  },
+  {
+    "url": "https://www.dvidshub.net/video/745041",
+    "status": "direct_temporal_view_screen_only",
+    "reason_ko": "48장 시간순 개요 직접 확인. 전신 측면은 약 10~12초로 짧고 나머지는 얼굴·타이머 확대. 3초 전신 유지 계약을 충족하는 새 구간을 확정하지 못해 총점 추가 0.",
+    "evidence": "review/dvids_745041_overview.jpg",
+    "score_labels_added": 0,
+    "independent_final_test": false
+  },
+  {
+    "url": "https://www.dvidshub.net/video/859787",
+    "status": "direct_temporal_view_screen_only",
+    "reason_ko": "48장 시간순 개요 직접 확인. 측면 장면은 발·하체가 잘리거나 코치가 겹치고 나머지는 정면·얼굴 확대. 보이지 않는 접점을 추정하지 않고 총점 추가 0.",
+    "evidence": "review/dvids_859787_overview.jpg",
+    "score_labels_added": 0,
+    "independent_final_test": false
+  },
+  {
+    "url": "https://www.dvidshub.net/video/980668",
+    "status": "direct_temporal_view_screen_only",
+    "reason_ko": "60장 시간순 개요 직접 확인. 여러 참여자의 전면·높은 사선 촬영과 전환 효과가 반복되며 무릎·발까지 측면으로 연속 관측되는 단일 수행자 구간을 확정하지 못함. 새 오류·정상 총점 추가 0.",
+    "evidence": "review/dvids_980668_overview.jpg",
+    "score_labels_added": 0,
+    "independent_final_test": false
+  }
+]

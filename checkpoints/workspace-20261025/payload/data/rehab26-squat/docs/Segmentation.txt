@@ -1,0 +1,32 @@
+Semantics of csv file columns and values
+========================================
+Segmentation.csv uses ';' as the column separator. Each row is one exercise repetition.
+Frame numbers are 0-based and refer to the 30 FPS videos. The three cameras are synchronized,
+so the same frame numbers apply to the cam1, cam2 and cam3 video (and skeleton) of a recording.
+
+video_id -- id of the recording, in the form <exercise>_<person>; the corresponding files are
+  videos/<exercise>/<video_id>_cam<1|2|3>.mp4 and
+  mediapipe/<exercise>/<video_id>_cam<1|2|3>_<2d|3d>.npy
+exercise_id -- id of the exercise (IDs consistent with the REHAB24-6 dataset)
+  1: Arm abduction
+  6: Squat
+  7: Shoulder extension
+exercise_subtype -- side of the body performing the exercise ('right' for the arm exercises, empty for the squat)
+person -- name of the exercising person
+repetition_number -- number of the repetition within the given recording and person_orientation
+first_frame -- number of the first frame of the repetition
+last_frame -- number of the last frame of the repetition
+person_orientation -- orientation o of the exercising person in degrees, one of 0, 10, ..., 90 and 45;
+  o = 0: facing cam1, o = 45: facing cam2, o = 90: facing cam3.
+  The resulting viewing angle of each camera (0 = frontal view, +/-90 = profile) is
+  cam1: -o, cam2: 45 - o, cam3: 90 - o
+correctness_score -- whether the repetition was performed correctly (1) or incorrectly (5)
+error_description -- for incorrect repetitions, code of the intended execution error (see Error_types.csv); empty for correct repetitions
+additional_errors -- further execution errors observed in the repetition besides error_description,
+  as a comma-separated list of error codes (see Error_types.csv); usually empty
+
+Error_types.csv lists the error codes per exercise:
+exercise_id -- id of the exercise (see above)
+exercise_name -- name of the exercise
+error_code -- code used in error_description and additional_errors
+error_description -- description of the execution error

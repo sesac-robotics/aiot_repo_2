@@ -1,0 +1,21 @@
+{
+  "schema": "pushup_root_cause_repair_v2",
+  "selection": "Training person-group cross-validation only, existing frozen fixed development assessment; no Test selection.",
+  "fixed_test_sources_and_targets": true,
+  "roi_quality_fallback": "If and only if required geometric observations are absent in the ROI extraction, compute the same item schema from the original verified pose cache. No label or prediction participates in source selection.",
+  "fallback_crop": "Full source frame when old landmarks cannot localize torso or feet.",
+  "normality_not_inferred_from_missing_pose": true,
+  "side_selection": "Mean visibility/presence for coherent required joints; never the side with better posture.",
+  "trunk_knee_features_removed": true,
+  "chest_floor_displacement_is_unscored_geometry": true,
+  "AIHub_training_only_native_encoders_retained": true,
+  "experimental_only": true,
+  "test_history": "Already exposed diagnostic Test; no claim of independent final performance.",
+  "implementations": {
+    "tools/pushup-repair/semantic_features.py": "2c8b3fdb61de68d5fce64bf3cb12dd72314a46536b8515aa180834c8046a86fb",
+    "tools/pushup-repair/prepare_run.py": "ac9cc3f4b7a9ee69f07181e89b5361b379fdcba1fa1a6f06d9c1a899342faa1a",
+    "tools/pushup-repair/crop_extract.py": "dad6567bbfff6e665492514d36abd8b2f5a0809a6ff182fc51319dc04eae0f46",
+    "tools/error-enrichment/train_scores.py": "daa88342cc55e1c810388c4c16ce8ee3c99ba39dd9143c0f564c9374355ebea3",
+    "tools/error-enrichment/selection.py": "936d287a6e2f6648f87fa1bff8ad3c4020742b2a2a081e20ff2096a268c89d12"
+  }
+}

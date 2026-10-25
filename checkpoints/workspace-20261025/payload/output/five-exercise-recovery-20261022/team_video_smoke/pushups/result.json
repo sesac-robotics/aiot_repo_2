@@ -1,0 +1,127 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "pushups",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "item_requires_side_view",
+        "finite_required_geometry_unavailable",
+        "item_not_reviewed_as_observable",
+        "unsupported_model_view_bank"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "descent_range",
+      "weight": 30,
+      "ai_grade": 1.986391129032258,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": true,
+      "bank": "front",
+      "measured": 64.27963014983983,
+      "feature": [
+        58.487490054522944,
+        64.27963014983983,
+        114.45456648178889,
+        128.92659349484148,
+        149.36656174704788,
+        170.61187781311642,
+        171.13616774494815,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "return_extension",
+      "weight": 20,
+      "ai_grade": 1.9537259615384617,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.9537259615384617,
+      "observed": true,
+      "bank": "front",
+      "measured": 144.2305936588724,
+      "feature": [
+        127.99482832234636,
+        128.82983174095142,
+        131.33484199676653,
+        135.50985908979175,
+        140.96031819546715,
+        144.2305936588724,
+        145.3206854800075,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support",
+      "weight": 10,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "item_requires_side_view",
+        "finite_required_geometry_unavailable",
+        "item_not_reviewed_as_observable",
+        "unsupported_model_view_bank"
+      ],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": null,
+  "rule_score": null,
+  "ai_minus_rule": null,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 21.2577469937969,
+    "ai": 159.6600220000255,
+    "rule": 0.015088997315615416
+  },
+  "limitations": [
+    "Development-only labels; trunk and support require side view."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00272558.mp4",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 13.351914523998857,
+    "delegate": "CPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

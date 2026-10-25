@@ -1,0 +1,42 @@
+{
+  "id": "subject_012_push_up_good_side",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-person-roi-v1",
+    "crop": [
+      0,
+      102,
+      960,
+      511
+    ],
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "53ffc16c2090adcab6ecf680c1561e80e3aaa387c3f20e2165d2943b851dea25",
+    "segment": {
+      "start_frame": 20,
+      "end_frame": 40,
+      "fps": 15.0,
+      "evidence_times_seconds": [
+        1.333,
+        2.667
+      ]
+    },
+    "required_views": [
+      "side"
+    ],
+    "sample_hz": 10,
+    "max_edge": 960,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "49f291d8a265d660b1f027d04a07d7c74176e1815c8073bb4a874b2de199b99d",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/observations/subject_012_push_up_good_side/primary.npz",
+  "frames": 14,
+  "observed_joint_fraction": 0.7272727272727273,
+  "extract_seconds": 0.9547032919999765,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

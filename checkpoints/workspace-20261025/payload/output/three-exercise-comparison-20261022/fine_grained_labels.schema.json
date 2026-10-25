@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QEVD compatible label list with project validation extension",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "video_path",
+      "labels",
+      "labels_descriptive",
+      "split"
+    ],
+    "properties": {
+      "video_path": {
+        "type": "string",
+        "minLength": 1
+      },
+      "labels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "labels_descriptive": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "split": {
+        "enum": [
+          "train",
+          "validation",
+          "test"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}

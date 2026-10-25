@@ -1,0 +1,163 @@
+{
+  "exercise": "pushup",
+  "source_sha256": "0283185d2876e1ed87d800af7963eb6ec5d1ebc5e0bd4c80cabd3a634e9d7551",
+  "coordinate_system": "image-normalized x,y; unavailable joints are NaN",
+  "sampling_fps": 7.992007992007992,
+  "label_status": "pseudo_label_unreviewed",
+  "human_reviewed": false,
+  "side": "left",
+  "repetitions": [
+    {
+      "number": 1,
+      "start": 3.75,
+      "end": 6.01,
+      "score": 94.6,
+      "parts": [
+        {
+          "name": "내려가는 깊이",
+          "score": 35.0,
+          "maximum": 35
+        },
+        {
+          "name": "다시 펴기",
+          "score": 21.4,
+          "maximum": 25
+        },
+        {
+          "name": "몸통 정렬",
+          "score": 30.0,
+          "maximum": 30
+        },
+        {
+          "name": "각도 변화 안정성",
+          "score": 8.2,
+          "maximum": 10
+        }
+      ],
+      "measurements": {
+        "minimum_angle_p10": 63.2,
+        "extension_p90": 167.1,
+        "body_angle": 172.3,
+        "jitter": 5.15
+      }
+    },
+    {
+      "number": 2,
+      "start": 6.63,
+      "end": 8.63,
+      "score": 93.0,
+      "parts": [
+        {
+          "name": "내려가는 깊이",
+          "score": 35.0,
+          "maximum": 35
+        },
+        {
+          "name": "다시 펴기",
+          "score": 21.1,
+          "maximum": 25
+        },
+        {
+          "name": "몸통 정렬",
+          "score": 29.6,
+          "maximum": 30
+        },
+        {
+          "name": "각도 변화 안정성",
+          "score": 7.3,
+          "maximum": 10
+        }
+      ],
+      "measurements": {
+        "minimum_angle_p10": 63.6,
+        "extension_p90": 166.8,
+        "body_angle": 169.6,
+        "jitter": 6.22
+      }
+    },
+    {
+      "number": 3,
+      "start": 11.89,
+      "end": 13.64,
+      "score": 92.6,
+      "parts": [
+        {
+          "name": "내려가는 깊이",
+          "score": 35.0,
+          "maximum": 35
+        },
+        {
+          "name": "다시 펴기",
+          "score": 22.3,
+          "maximum": 25
+        },
+        {
+          "name": "몸통 정렬",
+          "score": 30.0,
+          "maximum": 30
+        },
+        {
+          "name": "각도 변화 안정성",
+          "score": 5.3,
+          "maximum": 10
+        }
+      ],
+      "measurements": {
+        "minimum_angle_p10": 69.8,
+        "extension_p90": 167.8,
+        "body_angle": 172.6,
+        "jitter": 8.63
+      }
+    }
+  ],
+  "valid_ratio": 0.884,
+  "incomplete": 0,
+  "rules": {
+    "version": "0.2-experimental",
+    "notice": "측면 촬영용 실습 기준. 전문가 검증 전이며 학습된 품질 점수 모델이 아닙니다.",
+    "visibility": 0.5,
+    "presence": 0.5,
+    "top_angle": 160,
+    "start_angle": 145,
+    "minimum_range": 20,
+    "maximum_missing_seconds": 0.25,
+    "squat": {
+      "depth_full": 95,
+      "depth_zero": 145,
+      "extension_full": 170,
+      "extension_zero": 150,
+      "torso_full": 45,
+      "torso_zero": 85,
+      "weights": [
+        40,
+        25,
+        25,
+        10
+      ]
+    },
+    "pushup": {
+      "depth_full": 90,
+      "depth_zero": 145,
+      "extension_full": 170,
+      "extension_zero": 150,
+      "alignment_full": 170,
+      "alignment_zero": 140,
+      "weights": [
+        35,
+        25,
+        30,
+        10
+      ]
+    },
+    "maximum_projected_shoulder_torso_ratio": 0.35
+  },
+  "note": "측면 영상용 실습 기준 점수입니다. 정면ㆍ관절 누락 구간은 측정 불가로 처리합니다. 실제 각도ㆍ카메라 구도는 사람이 확인해야 합니다.",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=JyCG_5l3XLk",
+    "title": "How to Do a Push-Up Properly | Gym Workout",
+    "channel": "Howcast",
+    "original_start_seconds": 32,
+    "original_end_seconds": 46,
+    "changes": "Selected clip; audio removed; Heavy joints and draft rule scores added. Not endorsed by original creator."
+  }
+}

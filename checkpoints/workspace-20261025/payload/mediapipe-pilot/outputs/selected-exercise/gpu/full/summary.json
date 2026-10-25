@@ -1,0 +1,82 @@
+[
+  {
+    "model": "full",
+    "dataset": "REHAB26",
+    "input_split": "train (proposed fold_0; not official)",
+    "frames": 900,
+    "warmup_frames_excluded_from_latency": 5,
+    "detected_frames": 900,
+    "detected_rate": 1.0,
+    "valid_angle_frames": {
+      "left_elbow": 900,
+      "right_elbow": 900,
+      "left_knee": 900,
+      "right_knee": 900,
+      "left_hip": 900,
+      "right_hip": 900,
+      "left_shoulder": 900,
+      "right_shoulder": 900
+    },
+    "init_ms": 271.6239699948346,
+    "pose_mean_ms": 6.923884983378067,
+    "pose_p95_ms": 8.623982498829717,
+    "pose_fps_equivalent": 144.42758688231618,
+    "pipeline_mean_ms_decode_resize_pose_angles": 17.012825410136063,
+    "preview_throughput_fps_including_csv_json_drawing_encoding": 50.68367601402414,
+    "process_cpu_pct_one_core_mean": 587.085913829113,
+    "inference_delegate": "GPU",
+    "video_verified_frames": 900
+  },
+  {
+    "model": "full",
+    "dataset": "QEVD",
+    "input_split": "train (manifest original split)",
+    "frames": 155,
+    "warmup_frames_excluded_from_latency": 5,
+    "detected_frames": 153,
+    "detected_rate": 0.9870967741935484,
+    "valid_angle_frames": {
+      "left_elbow": 148,
+      "right_elbow": 152,
+      "left_knee": 147,
+      "right_knee": 147,
+      "left_hip": 148,
+      "right_hip": 149,
+      "left_shoulder": 152,
+      "right_shoulder": 153
+    },
+    "init_ms": 221.8767320009647,
+    "pose_mean_ms": 4.966315700148698,
+    "pose_p95_ms": 6.457571651117178,
+    "pose_fps_equivalent": 201.35651061612106,
+    "pipeline_mean_ms_decode_resize_pose_angles": 5.751827419832504,
+    "preview_throughput_fps_including_csv_json_drawing_encoding": 124.50351812407709,
+    "process_cpu_pct_one_core_mean": 126.11001513213029,
+    "inference_delegate": "GPU",
+    "video_verified_frames": 155
+  },
+  {
+    "model": "full",
+    "dataset": "Pose-Estimation-Model-Comparison",
+    "input_split": "unassigned; preview only, not train",
+    "frames": 110,
+    "warmup_frames_excluded_from_latency": 5,
+    "detected_frames": 110,
+    "detected_rate": 1.0,
+    "valid_angle_frames": {
+      "left_elbow": 110,
+      "left_knee": 110,
+      "left_hip": 110,
+      "left_shoulder": 110
+    },
+    "init_ms": 190.22477099497337,
+    "pose_mean_ms": 4.638276714693001,
+    "pose_p95_ms": 5.787746602436528,
+    "pose_fps_equivalent": 215.5973137247781,
+    "pipeline_mean_ms_decode_resize_pose_angles": 5.652426513898674,
+    "preview_throughput_fps_including_csv_json_drawing_encoding": 130.53428631734147,
+    "process_cpu_pct_one_core_mean": 153.08111759033588,
+    "inference_delegate": "GPU",
+    "video_verified_frames": 110
+  }
+]

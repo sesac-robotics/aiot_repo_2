@@ -1,0 +1,87 @@
+{
+  "exercise": "pushup",
+  "source_sha256": "6700e77b512982fba7cad58742728aacb0f516a33b8ae116040a151a5ce4a88b",
+  "coordinate_system": "image-normalized x,y; unavailable joints are NaN",
+  "sampling_fps": 9.99000999000999,
+  "label_status": "pseudo_label_unreviewed",
+  "human_reviewed": false,
+  "side": "right",
+  "repetitions": [
+    {
+      "number": 1,
+      "start": 1.0,
+      "end": 4.0,
+      "score": 91.8,
+      "parts": [
+        {
+          "name": "내려가는 깊이",
+          "score": 35.0,
+          "maximum": 35
+        },
+        {
+          "name": "다시 펴기",
+          "score": 18.8,
+          "maximum": 25
+        },
+        {
+          "name": "몸통 정렬",
+          "score": 30.0,
+          "maximum": 30
+        },
+        {
+          "name": "각도 변화 안정성",
+          "score": 8.0,
+          "maximum": 10
+        }
+      ],
+      "measurements": {
+        "minimum_angle_p10": 48.5,
+        "extension_p90": 165.0,
+        "body_angle": 170.7,
+        "jitter": 5.39
+      }
+    }
+  ],
+  "valid_ratio": 1.0,
+  "incomplete": 0,
+  "rules": {
+    "version": "0.2-experimental",
+    "notice": "측면 촬영용 실습 기준. 전문가 검증 전이며 학습된 품질 점수 모델이 아닙니다.",
+    "visibility": 0.5,
+    "presence": 0.5,
+    "top_angle": 160,
+    "start_angle": 145,
+    "minimum_range": 20,
+    "maximum_missing_seconds": 0.25,
+    "squat": {
+      "depth_full": 95,
+      "depth_zero": 145,
+      "extension_full": 170,
+      "extension_zero": 150,
+      "torso_full": 45,
+      "torso_zero": 85,
+      "weights": [
+        40,
+        25,
+        25,
+        10
+      ]
+    },
+    "pushup": {
+      "depth_full": 90,
+      "depth_zero": 145,
+      "extension_full": 170,
+      "extension_zero": 150,
+      "alignment_full": 170,
+      "alignment_zero": 140,
+      "weights": [
+        35,
+        25,
+        30,
+        10
+      ]
+    },
+    "maximum_projected_shoulder_torso_ratio": 0.35
+  },
+  "note": "측면 영상용 실습 기준 점수입니다. 정면ㆍ관절 누락 구간은 측정 불가로 처리합니다. 실제 각도ㆍ카메라 구도는 사람이 확인해야 합니다."
+}

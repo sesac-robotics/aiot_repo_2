@@ -1,0 +1,872 @@
+{
+  "feature_version": "standing-return-height-v4",
+  "train_support": {
+    "2": 82,
+    "1": 7
+  },
+  "train_people": [
+    "cfrep_m1",
+    "cfrep_m2",
+    "cfrep_m3",
+    "cfrep_m4",
+    "cfrep_w1"
+  ],
+  "validation_people": [
+    "cfrep_w2"
+  ],
+  "folds": [
+    {
+      "held_person": "cfrep_m1",
+      "metrics": {
+        "n": 26,
+        "partial_n": 5,
+        "normal_n": 21,
+        "missed_partial": 0,
+        "normal_flagged": 15,
+        "MAE_points": 3.7787998928972844
+      }
+    },
+    {
+      "held_person": "cfrep_m2",
+      "metrics": {
+        "n": 14,
+        "partial_n": 2,
+        "normal_n": 12,
+        "missed_partial": 2,
+        "normal_flagged": 0,
+        "MAE_points": 1.3687127976190474
+      }
+    },
+    {
+      "held_person": "cfrep_m3",
+      "metrics": {
+        "n": 12,
+        "partial_n": 0,
+        "normal_n": 12,
+        "missed_partial": 0,
+        "normal_flagged": 0,
+        "MAE_points": 0.0
+      }
+    },
+    {
+      "held_person": "cfrep_m4",
+      "metrics": {
+        "n": 13,
+        "partial_n": 0,
+        "normal_n": 13,
+        "missed_partial": 0,
+        "normal_flagged": 0,
+        "MAE_points": 0.5110775883113277
+      }
+    },
+    {
+      "held_person": "cfrep_w1",
+      "metrics": {
+        "n": 24,
+        "partial_n": 0,
+        "normal_n": 24,
+        "missed_partial": 0,
+        "normal_flagged": 0,
+        "MAE_points": 0.16426283132967068
+      }
+    }
+  ],
+  "group_cv": {
+    "n": 89,
+    "partial_n": 7,
+    "normal_n": 82,
+    "missed_partial": 2,
+    "normal_flagged": 15,
+    "MAE_points": 1.4381695840669146
+  },
+  "fixed_validation": {
+    "n": 21,
+    "partial_n": 6,
+    "normal_n": 15,
+    "missed_partial": 3,
+    "normal_flagged": 0,
+    "MAE_points": 2.059371254373388
+  },
+  "predictions": [
+    {
+      "id": "squat_diag_m1_6_7_r01",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m1_6_7_r02",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m1_6_7_r03",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m1_6_7_r04",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.1593857822285258
+    },
+    {
+      "id": "squat_diag_m1_6_7_r05",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.2994725570128811
+    },
+    {
+      "id": "squat_diag_m1_6_7_r06",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.4102530377328777
+    },
+    {
+      "id": "squat_diag_m1_6_7_r07",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.373354676237742
+    },
+    {
+      "id": "squat_diag_m1_6_7_r08",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.3794184735515391
+    },
+    {
+      "id": "squat_diag_m1_6_7_r09",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.3794184735515391
+    },
+    {
+      "id": "squat_diag_m1_6_7_r10",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.0239141212729936
+    },
+    {
+      "id": "squat_diag_m1_6_7_r11",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.0239141212729936
+    },
+    {
+      "id": "squat_diag_m1_6_7_r12",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.0239141212729936
+    },
+    {
+      "id": "squat_diag_m1_6_7_r13",
+      "person": "cfrep_m1",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.0239141212729936
+    },
+    {
+      "id": "squat_front_m1_9_4_r01",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m1_9_4_r02",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.969928266178266
+    },
+    {
+      "id": "squat_front_m1_9_4_r03",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4715651709401718
+    },
+    {
+      "id": "squat_front_m1_9_4_r04",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4465805811571948
+    },
+    {
+      "id": "squat_front_m1_9_4_r05",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4283192031982366
+    },
+    {
+      "id": "squat_front_m1_9_4_r06",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4715651709401718
+    },
+    {
+      "id": "squat_front_m1_9_4_r07",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4715651709401718
+    },
+    {
+      "id": "squat_front_m1_9_4_r08",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4715651709401718
+    },
+    {
+      "id": "squat_front_m1_9_4_r09",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4901135580369458
+    },
+    {
+      "id": "squat_front_m1_9_4_r10",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4778151709401717
+    },
+    {
+      "id": "squat_front_m1_9_4_r11",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 1,
+      "prediction": 1.4283192031982366
+    },
+    {
+      "id": "squat_front_m1_9_4_r12",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.502512751585333
+    },
+    {
+      "id": "squat_front_m1_9_4_r13",
+      "person": "cfrep_m1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.4962627515853328
+    },
+    {
+      "id": "squat_diag_m2_8_6_r01",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r02",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r03",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r04",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r05",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r06",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r07",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r08",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r09",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r10",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r11",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.9045312499999998
+    },
+    {
+      "id": "squat_diag_m2_8_6_r12",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.9761979166666666
+    },
+    {
+      "id": "squat_diag_m2_8_6_r13",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m2_8_6_r14",
+      "person": "cfrep_m2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9645312499999998
+    },
+    {
+      "id": "squat_front_m3_9_3_r01",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r02",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r03",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r04",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r05",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r06",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r07",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r08",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r09",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r10",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r11",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m3_9_3_r12",
+      "person": "cfrep_m3",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_m4_5_7_r06",
+      "person": "cfrep_m4",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9054886378545035
+    },
+    {
+      "id": "squat_diag_m4_5_7_r07",
+      "person": "cfrep_m4",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9498187304572192
+    },
+    {
+      "id": "squat_diag_m4_5_7_r08",
+      "person": "cfrep_m4",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.955083822130628
+    },
+    {
+      "id": "squat_diag_m4_5_7_r09",
+      "person": "cfrep_m4",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.6103819575008296
+    },
+    {
+      "id": "squat_diag_m4_5_7_r12",
+      "person": "cfrep_m4",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9148259872520939
+    },
+    {
+      "id": "squat_front_m4_6_6_r01",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m4_6_6_r02",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m4_6_6_r03",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m4_6_6_r04",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m4_6_6_r05",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m4_6_6_r06",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m4_6_6_r11",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_m4_6_6_r12",
+      "person": "cfrep_m4",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w1_9_3_r01",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w1_9_3_r02",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w1_9_3_r03",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w1_9_3_r04",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w1_9_3_r05",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9348959070373977
+    },
+    {
+      "id": "squat_diag_w1_9_3_r06",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.965871256213966
+    },
+    {
+      "id": "squat_diag_w1_9_3_r07",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9896733069748582
+    },
+    {
+      "id": "squat_diag_w1_9_3_r08",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9947080291970802
+    },
+    {
+      "id": "squat_diag_w1_9_3_r09",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w1_9_3_r10",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9893883547008548
+    },
+    {
+      "id": "squat_diag_w1_9_3_r11",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w1_9_3_r12",
+      "person": "cfrep_w1",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_w1_9_3_r01",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.994423076923077
+    },
+    {
+      "id": "squat_front_w1_9_3_r02",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.994423076923077
+    },
+    {
+      "id": "squat_front_w1_9_3_r03",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9893883547008548
+    },
+    {
+      "id": "squat_front_w1_9_3_r04",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.994423076923077
+    },
+    {
+      "id": "squat_front_w1_9_3_r05",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_w1_9_3_r06",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9893883547008548
+    },
+    {
+      "id": "squat_front_w1_9_3_r07",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.994423076923077
+    },
+    {
+      "id": "squat_front_w1_9_3_r08",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.8483739210688117
+    },
+    {
+      "id": "squat_front_w1_9_3_r09",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.994423076923077
+    },
+    {
+      "id": "squat_front_w1_9_3_r10",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9893883547008548
+    },
+    {
+      "id": "squat_front_w1_9_3_r11",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.994423076923077
+    },
+    {
+      "id": "squat_front_w1_9_3_r12",
+      "person": "cfrep_w1",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9481549039747947
+    },
+    {
+      "id": "squat_diag_w2_5_7_r01",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9711563003071817
+    },
+    {
+      "id": "squat_diag_w2_5_7_r02",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_diag_w2_5_7_r03",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.9547207900075558
+    },
+    {
+      "id": "squat_diag_w2_5_7_r04",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.931451357061896
+    },
+    {
+      "id": "squat_diag_w2_5_7_r05",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.7502534865957027
+    },
+    {
+      "id": "squat_diag_w2_5_7_r06",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.209330386080277
+    },
+    {
+      "id": "squat_diag_w2_5_7_r07",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.4059888457895489
+    },
+    {
+      "id": "squat_diag_w2_5_7_r08",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.8558129435245412
+    },
+    {
+      "id": "squat_diag_w2_5_7_r09",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.832983518751232
+    },
+    {
+      "id": "squat_diag_w2_5_7_r10",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.4494396977262727
+    },
+    {
+      "id": "squat_diag_w2_5_7_r11",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 1,
+      "prediction": 1.9054142591086802
+    },
+    {
+      "id": "squat_diag_w2_5_7_r12",
+      "person": "cfrep_w2",
+      "view": "diagonal",
+      "target": 2,
+      "prediction": 1.914360236382154
+    },
+    {
+      "id": "squat_front_w2_9_3_r01",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_w2_9_3_r02",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_w2_9_3_r03",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "squat_front_w2_9_3_r06",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9942415730337077
+    },
+    {
+      "id": "squat_front_w2_9_3_r08",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9773861774344568
+    },
+    {
+      "id": "squat_front_w2_9_3_r09",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9831446044007488
+    },
+    {
+      "id": "squat_front_w2_9_3_r10",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9716277504681645
+    },
+    {
+      "id": "squat_front_w2_9_3_r11",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.960530781835206
+    },
+    {
+      "id": "squat_front_w2_9_3_r12",
+      "person": "cfrep_w2",
+      "view": "front",
+      "target": 2,
+      "prediction": 1.9254169592696626
+    }
+  ],
+  "excluded": [
+    "squat_front_w2_9_3_r04",
+    "squat_front_w2_9_3_r05",
+    "squat_front_w2_9_3_r07"
+  ],
+  "grade_zero_supported": false,
+  "independent_final_test": false,
+  "expert_validated": false,
+  "development_gate_passed": false,
+  "model_sha256": "eddd2fb9e60a7bf5c54dc1cfa9043a1c9c7ac3929ca9a6cc6c1b4802b06d7a2a"
+}

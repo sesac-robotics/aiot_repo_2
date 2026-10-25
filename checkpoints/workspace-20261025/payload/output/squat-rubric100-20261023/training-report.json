@@ -1,0 +1,125 @@
+{
+  "version": "original100-alignment-v1",
+  "source_digest": "c850c28b43de189e32b2419147567247d08385c717c8ca90a6bc2c6d1f58d891",
+  "label_sha256": "03852878cc819e014a46019b9d3eda0d9087c9f093dd77e2c9b115f31cddc2d4",
+  "train_count": 31,
+  "validation_count": 10,
+  "train_support": {
+    "0": 2,
+    "1": 1,
+    "2": 28
+  },
+  "train_people": [
+    "Petra",
+    "Terka",
+    "Vasil"
+  ],
+  "validation_people": [
+    "Mima"
+  ],
+  "validation_MAE_grade": {
+    "before_raw_ai": 0.1,
+    "after_ai": 0.3757985959408582,
+    "before_rule": 0.1,
+    "after_rule": 0.1
+  },
+  "validation_MAE_points20": {
+    "before_raw_ai": 1.0,
+    "after_ai": 3.7579859594085816,
+    "before_rule": 1.0,
+    "after_rule": 1.0
+  },
+  "predictions": [
+    {
+      "id": "Mima_01",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.9916666666666667,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_02",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.3841408421606185,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_03",
+      "target": 1,
+      "before_raw_ai": 2.0,
+      "after_ai": 0.09812773072528065,
+      "before_rule": 0,
+      "after_rule": 0
+    },
+    {
+      "id": "Mima_04",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.8095117809172465,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_05",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.506260235895124,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_06",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.9916666666666667,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_07",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.4632596161069789,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_08",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.7201121010757532,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_09",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.6930962870873227,
+      "before_rule": 2,
+      "after_rule": 2
+    },
+    {
+      "id": "Mima_10",
+      "target": 2,
+      "before_raw_ai": 2.0,
+      "after_ai": 1.5841721132897602,
+      "before_rule": 2,
+      "after_rule": 2
+    }
+  ],
+  "promoted": false,
+  "selection_warning": "개발 검증 확인에 따른 보수적 반영 판단; 독립 최종 시험 아님",
+  "test_opened": false,
+  "expert_validated": false,
+  "rule_boundaries": [
+    8,
+    15
+  ],
+  "feature_pipeline": "original three_items.describe: abs frontal trunk tilt percentiles5/10/25/50/75/90/95+coverage",
+  "original_single_grade_model": true,
+  "model_sha256": "83f1cdf681c1ecad4923f0e3942e9bdb454e8da27ff729607c02af857c6420ad"
+}

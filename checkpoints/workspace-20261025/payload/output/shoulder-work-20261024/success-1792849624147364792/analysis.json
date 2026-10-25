@@ -1,0 +1,590 @@
+{
+  "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792849624147364792",
+  "scope": "deployed functional replay, no video ground truth",
+  "samples": 369,
+  "seconds": 36.8,
+  "saved_count": 7,
+  "replayed_count": 7,
+  "evaluation_rows": 7,
+  "segments_nonoverlapping": true,
+  "phase_counts": {
+    "하단 준비 자세 확인 중": 40,
+    "준비 완료 · 양팔을 올리세요": 130,
+    "상승 · 양팔 상단 확인 중": 59,
+    "하단 복귀 확인 중": 87,
+    "반복 완료 · 하단 준비 자세 재확인": 7,
+    "관측 대기 · 왼쪽 골반이 화면 안쪽에 보이도록 구도를 맞춰 주세요. 화면 경계 또는 밖의 추정 좌표는 횟수와 점수에서 함께 제외합니다.": 2,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반이 화면 안쪽에 보이도록 구도를 맞춰 주세요. 화면 경계 또는 밖의 추정 좌표는 횟수와 점수에서 함께 제외합니다.": 8,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반이 화면 안쪽에 보이도록 구도를 맞춰 주세요.": 5,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요. 화면 경계 또는 밖의 추정 좌표는 횟수와 점수에서 함께 제외합니다.": 1,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.": 1,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.": 1,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.": 2,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.": 25,
+    "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요. 화면 경계 또는 밖의 추정 좌표는 횟수와 점수에서 함께 제외합니다.": 1
+  },
+  "rows": [
+    {
+      "number": 1,
+      "start_tick": 876,
+      "end_tick": 906,
+      "samples": 31,
+      "duration": 3.0,
+      "slot_coverage": 1.0,
+      "all_required_observed": true,
+      "ai_subtotal": 49.9,
+      "ai_assessed_weight": 55,
+      "ai_total": null,
+      "rule_total": 75.0,
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 25.8,
+          "rule_points": 30.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -4.2,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -4.2점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 12.5,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 24.1,
+          "rule_points": 12.5,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": 11.6,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +11.6점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "start_tick": 917,
+      "end_tick": 940,
+      "samples": 24,
+      "duration": 2.3,
+      "slot_coverage": 1.0,
+      "all_required_observed": true,
+      "ai_subtotal": 52.3,
+      "ai_assessed_weight": 55,
+      "ai_total": null,
+      "rule_total": 87.5,
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 27.3,
+          "rule_points": 30.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -2.7,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -2.7점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 25.0,
+          "rule_points": 12.5,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": 12.5,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +12.5점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "start_tick": 953,
+      "end_tick": 977,
+      "samples": 25,
+      "duration": 2.4,
+      "slot_coverage": 1.0,
+      "all_required_observed": true,
+      "ai_subtotal": 50.2,
+      "ai_assessed_weight": 55,
+      "ai_total": null,
+      "rule_total": 87.5,
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 26.8,
+          "rule_points": 30.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -3.2,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -3.2점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 23.4,
+          "rule_points": 12.5,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": 10.9,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +10.9점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "start_tick": 985,
+      "end_tick": 1007,
+      "samples": 23,
+      "duration": 2.2,
+      "slot_coverage": 1.0,
+      "all_required_observed": true,
+      "ai_subtotal": 41.2,
+      "ai_assessed_weight": 55,
+      "ai_total": null,
+      "rule_total": 87.5,
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 26.8,
+          "rule_points": 30.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -3.2,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -3.2점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 14.4,
+          "rule_points": 12.5,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": 1.9,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +1.9점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "start_tick": 1037,
+      "end_tick": 1056,
+      "samples": 20,
+      "duration": 1.9,
+      "slot_coverage": 1.0,
+      "all_required_observed": true,
+      "ai_subtotal": 51.6,
+      "ai_assessed_weight": 55,
+      "ai_total": null,
+      "rule_total": 87.5,
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 26.7,
+          "rule_points": 30.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -3.3,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -3.3점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 24.9,
+          "rule_points": 12.5,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": 12.4,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +12.4점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "start_tick": 1072,
+      "end_tick": 1094,
+      "samples": 23,
+      "duration": 2.2,
+      "slot_coverage": 1.0,
+      "all_required_observed": true,
+      "ai_subtotal": 44.1,
+      "ai_assessed_weight": 55,
+      "ai_total": null,
+      "rule_total": 100.0,
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 25.1,
+          "rule_points": 30.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -4.9,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -4.9점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 19.0,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -6.0,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -6.0점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "start_tick": 1104,
+      "end_tick": 1128,
+      "samples": 25,
+      "duration": 2.4,
+      "slot_coverage": 1.0,
+      "all_required_observed": true,
+      "ai_subtotal": 47.0,
+      "ai_assessed_weight": 55,
+      "ai_total": null,
+      "rule_total": 100.0,
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 25.0,
+          "rule_points": 30.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -5.0,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -5.0점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 22.0,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -3.0,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -3.0점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ]
+    }
+  ],
+  "rule_mean": 89.28571428571429,
+  "ai_subtotal_mean": 48.04285714285714,
+  "sha256": {
+    "pose.npz": "12c727fd3bab887623a306a6559e3501a4e4b45ff0ba9c107fe03907a007a277",
+    "state.json": "7a048264a8a7f307c9e8294e0d7f7f132dc55b6eb108a54385d8d4c06b48e91c",
+    "final-state.json": "4e16026678079736c7277adc8094eb21d902d725aa701a3d6780b0292c292ff6"
+  },
+  "video_present": false,
+  "models_changed": false
+}

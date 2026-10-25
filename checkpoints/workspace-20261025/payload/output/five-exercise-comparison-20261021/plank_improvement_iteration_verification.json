@@ -1,0 +1,192 @@
+{
+  "updated_at": "2026-10-21T19:02:11.278606+09:00",
+  "metadata_candidates": 5,
+  "new_sources_acquired_and_directly_screened": 2,
+  "new_full_error_training_labels": 0,
+  "plank_full_training_records": 10,
+  "plank_training_people": 8,
+  "plank_error_training_people": 2,
+  "new_development_challenge_sources": 2,
+  "new_development_challenge_full_totals": 1,
+  "new_development_challenge_partial_only": 1,
+  "new_challenge_sources_used_for_training": false,
+  "independent_final_tests": 0,
+  "expert_labels": 0,
+  "AI_variants": {
+    "unweighted_leaf2": {
+      "all": {
+        "ai_score": {
+          "samples": 10,
+          "MAE": 13.3125
+        },
+        "original_rule_score": {
+          "samples": 10,
+          "MAE": 16.25
+        },
+        "trial_rule_score": {
+          "samples": 10,
+          "MAE": 9.25
+        }
+      },
+      "normal": {
+        "ai_score": {
+          "samples": 8,
+          "MAE": 5.21484375
+        },
+        "original_rule_score": {
+          "samples": 8,
+          "MAE": 15.0
+        },
+        "trial_rule_score": {
+          "samples": 8,
+          "MAE": 7.5
+        }
+      },
+      "error": {
+        "ai_score": {
+          "samples": 2,
+          "MAE": 45.703125
+        },
+        "original_rule_score": {
+          "samples": 2,
+          "MAE": 21.25
+        },
+        "trial_rule_score": {
+          "samples": 2,
+          "MAE": 16.25
+        }
+      }
+    },
+    "balanced_leaf2": {
+      "all": {
+        "ai_score": {
+          "samples": 10,
+          "MAE": 13.01953125
+        },
+        "original_rule_score": {
+          "samples": 10,
+          "MAE": 16.25
+        },
+        "trial_rule_score": {
+          "samples": 10,
+          "MAE": 9.25
+        }
+      },
+      "normal": {
+        "ai_score": {
+          "samples": 8,
+          "MAE": 9.42626953125
+        },
+        "original_rule_score": {
+          "samples": 8,
+          "MAE": 15.0
+        },
+        "trial_rule_score": {
+          "samples": 8,
+          "MAE": 7.5
+        }
+      },
+      "error": {
+        "ai_score": {
+          "samples": 2,
+          "MAE": 27.392578125
+        },
+        "original_rule_score": {
+          "samples": 2,
+          "MAE": 21.25
+        },
+        "trial_rule_score": {
+          "samples": 2,
+          "MAE": 16.25
+        }
+      }
+    },
+    "balanced_leaf1": {
+      "all": {
+        "ai_score": {
+          "samples": 10,
+          "MAE": 11.109375
+        },
+        "original_rule_score": {
+          "samples": 10,
+          "MAE": 16.25
+        },
+        "trial_rule_score": {
+          "samples": 10,
+          "MAE": 9.25
+        }
+      },
+      "normal": {
+        "ai_score": {
+          "samples": 8,
+          "MAE": 3.75
+        },
+        "original_rule_score": {
+          "samples": 8,
+          "MAE": 15.0
+        },
+        "trial_rule_score": {
+          "samples": 8,
+          "MAE": 7.5
+        }
+      },
+      "error": {
+        "ai_score": {
+          "samples": 2,
+          "MAE": 40.546875
+        },
+        "original_rule_score": {
+          "samples": 2,
+          "MAE": 21.25
+        },
+        "trial_rule_score": {
+          "samples": 2,
+          "MAE": 16.25
+        }
+      }
+    }
+  },
+  "common_model_unchanged": true,
+  "common_rule_unchanged": true,
+  "labels_unchanged": true,
+  "adopted": false,
+  "rule_warning_ko": "알려진 실패를 보고 설계한 기존 개발 자료의 개선이며 새로운 오류 참여자 검증을 대체하지 않는다.",
+  "web": "plank_improvement_trial.html",
+  "trial_report": "plank_balance_trial.json",
+  "challenge_report": "plank_balance_challenge_results.json",
+  "label_reaudit": "plank_label_reaudit_queue.json",
+  "input_crop_fix": "plank_challenge_input_adjustment.json",
+  "all_five_completed": false,
+  "checks": {
+    "unit_tests_passed": 55,
+    "black_files": 124,
+    "compileall_passed": true,
+    "links": {
+      "index.html": {
+        "references": 34,
+        "missing": []
+      },
+      "plank_improvement_trial.html": {
+        "references": 15,
+        "missing": []
+      },
+      "plank_side_progress.html": {
+        "references": 18,
+        "missing": []
+      }
+    },
+    "decoded_overlay_frames": {
+      "amanda_challenge": 30,
+      "ottobre_challenge": 30
+    },
+    "raw_label_sha_preserved": true,
+    "common_model_sha_preserved": true,
+    "local_browser_visual_check": false,
+    "resource_end": {
+      "cpu_c": 52.0,
+      "gpu_c": 35.0,
+      "available_mib": 8487.90234375,
+      "ac_connected": true
+    }
+  }
+}

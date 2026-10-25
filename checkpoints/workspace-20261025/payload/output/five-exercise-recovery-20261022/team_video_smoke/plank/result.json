@@ -1,0 +1,148 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "plank",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": 0.9605067447956017,
+      "rule_grade": 1,
+      "ai_minus_rule": -0.03949325520439828,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 156.3819800971707,
+      "feature": [
+        155.62381826828806,
+        156.3819800971707,
+        158.51188726634433,
+        162.63344717590633,
+        163.9508715451851,
+        166.89279549853836,
+        171.8918022788657
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "elbow_sagittal_position",
+      "weight": 25,
+      "ai_grade": 1.5201900887607471,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.5201900887607471,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 0.2892843071051995,
+      "feature": [
+        0.025630728439294672,
+        0.03901808250528432,
+        0.09572280161841573,
+        0.2392737014259926,
+        0.25809858921823087,
+        0.2892843071051995,
+        0.3811120093721895
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "leg_and_body_support",
+      "weight": 20,
+      "ai_grade": 1.101825688024935,
+      "rule_grade": 0,
+      "ai_minus_rule": 1.101825688024935,
+      "observed": true,
+      "bank": "side_support_clearance_v1",
+      "measured": [
+        84.79661092852069,
+        0.43357919674001355,
+        -0.17123551004896323
+      ],
+      "feature": [
+        63.24191184438386,
+        84.79661092852069,
+        157.48183886331657,
+        165.20958632846853,
+        167.15397270665449,
+        168.23892445889263,
+        168.55436455570526,
+        0.4024328569279643,
+        0.43357919674001355,
+        0.4551395645194305,
+        0.4893380255487679,
+        0.4981117443781559,
+        0.6181916578575081,
+        0.7586250971163978,
+        -0.2693055742780228,
+        -0.17123551004896323,
+        0.19257005691303247,
+        0.2657806023987902,
+        0.30570520188789885,
+        0.32089786848483604,
+        0.32180559365030315,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support_continuity",
+      "weight": 15,
+      "ai_grade": 0.012850422427035334,
+      "rule_grade": 0,
+      "ai_minus_rule": 0.012850422427035334,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 105.31245271132141,
+      "feature": [
+        63.24191184438386,
+        84.79661092852069,
+        157.48183886331657,
+        165.20958632846853,
+        167.15397270665449,
+        168.23892445889263,
+        168.55436455570526
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": 49.327146053873484,
+  "rule_score": 32.5,
+  "ai_minus_rule": 16.827146053873484,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 28.799883999454323,
+    "ai": 192.48951899498934,
+    "rule": 0.01926800177898258
+  },
+  "limitations": [
+    "79-segment candidate remains experimental; 17-segment baseline scored better on two reused total-score cases.",
+    "Repeated hold windows are concentrated in few source recordings.",
+    "Joint geometry does not certify body contact or load."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_773312.mp4",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 23.258974742995633,
+    "delegate": "CPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

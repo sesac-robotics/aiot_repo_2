@@ -1,0 +1,132 @@
+{
+  "schema": "ytw-Y-entry-repair-verification-v4.1",
+  "updated_at_utc": "2026-10-24T13:50:27.370556+00:00",
+  "comparison": {
+    "baseline": {
+      "summary": {
+        "withheld_auto_boundaries": 0,
+        "reference_attempts": 10,
+        "matched_attempts": 10,
+        "natural_negative_episodes": 13,
+        "false_completions": 0,
+        "invalid_phase_windows": 1,
+        "Y_definite_within_0_2": 2,
+        "Y_worst_error_sum": 3.3,
+        "Y_minimum_error_gt_0_2": 3,
+        "phase_definite_within_0_2": 16,
+        "phase_comparisons": 30,
+        "terminal_definite_within_0_2": 7,
+        "terminal_comparisons": 10,
+        "source_event_counts": {
+          "V37": 4,
+          "V38": 0,
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "timing": {
+        "Y_early_more_than_0_2": 3,
+        "Y_late_more_than_0_2": 0,
+        "Y_definitely_within_0_2": 2,
+        "Y_observations": 10
+      }
+    },
+    "ready_origin_fix": {
+      "summary": {
+        "withheld_auto_boundaries": 0,
+        "reference_attempts": 10,
+        "matched_attempts": 10,
+        "natural_negative_episodes": 13,
+        "false_completions": 0,
+        "invalid_phase_windows": 0,
+        "Y_definite_within_0_2": 2,
+        "Y_worst_error_sum": 3.2,
+        "Y_minimum_error_gt_0_2": 2,
+        "phase_definite_within_0_2": 16,
+        "phase_comparisons": 30,
+        "terminal_definite_within_0_2": 7,
+        "terminal_comparisons": 10,
+        "source_event_counts": {
+          "V37": 4,
+          "V38": 0,
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "timing": {
+        "Y_early_more_than_0_2": 2,
+        "Y_late_more_than_0_2": 0,
+        "Y_definitely_within_0_2": 2,
+        "Y_observations": 10
+      }
+    },
+    "hold_onset_v4": {
+      "summary": {
+        "withheld_auto_boundaries": 0,
+        "reference_attempts": 10,
+        "matched_attempts": 10,
+        "natural_negative_episodes": 13,
+        "false_completions": 0,
+        "invalid_phase_windows": 0,
+        "Y_definite_within_0_2": 5,
+        "Y_worst_error_sum": 2.9,
+        "Y_minimum_error_gt_0_2": 1,
+        "phase_definite_within_0_2": 19,
+        "phase_comparisons": 30,
+        "terminal_definite_within_0_2": 7,
+        "terminal_comparisons": 10,
+        "source_event_counts": {
+          "V37": 4,
+          "V38": 0,
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "timing": {
+        "Y_early_more_than_0_2": 0,
+        "Y_late_more_than_0_2": 1,
+        "Y_definitely_within_0_2": 5,
+        "Y_observations": 10
+      }
+    }
+  },
+  "reference_sha256": "969768c9842f9da3b379e6c9d77fc71304ec6dae1107d4b5f10a27145bd44de6",
+  "model_refit": false,
+  "source_roles_preserved": true,
+  "Test_or_finalTest_opened": false,
+  "live_app_changed": false,
+  "camera_started": false,
+  "all_new_phase_windows_valid": true,
+  "no_backdated_stability_tick": true,
+  "ordered_count_preserved": true,
+  "natural_negative_false_completions_unchanged": true,
+  "scoring_manual_approvals_false": true,
+  "source_bundle_newly_deployed": false,
+  "new_regression_tests_passed": 13,
+  "scope": "fully_exposed_development_repair_after_v3_failure_not_independent_validation",
+  "activation_gate_passed": false,
+  "remaining": [
+    "13 negatives below20/types limited",
+    "phase19/30 definite and terminal7/10 below90percent",
+    "one late Y case >=0.3s",
+    "AI draft uncertainty, no new full-bundle unseen person",
+    "state boundary improvement not severity score accuracy"
+  ],
+  "files_sha256": {
+    "tools/ytw-work/ytw_hold_onset_v4.py": "a0d3b0ece473a9e50326ea2bc1c817ee65fb9b498a718d4b7a0369529745b4c6",
+    "tools/ytw-work/ytw_ready_fix_v2.py": "74fdae7d54ab16ffa9af69fac486f1f912723dc005f962ff2c0cedd71b84f590",
+    "tools/ytw-work/entry_v4_replay.py": "af7b9b56fa7350a6ed3ceac6c766055c1aa7fd58faa9b328431f868998a18c6d",
+    "tools/ytw-work/test_ytw_entry_v4.py": "462068c5ed5719943f108c26d4b2b660ac8bc3bcf609bdc7c2eea2262c8ca7b2",
+    "output/ytw-work-20261024/y-entry-v4.1/evaluation.json": "7dc398a3e4daaaa89881d8435e1183c3535835423ed75a3d9b1d629782578f90",
+    "output/ytw-work-20261024/y-entry-v4.1/saved-session.json": "24f83f728694c01bbabd81e6beea47ee1b12ad2742dc6563d056330ea474954d"
+  }
+}

@@ -1,0 +1,411 @@
+[
+  {
+    "exercise": "pushups",
+    "rubric_version": "project-core-form-v1",
+    "criterion_ids": [
+      "trunk_line",
+      "descent_range",
+      "return_extension",
+      "support"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "팔 굽힘·하강 범위",
+      "상단 팔 펴기",
+      "손·발 지지"
+    ],
+    "weights": [
+      40,
+      30,
+      20,
+      10
+    ],
+    "anchors": [
+      {
+        "id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "anchors": [
+          "뚜렷한 엉덩이 들림·처짐",
+          "경미한 꺾임 또는 일부 구간 이탈",
+          "선택 구간에서 큰 꺾임 없이 정렬 유지"
+        ]
+      },
+      {
+        "id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "anchors": [
+          "움직임이 작고 하단에서도 팔이 크게 굽혀지지 않음",
+          "하강은 있으나 기준 자세에 충분히 이르지 않음",
+          "가슴이 낮아지고 상완이 바닥에 가까운 방향까지 내려감"
+        ]
+      },
+      {
+        "id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "anchors": [
+          "팔을 편 상단으로 돌아오지 못함",
+          "상단에서도 팔꿈치 굽힘이 일부 남음",
+          "상단에서 팔을 거의 편 자세로 돌아옴. 강제 잠금은 요구하지 않음"
+        ]
+      },
+      {
+        "id": "support",
+        "name_ko": "손·발 지지",
+        "anchors": [
+          "무릎·몸통을 바닥에 대고 지지함",
+          "중간에 지지 방식이 바뀜",
+          "선택 구간 손·발 지지 유지"
+        ]
+      }
+    ],
+    "required_views": [
+      "side"
+    ],
+    "segment_unit_ko": "상단 → 하강 → 상단의 한 반복",
+    "total_formula": "sum(weight * level / 2)",
+    "unknown_policy_ko": "가림·잘림·관측 방향 불일치·수행자 불명·구간 불완전·등급 경계 불확실은 null. 하나라도 null이면 총점 null.",
+    "scope_ko": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "expert_validated": false
+  },
+  {
+    "exercise": "squats",
+    "rubric_version": "project-core-form-v1",
+    "criterion_ids": [
+      "descent_range",
+      "return_extension",
+      "knee_foot",
+      "trunk_balance"
+    ],
+    "criterion_names_ko": [
+      "하강 범위",
+      "다시 일어서기",
+      "무릎·발 정렬과 접지",
+      "몸통 좌우 균형"
+    ],
+    "weights": [
+      30,
+      20,
+      30,
+      20
+    ],
+    "anchors": [
+      {
+        "id": "descent_range",
+        "name_ko": "하강 범위",
+        "anchors": [
+          "무릎·엉덩이를 조금만 굽힌 얕은 하강",
+          "분명히 내려가지만 허벅지가 수평보다 위에 있음",
+          "허벅지가 수평에 가까워지는 하강"
+        ]
+      },
+      {
+        "id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "anchors": [
+          "서기 자세로 복귀하지 못함",
+          "무릎·엉덩이 굽힘이 남아 부분 복귀",
+          "선택 반복에서 원래의 서기 자세로 복귀"
+        ]
+      },
+      {
+        "id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "anchors": [
+          "뚜렷한 안쪽 무릎 붕괴·뒤꿈치 들림·발 지지 이탈",
+          "부분적 정렬 이탈",
+          "앞뒤·정면 근거에서 큰 정렬 이탈 없이 접지 유지"
+        ]
+      },
+      {
+        "id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "anchors": [
+          "뚜렷한 한쪽 기울기·비대칭",
+          "경미한 한쪽 기울기",
+          "정면 근거에서 큰 좌우 기울기 없이 수행"
+        ]
+      }
+    ],
+    "required_views": [
+      "side",
+      "synchronized_front"
+    ],
+    "segment_unit_ko": "동기화 측면·정면의 서기 → 하강 → 서기 한 반복",
+    "total_formula": "sum(weight * level / 2)",
+    "unknown_policy_ko": "가림·잘림·관측 방향 불일치·수행자 불명·구간 불완전·등급 경계 불확실은 null. 하나라도 null이면 총점 null.",
+    "scope_ko": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "expert_validated": false
+  },
+  {
+    "exercise": "plank",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_support_position",
+      "knee_trunk_support",
+      "hold_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "팔꿈치 지지 위치",
+      "무릎·몸통 추가 지지",
+      "관측 구간의 지지 유지"
+    ],
+    "weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "anchors": [
+      {
+        "id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "anchors": [
+          "큰 엉덩이 들림·처짐",
+          "일부 꺾임·구간 이탈",
+          "몸통·골반의 큰 꺾임 없이 유지"
+        ]
+      },
+      {
+        "id": "elbow_support_position",
+        "name_ko": "팔꿈치 지지 위치",
+        "anchors": [
+          "어깨와 팔꿈치의 큰 전후·좌우 이탈이 직접 보임",
+          "부분 위치 이탈",
+          "팔꿈치가 어깨 아래에 대체로 위치함"
+        ]
+      },
+      {
+        "id": "knee_trunk_support",
+        "name_ko": "무릎·몸통 추가 지지",
+        "anchors": [
+          "무릎·몸통을 바닥에 두고 지지함",
+          "일부 구간 추가 지지",
+          "관측 구간 팔꿈치·발끝 지지를 유지함"
+        ]
+      },
+      {
+        "id": "hold_continuity",
+        "name_ko": "관측 구간의 지지 유지",
+        "anchors": [
+          "확인되는 지지 중단",
+          "반복되는 지지 변경·큰 이탈",
+          "선택 3초에서 큰 지지 변경 없이 유지"
+        ]
+      }
+    ],
+    "required_views": [
+      "side"
+    ],
+    "segment_unit_ko": "편집 없는 측면 전신의 약 3초 지지",
+    "total_formula": "sum(weight * level / 2)",
+    "unknown_policy_ko": "가림·잘림·관측 방향 불일치·수행자 불명·구간 불완전·등급 경계 불확실은 null. 하나라도 null이면 총점 null.",
+    "scope_ko": "무릎 플랭크는 별도 변형으로 표시. 정면 팔만 보이는 자료에서 몸통 정렬·전신 유지 여부를 추측하지 않음. 유지 시간은 체력 점수가 아님.",
+    "expert_validated": false
+  },
+  {
+    "exercise": "ytw",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "y_reach",
+      "t_reach",
+      "w_shape",
+      "hinge_and_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "Y 단계 팔 도달",
+      "T 단계 팔 펼침",
+      "W 단계 팔 굽힘",
+      "전경 자세와 큰 몸통 흔들림"
+    ],
+    "weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "anchors": [
+      {
+        "id": "y_reach",
+        "name_ko": "Y 단계 팔 도달",
+        "anchors": [
+          "Y 방향으로 뻗는 수행이 매우 작거나 명확히 미달",
+          "대각선 올림이 있으나 큰 팔 굽힘·부분 도달",
+          "양팔을 대각선 Y 방향으로 대체로 펴 올림"
+        ]
+      },
+      {
+        "id": "t_reach",
+        "name_ko": "T 단계 팔 펼침",
+        "anchors": [
+          "양옆 펼침이 매우 작음",
+          "부분 높이·큰 팔 굽힘·높이 차이",
+          "양팔을 어깨 선의 양옆 T 방향으로 대체로 펼침"
+        ]
+      },
+      {
+        "id": "w_shape",
+        "name_ko": "W 단계 팔 굽힘",
+        "anchors": [
+          "W 방향 굽힘 수행이 명확히 미달",
+          "부분 굽힘·팔 모양 차이",
+          "양 팔꿈치를 굽히고 손을 팔꿈치 위쪽으로 두는 W 모양이 구분됨"
+        ]
+      },
+      {
+        "id": "hinge_and_trunk_hold",
+        "name_ko": "전경 자세와 큰 몸통 흔들림",
+        "anchors": [
+          "대체로 직립이거나 몸통 큰 반동",
+          "얕은 전경 또는 일부 몸통 이탈",
+          "분명한 전경 자세를 큰 흔들림 없이 유지함"
+        ]
+      }
+    ],
+    "required_views": [
+      "front_or_oblique_full_arms_and_hinged_trunk"
+    ],
+    "segment_unit_ko": "Y → T → W → 원위치의 한 시도",
+    "total_formula": "sum(weight * level / 2)",
+    "unknown_policy_ko": "가림·잘림·관측 방향 불일치·수행자 불명·구간 불완전·등급 경계 불확실은 null. 하나라도 null이면 총점 null.",
+    "scope_ko": "정면 투영의 핵심 수행 범위. 척추 곡률·견갑 움직임·엄지 방향·통증·정확한 고관절 각도는 채점하지 않음. 다른 직립 변형을 임상적으로 잘못된 운동이라 부르지 않으며 목표 변형과 구분함.",
+    "expert_validated": false
+  },
+  {
+    "exercise": "shoulder",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "anchors": [
+      {
+        "id": "overhead_reach",
+        "name_ko": "머리 위 팔 올림",
+        "anchors": [
+          "머리 위로 올림이 매우 작음",
+          "팔꿈치의 큰 굽힘·양팔 도달 차이",
+          "양팔을 머리 위로 거의 펴 올림. 강제 잠금은 요구하지 않음"
+        ]
+      },
+      {
+        "id": "lower_return",
+        "name_ko": "어깨 높이 하단 복귀",
+        "anchors": [
+          "하단으로 돌아오지 못함",
+          "부분 복귀",
+          "양팔이 어깨 높이 하단으로 대체로 복귀함"
+        ]
+      },
+      {
+        "id": "bilateral_timing",
+        "name_ko": "양팔 동시 움직임",
+        "anchors": [
+          "번갈아 올림·명확한 큰 시차",
+          "일부 높이·타이밍 차이",
+          "상승·하강에서 대체로 함께 움직임"
+        ]
+      },
+      {
+        "id": "frontal_trunk_hold",
+        "name_ko": "정면 몸통 좌우 유지",
+        "anchors": [
+          "큰 좌우 기울기·반동",
+          "부분 기울기·구간 이탈",
+          "큰 좌우 기울기 없이 유지함"
+        ]
+      }
+    ],
+    "required_views": [
+      "front"
+    ],
+    "segment_unit_ko": "어깨 높이 하단 → 머리 위 상단 → 하단 한 반복",
+    "total_formula": "sum(weight * level / 2)",
+    "unknown_policy_ko": "가림·잘림·관측 방향 불일치·수행자 불명·구간 불완전·등급 경계 불확실은 null. 하나라도 null이면 총점 null.",
+    "scope_ko": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "expert_validated": false
+  },
+  {
+    "exercise": "plank",
+    "rubric_version": "project-plank-side-core-v2",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "anchors": [
+      {
+        "id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "anchors": [
+          "큰 골반 들림·처짐",
+          "일부 골반 높이 이탈",
+          "큰 꺾임 없이 정렬"
+        ]
+      },
+      {
+        "id": "elbow_sagittal_position",
+        "name_ko": "측면 팔꿈치 전후 위치",
+        "anchors": [
+          "어깨 아래에서 큰 전후 이탈",
+          "일부 전후 이탈",
+          "대체로 어깨 아래"
+        ]
+      },
+      {
+        "id": "leg_and_body_support",
+        "name_ko": "편 다리·몸통 추가 지지 여부",
+        "anchors": [
+          "골반·무릎을 바닥에 둔 추가 지지",
+          "부분 무릎 굽힘 또는 지지 전환",
+          "무릎을 펴고 발끝 지지"
+        ]
+      },
+      {
+        "id": "support_continuity",
+        "name_ko": "선택 구간의 지지 지속",
+        "anchors": [
+          "명확한 지지 중단",
+          "지지 위치 변경",
+          "선택 구간의 지지 유지"
+        ]
+      }
+    ],
+    "required_views": [
+      "side"
+    ],
+    "segment_unit_ko": "편집 없는 측면 전신의 약 3초 지지",
+    "total_formula": "sum(weight * level / 2)",
+    "unknown_policy_ko": "가림·잘림·관측 방향 불일치·수행자 불명·구간 불완전·등급 경계 불확실은 null. 하나라도 null이면 총점 null.",
+    "scope_ko": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "expert_validated": false
+  }
+]

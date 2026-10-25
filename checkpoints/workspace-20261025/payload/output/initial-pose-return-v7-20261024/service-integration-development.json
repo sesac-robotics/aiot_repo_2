@@ -1,0 +1,2990 @@
+{
+  "completed": true,
+  "Test_used": false,
+  "models_not_refit": true,
+  "score_model_sha256": "b3e18b4fed948050e02d8722023069119c26a6fdc3452f8ecc094aa26d6a2a2c",
+  "state_model_sha256": "fc18ccb7f3ab9a8a9b23d1683be07de83530ffebcf657046b81d69549a6e0439",
+  "checks": [
+    {
+      "source_id": "V28",
+      "reviewed_interval_id": "V28_001000_004250",
+      "split": "train",
+      "result": {
+        "schema": "posture-score-local-v1",
+        "exercise": "pushups",
+        "model_version": "2026.10.22-reviewed-clip.1",
+        "feature_version": "observed-pixel-10hz-held-v2",
+        "assessment_scope": "reviewed_clip",
+        "items": [
+          {
+            "id": "trunk_line",
+            "weight": 40,
+            "ai_grade": 1.1020408163265305,
+            "rule_grade": 2,
+            "ai_minus_rule": -0.8979591836734695,
+            "observed": true,
+            "bank": "side",
+            "measured": 168.80489567581057,
+            "feature": [
+              168.05830094889583,
+              168.80489567581057,
+              169.7068399141061,
+              170.6104690201518,
+              172.4265841950769,
+              173.65515652471782,
+              174.08675193250224,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 13,
+              "1": 2,
+              "2": 21
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "side",
+            "measured": 57.42753558166639,
+            "feature": [
+              53.89753098972551,
+              57.42753558166639,
+              78.79729012081899,
+              130.9872131071449,
+              160.64828278559972,
+              163.704611023981,
+              164.20432993908216,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 2,
+              "1": 3,
+              "2": 36
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": null,
+            "rule_grade": 2,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "side",
+            "measured": 160.71719677026846,
+            "feature": [
+              150.44963518127201,
+              151.64922716016764,
+              155.24800309685455,
+              157.4377268095755,
+              160.67211452169477,
+              160.71719677026846,
+              160.7322241864597,
+              1.0
+            ],
+            "reasons": [
+              "training_grades_missing_0",
+              "return_severity_head_not_trained_for_feature_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 1,
+              "2": 43
+            },
+            "unseen_training_grades": [
+              0
+            ],
+            "window": null,
+            "initial_return_status": "observation_ended",
+            "severity_is_separately_learned": true
+          },
+          {
+            "id": "support",
+            "weight": 10,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "side",
+            "measured": 0.2915658934894433,
+            "feature": [
+              0.2815323828869329,
+              0.2915658934894433,
+              0.34557041200890837,
+              0.48266314914262676,
+              0.5496031028902105,
+              0.5569473098523747,
+              0.5582289091737203,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 1,
+              "1": 2,
+              "2": 26
+            },
+            "unseen_training_grades": [],
+            "window": null
+          }
+        ],
+        "ai_score": null,
+        "rule_score": 100.0,
+        "ai_minus_rule": null,
+        "complete_attempt_reviewed": true,
+        "requires_manual_view_review": true,
+        "ytw_projection_proxy": false,
+        "expert_validated": false,
+        "independent_final_test": false,
+        "timing_ms": {
+          "features": 1.6335249997609935,
+          "ai": 15.76054400038629,
+          "rule": 0.012588999652507482
+        },
+        "limitations": [
+          "Development-only labels; trunk and support require side view.",
+          "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+        ],
+        "initial_return_evidence": {
+          "schema": "learned_initial_pose_return_evidence_v1",
+          "state": {
+            "status": "observation_ended",
+            "return_events": 1,
+            "valid_repetition": null,
+            "initial_ready_observed": true,
+            "initial_ready_time": 1.2999685620915031,
+            "grade": null,
+            "grade_reason": "state_and_event_evidence_not_a_trained_severity_grade",
+            "exercise": "pushups"
+          },
+          "phase_order": null,
+          "calibration_time": 1.2999685620915031,
+          "frames": [
+            {
+              "time": 1.0999733986928104,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.1999709803921568,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.2999685620915031,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.3999661437908497,
+              "ready_probability": 0.9898231196533887,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.499963725490196,
+              "ready_probability": 0.9903112761250905,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.5999613071895424,
+              "ready_probability": 0.989681525426868,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.6999588888888888,
+              "ready_probability": 0.9894407997978869,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.7999564705882352,
+              "ready_probability": 0.9850459522987297,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.8999540522875817,
+              "ready_probability": 0.9688197638561047,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.999951633986928,
+              "ready_probability": 0.8838969429804567,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.0999492156862742,
+              "ready_probability": 0.6333683008904274,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.199946797385621,
+              "ready_probability": 0.307828443805861,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.2999443790849674,
+              "ready_probability": 0.17497408525559205,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.3999419607843135,
+              "ready_probability": 0.09894824863686574,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.49993954248366,
+              "ready_probability": 0.05727220126174437,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.5999371241830063,
+              "ready_probability": 0.03758994368308264,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.699934705882353,
+              "ready_probability": 0.027564540160186567,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.7999322875816994,
+              "ready_probability": 0.018696651413123936,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.8999298692810456,
+              "ready_probability": 0.013935241172168366,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.999927450980392,
+              "ready_probability": 0.01237675775273205,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 3.0999250326797383,
+              "ready_probability": 0.012420230061647764,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 3.199922614379085,
+              "ready_probability": 0.03382165398430505,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 3.2999201960784315,
+              "ready_probability": 0.10013832823959799,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 3.3999177777777776,
+              "ready_probability": 0.2652376305970282,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 3.499915359477124,
+              "ready_probability": 0.6306239644937589,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 3.5999129411764703,
+              "ready_probability": 0.873330903633528,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 3.699910522875817,
+              "ready_probability": 0.9374718881466687,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 3.7999081045751635,
+              "ready_probability": 0.9652915879879841,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 3.8999056862745096,
+              "ready_probability": 0.9800706717062773,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 3.999903267973856,
+              "ready_probability": 0.9797596802700952,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 4.099900849673203,
+              "ready_probability": 0.9850003137876048,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 4.1998984313725485,
+              "ready_probability": 0.9845981634932183,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            }
+          ],
+          "grade": null,
+          "scope": "state_and_order_evidence_not_trained_0_1_2_return_grade",
+          "production_replacement": false
+        },
+        "production_replacement": false,
+        "return_grade_integration": {
+          "status": "unassessed",
+          "grade": null,
+          "holds": [
+            "return_severity_head_not_trained_for_feature_bank"
+          ],
+          "state_is_not_quality_grade": true,
+          "unseen_training_grades": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "V20",
+      "reviewed_interval_id": "V20_000000_004250",
+      "split": "train",
+      "result": {
+        "schema": "posture-score-local-v1",
+        "exercise": "shoulder",
+        "model_version": "2026.10.22-reviewed-clip.1",
+        "feature_version": "observed-pixel-10hz-held-v2",
+        "assessment_scope": "reviewed_clip",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "weight": 30,
+            "ai_grade": 1.7382990611099969,
+            "rule_grade": 2,
+            "ai_minus_rule": -0.2617009388900031,
+            "observed": true,
+            "bank": "front",
+            "measured": 159.37222621440114,
+            "feature": [
+              43.59582186672777,
+              44.51461163918531,
+              47.268219804947776,
+              83.49764138046412,
+              150.1958024705179,
+              159.37222621440114,
+              160.25508850650297,
+              1.0
+            ],
+            "reasons": [
+              "training_grades_missing_0"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 17,
+              "2": 32
+            },
+            "unseen_training_grades": [
+              0
+            ],
+            "window": null
+          },
+          {
+            "id": "lower_return",
+            "weight": 25,
+            "ai_grade": null,
+            "rule_grade": 2,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 66.76385362241233,
+            "feature": [
+              65.1428835325871,
+              65.15763624078532,
+              65.20189436537996,
+              66.76385362241233,
+              71.67514839841567,
+              78.25759424609345,
+              80.45174286198603,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified",
+              "return_severity_head_not_trained_for_feature_bank"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 66
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null,
+            "initial_return_status": "observation_ended",
+            "severity_is_separately_learned": true
+          },
+          {
+            "id": "bilateral_timing",
+            "weight": 25,
+            "ai_grade": 1.7370012812053992,
+            "rule_grade": 2,
+            "ai_minus_rule": -0.2629987187946008,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.06411767974009731,
+            "feature": [
+              0.0007526821319910203,
+              0.004664187837926444,
+              0.007947386576974696,
+              0.015623901385600297,
+              0.024056607167395938,
+              0.06411767974009731,
+              0.07095645916621085,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 3,
+              "1": 7,
+              "2": 51
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 1.2958498651488095,
+            "feature": [
+              0.05759097211197524,
+              0.20468029860659717,
+              0.4660979113884417,
+              0.9451796374793373,
+              1.168801299470135,
+              1.2958498651488095,
+              1.3282549150247873,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 71
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ],
+        "ai_score": null,
+        "rule_score": 100.0,
+        "ai_minus_rule": null,
+        "complete_attempt_reviewed": true,
+        "requires_manual_view_review": true,
+        "ytw_projection_proxy": false,
+        "expert_validated": false,
+        "independent_final_test": false,
+        "timing_ms": {
+          "features": 1.6840299999785202,
+          "ai": 18.533503000526252,
+          "rule": 0.011393999557185452
+        },
+        "limitations": [
+          "Frontal projection does not assess sagittal lumbar arch.",
+          "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+        ],
+        "initial_return_evidence": {
+          "schema": "learned_initial_pose_return_evidence_v1",
+          "state": {
+            "status": "observation_ended",
+            "return_events": 0,
+            "valid_repetition": null,
+            "initial_ready_observed": true,
+            "initial_ready_time": 2.600150274040857,
+            "grade": null,
+            "grade_reason": "state_and_event_evidence_not_a_trained_severity_grade",
+            "exercise": "shoulder"
+          },
+          "phase_order": null,
+          "calibration_time": 2.600150274040857,
+          "frames": [
+            {
+              "time": 0.0,
+              "ready_probability": 0.9825892857142858,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.10000577977080219,
+              "ready_probability": 0.6622767857142857,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.20001155954160438,
+              "ready_probability": 0.2138392857142857,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.3000173393124066,
+              "ready_probability": 0.023214285714285715,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.40002311908320876,
+              "ready_probability": 0.007589285714285713,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.500028898854011,
+              "ready_probability": 0.004464285714285714,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.6000346786248132,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.7000404583956154,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.8000462381664175,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.9000520179372198,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.000057797708022,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.100063577478824,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.2000693572496264,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.3000751370204284,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.4000809167912307,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.500086696562033,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.600092476332835,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.7000982561036373,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.8001040358744396,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.9001098156452416,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.000115595416044,
+              "ready_probability": 0.007589285714285713,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.100121375186846,
+              "ready_probability": 0.01852678571428571,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.200127154957648,
+              "ready_probability": 0.2216517857142857,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.3001329347284507,
+              "ready_probability": 0.4091517857142857,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.4001387144992528,
+              "ready_probability": 0.7138392857142857,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.500144494270055,
+              "ready_probability": 0.9013392857142858,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.600150274040857,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.7001560538116594,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.8001618335824614,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 2.9001676133532635,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.000173393124066,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.100179172894868,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.20018495266567,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.3001907324364725,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.4001965122072746,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.5002022919780766,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.600208071748879,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.700213851519681,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.8002196312904832,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 3.9002254110612857,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 4.000231190832088,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 4.10023697060289,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 4.200242750373692,
+              "ready_probability": 1.0,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            }
+          ],
+          "grade": null,
+          "scope": "state_and_order_evidence_not_trained_0_1_2_return_grade",
+          "production_replacement": false
+        },
+        "production_replacement": false,
+        "return_grade_integration": {
+          "status": "unassessed",
+          "grade": null,
+          "holds": [
+            "return_severity_head_not_trained_for_feature_bank"
+          ],
+          "state_is_not_quality_grade": true,
+          "unseen_training_grades": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "source_id": "V01",
+      "reviewed_interval_id": "V01_000000_003150",
+      "split": "train",
+      "result": {
+        "schema": "posture-score-local-v1",
+        "exercise": "squats",
+        "model_version": "2026.10.22-reviewed-clip.1",
+        "feature_version": "observed-pixel-10hz-held-v2",
+        "assessment_scope": "reviewed_clip",
+        "items": [
+          {
+            "id": "descent_range",
+            "weight": 30,
+            "ai_grade": 1.2944616858635687,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 0.4979697074197999,
+            "feature": [
+              0.46198771754910284,
+              0.4979697074197999,
+              0.7323459052995839,
+              0.9293579725435388,
+              0.9863799870561283,
+              0.993344344304439,
+              0.9976315570200325,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 1,
+              "2": 5
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "return_extension",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": true,
+            "bank": "front",
+            "measured": 178.6908917076621,
+            "feature": [
+              158.7222043630684,
+              159.87507745891483,
+              163.33369674645414,
+              170.4723776709424,
+              177.40682797584162,
+              178.6908917076621,
+              179.11891295160225,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 29
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          },
+          {
+            "id": "knee_foot",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front",
+            "measured": 0.04561629876876401,
+            "feature": null,
+            "reasons": [
+              "item_requires_side_view",
+              "unsupported_model_view_bank"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": null,
+            "unseen_training_grades": null,
+            "window": null
+          },
+          {
+            "id": "trunk_balance",
+            "weight": 20,
+            "ai_grade": 2.0,
+            "rule_grade": 2,
+            "ai_minus_rule": 0.0,
+            "observed": true,
+            "bank": "front",
+            "measured": 1.4498401524371716,
+            "feature": [
+              0.08946299140818167,
+              0.1251264973879794,
+              0.24691930587006988,
+              0.4817553964578424,
+              1.0778000031000265,
+              1.4498401524371716,
+              1.6052993343037074,
+              1.0
+            ],
+            "reasons": [
+              "single_grade_training_error_discrimination_unverified"
+            ],
+            "single_grade_training": true,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 93
+            },
+            "unseen_training_grades": [
+              0,
+              1
+            ],
+            "window": null
+          }
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "ai_minus_rule": null,
+        "complete_attempt_reviewed": true,
+        "requires_manual_view_review": true,
+        "ytw_projection_proxy": false,
+        "expert_validated": false,
+        "independent_final_test": false,
+        "timing_ms": {
+          "features": 1.8485309997231525,
+          "ai": 13.636642000165011,
+          "rule": 0.004517999968811637
+        },
+        "limitations": [
+          "Heel/knee errors can still receive excessive AI scores.",
+          "Full assessment requires reviewed synchronized front and side views.",
+          "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+        ],
+        "initial_return_evidence": {
+          "schema": "learned_initial_pose_return_evidence_v1",
+          "state": {
+            "status": "observation_ended",
+            "return_events": 1,
+            "valid_repetition": null,
+            "initial_ready_observed": true,
+            "initial_ready_time": 0.19986245614035086,
+            "grade": null,
+            "grade_reason": "state_and_event_evidence_not_a_trained_severity_grade",
+            "exercise": "squats"
+          },
+          "phase_order": null,
+          "calibration_time": 0.19986245614035086,
+          "frames": [
+            {
+              "time": 0.0,
+              "ready_probability": 0.9829567501707331,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.09993122807017543,
+              "ready_probability": 0.946598048610371,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.19986245614035086,
+              "ready_probability": 0.9948381696428571,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.2997936842105263,
+              "ready_probability": 0.7852507163509994,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.3997249122807017,
+              "ready_probability": 0.7805458825210947,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.4996561403508772,
+              "ready_probability": 0.7727991391111323,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.5995873684210526,
+              "ready_probability": 0.7597472943343474,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.699518596491228,
+              "ready_probability": 0.7381904648802208,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.7994498245614035,
+              "ready_probability": 0.7079277931219663,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.8993810526315789,
+              "ready_probability": 0.6475369573998377,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.9993122807017544,
+              "ready_probability": 0.5900478731013362,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.0992435087719297,
+              "ready_probability": 0.5395932851037928,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.1991747368421053,
+              "ready_probability": 0.4751146785033077,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.2991059649122807,
+              "ready_probability": 0.3933178535641623,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": null
+            },
+            {
+              "time": 1.399037192982456,
+              "ready_probability": 0.33572300506022157,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 1.4989684210526315,
+              "ready_probability": 0.24872707204278233,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 1.598899649122807,
+              "ready_probability": 0.17089347401390753,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 1.6988308771929823,
+              "ready_probability": 0.14818884333878865,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 1.7987621052631577,
+              "ready_probability": 0.1206077299633822,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 1.8986933333333331,
+              "ready_probability": 0.1093597240386372,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 1.9986245614035087,
+              "ready_probability": 0.10688173147311482,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.098555789473684,
+              "ready_probability": 0.13166612272539763,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.1984870175438593,
+              "ready_probability": 0.20512069814617398,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.2984182456140347,
+              "ready_probability": 0.3003764916579253,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.3983494736842106,
+              "ready_probability": 0.4130011954706856,
+              "predicted_ready_state": 0,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.498280701754386,
+              "ready_probability": 0.5104618898993469,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.5982119298245614,
+              "ready_probability": 0.5407466900658568,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": null
+            },
+            {
+              "time": 2.698143157894737,
+              "ready_probability": 0.6074019932601531,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 2.798074385964912,
+              "ready_probability": 0.6687619858999254,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 2.8980056140350876,
+              "ready_probability": 0.7245678081504268,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 2.997936842105263,
+              "ready_probability": 0.7645996527472113,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            },
+            {
+              "time": 3.0978680701754384,
+              "ready_probability": 0.7677599993746982,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "relative_x",
+              "status": "returned_to_initial",
+              "phase": null
+            }
+          ],
+          "grade": null,
+          "scope": "state_and_order_evidence_not_trained_0_1_2_return_grade",
+          "production_replacement": false
+        },
+        "production_replacement": false,
+        "return_grade_integration": {
+          "status": "unassessed",
+          "grade": null,
+          "holds": [
+            "return_target_not_equivalent_to_legacy_score_item"
+          ],
+          "criterion": "standing_height_return",
+          "state_is_not_quality_grade": true
+        }
+      }
+    },
+    {
+      "source_id": "V46",
+      "reviewed_interval_id": "V46_000500_003500",
+      "split": "train",
+      "result": {
+        "schema": "posture-score-local-v1",
+        "exercise": "plank",
+        "model_version": "2026.10.22-reviewed-clip.1",
+        "feature_version": "observed-pixel-10hz-held-v2",
+        "assessment_scope": "reviewed_clip",
+        "items": [
+          {
+            "id": "trunk_line",
+            "weight": 40,
+            "ai_grade": 1.6814095190440834,
+            "rule_grade": 2,
+            "ai_minus_rule": -0.3185904809559166,
+            "observed": true,
+            "bank": "side_video",
+            "measured": 172.33946755451788,
+            "feature": [
+              172.23998124485993,
+              172.33946755451788,
+              173.00538041737485,
+              173.9098735812533,
+              174.58152690729162,
+              175.97417651912323,
+              176.22246393229233
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 16,
+              "1": 1,
+              "2": 56
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "elbow_sagittal_position",
+            "weight": 25,
+            "ai_grade": 1.984594917084727,
+            "rule_grade": 1,
+            "ai_minus_rule": 0.984594917084727,
+            "observed": true,
+            "bank": "side_video",
+            "measured": 0.1319384116362454,
+            "feature": [
+              0.08263432400309668,
+              0.08410534435223743,
+              0.09293087963556054,
+              0.11697180462838488,
+              0.13046563579637993,
+              0.1319384116362454,
+              0.13232784239394463
+            ],
+            "reasons": [
+              "training_grades_missing_0"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 2,
+              "2": 67
+            },
+            "unseen_training_grades": [
+              0
+            ],
+            "window": null
+          },
+          {
+            "id": "leg_and_body_support",
+            "weight": 20,
+            "ai_grade": 1.9778585645724427,
+            "rule_grade": 2,
+            "ai_minus_rule": -0.02214143542755731,
+            "observed": true,
+            "bank": "side_support_clearance_v1",
+            "measured": [
+              173.94152806908738,
+              0.5007513585998171,
+              0.3588157560306764
+            ],
+            "feature": [
+              173.8104588595983,
+              173.94152806908738,
+              174.31911863314377,
+              175.2321353727059,
+              176.0513210600596,
+              176.95086435528498,
+              177.07762678945332,
+              0.4991053750796433,
+              0.5007513585998171,
+              0.513634757830417,
+              0.5179120105573116,
+              0.5345702905011165,
+              0.5454083420852917,
+              0.5462154602825461,
+              0.3587055551629287,
+              0.3588157560306764,
+              0.3602981370465071,
+              0.3626116751487046,
+              0.36594578099731223,
+              0.367704588254786,
+              0.3679379159175056,
+              1.0
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 10,
+              "1": 4,
+              "2": 52
+            },
+            "unseen_training_grades": [],
+            "window": null
+          },
+          {
+            "id": "support_continuity",
+            "weight": 15,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "side_video",
+            "measured": 3.2671679298550202,
+            "feature": null,
+            "reasons": [
+              "continuity_shorter_than_three_seconds"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 2,
+              "1": 5,
+              "2": 66
+            },
+            "unseen_training_grades": [],
+            "window": null
+          }
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "ai_minus_rule": null,
+        "complete_attempt_reviewed": true,
+        "requires_manual_view_review": true,
+        "ytw_projection_proxy": false,
+        "expert_validated": false,
+        "independent_final_test": false,
+        "timing_ms": {
+          "features": 1.7916519996106217,
+          "ai": 13.972584999464743,
+          "rule": 0.00564600031793816
+        },
+        "limitations": [
+          "79-segment candidate remains experimental; 17-segment baseline scored better on two reused total-score cases.",
+          "Repeated hold windows are concentrated in few source recordings.",
+          "Joint geometry does not certify body contact or load.",
+          "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+        ],
+        "initial_return_evidence": {
+          "schema": "learned_initial_pose_return_evidence_v1",
+          "state": {
+            "status": "hold_observation_ended",
+            "return_events": 0,
+            "valid_repetition": null,
+            "initial_ready_observed": true,
+            "initial_ready_time": 0.7000169191919192,
+            "grade": null,
+            "grade_reason": "state_and_event_evidence_not_a_trained_severity_grade",
+            "exercise": "plank"
+          },
+          "phase_order": null,
+          "calibration_time": 0.7000169191919192,
+          "frames": [
+            {
+              "time": 0.5000120851370852,
+              "ready_probability": 0.9733026033271787,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.6000145021645021,
+              "ready_probability": 0.9716230417283703,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": null
+            },
+            {
+              "time": 0.7000169191919192,
+              "ready_probability": 0.972306232100685,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 0.8000193362193363,
+              "ready_probability": 0.9739052896782056,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 0.9000217532467533,
+              "ready_probability": 0.9732857171625005,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.0000241702741703,
+              "ready_probability": 0.9745040028977056,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.1000265873015873,
+              "ready_probability": 0.9514085449349721,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.2000290043290043,
+              "ready_probability": 0.9460116554636653,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.3000314213564215,
+              "ready_probability": 0.9354001449942371,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.4000338383838384,
+              "ready_probability": 0.924644517251964,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.5000362554112554,
+              "ready_probability": 0.9238396653748223,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.6000386724386726,
+              "ready_probability": 0.922667388908484,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.7000410894660896,
+              "ready_probability": 0.9289274074098375,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.8000435064935065,
+              "ready_probability": 0.931749134269123,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 1.9000459235209235,
+              "ready_probability": 0.9385534381514655,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.0000483405483407,
+              "ready_probability": 0.9591840980621816,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.1000507575757577,
+              "ready_probability": 0.9604018552438407,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.2000531746031746,
+              "ready_probability": 0.9659337600215032,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.3000555916305916,
+              "ready_probability": 0.9673988099765822,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.4000580086580086,
+              "ready_probability": 0.9691524630562358,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.500060425685426,
+              "ready_probability": 0.9672720991413831,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.600062842712843,
+              "ready_probability": 0.9674217626904993,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.70006525974026,
+              "ready_probability": 0.9676669802552348,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.800067676767677,
+              "ready_probability": 0.9685596706869138,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 2.900070093795094,
+              "ready_probability": 0.9677875418115526,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 3.000072510822511,
+              "ready_probability": 0.9685230768575565,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 3.1000749278499278,
+              "ready_probability": 0.9675380902372813,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 3.200077344877345,
+              "ready_probability": 0.9680571606564742,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 3.300079761904762,
+              "ready_probability": 0.9682410411793544,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            },
+            {
+              "time": 3.400082178932179,
+              "ready_probability": 0.9678168545120914,
+              "predicted_ready_state": 1,
+              "phase_probabilities": null,
+              "feature_bank": "x",
+              "status": "holding",
+              "phase": null
+            }
+          ],
+          "grade": null,
+          "scope": "state_and_order_evidence_not_trained_0_1_2_return_grade",
+          "production_replacement": false
+        },
+        "production_replacement": false,
+        "return_grade_integration": {
+          "status": "hold_or_phase_order_exercise_not_repetition_return",
+          "grade": null,
+          "state_is_not_quality_grade": true
+        }
+      }
+    },
+    {
+      "source_id": "V37",
+      "reviewed_interval_id": "V37_002750_007250",
+      "split": "train",
+      "result": {
+        "schema": "posture-score-local-v1",
+        "exercise": "ytw",
+        "model_version": "2026.10.22-reviewed-clip.1",
+        "feature_version": "observed-pixel-10hz-held-v2",
+        "assessment_scope": "reviewed_clip",
+        "items": [
+          {
+            "id": "y_reach",
+            "weight": 30,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front_projected",
+            "measured": null,
+            "feature": null,
+            "reasons": [
+              "projection_view_review_required"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 2,
+              "1": 54,
+              "2": 3
+            },
+            "unseen_training_grades": [],
+            "window": {
+              "start_index": 1,
+              "end_index": 16,
+              "anchor_index": 8,
+              "samples": 16,
+              "median_lateral_span": 0.7927068979146239
+            }
+          },
+          {
+            "id": "t_reach",
+            "weight": 25,
+            "ai_grade": 1.5621105343094446,
+            "rule_grade": 2,
+            "ai_minus_rule": -0.4378894656905554,
+            "observed": true,
+            "bank": "front_projected",
+            "measured": null,
+            "feature": [
+              56.076831979791834,
+              94.29057741831798,
+              127.9250980123969,
+              100.86401878700035,
+              168.96922822385497,
+              171.01271339084536
+            ],
+            "reasons": [
+              "training_grades_missing_0"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 0,
+              "1": 11,
+              "2": 74
+            },
+            "unseen_training_grades": [
+              0
+            ],
+            "window": {
+              "start_index": 17,
+              "end_index": 33,
+              "anchor_index": 25,
+              "samples": 17,
+              "median_lateral_span": 1.204114544049434
+            }
+          },
+          {
+            "id": "w_shape",
+            "weight": 25,
+            "ai_grade": 1.6129505248930704,
+            "rule_grade": 1,
+            "ai_minus_rule": 0.6129505248930704,
+            "observed": true,
+            "bank": "front_projected",
+            "measured": null,
+            "feature": [
+              144.18737038488442,
+              0.378976866922079,
+              -0.9464944439354013,
+              141.7636488110997,
+              0.3712091852925282,
+              -0.9633881239732981,
+              2.423721573784718
+            ],
+            "reasons": [],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 12,
+              "1": 45,
+              "2": 26
+            },
+            "unseen_training_grades": [],
+            "window": {
+              "start_index": 34,
+              "end_index": 43,
+              "anchor_index": 38,
+              "samples": 10,
+              "median_lateral_span": 0.6366580026135777
+            }
+          },
+          {
+            "id": "hinge_and_trunk_hold",
+            "weight": 20,
+            "ai_grade": null,
+            "rule_grade": null,
+            "ai_minus_rule": null,
+            "observed": false,
+            "bank": "front_projected",
+            "measured": null,
+            "feature": null,
+            "reasons": [
+              "projection_view_review_required"
+            ],
+            "single_grade_training": false,
+            "training_grade_counts": {
+              "0": 13,
+              "1": 38,
+              "2": 48
+            },
+            "unseen_training_grades": [],
+            "window": null
+          }
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "ai_minus_rule": null,
+        "complete_attempt_reviewed": true,
+        "requires_manual_view_review": true,
+        "ytw_projection_proxy": true,
+        "expert_validated": false,
+        "independent_final_test": false,
+        "timing_ms": {
+          "features": 2.7454019996184797,
+          "ai": 9.434829999918293,
+          "rule": 0.10364199988543987
+        },
+        "limitations": [
+          "Y and hinge are projection proxies; manual view and phase review required for totals.",
+          "W stage and grade errors remain.",
+          "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+        ],
+        "initial_return_evidence": {
+          "schema": "learned_initial_pose_return_evidence_v1",
+          "state": {
+            "status": "closed_attempt_return_not_observed",
+            "return_events": 0,
+            "valid_repetition": null,
+            "initial_ready_observed": true,
+            "initial_ready_time": 3.600207087827427,
+            "grade": null,
+            "grade_reason": "state_and_event_evidence_not_a_trained_severity_grade",
+            "exercise": "ytw"
+          },
+          "phase_order": {
+            "status": "Y_T_W_order_completed",
+            "ordered_cycles": 1,
+            "grade": null,
+            "phase_order_is_not_full_quality_grade": true
+          },
+          "calibration_time": 3.600207087827427,
+          "frames": [
+            {
+              "time": 2.800161068310221,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 2.9001668207498716,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.0001725731895226,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.100178325629173,
+              "ready_probability": 0.006182065217391303,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.002878289473684211,
+                "W": 0.9827374053153978,
+                "Y": 0.014384305210918113
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.200184078068824,
+              "ready_probability": 0.07059224484429648,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0926727877385772,
+                "W": 0.8195670320693217,
+                "Y": 0.0877601801921013
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.300189830508475,
+              "ready_probability": 0.411661937548023,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.2162438301829749,
+                "W": 0.48186477623215207,
+                "Y": 0.30189139358487305
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.4001955829481254,
+              "ready_probability": 0.7369194641515061,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.11804289460539462,
+                "W": 0.3062918498951432,
+                "Y": 0.5756652554994622
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.5002013353877763,
+              "ready_probability": 0.9011765220058546,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.09541083916083916,
+                "W": 0.15253785315522903,
+                "Y": 0.7520513076839316
+              },
+              "feature_bank": "x",
+              "status": "waiting_initial_ready",
+              "phase": {
+                "status": "waiting_Y",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.600207087827427,
+              "ready_probability": 0.957470359078591,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.05202453796203797,
+                "W": 0.06282993692762107,
+                "Y": 0.8851455251103407
+              },
+              "feature_bank": "x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.7002128402670778,
+              "ready_probability": 0.9965277777777777,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.007481971153846154,
+                "W": 0.0,
+                "Y": 0.9925180288461539
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.8002185927067282,
+              "ready_probability": 0.989592187115053,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.008203125,
+                "W": 0.0,
+                "Y": 0.991796875
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 3.900224345146379,
+              "ready_probability": 0.9852667297979798,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 0.0,
+                "Y": 1.0
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.00023009758603,
+              "ready_probability": 0.9876104797979798,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 0.0,
+                "Y": 1.0
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.100235850025681,
+              "ready_probability": 0.9751104797979798,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 0.0,
+                "Y": 1.0
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.200241602465331,
+              "ready_probability": 0.9774542297979798,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 0.0,
+                "Y": 1.0
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.3002473549049824,
+              "ready_probability": 0.9769570707070707,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 0.0,
+                "Y": 1.0
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.400253107344633,
+              "ready_probability": 0.9772174873737373,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.009375000000000001,
+                "W": 0.0,
+                "Y": 0.9906249999999999
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.500258859784283,
+              "ready_probability": 0.9694286616161613,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.056417410714285736,
+                "W": 0.0,
+                "Y": 0.943582589285714
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.600264612223935,
+              "ready_probability": 0.910534317752857,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.12172397914585416,
+                "W": 0.0,
+                "Y": 0.8782760208541458
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.700270364663585,
+              "ready_probability": 0.5422584904575124,
+              "predicted_ready_state": 1,
+              "phase_probabilities": {
+                "T": 0.6305464067182814,
+                "W": 0.0,
+                "Y": 0.3694535932817187
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.800276117103236,
+              "ready_probability": 0.4743834394497769,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.7619072333916086,
+                "W": 0.0,
+                "Y": 0.23809276660839174
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 4.900281869542886,
+              "ready_probability": 0.20940171082088213,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.9392841533466534,
+                "W": 0.0,
+                "Y": 0.06071584665334666
+              },
+              "feature_bank": "relative_x",
+              "status": "initial_ready",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.000287621982538,
+              "ready_probability": 0.07545830905205905,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.9966517857142857,
+                "W": 0.0,
+                "Y": 0.003348214285714286
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.100293374422188,
+              "ready_probability": 0.05405679390054391,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 1.0,
+                "W": 0.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.200299126861839,
+              "ready_probability": 0.04251165501165502,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 1.0,
+                "W": 0.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.30030487930149,
+              "ready_probability": 0.03704290501165501,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 1.0,
+                "W": 0.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.4003106317411405,
+              "ready_probability": 0.02923040501165501,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.99765625,
+                "W": 0.00234375,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.500316384180791,
+              "ready_probability": 0.02923040501165501,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 1.0,
+                "W": 0.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.600322136620442,
+              "ready_probability": 0.02923040501165501,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.98984375,
+                "W": 0.00234375,
+                "Y": 0.0078125
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.700327889060093,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.9453632305194803,
+                "W": 0.025060096153846155,
+                "Y": 0.029576673326673332
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.800333641499743,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.5611987181437885,
+                "W": 0.3778182118890481,
+                "Y": 0.060983069967163336
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 5.900339393939394,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.1766083907080663,
+                "W": 0.765107174878714,
+                "Y": 0.05828443441321955
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.000345146379045,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.01938600782778865,
+                "W": 0.9776174168297456,
+                "Y": 0.0029965753424657537
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_then_T_observed",
+                "ordered_cycles": 0,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.100350898818696,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0029965753424657533,
+                "W": 0.9970034246575342,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.200356651258346,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.3003624036979975,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.400368156137648,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.5003739085772985,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.60037966101695,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.7003854134566,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.800391165896251,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 6.900396918335901,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 7.000402670775553,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 7.100408423215203,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            },
+            {
+              "time": 7.200414175654854,
+              "ready_probability": 0.0,
+              "predicted_ready_state": 0,
+              "phase_probabilities": {
+                "T": 0.0,
+                "W": 1.0,
+                "Y": 0.0
+              },
+              "feature_bank": "relative_x",
+              "status": "movement_away_from_initial",
+              "phase": {
+                "status": "Y_T_W_order_completed",
+                "ordered_cycles": 1,
+                "grade": null,
+                "phase_order_is_not_full_quality_grade": true
+              }
+            }
+          ],
+          "grade": null,
+          "scope": "state_and_order_evidence_not_trained_0_1_2_return_grade",
+          "production_replacement": false
+        },
+        "production_replacement": false,
+        "return_grade_integration": {
+          "status": "hold_or_phase_order_exercise_not_repetition_return",
+          "grade": null,
+          "state_is_not_quality_grade": true
+        }
+      }
+    }
+  ],
+  "unpassed_or_non_equivalent_return_heads_correctly_held": true,
+  "not_a_quality_accuracy_claim": true
+}

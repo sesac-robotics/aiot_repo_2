@@ -1,0 +1,26 @@
+{
+  "protocol": "AIHub-B-f17-static-item-development-v1",
+  "exercise": "plank",
+  "input": "Heavy IMAGE GPU on unchanged full 1920x1080 source resized max edge 640; no temporal interpolation or assumed FPS",
+  "comparison_criterion": "trunk_line",
+  "original_weight": 40,
+  "full_score": null,
+  "rule_good_min_angle_deg": 168,
+  "rule_partial_min_angle_deg": 155,
+  "rule_threshold_source": "unchanged common rule_score.py trunk_line engineering draft",
+  "AI_family": "ExtraTreesRegressor",
+  "AI_parameters": {
+    "n_estimators": 128,
+    "max_depth": 4,
+    "min_samples_leaf": 2,
+    "random_state": 42,
+    "n_jobs": 1
+  },
+  "validation": "leave-one-person-token-out development; all views/repetitions grouped; not independent final test",
+  "min_joint_visibility": 0.5,
+  "min_joint_presence": 0.5,
+  "label_sha256": "9b0617ec628b2e88a56b4bc9b35cbbe062e1071491247b13592e814ac73eaf86",
+  "rule_code_sha256": "f5d5b6469cd118811e5b2034b99c97ab3382dca10c8784361b30cf0c654aba5a",
+  "not_for_common_full_score_training": true,
+  "band_support_and_prone_Y_not_converted_to_unassisted_plank_or_bent_YTW": true
+}

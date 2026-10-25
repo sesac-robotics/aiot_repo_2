@@ -1,0 +1,534 @@
+{
+  "1": {
+    "note_ko": "선택 구간에서 팔을 편 상단, 가슴 하강, 상단 복귀가 보인다. 손·발 지지와 큰 꺾임 없는 몸통을 유지한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "2": {
+    "note_ko": "가슴을 먼저 들어 올리며 골반이 낮게 남는 처짐이 보인다. 하강과 팔 펴기는 확인된다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "3": {
+    "note_ko": "기존 종료 프레임은 다음 반복의 하강을 포함한다. f10–28로 줄이면 상단–하단–상단 한 주기이다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "corrected_frames": [
+      10,
+      28
+    ],
+    "dense_reviewed": true
+  },
+  "4": {
+    "note_ko": "기존 구간은 하강 중간부터 시작했다. f0–45에서 하단과 복귀가 보이며 골반이 낮게 남는 꺾임이 확인된다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "corrected_frames": [
+      0,
+      45
+    ],
+    "dense_reviewed": true
+  },
+  "5": {
+    "note_ko": "손잡이를 사용한 변형이다. 손바닥을 바닥에 댄 일반 푸시업 모델의 총점 학습에서는 분리한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "training_hold": "손잡이 지지 도메인 분리 필요"
+  },
+  "6": {
+    "note_ko": "기존 구간에는 여러 하강·상승이 섞여 있고 손잡이를 사용한다. 정확한 단일 반복 경계와 도메인 분리 전 총점 학습을 보류한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "training_hold": "단일 반복 경계 추가 확인 필요"
+  },
+  "7": {
+    "note_ko": "손발을 유지하며 하강·복귀한다. 몸통에 경미한 처짐이 보인다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "8": {
+    "note_ko": "상단과 하단에서 허리·골반의 경미한 처짐이 보인다. 손발 지지는 유지된다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "9": {
+    "note_ko": "하강 후 상단으로 돌아오며 큰 몸통 꺾임이 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "10": {
+    "note_ko": "확대 근거 f36–40에서 팔 굽힘은 분명하지만 상완이 바닥에 가까운 방향까지 내려가지는 않는다. 작은 움직임 0보다 부분 하강 1로 정정한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      2,
+      1,
+      2,
+      2
+    ],
+    "detail_reviewed": true
+  },
+  "11": {
+    "note_ko": "몸통 정렬을 대체로 유지하며 하단까지 내려가고 팔을 펴 복귀한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "12": {
+    "note_ko": "상단·하단에서 엉덩이가 어깨–발목 선보다 뚜렷하게 높다. 하강과 팔 펴기 자체는 보인다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "13": {
+    "note_ko": "선택 구간 상단에서 얼굴·어깨·팔에 영상 블러가 겹친다. 완전한 정렬·팔 펴기 판정과 반복 경계를 보수적으로 보류한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      null,
+      2,
+      null,
+      2
+    ],
+    "training_hold": "필수 항목 시각 근거 불충분",
+    "detail_reviewed": true
+  },
+  "14": {
+    "note_ko": "엉덩이가 높은 꺾임이 상단에서도 보인다. 가슴 하강과 상단 복귀는 확인된다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "15": {
+    "note_ko": "가슴이 낮아지고 상단으로 복귀한다. 몸통·다리에 뚜렷한 꺾임은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "16": {
+    "note_ko": "하단에서 상완·어깨에 블러가 겹친다. 하강 범위 0 판정을 확정할 수 없어 미관측으로 수정한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      2,
+      null,
+      2,
+      2
+    ],
+    "training_hold": "필수 항목 시각 근거 불충분",
+    "detail_reviewed": true
+  },
+  "17": {
+    "note_ko": "기존 시작 부분에 앞선 상승이 포함되었다. f40–64의 상단–하단–상단으로 경계를 좁힌다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "corrected_frames": [
+      40,
+      64
+    ],
+    "dense_reviewed": true
+  },
+  "18": {
+    "note_ko": "엉덩이 들림과 작은 가슴 하강이 함께 보인다. 상단 복귀와 손발 지지는 유지된다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "19": {
+    "note_ko": "몸통·다리 정렬을 유지하며 가슴을 낮추고 상단으로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "20": {
+    "note_ko": "골반이 낮게 남고 상체를 먼저 올리는 처짐이 보인다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "21": {
+    "note_ko": "상단–하단–상단이 확인되고 몸통과 다리가 함께 움직인다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "22": {
+    "note_ko": "상체를 먼저 들어 올리고 골반이 늦게 따라오는 꺾임이 보인다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "23": {
+    "note_ko": "가슴을 낮추고 상단으로 돌아오며 몸통에 큰 꺾임은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "27": {
+    "note_ko": "연속 원본 프레임 f10–25에서 하강과 복귀를 확인했다. 손잡이를 사용하므로 바닥 손바닥 지지 도메인의 총점 학습에서는 분리한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "training_hold": "손잡이 지지 도메인 분리 필요",
+    "detail_reviewed": true
+  },
+  "28": {
+    "note_ko": "기존 구간은 반복이 여러 번 들어 있다. f33–50 한 주기로 좁힌다. 하단 범위는 충분하나 상단 팔 굽힘이 남는다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "corrected_frames": [
+      33,
+      50
+    ],
+    "dense_reviewed": true
+  },
+  "29": {
+    "note_ko": "가슴을 낮추고 팔을 펴 복귀한다. 큰 몸통 꺾임과 지지 변경이 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "31": {
+    "note_ko": "선택 구간에서 가슴 하강과 상단 복귀, 손발 지지가 확인된다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "32": {
+    "note_ko": "팔 굽힘과 하강이 작다. 기존 구간은 한 주기의 상단 경계와 맞지 않아 재분할 전 총점 학습을 보류한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "training_hold": "단일 반복 경계 추가 확인 필요",
+    "detail_reviewed": true
+  },
+  "33": {
+    "note_ko": "인물이 화면에서 작고 기존 구간에서 하강·복귀는 보인다. 미세한 정렬 판정의 해상도가 부족해 총점 확정은 보류한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "training_hold": "필수 항목 시각 근거 불충분"
+  },
+  "35": {
+    "note_ko": "원경·세로 영상에서 하강과 복귀는 보이나 인물이 작아 정렬 판정이 불확실하다. 총점 확정은 보류한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "training_hold": "필수 항목 시각 근거 불충분"
+  },
+  "36": {
+    "note_ko": "원경·세로 영상에서 엉덩이가 높은 양상은 보이지만 지지·정렬 전체를 일관되게 판정하기 어렵다. 총점 확정은 보류한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "training_hold": "필수 항목 시각 근거 불충분"
+  },
+  "41": {
+    "note_ko": "가슴 하강과 상단 복귀가 보이며 몸통과 다리의 큰 꺾임은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "42": {
+    "note_ko": "확대 및 연속 원본 프레임에서 가슴이 충분히 낮아지는 하강이 반복 확인된다. 하강 범위 0은 잘못된 초안으로 2로 수정한다. 상단 팔 굽힘은 남는다. 기존 구간은 다중 반복으로 재분할 전 총점 학습을 보류한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      2,
+      2,
+      1,
+      2
+    ],
+    "training_hold": "단일 반복 경계 추가 확인 필요",
+    "detail_reviewed": true,
+    "dense_reviewed": true
+  },
+  "43": {
+    "note_ko": "상단 팔 펴기는 보이며 하강은 있으나 범위가 부분적이다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "44": {
+    "note_ko": "확대 f22–25에서 분명한 팔 굽힘·하강이 있으나 하단 범위가 부분적이다. 하강 범위 0을 1로 수정한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "levels": [
+      2,
+      1,
+      2,
+      2
+    ],
+    "detail_reviewed": true
+  },
+  "45": {
+    "note_ko": "몸통과 다리의 큰 꺾임 없이 하강하고 팔을 펴 복귀한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false
+  },
+  "47": {
+    "note_ko": "기존 시작 f100은 이미 하단에 가깝다. f95–115로 넓히면 상단–하단–상단이다. 일부 블러 구간을 포함하므로 실험 라벨로만 유지한다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "corrected_frames": [
+      95,
+      115
+    ],
+    "dense_reviewed": true
+  },
+  "48": {
+    "note_ko": "팔꿈치 굽힘과 가슴 하강이 작고, 손발 지지 및 상단 복귀가 유지된다.",
+    "decision_by": "Codex",
+    "method": "직접 시간순 접촉판 검토. 연속 재생 검토와 구별함.",
+    "expert_validated": false,
+    "detail_reviewed": true
+  },
+  "49": {
+    "note_ko": "하단 허벅지가 수평보다 위에 있다. 정면에서 큰 안쪽 붕괴·좌우 기울기는 보이지 않으며 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "50": {
+    "note_ko": "분명히 내려가지만 수평보다 얕다. 정면의 큰 정렬 붕괴 없이 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "51": {
+    "note_ko": "측면에서 허벅지가 수평에 가까워진다. 정면의 큰 좌우 균형 이탈 없이 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "52": {
+    "note_ko": "하강은 분명하지만 허벅지가 수평보다 위에 있다. 정면 무릎과 몸통의 큰 이탈은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "53": {
+    "note_ko": "구간 시작에 약한 굽힘이 있으나 하강·서기 복귀는 구분된다. 하단이 수평보다 높고 큰 정면 이탈은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "54": {
+    "note_ko": "측면에서 수평에 가까운 하강과 서기 복귀가 보인다. 정면에서 큰 무릎 붕괴가 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "55": {
+    "note_ko": "측면에서 수평에 가까운 하강이 보인다. 동기화 정면에서 큰 무릎 붕괴·좌우 기울기는 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "56": {
+    "note_ko": "구간 시작은 약간 굽힌 자세이나 하강과 서기 복귀가 보인다. 하단 허벅지는 수평보다 위에 있다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "57": {
+    "note_ko": "하단 허벅지가 수평에 가까워지고 서기로 복귀한다. 정면에서 큰 비대칭은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "58": {
+    "note_ko": "측면의 하강 깊이가 수평보다 얕다. 정면의 큰 이탈 없이 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "60": {
+    "note_ko": "하단 정면에서 양 무릎이 안쪽으로 모이는 붕괴가 보인다. 하강 깊이는 부분적이고 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "61": {
+    "note_ko": "측면 하단은 수평에 가깝지만 정면에서 양 무릎이 안쪽으로 모인다. 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "62": {
+    "note_ko": "하강 자체가 작으며 서기 자세로 돌아온다. 정면의 큰 좌우 이탈은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "63": {
+    "note_ko": "하단 정면에서 어깨선과 몸통이 한쪽으로 기운다. 부분 하강 후 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "65": {
+    "note_ko": "하강 중 정면 양 무릎의 안쪽 모임이 확인된다. 측면 깊이는 부분적이며 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "66": {
+    "note_ko": "측면 깊이는 수평보다 위에 있고 정면 하단에서 양 무릎이 안쪽으로 모인다. 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "67": {
+    "note_ko": "하강 범위가 작다. 정면의 큰 무릎 붕괴 없이 다시 선다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "69": {
+    "note_ko": "측면 하단은 수평보다 위에 있고 복귀가 보인다. 정면의 큰 비대칭은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "70": {
+    "note_ko": "측면의 하단이 수평보다 높다. 큰 정면 이탈 없이 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "71": {
+    "note_ko": "부분 하강과 서기로의 복귀가 구분된다. 정면 큰 무릎 붕괴가 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "72": {
+    "note_ko": "분명한 하강이나 허벅지는 수평보다 높다. 큰 정면 이탈 없이 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "73": {
+    "note_ko": "측면 부분 하강과 복귀가 보인다. 정면 큰 무릎 붕괴가 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "75": {
+    "note_ko": "정면 하단에서 양 무릎이 안쪽으로 모이는 붕괴가 보인다. 측면 하강 깊이는 부분적이며 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "77": {
+    "note_ko": "하강 범위가 작고 서기로 복귀한다. 정면에서 큰 무릎 붕괴가 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "78": {
+    "note_ko": "부분 하강과 복귀는 보인다. 정면 몸통의 경미한 기울기 정도가 작은 근거에서 불확실하므로 해당 항목을 보류한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false,
+    "levels": [
+      1,
+      2,
+      2,
+      null
+    ],
+    "training_hold": "몸통 균형 정도 추가 확인 필요"
+  },
+  "79": {
+    "note_ko": "측면 부분 하강 후 다시 선다. 정면의 큰 무릎 붕괴·비대칭은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "80": {
+    "note_ko": "측면 하강은 분명하지만 수평보다 위에 있다. 정면의 큰 붕괴 없이 서기로 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "81": {
+    "note_ko": "측면 허벅지가 수평에 가까워지고 서기로 복귀한다. 정면 큰 무릎 붕괴가 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "82": {
+    "note_ko": "측면 하단이 수평보다 위에 있다. 정면의 큰 좌우 이탈 없이 복귀한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "83": {
+    "note_ko": "부분 하강 후 서기 자세로 복귀한다. 정면의 큰 무릎 붕괴가 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "85": {
+    "note_ko": "정면 하단에서 양 무릎이 안쪽으로 모인다. 측면의 부분 하강과 복귀가 확인된다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "87": {
+    "note_ko": "하강 범위가 작고 다시 선다. 정면의 큰 비대칭은 보이지 않는다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false
+  },
+  "88": {
+    "note_ko": "하단 정면에서 옆으로 기우는 양상은 보이나 0과 1의 정도 판단이 작은 근거에서 불확실하다. 몸통 균형 등급을 보류한다.",
+    "decision_by": "Codex",
+    "method": "동기화 측면·정면의 시간순 표본 프레임 직접 재검토. 연속 재생 검토 아님.",
+    "expert_validated": false,
+    "levels": [
+      1,
+      2,
+      2,
+      null
+    ],
+    "training_hold": "몸통 균형 정도 추가 확인 필요"
+  }
+}

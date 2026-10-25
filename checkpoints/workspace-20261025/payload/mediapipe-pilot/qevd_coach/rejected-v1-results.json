@@ -1,0 +1,161 @@
+{
+  "heavy": {
+    "pushups": {
+      "name": "푸시업",
+      "extraction": "heavy",
+      "errors": {
+        "elevated hips": {
+          "name": "엉덩이가 높음",
+          "advice": "몸통과 골반 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 0,
+              "1": 23
+            },
+            "validation": {
+              "0": 0,
+              "1": 0
+            },
+            "test": {
+              "0": 0,
+              "1": 1
+            }
+          },
+          "status": "unsupported_insufficient_samples"
+        },
+        "shallow": {
+          "name": "내려가는 깊이 부족",
+          "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 0,
+              "1": 20
+            },
+            "validation": {
+              "0": 0,
+              "1": 0
+            },
+            "test": {
+              "0": 0,
+              "1": 4
+            }
+          },
+          "status": "unsupported_insufficient_samples"
+        },
+        "butt sinking": {
+          "name": "골반이 처짐",
+          "advice": "골반이 아래로 처지는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 0,
+              "1": 2
+            },
+            "validation": {
+              "0": 0,
+              "1": 0
+            },
+            "test": {
+              "0": 0,
+              "1": 1
+            }
+          },
+          "status": "unsupported_insufficient_samples"
+        },
+        "legs on the floor": {
+          "name": "다리가 바닥에 닿음",
+          "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 0,
+              "1": 0
+            },
+            "validation": {
+              "0": 0,
+              "1": 0
+            },
+            "test": {
+              "0": 0,
+              "1": 0
+            }
+          },
+          "status": "unsupported_insufficient_samples"
+        },
+        "head down": {
+          "name": "고개를 숙임",
+          "advice": "목과 몸통 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 0,
+              "1": 0
+            },
+            "validation": {
+              "0": 0,
+              "1": 0
+            },
+            "test": {
+              "0": 0,
+              "1": 0
+            }
+          },
+          "status": "unsupported_insufficient_samples"
+        }
+      },
+      "demos": [
+        {
+          "id": "00286219",
+          "path": "/run/media/jayden/T9/Data/QEVD/raw/fit/part4/00286219.mp4",
+          "worker": "2152",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - butt sinking",
+            "pushups - insufficient",
+            "pushups - wide"
+          ],
+          "errors": [
+            "butt sinking"
+          ],
+          "reference": false,
+          "predictions": []
+        },
+        {
+          "id": "00286605",
+          "path": "/run/media/jayden/T9/Data/QEVD/raw/fit/part4/00286605.mp4",
+          "worker": "1493",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - narrow",
+            "pushups - shallow"
+          ],
+          "errors": [
+            "shallow"
+          ],
+          "reference": false,
+          "predictions": []
+        },
+        {
+          "id": "00296016",
+          "path": "/run/media/jayden/T9/Data/QEVD/raw/fit/part4/00296016.mp4",
+          "worker": "1493",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - 90 degrees",
+            "pushups - elevated hips",
+            "pushups - wide"
+          ],
+          "errors": [
+            "elevated hips"
+          ],
+          "reference": false,
+          "predictions": []
+        }
+      ],
+      "valid_clips": {
+        "train": 38,
+        "test": 6
+      }
+    }
+  }
+}

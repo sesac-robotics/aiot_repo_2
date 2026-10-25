@@ -1,0 +1,69 @@
+{
+  "status": "integrity_verified_diagnostic_performance_only",
+  "trained_heads": 54,
+  "development_gate_passed_heads": 3,
+  "development_gate_passed_keys": [
+    [
+      "pushups",
+      "trunk_line",
+      "side_legacy_roi_v1"
+    ],
+    [
+      "pushups",
+      "trunk_line",
+      "side_semantic_roi_v1"
+    ],
+    [
+      "pushups",
+      "trunk_line",
+      "side_semantic_roi_v1_aihub_transfer_v1"
+    ]
+  ],
+  "actual_unique_trained_rows": 776,
+  "actual_trained_families": {
+    "MultiView": 130,
+    "CFRep_reviewed": 82,
+    "QEVD": 218,
+    "R2D2": 208,
+    "US_Navy": 53,
+    "REHAB24": 43,
+    "other_reviewed": 30,
+    "REHAB26": 12
+  },
+  "actual_trained_team_rows": {
+    "r2d2_P04": 53,
+    "r2d2_P02": 53,
+    "r2d2_P03": 51,
+    "r2d2_P01": 51
+  },
+  "current_test_source_overlap": 0,
+  "targets_and_person_quality_source_assignments_unchanged": true,
+  "people_normal_error_both_sides": true,
+  "Test_not_used_for_model_selection": true,
+  "Test_has_historical_and_current_diagnostic_exposure": true,
+  "independent_final_test": false,
+  "original_reviewed_team_labels_sha256": "fa4e5913e3b48790562702e3ff8751aee159f1435ae4b6e633b3e7a27e678667",
+  "original_immutable_labels_unchanged": true,
+  "roi_extracted_training_and_development_sources_or_intervals": 65,
+  "roi_test_sources": 2,
+  "raw_sources_unchanged": true,
+  "live_service_replaced": false,
+  "all_five_reliable": false,
+  "tests": {
+    "semantic_invariants": 4,
+    "label_geometry_and_protection": 6,
+    "existing_training_contracts": 16,
+    "service_tests": 41,
+    "service_subtests": 13
+  },
+  "files": {
+    "score-candidates.joblib": "ed57f5670fae2cf747397038c1ce4b1fb68d8faf25900437bdaed1e9c1d48722",
+    "score-inputs.frozen.json": "ab772d9d7c230fc4443c0cf6c316311db8b8f7e16c63513f71576356dd55e864",
+    "test-inputs.frozen.json": "b55fd62cf2d0c4a71b4bc51285a368276b27aebf418b3e0f390e45e8706dc1a0",
+    "test-evaluation.json": "737534b674bf7e185ed7eb73bf8a41b274df83e64d37a1c8489f0467fde7e56e",
+    "diagnostic-comparison.json": "2c1941f437953e88b20c1e23acb20d7f6eb9f508c63ccb9f0c258d69c2f78ba6",
+    "MODEL_SELECTION_PROTOCOL.frozen.json": "c46cfe6b73dc7ffd9881b7860f013d14b07f7ce4ad013ae4b4299c4b1dba5031"
+  },
+  "standing_model_reference": "/home/jayden/SeSACPAI-Mid/output/label-verified-five-expanded-20261024/absolute-standing-candidate.joblib",
+  "standing_model_sha256": "f480dd43be6de17146731bd034a4a7b78c5f6d6ca772d1e95f7705afd1805661"
+}

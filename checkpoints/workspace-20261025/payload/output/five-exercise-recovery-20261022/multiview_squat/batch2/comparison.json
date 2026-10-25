@@ -1,0 +1,3568 @@
+{
+  "completed": true,
+  "independent_final_test": false,
+  "expert_reference": false,
+  "promoted": false,
+  "baseline": "preserved_first_multiview_candidate",
+  "preserved": {
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/comparison.json": "0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/fit_input_manifest.json": "550128ec7c50f3ff2406aaa9947959cf5fc4a707cd99ac8e69717f4b4cf7ee12",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/comparison.json": "6bae156d8e18b3e8f6b41d29481387052723729bd3f6fb18af122d1988535f55",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/squats_candidate.joblib": "7756ffbac5ace9e378c7c4c5c3f52c198e6998978e3cb0c29d609e39815c8a35",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/pushups.joblib": "4f55d2abb82f3fe19251bfc7eb528d2f5d7afbdeef7ba7b31bee12cab19d3003",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/shoulder.joblib": "f5760134cfac440910e88ac10897d3d0ffbe6bdbc4c80cdd740d7c7e1a310013",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/plank.joblib": "6faf50a9c7a2b62e9c8ca4030b305c55d7a0415f69e75051074cfc0c3df74226",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/squats.joblib": "b27997dafdf097de1197463c06d585a04a5e63bb5d0a67593ceaa560096a6a79",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/ytw.joblib": "6f9dec22844444a586a01c81b325ea578a7e7274cb306a537048a7bd6692b8c2"
+  },
+  "model_sha256": "75471d8270ccac792bb1a0fb04a3133bc67869b619766ca58e9ad199dfae7e83",
+  "fit_input_manifest_sha256": "778cb356dcb85afbc48c4914dbeeb26aded30b4d610d04bf7b55ed5c69c8af67",
+  "configuration": {
+    "loaded_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2",
+    "prior_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat",
+    "library_path_override_in_isolated_module": true
+  },
+  "input_sha256": {
+    "score_annotations.json": "03e618aafd70e684f3954929e0928ea41616e9817f79a29b9de953d482bcaf25",
+    "subject_tracking_review.json": "a52eef0bd786e4d381f757c4173951a99f545d8be422cc40ee28cff6a063d6d9",
+    "extraction.json": "33429c622b7397e63c2470bceaa656459066ff8066329aa3df2ae90e2c7c966d",
+    "manual_decisions.json": "ec71b7e0dc4c861c0a279132b221df470006a2eb7f0aa2a85adf36476d907e47"
+  },
+  "code_sha256": {
+    "multiview_squat_batch2_train.py": "c3c8b990b27db4a93cfe548dc6670f01499588679f255ff6f62422e8200f618d",
+    "multiview_squat_batch2.py": "77d57d6383d998f95ed08b1538930f74390327baa8031b1e91c7514c224e3ca7",
+    "multiview_squat_trial.py": "bfa961471d38024ff3d99c0e73aa446dceb0522354e6f8baf4e86311499ffc8d",
+    "recovery_features.py": "e594068d3bc8e8e5e32996f58ec588182b7b9b648f2115f0354306e7bfc26f5e",
+    "recovery_train.py": "d52f12430d790b38996e205a69a15610c4270ffeaddc8448f194d5e06a43ecc9",
+    "three_items.py": "9d7056c84642c1ff7336c383cdceabe99cb463c4f51b8b505c411cda82bdcdda",
+    "three_training.py": "b6922e013d115f25078f0ffe7c791ad233191b5ad84331972e503d0d36f0b62c",
+    "geometry.py": "58c7a6279432d5f0a5777d66eb0353690158df128f12c74e8f51c0c6232c39a6"
+  },
+  "training_effective_segments": 85,
+  "training_four_item_observed_segments": 47,
+  "training_metadata_groups": 40,
+  "training_connected_groups": 40,
+  "added": {
+    "annotations": 20,
+    "train_segments": 12,
+    "validation_segments": 8,
+    "train_eligible_item_labels": 33,
+    "validation_eligible_item_labels": 26,
+    "four_item_observed_segments": 9
+  },
+  "heads": [
+    {
+      "exercise": "squats",
+      "item": "descent_range",
+      "view": "side",
+      "records": 51,
+      "metadata_groups": 12,
+      "grade_counts": {
+        "1": 18,
+        "2": 33
+      },
+      "error_metadata_groups": 7,
+      "rule_boundary": [
+        0.3,
+        0.8
+      ],
+      "heel_calibration": null
+    },
+    {
+      "exercise": "squats",
+      "item": "return_extension",
+      "view": "side",
+      "records": 49,
+      "metadata_groups": 11,
+      "grade_counts": {
+        "2": 49
+      },
+      "error_metadata_groups": 0,
+      "rule_boundary": [
+        160,
+        140
+      ],
+      "heel_calibration": null
+    },
+    {
+      "exercise": "squats",
+      "item": "knee_foot",
+      "view": "side",
+      "records": 50,
+      "metadata_groups": 12,
+      "grade_counts": {
+        "2": 34,
+        "0": 16
+      },
+      "error_metadata_groups": 7,
+      "rule_boundary": [
+        0.15,
+        0.35,
+        0.04,
+        0.06
+      ],
+      "heel_calibration": {
+        "previous_boundary": [
+          0.15,
+          0.35,
+          0.025,
+          0.08
+        ],
+        "selected_boundary": [
+          0.15,
+          0.35,
+          0.04,
+          0.06
+        ],
+        "training_weighted_MAE_before": 0.8244588744588744,
+        "training_weighted_MAE_after": 0.6034632034632035,
+        "candidate_policies": 409,
+        "training_only": true,
+        "numeric_grid_reused_from_existing_three_training": true
+      }
+    },
+    {
+      "exercise": "squats",
+      "item": "trunk_balance",
+      "view": "front",
+      "records": 81,
+      "metadata_groups": 37,
+      "grade_counts": {
+        "2": 81
+      },
+      "error_metadata_groups": 0,
+      "rule_boundary": [
+        8,
+        15
+      ],
+      "heel_calibration": null
+    },
+    {
+      "exercise": "squats",
+      "item": "descent_range",
+      "view": "front",
+      "records": 7,
+      "metadata_groups": 7,
+      "grade_counts": {
+        "0": 5,
+        "2": 2
+      },
+      "error_metadata_groups": 5,
+      "rule_boundary": [
+        0,
+        0.5
+      ],
+      "heel_calibration": null
+    },
+    {
+      "exercise": "squats",
+      "item": "return_extension",
+      "view": "front",
+      "records": 21,
+      "metadata_groups": 21,
+      "grade_counts": {
+        "2": 21
+      },
+      "error_metadata_groups": 0,
+      "rule_boundary": null,
+      "heel_calibration": null
+    }
+  ],
+  "comparisons": {
+    "existing_development": {
+      "baseline": {
+        "submitted": 7,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.3973557692307693,
+            "rule_MAE_grade_units": 0.2
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      },
+      "candidate": {
+        "submitted": 7,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.3973557692307693,
+            "rule_MAE_grade_units": 0.2
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      }
+    },
+    "batch1": {
+      "baseline": {
+        "submitted": 3,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "trunk_balance": {
+            "paired_records": 3,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "descent_range": {
+            "paired_records": 2,
+            "ai_MAE_grade_units": 0.1613374505926055,
+            "rule_MAE_grade_units": 0.0
+          },
+          "return_extension": {
+            "paired_records": 1,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      },
+      "candidate": {
+        "submitted": 3,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "trunk_balance": {
+            "paired_records": 3,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "descent_range": {
+            "paired_records": 2,
+            "ai_MAE_grade_units": 0.3178775375559384,
+            "rule_MAE_grade_units": 0.5
+          },
+          "return_extension": {
+            "paired_records": 1,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      }
+    },
+    "batch2": {
+      "baseline": {
+        "submitted": 8,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 14.976663030128606,
+          "rule_score": 6.0
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.28002353195941615,
+            "rule_MAE_grade_units": 0.3333333333333333
+          },
+          "return_extension": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "knee_foot": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.9766762223608861,
+            "rule_MAE_grade_units": 0.8333333333333334
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      },
+      "candidate": {
+        "submitted": 8,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 13.735087821784527,
+          "rule_score": 12.0
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.29494529169849376,
+            "rule_MAE_grade_units": 0.16666666666666666
+          },
+          "return_extension": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "knee_foot": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.9263148869144143,
+            "rule_MAE_grade_units": 0.8333333333333334
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      }
+    }
+  },
+  "rule_calibration_ablation": {
+    "existing_development": {
+      "prior_heel_boundaries": {
+        "submitted": 7,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.3973557692307693,
+            "rule_MAE_grade_units": 0.2
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      },
+      "calibrated": {
+        "submitted": 7,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.3973557692307693,
+            "rule_MAE_grade_units": 0.2
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      }
+    },
+    "batch1": {
+      "prior_heel_boundaries": {
+        "submitted": 3,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "trunk_balance": {
+            "paired_records": 3,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "descent_range": {
+            "paired_records": 2,
+            "ai_MAE_grade_units": 0.3178775375559384,
+            "rule_MAE_grade_units": 0.5
+          },
+          "return_extension": {
+            "paired_records": 1,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      },
+      "calibrated": {
+        "submitted": 3,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "trunk_balance": {
+            "paired_records": 3,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "descent_range": {
+            "paired_records": 2,
+            "ai_MAE_grade_units": 0.3178775375559384,
+            "rule_MAE_grade_units": 0.5
+          },
+          "return_extension": {
+            "paired_records": 1,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      }
+    },
+    "batch2": {
+      "prior_heel_boundaries": {
+        "submitted": 8,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 13.735087821784527,
+          "rule_score": 12.0
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.29494529169849376,
+            "rule_MAE_grade_units": 0.16666666666666666
+          },
+          "return_extension": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "knee_foot": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.9263148869144143,
+            "rule_MAE_grade_units": 0.8333333333333334
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      },
+      "calibrated": {
+        "submitted": 8,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 13.735087821784527,
+          "rule_score": 12.0
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.29494529169849376,
+            "rule_MAE_grade_units": 0.16666666666666666
+          },
+          "return_extension": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "knee_foot": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.9263148869144143,
+            "rule_MAE_grade_units": 0.8333333333333334
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      }
+    }
+  },
+  "group_cross_validation": {
+    "submitted": 85,
+    "paired_total_records": 47,
+    "paired_total_MAE_points": {
+      "ai_score": 9.428578448440545,
+      "rule_score": 17.127659574468087
+    },
+    "items": {
+      "descent_range": {
+        "paired_records": 54,
+        "ai_MAE_grade_units": 0.27976803858420346,
+        "rule_MAE_grade_units": 0.24074074074074073
+      },
+      "return_extension": {
+        "paired_records": 49,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.04081632653061224
+      },
+      "knee_foot": {
+        "paired_records": 50,
+        "ai_MAE_grade_units": 0.5876791763657666,
+        "rule_MAE_grade_units": 0.88
+      },
+      "trunk_balance": {
+        "paired_records": 81,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.12345679012345678
+      }
+    },
+    "ai_total_available": 47,
+    "rule_total_available": 47
+  },
+  "predictions": [
+    {
+      "id": "qevd_00003948",
+      "person": "qevd_410",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.2943948412698412,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "qevd_00003948",
+        "person": "qevd_410",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          1.2943948412698412,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "qevd_00003948",
+        "person": "qevd_410",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          1.2943948412698412,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "existing_development"
+    },
+    {
+      "id": "qevd_00014005",
+      "person": "qevd_39",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.08208371489621491,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "qevd_00014005",
+        "person": "qevd_39",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.08208371489621491,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "qevd_00014005",
+        "person": "qevd_39",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.08208371489621491,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "existing_development"
+    },
+    {
+      "id": "qevd_00023973",
+      "person": "qevd_2470",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.22674374236874237,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "qevd_00023973",
+        "person": "qevd_2470",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.22674374236874237,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "qevd_00023973",
+        "person": "qevd_2470",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.22674374236874237,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "existing_development"
+    },
+    {
+      "id": "qevd_00032130",
+      "person": "qevd_695",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.237284416971917,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "qevd_00032130",
+        "person": "qevd_695",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.237284416971917,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "qevd_00032130",
+        "person": "qevd_695",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          0,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.237284416971917,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "existing_development"
+    },
+    {
+      "id": "qevd_00010352",
+      "person": "qevd_1563",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.8537278693528687,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "qevd_00010352",
+        "person": "qevd_1563",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          1.8537278693528687,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          1,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "qevd_00010352",
+        "person": "qevd_1563",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          1.8537278693528687,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          1,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "existing_development"
+    },
+    {
+      "id": "qevd_00241717_existing_review",
+      "person": "qevd_244",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.738839285714285,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "qevd_00241717_existing_review",
+        "person": "qevd_244",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          null,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          1.738839285714285,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "qevd_00241717_existing_review",
+        "person": "qevd_244",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          null,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          1.738839285714285,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "existing_development"
+    },
+    {
+      "id": "qevd_00039770_existing_review",
+      "person": "qevd_2496",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.23988858363858365,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "qevd_00039770_existing_review",
+        "person": "qevd_2496",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          null,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.23988858363858365,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "qevd_00039770_existing_review",
+        "person": "qevd_2496",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          null,
+          2,
+          null,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          0.23988858363858365,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          0,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "existing_development"
+    },
+    {
+      "id": "subject_002_squat_bad_paired_direct_rep0",
+      "person": "shoulder_002",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_002_squat_bad_paired_direct_rep0",
+        "person": "shoulder_002",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "target_score": 70.0,
+        "ai_levels": [
+          null,
+          null,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          null,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "return_extension",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_002_squat_bad_paired_direct_rep0",
+        "person": "shoulder_002",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "target_score": 70.0,
+        "ai_levels": [
+          null,
+          null,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          null,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "return_extension",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch1"
+    },
+    {
+      "id": "subject_004_squat_good_paired_direct_rep0",
+      "person": "shoulder_004",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.5361409669884953,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_004_squat_good_paired_direct_rep0",
+        "person": "shoulder_004",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.7028179138479507,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_004_squat_good_paired_direct_rep0",
+        "person": "shoulder_004",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.5361409669884953,
+          2.0,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          1,
+          2,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch1"
+    },
+    {
+      "id": "subject_004_squat_bad_paired_direct_rep0",
+      "person": "shoulder_004",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.8281039578996279,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_004_squat_bad_paired_direct_rep0",
+        "person": "shoulder_004",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.9745071849668383,
+          null,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent"
+            ]
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_004_squat_bad_paired_direct_rep0",
+        "person": "shoulder_004",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.8281039578996279,
+          null,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent"
+            ]
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch1"
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.765051740985294,
+        2.0,
+        1.369654440416686,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 87.0205927210297,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_012_squat_good_batch2_rep0",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "target_score": 85.0,
+        "ai_levels": [
+          1.711024982121574,
+          2.0,
+          1.6170836755644584,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 89.92162986529048,
+        "rule_score": 85.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_012_squat_good_batch2_rep0",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "target_score": 85.0,
+        "ai_levels": [
+          1.765051740985294,
+          2.0,
+          1.369654440416686,
+          2.0
+        ],
+        "rule_levels": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 87.0205927210297,
+        "rule_score": 70.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch2"
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep1",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.4896743730806812,
+        2.0,
+        1.3414096111264098,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 82.46625976310636,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_012_squat_good_batch2_rep1",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "target_score": 85.0,
+        "ai_levels": [
+          1.8004924667774154,
+          2.0,
+          1.1299637703838592,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 83.95684355741912,
+        "rule_score": 85.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_012_squat_good_batch2_rep1",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "target_score": 85.0,
+        "ai_levels": [
+          1.4896743730806812,
+          2.0,
+          1.3414096111264098,
+          2.0
+        ],
+        "rule_levels": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 82.46625976310636,
+        "rule_score": 70.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch2"
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep0",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_012_squat_bad_batch2_rep0",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "target_score": 85.0,
+        "ai_levels": [
+          null,
+          null,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          null,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "return_extension",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_012_squat_bad_batch2_rep0",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "target_score": 85.0,
+        "ai_levels": [
+          null,
+          null,
+          null,
+          2.0
+        ],
+        "rule_levels": [
+          null,
+          null,
+          null,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "return_extension",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent",
+              "required_measurement_unavailable",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_measurement_unavailable",
+              "side_heel_and_toe_missing",
+              "direct_sample_review_unreliable_target_geometry"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch2"
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.994212962962963,
+        2.0,
+        1.3628317299254658,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 90.35567039332642,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_012_squat_bad_batch2_rep1",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.9878572162828947,
+          2.0,
+          1.1828276379285885,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 87.56027281317225,
+        "rule_score": 85.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_012_squat_bad_batch2_rep1",
+        "person": "shoulder_012",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.994212962962963,
+          2.0,
+          1.3628317299254658,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 90.35567039332642,
+        "rule_score": 85.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch2"
+    },
+    {
+      "id": "subject_015_squat_good_batch2_rep0",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        2,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "direct_video_review_item_not_observable"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_015_squat_good_batch2_rep0",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          null,
+          2,
+          2,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          null,
+          2.0,
+          1.986723052714398,
+          2.0
+        ],
+        "rule_levels": [
+          null,
+          2,
+          1,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": false,
+            "holds": [
+              "direct_video_review_item_not_observable"
+            ]
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_015_squat_good_batch2_rep0",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          null,
+          2,
+          2,
+          2
+        ],
+        "target_score": null,
+        "ai_levels": [
+          null,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "rule_levels": [
+          null,
+          2,
+          1,
+          2
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": false,
+            "holds": [
+              "direct_video_review_item_not_observable"
+            ]
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch2"
+    },
+    {
+      "id": "subject_015_squat_good_batch2_rep1",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.4908414009120494,
+        2.0,
+        null,
+        null
+      ],
+      "rule_levels": [
+        1,
+        2,
+        null,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        }
+      ],
+      "baseline": {
+        "id": "subject_015_squat_good_batch2_rep1",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.8549210678866248,
+          2.0,
+          null,
+          null
+        ],
+        "rule_levels": [
+          2,
+          2,
+          null,
+          null
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent"
+            ]
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_015_squat_good_batch2_rep1",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "target_score": 100.0,
+        "ai_levels": [
+          1.4908414009120494,
+          2.0,
+          null,
+          null
+        ],
+        "rule_levels": [
+          1,
+          2,
+          null,
+          null
+        ],
+        "ai_score": null,
+        "rule_score": null,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent"
+            ]
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": false,
+            "holds": [
+              "required_joints_not_simultaneously_observed_in_80_percent"
+            ]
+          }
+        ]
+      },
+      "subset": "batch2"
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep0",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        1.8508896911069397,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "ai_score": 97.7633453666041,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_015_squat_bad_batch2_rep0",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "target_score": 70.0,
+        "ai_levels": [
+          2.0,
+          2.0,
+          1.8751010688358736,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "ai_score": 98.1265160325381,
+        "rule_score": 70.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_015_squat_bad_batch2_rep0",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "target_score": 70.0,
+        "ai_levels": [
+          2.0,
+          2.0,
+          1.8508896911069397,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "ai_score": 97.7633453666041,
+        "rule_score": 70.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch2"
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep1",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        1.7808954118481075,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 96.71343117772162,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ],
+      "baseline": {
+        "id": "subject_015_squat_bad_batch2_rep1",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "target_score": 70.0,
+        "ai_levels": [
+          1.9885979729729728,
+          2.0,
+          1.9015544019207473,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 98.3522856234058,
+        "rule_score": 85.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "before_heel_calibration": {
+        "id": "subject_015_squat_bad_batch2_rep1",
+        "person": "shoulder_015",
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "levels": [
+          2,
+          2,
+          0,
+          2
+        ],
+        "target_score": 70.0,
+        "ai_levels": [
+          2.0,
+          2.0,
+          1.7808954118481075,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "ai_score": 96.71343117772162,
+        "rule_score": 85.0,
+        "observation": [
+          {
+            "item": "descent_range",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "return_extension",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "knee_foot",
+            "eligible": true,
+            "holds": []
+          },
+          {
+            "item": "trunk_balance",
+            "eligible": true,
+            "holds": []
+          }
+        ]
+      },
+      "subset": "batch2"
+    }
+  ],
+  "split_leakage": false,
+  "same_source_camera_views_not_independent_people": true
+}

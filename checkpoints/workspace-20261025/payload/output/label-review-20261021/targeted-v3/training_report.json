@@ -1,0 +1,468 @@
+{
+  "version": "targeted-item-model-v4-balanced",
+  "test_split_used": false,
+  "expert_validated": false,
+  "production_ready": false,
+  "full_score_enabled": false,
+  "training_weighting": "등급별 역빈도 가중치. 테스트 분할은 사용하지 않음.",
+  "gate_policy": {
+    "min_grade_samples": 3,
+    "min_validation_samples": 5,
+    "min_validation_grades": 2,
+    "max_validation_MAE_grade": 0.5,
+    "min_validation_samples_per_grade": 3,
+    "max_grade_specific_MAE": 0.5,
+    "min_relative_baseline_improvement": 0.1,
+    "require_group_cv_improvement": true
+  },
+  "results": {
+    "pushups": {
+      "train_features": 42,
+      "validation_features": 13,
+      "train_people": 33,
+      "items": {
+        "trunk_line": {
+          "status": "validation_failed",
+          "train_grades": {
+            "2": 14,
+            "0": 7
+          },
+          "train_samples": 21,
+          "validation_samples": 7,
+          "validation_grades": {
+            "2": 4,
+            "0": 1,
+            "1": 2
+          },
+          "group_MAE_grade": 0.74018882704597,
+          "group_baseline_MAE_grade": 0.925170068027211,
+          "validation_MAE_grade": 0.47395238095238085,
+          "validation_baseline_MAE_grade": 0.6666666666666667,
+          "validation_per_grade": {
+            "0": {
+              "samples": 1,
+              "MAE": 1.0539999999999994
+            },
+            "1": {
+              "samples": 2,
+              "MAE": 0.4368333333333335
+            },
+            "2": {
+              "samples": 4,
+              "MAE": 0.3474999999999999
+            }
+          },
+          "web_experiment_enabled": false,
+          "hold_reasons": [
+            "등급별 검증 표본 부족",
+            "오류 등급별 검증 오차 기준 미달"
+          ],
+          "folds": [
+            {
+              "validation_people": [
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_018",
+                "shoulder_023"
+              ],
+              "train_grades": [
+                0,
+                2
+              ]
+            },
+            {
+              "validation_people": [
+                "shoulder_005",
+                "shoulder_009",
+                "shoulder_014",
+                "shoulder_016"
+              ],
+              "train_grades": [
+                0,
+                2
+              ]
+            },
+            {
+              "validation_people": [
+                "shoulder_001",
+                "shoulder_007",
+                "shoulder_008",
+                "shoulder_011"
+              ],
+              "train_grades": [
+                0,
+                2
+              ]
+            }
+          ],
+          "validation_predictions": [
+            {
+              "id": "subject_002_push_up_good_side",
+              "label": 2,
+              "prediction": 1.870666666666667
+            },
+            {
+              "id": "subject_002_push_up_bad_side",
+              "label": 0,
+              "prediction": 1.0539999999999994
+            },
+            {
+              "id": "subject_004_push_up_good_side",
+              "label": 1,
+              "prediction": 1.4343333333333335
+            },
+            {
+              "id": "subject_004_push_up_bad_side",
+              "label": 1,
+              "prediction": 1.4393333333333336
+            },
+            {
+              "id": "subject_012_push_up_good_side",
+              "label": 2,
+              "prediction": 1.5376666666666663
+            },
+            {
+              "id": "subject_015_push_up_good_side",
+              "label": 2,
+              "prediction": 1.4736666666666667
+            },
+            {
+              "id": "subject_017_push_up_good_side",
+              "label": 2,
+              "prediction": 1.7280000000000004
+            }
+          ]
+        },
+        "descent_range": {
+          "status": "grade_diversity_insufficient",
+          "train_grades": {
+            "2": 35,
+            "0": 5,
+            "1": 2
+          },
+          "web_experiment_enabled": false
+        },
+        "return_extension": {
+          "status": "grade_diversity_insufficient",
+          "train_grades": {
+            "2": 40,
+            "1": 2
+          },
+          "web_experiment_enabled": false
+        },
+        "support": {
+          "status": "validation_failed",
+          "train_grades": {
+            "2": 32,
+            "0": 5
+          },
+          "train_samples": 37,
+          "validation_samples": 13,
+          "validation_grades": {
+            "2": 10,
+            "0": 3
+          },
+          "group_MAE_grade": 0.303252483529545,
+          "group_baseline_MAE_grade": 0.474774774774775,
+          "validation_MAE_grade": 0.275714888323584,
+          "validation_baseline_MAE_grade": 0.607068607068607,
+          "validation_per_grade": {
+            "0": {
+              "samples": 3,
+              "MAE": 1.1914311827355306
+            },
+            "2": {
+              "samples": 10,
+              "MAE": 0.0010000000000000009
+            }
+          },
+          "web_experiment_enabled": false,
+          "hold_reasons": [
+            "오류 등급별 검증 오차 기준 미달"
+          ],
+          "folds": [
+            {
+              "validation_people": [
+                "qevd_103",
+                "qevd_1379",
+                "qevd_1871",
+                "qevd_209",
+                "qevd_246",
+                "qevd_787",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_018",
+                "shoulder_023"
+              ],
+              "train_grades": [
+                0,
+                2
+              ]
+            },
+            {
+              "validation_people": [
+                "qevd_1207",
+                "qevd_1775",
+                "qevd_2072",
+                "qevd_2362",
+                "qevd_422",
+                "shoulder_005",
+                "shoulder_009",
+                "shoulder_014",
+                "shoulder_016"
+              ],
+              "train_grades": [
+                0,
+                2
+              ]
+            },
+            {
+              "validation_people": [
+                "qevd_1038",
+                "qevd_1769",
+                "qevd_1914",
+                "qevd_2100",
+                "qevd_2574",
+                "shoulder_001",
+                "shoulder_007",
+                "shoulder_008",
+                "shoulder_011"
+              ],
+              "train_grades": [
+                0,
+                2
+              ]
+            }
+          ],
+          "validation_predictions": [
+            {
+              "id": "subject_002_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_002_push_up_bad_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_004_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_004_push_up_bad_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_012_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_015_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_017_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "qevd_00109429",
+              "label": 0,
+              "prediction": 0.6445985115550337
+            },
+            {
+              "id": "qevd_00127403",
+              "label": 0,
+              "prediction": 1.5666924066924068
+            },
+            {
+              "id": "qevd_00157328",
+              "label": 0,
+              "prediction": 1.3630026299591516
+            },
+            {
+              "id": "qevd_00005826",
+              "label": 2,
+              "prediction": 1.99
+            },
+            {
+              "id": "qevd_00023195",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "qevd_00053514",
+              "label": 2,
+              "prediction": 2.0
+            }
+          ]
+        }
+      }
+    },
+    "squats": {
+      "train_features": 25,
+      "validation_features": 13,
+      "train_people": 11,
+      "items": {
+        "descent_range": {
+          "status": "validation_failed",
+          "train_grades": {
+            "1": 10,
+            "2": 5,
+            "0": 6
+          },
+          "train_samples": 21,
+          "validation_samples": 13,
+          "validation_grades": {
+            "1": 7,
+            "0": 5,
+            "2": 1
+          },
+          "group_MAE_grade": 0.39431170681170674,
+          "group_baseline_MAE_grade": 0.5915750915750916,
+          "validation_MAE_grade": 0.40409090909090906,
+          "validation_baseline_MAE_grade": 0.47252747252747257,
+          "validation_per_grade": {
+            "0": {
+              "samples": 5,
+              "MAE": 0.7051022727272728
+            },
+            "1": {
+              "samples": 7,
+              "MAE": 0.10797077922077916
+            },
+            "2": {
+              "samples": 1,
+              "MAE": 0.971875
+            }
+          },
+          "web_experiment_enabled": false,
+          "hold_reasons": [
+            "등급별 검증 표본 부족",
+            "오류 등급별 검증 오차 기준 미달"
+          ],
+          "folds": [
+            {
+              "validation_people": [
+                "rehab_Petra"
+              ],
+              "train_grades": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "validation_people": [
+                "qevd_1213",
+                "rehab_Terka"
+              ],
+              "train_grades": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "validation_people": [
+                "qevd_2102",
+                "qevd_2666",
+                "qevd_2741",
+                "rehab_Vasil"
+              ],
+              "train_grades": [
+                0,
+                1,
+                2
+              ]
+            }
+          ],
+          "validation_predictions": [
+            {
+              "id": "rehab_Mima_2010_2078",
+              "label": 1,
+              "prediction": 1.0202083333333334
+            },
+            {
+              "id": "rehab_Mima_5584_5655",
+              "label": 1,
+              "prediction": 1.2041666666666664
+            },
+            {
+              "id": "rehab_Mima_5503_5564",
+              "label": 1,
+              "prediction": 1.210208333333333
+            },
+            {
+              "id": "rehab_Mima_265_337",
+              "label": 1,
+              "prediction": 1.0002083333333334
+            },
+            {
+              "id": "rehab_Mima_6174_6241",
+              "label": 1,
+              "prediction": 1.0897916666666665
+            },
+            {
+              "id": "rehab_Mima_3648_3718",
+              "label": 1,
+              "prediction": 0.870871212121212
+            },
+            {
+              "id": "rehab_Mima_14792_14851",
+              "label": 0,
+              "prediction": 1.5491856060606068
+            },
+            {
+              "id": "rehab_Mima_451_525",
+              "label": 1,
+              "prediction": 0.8979166666666666
+            },
+            {
+              "id": "qevd_00003948",
+              "label": 0,
+              "prediction": 0.7177462121212121
+            },
+            {
+              "id": "qevd_00014005",
+              "label": 0,
+              "prediction": 0.4075
+            },
+            {
+              "id": "qevd_00023973",
+              "label": 0,
+              "prediction": 0.3633522727272727
+            },
+            {
+              "id": "qevd_00032130",
+              "label": 0,
+              "prediction": 0.48772727272727273
+            },
+            {
+              "id": "qevd_00010352",
+              "label": 2,
+              "prediction": 1.028125
+            }
+          ]
+        },
+        "return_extension": {
+          "status": "grade_diversity_insufficient",
+          "train_grades": {
+            "2": 25
+          },
+          "web_experiment_enabled": false
+        }
+      }
+    }
+  },
+  "limitations": [
+    "기존 검증 분할을 여러 개발 실험에 사용했으므로 독립 최종 시험은 아님",
+    "추가 QEVD 영상은 정면 장면이 많아 측면 몸통 라벨을 부여하지 않음",
+    "0~2 항목 등급에 대한 모델 예측이며 종합 100점 평가가 아님"
+  ]
+}

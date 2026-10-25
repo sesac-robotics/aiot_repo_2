@@ -1,0 +1,94 @@
+{
+  "rubric_version": "squat-core100-observation-v3",
+  "label_origin": "independent_direct_chronological_frame_review",
+  "expert_validated": false,
+  "model_output_used_as_label": false,
+  "records": [
+    {
+      "id": "subject_014_squat_new_rubric_rep1",
+      "person": "shoulder_014",
+      "exercise": "squats",
+      "view": "side",
+      "start_frame": 24,
+      "end_frame": 54,
+      "levels": [
+        1,
+        2,
+        null,
+        null
+      ],
+      "attempt_complete": true,
+      "source_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise Quality-wise/squat/bad/side/subject_014_squat_bad_side.mp4",
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/squat-unified-20261023/return014-review.jpg",
+      "evidence": "f24 서기→f36·42 얕은 하강→f48·54 서기 복귀. 전체 개요의 성긴 표본에서는 복귀가 없어 보였으나 촘촘한 표본에서 복귀 확인. 발끝 앞으로 무릎이 움직이는 것 자체는 오류로 라벨링하지 않음. 측면만으로 무릎 좌우 정렬과 몸통 좌우 균형은 비움.",
+      "reviewed_frames": [
+        24,
+        30,
+        36,
+        42,
+        48,
+        54
+      ],
+      "continuous_video_review": false,
+      "previous_hypothesis": "부분 복귀 후보",
+      "decision": "복귀 오류 가설 기각; 관측된 복귀 정상"
+    },
+    {
+      "id": "subject_014_squat_new_rubric_rep2",
+      "person": "shoulder_014",
+      "exercise": "squats",
+      "view": "side",
+      "start_frame": 54,
+      "end_frame": 84,
+      "levels": [
+        1,
+        2,
+        null,
+        null
+      ],
+      "attempt_complete": true,
+      "source_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise Quality-wise/squat/bad/side/subject_014_squat_bad_side.mp4",
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/squat-unified-20261023/return014-review.jpg",
+      "evidence": "f54 서기→f66·72 얕은 하강→f78·84 서기 복귀. 깊이는 표준 병렬 목표보다 작지만 복귀 실패가 아님. 정면 항목은 관측 불가.",
+      "reviewed_frames": [
+        54,
+        60,
+        66,
+        72,
+        78,
+        84
+      ],
+      "continuous_video_review": false,
+      "previous_hypothesis": "부분 복귀 후보",
+      "decision": "복귀 오류 가설 기각; 관측된 복귀 정상"
+    },
+    {
+      "id": "qevd_00042076_rubric3_review",
+      "person": "qevd_2741",
+      "exercise": "squats",
+      "view": "front",
+      "start_frame": 21,
+      "end_frame": 106,
+      "levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "attempt_complete": true,
+      "source_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part1/00042076.mp4",
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/squat-unified-20261023/qevd-return-review-1.jpg",
+      "evidence": "f21 선 자세→f42·63 하강→f83·106 선 자세. 뚜렷한 좌우 몸통 이탈 신호 없음. 정면 깊이·관절 신전·발 정렬의 확정은 비움.",
+      "reviewed_frames": [
+        21,
+        42,
+        63,
+        83,
+        106
+      ],
+      "continuous_video_review": false,
+      "previous_hypothesis": "provider insufficient; no criterion targets assumed",
+      "decision": "몸통 좌우 안정만 충족 초안; 나머지 관측 근거 부족"
+    }
+  ]
+}

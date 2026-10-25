@@ -1,0 +1,37 @@
+{
+  "priority": [
+    "반복 경계 수정 구간의 관절 특징 재추출",
+    "관측 가능한 입력 시점에 맞는 총점 모델 소규모 재학습",
+    "정상·부분 미달·명확한 미달과 복귀 실패 사례를 여러 사람으로 보충",
+    "새 사람의 독립 평가 자료를 별도로 확보"
+  ],
+  "local_video_shortage": false,
+  "missing_types": {
+    "pushups": [
+      "상단 복귀 부분 미달·실패",
+      "정렬·하강의 중간 수준",
+      "손바닥 바닥 지지와 손잡이 지지 도메인 분리"
+    ],
+    "squats": [
+      "서기 복귀 부분 미달·실패",
+      "5명 밖의 새로운 참여자",
+      "정면·측면 입력 모두 있는 사례"
+    ]
+  },
+  "youtube_candidates": [
+    {
+      "url": "https://www.youtube.com/watch?v=lnR_kb5Wjf8",
+      "publisher": "FitnessFAQs",
+      "purpose": "푸시업 범위·몸통 오류의 기준 비교 및 보충 후보",
+      "status": "검색 확인, 영상 직접 라벨링·학습 미실시"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=T0ek1FssRBU",
+      "publisher": "CrossFit",
+      "purpose": "스쿼트 수행 요점과 오류의 기준 비교 및 보충 후보",
+      "status": "공식 설명·검색 확인, 영상 직접 라벨링·학습 미실시"
+    }
+  ],
+  "external_media_policy": "영상별 이용 조건을 확인하고 실제 구간·촬영 방향을 직접 검토한 후 학습 후보 여부를 정한다. 제목만으로 정답을 부여하지 않는다.",
+  "failure_attempt_policy": "완료된 반복만 모으면 복귀 실패 라벨을 만들 수 없으므로, 시작·하강·복귀 실패가 관측되는 미완료 시도를 별도 상태로 수집한다. 잘린 영상은 실패와 구분한다."
+}

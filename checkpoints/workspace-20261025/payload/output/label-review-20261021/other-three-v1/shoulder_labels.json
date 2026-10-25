@@ -1,0 +1,1085 @@
+[
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_001_shoulder_bad_front",
+    "original_id": "subject_001_shoulder_bad_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_001_shoulder_bad_front.mp4",
+    "video_sha256": "9bd8a764c6575135e494f3e728104d5295f6e41ccdec8f7706d2e4a1f37f11bb",
+    "exercise": "shoulder",
+    "person": "shoulder_001",
+    "split": "train",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "하단에서 두 팔을 머리 위로 거의 펴고 어깨 높이 하단으로 돌아온다. 큰 좌우 시차·몸통 기울기는 보이지 않는다. 정면 핵심 항목만 평가하며 허리 과신전 여부는 평가하지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        5.87,
+        6.13
+      ],
+      [
+        4.67,
+        6.87,
+        7.07
+      ],
+      [
+        5.4,
+        5.87,
+        6.6
+      ],
+      [
+        4.67,
+        5.87,
+        7.07
+      ]
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 70,
+      "end_frame": 106,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 29,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "하단에서 두 팔을 머리 위로 거의 펴고 어깨 높이 하단으로 돌아온다. 큰 좌우 시차·몸통 기울기는 보이지 않는다. 정면 핵심 항목만 평가하며 허리 과신전 여부는 평가하지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_029.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_029.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_001_shoulder_good_front",
+    "original_id": "subject_001_shoulder_good_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_001_shoulder_good_front.mp4",
+    "video_sha256": "09d9ceb76c4d2f6e2d5d17e4a064862785378ad4b25b166037f4f218ef3a8958",
+    "exercise": "shoulder",
+    "person": "shoulder_001",
+    "split": "train",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "하강·좌우 동시 움직임·정면 몸통 유지가 보인다. 상단에서 손·팔 끝이 잘려 최대 도달을 보류한다. 시차가 작은 전후 발 배치는 그 자체로 감점하지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [],
+      [
+        4.67,
+        6.8
+      ],
+      [
+        5.2,
+        6.27
+      ],
+      [
+        4.67,
+        6.8
+      ]
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 180,
+      "fps": 15.0
+    },
+    "completion_status": "unit_or_visibility_unconfirmed",
+    "review_number": 30,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": false,
+    "hold_reason": "상단 필수 관절 관측·단일 반복 경계 보류",
+    "note_ko": "하강·좌우 동시 움직임·정면 몸통 유지가 보인다. 상단에서 손·팔 끝이 잘려 최대 도달을 보류한다. 시차가 작은 전후 발 배치는 그 자체로 감점하지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_030.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_030.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_005_shoulder_bad_front",
+    "original_id": "subject_005_shoulder_bad_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_005_shoulder_bad_front.mp4",
+    "video_sha256": "073f81be93eb93fd39281f86e04f45934bdd6ba8c39830a7989626d36fd201e3",
+    "exercise": "shoulder",
+    "person": "shoulder_005",
+    "split": "train",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "한쪽 팔이 먼저 머리 위로 올라가고 반대쪽은 크게 굽어 있어 도달이 불균등하다. 양팔의 뚜렷한 시차가 보이며 하단 복귀는 확인된다. 몸통의 큰 좌우 기울기는 보이지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      0,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        2,
+        2.27
+      ],
+      [
+        1.07,
+        3.4,
+        3.67
+      ],
+      [
+        1.8,
+        2,
+        2.27
+      ],
+      [
+        1.07,
+        2.27,
+        3.67
+      ]
+    ],
+    "score": 60.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 16,
+      "end_frame": 55,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 31,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "한쪽 팔이 먼저 머리 위로 올라가고 반대쪽은 크게 굽어 있어 도달이 불균등하다. 양팔의 뚜렷한 시차가 보이며 하단 복귀는 확인된다. 몸통의 큰 좌우 기울기는 보이지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_031.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_031.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_005_shoulder_good_front",
+    "original_id": "subject_005_shoulder_good_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_005_shoulder_good_front.mp4",
+    "video_sha256": "d0f9d10d312f205f47b55c19a2155dea74caf78d664d6bc2ed02fc510ee7d853",
+    "exercise": "shoulder",
+    "person": "shoulder_005",
+    "split": "train",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "양팔을 올리나 상단 일부가 화면 위로 잘린다. 하단 복귀는 보이며 움직임 중 좌우 높이 차이가 일부 있다. 정면 몸통의 큰 기울기는 보이지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      1,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [],
+      [
+        0,
+        2.6
+      ],
+      [
+        0.53,
+        1.53
+      ],
+      [
+        0,
+        1.53,
+        2.6
+      ]
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 180,
+      "fps": 15.0
+    },
+    "completion_status": "unit_or_visibility_unconfirmed",
+    "review_number": 32,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": false,
+    "hold_reason": "상단 필수 관절 관측·단일 반복 경계 보류",
+    "note_ko": "양팔을 올리나 상단 일부가 화면 위로 잘린다. 하단 복귀는 보이며 움직임 중 좌우 높이 차이가 일부 있다. 정면 몸통의 큰 기울기는 보이지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_032.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_032.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_006_shoulder_bad_front",
+    "original_id": "subject_006_shoulder_bad_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_006_shoulder_bad_front.mp4",
+    "video_sha256": "902ef149e3fcb982606829a22de52efea2b9d5f771e840ca668f3f497f0f841d",
+    "exercise": "shoulder",
+    "person": "shoulder_006",
+    "split": "train",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "상단 손·팔 끝이 잘려 최대 도달은 보류한다. 하단 복귀와 대체로 동시인 양팔 움직임·정면 몸통 유지가 보인다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [],
+      [
+        0,
+        1.53
+      ],
+      [
+        0.53,
+        1.07
+      ],
+      [
+        0,
+        1.53,
+        2.07
+      ]
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 180,
+      "fps": 15.0
+    },
+    "completion_status": "unit_or_visibility_unconfirmed",
+    "review_number": 33,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": false,
+    "hold_reason": "상단 필수 관절 관측·단일 반복 경계 보류",
+    "note_ko": "상단 손·팔 끝이 잘려 최대 도달은 보류한다. 하단 복귀와 대체로 동시인 양팔 움직임·정면 몸통 유지가 보인다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_033.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_033.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_006_shoulder_good_front",
+    "original_id": "subject_006_shoulder_good_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_006_shoulder_good_front.mp4",
+    "video_sha256": "891efaf5de674b75a4c947b2d11ceb51b3bedf895db78eee2d485c1570031cce",
+    "exercise": "shoulder",
+    "person": "shoulder_006",
+    "split": "train",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "상단 손·팔 끝이 잘린다. 하단 복귀·양팔의 대체로 동시인 움직임·정면 몸통 유지는 확인되지만 최대 도달은 보류한다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [],
+      [
+        0.53,
+        2.6
+      ],
+      [
+        1.07,
+        1.53
+      ],
+      [
+        0.53,
+        2.6
+      ]
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 180,
+      "fps": 15.0
+    },
+    "completion_status": "unit_or_visibility_unconfirmed",
+    "review_number": 34,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": false,
+    "hold_reason": "상단 필수 관절 관측·단일 반복 경계 보류",
+    "note_ko": "상단 손·팔 끝이 잘린다. 하단 복귀·양팔의 대체로 동시인 움직임·정면 몸통 유지는 확인되지만 최대 도달은 보류한다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_034.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_034.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_007_shoulder_bad_front",
+    "original_id": "subject_007_shoulder_bad_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_007_shoulder_bad_front.mp4",
+    "video_sha256": "40cf7568e2b3554a056b7781d1718999f3e50baa34236314ee82591f2b67a048",
+    "exercise": "shoulder",
+    "person": "shoulder_007",
+    "split": "train",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "상단에서 팔꿈치 굽힘이 남는 부분 프레스이다. 하단 복귀·양팔의 대체로 동시인 움직임과 정면 몸통 유지가 보인다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        3.2,
+        3.33,
+        3.47
+      ],
+      [
+        2.6,
+        3.93,
+        4.07
+      ],
+      [
+        3.07,
+        3.33,
+        3.73
+      ],
+      [
+        2.6,
+        3.33,
+        4.07
+      ]
+    ],
+    "score": 85.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 39,
+      "end_frame": 61,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 35,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "상단에서 팔꿈치 굽힘이 남는 부분 프레스이다. 하단 복귀·양팔의 대체로 동시인 움직임과 정면 몸통 유지가 보인다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_035.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_035.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_007_shoulder_good_front",
+    "original_id": "subject_007_shoulder_good_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_007_shoulder_good_front.mp4",
+    "video_sha256": "359f82fc2880fb7ec88d10aa33c5be8a0656e600738ced7c87ef414e0520b3ca",
+    "exercise": "shoulder",
+    "person": "shoulder_007",
+    "split": "train",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "양팔을 머리 위로 거의 펴고 어깨 높이 하단으로 복귀한다. 큰 좌우 시차·정면 몸통 기울기는 보이지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        1.47,
+        1.67
+      ],
+      [
+        0.53,
+        2.4,
+        2.6
+      ],
+      [
+        1.27,
+        1.47,
+        2.07
+      ],
+      [
+        0.53,
+        1.67,
+        2.6
+      ]
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 8,
+      "end_frame": 39,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 36,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "양팔을 머리 위로 거의 펴고 어깨 높이 하단으로 복귀한다. 큰 좌우 시차·정면 몸통 기울기는 보이지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_036.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_036.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_008_shoulder_bad_front",
+    "original_id": "subject_008_shoulder_bad_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_008_shoulder_bad_front.mp4",
+    "video_sha256": "4f3ccdbb2934174c540705794652286e858e748636f8d4d0b764954ece2f5860",
+    "exercise": "shoulder",
+    "person": "shoulder_008",
+    "split": "train",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "양팔이 거의 펴진 상단과 어깨 높이 하단 복귀가 보인다. 정면 핵심 항목의 큰 좌우 차이·몸통 기울기는 보이지 않는다. 측면 허리 젖힘은 이 시점에서 평가하지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        1.53,
+        2.07
+      ],
+      [
+        0.53,
+        2.6,
+        3.13
+      ],
+      [
+        1.07,
+        1.53,
+        2.6
+      ],
+      [
+        0.53,
+        1.53,
+        3.13
+      ]
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 8,
+      "end_frame": 47,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 37,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "양팔이 거의 펴진 상단과 어깨 높이 하단 복귀가 보인다. 정면 핵심 항목의 큰 좌우 차이·몸통 기울기는 보이지 않는다. 측면 허리 젖힘은 이 시점에서 평가하지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_037.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_037.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_008_shoulder_good_front",
+    "original_id": "subject_008_shoulder_good_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_008_shoulder_good_front.mp4",
+    "video_sha256": "62b2f60229b4157084b91f56704bd96f2f005bc1aad91c40183e3652fd472aba",
+    "exercise": "shoulder",
+    "person": "shoulder_008",
+    "split": "train",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "양팔이 머리 위로 거의 펴지고 어깨 높이로 돌아온다. 큰 시차와 정면 몸통 기울기는 보이지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        2.07,
+        2.6
+      ],
+      [
+        1.07,
+        3.13,
+        3.67
+      ],
+      [
+        1.53,
+        2.07,
+        3.13
+      ],
+      [
+        1.07,
+        2.07,
+        3.67
+      ]
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 16,
+      "end_frame": 55,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 38,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "양팔이 머리 위로 거의 펴지고 어깨 높이로 돌아온다. 큰 시차와 정면 몸통 기울기는 보이지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_038.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_038.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_009_shoulder_bad_front",
+    "original_id": "subject_009_shoulder_bad_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_009_shoulder_bad_front.mp4",
+    "video_sha256": "0f03f2587cad9602191dc7ff308a23be886405b6c18b9ad4e83ee195b84a1b30",
+    "exercise": "shoulder",
+    "person": "shoulder_009",
+    "split": "train",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "두 팔이 함께 올라가지 않고 번갈아 올라가는 뚜렷한 비동기가 보인다. 동시에 도달하는 상단은 부분적이며 하단 복귀와 정면 몸통 유지는 보인다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      0,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        2.07,
+        2.6
+      ],
+      [
+        1.07,
+        3.67
+      ],
+      [
+        1.53,
+        2.07,
+        2.6,
+        3.13
+      ],
+      [
+        1.07,
+        2.6,
+        3.67
+      ]
+    ],
+    "score": 60.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 16,
+      "end_frame": 55,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 39,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "두 팔이 함께 올라가지 않고 번갈아 올라가는 뚜렷한 비동기가 보인다. 동시에 도달하는 상단은 부분적이며 하단 복귀와 정면 몸통 유지는 보인다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_039.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_039.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_009_shoulder_good_front",
+    "original_id": "subject_009_shoulder_good_front",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_009_shoulder_good_front.mp4",
+    "video_sha256": "3abed929cd1f35f67372cd9d1636504f251d43c870376fc5a6d927b4785dce10",
+    "exercise": "shoulder",
+    "person": "shoulder_009",
+    "split": "train",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "하단–머리 위로 거의 편 상단–하단 복귀가 보인다. 큰 양팔 시차·정면 몸통 기울기는 보이지 않는다."
+    ],
+    "provider_label_source": "MultiView_provider",
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_names_ko": [
+      "머리 위 팔 올림",
+      "어깨 높이 하단 복귀",
+      "양팔 동시 움직임",
+      "정면 몸통 좌우 유지"
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_evidence_seconds": [
+      [
+        1.07,
+        1.53
+      ],
+      [
+        0.53,
+        2.07,
+        2.6
+      ],
+      [
+        1.07,
+        1.53,
+        2.07
+      ],
+      [
+        0.53,
+        1.53,
+        2.6
+      ]
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "unit": "project_observable_core_0_to_100",
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+    "segment": {
+      "start_frame": 8,
+      "end_frame": 39,
+      "fps": 15.0
+    },
+    "completion_status": "complete_single_unit_reviewed",
+    "review_number": 40,
+    "label_source": "codex_direct_temporal_frame_review",
+    "reviewer": "Codex",
+    "source_aware_review": true,
+    "expert_validated": false,
+    "review_status": "AI_provisional_experimental",
+    "confidence": "provisional",
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "eligible_for_experimental_training": true,
+    "hold_reason": null,
+    "note_ko": "하단–머리 위로 거의 편 상단–하단 복귀가 보인다. 큰 양팔 시차·정면 몸통 기울기는 보이지 않는다.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/case_040.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/other-three-v1/detail_040.jpg"
+    ],
+    "observed_variant": "standing_dumbbell_shoulder_press",
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음."
+  }
+]

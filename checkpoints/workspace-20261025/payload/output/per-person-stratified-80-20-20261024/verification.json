@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "team_sources": 57,
+  "team_labeled_segments": 281,
+  "assigned_counts": {
+    "train": 223,
+    "test": 58
+  },
+  "class_counts": {
+    "normal": {
+      "train": 86,
+      "test": 24
+    },
+    "error": {
+      "train": 103,
+      "test": 27
+    },
+    "unknown": {
+      "train": 34,
+      "test": 7
+    }
+  },
+  "all_people_have_normal_and_error_in_both_sides": true,
+  "all_five_exercises_have_both_classes_in_test": true,
+  "actual_trained_unique_rows": 762,
+  "actual_trained_team_rows": {
+    "r2d2_P01": 52,
+    "r2d2_P03": 51,
+    "r2d2_P02": 53,
+    "r2d2_P04": 53
+  },
+  "actual_trained_source_families": {
+    "MultiView": 129,
+    "R2D2": 209,
+    "CFRep_reviewed": 82,
+    "QEVD": 202,
+    "REHAB24": 43,
+    "US_Navy": 53,
+    "other_reviewed": 32,
+    "REHAB26": 12
+  },
+  "test_rows_previously_trained_by_current_models": 0,
+  "source_overlap_with_training": 0,
+  "standing_and_shared_models_test_protection_checked": true,
+  "original_team_labels_unchanged": true,
+  "new_labeled_segments": 54,
+  "new_project_score_candidate_segments": 47,
+  "new_clips_decoded": 54,
+  "annotation_status": "non_expert_visual_draft_with_eight_documented_item_holds",
+  "independent_unseen_final_test": false,
+  "historical_exposure": [
+    {
+      "run": "integrated-five-20261024",
+      "new_test_rows_previously_trained": 38
+    },
+    {
+      "run": "error-enrichment-20261024",
+      "new_test_rows_previously_trained": 38
+    },
+    {
+      "run": "per-person-80-20-20261024",
+      "new_test_rows_previously_trained": 37
+    }
+  ],
+  "models_promoted_to_live_service": false,
+  "all_five_reliable_evaluation_completed": false,
+  "verification_tests": "16 contract tests; existing service 41 tests and 13 subtests passed",
+  "files": {
+    "score-candidates.joblib": {
+      "path": "/home/jayden/SeSACPAI-Mid/output/per-person-stratified-80-20-20261024/score-candidates.joblib",
+      "sha256": "018a82332dce6548fc61e594f4c60ac96debd0014ec3dd3246cecc266283793f"
+    },
+    "standing-monotone-candidate.joblib": {
+      "path": "/home/jayden/SeSACPAI-Mid/output/per-person-stratified-80-20-20261024/standing-monotone-candidate.joblib",
+      "sha256": "7fbac1215f97bd6b80521791b9b590a059329d42089a554ab49efb4e4a6977aa"
+    },
+    "shared-frontal-trunk-candidate.joblib": {
+      "path": "/home/jayden/SeSACPAI-Mid/output/per-person-stratified-80-20-20261024/shared-frontal-trunk-candidate.joblib",
+      "sha256": "700d22852bb099f7405746ce96228215d45847651073239437ee1d3e789578aa"
+    },
+    "score-inputs.frozen.json": {
+      "path": "/home/jayden/SeSACPAI-Mid/output/per-person-stratified-80-20-20261024/score-inputs.frozen.json",
+      "sha256": "f4bb3f80125fe4c58f387d21ceca436b96ae13dd5309b8339afb0d89ce8c7b0c"
+    },
+    "test-inputs.frozen.json": {
+      "path": "/home/jayden/SeSACPAI-Mid/output/per-person-stratified-80-20-20261024/test-inputs.frozen.json",
+      "sha256": "e6313beea20d311565a55632926a4ca4a054c64037b9d0a05f83a58933cf6424"
+    },
+    "test-evaluation.json": {
+      "path": "/home/jayden/SeSACPAI-Mid/output/per-person-stratified-80-20-20261024/test-evaluation.json",
+      "sha256": "b91ab4d78bef4dd5b375a842eb37edde72ec66504b27d240afd6bde67006f6c7"
+    }
+  },
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809"
+}

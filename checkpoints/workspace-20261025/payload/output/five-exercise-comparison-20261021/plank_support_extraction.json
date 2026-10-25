@@ -1,0 +1,335 @@
+{
+  "records": [
+    {
+      "id": "support_colossus_elbow_baseline",
+      "extraction": {
+        "id": "support_colossus_elbow_baseline",
+        "view": "primary",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "bd66c89064b12b8709c4be01401b252f910a13b1c7632b606893f015e813b010",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 71,
+            "fps": 23.976023976023978
+          },
+          "required_views": [
+            "item_only_review"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "802cc6934c2c111060c2495ab5e5716fc8f1ebdbc03e37ddf41e7d4b3c1a696d",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_support_cache/support_colossus_elbow_baseline/primary.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.7070707070707071,
+        "extract_seconds": 10.099575582000398,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "observation": {
+        "items": [
+          {
+            "criterion_id": "trunk_line",
+            "required_joint_indices": [
+              11,
+              23,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted"
+            ],
+            "rule_grade": null,
+            "measured": 167.43766211451845
+          },
+          {
+            "criterion_id": "elbow_sagittal_position",
+            "required_joint_indices": [
+              11,
+              13,
+              23
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 0,
+            "measured": 0.4372170085337576
+          },
+          {
+            "criterion_id": "leg_and_body_support",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.36666666666666664,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted",
+              "item_joint_observation_below_80_percent",
+              "geometric_channel_unavailable"
+            ],
+            "rule_grade": null,
+            "measured": null
+          },
+          {
+            "criterion_id": "support_continuity",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.36666666666666664,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted",
+              "item_joint_observation_below_80_percent"
+            ],
+            "rule_grade": null,
+            "measured": 3.9934085782996647
+          }
+        ],
+        "total_score": null,
+        "contact_is_proxy": true
+      },
+      "total_score": null,
+      "source_group": "youtube_KbcsJX1DfRs_all_segments",
+      "person_group": "UCqV2z4XYLcOLT27AmGT0M6w",
+      "kind": "basic_hold_reference"
+    },
+    {
+      "id": "support_colossus_elbow_transition",
+      "extraction": {
+        "id": "support_colossus_elbow_transition",
+        "view": "primary",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "8a9b79698ed227881e941c39c37a24d1b817ecffe74863fc6799bdeda2dc0f54",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 71,
+            "fps": 23.976023976023978
+          },
+          "required_views": [
+            "item_only_review"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "58d11a72d3b87f1f659eb3dd217ba6cb0bd6223c8bcf06f1724b0da5954461f6",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_support_cache/support_colossus_elbow_transition/primary.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.806060606060606,
+        "extract_seconds": 9.976869852998789,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "observation": {
+        "items": [
+          {
+            "criterion_id": "trunk_line",
+            "required_joint_indices": [
+              11,
+              23,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.8333333333333334,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted"
+            ],
+            "rule_grade": null,
+            "measured": 153.64803692916635
+          },
+          {
+            "criterion_id": "elbow_sagittal_position",
+            "required_joint_indices": [
+              11,
+              13,
+              23
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 0,
+            "measured": 0.44598234026856204
+          },
+          {
+            "criterion_id": "leg_and_body_support",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.36666666666666664,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted",
+              "item_joint_observation_below_80_percent",
+              "geometric_channel_unavailable"
+            ],
+            "rule_grade": null,
+            "measured": null
+          },
+          {
+            "criterion_id": "support_continuity",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.36666666666666664,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted",
+              "item_joint_observation_below_80_percent"
+            ],
+            "rule_grade": null,
+            "measured": 8.253920100537869
+          }
+        ],
+        "total_score": null,
+        "contact_is_proxy": true
+      },
+      "total_score": null,
+      "source_group": "youtube_KbcsJX1DfRs_all_segments",
+      "person_group": "UCqV2z4XYLcOLT27AmGT0M6w",
+      "kind": "visible_elbow_position_transition"
+    },
+    {
+      "id": "support_pannell_stop",
+      "extraction": {
+        "id": "support_pannell_stop",
+        "view": "primary",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "be510ca6b059d1490582d8f9385524b73257a4f0fda658268572f6e6cee7daed",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 73,
+            "fps": 24.0
+          },
+          "required_views": [
+            "item_only_review"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "174d17869e110f95d45894de1f9de19857af9fae108778609e40aae2df47e0d9",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_support_cache/support_pannell_stop/primary.npz",
+        "frames": 31,
+        "observed_joint_fraction": 0.7038123167155426,
+        "extract_seconds": 9.647381127999324,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "observation": {
+        "items": [
+          {
+            "criterion_id": "trunk_line",
+            "required_joint_indices": [
+              11,
+              23,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.967741935483871,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted"
+            ],
+            "rule_grade": null,
+            "measured": 101.93915188115244
+          },
+          {
+            "criterion_id": "elbow_sagittal_position",
+            "required_joint_indices": [
+              11,
+              13,
+              23
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.9032258064516129,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted"
+            ],
+            "rule_grade": null,
+            "measured": 0.4357894486509739
+          },
+          {
+            "criterion_id": "leg_and_body_support",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.967741935483871,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted"
+            ],
+            "rule_grade": null,
+            "measured": 105.41087089411252
+          },
+          {
+            "criterion_id": "support_continuity",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.967741935483871,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 0,
+            "measured": 84.4996169644796
+          }
+        ],
+        "total_score": null,
+        "contact_is_proxy": true
+      },
+      "total_score": null,
+      "source_group": "youtube_hR38KqFSe7A_all_segments",
+      "person_group": "UC4gfY04USI_IuTEqBzp5grg",
+      "kind": "intentional_exercise_termination_event"
+    }
+  ],
+  "direct_sha256": "e887494be218e87560936812860e905a2d64eb3772e767fcbf783bd8699bf969",
+  "independent_final_test": false,
+  "expert_validated": false,
+  "full_score_labels_created": 0
+}

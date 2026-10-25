@@ -1,0 +1,696 @@
+{
+  "version": "targeted-image-item-model-v5",
+  "test_split_used": false,
+  "expert_validated": false,
+  "production_ready": false,
+  "full_score_enabled": false,
+  "gate_policy": {
+    "min_grade_samples": 3,
+    "min_validation_samples": 5,
+    "min_validation_grades": 2,
+    "max_validation_MAE_grade": 0.5,
+    "min_validation_samples_per_grade": 3,
+    "max_grade_specific_MAE": 0.5,
+    "min_relative_baseline_improvement": 0.1,
+    "require_group_cv_improvement": true
+  },
+  "results": {
+    "pushups": {
+      "train_features": 42,
+      "validation_features": 13,
+      "train_people": 33,
+      "items": {
+        "trunk_line": {
+          "status": "validation_failed",
+          "web_experiment_enabled": false,
+          "hold_reasons": [
+            "등급별 검증 표본 부족",
+            "오류 등급별 검증 오차 기준 미달",
+            "참여자 교차검증 개선 부족"
+          ],
+          "train_grades": {
+            "2": 14,
+            "0": 7
+          },
+          "train_samples": 21,
+          "validation_samples": 7,
+          "validation_grades": {
+            "2": 4,
+            "0": 1,
+            "1": 2
+          },
+          "validation_MAE_grade": 0.3267619047619045,
+          "validation_baseline_MAE_grade": 0.5714285714285714,
+          "validation_per_grade": {
+            "0": {
+              "samples": 1,
+              "MAE": 0.9466666666666664
+            },
+            "1": {
+              "samples": 2,
+              "MAE": 0.06466666666666648
+            },
+            "2": {
+              "samples": 4,
+              "MAE": 0.302833333333333
+            }
+          },
+          "selected_variant": "image_and_world",
+          "feature_variants": [
+            {
+              "name": "image_only",
+              "columns": [
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                140,
+                141,
+                142,
+                143,
+                144,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153
+              ],
+              "feature_count": 28,
+              "group_MAE_grade": 0.8951997473426048,
+              "group_macro_MAE_grade": 0.9983492380635242,
+              "group_median_baseline_MAE_grade": 0.6666666666666666
+            },
+            {
+              "name": "image_and_world",
+              "columns": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                140,
+                141,
+                142,
+                143,
+                144,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153
+              ],
+              "feature_count": 56,
+              "group_MAE_grade": 0.7417953686525116,
+              "group_macro_MAE_grade": 0.8660281900639046,
+              "group_median_baseline_MAE_grade": 0.6666666666666666
+            }
+          ],
+          "validation_predictions": [
+            {
+              "id": "subject_002_push_up_good_side",
+              "label": 2,
+              "prediction": 1.8260000000000005
+            },
+            {
+              "id": "subject_002_push_up_bad_side",
+              "label": 0,
+              "prediction": 0.9466666666666664
+            },
+            {
+              "id": "subject_004_push_up_good_side",
+              "label": 1,
+              "prediction": 0.9766666666666662
+            },
+            {
+              "id": "subject_004_push_up_bad_side",
+              "label": 1,
+              "prediction": 0.8940000000000008
+            },
+            {
+              "id": "subject_012_push_up_good_side",
+              "label": 2,
+              "prediction": 1.920666666666667
+            },
+            {
+              "id": "subject_015_push_up_good_side",
+              "label": 2,
+              "prediction": 1.530333333333334
+            },
+            {
+              "id": "subject_017_push_up_good_side",
+              "label": 2,
+              "prediction": 1.5116666666666665
+            }
+          ]
+        },
+        "support": {
+          "status": "validation_failed",
+          "web_experiment_enabled": false,
+          "hold_reasons": [
+            "참여자 교차검증 개선 부족"
+          ],
+          "train_grades": {
+            "2": 32,
+            "0": 5
+          },
+          "train_samples": 37,
+          "validation_samples": 13,
+          "validation_grades": {
+            "2": 10,
+            "0": 3
+          },
+          "validation_MAE_grade": 0.09230769230769237,
+          "validation_baseline_MAE_grade": 0.46153846153846156,
+          "validation_per_grade": {
+            "0": {
+              "samples": 3,
+              "MAE": 0.4000000000000003
+            },
+            "2": {
+              "samples": 10,
+              "MAE": 0.0
+            }
+          },
+          "selected_variant": "image_and_world",
+          "feature_variants": [
+            {
+              "name": "image_only",
+              "columns": [
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                202,
+                203,
+                204,
+                205,
+                206,
+                207,
+                208,
+                209
+              ],
+              "feature_count": 42,
+              "group_MAE_grade": 0.44850233310233306,
+              "group_macro_MAE_grade": 0.41756767094017105,
+              "group_median_baseline_MAE_grade": 0.2702702702702703
+            },
+            {
+              "name": "image_and_world",
+              "columns": [
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                202,
+                203,
+                204,
+                205,
+                206,
+                207,
+                208,
+                209
+              ],
+              "feature_count": 56,
+              "group_MAE_grade": 0.44852852852852854,
+              "group_macro_MAE_grade": 0.41755555555555574,
+              "group_median_baseline_MAE_grade": 0.2702702702702703
+            }
+          ],
+          "validation_predictions": [
+            {
+              "id": "subject_002_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_002_push_up_bad_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_004_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_004_push_up_bad_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_012_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_015_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "subject_017_push_up_good_side",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "qevd_00109429",
+              "label": 0,
+              "prediction": 0.4000000000000003
+            },
+            {
+              "id": "qevd_00127403",
+              "label": 0,
+              "prediction": 0.4000000000000003
+            },
+            {
+              "id": "qevd_00157328",
+              "label": 0,
+              "prediction": 0.4000000000000003
+            },
+            {
+              "id": "qevd_00005826",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "qevd_00023195",
+              "label": 2,
+              "prediction": 2.0
+            },
+            {
+              "id": "qevd_00053514",
+              "label": 2,
+              "prediction": 2.0
+            }
+          ]
+        }
+      }
+    },
+    "squats": {
+      "train_features": 25,
+      "validation_features": 13,
+      "train_people": 11,
+      "items": {
+        "descent_range": {
+          "status": "validation_failed",
+          "web_experiment_enabled": false,
+          "hold_reasons": [
+            "등급별 검증 표본 부족",
+            "오류 등급별 검증 오차 기준 미달",
+            "중앙값 비교 기준 대비 개선 부족"
+          ],
+          "train_grades": {
+            "1": 10,
+            "2": 5,
+            "0": 6
+          },
+          "train_samples": 21,
+          "validation_samples": 13,
+          "validation_grades": {
+            "1": 7,
+            "0": 5,
+            "2": 1
+          },
+          "validation_MAE_grade": 0.4344565850815846,
+          "validation_baseline_MAE_grade": 0.46153846153846156,
+          "validation_per_grade": {
+            "0": {
+              "samples": 5,
+              "MAE": 0.6267499999999999
+            },
+            "1": {
+              "samples": 7,
+              "MAE": 0.31167207792207713
+            },
+            "2": {
+              "samples": 1,
+              "MAE": 0.33248106060606064
+            }
+          },
+          "selected_variant": "image_and_world",
+          "feature_variants": [
+            {
+              "name": "image_only",
+              "columns": [
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                154,
+                155,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                182,
+                183,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                193,
+                194,
+                195
+              ],
+              "feature_count": 56,
+              "group_MAE_grade": 0.5036424988055423,
+              "group_macro_MAE_grade": 0.5858278767327681,
+              "group_median_baseline_MAE_grade": 0.5238095238095238
+            },
+            {
+              "name": "image_and_world",
+              "columns": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                154,
+                155,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                182,
+                183,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                193,
+                194,
+                195
+              ],
+              "feature_count": 84,
+              "group_MAE_grade": 0.44119068431568437,
+              "group_macro_MAE_grade": 0.5032163353621687,
+              "group_median_baseline_MAE_grade": 0.5238095238095238
+            }
+          ],
+          "validation_predictions": [
+            {
+              "id": "rehab_Mima_2010_2078",
+              "label": 1,
+              "prediction": 1.300662878787878
+            },
+            {
+              "id": "rehab_Mima_5584_5655",
+              "label": 1,
+              "prediction": 1.4293749999999992
+            },
+            {
+              "id": "rehab_Mima_5503_5564",
+              "label": 1,
+              "prediction": 1.4049999999999991
+            },
+            {
+              "id": "rehab_Mima_265_337",
+              "label": 1,
+              "prediction": 1.475643939393939
+            },
+            {
+              "id": "rehab_Mima_6174_6241",
+              "label": 1,
+              "prediction": 1.259185606060605
+            },
+            {
+              "id": "rehab_Mima_3648_3718",
+              "label": 1,
+              "prediction": 1.141742424242424
+            },
+            {
+              "id": "rehab_Mima_14792_14851",
+              "label": 0,
+              "prediction": 1.3737689393939387
+            },
+            {
+              "id": "rehab_Mima_451_525",
+              "label": 1,
+              "prediction": 1.1700946969696961
+            },
+            {
+              "id": "qevd_00003948",
+              "label": 0,
+              "prediction": 0.7563257575757575
+            },
+            {
+              "id": "qevd_00014005",
+              "label": 0,
+              "prediction": 0.24151515151515152
+            },
+            {
+              "id": "qevd_00023973",
+              "label": 0,
+              "prediction": 0.22107954545454547
+            },
+            {
+              "id": "qevd_00032130",
+              "label": 0,
+              "prediction": 0.5410606060606061
+            },
+            {
+              "id": "qevd_00010352",
+              "label": 2,
+              "prediction": 1.6675189393939394
+            }
+          ]
+        }
+      }
+    }
+  },
+  "limitations": [
+    "기존 검증 자료를 반복 사용한 개발 결과. 독립 최종 정확도 아님",
+    "특징 방식은 학습 분할의 참여자 교차검증으로 선택",
+    "총점 라벨을 생성하거나 미관측 항목을 만점 처리하지 않음"
+  ]
+}

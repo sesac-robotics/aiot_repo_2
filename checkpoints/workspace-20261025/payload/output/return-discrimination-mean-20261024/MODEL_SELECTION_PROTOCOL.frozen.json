@@ -1,0 +1,37 @@
+{
+  "frozen_at": "2026-10-24T11:19:24.819338+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/mild-return-calibrated-20261024",
+  "new_bank": "standing_support_extension_mean_v1",
+  "feature_names": [
+    "hip_height_deficit_mean",
+    "shoulder_height_deficit_mean",
+    "knee_extension_deficit_mean",
+    "hip_extension_deficit_mean",
+    "torso_vertical_deficit_mean"
+  ],
+  "feature_code_sha256": "7ba11d6371998030b7a437ecbe4aae039f8558443aa36adf8c8888b733bef70f",
+  "model_code_sha256": "0391505f48004721c7e59c812b73fe7824fd9652e0c44150240bff0a542e7a92",
+  "new_labels_this_experiment": 0,
+  "selection": "Train nested group validation only: prioritize <=5 percent normal FP; then recall>=.65; then mild error recall; then total recall; then normal FP; then balanced MAE",
+  "candidate_models": [
+    "positive_deficit",
+    "logistic"
+  ],
+  "C": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "outer_folds": 4,
+  "inner_folds": 3,
+  "threshold_fit_Train_only": true,
+  "Test_feature_only_augmentation": "same51rows, original labels/features and source roles retained",
+  "production_replacement": false,
+  "previous_experiment": "/home/jayden/SeSACPAI-Mid/output/return-discrimination-v2-20261024",
+  "normal_false_alarm_cap": 0.05,
+  "reason": "User explicitly requires reducing normal false alarms; no development IDs/labels/cutoff values used for selection",
+  "independent_validation_claim": false,
+  "feature_ablation": "side average only; remove maximum-side features that amplify one-side projection noise",
+  "Test_used_for_selection": false,
+  "code_sha256": "409ea7f2305dd4d40a1dcbcedcae8cefd6ac520525801c22a47b379bcbbe8bc4"
+}

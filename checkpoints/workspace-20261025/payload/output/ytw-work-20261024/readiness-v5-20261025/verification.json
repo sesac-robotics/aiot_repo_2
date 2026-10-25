@@ -1,0 +1,56 @@
+{
+  "schema": "ytw-readiness-v5-verification",
+  "updated_at_utc": "2026-10-24T15:50:35.784105+00:00",
+  "summary": {
+    "Train_source_count": 7,
+    "Train_ordered_attempts": 21,
+    "whole_source_event_and_dense_input_parity": true,
+    "prefix_event_and_receipt_checks": 21,
+    "required_unobserved_Train_frames": 22,
+    "current_ready_on_unobserved_Train_frames": 0,
+    "saved_live_samples": 497,
+    "saved_live_unobserved_frames": 293,
+    "saved_live_current_ready_on_unobserved_frames": 0,
+    "saved_live_ordered_attempts": 1,
+    "new_functional_tests": 15,
+    "Y_model_ready_confirmation_delay_slots": [
+      4
+    ],
+    "Y_stability_confirmation_delay_slots": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "T_confirmation_delay_slots": [
+      4
+    ],
+    "W_confirmation_delay_slots": [
+      4
+    ],
+    "previous_boundary_metrics_unchanged": true,
+    "phase_boundary_definite_within_0_2": "19/30",
+    "completion_boundary_definite_within_0_2": "7/10",
+    "remaining_Y_late_cases": 1,
+    "independent_accuracy_claim": false,
+    "production_changed": false
+  },
+  "model_refit": false,
+  "score_model_called_or_refit": false,
+  "source_roles_or_labels_modified": false,
+  "Test_opened": false,
+  "camera_access": false,
+  "live_files_modified": false,
+  "manual_complete_and_projection_approvals_remain_false": true,
+  "activation_gate_passed": false,
+  "files_sha256": {
+    "tools/ytw-work/ytw_readiness_v5.py": "d58cbe26cc13155db3cd7294b098c80160224c5bb30858118291a2ae699806ca",
+    "tools/ytw-work/test_readiness_v5.py": "e2f0135a2d3f9c6d84e82d7d479d4bd14ddc547c7b71e03c6b470c7d0cc0081b",
+    "tools/ytw-work/replay_readiness_v5.py": "05fa5ab838f5475523f34f52d66d7744af7a9f209710664104c854c3f51a56eb",
+    "tools/ytw-work/saved_readiness_v5.py": "09638e185ce6769b52e284c5c2a12d23036154c3485404b906de2e60284be0c4",
+    "output/ytw-work-20261024/readiness-v5-20261025/replay.json": "359d695e1d1d2f9af1e60201f4e1aae2ef60a0536a2ed10626f3b870288d48c3",
+    "output/ytw-work-20261024/readiness-v5-20261025/saved-session.json": "d96c42bb5d5768101c802856f7bcc42d7be2b3ae8f6db4a49c2d851a5dee63f5",
+    "output/ytw-work-20261024/readiness-v5-20261025/plan.frozen.json": "fca1f8220886f9d30dcd4435ff016400853871e41953f3700936aec6ee2d58bf",
+    "output/ytw-work-20261024/boundary-v2/references-v2.frozen.json": "969768c9842f9da3b379e6c9d77fc71304ec6dae1107d4b5f10a27145bd44de6"
+  }
+}

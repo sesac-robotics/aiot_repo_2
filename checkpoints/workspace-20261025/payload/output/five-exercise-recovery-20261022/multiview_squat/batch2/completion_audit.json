@@ -1,0 +1,279 @@
+{
+  "stage": "held_multiview_squat_batch2_direct_review_and_isolated_fit",
+  "reviewed_recording_candidates": 12,
+  "reviewed_temporal_view_sheets": 24,
+  "reviewed_joint_view_sheets": 40,
+  "reviewed_joint_sample_frames": 480,
+  "continuous_full_video_review": false,
+  "direct_score_drafts": 20,
+  "accepted_source_pairs": 10,
+  "paired_correspondence_pending_source_pairs": 2,
+  "annotation_reference_complete_segments": 16,
+  "added": {
+    "annotations": 20,
+    "train_segments": 12,
+    "validation_segments": 8,
+    "train_eligible_item_labels": 33,
+    "validation_eligible_item_labels": 26,
+    "four_item_observed_segments": 9
+  },
+  "added_distribution": {
+    "train": {
+      "segments": 12,
+      "metadata_groups": 3,
+      "full_total_segments": 4,
+      "full_normal_segments": 3,
+      "full_error_segments": 1
+    },
+    "validation": {
+      "segments": 8,
+      "metadata_groups": 2,
+      "full_total_segments": 5,
+      "full_normal_segments": 1,
+      "full_error_segments": 4
+    }
+  },
+  "training_effective_segments": 85,
+  "training_four_item_observed_segments": 47,
+  "development_comparison": {
+    "existing_development": {
+      "baseline": {
+        "submitted": 7,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.3973557692307693,
+            "rule_MAE_grade_units": 0.2
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      },
+      "candidate": {
+        "submitted": 7,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.3973557692307693,
+            "rule_MAE_grade_units": 0.2
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      }
+    },
+    "batch1": {
+      "baseline": {
+        "submitted": 3,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "trunk_balance": {
+            "paired_records": 3,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "descent_range": {
+            "paired_records": 2,
+            "ai_MAE_grade_units": 0.1613374505926055,
+            "rule_MAE_grade_units": 0.0
+          },
+          "return_extension": {
+            "paired_records": 1,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      },
+      "candidate": {
+        "submitted": 3,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "trunk_balance": {
+            "paired_records": 3,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "descent_range": {
+            "paired_records": 2,
+            "ai_MAE_grade_units": 0.3178775375559384,
+            "rule_MAE_grade_units": 0.5
+          },
+          "return_extension": {
+            "paired_records": 1,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 0,
+        "rule_total_available": 0
+      }
+    },
+    "batch2": {
+      "baseline": {
+        "submitted": 8,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 14.976663030128606,
+          "rule_score": 6.0
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.28002353195941615,
+            "rule_MAE_grade_units": 0.3333333333333333
+          },
+          "return_extension": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "knee_foot": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.9766762223608861,
+            "rule_MAE_grade_units": 0.8333333333333334
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      },
+      "candidate": {
+        "submitted": 8,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 13.735087821784527,
+          "rule_score": 12.0
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.29494529169849376,
+            "rule_MAE_grade_units": 0.16666666666666666
+          },
+          "return_extension": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "knee_foot": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.9263148869144143,
+            "rule_MAE_grade_units": 0.8333333333333334
+          },
+          "trunk_balance": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      }
+    }
+  },
+  "group_cross_validation": {
+    "submitted": 85,
+    "paired_total_records": 47,
+    "paired_total_MAE_points": {
+      "ai_score": 9.428578448440545,
+      "rule_score": 17.127659574468087
+    },
+    "items": {
+      "descent_range": {
+        "paired_records": 54,
+        "ai_MAE_grade_units": 0.27976803858420346,
+        "rule_MAE_grade_units": 0.24074074074074073
+      },
+      "return_extension": {
+        "paired_records": 49,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.04081632653061224
+      },
+      "knee_foot": {
+        "paired_records": 50,
+        "ai_MAE_grade_units": 0.5876791763657666,
+        "rule_MAE_grade_units": 0.88
+      },
+      "trunk_balance": {
+        "paired_records": 81,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.12345679012345678
+      }
+    },
+    "ai_total_available": 47,
+    "rule_total_available": 47
+  },
+  "tests_passed": 162,
+  "protected_files_unchanged": {
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/comparison.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/fit_input_manifest.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/comparison.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/squats_candidate.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/pushups.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/shoulder.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/plank.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/squats.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/ytw.joblib": true
+  },
+  "original_reserved_test_source_overlap": [],
+  "new_source_overlap_previous_fit": [],
+  "video_files": 6,
+  "all_frames_decoded": true,
+  "local_links_checked": 57,
+  "missing_local_links": [],
+  "browser_qa": false,
+  "external_discovery_paused": true,
+  "promoted": false,
+  "expert_reference": false,
+  "independent_final_test": false,
+  "files_sha256": {
+    "comparison.json": "7929d1a2b8add7ee10d0b8d868dcf4fbf8fadd286d352ba2753e88d7ac516593",
+    "fit_input_manifest.json": "778cb356dcb85afbc48c4914dbeeb26aded30b4d610d04bf7b55ed5c69c8af67",
+    "score_annotations.json": "03e618aafd70e684f3954929e0928ea41616e9817f79a29b9de953d482bcaf25",
+    "subject_tracking_review.json": "a52eef0bd786e4d381f757c4173951a99f545d8be422cc40ee28cff6a063d6d9",
+    "failure_analysis.json": "f8e82e1ed722443a7740cf8bdb41590b2f92e257d957c8949854a8ea6f542af6",
+    "report_verification.json": "4945243664f6bafe27710abf204b2d6f183d5e989f2c6a82d2c07d9342919591",
+    "index.html": "75a3ed1cab65d305144a4642ca6293aa358ea89a51fe6831210fd9b93c9eeaa1"
+  },
+  "existing_plank_ytw_preserved": true,
+  "next_work_ko": [
+    "학습 그룹 안에서 뒤꿈치·발끝·지면 기준 특징의 오류 구분력을 비교하고 기존 특징과 절제 대조한다.",
+    "보유 자료에서 복귀 신전·몸통 균형 오류와 다양한 참여자를 먼저 검토한다. 현재 정상 단일 등급으로 오류 검출 성능을 주장하지 않는다.",
+    "기존 개발 검증을 최종 시험으로 재명명하지 않고 이후 미검토 원본·참여자를 별도 확정 시험으로 잠근다.",
+    "플랭크·YTW와 기존 모델은 보존한다. 이번 Rule 후보의 총점 오차가 악화되어 자동 승격하지 않는다."
+  ]
+}

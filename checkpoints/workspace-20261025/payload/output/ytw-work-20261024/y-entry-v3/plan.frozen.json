@@ -1,0 +1,52 @@
+{
+  "schema": "ytw-Y-entry-candidate-development-plan-v3",
+  "frozen_at_utc": "2026-10-24T13:44:36.729290+00:00",
+  "development_person": "r2d2_P01",
+  "development_sources": [
+    "V37",
+    "V38"
+  ],
+  "recheck_people": [
+    "r2d2_P02",
+    "r2d2_P03",
+    "r2d2_P04"
+  ],
+  "recheck_sources": [
+    "V39",
+    "V40",
+    "V41",
+    "V43",
+    "V44"
+  ],
+  "exposure": "all_v2_references_and_v7_hyperparameter_selection_previously_exposed; recheck_not_independent_final",
+  "fixed_models": "logo-v1 same person-excluded models, no refit",
+  "reference_sha256": "969768c9842f9da3b379e6c9d77fc71304ec6dae1107d4b5f10a27145bd44de6",
+  "baseline_sha256": "5300505234b2203b9a1081364325823782a67cb1b5503da4556a5ca836fed54a",
+  "candidates": [
+    "baseline",
+    "ready_origin_fix",
+    "stable_0.05",
+    "stable_0.08",
+    "stable_0.10"
+  ],
+  "stable_step_limits": [
+    0.05,
+    0.08,
+    0.1
+  ],
+  "selection": "Use only P01 development results: no lost matched order, no new false completion, no negative window; then minimize Y boundary worst-case error, ties prefer 0.08 then 0.10 then 0.05. Compare ready-only control. Freeze once before recheck; no recheck tuning.",
+  "unchanged": [
+    "T/W dwell and windows",
+    "missing/gap handling",
+    "2percent image boundary",
+    "actual slot80percent coverage",
+    "manual phase/projection/complete approvals false"
+  ],
+  "additional_work": [
+    "negative window integrity across all events",
+    "causal gaps/jitter/translation/slow transition regressions",
+    "same event dense inputs preserve shared AI/Rule approval contract"
+  ],
+  "production_replacement": false,
+  "Test_used": false
+}

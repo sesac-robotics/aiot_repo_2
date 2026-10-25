@@ -1,0 +1,266 @@
+{
+  "version": "r2d2-visual-draft-v1",
+  "status": "non_expert_visual_draft",
+  "grades": {
+    "0": "명확한 미충족",
+    "1": "부분 충족",
+    "2": "관찰 기준 충족",
+    "null": "가림·시점·변형으로 평가 불가"
+  },
+  "scoring": "항목 배점 × 등급 / 2. 모든 항목 관찰 및 완전한 시도일 때만 100점 만점 총점 산출. 관찰 항목만으로 100점 환산 금지.",
+  "limits": [
+    "임상·전문가 판정 또는 AI 출력이 아님",
+    "4fps 시간순 장면 검토, 경계 정밀도 약 0.25초",
+    "정면 스쿼트 깊이는 측면 관절각 판정과 동일하지 않음",
+    "하중·통증·근활성·가려진 접촉·견갑 세부 판정 없음",
+    "YTW는 upright 변형이며 기존 bent-over 자료와 분리",
+    "숄더는 실제 중량 덤벨이 없는 앉은 프레스 시범",
+    "3초 플랭크 창의 점수는 총 버티기 체력 점수가 아님"
+  ],
+  "exercises": {
+    "squats": {
+      "name_ko": "스쿼트",
+      "variant": "squats",
+      "items": [
+        {
+          "id": "descent_range",
+          "name_ko": "하강 범위(정면은 대리 관찰)",
+          "weight": 30,
+          "grade_anchors_0_1_2": [
+            "뚜렷한 하강이 없거나 다른 관절 움직임이 지배적",
+            "하강은 있으나 반복 하단 범위가 제한됨",
+            "해당 관찰 시점에서 충분한 하강이 구분됨"
+          ]
+        },
+        {
+          "id": "standing_height_return",
+          "name_ko": "서기 높이 복귀",
+          "weight": 20,
+          "grade_anchors_0_1_2": [
+            "완전한 시도 중 하강 후 원래 선 높이로 돌아오지 못함",
+            "상승하지만 골반 높이나 무릎·엉덩이 펴기가 일부 남음",
+            "하강 전 선 높이와 비슷하게 상승하고 선 자세가 다시 구분됨"
+          ]
+        },
+        {
+          "id": "knee_gap",
+          "name_ko": "무릎 간격 유지",
+          "weight": 30,
+          "grade_anchors_0_1_2": [
+            "반복 중 무릎 사이 간격이 뚜렷이 안으로 무너짐",
+            "일부 간격 이탈 또는 좌우 차이",
+            "정면에서 큰 안쪽 무너짐 없이 간격 유지"
+          ]
+        },
+        {
+          "id": "frontal_trunk_stability",
+          "name_ko": "정면 몸통 안정",
+          "weight": 20,
+          "grade_anchors_0_1_2": [
+            "큰 좌우 쏠림 또는 반복적 기울임",
+            "일부 좌우 기울임",
+            "큰 좌우 기울임 없이 유지; 앞뒤 허리 정렬의 보증은 아님"
+          ]
+        }
+      ]
+    },
+    "shoulder": {
+      "name_ko": "앉은 양팔 프레스",
+      "variant": "seated_unloaded_bilateral_press",
+      "items": [
+        {
+          "id": "overhead_reach",
+          "name_ko": "머리 위 도달",
+          "weight": 30,
+          "grade_anchors_0_1_2": [
+            "양팔 프레스 상단을 만들지 못함",
+            "팔꿈치 굽힘이 남거나 양팔이 바깥 대각선에 머묾",
+            "양팔을 머리 위로 거의 펴 올린 상단 구분"
+          ]
+        },
+        {
+          "id": "lower_return",
+          "name_ko": "하단 복귀",
+          "weight": 25,
+          "grade_anchors_0_1_2": [
+            "관찰 가능한 완전한 시도에서 하단 미복귀",
+            "하단 복귀가 제한적",
+            "팔꿈치가 어깨 부근의 하단 자세로 복귀"
+          ]
+        },
+        {
+          "id": "bilateral_timing",
+          "name_ko": "양팔 동시성",
+          "weight": 25,
+          "grade_anchors_0_1_2": [
+            "한 팔이 남거나 큰 양팔 시차",
+            "일부 양팔 도달·시차 차이",
+            "양팔이 대체로 함께 오르고 내림"
+          ]
+        },
+        {
+          "id": "frontal_trunk_stability",
+          "name_ko": "정면 몸통 안정",
+          "weight": 20,
+          "grade_anchors_0_1_2": [
+            "큰 좌우 쏠림 또는 반복적 기울임",
+            "일부 좌우 기울임",
+            "큰 좌우 기울임 없이 유지; 앞뒤 허리 정렬의 보증은 아님"
+          ]
+        }
+      ]
+    },
+    "pushups": {
+      "name_ko": "푸시업",
+      "variant": "pushups",
+      "items": [
+        {
+          "id": "trunk_alignment",
+          "name_ko": "몸통 정렬",
+          "weight": 40,
+          "grade_anchors_0_1_2": [
+            "골반이 크게 들리거나 처져 몸통·다리가 뚜렷이 꺾임",
+            "일부 골반 높이·몸통 정렬 이탈",
+            "어깨·골반·다리 선에 큰 꺾임 없이 유지"
+          ]
+        },
+        {
+          "id": "descent_range",
+          "name_ko": "가슴 하강",
+          "weight": 30,
+          "grade_anchors_0_1_2": [
+            "뚜렷한 하강이 없거나 다른 관절 움직임이 지배적",
+            "하강은 있으나 반복 하단 범위가 제한됨",
+            "해당 관찰 시점에서 충분한 하강이 구분됨"
+          ]
+        },
+        {
+          "id": "extension_return",
+          "name_ko": "팔 펴기 복귀",
+          "weight": 20,
+          "grade_anchors_0_1_2": [
+            "상승 후 팔 펴기 상단 없음",
+            "팔 굽힘이 상당히 남는 부분 상승",
+            "팔을 거의 편 상단으로 복귀"
+          ]
+        },
+        {
+          "id": "support",
+          "name_ko": "손·발 지지",
+          "weight": 10,
+          "grade_anchors_0_1_2": [
+            "목표 지지 외 무릎·하체 추가 접촉이 명확함",
+            "목표 지지와 추가 지지가 구간 중 혼재함",
+            "목표 지지 유지, 무릎·하체 추가 접촉 없음; 가려지면 null"
+          ]
+        }
+      ]
+    },
+    "plank": {
+      "name_ko": "플랭크",
+      "variant": "forearm_feet_plank",
+      "items": [
+        {
+          "id": "trunk_alignment",
+          "name_ko": "몸통 정렬",
+          "weight": 40,
+          "grade_anchors_0_1_2": [
+            "골반이 크게 들리거나 처져 몸통·다리가 뚜렷이 꺾임",
+            "일부 골반 높이·몸통 정렬 이탈",
+            "어깨·골반·다리 선에 큰 꺾임 없이 유지"
+          ]
+        },
+        {
+          "id": "elbow_position",
+          "name_ko": "팔꿈치 위치",
+          "weight": 25,
+          "grade_anchors_0_1_2": [
+            "어깨에 비해 팔꿈치 위치가 뚜렷하게 이탈",
+            "어깨 아래 위치에서 일부 이탈",
+            "측면에서 팔꿈치가 대체로 어깨 아래; 손 지지 변형은 null"
+          ]
+        },
+        {
+          "id": "support",
+          "name_ko": "전완·발 지지",
+          "weight": 20,
+          "grade_anchors_0_1_2": [
+            "목표 지지 외 무릎·하체 추가 접촉이 명확함",
+            "목표 지지와 추가 지지가 구간 중 혼재함",
+            "목표 지지 유지, 무릎·하체 추가 접촉 없음; 가려지면 null"
+          ]
+        },
+        {
+          "id": "continuity",
+          "name_ko": "구간 내 지속",
+          "weight": 15,
+          "grade_anchors_0_1_2": [
+            "구간 내 목표 지지를 분명하게 중단",
+            "유지가 일시적으로 끊기거나 전환과 혼재",
+            "관찰 구간에서 지속; 나쁜 정렬도 지속 자체는 충족 가능"
+          ]
+        }
+      ]
+    },
+    "ytw": {
+      "name_ko": "서서 Y–T–W",
+      "variant": "upright_ytw",
+      "items": [
+        {
+          "id": "Y_shape",
+          "name_ko": "Y 형태",
+          "weight": 30,
+          "grade_anchors_0_1_2": [
+            "대각선 Y 단계 누락",
+            "양팔이 머리 위로 모이거나 도달이 부분적",
+            "양팔을 위쪽 대각선으로 편 Y 구분"
+          ]
+        },
+        {
+          "id": "T_shape",
+          "name_ko": "T 형태",
+          "weight": 25,
+          "grade_anchors_0_1_2": [
+            "곧게 양옆으로 편 T 단계 누락",
+            "수평을 잠깐 통과하거나 비대칭·부분 형태",
+            "양팔을 옆으로 곧게 편 T 구분"
+          ]
+        },
+        {
+          "id": "W_shape",
+          "name_ko": "W 형태",
+          "weight": 25,
+          "grade_anchors_0_1_2": [
+            "양팔을 굽힌 W 단계 누락",
+            "한쪽만 굽히거나 형태가 부분적으로만 구분됨",
+            "양 팔꿈치를 굽혀 손이 팔꿈치 위로 오는 W 구분"
+          ]
+        },
+        {
+          "id": "upright_trunk_stability",
+          "name_ko": "서 있는 몸통 안정",
+          "weight": 20,
+          "grade_anchors_0_1_2": [
+            "서 있는 몸통의 큰 좌우 기울임",
+            "일부 좌우 기울임",
+            "큰 좌우 기울임 없이 서 있는 형태 유지; 견갑 근활성 판단 제외"
+          ]
+        }
+      ]
+    }
+  },
+  "references": [
+    {
+      "url": "https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/",
+      "scope": "기본 푸시업 동작 참고. 점수 배점은 프로젝트 정의."
+    },
+    {
+      "url": "https://www.acefitness.org/resources/everyone/exercise-library/32/front-plank/",
+      "scope": "전완 플랭크 기본 형태 참고. 수치 임계값을 임상 기준으로 주장하지 않음."
+    },
+    {
+      "url": "https://www.acefitness.org/continuing-education/prosource/september-2014/4972/dynamite-delts-ace-research-identifies-top-shoulder-exercises/",
+      "scope": "숄더 프레스 동작 참고, 무부하 촬영과 하중 운동 구분."
+    }
+  ]
+}

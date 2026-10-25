@@ -1,0 +1,138 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "shoulder",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "overhead_reach",
+      "weight": 30,
+      "ai_grade": 1.7961611706234368,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.20383882937656317,
+      "observed": true,
+      "bank": "front",
+      "measured": 154.50394575694867,
+      "feature": [
+        76.61865253218825,
+        77.54549023571651,
+        84.0340483377889,
+        112.98838464920061,
+        139.38999458046226,
+        154.50394575694867,
+        155.2486770576164,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "lower_return",
+      "weight": 25,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "front",
+      "measured": 96.03737000625213,
+      "feature": [
+        92.52328623917397,
+        92.91373999107155,
+        94.08510124676427,
+        96.03737000625213,
+        98.74926702407728,
+        100.37640523477239,
+        100.91878463833741,
+        1.0
+      ],
+      "reasons": [
+        "single_grade_training_error_discrimination_unverified"
+      ],
+      "single_grade_training": true,
+      "window": null
+    },
+    {
+      "id": "bilateral_timing",
+      "weight": 25,
+      "ai_grade": 1.5860848814262258,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.41391511857377417,
+      "observed": true,
+      "bank": "front",
+      "measured": 0.05829021652543433,
+      "feature": [
+        0.004723268465705092,
+        0.012696425983299798,
+        0.018694267717308463,
+        0.028092799365646126,
+        0.0465946353888059,
+        0.05829021652543433,
+        0.06028086651246553,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "frontal_trunk_hold",
+      "weight": 20,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "front",
+      "measured": 3.8994934134755352,
+      "feature": [
+        0.7474692766630677,
+        0.8322022550511085,
+        1.6000160918304314,
+        2.2324202884799758,
+        2.9571216600671475,
+        3.8994934134755352,
+        4.243229699402833,
+        1.0
+      ],
+      "reasons": [
+        "single_grade_training_error_discrimination_unverified"
+      ],
+      "single_grade_training": true,
+      "window": null
+    }
+  ],
+  "ai_score": 91.76847857717938,
+  "rule_score": 100.0,
+  "ai_minus_rule": -8.23152142282062,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 9.57251499994527,
+    "ai": 99.928724999927,
+    "rule": 0.020369000139908167
+  },
+  "limitations": [
+    "Frontal projection does not assess sagittal lumbar arch.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_005_shoulder_good_front.mp4",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 3.9592878320002,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

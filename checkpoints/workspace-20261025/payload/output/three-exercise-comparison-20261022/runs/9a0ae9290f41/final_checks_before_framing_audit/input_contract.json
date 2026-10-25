@@ -1,0 +1,207 @@
+{
+  "schema_version": "qevd-compatible-assessment-v1",
+  "scope": [
+    "pushups",
+    "squats",
+    "shoulder"
+  ],
+  "rubrics": {
+    "pushups": {
+      "scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+      "weights": [
+        40,
+        30,
+        20,
+        10
+      ],
+      "items": [
+        {
+          "id": "trunk_line",
+          "name_ko": "몸통·골반 정렬",
+          "anchors": [
+            "뚜렷한 엉덩이 들림·처짐",
+            "경미한 꺾임 또는 일부 구간 이탈",
+            "선택 구간에서 큰 꺾임 없이 정렬 유지"
+          ]
+        },
+        {
+          "id": "descent_range",
+          "name_ko": "팔 굽힘·하강 범위",
+          "anchors": [
+            "움직임이 작고 하단에서도 팔이 크게 굽혀지지 않음",
+            "하강은 있으나 기준 자세에 충분히 이르지 않음",
+            "가슴이 낮아지고 상완이 바닥에 가까운 방향까지 내려감"
+          ]
+        },
+        {
+          "id": "return_extension",
+          "name_ko": "상단 팔 펴기",
+          "anchors": [
+            "팔을 편 상단으로 돌아오지 못함",
+            "상단에서도 팔꿈치 굽힘이 일부 남음",
+            "상단에서 팔을 거의 편 자세로 돌아옴. 강제 잠금은 요구하지 않음"
+          ]
+        },
+        {
+          "id": "support",
+          "name_ko": "손·발 지지",
+          "anchors": [
+            "무릎·몸통을 바닥에 대고 지지함",
+            "중간에 지지 방식이 바뀜",
+            "선택 구간 손·발 지지 유지"
+          ]
+        }
+      ]
+    },
+    "squats": {
+      "scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+      "weights": [
+        30,
+        20,
+        30,
+        20
+      ],
+      "items": [
+        {
+          "id": "descent_range",
+          "name_ko": "하강 범위",
+          "anchors": [
+            "무릎·엉덩이를 조금만 굽힌 얕은 하강",
+            "분명히 내려가지만 허벅지가 수평보다 위에 있음",
+            "허벅지가 수평에 가까워지는 하강"
+          ]
+        },
+        {
+          "id": "return_extension",
+          "name_ko": "다시 일어서기",
+          "anchors": [
+            "서기 자세로 복귀하지 못함",
+            "무릎·엉덩이 굽힘이 남아 부분 복귀",
+            "선택 반복에서 원래의 서기 자세로 복귀"
+          ]
+        },
+        {
+          "id": "knee_foot",
+          "name_ko": "무릎·발 정렬과 접지",
+          "anchors": [
+            "뚜렷한 안쪽 무릎 붕괴·뒤꿈치 들림·발 지지 이탈",
+            "부분적 정렬 이탈",
+            "앞뒤·정면 근거에서 큰 정렬 이탈 없이 접지 유지"
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "name_ko": "몸통 좌우 균형",
+          "anchors": [
+            "뚜렷한 한쪽 기울기·비대칭",
+            "경미한 한쪽 기울기",
+            "정면 근거에서 큰 좌우 기울기 없이 수행"
+          ]
+        }
+      ]
+    },
+    "shoulder": {
+      "name_ko": "덤벨 숄더 프레스 — 정면 관측 핵심 항목",
+      "unit": "어깨 높이 하단 → 상단 → 하단의 단일 시도",
+      "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+      "weights": [
+        30,
+        25,
+        25,
+        20
+      ],
+      "items": [
+        {
+          "id": "overhead_reach",
+          "name_ko": "머리 위 팔 올림",
+          "anchors": [
+            "머리 위로 올림이 매우 작음",
+            "팔꿈치의 큰 굽힘·양팔 도달 차이",
+            "양팔을 머리 위로 거의 펴 올림. 강제 잠금은 요구하지 않음"
+          ]
+        },
+        {
+          "id": "lower_return",
+          "name_ko": "어깨 높이 하단 복귀",
+          "anchors": [
+            "하단으로 돌아오지 못함",
+            "부분 복귀",
+            "양팔이 어깨 높이 하단으로 대체로 복귀함"
+          ]
+        },
+        {
+          "id": "bilateral_timing",
+          "name_ko": "양팔 동시 움직임",
+          "anchors": [
+            "번갈아 올림·명확한 큰 시차",
+            "일부 높이·타이밍 차이",
+            "상승·하강에서 대체로 함께 움직임"
+          ]
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "name_ko": "정면 몸통 좌우 유지",
+          "anchors": [
+            "큰 좌우 기울기·반동",
+            "부분 기울기·구간 이탈",
+            "큰 좌우 기울기 없이 유지함"
+          ]
+        }
+      ],
+      "exclusions": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음."
+    }
+  },
+  "json_files": {
+    "provider_base": "qevd-json/fine_grained_labels.json",
+    "participant_mapping": "qevd-json/fine_grained_labels_with_worker_ids.json",
+    "score_extension": "qevd-json/score_annotations.json",
+    "actual_development_split": "qevd-json/development_splits.json",
+    "logical_to_local_file_mapping": "qevd-json/media_manifest.json"
+  },
+  "base_split_is_provider_style_only": true,
+  "validation_must_be_taken_from_development_manifest": true,
+  "extractor": {
+    "name": "MediaPipe Pose Landmarker Heavy",
+    "role": "joint_extraction_only_not_score_prediction",
+    "sample_hz": 10,
+    "max_image_edge_pixels": 640,
+    "visibility_min": 0.5,
+    "presence_min": 0.5,
+    "coordinates": "N x 33 x 2 original image pixels; missing = NaN in NPZ, null in JSON outputs",
+    "world_coordinates_used_for_scoring": false
+  },
+  "common_observability": {
+    "item_required_joints_simultaneous_fraction_min": 0.8,
+    "endpoint_min_samples": 2,
+    "overhead_wrists_required_at_peak": true,
+    "image_border_uncertain_fraction": 0.02,
+    "unnecessary_face_or_foot_cropping_does_not_block_shoulder_scoring": true,
+    "frontal_trunk_not_identifiable_from_front_oblique": true,
+    "missing_items_never_filled_or_renormalized": true
+  },
+  "units": {
+    "criterion_level": "0, 1, 2 or null",
+    "score": "sum(weight * level / 2), 0..100 points only when all four items known",
+    "angles": "degrees",
+    "distances": "torso-length ratios",
+    "medial_knee_angle": "frontal bend divided by 180, considered only for inward deviation",
+    "heel_lift": "change in toe-to-heel vertical separation divided by torso length"
+  },
+  "temporal_scoring": "human-delimited single attempt; auto phase results are conditional on the manual envelope, not whole-video automatic validation",
+  "failed_attempt": "explicit observed stop without return is distinct from a clip ending early",
+  "score_targets": "assistant direct sampled-frame nonexpert drafts only; no rule-generated targets or provider-string conversion",
+  "split_policy": "participant + raw-original hash grouped; unknown REHAB24/26 identity linkage means separate cohorts",
+  "limitations": [
+    "Expert reference and prospective independent final exam not completed",
+    "Several item heads have only full-grade examples; they are constant baselines for error recognition",
+    "Static heel elevation from the beginning of a clip remains a limitation of relative heel measurement",
+    "Unknown participant identity across different sources is not proved unique"
+  ],
+  "team_API_DB_contract_changed": false,
+  "AI_models": [
+    "ExtraTrees per criterion trained on direct draft grades",
+    "Pushup trunk: isotonic versus ExtraTrees selected by 3 inner participant-group folds of training data only"
+  ],
+  "latest_knee_feature_experiment": "V3 static+dynamic medial knee candidate did not improve same-cohort development error; preserved separately, not promoted to common rules",
+  "test_record_loading": "JSON test records may be deserialized for export and metadata audit, but are excluded from feature extraction, fitting and development scoring"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "support_colossus_elbow_transition",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "8a9b79698ed227881e941c39c37a24d1b817ecffe74863fc6799bdeda2dc0f54",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 71,
+      "fps": 23.976
+    },
+    "required_views": [
+      "side"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "d38468ed543d10bbe3aabe0bedf7063114c55600bec70ed30f1167c021e76c08",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/four-exercise-source-phase-v2-20261025/recovered-observations/support_colossus_elbow_transition/primary.npz",
+  "frames": 30,
+  "observed_joint_fraction": 0.806060606060606,
+  "extract_seconds": 2.3250928070001464,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

@@ -73,8 +73,14 @@ class ScoringEngine:
         return self._models[exercise]
 
     def analyze_initial_return(
-        self, exercise: str, primary: PoseSequence, *, state_models: dict,
-        view: str, protocol: str, attempt_closed: bool = False,
+        self,
+        exercise: str,
+        primary: PoseSequence,
+        *,
+        state_models: dict,
+        view: str,
+        protocol: str,
+        attempt_closed: bool = False,
         user_stopped: bool = False,
     ) -> dict:
         """학습된 시작 자세와 복귀 순서의 실험 근거를 계산한다.
@@ -86,15 +92,26 @@ class ScoringEngine:
         from app.scoring.initial_pose_return import InitialPoseAnalyzer
 
         return InitialPoseAnalyzer(state_models).run(
-            exercise, primary.image_xy, primary.frame_numbers / primary.fps,
-            view=view, protocol=protocol, attempt_closed=attempt_closed,
+            exercise,
+            primary.image_xy,
+            primary.frame_numbers / primary.fps,
+            view=view,
+            protocol=protocol,
+            attempt_closed=attempt_closed,
             user_stopped=user_stopped,
         )
 
     def score_with_initial_return(
-        self, exercise: str, primary: PoseSequence, *, state_models: dict,
-        return_severity_models: dict, protocol: str, view: str,
-        user_stopped: bool = False, **score_options,
+        self,
+        exercise: str,
+        primary: PoseSequence,
+        *,
+        state_models: dict,
+        return_severity_models: dict,
+        protocol: str,
+        view: str,
+        user_stopped: bool = False,
+        **score_options,
     ) -> dict:
         """동일 구간의 기존 항목·규칙과 새 시작/복귀 AI를 함께 검증한다.
 
@@ -105,17 +122,24 @@ class ScoringEngine:
         from app.scoring.return_scoring import combine_return_score
 
         if type(user_stopped) is not bool:
-            raise ValueError('user_stopped must be a boolean')
-        complete = score_options.get('complete_attempt', False)
+            raise ValueError("user_stopped must be a boolean")
+        complete = score_options.get("complete_attempt", False)
         score = self.score(exercise, primary, view=view, **score_options)
         evidence = self.analyze_initial_return(
-            exercise, primary, state_models=state_models, view=view,
-            protocol=protocol, attempt_closed=complete,
+            exercise,
+            primary,
+            state_models=state_models,
+            view=view,
+            protocol=protocol,
+            attempt_closed=complete,
             user_stopped=user_stopped,
         )
         return combine_return_score(
-            score, evidence, return_severity_models,
-            complete_attempt=complete, user_stopped=user_stopped,
+            score,
+            evidence,
+            return_severity_models,
+            complete_attempt=complete,
+            user_stopped=user_stopped,
         )
 
     def score(

@@ -1,0 +1,20 @@
+{
+  "reviewer": "AI_assisted_visual_not_expert_adjudicated",
+  "evidence": [
+    "r05-original-pose.jpg",
+    "r09-original-pose.jpg",
+    "r12-original-pose.jpg"
+  ],
+  "original_coordinates_and_frame_dimensions_verified": true,
+  "notes_ko": [
+    "r09선택복귀393/396/399프레임은원본에서상승뒤몸통전경과약간의무릎굽힘이남은상단이다. 추정골반/무릎/발목이완전히다른사람이나배경으로이동한명백한오연결은선택프레임에서보이지않는다. 정확한관절정답검증을뜻하지않는다.",
+    "가까운정상r05의246/249/252프레임도몸통전경이남고유사한지지높이를보인다. 원본비교에서도부분복귀1점과정상2점의서기높이경계가분명하지않아목표/정답재판정대상으로표시한다. 모델예측을맞추려고기존등급을수정하거나오류분모에서빼지않는다.",
+    "r12의507/510/513상단은몸방향이카메라쪽으로변한다. 같은초기기준과의투영차이/신체회전영향을분리확인해야한다. 기존모델의문턱만올리면이정상구간오판이발생한다는이전진단은유지한다."
+  ],
+  "new_error_labels": 0,
+  "label_changes": false,
+  "fit": false,
+  "threshold_changes": false,
+  "conclusion": "remaining_miss_not_explained_by_obvious_tracking_swap_in_selected_frames; target_grade_boundary_and_pose_projection_overlap_remain_unresolved",
+  "created_utc": "2026-10-24T14:54:16.107307+00:00"
+}

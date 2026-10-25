@@ -1,0 +1,152 @@
+{
+  "model_version": "7e1158624b2c",
+  "records": [
+    {
+      "id": "youtube_DVGi7h0lL3A_control",
+      "method": "ai",
+      "evaluation": "leave_person_out_development",
+      "target_score": 100.0,
+      "predicted_score": null,
+      "items": [
+        {
+          "item": "trunk_line",
+          "target_level": 2,
+          "predicted_level": 2.0,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "descent_range",
+          "target_level": 2,
+          "predicted_level": 2.0,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "return_extension",
+          "target_level": 2,
+          "predicted_level": 1.1387494351362608,
+          "weighted_error_points": -8.612505648637391
+        },
+        {
+          "item": "support",
+          "target_level": 2,
+          "predicted_level": null,
+          "weighted_error_points": null
+        }
+      ],
+      "signed_total_error_points": null,
+      "sum_absolute_item_errors_points": null,
+      "item_error_cancellation": false
+    },
+    {
+      "id": "youtube_DVGi7h0lL3A_control",
+      "method": "rule",
+      "evaluation": "leave_person_out_development",
+      "target_score": 100.0,
+      "predicted_score": null,
+      "items": [
+        {
+          "item": "trunk_line",
+          "target_level": 2,
+          "predicted_level": 2,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "descent_range",
+          "target_level": 2,
+          "predicted_level": 2,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "return_extension",
+          "target_level": 2,
+          "predicted_level": 2,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "support",
+          "target_level": 2,
+          "predicted_level": null,
+          "weighted_error_points": null
+        }
+      ],
+      "signed_total_error_points": null,
+      "sum_absolute_item_errors_points": null,
+      "item_error_cancellation": false
+    },
+    {
+      "id": "youtube_DVGi7h0lL3A_hip_floor_fault",
+      "method": "ai",
+      "evaluation": "leave_person_out_development",
+      "target_score": 50.0,
+      "predicted_score": 50.13790726807141,
+      "items": [
+        {
+          "item": "trunk_line",
+          "target_level": 0,
+          "predicted_level": 0.0,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "descent_range",
+          "target_level": 2,
+          "predicted_level": 1.9466989837192838,
+          "weighted_error_points": -0.7995152442107423
+        },
+        {
+          "item": "return_extension",
+          "target_level": 2,
+          "predicted_level": 1.093742251228215,
+          "weighted_error_points": -9.062577487717851
+        },
+        {
+          "item": "support",
+          "target_level": 0,
+          "predicted_level": 2.0,
+          "weighted_error_points": 10.0
+        }
+      ],
+      "signed_total_error_points": 0.13790726807140663,
+      "sum_absolute_item_errors_points": 19.862092731928595,
+      "item_error_cancellation": true
+    },
+    {
+      "id": "youtube_DVGi7h0lL3A_hip_floor_fault",
+      "method": "rule",
+      "evaluation": "leave_person_out_development",
+      "target_score": 50.0,
+      "predicted_score": 55.0,
+      "items": [
+        {
+          "item": "trunk_line",
+          "target_level": 0,
+          "predicted_level": 0,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "descent_range",
+          "target_level": 2,
+          "predicted_level": 2,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "return_extension",
+          "target_level": 2,
+          "predicted_level": 2,
+          "weighted_error_points": 0.0
+        },
+        {
+          "item": "support",
+          "target_level": 0,
+          "predicted_level": 1,
+          "weighted_error_points": 5.0
+        }
+      ],
+      "signed_total_error_points": 5.0,
+      "sum_absolute_item_errors_points": 5.0,
+      "item_error_cancellation": false
+    }
+  ],
+  "expert_reference": false,
+  "independent_final_test": false,
+  "caution_ko": "작은 총점 오차가 항목 오류 인식을 입증하지 않는다. 새 참여자의 지지 오류를 놓쳤는지 항목 등급을 함께 확인한다."
+}

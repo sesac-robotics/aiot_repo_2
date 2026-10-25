@@ -1,0 +1,20 @@
+{
+  "user_authorized_reclaim_obsolete_data": true,
+  "protected_ko": [
+    "진행 중 .crdownload 파일",
+    "현재 평가·직접 검토에 필요한 원본과 라벨",
+    "출처·이용 조건·분할·라벨 이력·실험 결과·모델",
+    "팀 저장소와 타인의 변경"
+  ],
+  "cleanup_order_ko": [
+    "해시 대조 후 중복 포장·해제 완료 압축 삭제",
+    "검증된 동일 원시 사본의 물리 중복 제거, 경로 유지",
+    "검토가 끝난 재생성 가능한 변환 중간 파일 정리",
+    "학습·검증 완료 후 사용자 계획에 따라 원본 제거"
+  ],
+  "raw_retirement_gate_ko": "필요 표본 추출·파일 무결성·라벨 연결·학습 및 검증 완료 여부와 보존 범위를 확인하기 전 유일한 원본을 삭제하지 않음",
+  "free_space_reserve_bytes": 10737418240,
+  "no_new_bulk_download_until_selected": true,
+  "remaining_free_bytes": 62271553536,
+  "retained_dataset_files_are_hardlinked_ko": "동일 원시 파일은 여러 경로에서 같은 파일을 공유한다. 원시 파일은 읽기 전용 입력으로 취급하고 변환 결과는 별도 경로에 저장한다."
+}

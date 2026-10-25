@@ -1,0 +1,113 @@
+{
+  "fixed_configuration": {
+    "nu": 0.05,
+    "gamma": "scale"
+  },
+  "metrics": {
+    "frontal_trunk_hold/front_standing": {
+      "status": "normal_reference_fitted",
+      "Train_rows": 2,
+      "Train_people": [
+        "shoulder_018",
+        "shoulder_026"
+      ],
+      "development_validation_rows": 0,
+      "development_normal_inlier_count": 0,
+      "leave_person_out_normal_inlier_count": 0,
+      "leave_person_out_rows": 2,
+      "leave_person_out": [
+        {
+          "id": "subject_018_shoulder_good_front_frontal_trunk_hold_2.4",
+          "person": "shoulder_018",
+          "normal_reference_inlier": false
+        },
+        {
+          "id": "subject_026_shoulder_good_front_frontal_trunk_hold_3.8",
+          "person": "shoulder_026",
+          "normal_reference_inlier": false
+        }
+      ],
+      "false_error_detection_claim": false,
+      "error_examples": 0
+    },
+    "frontal_trunk_hold_window_reference/front_standing": {
+      "status": "normal_reference_fitted",
+      "Train_rows": 6,
+      "Train_people": [
+        "shoulder_013",
+        "shoulder_014",
+        "shoulder_018",
+        "shoulder_019",
+        "shoulder_026"
+      ],
+      "development_validation_rows": 0,
+      "development_normal_inlier_count": 0,
+      "leave_person_out_normal_inlier_count": 2,
+      "leave_person_out_rows": 6,
+      "leave_person_out": [
+        {
+          "id": "subject_013_shoulder_bad_front_body_window_2",
+          "person": "shoulder_013",
+          "normal_reference_inlier": false
+        },
+        {
+          "id": "subject_013_shoulder_good_front_body_window_1",
+          "person": "shoulder_013",
+          "normal_reference_inlier": false
+        },
+        {
+          "id": "subject_014_shoulder_bad_front_body_window_1",
+          "person": "shoulder_014",
+          "normal_reference_inlier": false
+        },
+        {
+          "id": "subject_018_shoulder_good_front_body_window_0",
+          "person": "shoulder_018",
+          "normal_reference_inlier": false
+        },
+        {
+          "id": "subject_019_shoulder_good_front_body_window_0",
+          "person": "shoulder_019",
+          "normal_reference_inlier": true
+        },
+        {
+          "id": "subject_026_shoulder_good_front_body_window_0",
+          "person": "shoulder_026",
+          "normal_reference_inlier": true
+        }
+      ],
+      "false_error_detection_claim": false,
+      "error_examples": 0
+    },
+    "lower_return/front_standing": {
+      "status": "normal_reference_fitted",
+      "Train_rows": 2,
+      "Train_people": [
+        "shoulder_018",
+        "shoulder_026"
+      ],
+      "development_validation_rows": 0,
+      "development_normal_inlier_count": 0,
+      "leave_person_out_normal_inlier_count": 0,
+      "leave_person_out_rows": 2,
+      "leave_person_out": [
+        {
+          "id": "subject_018_shoulder_good_front_lower_return_2.4",
+          "person": "shoulder_018",
+          "normal_reference_inlier": false
+        },
+        {
+          "id": "subject_026_shoulder_good_front_lower_return_3.8",
+          "person": "shoulder_026",
+          "normal_reference_inlier": false
+        }
+      ],
+      "false_error_detection_claim": false,
+      "error_examples": 0
+    }
+  },
+  "roles_preserved": true,
+  "test_inference": false,
+  "production_changed": false,
+  "expert_adjudicated": false
+}

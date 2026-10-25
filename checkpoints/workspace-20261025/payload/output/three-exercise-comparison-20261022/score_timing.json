@@ -1,0 +1,100 @@
+{
+  "model_version": "7e1158624b2c",
+  "records": [
+    {
+      "exercise": "pushups",
+      "input_ids": [
+        "subject_002_push_up_good_side",
+        "subject_002_push_up_bad_side",
+        "subject_004_push_up_good_side",
+        "subject_004_push_up_bad_side",
+        "subject_012_push_up_good_side",
+        "subject_015_push_up_good_side",
+        "subject_017_push_up_good_side",
+        "subject_012_push_up_bad_side",
+        "subject_015_push_up_bad_side",
+        "subject_017_push_up_bad_side",
+        "youtube_0xbZWGGEK3Q_failed_attempt"
+      ],
+      "repeats_per_input": 20,
+      "shared_input_verified": true,
+      "methods": {
+        "ai": {
+          "measurements": 220,
+          "p50_ms": 28.67719549976755,
+          "p90_ms": 29.990056000497134
+        },
+        "rule": {
+          "measurements": 220,
+          "p50_ms": 0.006524999662360642,
+          "p90_ms": 0.0157841008331161
+        }
+      }
+    },
+    {
+      "exercise": "squats",
+      "input_ids": [
+        "rehab24_PM_008_rep9",
+        "rehab24_PM_008_rep17",
+        "rehab24_PM_008_rep1",
+        "rehab24_PM_022_rep6",
+        "rehab24_PM_022_rep1",
+        "rehab24_PM_022_rep2",
+        "rehab24_PM_029_rep3",
+        "rehab24_PM_029_rep6",
+        "rehab24_PM_029_rep10",
+        "rehab24_PM_029_rep8",
+        "rehab24_PM_038_rep6",
+        "rehab24_PM_038_rep1"
+      ],
+      "repeats_per_input": 20,
+      "shared_input_verified": true,
+      "methods": {
+        "ai": {
+          "measurements": 240,
+          "p50_ms": 38.648105500215024,
+          "p90_ms": 43.2950107007855
+        },
+        "rule": {
+          "measurements": 240,
+          "p50_ms": 0.013016999218962155,
+          "p90_ms": 0.01832000052672811
+        }
+      }
+    },
+    {
+      "exercise": "shoulder",
+      "input_ids": [
+        "subject_002_shoulder_bad_front",
+        "subject_015_shoulder_bad_front",
+        "subject_017_shoulder_good_front",
+        "subject_015_shoulder_good_front",
+        "subject_002_shoulder_good_front",
+        "subject_004_shoulder_good_front",
+        "subject_017_shoulder_bad_front",
+        "subject_004_shoulder_bad_front",
+        "youtube_U9ZRi5VwSo8_rep1",
+        "youtube_U9ZRi5VwSo8_rep2",
+        "youtube_OOe_HrNnQWw_peak_cropped"
+      ],
+      "repeats_per_input": 20,
+      "shared_input_verified": true,
+      "methods": {
+        "ai": {
+          "measurements": 220,
+          "p50_ms": 20.324739999523445,
+          "p90_ms": 39.41242750006495
+        },
+        "rule": {
+          "measurements": 220,
+          "p50_ms": 0.007442999049089849,
+          "p90_ms": 0.015800400251464453
+        }
+      }
+    }
+  ],
+  "includes": "prediction and weighted total only",
+  "excludes": "decode, Heavy, feature generation, model load",
+  "independent_test": false,
+  "cpu_quota_percent": 50
+}

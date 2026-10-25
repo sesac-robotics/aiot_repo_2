@@ -1,0 +1,3215 @@
+{
+  "completed": true,
+  "training_attempts": 94,
+  "training_metadata_groups": 77,
+  "training_heads": [
+    {
+      "item": 0,
+      "policy": [
+        135,
+        95,
+        150,
+        100
+      ],
+      "records": 55,
+      "grade_counts": {
+        "1": 52,
+        "0": 1,
+        "2": 2
+      },
+      "grade_metadata_groups": {
+        "1": 43,
+        "0": 1,
+        "2": 2
+      },
+      "training_only": true,
+      "used_default_for_insufficient_grade_groups": true
+    },
+    {
+      "item": 1,
+      "policy": [
+        65,
+        40,
+        160,
+        80
+      ],
+      "records": 80,
+      "grade_counts": {
+        "2": 69,
+        "1": 11
+      },
+      "grade_metadata_groups": {
+        "2": 59,
+        "1": 11
+      },
+      "training_only": true,
+      "used_default_for_insufficient_grade_groups": false
+    },
+    {
+      "item": 2,
+      "policy": [
+        20.0,
+        8.0,
+        0.025,
+        -0.05,
+        0.25,
+        0.5,
+        35.0,
+        -0.95,
+        -1.0
+      ],
+      "records": 77,
+      "grade_counts": {
+        "2": 26,
+        "1": 44,
+        "0": 7
+      },
+      "grade_metadata_groups": {
+        "2": 25,
+        "1": 39,
+        "0": 7
+      },
+      "training_only": true,
+      "used_default_for_insufficient_grade_groups": false
+    },
+    {
+      "item": 3,
+      "policy": [
+        1.2,
+        0.7,
+        10,
+        15
+      ],
+      "records": 92,
+      "grade_counts": {
+        "2": 44,
+        "1": 35,
+        "0": 13
+      },
+      "grade_metadata_groups": {
+        "2": 39,
+        "1": 31,
+        "0": 13
+      },
+      "training_only": true,
+      "used_default_for_insufficient_grade_groups": false
+    }
+  ],
+  "connected_group_cv": {
+    "submitted": 94,
+    "paired_total_records": 44,
+    "paired_total_MAE_points": {
+      "ai_score": 9.6637421978377,
+      "rule_score": 17.84090909090909
+    },
+    "items": {
+      "y_reach": {
+        "paired_records": 55,
+        "ai_MAE_grade_units": 0.12694445489746142,
+        "rule_MAE_grade_units": 0.6909090909090909
+      },
+      "t_reach": {
+        "paired_records": 80,
+        "ai_MAE_grade_units": 0.1521523582695951,
+        "rule_MAE_grade_units": 0.175
+      },
+      "w_shape": {
+        "paired_records": 77,
+        "ai_MAE_grade_units": 0.4710969662893191,
+        "rule_MAE_grade_units": 0.4155844155844156
+      },
+      "hinge_and_trunk_hold": {
+        "paired_records": 92,
+        "ai_MAE_grade_units": 0.4723596566702755,
+        "rule_MAE_grade_units": 0.4782608695652174
+      }
+    },
+    "ai_total_available": 44,
+    "rule_total_available": 44
+  },
+  "group_cv_predictions": [
+    {
+      "id": "qevd_00015905",
+      "person": "qevd_191",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.0438624071940605,
+        1.4308808381805687,
+        1.5671373550304029,
+        1.7283013768347744
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 70.4161772913958,
+      "rule_score": 47.5,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00014884",
+      "person": "qevd_1207",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.1300945970183665,
+        1.993421052631579,
+        0.5890304263689876,
+        0.6022957362850084
+      ],
+      "rule_levels": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "ai_score": 55.255019805632664,
+      "rule_score": 50.0,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00240151",
+      "person": "qevd_556",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        0.9857312650796536,
+        1.5161981100255104,
+        0.7173737223997667,
+        1.9409962778834946
+      ],
+      "rule_levels": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "ai_score": 62.115579660345716,
+      "rule_score": 45.0,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00107995",
+      "person": "qevd_309",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        1.8986584595959595,
+        1.2306444526675553,
+        1.7586098043525957
+      ],
+      "rule_levels": [
+        null,
+        1,
+        1,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00225499",
+      "person": "qevd_2103",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        null,
+        2.0,
+        0.9552637573823912,
+        1.878225816309688
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00152261",
+      "person": "qevd_1746",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.987468671679198,
+        0.8262204230914036,
+        1.8472129637121233
+      ],
+      "rule_levels": [
+        null,
+        2,
+        0,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00064848",
+      "person": "qevd_1948",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.565005462910843,
+        0.3849225403387375,
+        null
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00139632",
+      "person": "qevd_2588",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        null,
+        1
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.7155428707933031
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00101081",
+      "person": "qevd_1724",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        0.9925717213114754,
+        2.0,
+        1.170748676148778,
+        0.5762153941598174
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 60.28508821313003,
+      "rule_score": 47.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00192842",
+      "person": "qevd_1845",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.1272422137947133,
+        1.9291645166838667,
+        0.42661459630097454,
+        1.4121030339702376
+      ],
+      "rule_levels": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00209671_existing_review",
+      "person": "qevd_1695",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.670011111502017,
+        1.210900786973837,
+        1.584506529152974
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 32.5
+    },
+    {
+      "id": "qevd_00221452_batch1",
+      "person": "qevd_613",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.0531205861581923,
+        1.8506222664504401,
+        1.0496842958048604,
+        0.5869272175282801
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 57.91991299584694,
+      "rule_score": 75.0,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00223712_batch1",
+      "person": "qevd_926",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        0,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.915561575507396,
+        0.5825338979817517,
+        1.525247628389647
+      ],
+      "rule_levels": [
+        null,
+        2,
+        0,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00177543_batch1",
+      "person": "qevd_2699",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        1,
+        2,
+        0
+      ],
+      "ai_levels": [
+        null,
+        1.0778025514432261,
+        1.439215532390349,
+        0.1585607616204559
+      ],
+      "rule_levels": [
+        null,
+        1,
+        2,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00213492_batch1",
+      "person": "qevd_156",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        0,
+        1
+      ],
+      "ai_levels": [
+        null,
+        1.9926470588235294,
+        1.2937195580627963,
+        1.6095010815368715
+      ],
+      "rule_levels": [
+        null,
+        2,
+        0,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00151882_batch1",
+      "person": "qevd_155",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.0,
+        2.0,
+        1.3163806115755061,
+        1.249189706968247
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 68.9466547143763,
+      "rule_score": 62.5,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00217128_batch1",
+      "person": "qevd_1223",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        0,
+        1
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.3040509070786124
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00200145_batch1",
+      "person": "qevd_2581",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "ai_levels": [
+        0.9926915322580645,
+        1.1130177549488705,
+        0.9683494462130803,
+        0.9822394302209523
+      ],
+      "rule_levels": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "ai_score": 50.72985730060488,
+      "rule_score": 35.0,
+      "target_score": 40.0
+    },
+    {
+      "id": "qevd_00103453_batch1",
+      "person": "qevd_141",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.987171052631579,
+        0.38425819077407436,
+        1.630502872722386
+      ],
+      "rule_levels": [
+        null,
+        2,
+        0,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00145185_batch1",
+      "person": "qevd_848",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.2464986455394933,
+        1.9926470588235294,
+        1.2360954317795718,
+        1.7800758312133391
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 76.85751912776456,
+      "rule_score": 57.5,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00211247_batch1",
+      "person": "qevd_1510",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        0.27909771801430516
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 75.0
+    },
+    {
+      "id": "qevd_00183299_batch1",
+      "person": "qevd_2829",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.4106617647058837,
+        0.618906274667947,
+        1.7330139387763617
+      ],
+      "rule_levels": [
+        null,
+        1,
+        0,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 32.5
+    },
+    {
+      "id": "qevd_00233070_batch1",
+      "person": "qevd_1343",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "ai_levels": [
+        0.9999052631246194,
+        1.0851554926196967,
+        1.728033443857453,
+        0.3819766099556971
+      ],
+      "rule_levels": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "ai_score": 53.983206752390636,
+      "rule_score": 37.5,
+      "target_score": 52.5
+    },
+    {
+      "id": "qevd_00277054_batch1",
+      "person": "qevd_524",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_levels": [
+        0.9925717213114754,
+        1.5133949792038035,
+        1.1008872115681567,
+        1.4198166837219113
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00234208_batch1",
+      "person": "qevd_2138",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        0.8670066678654763,
+        1.966810408373876,
+        1.089665234066373,
+        0.8685436913562969
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 59.896482462048226,
+      "rule_score": 60.0,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00164005_batch1",
+      "person": "qevd_2011",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "ai_levels": [
+        0.9857312650796536,
+        1.0778025514432261,
+        1.4197062242317227,
+        0.17975860665554608
+      ],
+      "rule_levels": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "ai_score": 47.802414738687126,
+      "rule_score": 37.5,
+      "target_score": 52.5
+    },
+    {
+      "id": "qevd_00114122_batch1",
+      "person": "qevd_2147",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.966573363027897
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00058755_batch1",
+      "person": "qevd_1207",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.129966595605937,
+        1.9372235736399825,
+        0.8859121851253231,
+        1.7921783625087964
+      ],
+      "rule_levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "ai_score": 70.16047954374334,
+      "rule_score": 60.0,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00197943_batch1",
+      "person": "qevd_2581",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "ai_levels": [
+        1.0920697839915994,
+        1.7616845143160937,
+        null,
+        1.2544571100442055
+      ],
+      "rule_levels": [
+        1,
+        2,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00247622_batch1",
+      "person": "qevd_556",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.0,
+        1.5807204620285127,
+        1.2631175768348315,
+        1.9636986217715005
+      ],
+      "rule_levels": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "ai_score": 70.1849617035068,
+      "rule_score": 57.5,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00233698_batch1",
+      "person": "qevd_490",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "ai_levels": [
+        1.0,
+        1.8966602460362136,
+        0.793454950145541,
+        0.6312669438134151
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 54.93910939040609,
+      "rule_score": 47.5,
+      "target_score": 52.5
+    },
+    {
+      "id": "qevd_00025409_round1_score",
+      "person": "qevd_1948",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.082134020081929
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 60.0
+    },
+    {
+      "id": "qevd_00016070",
+      "person": "qevd_2775",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "ai_levels": [
+        null,
+        2.0,
+        null,
+        1.0653576468104706
+      ],
+      "rule_levels": [
+        null,
+        2,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00022336",
+      "person": "qevd_2262",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.2974899048711537,
+        1.964657738095238,
+        0.7227203217944537,
+        1.3272249945665524
+      ],
+      "rule_levels": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00038261",
+      "person": "qevd_426",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        1,
+        0
+      ],
+      "ai_levels": [
+        null,
+        1.9126589556277054,
+        1.5576039652056723,
+        1.4071695803631357
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00013653",
+      "person": "qevd_1213",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        1.2603205235328396,
+        0.7193939946688792,
+        0.32894806208238886
+      ],
+      "rule_levels": [
+        null,
+        1,
+        0,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00116189",
+      "person": "qevd_482",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        null,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        null,
+        1.6131052846641063,
+        0.6843596587940259
+      ],
+      "rule_levels": [
+        null,
+        null,
+        2,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00120483",
+      "person": "qevd_762",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        1.2157534369735656,
+        0.7084321713475656,
+        0.9649681074506152
+      ],
+      "rule_levels": [
+        null,
+        1,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 50.0
+    },
+    {
+      "id": "qevd_00242625",
+      "person": "qevd_832",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "ai_levels": [
+        1.0,
+        1.9124768460705959,
+        1.4360588008146906,
+        0.20229757951505942
+      ],
+      "rule_levels": [
+        0,
+        2,
+        0,
+        1
+      ],
+      "ai_score": 58.879671381216674,
+      "rule_score": 35.0,
+      "target_score": 52.5
+    },
+    {
+      "id": "qevd_00236035",
+      "person": "qevd_2471",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        null,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.1021466994577311,
+        null,
+        1.2799391843798325,
+        1.408625292282512
+      ],
+      "rule_levels": [
+        0,
+        null,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00110896",
+      "person": "qevd_1058",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        null,
+        1,
+        2
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.8771893904292933
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00194940",
+      "person": "qevd_2268",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.0072916666666667,
+        1.9453947744963367,
+        1.8333637231690798,
+        1.8063193364263008
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 80.40704958508071,
+      "rule_score": 60.0,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00076271_existing_review",
+      "person": "qevd_171",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        null
+      ],
+      "ai_levels": [
+        1.0072916666666667,
+        1.8694404553779551,
+        1.7943977300982041,
+        null
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00048138_existing_review",
+      "person": "qevd_2775",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        2,
+        0
+      ],
+      "ai_levels": [
+        null,
+        1.8601979617604614,
+        0.8146977326828772,
+        0.6752104843980623
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00271981_batch1",
+      "person": "qevd_948",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.4489553641777906,
+        1.9758899954212452,
+        1.0029047205905575,
+        1.7187541818848078
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 76.15680623166247,
+      "rule_score": 57.5,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00122912_batch1",
+      "person": "qevd_2425",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.0141276041666667,
+        1.9618675595238095,
+        1.4878913963516573,
+        1.7194499623789787
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 75.52840063473312,
+      "rule_score": 62.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00163381_batch1",
+      "person": "qevd_1175",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.9134241409632031,
+        1.0088901327474455,
+        1.4947389614532913
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00107192_batch1",
+      "person": "qevd_555",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.0,
+        1.966673951048951,
+        1.8655167639562154,
+        1.763902684331033
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 80.54141078087491,
+      "rule_score": 70.0,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00098673_batch1",
+      "person": "qevd_546",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        null,
+        1
+      ],
+      "ai_levels": [
+        1.0,
+        1.947068881639194,
+        null,
+        1.60002229733899
+      ],
+      "rule_levels": [
+        0,
+        2,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00186041_batch1",
+      "person": "qevd_2492",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.8630351853008102,
+        0.5290414371512872,
+        1.7403022845671523
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 57.5
+    },
+    {
+      "id": "qevd_00131767_batch1",
+      "person": "qevd_2621",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_levels": [
+        1.0,
+        1.9939903846153846,
+        1.4505863178196372,
+        0.5164564684518353
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        0
+      ],
+      "ai_score": 63.22177346495613,
+      "rule_score": 37.5,
+      "target_score": 75.0
+    },
+    {
+      "id": "qevd_00238218_batch1",
+      "person": "qevd_1276",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        1,
+        2,
+        0
+      ],
+      "ai_levels": [
+        null,
+        1.4133928201598238,
+        1.4839362239374367,
+        1.542171964545461
+      ],
+      "rule_levels": [
+        null,
+        2,
+        2,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00092834_batch1",
+      "person": "qevd_2104",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.0360188258945124,
+        1.9820963541666665,
+        1.8938254677979813,
+        1.9035372208939851
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 83.02467737191563,
+      "rule_score": 85.0,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00049546_batch1",
+      "person": "qevd_1068",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.0,
+        1.9869791666666667,
+        0.8542008802066038,
+        1.32305735033443
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00207227_batch1",
+      "person": "qevd_2592",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.029418103448276,
+        1.9895368303571428,
+        0.5229800105940258,
+        0.782189343572756
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 54.66962549934131,
+      "rule_score": 62.5,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00222910_batch1",
+      "person": "qevd_752",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "ai_levels": [
+        1.3125940715378202,
+        2.0,
+        1.02483183197822,
+        1.793636496224491
+      ],
+      "rule_levels": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00215611_batch1",
+      "person": "qevd_100",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.501606675241009,
+        2.0,
+        1.3539703912337036,
+        0.8254003136913731
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 72.70273315595016,
+      "rule_score": 47.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00038239_batch1",
+      "person": "qevd_832",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        null,
+        1
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        0.2393590657600883
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00153828_batch1",
+      "person": "qevd_2425",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.1405856043752323,
+        1.73400808129069,
+        1.4456340852121279,
+        1.6593451136479107
+      ],
+      "rule_levels": [
+        2,
+        2,
+        0,
+        1
+      ],
+      "ai_score": 73.44776228339282,
+      "rule_score": 65.0,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00101799_batch1",
+      "person": "qevd_2104",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.021875,
+        1.9668560606060603,
+        1.4157355256077426,
+        1.8491173194005968
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 76.1016930216785,
+      "rule_score": 62.5,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00268366_batch1",
+      "person": "qevd_546",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        1.0578776041666669,
+        1.9395373506701632,
+        1.7994642023158256,
+        1.804668721349289
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 80.65237068831775,
+      "rule_score": 72.5,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00174465_batch1",
+      "person": "qevd_482",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.1177991460418988,
+        1.935029282311891,
+        1.1976928686708015,
+        0.3043447408252433
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "ai_score": 58.969461486164576,
+      "rule_score": 52.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00036790_round1_score",
+      "person": "qevd_832",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "ai_levels": [
+        1.6168249009315911,
+        1.9872395833333334,
+        null,
+        0.21056873782765834
+      ],
+      "rule_levels": [
+        1,
+        2,
+        null,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 50.0
+    },
+    {
+      "id": "qevd_00004904",
+      "person": "qevd_1817",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        null,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.7616779684815647,
+        null,
+        1.9864309859570968
+      ],
+      "rule_levels": [
+        null,
+        1,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00027172",
+      "person": "qevd_1613",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        0
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        0.3911630217868672
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00035657",
+      "person": "qevd_2005",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        0.9924479166666667,
+        1.904946030103661,
+        1.4469492752401363,
+        1.6175256758613508
+      ],
+      "rule_levels": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "ai_score": 72.96066682541097,
+      "rule_score": 35.0,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00009729",
+      "person": "qevd_2380",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.893464236191869
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00015724",
+      "person": "qevd_1197",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.0977536751710268,
+        2.0,
+        1.3048784887327889,
+        1.6450977423408548
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 74.22826366013382,
+      "rule_score": 62.5,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00013496",
+      "person": "qevd_2661",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_levels": [
+        0.9851394489247312,
+        1.9395785336601254,
+        1.840758264249297,
+        0.7499752798224623
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        0
+      ],
+      "ai_score": 69.53105450596337,
+      "rule_score": 50.0,
+      "target_score": 75.0
+    },
+    {
+      "id": "qevd_00167363",
+      "person": "qevd_768",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        0.9924479166666667,
+        2.0,
+        1.2397187423975236,
+        1.6255902743453543
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 71.63910577342259,
+      "rule_score": 57.5,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00273008",
+      "person": "qevd_2141",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        1,
+        null,
+        2
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.7330580952458916
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00200390",
+      "person": "qevd_1135",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        0.9708747077026044,
+        1.9782631530873218,
+        1.9077499924270886,
+        1.5760340662119547
+      ],
+      "rule_levels": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "ai_score": 78.89862559658874,
+      "rule_score": 47.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00221486",
+      "person": "qevd_2798",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "ai_levels": [
+        1.0080477080513703,
+        1.4265430664449472,
+        1.3856023972564901,
+        0.38270628398814244
+      ],
+      "rule_levels": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "ai_score": 54.099596756919944,
+      "rule_score": 27.5,
+      "target_score": 40.0
+    },
+    {
+      "id": "qevd_00137555",
+      "person": "qevd_235",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.0147519724049223,
+        2.0,
+        0.9348385150574319,
+        0.95139539719766
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "ai_score": 61.42071499626833,
+      "rule_score": 52.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00202123",
+      "person": "qevd_976",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        1.815627548750245
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00233386_existing_review",
+      "person": "qevd_888",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        2,
+        0
+      ],
+      "ai_levels": [
+        null,
+        1.9809336534138546,
+        1.9496989508659357,
+        0.14169863442665342
+      ],
+      "rule_levels": [
+        null,
+        2,
+        2,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00104489_existing_review",
+      "person": "qevd_768",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        0.9924479166666667,
+        2.0,
+        1.785475922442621,
+        1.4257485083537331
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 76.4626528640701,
+      "rule_score": 60.0,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00159081_existing_review",
+      "person": "qevd_77",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_levels": [
+        0.9848958333333333,
+        2.0,
+        0.7939368569493269,
+        1.806210195477599
+      ],
+      "rule_levels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "ai_score": 67.75975016664258,
+      "rule_score": 32.5,
+      "target_score": 72.5
+    },
+    {
+      "id": "qevd_00105682_batch1",
+      "person": "qevd_1762",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        null,
+        1.9392006530873218,
+        1.690126505077068,
+        1.0408466380740529
+      ],
+      "rule_levels": [
+        null,
+        1,
+        2,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00207813_batch1",
+      "person": "qevd_1011",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        null,
+        2.0,
+        1.0133858506329751,
+        1.3454878371892405
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00142810_batch1",
+      "person": "qevd_1361",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_levels": [
+        0.9851394489247312,
+        1.3471645832815202,
+        1.7805218508409013,
+        0.7576513848483442
+      ],
+      "rule_levels": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "ai_score": 61.449686008884676,
+      "rule_score": 37.5,
+      "target_score": 75.0
+    },
+    {
+      "id": "qevd_00075021_batch1",
+      "person": "qevd_844",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        0.8957281270446987,
+        2.0,
+        1.6557898357943786,
+        1.668056481195597
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 75.81385966505619,
+      "rule_score": 60.0,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00229192_batch1",
+      "person": "qevd_746",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "ai_levels": [
+        0.9851394489247312,
+        1.9889340976074896,
+        1.0978827871791101,
+        0.5763795238867307
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00122226_batch1",
+      "person": "qevd_1714",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "ai_levels": [
+        0.9851394489247312,
+        2.0,
+        1.8204207671533876,
+        1.6299838211694435
+      ],
+      "rule_levels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "ai_score": 78.83218953498275,
+      "rule_score": 45.0,
+      "target_score": 60.0
+    },
+    {
+      "id": "qevd_00123817_batch1",
+      "person": "qevd_2847",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        2.0,
+        0.9668846123425,
+        1.4064460109095407
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00249915_batch1",
+      "person": "qevd_1087",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        1.9936835106382977,
+        1.5100101038660563,
+        0.7471263322336172
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00229903_batch1",
+      "person": "qevd_2696",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.0,
+        2.0,
+        1.082101335436496,
+        1.5447634735727052
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 68.97390142868325,
+      "rule_score": 47.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00239742_batch1",
+      "person": "qevd_2836",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        0
+      ],
+      "ai_levels": [
+        null,
+        null,
+        null,
+        0.9142235488696435
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00217441_batch1",
+      "person": "qevd_23",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.0,
+        1.9392117518549974,
+        1.7317969106247142,
+        0.8733091658847755
+      ],
+      "rule_levels": [
+        0,
+        2,
+        2,
+        0
+      ],
+      "ai_score": 69.62069993984414,
+      "rule_score": 50.0,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00170373_batch1",
+      "person": "qevd_1011",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        0.9634460357685731,
+        1.9946986607142856,
+        1.0681313745363354,
+        1.3247352968978297
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 65.98441894613966,
+      "rule_score": 57.5,
+      "target_score": 100.0
+    },
+    {
+      "id": "qevd_00227365_batch1",
+      "person": "qevd_1714",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.0,
+        1.9767643427051675,
+        1.863832233944804,
+        1.6641766116099543
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 79.64922332422418,
+      "rule_score": 47.5,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00193851_batch1",
+      "person": "qevd_23",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        1.0598292503487659,
+        1.9013128156847852,
+        1.6339923569024297,
+        0.45567801814917863
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        0
+      ],
+      "ai_score": 64.64553359406347,
+      "rule_score": 65.0,
+      "target_score": 62.5
+    },
+    {
+      "id": "qevd_00026168_round1_score",
+      "person": "qevd_2380",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        null,
+        2.0,
+        1.7002727739235766,
+        1.8305638544230678
+      ],
+      "rule_levels": [
+        null,
+        1,
+        1,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00190168_round1_score",
+      "person": "qevd_976",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        1.6868470441981374,
+        1.2353195140761832,
+        1.2877576199192056
+      ],
+      "rule_levels": [
+        null,
+        1,
+        2,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    }
+  ],
+  "fixed_development": {
+    "submitted": 4,
+    "paired_total_records": 3,
+    "paired_total_MAE_points": {
+      "ai_score": 9.129138304347686,
+      "rule_score": 27.5
+    },
+    "items": {
+      "t_reach": {
+        "paired_records": 4,
+        "ai_MAE_grade_units": 0.2120449000452415,
+        "rule_MAE_grade_units": 0.5
+      },
+      "w_shape": {
+        "paired_records": 4,
+        "ai_MAE_grade_units": 0.6694288405065454,
+        "rule_MAE_grade_units": 0.25
+      },
+      "hinge_and_trunk_hold": {
+        "paired_records": 4,
+        "ai_MAE_grade_units": 0.6369935508510395,
+        "rule_MAE_grade_units": 0.5
+      },
+      "y_reach": {
+        "paired_records": 3,
+        "ai_MAE_grade_units": 0.08749496130489794,
+        "rule_MAE_grade_units": 1.0
+      }
+    },
+    "ai_total_available": 3,
+    "rule_total_available": 3
+  },
+  "fixed_predictions": [
+    {
+      "id": "qevd_00105254",
+      "person": "qevd_956",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_levels": [
+        null,
+        2.0,
+        1.6814268725533739,
+        1.6292696718506894
+      ],
+      "rule_levels": [
+        null,
+        2,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "target_score": null
+    },
+    {
+      "id": "qevd_00196196",
+      "person": "qevd_547",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_levels": [
+        1.080049738539418,
+        2.0,
+        1.1824435291862503,
+        1.2522058816687007
+      ],
+      "rule_levels": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 68.50334900960641,
+      "rule_score": 47.5,
+      "target_score": 85.0
+    },
+    {
+      "id": "qevd_00265931",
+      "person": "qevd_149",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_levels": [
+        1.175132156244841,
+        1.8637331900352732,
+        1.1931470295706825,
+        1.3780164313800645
+      ],
+      "rule_levels": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "ai_score": 69.6181494025477,
+      "rule_score": 47.5,
+      "target_score": 75.0
+    },
+    {
+      "id": "qevd_00265212",
+      "person": "qevd_1810",
+      "criterion_ids": [
+        "y_reach",
+        "t_reach",
+        "w_shape",
+        "hinge_and_trunk_hold"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        0
+      ],
+      "ai_levels": [
+        1.0073029891304348,
+        1.2880872097837608,
+        1.6281209517702597,
+        0.7928939818421049
+      ],
+      "rule_levels": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "ai_score": 59.49108667480283,
+      "rule_score": 47.5,
+      "target_score": 65.0
+    }
+  ],
+  "model_sha256": "670f4743b9f62f59bc7abc66fbb153012fb3606e9d6e95deaa482deadbfe580f",
+  "input_sha256": "978c142d465c9a669442edfb32ac50da5b4e9cb7ca6b58f58676ed93e6b1a5b3",
+  "code_sha256": "684075529b0c1259926185a54fb144e88107a4f22e97e27b90fccc3accf0ef5e",
+  "manual_observability_intersection": true,
+  "automatic_deployment_view_gate_verified": false,
+  "anatomical_hinge_angle_measured": false,
+  "projection_only": true,
+  "expert_reference": false,
+  "independent_final_test": false,
+  "promoted": false,
+  "validation_used_for_numeric_fitting": false
+}

@@ -1,0 +1,49 @@
+{
+  "original_fixed_development_rows": 23,
+  "original_development_error_rows": 6,
+  "error_people": [
+    "cfrep_w2"
+  ],
+  "same_error_IDs_preserved": [
+    "return_squat_diag_w2_5_7_r06",
+    "return_squat_diag_w2_5_7_r07",
+    "return_squat_diag_w2_5_7_r08",
+    "return_squat_diag_w2_5_7_r09",
+    "return_squat_diag_w2_5_7_r10",
+    "return_squat_diag_w2_5_7_r11"
+  ],
+  "new_bank_paired_development_rows": 19,
+  "new_bank_development_normals": 13,
+  "original_normal_REHAB_rows_not_recomputed": 4,
+  "no_error_rows_dropped": true,
+  "old_Train_partial_hip_residual_range": [
+    0.1408648977044874,
+    0.4409942862375654
+  ],
+  "missed_five_hip_residual_range": [
+    0.015468565845226283,
+    0.0788156796357076
+  ],
+  "normal_Train_timing_error": {
+    "id": "return_squat_diag_m4_5_7_r09",
+    "actual_upright_original_frame": 375,
+    "old_selected_frame": 393,
+    "new_selected_frame": 366,
+    "old_shoulder_residual": 0.24625937895940708,
+    "new_shoulder_residual": 0.09468816305346686,
+    "evidence_sheets": [
+      "m4-dense-360.jpg",
+      "m4-f376.jpg"
+    ],
+    "old_last_quarter_restricted_window_confirmed": true
+  },
+  "additional_cause": "existing grade1 examples concentrated on larger incomplete returns; five mild development errors overlap normal feature ranges. Class-balancing weights already exist, so normal sample count alone is not an adequate explanation.",
+  "label_consistency_issue": "Prior pelvis-only audit withdrew m4r10/r11. Dense new review explicitly requires initial hip AND shoulder heights, independent from angle-only trunk score; those two Train intervals are restored as partial height return. Existing development/Test grades unchanged.",
+  "AI_development_detected": 1,
+  "rule_development_detected": 1,
+  "development_error_n": 6,
+  "AI_development_normal_false_alarm": 0,
+  "rule_development_normal_false_alarm": 0,
+  "development_normal_n": 13,
+  "not_an_independent_final_Test": true
+}

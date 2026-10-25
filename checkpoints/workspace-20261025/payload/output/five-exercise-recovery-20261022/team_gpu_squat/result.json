@@ -1,0 +1,143 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "squats",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "descent_range",
+      "weight": 30,
+      "ai_grade": 1.4896743730806812,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.4896743730806812,
+      "observed": true,
+      "bank": "side",
+      "measured": 0.30262693869281626,
+      "feature": [
+        0.2815189647434168,
+        0.30262693869281626,
+        0.5052631351971362,
+        0.7298559701185927,
+        0.9762436457268268,
+        0.9973857506736046,
+        0.9978788578783109,
+        0.8
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "return_extension",
+      "weight": 20,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "side",
+      "measured": 175.7395323994749,
+      "feature": [
+        169.67903185642118,
+        170.57062148699174,
+        173.24539037870338,
+        174.97556858253904,
+        175.40539561544202,
+        175.7395323994749,
+        175.85091132748587,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": true,
+      "window": null
+    },
+    {
+      "id": "knee_foot",
+      "weight": 30,
+      "ai_grade": 1.3273247844948717,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.6726752155051283,
+      "observed": true,
+      "bank": "side_foot_partial_top_v2",
+      "measured": 0.03821526282412047,
+      "feature": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02821764530382629,
+        0.03821526282412047,
+        0.041920953314174815,
+        1.0,
+        3.9024197364302147,
+        7.320467431135238,
+        3.418047694705023,
+        0.03520862978866962,
+        0.05806221410651207
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "trunk_balance",
+      "weight": 20,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "front",
+      "measured": 1.8234066202393235,
+      "feature": [
+        0.4580564045743521,
+        0.48684573878597287,
+        0.7169625874604453,
+        1.22948095220165,
+        1.6848516787052874,
+        1.8234066202393235,
+        5.3970137642496345,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": true,
+      "window": null
+    }
+  ],
+  "ai_score": 82.25498736363329,
+  "rule_score": 85.0,
+  "ai_minus_rule": -2.7450126363667096,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 2.6017590062110685,
+    "ai": 180.1404379948508,
+    "rule": 0.03164399822708219
+  },
+  "limitations": [
+    "Heel/knee errors can still receive excessive AI scores.",
+    "Full assessment requires reviewed synchronized front and side views."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/good/side/subject_012_squat_good_side.mp4",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 4.686981089995243,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false,
+    "front": {
+      "extraction_seconds": 5.2093530889978865,
+      "delegate": "GPU",
+      "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+      "score_generated": false
+    }
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

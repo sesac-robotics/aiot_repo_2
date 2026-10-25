@@ -1,0 +1,13 @@
+import json,sys,copy,datetime
+from pathlib import Path
+import joblib
+B=Path(__file__).resolve().parents[2];P=B/'output/return-label-enriched-v4-20261024';O=B/'output/return-shared-extension-v1-20261024';S=O/'changed-heads-fit'
+sys.path[:0]=[str(B/'tools/error-enrichment'),str(B/'tools/paired-evaluation')]
+from common import sha
+from artifact_integrity import equal_state
+from split_guard import assert_training_allowed
+read=lambda p:json.loads(p.read_text());old=joblib.load(P/'score-candidates.joblib');new=joblib.load(S/'score-candidates.joblib');key=('pushups','return_extension','observed_arm_extension_shared_v1');assert set(new['heads'])=={key} and key not in old['heads']
+m=copy.deepcopy(old);m['heads'][key]=new['heads'][key];m.update(labels_sha256=sha(O/'score-inputs.frozen.json'),parent_run=str(P),production_replacement=False)
+assert all(equal_state(h,m['heads'][k]) for k,h in old['heads'].items());rows={r['id']:r for r in read(O/'score-inputs.frozen.json')};assert_training_allowed([rows[i] for h in m['heads'].values() for i in h['trained_ids']])
+p=O/'score-candidates.joblib';assert not p.exists();joblib.dump(m,p);tr=read(P/'score-training.json');tr['heads']+=read(S/'score-training.json')['heads'];tr.update(completed=True,trained_heads=59,unchanged_heads_copied=58,refitted_heads=0,new_heads=1,gate_passed=sum(h.get('candidate_gate_passed',False) for h in tr['heads']),models_promoted_to_live_service=False)
+(O/'score-training.json').write_text(json.dumps(tr,indent=2));(O/'model-freeze-before-test.json').write_text(json.dumps(dict(frozen_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),model_sha256=sha(p),Train_input_sha256=sha(O/'score-inputs.frozen.json'),Test_input_sha256=sha(O/'test-inputs.frozen.json'),selection_before_Test=True,production_replacement=False),indent=2));print('MERGED59 preserved58; shared head failed CV/development gate before Test')

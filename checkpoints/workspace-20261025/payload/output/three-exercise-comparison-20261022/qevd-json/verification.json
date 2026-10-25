@@ -1,0 +1,25 @@
+{
+  "videos": 175,
+  "scored_segments": 222,
+  "exact_base_keys": [
+    "video_path",
+    "labels",
+    "labels_descriptive",
+    "split"
+  ],
+  "base_split_values": [
+    "train",
+    "test"
+  ],
+  "local_validation_must_follow": "development_splits.json",
+  "original_QEVD_values_preserved": true,
+  "references_resolve": true,
+  "expert_validated": false,
+  "source_sha256": {
+    "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/coach/fine_grained_labels.json": "9058eac1487b3ab34a7a58c6545acddd71654ce7662cd2491a791236ae7308bb",
+    "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/annotations/fine_grained_labels_with_worker_ids.json": "2c3d7bc22e4278dacf409366b92e19560b2e47c36259b9dab6e7c76e9454d732",
+    "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/score_annotations.json": "999362d86722a6e03340095ab007a314bfdcb60b5e612d24dabf118c8c62210f",
+    "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/additional_score_annotations.json": "d0c7bdb4fa373358d407d63b9760366fee05c0aaebb35adbb0b70d98c6869182"
+  },
+  "warning_ko": "기본 train에는 로컬 validation이 포함되므로 학습·검증은 반드시 development_splits.json으로 분리한다. 점수 초안은 전문가 정답이 아니다."
+}

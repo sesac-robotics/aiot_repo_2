@@ -1,0 +1,24 @@
+{
+  "baseline_run": "/home/jayden/SeSACPAI-Mid/output/label-verified-five-expanded-20261024",
+  "test_people": [
+    "r2d2_P04"
+  ],
+  "test_segments": 10,
+  "normal_item_targets": 24,
+  "false_alarms": 19,
+  "false_alarms_by_criterion": {
+    "descent_range": 9,
+    "support": 6,
+    "trunk_line": 4
+  },
+  "observed_fault_item_targets": 6,
+  "detected_faults": 6,
+  "test_targets_kept": true,
+  "root_cause_evidence": [
+    "V33 tracking overlays show estimated elbow displaced at bottom despite visibility/presence passing.",
+    "Old trunk alignment vector contains 3 knee-bend statistics, although project trunk target is shoulder/hip/ankle alignment.",
+    "Old support model uses whole-window low knee clearance; shallow clearance alone is not observed load-bearing contact."
+  ],
+  "scope": "24 normal item labels over ten P04 segments from V33/V34, not 24 independent videos/people.",
+  "visual_labels_remain_non_expert": true
+}

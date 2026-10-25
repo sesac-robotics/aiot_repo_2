@@ -1,0 +1,1293 @@
+{
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "reviewed_team_labels_sha256": "fa4e5913e3b48790562702e3ff8751aee159f1435ae4b6e633b3e7a27e678667",
+  "source_roles_unchanged": true,
+  "same_original_source_in_train_and_test": false,
+  "requested_test_fraction": 0.2,
+  "exact_80_20_achieved": false,
+  "whole_source_grouping_preserved": true,
+  "person_quality_counts": {
+    "P01": {
+      "normal": {
+        "train": 25,
+        "test": 10,
+        "test_fraction": 0.2857142857142857
+      },
+      "error": {
+        "train": 21,
+        "test": 6,
+        "test_fraction": 0.2222222222222222
+      },
+      "unknown": {
+        "train": 6,
+        "test": 1,
+        "test_fraction": 0.14285714285714285
+      }
+    },
+    "P02": {
+      "normal": {
+        "train": 25,
+        "test": 5,
+        "test_fraction": 0.16666666666666666
+      },
+      "error": {
+        "train": 25,
+        "test": 6,
+        "test_fraction": 0.1935483870967742
+      },
+      "unknown": {
+        "train": 9,
+        "test": 3,
+        "test_fraction": 0.25
+      }
+    },
+    "P03": {
+      "normal": {
+        "train": 15,
+        "test": 4,
+        "test_fraction": 0.21052631578947367
+      },
+      "error": {
+        "train": 23,
+        "test": 7,
+        "test_fraction": 0.23333333333333334
+      },
+      "unknown": {
+        "train": 18,
+        "test": 3,
+        "test_fraction": 0.14285714285714285
+      }
+    },
+    "P04": {
+      "normal": {
+        "train": 21,
+        "test": 5,
+        "test_fraction": 0.19230769230769232
+      },
+      "error": {
+        "train": 33,
+        "test": 8,
+        "test_fraction": 0.1951219512195122
+      },
+      "unknown": {
+        "train": 1,
+        "test": 0,
+        "test_fraction": 0.0
+      }
+    }
+  },
+  "person_exercise_quality_split_cells": [
+    {
+      "person": "P01",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P01",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "train",
+      "count": 3
+    },
+    {
+      "person": "P01",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "test",
+      "count": 10
+    },
+    {
+      "person": "P01",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 11
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "unknown",
+      "split": "test",
+      "count": 1
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "unknown",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P01",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P01",
+      "exercise": "ytw",
+      "quality": "unknown",
+      "split": "train",
+      "count": 1
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "train",
+      "count": 3
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "train",
+      "count": 10
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "unknown",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P02",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "train",
+      "count": 8
+    },
+    {
+      "person": "P02",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "pushups",
+      "quality": "unknown",
+      "split": "train",
+      "count": 1
+    },
+    {
+      "person": "P02",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "test",
+      "count": 6
+    },
+    {
+      "person": "P02",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "test",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 9
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "unknown",
+      "split": "train",
+      "count": 6
+    },
+    {
+      "person": "P02",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "ytw",
+      "quality": "unknown",
+      "split": "train",
+      "count": 2
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "unknown",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "unknown",
+      "split": "train",
+      "count": 10
+    },
+    {
+      "person": "P03",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "train",
+      "count": 14
+    },
+    {
+      "person": "P03",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P03",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 6
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "unknown",
+      "split": "train",
+      "count": 7
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "test",
+      "count": 4
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "test",
+      "count": 1
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "unknown",
+      "split": "train",
+      "count": 1
+    },
+    {
+      "person": "P04",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P04",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "train",
+      "count": 10
+    },
+    {
+      "person": "P04",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "test",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "test",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "train",
+      "count": 9
+    },
+    {
+      "person": "P04",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "train",
+      "count": 2
+    },
+    {
+      "person": "P04",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 14
+    },
+    {
+      "person": "P04",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P04",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "ytw",
+      "quality": "unknown",
+      "split": "train",
+      "count": 1
+    }
+  ],
+  "missing_normal_error_cells": [
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P01",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P01",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P01",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P01",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P01",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P01",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P01",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "train"
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P02",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P02",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P02",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "train"
+    },
+    {
+      "person": "P02",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "train"
+    },
+    {
+      "person": "P02",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P02",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P03",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "train"
+    },
+    {
+      "person": "P03",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P03",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P03",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P03",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "train"
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "train"
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "train"
+    },
+    {
+      "person": "P04",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P04",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P04",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "train"
+    },
+    {
+      "person": "P04",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "train"
+    },
+    {
+      "person": "P04",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P04",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P04",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "test"
+    },
+    {
+      "person": "P04",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "test"
+    },
+    {
+      "person": "P04",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "test"
+    }
+  ],
+  "missing_normal_error_cell_count": 37,
+  "team_return_grades": {
+    "squats/train": {
+      "2": 75
+    },
+    "squats/test": {
+      "2": 6,
+      "1": 1
+    },
+    "shoulder/train": {
+      "2": 31
+    },
+    "shoulder/test": {
+      "2": 11
+    },
+    "pushups/train": {
+      "2": 38
+    },
+    "pushups/test": {
+      "2": 10
+    }
+  },
+  "mixed_data_return_severity_heads": [
+    {
+      "key": [
+        "pushups",
+        "return_extension",
+        "front"
+      ],
+      "status": "trained_experimental",
+      "train_count": 58,
+      "grade_counts": {
+        "2": 51,
+        "1": 7
+      },
+      "normal_groups": 42,
+      "error_groups": 7,
+      "source_families": {
+        "QEVD": 58
+      },
+      "candidate_gate_passed": false,
+      "group_cv": {
+        "balanced_group_MAE": 0.26785714285714285,
+        "n": 58,
+        "groups": 48,
+        "MAE": 0.22413793103448276,
+        "group_MAE": 0.24652777777777776,
+        "error_n": 7,
+        "normal_n": 51,
+        "error_recall": 0.7142857142857143,
+        "normal_false_alarm": 0.21568627450980393
+      },
+      "fixed_development_validation": {
+        "balanced_group_MAE": 0.0,
+        "n": 5,
+        "groups": 4,
+        "MAE": 0.0,
+        "group_MAE": 0.0,
+        "error_n": 0,
+        "normal_n": 5,
+        "error_recall": null,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "key": [
+        "pushups",
+        "return_extension",
+        "side"
+      ],
+      "status": "unsupported_missing_normal_or_error_groups",
+      "train_count": 2,
+      "grade_counts": {
+        "2": 2
+      },
+      "normal_groups": 1,
+      "error_groups": 0,
+      "source_families": {
+        "other_reviewed": 2
+      },
+      "candidate_gate_passed": null,
+      "group_cv": null,
+      "fixed_development_validation": null
+    },
+    {
+      "key": [
+        "pushups",
+        "return_extension",
+        "side_legacy_roi_v1"
+      ],
+      "status": "unsupported_missing_normal_or_error_groups",
+      "train_count": 82,
+      "grade_counts": {
+        "2": 80,
+        "1": 2
+      },
+      "normal_groups": 17,
+      "error_groups": 1,
+      "source_families": {
+        "MultiView": 45,
+        "R2D2": 37
+      },
+      "candidate_gate_passed": null,
+      "group_cv": null,
+      "fixed_development_validation": null
+    },
+    {
+      "key": [
+        "pushups",
+        "return_extension",
+        "side_semantic_roi_v1"
+      ],
+      "status": "unsupported_missing_normal_or_error_groups",
+      "train_count": 81,
+      "grade_counts": {
+        "2": 79,
+        "1": 2
+      },
+      "normal_groups": 17,
+      "error_groups": 1,
+      "source_families": {
+        "MultiView": 44,
+        "R2D2": 37
+      },
+      "candidate_gate_passed": null,
+      "group_cv": null,
+      "fixed_development_validation": null
+    },
+    {
+      "key": [
+        "shoulder",
+        "lower_return",
+        "front"
+      ],
+      "status": "unsupported_missing_normal_or_error_groups",
+      "train_count": 104,
+      "grade_counts": {
+        "2": 104
+      },
+      "normal_groups": 18,
+      "error_groups": 0,
+      "source_families": {
+        "MultiView": 75,
+        "R2D2": 29
+      },
+      "candidate_gate_passed": null,
+      "group_cv": null,
+      "fixed_development_validation": null
+    },
+    {
+      "key": [
+        "shoulder",
+        "lower_return",
+        "front_oblique"
+      ],
+      "status": "unsupported_missing_normal_or_error_groups",
+      "train_count": 5,
+      "grade_counts": {
+        "2": 5
+      },
+      "normal_groups": 3,
+      "error_groups": 0,
+      "source_families": {
+        "other_reviewed": 4,
+        "MultiView": 1
+      },
+      "candidate_gate_passed": null,
+      "group_cv": null,
+      "fixed_development_validation": null
+    },
+    {
+      "key": [
+        "squats",
+        "return_extension",
+        "front"
+      ],
+      "status": "unsupported_missing_normal_or_error_groups",
+      "train_count": 33,
+      "grade_counts": {
+        "2": 33
+      },
+      "normal_groups": 31,
+      "error_groups": 0,
+      "source_families": {
+        "QEVD": 33
+      },
+      "candidate_gate_passed": null,
+      "group_cv": null,
+      "fixed_development_validation": null
+    },
+    {
+      "key": [
+        "squats",
+        "return_extension",
+        "side"
+      ],
+      "status": "unsupported_missing_normal_or_error_groups",
+      "train_count": 49,
+      "grade_counts": {
+        "2": 49
+      },
+      "normal_groups": 11,
+      "error_groups": 0,
+      "source_families": {
+        "REHAB24": 43,
+        "MultiView": 6
+      },
+      "candidate_gate_passed": null,
+      "group_cv": null,
+      "fixed_development_validation": null
+    },
+    {
+      "key": [
+        "squats",
+        "standing_height_return",
+        "height_v4"
+      ],
+      "status": "trained_experimental",
+      "train_count": 139,
+      "grade_counts": {
+        "2": 132,
+        "1": 7
+      },
+      "normal_groups": 20,
+      "error_groups": 2,
+      "source_families": {
+        "R2D2": 36,
+        "CFRep_reviewed": 82,
+        "QEVD": 9,
+        "REHAB26": 12
+      },
+      "candidate_gate_passed": false,
+      "group_cv": {
+        "balanced_group_MAE": 0.19974721394015094,
+        "n": 139,
+        "groups": 20,
+        "MAE": 0.09662234873569435,
+        "group_MAE": 0.10719210000035853,
+        "error_n": 7,
+        "normal_n": 132,
+        "error_recall": 0.7142857142857143,
+        "normal_false_alarm": 0.05303030303030303
+      },
+      "fixed_development_validation": {
+        "balanced_group_MAE": 0.4343335498282145,
+        "n": 23,
+        "groups": 2,
+        "MAE": 0.2801970338443779,
+        "group_MAE": 0.2126985433476039,
+        "error_n": 6,
+        "normal_n": 17,
+        "error_recall": 0.16666666666666666,
+        "normal_false_alarm": 0.0
+      }
+    }
+  ],
+  "no_severe_grade_zero_return_labels_in_these_heads": true,
+  "Test_used_for_fit_or_model_selection": false,
+  "existing_Test_is_historically_exposed_diagnostic": true,
+  "independent_final_Test_opened": false,
+  "score_run": "/home/jayden/SeSACPAI-Mid/output/paired-failure-enriched-five-v2-20261024",
+  "score_model_sha256": "b3e18b4fed948050e02d8722023069119c26a6fdc3452f8ecc094aa26d6a2a2c",
+  "test_inputs_sha256": "b55fd62cf2d0c4a71b4bc51285a368276b27aebf418b3e0f390e45e8706dc1a0",
+  "operational_quality_definition": "Observed primary grades plus existing quality_training_candidate flag. Excluded/incomplete whole-quality intervals remain unknown for whole-quality strata; item-level observed errors remain in labels.",
+  "item_observation_counts_before_whole_quality_eligibility": [
+    {
+      "person": "P01",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P01",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "train",
+      "count": 3
+    },
+    {
+      "person": "P01",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "test",
+      "count": 10
+    },
+    {
+      "person": "P01",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "test",
+      "count": 4
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 11
+    },
+    {
+      "person": "P01",
+      "exercise": "squats",
+      "quality": "unknown",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P01",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P01",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "train",
+      "count": 3
+    },
+    {
+      "person": "P02",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "train",
+      "count": 10
+    },
+    {
+      "person": "P02",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "train",
+      "count": 9
+    },
+    {
+      "person": "P02",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "test",
+      "count": 6
+    },
+    {
+      "person": "P02",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "test",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 10
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "squats",
+      "quality": "unknown",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P02",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "train",
+      "count": 6
+    },
+    {
+      "person": "P02",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 6
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test",
+      "count": 6
+    },
+    {
+      "person": "P03",
+      "exercise": "plank",
+      "quality": "unknown",
+      "split": "train",
+      "count": 10
+    },
+    {
+      "person": "P03",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "train",
+      "count": 14
+    },
+    {
+      "person": "P03",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P03",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 6
+    },
+    {
+      "person": "P03",
+      "exercise": "squats",
+      "quality": "unknown",
+      "split": "train",
+      "count": 7
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "test",
+      "count": 4
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "test",
+      "count": 1
+    },
+    {
+      "person": "P03",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "test",
+      "count": 3
+    },
+    {
+      "person": "P04",
+      "exercise": "plank",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "plank",
+      "quality": "normal",
+      "split": "train",
+      "count": 10
+    },
+    {
+      "person": "P04",
+      "exercise": "pushups",
+      "quality": "error",
+      "split": "test",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "pushups",
+      "quality": "normal",
+      "split": "test",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "shoulder",
+      "quality": "error",
+      "split": "train",
+      "count": 9
+    },
+    {
+      "person": "P04",
+      "exercise": "shoulder",
+      "quality": "normal",
+      "split": "train",
+      "count": 2
+    },
+    {
+      "person": "P04",
+      "exercise": "squats",
+      "quality": "error",
+      "split": "train",
+      "count": 14
+    },
+    {
+      "person": "P04",
+      "exercise": "squats",
+      "quality": "normal",
+      "split": "train",
+      "count": 4
+    },
+    {
+      "person": "P04",
+      "exercise": "ytw",
+      "quality": "error",
+      "split": "train",
+      "count": 5
+    },
+    {
+      "person": "P04",
+      "exercise": "ytw",
+      "quality": "normal",
+      "split": "train",
+      "count": 6
+    }
+  ],
+  "whole_quality_exclusion_does_not_erase_observed_item_faults": true
+}

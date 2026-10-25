@@ -1,0 +1,193 @@
+--- movement.py.before
++++ movement.py
+@@ -33,6 +33,7 @@
+         self.standing_reference = None
+         self.observation = None
+         self.last_completion_coverage = None
++        self.last_observation_receipt = None
+         self.base_center = None
+         self.base_scale = None
+         self.hip_drop = None
+@@ -41,12 +42,19 @@
+         self.count = 0
+         self.uncertain_attempts = []
+         self.completion_receipts = []
++        self.recovery_receipts = []
+         self.bottom_confirmed_tick = None
+         self.return_first_tick = None
+         self.ready = 0
+         self.bottom = 0
+         self.returned = 0
+         self.missing = 0
++        self.knee_recovering = False
++        self.knee_recovery_streak = 0
++        self.knee_gap_start = None
++        self.entry_gap_prefix = None
++        self.knee_missing_ticks = set()
++        self.knee_gap_observed_ticks = set()
+         self.active = False
+         self.has_bottom = False
+         self.bottom_confirmed_tick = None
+@@ -65,6 +73,12 @@
+         """완료 횟수를 유지하며 미완료 동작과 준비 기준을 초기화한다."""
+         if self.exercise=='squats' and self.view=='front' and self.active and self.buffer and self.last_tick-self.buffer[0][0]>=8 and any(word in message for word in ('관측','위치','초과','투영')):
+             self.uncertain_attempts.append(dict(start_tick=int(self.buffer[0][0]),end_tick=int(self.last_tick),reason=message,counted=False))
++        self.knee_recovering = False
++        self.knee_recovery_streak = 0
++        self.knee_gap_start = None
++        self.entry_gap_prefix = None
++        self.knee_missing_ticks = set()
++        self.knee_gap_observed_ticks = set()
+         self.active = False
+         self.ready = self.bottom = self.returned = 0
+         self.has_bottom = False
+@@ -95,6 +109,11 @@
+             self.reset_attempt('관측 끊김 · 준비 자세를 다시 확인하세요')
+         previous_tick = self.last_tick
+         self.last_tick = tick
++        consecutive = previous_tick is not None and tick == previous_tick+1
++        if not consecutive and self.exercise=='squats' and self.view=='front':
++            self.ready = self.bottom = self.returned = self.top_confirm = 0
++            self.return_first_tick = None
++            self.knee_recovery_streak = 0
+         if self.exercise == 'ytw':
+             self.phase = 'YTW 자동 반복 구분은 아직 미지원'
+             return None
+@@ -107,12 +126,60 @@
+         else:
+             required += [13, 14, 15, 16]
+         if not np.isfinite(xy[required]).all():
++            was_prepared = self.active or self.ready>=6 or self.knee_recovering
++            if self.exercise=='squats' and self.view=='front':
++                self.ready = self.bottom = self.returned = self.top_confirm = 0
++                self.return_first_tick = None
++                self.knee_recovery_streak = 0
+             self.missing += 1
+             self.phase = self.observation['message']
+-            if self.missing >= 4:
++            # Only a previously established upright reference may wait through
++            # a short knee-only gap. No missing pose contributes phase evidence.
++            core_ok = np.isfinite(xy[[11,12,23,24]]).all()
++            knee_only_gap = self.exercise=='squats' and self.view=='front' and core_ok and self.base_hip is not None and self.standing_reference is not None and was_prepared
++            if knee_only_gap:
++                center=(xy[23]+xy[24])/2
++                current_scale=max(30.,float(np.linalg.norm((xy[11]+xy[12])/2-center)))
++                if abs(center[0]-self.base_center)>self.base_scale*.45 or not .4<current_scale/self.base_scale<2.5:
++                    self.reset_attempt('위치 또는 투영 변화 · 준비 자세를 다시 확인하세요')
++                    return None
++            if knee_only_gap and self.knee_gap_start is None:
++                self.knee_gap_start = int(tick)
++                if not self.active and self.entry_gap_prefix is None:self.entry_gap_prefix = list(self.pre)
++            elapsed_gap = int(tick)-self.knee_gap_start+1 if self.knee_gap_start is not None else 0
++            if knee_only_gap and elapsed_gap <= 6 and (not self.active or self.buffer and tick-self.buffer[0][0]<=150):
++                self.knee_missing_ticks.add(int(tick))
++                self.knee_gap_observed_ticks.add(int(tick))
++                (self.buffer if self.active else self.pre).append((tick,xy.copy()))
++                self.knee_recovering = True
++                self.knee_recovery_streak = 0
++                self.bottom = self.returned = 0
++                self.return_first_tick = None
++                self.phase = '무릎 관측 일시 중단 · 회복 대기 · 횟수 확정 보류'
++                return None
++            if self.missing >= 4 or knee_only_gap and elapsed_gap > 6:
+                 self.reset_attempt('관측 중단 · ' + self.observation['message'])
+             return None
+         self.missing = 0
++        if self.knee_recovering:
++            center = (xy[23]+xy[24])/2
++            current_scale = max(30.,float(np.linalg.norm((xy[11]+xy[12])/2-center)))
++            if abs(center[0]-self.base_center)>self.base_scale*.45 or not .4<current_scale/self.base_scale<2.5:
++                self.reset_attempt('위치 또는 투영 변화 · 준비 자세를 다시 확인하세요')
++                return None
++            self.knee_gap_observed_ticks.add(int(tick))
++            self.knee_recovery_streak += 1
++            (self.buffer if self.active else self.pre).append((tick,xy.copy()))
++            self.phase = '무릎 관측 회복 확인 중 · 새 연속 관측 후 동작 판정'
++            if self.knee_recovery_streak >= 2:
++                self.recovery_receipts.append(dict(gap_start_tick=self.knee_gap_start,recovered_tick=int(tick),observed_missing_ticks=sorted(self.knee_missing_ticks),observed_missing_slots=len(self.knee_missing_ticks),missing_elapsed_span_slots=max(self.knee_missing_ticks)-self.knee_gap_start+1,recovery_elapsed_span_slots=int(tick)-self.knee_gap_start+1,unobserved_tick_slots=int(tick)-self.knee_gap_start+1-len(self.knee_gap_observed_ticks)))
++                self.knee_recovering = False
++                self.knee_recovery_streak = 0
++                self.knee_gap_start = None
++                if not self.active:self.ready = 0
++                self.knee_missing_ticks = set()
++                self.knee_gap_observed_ticks = set()
++            return None
+         shoulder = (xy[11]+xy[12])/2
+         hip = (xy[23]+xy[24])/2
+         scale = max(30., float(np.linalg.norm(shoulder-hip)))
+@@ -159,7 +226,7 @@
+                     self.phase = '준비 완료 · 서기 기준 보정'
+                     return None
+                 at_start = -.35 < drop < (.07 if self.has_bottom else .09) and upright
+-                at_bottom = drop > .08
++                at_bottom = drop > .09
+ 
+         else:
+             if angle is None:
+@@ -180,6 +247,7 @@
+             self.pre.append(sample)
+             self.ready = self.ready+1 if at_start else 0
+             if self.ready >= 6:
++                self.entry_gap_prefix = None
+                 if self.exercise=='squats' and self.view=='front' and self.standing_reference is None:
+                     self.standing_reference=make_reference(np.array([p for _,p in self.pre]))
+                 self.phase = '준비 완료 · 동작을 시작하세요'
+@@ -196,6 +264,10 @@
+             if not self.active:
+                 return None
+             self.buffer = list(self.pre)
++            if self.entry_gap_prefix:
++                actual = dict(self.entry_gap_prefix+self.buffer)
++                self.buffer = sorted(actual.items())
++                self.entry_gap_prefix = None
+             self.phase = '동작 진행 중'
+         else:
+             self.buffer.append(sample)
+@@ -204,7 +276,8 @@
+             return None
+         had_bottom = self.has_bottom
+         self.bottom = self.bottom+1 if at_bottom else 0
+-        if self.bottom >= 2:
++        required_bottom = 3 if self.exercise=='squats' and self.view=='front' else 2
++        if self.bottom >= required_bottom:
+             self.has_bottom = True
+             self.phase = '하강 확인 · 복귀 대기' if self.exercise != 'shoulder' else '상승 확인 · 하단 복귀 대기'
+         front_squat = self.exercise=='squats' and self.view=='front'
+@@ -233,14 +306,24 @@
+         if self.returned >= 3 and tick-self.buffer[0][0] >= 8:
+             segment = self.buffer[:]
+             self.last_completion_coverage = segment_coverage(segment)
+-            if self.last_completion_coverage < MINIMUM_COVERAGE:
++            core = 1.0
++            if front_squat:
++                span = segment[-1][0]-segment[0][0]+1
++                core = sum(np.isfinite(points[[11,12,23,24]]).all() for _,points in segment)/span
++                knee = sum(np.isfinite(points[[11,12,23,24]]).all() and np.isfinite(points[[25,26]]).all(1).any() for _,points in segment)/span
++                self.last_observation_receipt = dict(policy_version='front-squat-stage-observation-v1-candidate',
++                    detector_core_coverage=core,actual_time_slot_coverage=self.last_completion_coverage,
++                    knee_phase_evidence_coverage=knee,
++                    phase_evidence_requires_actual_one_knee=True,
++                    score_observation_policy_unchanged=True)
++            if self.last_completion_coverage < MINIMUM_COVERAGE or core < MINIMUM_COVERAGE:
+                 self.reset_attempt('관측 부족 · 동작 구간의 유효 관절이 80% 미만입니다. 구도를 맞추고 다시 시작하세요.')
+                 return None
+             if front_squat:
+                 self.completion_receipts.append(dict(number=self.count+1,
+                     bottom_confirmed_tick=self.bottom_confirmed_tick,
+                     return_first_tick=self.return_first_tick,
+-                    completed_tick=int(tick)))
++                    completed_tick=int(tick),observation=self.last_observation_receipt))
+             self.count += 1
+             self.movement_seconds += (segment[-1][0]-segment[0][0])/10
+             baseline = (self.base_hip,self.base_center,self.base_scale,self.base_feet,self.standing_reference)
+@@ -254,8 +337,8 @@
+ 
+     def status(self):
+         """표시용 상태를 반환한다. 반복 미지원 종목은 횟수를 None으로 둔다."""
+-        return dict(detection_version='front-hysteresis-v4-exclusive-return',observation_version=OBSERVATION_VERSION,observation=self.observation,standing_state_version='initial-standing-state-v1',uncertain_attempts=list(self.uncertain_attempts),completion_receipts=list(self.completion_receipts),phase=self.phase, count=None if self.exercise in ('ytw','plank') else self.count,
+-                    completion_observation_coverage=self.last_completion_coverage,
++        return dict(detection_version=('front-hysteresis-v5b-stage-observation-candidate' if self.exercise=='squats' and self.view=='front' else 'front-hysteresis-v4-exclusive-return'),observation_version=OBSERVATION_VERSION,observation=self.observation,standing_state_version='initial-standing-state-v1',uncertain_attempts=list(self.uncertain_attempts),completion_receipts=list(self.completion_receipts),recovery_receipts=list(self.recovery_receipts),phase=self.phase, count=None if self.exercise in ('ytw','plank') else self.count,
++                    completion_observation_coverage=self.last_completion_coverage,stage_observation=self.last_observation_receipt,
+                     angle=self.angle, hip_drop=self.hip_drop, active=self.active,
+                     movement_seconds=round(self.movement_seconds,1),
+                     hold_seconds=round(self.hold_seconds,1),

@@ -1,0 +1,206 @@
+{
+  "comparison_sha256": "7929d1a2b8add7ee10d0b8d868dcf4fbf8fadd286d352ba2753e88d7ac516593",
+  "fingerprints": {
+    "score_annotations.json": true,
+    "subject_tracking_review.json": true,
+    "extraction.json": true,
+    "manual_decisions.json": true,
+    "multiview_squat_batch2_train.py": true,
+    "multiview_squat_batch2.py": true,
+    "multiview_squat_trial.py": true,
+    "recovery_features.py": true,
+    "recovery_train.py": true,
+    "three_items.py": true,
+    "three_training.py": true,
+    "geometry.py": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/comparison.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/fit_input_manifest.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/comparison.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/squats_candidate.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/pushups.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/shoulder.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/plank.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/squats.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/ytw.joblib": true,
+    "model": true,
+    "fit_input_manifest": true
+  },
+  "videos": [
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "view": "side",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/previews/subject_012_squat_bad_batch2_rep1/side/overlay.mp4",
+      "sha256": "e328c4be61eb648272b6226ba99f0b4182fbd1a4d68dc9807f0ee4c18a574c1f",
+      "decoded_frames": 21
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "view": "front",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/previews/subject_012_squat_bad_batch2_rep1/front/overlay.mp4",
+      "sha256": "9fd0cbc6691f77a70f1a2d5441c344591c70f1ec667aba56148e8a4b2c9ba349",
+      "decoded_frames": 21
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "view": "side",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/previews/subject_012_squat_good_batch2_rep0/side/overlay.mp4",
+      "sha256": "e27350298c38be1b56395fbf96fb62b17c15292c9579361f3ac74c2994cfb570",
+      "decoded_frames": 27
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "view": "front",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/previews/subject_012_squat_good_batch2_rep0/front/overlay.mp4",
+      "sha256": "072d733eac16ba69fbf7f72ce913212cf50b9f38acd802ed3904f11a39c5a5ea",
+      "decoded_frames": 27
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep0",
+      "view": "side",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/previews/subject_015_squat_bad_batch2_rep0/side/overlay.mp4",
+      "sha256": "e7c76ff7b2238907c63ee030ea326d12126c824632c4a5b375202dd0f9b6857c",
+      "decoded_frames": 24
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep0",
+      "view": "front",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/previews/subject_015_squat_bad_batch2_rep0/front/overlay.mp4",
+      "sha256": "7fd59fc3ed90c945e8df862221451b75ae2b351d17d8bd4f9dcd8d0a843c4f19",
+      "decoded_frames": 24
+    }
+  ],
+  "all_frames_decoded": true,
+  "score_calculation_profile": [
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 90.35458200014546,
+      "rule_grading_median_ms": 0.013231998309493065,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep1",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 99.88249799789628,
+      "rule_grading_median_ms": 0.01251299909199588,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep0",
+      "exercise": "squats",
+      "common_item_ids": [
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 40.322038999875076,
+      "rule_grading_median_ms": 0.011126998288091272,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 88.84276599928853,
+      "rule_grading_median_ms": 0.012119999155402184,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_squat_good_batch2_rep0",
+      "exercise": "squats",
+      "common_item_ids": [
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 129.6660250009154,
+      "rule_grading_median_ms": 0.02136699913535267,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_squat_good_batch2_rep1",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension"
+      ],
+      "ai_grading_median_ms": 73.10124099967652,
+      "rule_grading_median_ms": 0.008961000276030973,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep0",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 80.31146400026046,
+      "rule_grading_median_ms": 0.011403997632442042,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep1",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 291.5101420003339,
+      "rule_grading_median_ms": 0.04699900091509335,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    }
+  ],
+  "local_links_checked": 57,
+  "missing_local_links": [],
+  "browser_rendering_verified": false,
+  "independent_final_test": false,
+  "interval_overlap": false,
+  "metadata_role_overlap": false,
+  "qevd_original_records": 10,
+  "score_interval_records": 20,
+  "code_sha256": "3bdf4974f1c0283bf4708da9862cd000b350455f76e4969e7ea7e81a33d3d901"
+}

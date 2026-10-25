@@ -1,0 +1,46 @@
+{
+  "schema": "ytw-logo-development-plan-v1",
+  "frozen_at_utc": "2026-10-24T13:25:04.349803+00:00",
+  "inputs": "/home/jayden/SeSACPAI-Mid/output/initial-pose-return-v7-20261024/state-inputs.frozen.json",
+  "inputs_sha256": "81a06b66d03f704e0a509cb0bff1a26ac5a0040185eafc0c86dedbc993a4076a",
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "rows": 76,
+  "people": [
+    "r2d2_P01",
+    "r2d2_P02",
+    "r2d2_P03",
+    "r2d2_P04"
+  ],
+  "heads": [
+    "target",
+    "phase"
+  ],
+  "algorithm": {
+    "name": "ExtraTreesClassifier",
+    "n_estimators": 128,
+    "min_samples_leaf": 2,
+    "max_features": 1.0,
+    "random_state": 241024,
+    "n_jobs": 1
+  },
+  "weighting": "inverse_class_person_count_as_original_train.py",
+  "tracker": {
+    "dwell_slots": 5,
+    "missing_reset_slots": 4,
+    "max_gap_slots": 3,
+    "attempt_max_slots": 300,
+    "required_coverage": 0.8,
+    "border_fraction": 0.02
+  },
+  "gates": {
+    "min_unseen_people": 2,
+    "min_completed_attempts": 10,
+    "min_negative_intervals": 20,
+    "min_detection_rate": 0.9,
+    "max_false_complete_rate": 0.05,
+    "min_boundaries_within_two_slots": 0.9
+  },
+  "ground_truth": "video_review_required_before_accuracy_metrics",
+  "final_test_opened": false,
+  "production_replacement": false
+}

@@ -1,0 +1,577 @@
+<!doctype html><html lang="ko"><meta charset="utf-8">
+<title>보유 자료 2차 보강 비교</title><style>
+body{font:16px sans-serif;max-width:1250px;margin:30px auto;line-height:1.6}
+table{border-collapse:collapse;width:100%;margin:18px 0}td,th{border:1px solid #aaa;padding:8px;overflow-wrap:anywhere}
+pre{white-space:pre-wrap}p{max-width:1050px}a{color:#175bb5}
+</style><h1>보유 자료 보강 · AI / Rule 개발 비교</h1>
+<p>외부 탐색·다운로드 없이 보유 QEVD 미검토 자료를 먼저 검토했다.
+추가 라벨은 AI가 시간순 영상 표본을 직접 검토한 비전문가 실험 초안이다.
+정상·오류 제공자 문자열을 점수로 변환하지 않았고 Rule 출력을 정답으로 쓰지 않았다.</p>
+<p>70개는 최소 한 항목이 실제 학습된 구간의 수다. 70명·70개 독립 원본·
+70개 총점 학습 자료를 뜻하지 않는다. 플랭크 추가 유지 구간은 기존 4개 원본에 집중된다.
+같은 사람일 가능성이 있는 해군 두 원본도 하나의 연결 그룹으로 묶었다.
+고정 검증은 반복 사용한 개발 자료이며 새로운 독립 최종 시험이 아니다.</p>
+<p>MediaPipe Heavy는 관절 추출기이며 별도 회귀 모델이 AI 점수를 예측한다.
+미관측 항목은 비워 두고 총점을 환산하지 않는다.
+YTW 규칙은 직접 확인한 구도·단계 관측 게이트를 사용하는 투영 기반 실험이며,
+새 영상에서의 완전 자동 구도 판정과 공통 규칙 승격을 검증한 상태는 아니다.</p>
+<p>보강 후보는 자동 승격하지 않았다. 플랭크 AI의 기존 공통 총점 오차는
+6.636에서 10.256으로 증가했고, YTW AI도 이전 투영 실험보다 악화됐다.
+구간 수 증가가 성능 향상을 보장하지 않으며 단일 등급만 학습한 항목은
+오류 식별 성능을 입증하지 못한다.</p>
+<p>플랭크 지지는 무릎 각도만 보던 특징에 팔꿈치–발끝 선 대비 골반·무릎 높이를 추가했다.
+스쿼트 발 특징은 선 자세와 하강 자세를 구분하고 고정 발 길이를 분모로 사용한다.
+이 구조 변경은 기존 개발 실패를 참고했으며 검증 자료를 임계값 학습에 넣지 않았다.</p>
+<p><a href="score_annotations.json">점수 확장 JSON</a> ·
+<a href="fine_grained_labels.json">QEVD 기본 4필드 JSON</a> ·
+<a href="annotation_export_audit.json">분할·구간 감사</a> ·
+<a href="subject_tracking_review.json">직접 관절 표본 검토</a> ·
+<a href="comparison.json">전체 수치</a> ·
+<a href="candidate_input_manifest.json">실제 학습 입력</a> ·
+<a href="../squat_partial_top_trial/index.html">후속 스쿼트 관측 개선 비교</a> ·
+<a href="plank_support_failure_diagnostic.json">플랭크 AI 오판 특징 분석</a> ·
+<a href="../held_squat_errors/hypothesis_review.json">학습 전 철회한 발 오류 가설</a></p><table><tr><th>운동</th><th>≥1항목 학습</th><th>총점 학습</th><th>AI 총점 가용/검증</th><th>Rule 총점 가용/검증</th><th>공통 총점 비교 수</th><th>AI MAE /100</th><th>Rule MAE /100</th></tr><tr><td>푸시업</td><td>85</td><td>28</td><td>8/19</td><td>8/19</td><td>6</td><td>14.788</td><td>15.833</td></tr><tr><td>스쿼트</td><td>97</td><td>47</td><td>5/18</td><td>5/18</td><td>5</td><td>15.526</td><td>9.0</td></tr><tr><td>숄더 프레스</td><td>82</td><td>46</td><td>5/11</td><td>5/11</td><td>5</td><td>8.701</td><td>10.0</td></tr><tr><td>플랭크</td><td>79</td><td>63</td><td>2/4</td><td>2/4</td><td>2</td><td>10.256</td><td>6.25</td></tr><tr><td>YTW</td><td>101</td><td>48</td><td>3/4</td><td>3/4</td><td>3</td><td>10.846</td><td>21.667</td></tr></table><h2>푸시업</h2><table><tr><td>실제 ≥1항목 학습 구간</td><td>85</td></tr><tr><td>4항목 관측·직접 총점 가능 학습 구간</td><td>28</td></tr><tr><td>참여자 메타 그룹 / 원본 SHA 수</td><td>52 / 68</td></tr><tr><td>학습 항목별 등급 분포 (0 오류 / 1 부분 / 2 정상)</td><td>[{&quot;2&quot;: 21, &quot;0&quot;: 13, &quot;1&quot;: 2}, {&quot;2&quot;: 65, &quot;1&quot;: 5, &quot;0&quot;: 3}, {&quot;2&quot;: 79, &quot;1&quot;: 4}, {&quot;2&quot;: 26, &quot;0&quot;: 1, &quot;1&quot;: 2}]</td></tr><tr><td>고정 개발 검증</td><td>{&quot;submitted&quot;: 19, &quot;paired_total_records&quot;: 6, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 14.788414640197987, &quot;rule_score&quot;: 15.833333333333334}, &quot;items&quot;: {&quot;trunk_line&quot;: {&quot;paired_records&quot;: 7, &quot;ai_MAE_grade_units&quot;: 0.5415988951971766, &quot;rule_MAE_grade_units&quot;: 0.42857142857142855}, &quot;descent_range&quot;: {&quot;paired_records&quot;: 10, &quot;ai_MAE_grade_units&quot;: 0.09275366018262746, &quot;rule_MAE_grade_units&quot;: 0.3}, &quot;return_extension&quot;: {&quot;paired_records&quot;: 15, &quot;ai_MAE_grade_units&quot;: 0.27950078649381765, &quot;rule_MAE_grade_units&quot;: 0.13333333333333333}, &quot;support&quot;: {&quot;paired_records&quot;: 7, &quot;ai_MAE_grade_units&quot;: 0.08359345906867392, &quot;rule_MAE_grade_units&quot;: 0.0}}, &quot;ai_total_available&quot;: 8, &quot;rule_total_available&quot;: 8}</td></tr><tr><td>연결 그룹 3분할 교차검증</td><td>{&quot;submitted&quot;: 103, &quot;paired_total_records&quot;: 28, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 16.942099633923643, &quot;rule_score&quot;: 18.75}, &quot;items&quot;: {&quot;trunk_line&quot;: {&quot;paired_records&quot;: 36, &quot;ai_MAE_grade_units&quot;: 0.8419788636032052, &quot;rule_MAE_grade_units&quot;: 0.5833333333333334}, &quot;descent_range&quot;: {&quot;paired_records&quot;: 49, &quot;ai_MAE_grade_units&quot;: 0.14793134157231727, &quot;rule_MAE_grade_units&quot;: 0.42857142857142855}, &quot;return_extension&quot;: {&quot;paired_records&quot;: 69, &quot;ai_MAE_grade_units&quot;: 0.15286996097412278, &quot;rule_MAE_grade_units&quot;: 0.4057971014492754}, &quot;support&quot;: {&quot;paired_records&quot;: 29, &quot;ai_MAE_grade_units&quot;: 0.2270602291260941, &quot;rule_MAE_grade_units&quot;: 0.13793103448275862}}, &quot;ai_total_available&quot;: 29, &quot;rule_total_available&quot;: 29}</td></tr><tr><td>전후 공통 교집합</td><td>{&quot;submitted&quot;: 19, &quot;common_total_records&quot;: 6, &quot;total&quot;: {&quot;baseline&quot;: {&quot;ai_score&quot;: 14.788414640197987, &quot;rule_score&quot;: 15.833333333333334}, &quot;candidate&quot;: {&quot;ai_score&quot;: 14.788414640197987, &quot;rule_score&quot;: 15.833333333333334}}, &quot;common_items&quot;: {&quot;trunk_line&quot;: {&quot;records&quot;: 7, &quot;baseline_ai&quot;: 0.5415988951971766, &quot;baseline_rule&quot;: 0.42857142857142855, &quot;candidate_ai&quot;: 0.5415988951971766, &quot;candidate_rule&quot;: 0.42857142857142855}, &quot;descent_range&quot;: {&quot;records&quot;: 10, &quot;baseline_ai&quot;: 0.09275366018262746, &quot;baseline_rule&quot;: 0.3, &quot;candidate_ai&quot;: 0.09275366018262746, &quot;candidate_rule&quot;: 0.3}, &quot;return_extension&quot;: {&quot;records&quot;: 15, &quot;baseline_ai&quot;: 0.2788592212111746, &quot;baseline_rule&quot;: 0.13333333333333333, &quot;candidate_ai&quot;: 0.27950078649381765, &quot;candidate_rule&quot;: 0.13333333333333333}, &quot;support&quot;: {&quot;records&quot;: 7, &quot;baseline_ai&quot;: 0.08359345906867392, &quot;baseline_rule&quot;: 0.0, &quot;candidate_ai&quot;: 0.08359345906867392, &quot;candidate_rule&quot;: 0.0}}}</td></tr></table><details><summary>항목별 학습 모델·등급·오류 그룹</summary><pre>[
+  {
+    &quot;item&quot;: &quot;trunk_line&quot;,
+    &quot;view&quot;: &quot;side&quot;,
+    &quot;records&quot;: 36,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 21,
+      &quot;0&quot;: 13,
+      &quot;1&quot;: 2
+    },
+    &quot;metadata_groups&quot;: 13,
+    &quot;error_groups&quot;: 11,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;descent_range&quot;,
+    &quot;view&quot;: &quot;side&quot;,
+    &quot;records&quot;: 41,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 36,
+      &quot;1&quot;: 3,
+      &quot;0&quot;: 2
+    },
+    &quot;metadata_groups&quot;: 15,
+    &quot;error_groups&quot;: 3,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;return_extension&quot;,
+    &quot;view&quot;: &quot;side&quot;,
+    &quot;records&quot;: 44,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 43,
+      &quot;1&quot;: 1
+    },
+    &quot;metadata_groups&quot;: 15,
+    &quot;error_groups&quot;: 1,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;support&quot;,
+    &quot;view&quot;: &quot;side&quot;,
+    &quot;records&quot;: 29,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 26,
+      &quot;0&quot;: 1,
+      &quot;1&quot;: 2
+    },
+    &quot;metadata_groups&quot;: 13,
+    &quot;error_groups&quot;: 3,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;descent_range&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 32,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 29,
+      &quot;1&quot;: 2,
+      &quot;0&quot;: 1
+    },
+    &quot;metadata_groups&quot;: 30,
+    &quot;error_groups&quot;: 3,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;return_extension&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 39,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 36,
+      &quot;1&quot;: 3
+    },
+    &quot;metadata_groups&quot;: 36,
+    &quot;error_groups&quot;: 3,
+    &quot;single_grade&quot;: false
+  }
+]</pre></details><table><tr><th>검증 ID</th><th>초안 /100</th><th>AI /100</th><th>Rule /100</th><th>초안 /2</th><th>AI /2</th><th>Rule /2</th></tr><tr><td>subject_002_push_up_good_side</td><td>100.0</td><td>74.41747497627881</td><td>70.0</td><td>[2, 2, 2, 2]</td><td>[1.4210526315789471, 1.0902956578593979, 1.9641987476808906, 2.0]</td><td>[2, 0, 2, 2]</td></tr><tr><td>subject_002_push_up_bad_side</td><td>60.0</td><td>판정 불가</td><td>판정 불가</td><td>[0, 2, 2, 2]</td><td>[0.5549597855227882, 2.0, 2.0, None]</td><td>[1, 2, 2, None]</td></tr><tr><td>subject_004_push_up_good_side</td><td>80.0</td><td>판정 불가</td><td>판정 불가</td><td>[1, 2, 2, 2]</td><td>[None, 2.0, 2.0, None]</td><td>[None, 2, 1, None]</td></tr><tr><td>subject_004_push_up_bad_side</td><td>80.0</td><td>75.14616343896714</td><td>55.0</td><td>[1, 2, 2, 2]</td><td>[0.7605633802816901, 1.9956597222222223, 2.0, 2.0]</td><td>[1, 1, 1, 2]</td></tr><tr><td>subject_012_push_up_good_side</td><td>100.0</td><td>87.84766193776979</td><td>100.0</td><td>[2, 2, 2, 2]</td><td>[1.6857142857142855, 2.0, 1.4303041235891036, 1.9660669975186105]</td><td>[2, 2, 2, 2]</td></tr><tr><td>subject_015_push_up_good_side</td><td>100.0</td><td>79.93968366009271</td><td>80.0</td><td>[2, 2, 2, 2]</td><td>[1.1020408163265305, 2.0, 1.8947307947107943, 1.7903118772908293]</td><td>[1, 2, 2, 2]</td></tr><tr><td>subject_017_push_up_good_side</td><td>판정 불가</td><td>81.83843659791219</td><td>100.0</td><td>[None, 2, 2, 2]</td><td>[1.1020408163265305, 1.9865080180921053, 2.0, 2.0]</td><td>[2, 2, 2, 2]</td></tr><tr><td>subject_012_push_up_bad_side</td><td>60.0</td><td>판정 불가</td><td>판정 불가</td><td>[0, 2, 2, 2]</td><td>[None, None, None, None]</td><td>[None, None, None, None]</td></tr><tr><td>subject_015_push_up_bad_side</td><td>60.0</td><td>74.16753646727729</td><td>80.0</td><td>[0, 2, 2, 2]</td><td>[0.7605633802816901, 2.0, 1.9849194626530964, 1.8214148470225051]</td><td>[1, 2, 2, 2]</td></tr><tr><td>subject_017_push_up_bad_side</td><td>판정 불가</td><td>92.1456632495572</td><td>100.0</td><td>[None, 2, 2, None]</td><td>[1.6857142857142855, 2.0, 1.864401489790886, 1.9574725274725275]</td><td>[2, 2, 2, 2]</td></tr><tr><td>youtube_0xbZWGGEK3Q_failed_attempt</td><td>50.0</td><td>61.91393538701908</td><td>50.0</td><td>[1, 2, 0, 0]</td><td>[0.5549597855227882, 2.0, 2.0, 0.16294793531266236]</td><td>[1, 2, 0, 0]</td></tr><tr><td>qevd_00109429</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 0]</td><td>[None, 2.0, 1.258513621794874, None]</td><td>[None, None, 2, None]</td></tr><tr><td>qevd_00127403</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 0]</td><td>[None, 0.45688346292616333, 1.5900655334249105, None]</td><td>[None, None, 2, None]</td></tr><tr><td>qevd_00157328</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 0]</td><td>[None, None, None, None]</td><td>[None, None, None, None]</td></tr><tr><td>qevd_00005826</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 2]</td><td>[None, None, None, None]</td><td>[None, None, None, None]</td></tr><tr><td>qevd_00023195</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 2]</td><td>[None, None, None, None]</td><td>[None, None, None, None]</td></tr><tr><td>qevd_00053514</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 2]</td><td>[None, 1.986391129032258, 1.958950765669516, None]</td><td>[None, None, 2, None]</td></tr><tr><td>qevd_00253673_existing_review</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, None, 2, None]</td><td>[None, 1.9854525862068966, 1.9383037304131057, None]</td><td>[None, None, 2, None]</td></tr><tr><td>qevd_00177677_existing_review</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, None, 2, None]</td><td>[None, 2.0, 1.923099932865558, None]</td><td>[None, None, 2, None]</td></tr></table><h2>스쿼트</h2><table><tr><td>실제 ≥1항목 학습 구간</td><td>97</td></tr><tr><td>4항목 관측·직접 총점 가능 학습 구간</td><td>47</td></tr><tr><td>참여자 메타 그룹 / 원본 SHA 수</td><td>51 / 74</td></tr><tr><td>학습 항목별 등급 분포 (0 오류 / 1 부분 / 2 정상)</td><td>[{&quot;1&quot;: 19, &quot;2&quot;: 38, &quot;0&quot;: 12}, {&quot;2&quot;: 78}, {&quot;2&quot;: 34, &quot;0&quot;: 14}, {&quot;2&quot;: 93}]</td></tr><tr><td>고정 개발 검증</td><td>{&quot;submitted&quot;: 18, &quot;paired_total_records&quot;: 5, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 15.526103399725377, &quot;rule_score&quot;: 9.0}, &quot;items&quot;: {&quot;trunk_balance&quot;: {&quot;paired_records&quot;: 17, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.0}, &quot;descent_range&quot;: {&quot;paired_records&quot;: 8, &quot;ai_MAE_grade_units&quot;: 0.30067835316285496, &quot;rule_MAE_grade_units&quot;: 0.25}, &quot;return_extension&quot;: {&quot;paired_records&quot;: 8, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.0}, &quot;knee_foot&quot;: {&quot;paired_records&quot;: 6, &quot;ai_MAE_grade_units&quot;: 0.9029253936244176, &quot;rule_MAE_grade_units&quot;: 0.5}}, &quot;ai_total_available&quot;: 5, &quot;rule_total_available&quot;: 5}</td></tr><tr><td>연결 그룹 3분할 교차검증</td><td>{&quot;submitted&quot;: 97, &quot;paired_total_records&quot;: 47, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 11.12964540425172, &quot;rule_score&quot;: 12.340425531914894}, &quot;items&quot;: {&quot;descent_range&quot;: {&quot;paired_records&quot;: 56, &quot;ai_MAE_grade_units&quot;: 0.30943791151286737, &quot;rule_MAE_grade_units&quot;: 0.23214285714285715}, &quot;return_extension&quot;: {&quot;paired_records&quot;: 49, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.04081632653061224}, &quot;knee_foot&quot;: {&quot;paired_records&quot;: 48, &quot;ai_MAE_grade_units&quot;: 0.6249189920686588, &quot;rule_MAE_grade_units&quot;: 0.6041666666666666}, &quot;trunk_balance&quot;: {&quot;paired_records&quot;: 93, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.10752688172043011}}, &quot;ai_total_available&quot;: 47, &quot;rule_total_available&quot;: 47}</td></tr><tr><td>전후 공통 교집합</td><td>{&quot;submitted&quot;: 18, &quot;common_total_records&quot;: 5, &quot;total&quot;: {&quot;baseline&quot;: {&quot;ai_score&quot;: 16.754298282452847, &quot;rule_score&quot;: 12.0}, &quot;candidate&quot;: {&quot;ai_score&quot;: 15.526103399725377, &quot;rule_score&quot;: 9.0}}, &quot;common_items&quot;: {&quot;trunk_balance&quot;: {&quot;records&quot;: 17, &quot;baseline_ai&quot;: 0.0, &quot;baseline_rule&quot;: 0.0, &quot;candidate_ai&quot;: 0.0, &quot;candidate_rule&quot;: 0.0}, &quot;descent_range&quot;: {&quot;records&quot;: 8, &quot;baseline_ai&quot;: 0.30067835316285496, &quot;baseline_rule&quot;: 0.25, &quot;candidate_ai&quot;: 0.30067835316285496, &quot;candidate_rule&quot;: 0.25}, &quot;return_extension&quot;: {&quot;records&quot;: 8, &quot;baseline_ai&quot;: 0.0, &quot;baseline_rule&quot;: 0.0, &quot;candidate_ai&quot;: 0.0, &quot;candidate_rule&quot;: 0.0}, &quot;knee_foot&quot;: {&quot;records&quot;: 6, &quot;baseline_ai&quot;: 0.9485978674786848, &quot;baseline_rule&quot;: 0.8333333333333334, &quot;candidate_ai&quot;: 0.9029253936244176, &quot;candidate_rule&quot;: 0.5}}}</td></tr><tr><td>더 이전 배치 AI 총점 MAE /100</td><td>13.735 (현재 후보가 이 수치까지 개선된 것은 아님)</td></tr></table><details><summary>항목별 학습 모델·등급·오류 그룹</summary><pre>[
+  {
+    &quot;item&quot;: &quot;descent_range&quot;,
+    &quot;view&quot;: &quot;side&quot;,
+    &quot;records&quot;: 51,
+    &quot;grade_counts&quot;: {
+      &quot;1&quot;: 18,
+      &quot;2&quot;: 33
+    },
+    &quot;metadata_groups&quot;: 12,
+    &quot;error_groups&quot;: 7,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;return_extension&quot;,
+    &quot;view&quot;: &quot;side&quot;,
+    &quot;records&quot;: 49,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 49
+    },
+    &quot;metadata_groups&quot;: 11,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  },
+  {
+    &quot;item&quot;: &quot;knee_foot&quot;,
+    &quot;view&quot;: &quot;side_foot_change_v1&quot;,
+    &quot;records&quot;: 36,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 26,
+      &quot;0&quot;: 10
+    },
+    &quot;metadata_groups&quot;: 11,
+    &quot;error_groups&quot;: 4,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;trunk_balance&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 93,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 93
+    },
+    &quot;metadata_groups&quot;: 48,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  },
+  {
+    &quot;item&quot;: &quot;descent_range&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 18,
+    &quot;grade_counts&quot;: {
+      &quot;0&quot;: 12,
+      &quot;2&quot;: 5,
+      &quot;1&quot;: 1
+    },
+    &quot;metadata_groups&quot;: 18,
+    &quot;error_groups&quot;: 13,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;return_extension&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 29,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 29
+    },
+    &quot;metadata_groups&quot;: 29,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  },
+  {
+    &quot;item&quot;: &quot;knee_foot&quot;,
+    &quot;view&quot;: &quot;side&quot;,
+    &quot;records&quot;: 12,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 8,
+      &quot;0&quot;: 4
+    },
+    &quot;metadata_groups&quot;: 7,
+    &quot;error_groups&quot;: 3,
+    &quot;single_grade&quot;: false
+  }
+]</pre></details><table><tr><th>검증 ID</th><th>초안 /100</th><th>AI /100</th><th>Rule /100</th><th>초안 /2</th><th>AI /2</th><th>Rule /2</th></tr><tr><td>qevd_00003948</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[0, 2, None, 2]</td><td>[0.8391323617854423, 2.0, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>qevd_00014005</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[0, 2, None, 2]</td><td>[0.019552139037433157, 2.0, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>qevd_00023973</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[0, 2, None, 2]</td><td>[0.04880787316132144, 2.0, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>qevd_00032130</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[0, 2, None, 2]</td><td>[0.047279543373293376, 2.0, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>qevd_00010352</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[2, 2, None, 2]</td><td>[1.593683543931373, 2.0, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>qevd_00241717_existing_review</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, None, 2]</td><td>[1.6503104658600192, 2.0, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>qevd_00039770_existing_review</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, None, 2]</td><td>[0.025568181818181823, 2.0, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>subject_002_squat_bad_paired_direct_rep0</td><td>70.0</td><td>판정 불가</td><td>판정 불가</td><td>[2, 2, 0, 2]</td><td>[None, None, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>subject_004_squat_good_paired_direct_rep0</td><td>100.0</td><td>판정 불가</td><td>판정 불가</td><td>[2, 2, 2, 2]</td><td>[1.5361409669884953, 2.0, None, 2.0]</td><td>[1, 2, None, 2]</td></tr><tr><td>subject_004_squat_bad_paired_direct_rep0</td><td>100.0</td><td>판정 불가</td><td>판정 불가</td><td>[2, 2, 2, 2]</td><td>[1.8281039578996279, None, None, 2.0]</td><td>[2, None, None, 2]</td></tr><tr><td>subject_012_squat_good_batch2_rep0</td><td>85.0</td><td>92.62227344726503</td><td>70.0</td><td>[1, 2, 2, 2]</td><td>[1.765051740985294, 2.0, 1.7430998221657081, 2.0]</td><td>[1, 2, 1, 2]</td></tr><tr><td>subject_012_squat_good_batch2_rep1</td><td>85.0</td><td>82.21595084294128</td><td>85.0</td><td>[1, 2, 2, 2]</td><td>[1.4896743730806812, 2.0, 1.3247223497820708, 2.0]</td><td>[1, 2, 2, 2]</td></tr><tr><td>subject_012_squat_bad_batch2_rep0</td><td>85.0</td><td>판정 불가</td><td>판정 불가</td><td>[1, 2, 2, 2]</td><td>[None, None, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>subject_012_squat_bad_batch2_rep1</td><td>100.0</td><td>85.64483041070994</td><td>100.0</td><td>[2, 2, 2, 2]</td><td>[1.994212962962963, 2.0, 1.048775731084367, 2.0]</td><td>[2, 2, 2, 2]</td></tr><tr><td>subject_015_squat_good_batch2_rep0</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 2]</td><td>[None, 2.0, 1.9904513888888888, 2.0]</td><td>[None, 2, 2, 2]</td></tr><tr><td>subject_015_squat_good_batch2_rep1</td><td>100.0</td><td>판정 불가</td><td>판정 불가</td><td>[2, 2, 2, 2]</td><td>[1.4908414009120494, 2.0, None, None]</td><td>[1, 2, None, None]</td></tr><tr><td>subject_015_squat_bad_batch2_rep0</td><td>70.0</td><td>94.26012145748987</td><td>85.0</td><td>[2, 2, 0, 2]</td><td>[2.0, 2.0, 1.6173414304993254, 2.0]</td><td>[2, 2, 1, 2]</td></tr><tr><td>subject_015_squat_bad_batch2_rep1</td><td>70.0</td><td>98.60890334752321</td><td>85.0</td><td>[2, 2, 0, 2]</td><td>[2.0, 2.0, 1.9072602231682145, 2.0]</td><td>[2, 2, 1, 2]</td></tr></table><h2>숄더 프레스</h2><table><tr><td>실제 ≥1항목 학습 구간</td><td>82</td></tr><tr><td>4항목 관측·직접 총점 가능 학습 구간</td><td>46</td></tr><tr><td>참여자 메타 그룹 / 원본 SHA 수</td><td>15 / 34</td></tr><tr><td>학습 항목별 등급 분포 (0 오류 / 1 부분 / 2 정상)</td><td>[{&quot;1&quot;: 17, &quot;2&quot;: 37}, {&quot;2&quot;: 71}, {&quot;0&quot;: 3, &quot;2&quot;: 57, &quot;1&quot;: 7}, {&quot;2&quot;: 71}]</td></tr><tr><td>고정 개발 검증</td><td>{&quot;submitted&quot;: 11, &quot;paired_total_records&quot;: 5, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 8.700717745148921, &quot;rule_score&quot;: 10.0}, &quot;items&quot;: {&quot;overhead_reach&quot;: {&quot;paired_records&quot;: 5, &quot;ai_MAE_grade_units&quot;: 0.2293307897240517, &quot;rule_MAE_grade_units&quot;: 0.0}, &quot;lower_return&quot;: {&quot;paired_records&quot;: 10, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.3}, &quot;bilateral_timing&quot;: {&quot;paired_records&quot;: 5, &quot;ai_MAE_grade_units&quot;: 0.5499924560701673, &quot;rule_MAE_grade_units&quot;: 0.6}, &quot;frontal_trunk_hold&quot;: {&quot;paired_records&quot;: 11, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.0}}, &quot;ai_total_available&quot;: 5, &quot;rule_total_available&quot;: 5}</td></tr><tr><td>연결 그룹 3분할 교차검증</td><td>{&quot;submitted&quot;: 86, &quot;paired_total_records&quot;: 46, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 10.553575776017714, &quot;rule_score&quot;: 11.684782608695652}, &quot;items&quot;: {&quot;overhead_reach&quot;: {&quot;paired_records&quot;: 54, &quot;ai_MAE_grade_units&quot;: 0.35006722694469733, &quot;rule_MAE_grade_units&quot;: 0.3333333333333333}, &quot;lower_return&quot;: {&quot;paired_records&quot;: 71, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.14084507042253522}, &quot;bilateral_timing&quot;: {&quot;paired_records&quot;: 67, &quot;ai_MAE_grade_units&quot;: 0.47260431589081847, &quot;rule_MAE_grade_units&quot;: 0.6865671641791045}, &quot;frontal_trunk_hold&quot;: {&quot;paired_records&quot;: 71, &quot;ai_MAE_grade_units&quot;: 0.0, &quot;rule_MAE_grade_units&quot;: 0.028169014084507043}}, &quot;ai_total_available&quot;: 46, &quot;rule_total_available&quot;: 46}</td></tr><tr><td>전후 공통 교집합</td><td>{&quot;submitted&quot;: 11, &quot;common_total_records&quot;: 5, &quot;total&quot;: {&quot;baseline&quot;: {&quot;ai_score&quot;: 9.034630665700812, &quot;rule_score&quot;: 10.0}, &quot;candidate&quot;: {&quot;ai_score&quot;: 8.700717745148921, &quot;rule_score&quot;: 10.0}}, &quot;common_items&quot;: {&quot;overhead_reach&quot;: {&quot;records&quot;: 5, &quot;baseline_ai&quot;: 0.2589842897167131, &quot;baseline_rule&quot;: 0.0, &quot;candidate_ai&quot;: 0.2293307897240517, &quot;candidate_rule&quot;: 0.0}, &quot;lower_return&quot;: {&quot;records&quot;: 10, &quot;baseline_ai&quot;: 0.0, &quot;baseline_rule&quot;: 0.3, &quot;candidate_ai&quot;: 0.0, &quot;candidate_rule&quot;: 0.3}, &quot;bilateral_timing&quot;: {&quot;records&quot;: 5, &quot;baseline_ai&quot;: 0.5580136458390992, &quot;baseline_rule&quot;: 0.6, &quot;candidate_ai&quot;: 0.5499924560701673, &quot;candidate_rule&quot;: 0.6}, &quot;frontal_trunk_hold&quot;: {&quot;records&quot;: 11, &quot;baseline_ai&quot;: 0.0, &quot;baseline_rule&quot;: 0.0, &quot;candidate_ai&quot;: 0.0, &quot;candidate_rule&quot;: 0.0}}}</td></tr></table><details><summary>항목별 학습 모델·등급·오류 그룹</summary><pre>[
+  {
+    &quot;item&quot;: &quot;lower_return&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 66,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 66
+    },
+    &quot;metadata_groups&quot;: 13,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  },
+  {
+    &quot;item&quot;: &quot;frontal_trunk_hold&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 71,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 71
+    },
+    &quot;metadata_groups&quot;: 13,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  },
+  {
+    &quot;item&quot;: &quot;overhead_reach&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 49,
+    &quot;grade_counts&quot;: {
+      &quot;1&quot;: 17,
+      &quot;2&quot;: 32
+    },
+    &quot;metadata_groups&quot;: 12,
+    &quot;error_groups&quot;: 8,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;bilateral_timing&quot;,
+    &quot;view&quot;: &quot;front&quot;,
+    &quot;records&quot;: 61,
+    &quot;grade_counts&quot;: {
+      &quot;0&quot;: 3,
+      &quot;2&quot;: 51,
+      &quot;1&quot;: 7
+    },
+    &quot;metadata_groups&quot;: 12,
+    &quot;error_groups&quot;: 7,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;overhead_reach&quot;,
+    &quot;view&quot;: &quot;front_oblique&quot;,
+    &quot;records&quot;: 5,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 5
+    },
+    &quot;metadata_groups&quot;: 3,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  },
+  {
+    &quot;item&quot;: &quot;lower_return&quot;,
+    &quot;view&quot;: &quot;front_oblique&quot;,
+    &quot;records&quot;: 5,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 5
+    },
+    &quot;metadata_groups&quot;: 3,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  },
+  {
+    &quot;item&quot;: &quot;bilateral_timing&quot;,
+    &quot;view&quot;: &quot;front_oblique&quot;,
+    &quot;records&quot;: 6,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 6
+    },
+    &quot;metadata_groups&quot;: 4,
+    &quot;error_groups&quot;: 0,
+    &quot;single_grade&quot;: true
+  }
+]</pre></details><table><tr><th>검증 ID</th><th>초안 /100</th><th>AI /100</th><th>Rule /100</th><th>초안 /2</th><th>AI /2</th><th>Rule /2</th></tr><tr><td>subject_002_shoulder_bad_front</td><td>85.0</td><td>80.47535619039307</td><td>72.5</td><td>[1, 2, 2, 2]</td><td>[1.269024966931492, 2.0, 1.315198534913656, 2.0]</td><td>[1, 2, 1, 2]</td></tr><tr><td>subject_015_shoulder_bad_front</td><td>100.0</td><td>판정 불가</td><td>판정 불가</td><td>[2, 2, 2, 2]</td><td>[None, 2.0, None, 2.0]</td><td>[None, 2, None, 2]</td></tr><tr><td>subject_017_shoulder_good_front</td><td>100.0</td><td>96.17610846434411</td><td>75.0</td><td>[2, 2, 2, 2]</td><td>[1.984053162246097, 2.0, 1.713224882452213, 2.0]</td><td>[2, 1, 1, 2]</td></tr><tr><td>subject_015_shoulder_good_front</td><td>100.0</td><td>판정 불가</td><td>판정 불가</td><td>[2, 2, 2, 2]</td><td>[None, 2.0, None, 2.0]</td><td>[None, 2, None, 2]</td></tr><tr><td>subject_002_shoulder_good_front</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 2]</td><td>[None, 2.0, None, 2.0]</td><td>[None, 2, None, 2]</td></tr><tr><td>subject_004_shoulder_good_front</td><td>72.5</td><td>87.64842604204196</td><td>85.0</td><td>[1, 2, 1, 2]</td><td>[1.3807934274322096, 2.0, 1.7549219704447052, 2.0]</td><td>[1, 2, 2, 2]</td></tr><tr><td>subject_017_shoulder_bad_front</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 2, 2]</td><td>[None, 2.0, None, 2.0]</td><td>[None, 0, None, 2]</td></tr><tr><td>subject_004_shoulder_bad_front</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 1, 1, 2]</td><td>[None, None, None, 2.0]</td><td>[None, None, None, 2]</td></tr><tr><td>youtube_U9ZRi5VwSo8_rep1</td><td>100.0</td><td>92.40189042925826</td><td>100.0</td><td>[2, 2, 2, 2]</td><td>[1.8622414684754784, 2.0, 1.557461472170087, 2.0]</td><td>[2, 2, 2, 2]</td></tr><tr><td>youtube_U9ZRi5VwSo8_rep2</td><td>100.0</td><td>87.59148223230191</td><td>100.0</td><td>[2, 2, 2, 2]</td><td>[1.6568698150218675, 2.0, 1.4190748005579124, 2.0]</td><td>[2, 2, 2, 2]</td></tr><tr><td>youtube_OOe_HrNnQWw_peak_cropped</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, None, 2]</td><td>[None, 2.0, None, 2.0]</td><td>[None, 2, None, 2]</td></tr></table><h2>플랭크</h2><table><tr><td>실제 ≥1항목 학습 구간</td><td>79</td></tr><tr><td>4항목 관측·직접 총점 가능 학습 구간</td><td>63</td></tr><tr><td>참여자 메타 그룹 / 원본 SHA 수</td><td>12 / 12</td></tr><tr><td>학습 항목별 등급 분포 (0 오류 / 1 부분 / 2 정상)</td><td>[{&quot;2&quot;: 56, &quot;0&quot;: 16, &quot;1&quot;: 1}, {&quot;2&quot;: 67, &quot;1&quot;: 2}, {&quot;2&quot;: 52, &quot;0&quot;: 10, &quot;1&quot;: 4}, {&quot;2&quot;: 66, &quot;0&quot;: 4, &quot;1&quot;: 5}]</td></tr><tr><td>고정 개발 검증</td><td>{&quot;submitted&quot;: 4, &quot;paired_total_records&quot;: 2, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 10.255710323798453, &quot;rule_score&quot;: 6.25}, &quot;items&quot;: {&quot;trunk_line&quot;: {&quot;paired_records&quot;: 3, &quot;ai_MAE_grade_units&quot;: 0.24934672158912605, &quot;rule_MAE_grade_units&quot;: 0.3333333333333333}, &quot;elbow_sagittal_position&quot;: {&quot;paired_records&quot;: 2, &quot;ai_MAE_grade_units&quot;: 0.017957839974584, &quot;rule_MAE_grade_units&quot;: 0.5}, &quot;leg_and_body_support&quot;: {&quot;paired_records&quot;: 4, &quot;ai_MAE_grade_units&quot;: 0.45464666075889426, &quot;rule_MAE_grade_units&quot;: 0.5}, &quot;support_continuity&quot;: {&quot;paired_records&quot;: 4, &quot;ai_MAE_grade_units&quot;: 0.26702609649925774, &quot;rule_MAE_grade_units&quot;: 0.5}}, &quot;ai_total_available&quot;: 2, &quot;rule_total_available&quot;: 2}</td></tr><tr><td>연결 그룹 3분할 교차검증</td><td>{&quot;submitted&quot;: 86, &quot;paired_total_records&quot;: 63, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 12.824743451812664, &quot;rule_score&quot;: 13.76984126984127}, &quot;items&quot;: {&quot;trunk_line&quot;: {&quot;paired_records&quot;: 73, &quot;ai_MAE_grade_units&quot;: 0.41194123581148046, &quot;rule_MAE_grade_units&quot;: 0.5205479452054794}, &quot;elbow_sagittal_position&quot;: {&quot;paired_records&quot;: 69, &quot;ai_MAE_grade_units&quot;: 0.11558015337341479, &quot;rule_MAE_grade_units&quot;: 0.30434782608695654}, &quot;leg_and_body_support&quot;: {&quot;paired_records&quot;: 66, &quot;ai_MAE_grade_units&quot;: 0.43563954167805363, &quot;rule_MAE_grade_units&quot;: 0.3939393939393939}, &quot;support_continuity&quot;: {&quot;paired_records&quot;: 73, &quot;ai_MAE_grade_units&quot;: 0.3257739873007217, &quot;rule_MAE_grade_units&quot;: 0.1506849315068493}}, &quot;ai_total_available&quot;: 63, &quot;rule_total_available&quot;: 63}</td></tr><tr><td>전후 공통 교집합</td><td>{&quot;submitted&quot;: 4, &quot;common_total_records&quot;: 2, &quot;total&quot;: {&quot;baseline&quot;: {&quot;ai_score&quot;: 6.635896591975104, &quot;rule_score&quot;: 6.25}, &quot;candidate&quot;: {&quot;ai_score&quot;: 10.255710323798453, &quot;rule_score&quot;: 6.25}}, &quot;common_items&quot;: {&quot;trunk_line&quot;: {&quot;records&quot;: 3, &quot;baseline_ai&quot;: 0.20305501789876804, &quot;baseline_rule&quot;: 0.3333333333333333, &quot;candidate_ai&quot;: 0.24934672158912605, &quot;candidate_rule&quot;: 0.3333333333333333}, &quot;elbow_sagittal_position&quot;: {&quot;records&quot;: 2, &quot;baseline_ai&quot;: 0.003810975609756073, &quot;baseline_rule&quot;: 0.5, &quot;candidate_ai&quot;: 0.017957839974584, &quot;candidate_rule&quot;: 0.5}, &quot;leg_and_body_support&quot;: {&quot;records&quot;: 4, &quot;baseline_ai&quot;: 0.5745198161213785, &quot;baseline_rule&quot;: 0.5, &quot;candidate_ai&quot;: 0.45464666075889426, &quot;candidate_rule&quot;: 0.5}, &quot;support_continuity&quot;: {&quot;records&quot;: 4, &quot;baseline_ai&quot;: 0.1690590737054552, &quot;baseline_rule&quot;: 0.5, &quot;candidate_ai&quot;: 0.26702609649925774, &quot;candidate_rule&quot;: 0.5}}}</td></tr></table><details><summary>항목별 학습 모델·등급·오류 그룹</summary><pre>[
+  {
+    &quot;item&quot;: &quot;trunk_line&quot;,
+    &quot;view&quot;: &quot;side_video&quot;,
+    &quot;records&quot;: 73,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 56,
+      &quot;0&quot;: 16,
+      &quot;1&quot;: 1
+    },
+    &quot;metadata_groups&quot;: 9,
+    &quot;error_groups&quot;: 3,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;elbow_sagittal_position&quot;,
+    &quot;view&quot;: &quot;side_video&quot;,
+    &quot;records&quot;: 69,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 67,
+      &quot;1&quot;: 2
+    },
+    &quot;metadata_groups&quot;: 10,
+    &quot;error_groups&quot;: 2,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;leg_and_body_support&quot;,
+    &quot;view&quot;: &quot;side_support_clearance_v1&quot;,
+    &quot;records&quot;: 66,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 52,
+      &quot;0&quot;: 10,
+      &quot;1&quot;: 4
+    },
+    &quot;metadata_groups&quot;: 9,
+    &quot;error_groups&quot;: 2,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;support_continuity&quot;,
+    &quot;view&quot;: &quot;side_video&quot;,
+    &quot;records&quot;: 73,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 66,
+      &quot;0&quot;: 2,
+      &quot;1&quot;: 5
+    },
+    &quot;metadata_groups&quot;: 9,
+    &quot;error_groups&quot;: 2,
+    &quot;single_grade&quot;: false
+  },
+  {
+    &quot;item&quot;: &quot;support_continuity&quot;,
+    &quot;view&quot;: &quot;front_visible_interruption&quot;,
+    &quot;records&quot;: 2,
+    &quot;grade_counts&quot;: {
+      &quot;0&quot;: 2
+    },
+    &quot;metadata_groups&quot;: 2,
+    &quot;error_groups&quot;: 2,
+    &quot;single_grade&quot;: true
+  }
+]</pre></details><table><tr><th>검증 ID</th><th>초안 /100</th><th>AI /100</th><th>Rule /100</th><th>초안 /2</th><th>AI /2</th><th>Rule /2</th></tr><tr><td>amanda_challenge</td><td>100.0</td><td>93.98244243721496</td><td>87.5</td><td>[2, 2, 2, 2]</td><td>[1.8764890340488003, 1.976810998864005, 1.6742524270438897, 2.0]</td><td>[2, 1, 2, 2]</td></tr><tr><td>ottobre_challenge</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, None, 1, 1]</td><td>[None, None, 1.121118166164499, 1.5981906114718611]</td><td>[None, None, 0, 0]</td></tr><tr><td>climber_prospective</td><td>100.0</td><td>85.50613691518814</td><td>100.0</td><td>[2, 2, 2, 2]</td><td>[2.0, 1.987273321186827, 0.6583366618745061, 1.877580504214364]</td><td>[2, 2, 2, 2]</td></tr><tr><td>gotti_prospective</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[1, None, 2, 2]</td><td>[0.3754708011838216, None, 1.9699424342105263, 1.6525057212604661]</td><td>[0, None, 1, 1]</td></tr></table><h2>YTW</h2><table><tr><td>실제 ≥1항목 학습 구간</td><td>101</td></tr><tr><td>4항목 관측·직접 총점 가능 학습 구간</td><td>48</td></tr><tr><td>참여자 메타 그룹 / 원본 SHA 수</td><td>79 / 101</td></tr><tr><td>학습 항목별 등급 분포 (0 오류 / 1 부분 / 2 정상)</td><td>[{&quot;1&quot;: 54, &quot;0&quot;: 2, &quot;2&quot;: 3}, {&quot;2&quot;: 74, &quot;1&quot;: 11}, {&quot;2&quot;: 26, &quot;1&quot;: 45, &quot;0&quot;: 12}, {&quot;2&quot;: 48, &quot;1&quot;: 38, &quot;0&quot;: 13}]</td></tr><tr><td>고정 개발 검증</td><td>{&quot;submitted&quot;: 4, &quot;paired_total_records&quot;: 3, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 10.845977149621108, &quot;rule_score&quot;: 21.666666666666668}, &quot;items&quot;: {&quot;t_reach&quot;: {&quot;paired_records&quot;: 4, &quot;ai_MAE_grade_units&quot;: 0.20975952128255698, &quot;rule_MAE_grade_units&quot;: 0.5}, &quot;w_shape&quot;: {&quot;paired_records&quot;: 4, &quot;ai_MAE_grade_units&quot;: 0.745711094918289, &quot;rule_MAE_grade_units&quot;: 0.5}, &quot;hinge_and_trunk_hold&quot;: {&quot;paired_records&quot;: 4, &quot;ai_MAE_grade_units&quot;: 0.5856841898326817, &quot;rule_MAE_grade_units&quot;: 0.5}, &quot;y_reach&quot;: {&quot;paired_records&quot;: 3, &quot;ai_MAE_grade_units&quot;: 0.18089382042095192, &quot;rule_MAE_grade_units&quot;: 0.3333333333333333}}, &quot;ai_total_available&quot;: 3, &quot;rule_total_available&quot;: 3}</td></tr><tr><td>연결 그룹 3분할 교차검증</td><td>{&quot;submitted&quot;: 102, &quot;paired_total_records&quot;: 48, &quot;paired_total_MAE_points&quot;: {&quot;ai_score&quot;: 10.061763713218093, &quot;rule_score&quot;: 17.708333333333332}, &quot;items&quot;: {&quot;y_reach&quot;: {&quot;paired_records&quot;: 59, &quot;ai_MAE_grade_units&quot;: 0.2581715429707641, &quot;rule_MAE_grade_units&quot;: 0.576271186440678}, &quot;t_reach&quot;: {&quot;paired_records&quot;: 85, &quot;ai_MAE_grade_units&quot;: 0.168341381636675, &quot;rule_MAE_grade_units&quot;: 0.27058823529411763}, &quot;w_shape&quot;: {&quot;paired_records&quot;: 83, &quot;ai_MAE_grade_units&quot;: 0.44240382504994236, &quot;rule_MAE_grade_units&quot;: 0.4578313253012048}, &quot;hinge_and_trunk_hold&quot;: {&quot;paired_records&quot;: 99, &quot;ai_MAE_grade_units&quot;: 0.48712898814837563, &quot;rule_MAE_grade_units&quot;: 0.42424242424242425}}, &quot;ai_total_available&quot;: 48, &quot;rule_total_available&quot;: 48}</td></tr><tr><td>전후 공통 교집합</td><td>{&quot;submitted&quot;: 4, &quot;common_total_records&quot;: 0, &quot;total&quot;: {&quot;baseline&quot;: {&quot;ai_score&quot;: null, &quot;rule_score&quot;: null}, &quot;candidate&quot;: {&quot;ai_score&quot;: null, &quot;rule_score&quot;: null}}, &quot;common_items&quot;: {&quot;t_reach&quot;: {&quot;records&quot;: 4, &quot;baseline_ai&quot;: 0.2120449000452415, &quot;baseline_rule&quot;: 0.25, &quot;candidate_ai&quot;: 0.20975952128255698, &quot;candidate_rule&quot;: 0.5}, &quot;w_shape&quot;: {&quot;records&quot;: 4, &quot;baseline_ai&quot;: 0.6694288405065454, &quot;baseline_rule&quot;: 0.5, &quot;candidate_ai&quot;: 0.745711094918289, &quot;candidate_rule&quot;: 0.5}}, &quot;previous_projected_trial&quot;: {&quot;submitted&quot;: 4, &quot;common_total_records&quot;: 3, &quot;total&quot;: {&quot;baseline&quot;: {&quot;ai_score&quot;: 9.129138304347686, &quot;rule_score&quot;: 27.5}, &quot;candidate&quot;: {&quot;ai_score&quot;: 10.845977149621108, &quot;rule_score&quot;: 21.666666666666668}}, &quot;common_items&quot;: {&quot;t_reach&quot;: {&quot;records&quot;: 4, &quot;baseline_ai&quot;: 0.2120449000452415, &quot;baseline_rule&quot;: 0.5, &quot;candidate_ai&quot;: 0.20975952128255698, &quot;candidate_rule&quot;: 0.5}, &quot;w_shape&quot;: {&quot;records&quot;: 4, &quot;baseline_ai&quot;: 0.6694288405065454, &quot;baseline_rule&quot;: 0.25, &quot;candidate_ai&quot;: 0.745711094918289, &quot;candidate_rule&quot;: 0.5}, &quot;hinge_and_trunk_hold&quot;: {&quot;records&quot;: 4, &quot;baseline_ai&quot;: 0.6369935508510395, &quot;baseline_rule&quot;: 0.5, &quot;candidate_ai&quot;: 0.5856841898326817, &quot;candidate_rule&quot;: 0.5}, &quot;y_reach&quot;: {&quot;records&quot;: 3, &quot;baseline_ai&quot;: 0.08749496130489794, &quot;baseline_rule&quot;: 1.0, &quot;candidate_ai&quot;: 0.18089382042095192, &quot;candidate_rule&quot;: 0.3333333333333333}}}}</td></tr></table><details><summary>항목별 학습 모델·등급·오류 그룹</summary><pre>[
+  {
+    &quot;item&quot;: &quot;y_reach&quot;,
+    &quot;view&quot;: &quot;front_projected_manual_observation_gate&quot;,
+    &quot;records&quot;: 59,
+    &quot;grade_counts&quot;: {
+      &quot;1&quot;: 54,
+      &quot;0&quot;: 2,
+      &quot;2&quot;: 3
+    },
+    &quot;grade_metadata_groups&quot;: {
+      &quot;1&quot;: 45,
+      &quot;0&quot;: 2,
+      &quot;2&quot;: 3
+    },
+    &quot;policy&quot;: [
+      120,
+      65,
+      145,
+      80
+    ]
+  },
+  {
+    &quot;item&quot;: &quot;t_reach&quot;,
+    &quot;view&quot;: &quot;front_projected_manual_observation_gate&quot;,
+    &quot;records&quot;: 85,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 74,
+      &quot;1&quot;: 11
+    },
+    &quot;grade_metadata_groups&quot;: {
+      &quot;2&quot;: 62,
+      &quot;1&quot;: 11
+    },
+    &quot;policy&quot;: [
+      65,
+      40,
+      160,
+      80
+    ]
+  },
+  {
+    &quot;item&quot;: &quot;w_shape&quot;,
+    &quot;view&quot;: &quot;front_projected_manual_observation_gate&quot;,
+    &quot;records&quot;: 83,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 26,
+      &quot;1&quot;: 45,
+      &quot;0&quot;: 12
+    },
+    &quot;grade_metadata_groups&quot;: {
+      &quot;2&quot;: 25,
+      &quot;1&quot;: 40,
+      &quot;0&quot;: 12
+    },
+    &quot;policy&quot;: [
+      20.0,
+      8.0,
+      0.1,
+      -0.05,
+      0.25,
+      0.5,
+      35.0,
+      -0.95,
+      -1.0
+    ]
+  },
+  {
+    &quot;item&quot;: &quot;hinge_and_trunk_hold&quot;,
+    &quot;view&quot;: &quot;front_projected_manual_observation_gate&quot;,
+    &quot;records&quot;: 99,
+    &quot;grade_counts&quot;: {
+      &quot;2&quot;: 48,
+      &quot;1&quot;: 38,
+      &quot;0&quot;: 13
+    },
+    &quot;grade_metadata_groups&quot;: {
+      &quot;2&quot;: 42,
+      &quot;1&quot;: 32,
+      &quot;0&quot;: 13
+    },
+    &quot;policy&quot;: [
+      1.2,
+      0.7,
+      10,
+      15
+    ]
+  }
+]</pre></details><table><tr><th>검증 ID</th><th>초안 /100</th><th>AI /100</th><th>Rule /100</th><th>초안 /2</th><th>AI /2</th><th>Rule /2</th></tr><tr><td>qevd_00105254</td><td>판정 불가</td><td>판정 불가</td><td>판정 불가</td><td>[None, 2, 1, 1]</td><td>[None, 2.0, 1.6260982573986613, 1.6604009523027738]</td><td>[None, 2, 1, 1]</td></tr><tr><td>qevd_00196196</td><td>85.0</td><td>71.14218097896605</td><td>62.5</td><td>[1, 2, 2, 2]</td><td>[1.2258330136132292, 2.0, 0.9853884372121677, 1.5437330309615518]</td><td>[1, 2, 1, 1]</td></tr><tr><td>qevd_00265931</td><td>75.0</td><td>61.87610845036483</td><td>50.0</td><td>[1, 2, 2, 1]</td><td>[0.7190376845080767, 1.8668564167459283, 1.0645733097338077, 1.4447671601746979]</td><td>[1, 1, 1, 1]</td></tr><tr><td>qevd_00265212</td><td>65.0</td><td>59.44377912180579</td><td>47.5</td><td>[1, 2, 2, 0]</td><td>[1.0358861321577033, 1.2941054981238438, 1.59329213077953, 0.7813016778148066]</td><td>[0, 1, 2, 1]</td></tr></table><h2>새 보강 구간의 관절 영상과 항목 점수</h2><p>표시 속도는 특징 캐시 이후 AI·규칙 합산 추론 시간이다. Heavy·특징 계산·파일 읽기는 제외한다. 동일 입력 3회 반복의 일치는 촬영 변화에 대한 일관성 검증을 뜻하지 않는다.</p><h3>푸시업</h3><p>연결 그룹 교차검증의 폴드 외 예측. 총점 누락은 미환산.</p><video controls preload="metadata" width="640" src="previews/qevd_00165652_held2_score/overlay.mp4"></video><pre>{
+  &quot;id&quot;: &quot;qevd_00165652_held2_score&quot;,
+  &quot;reference&quot;: [
+    null,
+    2,
+    2,
+    null
+  ],
+  &quot;ai&quot;: [
+    null,
+    1.9008068990003464,
+    1.4122607212133487,
+    null
+  ],
+  &quot;rule&quot;: [
+    null,
+    2,
+    2,
+    null
+  ],
+  &quot;cached_joint_inference_ms&quot;: 40.98647200589767,
+  &quot;deterministic&quot;: true,
+  &quot;separate_speed&quot;: {
+    &quot;id&quot;: &quot;qevd_00165652_held2_score&quot;,
+    &quot;common_items&quot;: 1,
+    &quot;ai_median_ms&quot;: 70.45576599921333,
+    &quot;rule_median_ms&quot;: 0.020007006241939962,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  }
+}</pre><h3>스쿼트</h3><p>연결 그룹 교차검증의 폴드 외 예측. 총점 누락은 미환산.</p><video controls preload="metadata" width="640" src="previews/qevd_00235103_held2_score/overlay.mp4"></video><pre>{
+  &quot;id&quot;: &quot;qevd_00235103_held2_score&quot;,
+  &quot;reference&quot;: [
+    2,
+    2,
+    null,
+    2
+  ],
+  &quot;ai&quot;: [
+    1.6192015921125975,
+    2.0,
+    null,
+    2.0
+  ],
+  &quot;rule&quot;: [
+    2,
+    null,
+    null,
+    2
+  ],
+  &quot;cached_joint_inference_ms&quot;: 189.4382529935683,
+  &quot;deterministic&quot;: true,
+  &quot;separate_speed&quot;: {
+    &quot;id&quot;: &quot;qevd_00235103_held2_score&quot;,
+    &quot;common_items&quot;: 1,
+    &quot;ai_median_ms&quot;: 80.39291499881074,
+    &quot;rule_median_ms&quot;: 0.016206002328544855,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  }
+}</pre><h3>숄더 프레스</h3><p>연결 그룹 교차검증의 폴드 외 예측. 총점 누락은 미환산.</p><video controls preload="metadata" width="640" src="previews/subject_010_shoulder_good_front_held2_score/overlay.mp4"></video><pre>{
+  &quot;id&quot;: &quot;subject_010_shoulder_good_front_held2_score&quot;,
+  &quot;reference&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;ai&quot;: [
+    1.629852849812343,
+    2.0,
+    1.2873312108461756,
+    2.0
+  ],
+  &quot;rule&quot;: [
+    2,
+    2,
+    1,
+    2
+  ],
+  &quot;cached_joint_inference_ms&quot;: 260.01367100252537,
+  &quot;deterministic&quot;: true,
+  &quot;separate_speed&quot;: {
+    &quot;id&quot;: &quot;subject_010_shoulder_good_front_held2_score&quot;,
+    &quot;common_items&quot;: 4,
+    &quot;ai_median_ms&quot;: 240.818981998018,
+    &quot;rule_median_ms&quot;: 0.02091500209644437,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  }
+}</pre><h3>플랭크</h3><p>연결 그룹 교차검증의 폴드 외 예측. 총점 누락은 미환산.</p><video controls preload="metadata" width="640" src="previews/held2_navy773312_1768_1864_held2_score/overlay.mp4"></video><pre>{
+  &quot;id&quot;: &quot;held2_navy773312_1768_1864_held2_score&quot;,
+  &quot;reference&quot;: [
+    1,
+    2,
+    1,
+    0
+  ],
+  &quot;ai&quot;: [
+    0.5932671138984094,
+    1.5833333333333344,
+    0.6662421630094044,
+    1.042735465071609
+  ],
+  &quot;rule&quot;: [
+    1,
+    1,
+    0,
+    0
+  ],
+  &quot;cached_joint_inference_ms&quot;: 280.3776629953063,
+  &quot;deterministic&quot;: true,
+  &quot;separate_speed&quot;: {
+    &quot;id&quot;: &quot;held2_navy773312_1768_1864_held2_score&quot;,
+    &quot;common_items&quot;: 4,
+    &quot;ai_median_ms&quot;: 259.7273060018779,
+    &quot;rule_median_ms&quot;: 0.02738799958024174,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  }
+}</pre><h3>YTW</h3><p>연결 그룹 교차검증의 폴드 외 예측. 총점 누락은 미환산.</p><video controls preload="metadata" width="640" src="previews/qevd_00150534_held2_score/overlay.mp4"></video><pre>{
+  &quot;id&quot;: &quot;qevd_00150534_held2_score&quot;,
+  &quot;reference&quot;: [
+    2,
+    2,
+    0,
+    2
+  ],
+  &quot;ai&quot;: [
+    1.0290054813508065,
+    1.4380970082272697,
+    0.8862693586925517,
+    1.0567598689845883
+  ],
+  &quot;rule&quot;: [
+    1,
+    1,
+    0,
+    1
+  ],
+  &quot;cached_joint_inference_ms&quot;: 80.82766499865102,
+  &quot;deterministic&quot;: true,
+  &quot;separate_speed&quot;: {
+    &quot;common_items&quot;: 4,
+    &quot;ai_median_ms&quot;: 80.01017800415866,
+    &quot;rule_median_ms&quot;: 0.14905100397299975,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  }
+}</pre><details><summary>95구간의 자동 관절 표시와 직접 검토 근거</summary><ul><li><a href="joints/qevd_00278592_held2_score.jpg">qevd_00278592</a></li><li><a href="joints/qevd_00258746_held2_score.jpg">qevd_00258746</a></li><li><a href="joints/qevd_00174307_held2_score.jpg">qevd_00174307</a></li><li><a href="joints/qevd_00133361_held2_score.jpg">qevd_00133361</a></li><li><a href="joints/qevd_00272558_held2_score.jpg">qevd_00272558</a></li><li><a href="joints/qevd_00165652_held2_score.jpg">qevd_00165652</a></li><li><a href="joints/qevd_00223586_held2_score.jpg">qevd_00223586</a></li><li><a href="joints/qevd_00238088_held2_score.jpg">qevd_00238088</a></li><li><a href="joints/qevd_00272079_held2_score.jpg">qevd_00272079</a></li><li><a href="joints/qevd_00094677_held2_score.jpg">qevd_00094677</a></li><li><a href="joints/qevd_00187954_held2_score.jpg">qevd_00187954</a></li><li><a href="joints/qevd_00051575_held2_score.jpg">qevd_00051575</a></li><li><a href="joints/qevd_00174839_held2_score.jpg">qevd_00174839</a></li><li><a href="joints/qevd_00068330_held2_score.jpg">qevd_00068330</a></li><li><a href="joints/qevd_00235103_held2_score.jpg">qevd_00235103</a></li><li><a href="joints/qevd_00179430_held2_score.jpg">qevd_00179430</a></li><li><a href="joints/qevd_00095193_held2_score.jpg">qevd_00095193</a></li><li><a href="joints/qevd_00241029_held2_score.jpg">qevd_00241029</a></li><li><a href="joints/qevd_00246294_held2_score.jpg">qevd_00246294</a></li><li><a href="joints/qevd_00255756_held2_score.jpg">qevd_00255756</a></li><li><a href="joints/qevd_00166279_held2_score.jpg">qevd_00166279</a></li><li><a href="joints/qevd_00239346_held2_score.jpg">qevd_00239346</a></li><li><a href="joints/qevd_00150534_held2_score.jpg">qevd_00150534</a></li><li><a href="joints/qevd_00268595_held2_score.jpg">qevd_00268595</a></li><li><a href="joints/qevd_00143162_held2_score.jpg">qevd_00143162</a></li><li><a href="joints/qevd_00233699_held2_score.jpg">qevd_00233699</a></li><li><a href="joints/qevd_00195032_held2_score.jpg">qevd_00195032</a></li><li><a href="joints/qevd_00205739_held2_score.jpg">qevd_00205739</a></li><li><a href="joints/subject_005_shoulder_bad_front_held2_score.jpg">subject_005_shoulder_bad_front</a></li><li><a href="joints/subject_010_shoulder_good_front_held2_score.jpg">subject_010_shoulder_good_front</a></li><li><a href="joints/subject_014_shoulder_bad_front_held2_score.jpg">subject_014_shoulder_bad_front</a></li><li><a href="joints/subject_007_shoulder_bad_front_held2_score.jpg">subject_007_shoulder_bad_front</a></li><li><a href="joints/subject_019_shoulder_good_front_held2_score.jpg">subject_019_shoulder_good_front</a></li><li><a href="joints/subject_009_shoulder_good_front_held2_score.jpg">subject_009_shoulder_good_front</a></li><li><a href="joints/held2_navy773312_1768_1864_held2_score.jpg">held2_navy773312_1768_1864</a></li><li><a href="joints/held2_navy773312_1888_1984_held2_score.jpg">held2_navy773312_1888_1984</a></li><li><a href="joints/held2_navy773312_2008_2104_held2_score.jpg">held2_navy773312_2008_2104</a></li><li><a href="joints/held2_navy773312_2128_2224_held2_score.jpg">held2_navy773312_2128_2224</a></li><li><a href="joints/held2_navy773312_2248_2344_held2_score.jpg">held2_navy773312_2248_2344</a></li><li><a href="joints/held2_navy773312_2368_2464_held2_score.jpg">held2_navy773312_2368_2464</a></li><li><a href="joints/held2_navy773312_2488_2583_held2_score.jpg">held2_navy773312_2488_2583</a></li><li><a href="joints/held2_navy773312_2607_2703_held2_score.jpg">held2_navy773312_2607_2703</a></li><li><a href="joints/held2_navy773312_2727_2823_held2_score.jpg">held2_navy773312_2727_2823</a></li><li><a href="joints/held2_navy773312_2847_2943_held2_score.jpg">held2_navy773312_2847_2943</a></li><li><a href="joints/held2_navy773312_3207_3303_held2_score.jpg">held2_navy773312_3207_3303</a></li><li><a href="joints/held2_navy773312_3327_3423_held2_score.jpg">held2_navy773312_3327_3423</a></li><li><a href="joints/held2_navy773312_3447_3542_held2_score.jpg">held2_navy773312_3447_3542</a></li><li><a href="joints/held2_navy773312_3926_4022_held2_score.jpg">held2_navy773312_3926_4022</a></li><li><a href="joints/held2_navy773312_4046_4142_held2_score.jpg">held2_navy773312_4046_4142</a></li><li><a href="joints/held2_navy773312_4166_4262_held2_score.jpg">held2_navy773312_4166_4262</a></li><li><a href="joints/held2_navy773312_4286_4382_held2_score.jpg">held2_navy773312_4286_4382</a></li><li><a href="joints/held2_navy773312_4406_4501_held2_score.jpg">held2_navy773312_4406_4501</a></li><li><a href="joints/held2_navy773312_4525_4621_held2_score.jpg">held2_navy773312_4525_4621</a></li><li><a href="joints/held2_navy773312_4645_4741_held2_score.jpg">held2_navy773312_4645_4741</a></li><li><a href="joints/held2_navy773312_4765_4861_held2_score.jpg">held2_navy773312_4765_4861</a></li><li><a href="joints/held2_navy773312_4885_4981_held2_score.jpg">held2_navy773312_4885_4981</a></li><li><a href="joints/held2_navy773312_5005_5101_held2_score.jpg">held2_navy773312_5005_5101</a></li><li><a href="joints/held2_navy773312_5125_5221_held2_score.jpg">held2_navy773312_5125_5221</a></li><li><a href="joints/held2_navy773312_5245_5341_held2_score.jpg">held2_navy773312_5245_5341</a></li><li><a href="joints/held2_navy773312_5365_5461_held2_score.jpg">held2_navy773312_5365_5461</a></li><li><a href="joints/held2_navy773312_5485_5580_held2_score.jpg">held2_navy773312_5485_5580</a></li><li><a href="joints/held2_navy773312_5604_5700_held2_score.jpg">held2_navy773312_5604_5700</a></li><li><a href="joints/held2_navy773312_5724_5820_held2_score.jpg">held2_navy773312_5724_5820</a></li><li><a href="joints/held2_navy773312_5844_5940_held2_score.jpg">held2_navy773312_5844_5940</a></li><li><a href="joints/held2_navy773312_5964_6060_held2_score.jpg">held2_navy773312_5964_6060</a></li><li><a href="joints/held2_navy773312_6084_6180_held2_score.jpg">held2_navy773312_6084_6180</a></li><li><a href="joints/held2_navy805472_779_875_held2_score.jpg">held2_navy805472_779_875</a></li><li><a href="joints/held2_navy805472_959_1055_held2_score.jpg">held2_navy805472_959_1055</a></li><li><a href="joints/held2_navy805472_1139_1235_held2_score.jpg">held2_navy805472_1139_1235</a></li><li><a href="joints/held2_navy805472_1319_1415_held2_score.jpg">held2_navy805472_1319_1415</a></li><li><a href="joints/held2_navy805472_1498_1594_held2_score.jpg">held2_navy805472_1498_1594</a></li><li><a href="joints/held2_navy805472_1678_1774_held2_score.jpg">held2_navy805472_1678_1774</a></li><li><a href="joints/held2_navy805472_1858_1954_held2_score.jpg">held2_navy805472_1858_1954</a></li><li><a href="joints/held2_navy805472_2038_2134_held2_score.jpg">held2_navy805472_2038_2134</a></li><li><a href="joints/held2_navy805472_2218_2314_held2_score.jpg">held2_navy805472_2218_2314</a></li><li><a href="joints/held2_navy805472_2398_2494_held2_score.jpg">held2_navy805472_2398_2494</a></li><li><a href="joints/held2_navy805472_2577_2673_held2_score.jpg">held2_navy805472_2577_2673</a></li><li><a href="joints/held2_navy805472_2757_2853_held2_score.jpg">held2_navy805472_2757_2853</a></li><li><a href="joints/held2_navy805472_2937_3033_held2_score.jpg">held2_navy805472_2937_3033</a></li><li><a href="joints/held2_navy805472_3117_3213_held2_score.jpg">held2_navy805472_3117_3213</a></li><li><a href="joints/held2_navy805472_3297_3393_held2_score.jpg">held2_navy805472_3297_3393</a></li><li><a href="joints/held2_navy805472_3477_3572_held2_score.jpg">held2_navy805472_3477_3572</a></li><li><a href="joints/held2_chris_264_341_held2_score.jpg">held2_chris_264_341</a></li><li><a href="joints/held2_chris_360_437_held2_score.jpg">held2_chris_360_437</a></li><li><a href="joints/held2_chris_456_533_held2_score.jpg">held2_chris_456_533</a></li><li><a href="joints/held2_chris_552_629_held2_score.jpg">held2_chris_552_629</a></li><li><a href="joints/held2_chris_792_869_held2_score.jpg">held2_chris_792_869</a></li><li><a href="joints/held2_chris_888_965_held2_score.jpg">held2_chris_888_965</a></li><li><a href="joints/held2_chris_984_1061_held2_score.jpg">held2_chris_984_1061</a></li><li><a href="joints/held2_chris_1080_1157_held2_score.jpg">held2_chris_1080_1157</a></li><li><a href="joints/held2_avid_495_590_held2_score.jpg">held2_avid_495_590</a></li><li><a href="joints/held2_avid_614_710_held2_score.jpg">held2_avid_614_710</a></li><li><a href="joints/held2_avid_734_830_held2_score.jpg">held2_avid_734_830</a></li><li><a href="joints/held2_avid_854_950_held2_score.jpg">held2_avid_854_950</a></li><li><a href="joints/held2_avid_959_1055_held2_score.jpg">held2_avid_959_1055</a></li></ul></details></html>

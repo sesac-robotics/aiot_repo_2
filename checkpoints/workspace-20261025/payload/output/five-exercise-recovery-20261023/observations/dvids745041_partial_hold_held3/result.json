@@ -1,0 +1,144 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "plank",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": 1.9936272658610272,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.006372734138972769,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 171.78586348926626,
+      "feature": [
+        171.72148818396028,
+        171.78586348926626,
+        171.9558200157921,
+        172.12274269679648,
+        172.1717215612175,
+        172.45157800525124,
+        172.59056057207502
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "elbow_sagittal_position",
+      "weight": 25,
+      "ai_grade": 1.9817041716507178,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.018295828349282228,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 0.0077738549476743055,
+      "feature": [
+        0.0002847594908188993,
+        0.0005199712299840628,
+        0.0018907326615973333,
+        0.005398629770744576,
+        0.00628433016610982,
+        0.0077738549476743055,
+        0.008505481147445409
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "leg_and_body_support",
+      "weight": 20,
+      "ai_grade": 1.9925047588832487,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.007495241116751261,
+      "observed": true,
+      "bank": "side_support_clearance_v1",
+      "measured": [
+        179.16497298271062,
+        0.5078577485784403,
+        0.3698471135373705
+      ],
+      "feature": [
+        179.05214963933483,
+        179.16497298271062,
+        179.44411275527662,
+        179.61537414221672,
+        179.70629990800518,
+        179.79306201393797,
+        179.8230857941891,
+        0.5043215967196896,
+        0.5078577485784403,
+        0.5170410603007187,
+        0.5247498889173166,
+        0.5262672918018176,
+        0.5275518918802258,
+        0.5281705922057243,
+        0.3669151367352448,
+        0.3698471135373705,
+        0.37726249478051577,
+        0.3839632897220239,
+        0.3860120120805469,
+        0.3870201580069887,
+        0.38752386258126015,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support_continuity",
+      "weight": 15,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "side_video",
+      "measured": 0.7709361548542688,
+      "feature": null,
+      "reasons": [
+        "continuity_shorter_than_three_seconds",
+        "item_not_reviewed_as_observable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": null,
+  "rule_score": null,
+  "ai_minus_rule": null,
+  "complete_attempt_reviewed": false,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 2.0033069999954023,
+    "ai": 99.33999600025345,
+    "rule": 0.017458999991504243
+  },
+  "limitations": [
+    "79-segment candidate remains experimental; 17-segment baseline scored better on two reused total-score cases.",
+    "Repeated hold windows are concentrated in few source recordings.",
+    "Joint geometry does not certify body contact or load.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_745041.mp4",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 7.549945420999848,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

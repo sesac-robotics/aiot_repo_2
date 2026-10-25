@@ -1,0 +1,16 @@
+--- checklist_comparison.py.before
++++ checklist_comparison.py
+@@ -32,8 +32,11 @@
+             return_candidate=candidate
+             return_observed=observed
+             if return_xy is not None:
+-                from front_candidate import predict
+-                return_candidate=predict(return_xy)
++                # Return/trunk use shoulders and hips; missing knees must not
++                # abort independent observed items through the depth predictor.
++                from torso_candidate import torso_features
++                try:return_candidate={'torso_features':torso_features(return_xy).tolist()}
++                except ValueError:return_candidate=None
+                 return_observed=extract(np.asarray(return_xy,float),width,height)
+             tf=(return_candidate or {}).get('torso_features',[])
+             if return_observed.get('standing_return') and len(tf)==4 and np.isfinite(tf).all():

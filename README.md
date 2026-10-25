@@ -74,3 +74,12 @@ g++ -std=c++17 -Wall -Wextra -Werror -pedantic -I . tests/firmware/test_connecti
 ## 원본 브랜치별 변경 기록
 
 [브랜치 통합·수정 기록](branch-change-records/README.md)에서 원본 8개 기능 브랜치와 main의 고정 커밋, 병합 방식, 통합 후 직접 수정, 적용 규칙 원문과 남은 불일치를 확인할 수 있습니다.
+
+
+## 최신 자세 평가 작업 — 2026-10-25
+
+`feature/exercise-posture-scoring`에는 기존 준비·복귀 미커밋 작업을 보존하고 `feature/team-integration-standards`의 최신 통합 소스와 규칙 적용 이력을 병합했습니다. 이전 브랜치별 변경 기록은 해당 시점의 고정 커밋 기준으로 유지합니다.
+
+저장소 밖에 있던 코드·라벨·관절 특징·자체 학습 모델·검증 결과는 [최신 작업 스냅샷](checkpoints/workspace-20261025/README.md)에 원래 경로와 SHA-256으로 연결했습니다. [현재 위치 색인](LATEST_WORKSPACE.json)에서 공통 측정 포인터, 별도 4종 연구, 숄더 연구와 저장된 로컬 웹앱을 구분합니다. 과거 스쿼트 보존본·태그·동결 분할은 유지했습니다.
+
+이 게시가 연구 모델의 운영 채택·독립 최종 Test 통과·새 라이브 배포를 뜻하지 않습니다. 원본 데이터셋·영상·검토 이미지·제공자 사전학습 가중치는 별도 보관 목록에 남겼으며, Confluence 공용 문서 본문과 개인 문서 사본은 Git에 넣지 않았습니다.
