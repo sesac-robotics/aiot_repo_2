@@ -1,0 +1,102 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ESP32-CAM 실시간 자세 오류 테스트",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_esp32cam_live.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "name": "학습 모델로 영상 또는 ESP32-CAM 추론",
+      "program": "${workspaceFolder}/predict_exercise.py",
+      "args": [
+        "--exercise",
+        "${input:predictExercise}",
+        "--source",
+        "${input:videoSource}"
+      ]
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "name": "5종목 학습 결과 화면 열기",
+      "program": "${workspaceFolder}/run_all_training_results.py",
+      "args": []
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "name": "종목 선택해서 학습",
+      "program": "${workspaceFolder}/run_remaining_exercises.py",
+      "args": [
+        "--exercise",
+        "${input:remainingExercise}"
+      ]
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "name": "나머지 4종목 CNN + GRU 학습",
+      "program": "${workspaceFolder}/run_remaining_exercises.py",
+      "args": []
+    },
+    {
+      "name": "스쿼트 CNN + GRU 학습",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_training.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ],
+  "inputs": [
+    {
+      "id": "remainingExercise",
+      "type": "pickString",
+      "description": "학습 종목",
+      "options": [
+        "pushups",
+        "elbow_plank",
+        "ytw",
+        "shoulder_press"
+      ]
+    },
+    {
+      "id": "predictExercise",
+      "type": "pickString",
+      "description": "추론 종목",
+      "options": [
+        "squats",
+        "pushups",
+        "elbow_plank",
+        "ytw",
+        "shoulder_press"
+      ]
+    },
+    {
+      "id": "videoSource",
+      "type": "promptString",
+      "description": "영상 절대 경로, 웹캠 번호(0), 또는 ESP32-CAM URL",
+      "default": "0"
+    }
+  ]
+}
