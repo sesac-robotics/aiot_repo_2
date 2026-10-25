@@ -1,10 +1,20 @@
+"""ESP32 영상을 직접 확인하는 독립 Qt 시험 도구입니다. 자동 서비스 진입점이 아니며 명시적 실행 시에만 카메라를 엽니다."""
+
 import sys
+
 import cv2
-from PyQt6.QtCore import QThread, pyqtSignal, Qt
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QImage, QPixmap
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import (
+    QApplication,
+    QLabel,
+    QMainWindow,
+    QVBoxLayout,
+    QWidget,
+)
 
 # 1. 영상을 백그라운드에서 읽어오는 스레드 클래스
+
 
 class VideoThread(QThread):
     change_pixmap_signal = pyqtSignal(QImage)
@@ -36,18 +46,10 @@ class VideoThread(QThread):
             h, w, ch = rgb_image.shape
 
             q_img = QImage(
-                rgb_image.data,
-                w,
-                h,
-                ch * w,
-                QImage.Format.Format_RGB888
+                rgb_image.data, w, h, ch * w, QImage.Format.Format_RGB888
             ).copy()
 
-            q_img = q_img.scaled(
-                640,
-                480,
-                Qt.AspectRatioMode.KeepAspectRatio
-            )
+            q_img = q_img.scaled(640, 480, Qt.AspectRatioMode.KeepAspectRatio)
 
             self.change_pixmap_signal.emit(q_img)
 
@@ -95,6 +97,7 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         self.thread.stop()
         event.accept()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

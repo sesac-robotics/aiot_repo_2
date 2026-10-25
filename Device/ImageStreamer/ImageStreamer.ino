@@ -1,6 +1,14 @@
+/**
+ * @file ImageStreamer.ino
+ * @brief ESP32 카메라를 초기화하고 연결 성공 후 영상 HTTP 서버를 시작합니다.
+ * @details Espressif CameraWebServer 예제를 기반으로 합니다. SDK 영상 처리
+ * 코드는 app_httpd.cpp에 유지하며, 연결 대기는 connection_state.h의 상태 전이로
+ * 분리합니다.
+ */
 #include <Arduino.h>
-#include "esp_camera.h"
 #include <WiFi.h>
+
+#include "esp_camera.h"
 
 // ===========================
 // Select camera model in board_config.h
@@ -10,8 +18,15 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char *ssid = "SeSAC GANGNAM";
-const char *password = "sesac01234";
+// Copy wifi_credentials.example.h to the ignored wifi_credentials.h locally.
+#include "connection_state.h"
+#include "wifi_credentials.h"
+
+namespace {
+constexpr std::uint32_t kWifiTimeoutMs = 30000U;
+connection::State network_state = connection::State::kIdle;
+std::uint32_t connecting_since_ms = 0U;
+}  // namespace
 
 void startCameraServer();
 void setupLedFlash();
@@ -21,7 +36,7 @@ void setup() {
   Serial.setDebugOutput(true);
   Serial.println();
 
-  camera_config_t config;
+  camera_config_t config{};
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
   config.pin_d0 = Y2_GPIO_NUM;
@@ -43,7 +58,7 @@ void setup() {
   config.xclk_freq_hz = 20000000;
   config.frame_size = FRAMESIZE_UXGA;
   config.pixel_format = PIXFORMAT_JPEG;  // for streaming
-  //config.pixel_format = PIXFORMAT_RGB565; // for face detection/recognition
+  // config.pixel_format = PIXFORMAT_RGB565; // for face detection/recognition
   config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
   config.fb_location = CAMERA_FB_IN_PSRAM;
   config.jpeg_quality = 12;
@@ -81,7 +96,12 @@ void setup() {
     return;
   }
 
-  sensor_t *s = esp_camera_sensor_get();
+  sensor_t* s = esp_camera_sensor_get();
+  if (s == nullptr) {
+    Serial.println("Camera sensor is unavailable");
+    esp_camera_deinit();
+    return;
+  }
   // initial sensors are flipped vertically and colors are a bit saturated
   if (s->id.PID == OV3660_PID) {
     s->set_vflip(s, 1);        // flip it back
@@ -107,25 +127,32 @@ void setup() {
   setupLedFlash();
 #endif
 
-  WiFi.begin(ssid, password);
+  WiFi.begin(kWifiSsid, kWifiPassword);
   WiFi.setSleep(false);
 
-  Serial.print("WiFi connecting");
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected");
-
-  startCameraServer();
-
-  Serial.print("Camera Ready! Use 'http://");
-  Serial.print(WiFi.localIP());
-  Serial.println("' to connect");
+  connecting_since_ms = millis();
+  network_state = connection::State::kConnecting;
+  Serial.println("WiFi connecting");
 }
 
+/**
+ * @brief Wi-Fi connection state is polled without a blocking connection loop.
+ * @note The camera HTTP server starts once, after a successful connection.
+ */
 void loop() {
-  // Do nothing. Everything is done in another task by the web server
-  delay(10000);
+  if (network_state == connection::State::kConnecting) {
+    network_state =
+        connection::advance(network_state, WiFi.status() == WL_CONNECTED,
+                            millis() - connecting_since_ms, kWifiTimeoutMs);
+    if (network_state == connection::State::kReady) {
+      startCameraServer();
+      Serial.print("Camera ready: http://");
+      Serial.println(WiFi.localIP());
+    } else if (network_state == connection::State::kTimedOut) {
+      WiFi.disconnect();
+      Serial.println(
+          "WiFi connection timed out; check local credentials and restart");
+    }
+  }
+  delay(1);  // Yield to the ESP32 network tasks; not a connection-wait loop.
 }
