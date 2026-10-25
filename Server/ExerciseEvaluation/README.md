@@ -40,6 +40,24 @@ PARENT_DIR="$(cd .. && pwd)"
 
 카메라·운동·모드를 바꾸고 다시 시작하면 새로운 세션입니다. 연결 재시도, 자동 카메라 전환, 영상 크기 변경 때도 진행 구간과 반복 목록을 초기화합니다. 영상과 관절을 파일로 저장하지 않습니다. 미리보기는 로컬 메모리의 JPEG이며 모델에는 압축하지 않은 원시 BGR 프레임을 전달합니다.
 
+## 팀 PyQt6 환경에서 실행
+
+2026-10-25 확인한 Confluence 팀 공통 기준과 카메라 가이드에는 PyQt6의 정확한 패치 버전이 없습니다. GUI의 기존 `requirements.txt`도 버전 번호를 고정하지 않습니다. 사용자 승인에 따라 최신 정식 PyQt6 6.11.0과 Qt 런타임 6.11.2를 선택했으며, 이를 과거 팀 전체 합의 버전으로 간주하지 않습니다. 새 설치 목록은 `GUI/FitHelper/requirements-desktop.txt`입니다.
+
+현재 노트북에서는 기존 팀 가상환경 `../aiot_repo_2/R2D2`를 사용합니다. 이 환경의 점수·관절 패키지 버전은 점수 실행기와 일치합니다. 다른 체크아웃에서는 해당 환경의 실제 위치로 경로를 바꿉니다.
+
+```bash
+source ../aiot_repo_2/R2D2/bin/activate
+python -m pip install -r GUI/FitHelper/requirements-desktop.txt
+python -m GUI.FitHelper.exercise_evaluation_window
+```
+
+공통 평가 엔진 `http://127.0.0.1:8790`이 먼저 실행되어 있어야 합니다. 위의 `run_selectable` 실행에서 점수 Python을 기존 R2D2 환경의 절대 경로로 지정하면 됩니다. 교정 Python은 호환되는 별도 환경을 유지합니다. 새 PyQt 화면은 카메라를 따로 열지 않고 같은 엔진의 영상과 결과를 표시합니다. 기본 카메라는 웹캠이며 ESP32가 없어도 실행할 수 있습니다. 화면에서 카메라·운동·동시/개별 평가를 선택하고 시작합니다. 창을 닫으면 측정 중지를 요청합니다.
+
+이 파일은 기존 팀 PyQt6 구성 안의 추가 평가 창입니다. 기존 `GUI/FitHelper/main.py`의 로그인·회원가입 흐름이나 `workout_window.py`, `Device/ImageStreamer/ESP32Cam.py` 원본을 교체하지 않습니다. 원래 팀 GUI와 서버·인증·DB까지의 전체 서비스 시험은 이 추가 창의 실행과 구분합니다.
+
+버전 확인 근거: [팀 공통 개발 기준](https://r2d2sesac.atlassian.net/wiki/spaces/YLI4jLZJ4ELw/pages/3932327), [팀 카메라 연결 가이드](https://r2d2sesac.atlassian.net/wiki/spaces/YLI4jLZJ4ELw/pages/10158237), [공식 PyQt6 6.11.0 릴리스](https://riverbankcomputing.com/news/PyQt_v6.11.0_Released). 설치 전 환경 목록과 실제 설치 결과는 로컬 `output/team-pyqt-environment-20261025`에 기록합니다. 기존 NumPy·MediaPipe·scikit-learn·모델 파일을 덮어 교체하지 않습니다.
+
 ## 결과 해석
 
 교정은 최근 32개 연속 관측을 약 6Hz로 처리하는 선택 오류 분류입니다. 약 5.2초 이상의 문맥이 필요합니다. 6Hz 시간 슬롯마다 실제 프레임을 하나만 선택합니다. 카메라가 느리거나 추론이 지연되어 슬롯이 누락되면 다시 수집합니다. 4fps 입력으로 6Hz의 연속 32표본을 채우지 않습니다. 프레임을 복제해 관측 수를 채우지 않습니다. 선택 오류 미검출은 전신 자세가 정상이라는 판정이 아닙니다.
