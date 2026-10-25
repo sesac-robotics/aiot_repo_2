@@ -72,6 +72,52 @@ class ScoringEngine:
             self._models[exercise] = joblib.load(path)
         return self._models[exercise]
 
+    def analyze_initial_return(
+        self, exercise: str, primary: PoseSequence, *, state_models: dict,
+        view: str, protocol: str, attempt_closed: bool = False,
+        user_stopped: bool = False,
+    ) -> dict:
+        """학습된 시작 자세와 복귀 순서의 실험 근거를 계산한다.
+
+        state_models는 검증된 로컬 상태 모델 객체다. 첫 프레임을 정상으로
+        가정하거나 온라인 학습하지 않는다. 상태/순서 근거는 기존 0/1/2
+        품질 점수와 구분하며, 관측 누락·사용자 종료를 실패로 만들지 않는다.
+        """
+        from app.scoring.initial_pose_return import InitialPoseAnalyzer
+
+        return InitialPoseAnalyzer(state_models).run(
+            exercise, primary.image_xy, primary.frame_numbers / primary.fps,
+            view=view, protocol=protocol, attempt_closed=attempt_closed,
+            user_stopped=user_stopped,
+        )
+
+    def score_with_initial_return(
+        self, exercise: str, primary: PoseSequence, *, state_models: dict,
+        return_severity_models: dict, protocol: str, view: str,
+        user_stopped: bool = False, **score_options,
+    ) -> dict:
+        """동일 구간의 기존 항목·규칙과 새 시작/복귀 AI를 함께 검증한다.
+
+        복귀 등급은 정상/오류를 따로 학습하고 개발 기준을 통과한 정확한
+        특징 버전의 모델만 사용한다. 상태 복귀 확인을 2점으로 치환하지
+        않는다. 이 실험 API는 기본 score나 라이브 모델을 교체하지 않는다.
+        """
+        from app.scoring.return_scoring import combine_return_score
+
+        if type(user_stopped) is not bool:
+            raise ValueError('user_stopped must be a boolean')
+        complete = score_options.get('complete_attempt', False)
+        score = self.score(exercise, primary, view=view, **score_options)
+        evidence = self.analyze_initial_return(
+            exercise, primary, state_models=state_models, view=view,
+            protocol=protocol, attempt_closed=complete,
+            user_stopped=user_stopped,
+        )
+        return combine_return_score(
+            score, evidence, return_severity_models,
+            complete_attempt=complete, user_stopped=user_stopped,
+        )
+
     def score(
         self,
         exercise: str,
