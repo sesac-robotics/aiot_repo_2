@@ -8,22 +8,30 @@ HTTP MJPEG / RTSP 영상 연결 및 프레임 수신 관리
 - Event를 이용한 안전한 종료
 """
 
-import cv2
-import threading
-import os
-import time
-import logging
 import json
+import logging
+import os
+import threading
+import time
 from collections import deque
 
+import cv2
 
 # OpenCV의 capture options는 프로세스 환경변수입니다. 모든 CameraStream open을
 # 직렬화하고 RTSP open 직후 복원하여 HTTP open에 옵션이 섞이지 않게 합니다.
 _CAPTURE_OPEN_LOCK = threading.Lock()
 _LOGGER = logging.getLogger("uvicorn.error")
 
+
 class CameraStream:
-    def __init__(self, stream_url: str, metrics=None, *, source_type="http", rtsp_transport="tcp"):
+    def __init__(
+        self,
+        stream_url: str,
+        metrics=None,
+        *,
+        source_type="http",
+        rtsp_transport="tcp",
+    ):
         if not stream_url:
             raise ValueError("카메라 스트림 URL이 없습니다.")
 
@@ -93,9 +101,7 @@ class CameraStream:
 
             # 별도 스레드에서 카메라 연결 및 수신 수행
             self.thread = threading.Thread(
-                target=self._capture_loop,
-                daemon=True,
-                name="camera-worker"
+                target=self._capture_loop, daemon=True, name="camera-worker"
             )
 
             self.thread.start()
@@ -110,14 +116,24 @@ class CameraStream:
             try:
                 if self.source_type == "rtsp":
                     # 기존 비전송 옵션은 보존하고 이 연결의 transport만 교체합니다.
-                    options = [item for item in (previous or "").split("|")
-                               if item and item.split(";", 1)[0] not in ("rtsp_transport", "rtsp_flags")]
+                    options = [
+                        item
+                        for item in (previous or "").split("|")
+                        if item
+                        and item.split(";", 1)[0]
+                        not in ("rtsp_transport", "rtsp_flags")
+                    ]
                     options.append("rtsp_transport;" + self.rtsp_transport)
                     os.environ[key] = "|".join(options)
                 return cv2.VideoCapture(
-                    self.stream_url, cv2.CAP_FFMPEG,
-                    [cv2.CAP_PROP_OPEN_TIMEOUT_MSEC, 5000,
-                     cv2.CAP_PROP_READ_TIMEOUT_MSEC, 5000],
+                    self.stream_url,
+                    cv2.CAP_FFMPEG,
+                    [
+                        cv2.CAP_PROP_OPEN_TIMEOUT_MSEC,
+                        5000,
+                        cv2.CAP_PROP_READ_TIMEOUT_MSEC,
+                        5000,
+                    ],
                 )
             finally:
                 if self.source_type == "rtsp":
@@ -136,15 +152,23 @@ class CameraStream:
             result = {
                 "camera_source_type": self.source_type,
                 "camera_connected": self._connected,
-                "camera_receive_fps": len(self._capture_times) / elapsed if elapsed else 0.0,
+                "camera_receive_fps": (
+                    len(self._capture_times) / elapsed if elapsed else 0.0
+                ),
                 "frame_id": self.frame_id,
                 "frame_read_duration_ms": self._frame_read_ms,
                 "reconnect_count": self._reconnect_count,
-                "last_frame_age_ms": None if self._last_frame_at is None else
-                    max(0.0, now - self._last_frame_at) * 1000,
+                "last_frame_age_ms": (
+                    None
+                    if self._last_frame_at is None
+                    else max(0.0, now - self._last_frame_at) * 1000
+                ),
             }
-        result["inference_fps"] = (self.metrics.snapshot()["pose_inference_fps"]
-                                   if self.metrics is not None else None)
+        result["inference_fps"] = (
+            self.metrics.snapshot()["pose_inference_fps"]
+            if self.metrics is not None
+            else None
+        )
         return result
 
     def _log_diagnostics(self):
@@ -166,19 +190,27 @@ class CameraStream:
                 with self.condition:
                     self._reconnect_count += int(attempts > 0)
                 attempts += 1
-                _LOGGER.info("[Camera] source=%s connecting attempt=%d", self.source_type, attempts)
+                _LOGGER.info(
+                    "[Camera] source=%s connecting attempt=%d",
+                    self.source_type,
+                    attempts,
+                )
 
                 capture = self._create_capture()
 
                 if not capture.isOpened():
-                    _LOGGER.warning("[Camera] source=%s connection_failed", self.source_type)
+                    _LOGGER.warning(
+                        "[Camera] source=%s connection_failed", self.source_type
+                    )
 
                 else:
                     with self.condition:
                         self.capture = capture
                         self._connected = True
 
-                    _LOGGER.info("[Camera] source=%s connected", self.source_type)
+                    _LOGGER.info(
+                        "[Camera] source=%s connected", self.source_type
+                    )
 
                     # 카메라 프레임 지속 수신
                     while not self.stop_event.is_set():
@@ -189,7 +221,10 @@ class CameraStream:
                             self._frame_read_ms = read_ms
 
                         if not success or frame is None:
-                            _LOGGER.warning("[Camera] source=%s frame_read_failed", self.source_type)
+                            _LOGGER.warning(
+                                "[Camera] source=%s frame_read_failed",
+                                self.source_type,
+                            )
                             break
 
                         # 가장 최근 프레임만 보관
@@ -198,14 +233,20 @@ class CameraStream:
                             if self.metrics is not None:
                                 self.metrics.record_event(
                                     "capture",
-                                    skipped=int(self.latest_frame is not None
-                                                and self.frame_id > self.last_read_id),
+                                    skipped=int(
+                                        self.latest_frame is not None
+                                        and self.frame_id > self.last_read_id
+                                    ),
                                 )
                             self.latest_frame = frame
                             self.frame_id += 1
                             self._last_frame_at = time.monotonic()
                             # 수신 시각만 최근 5초 보관하며 영상 큐는 생성하지 않습니다.
-                            while self._capture_times and self._capture_times[0] <= self._last_frame_at - 5.0:
+                            while (
+                                self._capture_times
+                                and self._capture_times[0]
+                                <= self._last_frame_at - 5.0
+                            ):
                                 self._capture_times.popleft()
                             self._capture_times.append(self._last_frame_at)
 
@@ -215,7 +256,11 @@ class CameraStream:
 
             except Exception as e:
                 # OpenCV 예외에는 인증 URL이 포함될 수 있어 타입만 남깁니다.
-                _LOGGER.warning("[Camera] source=%s stream_error=%s", self.source_type, type(e).__name__)
+                _LOGGER.warning(
+                    "[Camera] source=%s stream_error=%s",
+                    self.source_type,
+                    type(e).__name__,
+                )
 
             finally:
                 # 이전 연결 정리
@@ -229,12 +274,16 @@ class CameraStream:
                     try:
                         capture.release()
                     except Exception as error:
-                        _LOGGER.warning("[Camera] release_error=%s", type(error).__name__)
+                        _LOGGER.warning(
+                            "[Camera] release_error=%s", type(error).__name__
+                        )
                 self._log_diagnostics()
 
             # 종료 요청이 없다면 1초 후 재연결 시도
             if not self.stop_event.is_set():
-                _LOGGER.info("[Camera] source=%s reconnect_in_sec=1", self.source_type)
+                _LOGGER.info(
+                    "[Camera] source=%s reconnect_in_sec=1", self.source_type
+                )
                 self.stop_event.wait(1.0)
 
         with self.condition:
@@ -258,7 +307,7 @@ class CameraStream:
                     )
                     or self.stop_event.is_set()
                 ),
-                timeout=1.0
+                timeout=1.0,
             )
 
             # 종료되었거나 새로운 프레임이 없는 경우
@@ -291,7 +340,9 @@ class CameraStream:
             worker.join(timeout=7.0)
 
             if worker.is_alive():
-                _LOGGER.warning("[Camera] source=%s worker_stop_delayed", self.source_type)
+                _LOGGER.warning(
+                    "[Camera] source=%s worker_stop_delayed", self.source_type
+                )
             else:
                 with self.state_lock:
                     if self.thread is worker:

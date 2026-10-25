@@ -6,8 +6,8 @@
 
 import os
 import pathlib
-import socket
 import shutil
+import socket
 import subprocess
 import tempfile
 import threading
@@ -16,9 +16,8 @@ from unittest import mock
 
 import paramiko
 
-from tools.t9_share import filesystem
-from tools.t9_share import server
 from tools.t9_share import __main__ as cli
+from tools.t9_share import filesystem, server
 
 
 class RootReaderTest(unittest.TestCase):
@@ -105,9 +104,10 @@ class SftpIntegrationTest(unittest.TestCase):
         with self.client.open_sftp() as sftp:
             self.assertEqual(set(sftp.listdir("/")), {"folder", "운동.bin"})
             self.assertEqual(sftp.stat("/운동.bin").st_size, len(self.data))
-            with sftp.open("/운동.bin", "rb") as first, sftp.open(
-                "운동.bin", "rb"
-            ) as second:
+            with (
+                sftp.open("/운동.bin", "rb") as first,
+                sftp.open("운동.bin", "rb") as second,
+            ):
                 first.seek(1048570)
                 self.assertEqual(first.read(90000), self.data[1048570:1138570])
                 self.assertEqual(second.read(12345), self.data[:12345])

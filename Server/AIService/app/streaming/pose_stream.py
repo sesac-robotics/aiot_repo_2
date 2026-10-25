@@ -1,36 +1,50 @@
+"""카메라 수신, 추론 워커, 운동 분석, 자세 판정과 JPEG 출력을 조립합니다. 최신 영상 경로와 완료 운동 이벤트 경로의 수명·전달 책임을 구분합니다."""
 
-import cv2
-import time
-import torch
-import threading
 import json
 import logging
 import math
-
+import threading
+import time
+from collections import deque
 from copy import deepcopy
 from datetime import datetime, timezone
-from collections import deque
 
-from app.metrics import PipelineMetrics
-from app.camera.stream import CameraStream
-from app.streaming.output import encode_jpeg
-from app.analysis.keypoints import extract_mediapipe_keypoints
+import cv2
+import torch
+
 from app.analysis.exercise import ExerciseAnalysisBridge
+from app.analysis.frame_debug import FrameDebug
+from app.analysis.keypoints import extract_mediapipe_keypoints
 from app.analysis.registry import RegisteredExerciseAnalyzer
 from app.analysis.shoulder_debug import ShoulderPressDebug, session_fields
-from app.analysis.frame_debug import FrameDebug
+from app.camera.stream import CameraStream
+from app.metrics import PipelineMetrics
+from app.streaming.output import encode_jpeg
 
 
 class PoseStreamService:
-    def __init__(self, stream_url, pose_estimator, model_name, metrics_log_interval=5.0,
-                 *, estimator_factory=None, session_manager=None, exercise_analyzer=None,
-                 camera_source_type="http", rtsp_transport="tcp", posture_service=None):
+    def __init__(
+        self,
+        stream_url,
+        pose_estimator,
+        model_name,
+        metrics_log_interval=5.0,
+        *,
+        estimator_factory=None,
+        session_manager=None,
+        exercise_analyzer=None,
+        camera_source_type="http",
+        rtsp_transport="tcp",
+        posture_service=None,
+    ):
         # 잘못된 간격은 워커 시작 전에 검증합니다.
         if not math.isfinite(metrics_log_interval) or metrics_log_interval <= 0:
             raise ValueError("METRICS_LOG_INTERVAL_SECONDS는 양수여야 합니다.")
         # 실제 서버는 팩터리를 전달하여 모델 생명주기를 추론 워커에 귀속시킵니다.
         if (pose_estimator is None) == (estimator_factory is None):
-            raise ValueError("pose_estimator와 estimator_factory 중 하나만 지정해야 합니다.")
+            raise ValueError(
+                "pose_estimator와 estimator_factory 중 하나만 지정해야 합니다."
+            )
         self.estimator_factory = estimator_factory
         self._lifecycle_lock = threading.Lock()
         self._ready = threading.Event()
@@ -39,8 +53,12 @@ class PoseStreamService:
         self.metrics_log_interval = metrics_log_interval
         self.metrics_worker = None
         # 입력만 선택하며 이후 추론/분석/출력 경로는 동일합니다.
-        self.camera = CameraStream(stream_url, metrics=self.metrics,
-                                   source_type=camera_source_type, rtsp_transport=rtsp_transport)
+        self.camera = CameraStream(
+            stream_url,
+            metrics=self.metrics,
+            source_type=camera_source_type,
+            rtsp_transport=rtsp_transport,
+        )
         if model_name == "mediapipe" and pose_estimator is not None:
             pose_estimator.metrics = self.metrics
         self.pose_estimator = pose_estimator
@@ -54,9 +72,16 @@ class PoseStreamService:
         self._shoulder_debug = ShoulderPressDebug()
         self._frame_debug = FrameDebug()
         self.exercise_analysis = (
-            ExerciseAnalysisBridge(session_manager, exercise_analyzer if exercise_analyzer is not None
-                                   else RegisteredExerciseAnalyzer())
-            if session_manager is not None else None
+            ExerciseAnalysisBridge(
+                session_manager,
+                (
+                    exercise_analyzer
+                    if exercise_analyzer is not None
+                    else RegisteredExerciseAnalyzer()
+                ),
+            )
+            if session_manager is not None
+            else None
         )
 
         # 모든 클라이언트가 공유할 최신 추론 영상
@@ -83,7 +108,9 @@ class PoseStreamService:
                     raise RuntimeError("추론 워커가 아직 종료 중입니다.")
                 return
             if self.worker is not None and self.estimator_factory is None:
-                raise RuntimeError("종료한 모델 재사용 대신 새 estimator_factory를 지정하세요.")
+                raise RuntimeError(
+                    "종료한 모델 재사용 대신 새 estimator_factory를 지정하세요."
+                )
             # 종료한 이전 로거가 새 실행의 Event.clear를 보지 않도록 먼저 회수합니다.
             if self.metrics_worker is not None:
                 self.metrics_worker.join(timeout=1.0)
@@ -97,16 +124,22 @@ class PoseStreamService:
                 self.latest_pose = None
                 self.frame_id = 0
             self.worker = threading.Thread(
-                target=self._run_worker, daemon=True, name="pose-inference-worker"
+                target=self._run_worker,
+                daemon=True,
+                name="pose-inference-worker",
             )
             self.worker.start()
             # GPU 초기화 실패를 ASGI startup 실패로 전달합니다.
             if not self._ready.wait(timeout=30.0):
                 self.stop_event.set()
-                raise TimeoutError("Pose 모델 초기화가 30초 안에 완료되지 않았습니다.")
+                raise TimeoutError(
+                    "Pose 모델 초기화가 30초 안에 완료되지 않았습니다."
+                )
             if self._startup_error is not None:
                 self.worker.join(timeout=10.0)
-                raise RuntimeError("Pose 추론 워커 초기화 실패") from self._startup_error
+                raise RuntimeError(
+                    "Pose 추론 워커 초기화 실패"
+                ) from self._startup_error
             self.metrics_worker = threading.Thread(
                 target=self._metrics_loop, daemon=True, name="metrics-logger"
             )
@@ -118,8 +151,11 @@ class PoseStreamService:
         # MediaPipe 내부 GL 스레드의 Tensor 재사용 문제를 고치는 코드는 아닙니다.
         estimator = None
         try:
-            estimator = (self.estimator_factory() if self.estimator_factory is not None
-                         else self.pose_estimator)
+            estimator = (
+                self.estimator_factory()
+                if self.estimator_factory is not None
+                else self.pose_estimator
+            )
             self.pose_estimator = estimator
             if self.model_name == "mediapipe":
                 estimator.metrics = self.metrics
@@ -149,28 +185,29 @@ class PoseStreamService:
     # CUDA 연산 동기화
     def _sync_inferecnce(self):
         # CUDA 비동기 연산 완료까지 측정
-        if (
-            self.model_name == "yolo"
-            and torch.cuda.is_available()
-        ):
+        if self.model_name == "yolo" and torch.cuda.is_available():
             torch.cuda.synchronize()
-        elif self.model_name == 'mediapipe':
-            '''
+        elif self.model_name == "mediapipe":
+            """
             detect_for_video()는 동기식 함수
             함수가 반환되면 해당 프레임의 추론이 완료됨
             MediaPipe GPU delegate는 PyTorch CUDA와 별도이기 때문에
             torch.cuda.synchronize()를 호출하지 않음
-            '''
+            """
             pass
 
     def _debug_analysis_pipeline(self, stage):
         # 분석기 호출/프레임이 없어도 기존 워커의 대기 루프에서 1초 간격으로 상태를 읽습니다.
-        self._shoulder_debug.emit('pipeline', lambda: {
-            'stage': stage, 'pose_model': self.model_name,
-            'bridge_configured': self.exercise_analysis is not None,
-            'mediapipe_selected': self.model_name == 'mediapipe',
-            **session_fields(self.session_manager),
-        })
+        self._shoulder_debug.emit(
+            "pipeline",
+            lambda: {
+                "stage": stage,
+                "pose_model": self.model_name,
+                "bridge_configured": self.exercise_analysis is not None,
+                "mediapipe_selected": self.model_name == "mediapipe",
+                **session_fields(self.session_manager),
+            },
+        )
 
     def _inference_loop(self):
         # 최근 30프레임 기준 성능 측정
@@ -180,24 +217,30 @@ class PoseStreamService:
             try:
                 self.exercise_analysis.reset()
             except Exception:
-                logging.getLogger('uvicorn.error').exception('운동 분석기 시작 초기화 실패')
+                logging.getLogger("uvicorn.error").exception(
+                    "운동 분석기 시작 초기화 실패"
+                )
 
         while not self.stop_event.is_set():
             try:
-                self._debug_analysis_pipeline('waiting_for_frame')
+                self._debug_analysis_pipeline("waiting_for_frame")
                 # 1. ESP32-CAM 최신 프레임 가져오기
                 frame = self.camera.read()
 
                 if frame is None:
-                    self._debug_analysis_pipeline('no_camera_frame')
+                    self._debug_analysis_pipeline("no_camera_frame")
                     if self.exercise_analysis is not None:
-                        self.exercise_analysis._squat_debug.pipeline(self.session_manager,'no_camera_frame')
+                        self.exercise_analysis._squat_debug.pipeline(
+                            self.session_manager, "no_camera_frame"
+                        )
                     continue
 
                 # 문맥만 잠깐 읽고 잠금을 해제한 뒤 GPU 추론을 실행합니다.
                 analysis_context = (
                     self.session_manager.get_analysis_context()
-                    if self.session_manager is not None and self.model_name == 'mediapipe' else None
+                    if self.session_manager is not None
+                    and self.model_name == "mediapipe"
+                    else None
                 )
                 # 분석 입력 시각만 기록합니다. GPU 호출/전송 지연을 동작 시간으로 더하지 않습니다.
                 analysis_timestamp = time.monotonic()
@@ -206,30 +249,46 @@ class PoseStreamService:
                 self._sync_inferecnce()
                 infer_start = time.perf_counter()
 
-                annotated_frame, result = (
-                    self.pose_estimator.predict(frame)
-                )
+                annotated_frame, result = self.pose_estimator.predict(frame)
 
                 # MediaPipe 추론 결과에서 33개 관절 추출
                 keypoints = extract_mediapipe_keypoints(result)
                 # JPEG 게시 번호와 분석 번호를 동일하게 예약합니다. 인코딩 실패 시 게시/분석하지 않습니다.
                 output_frame_id = self.frame_id + 1
                 frame_trace = None
-                if self._frame_debug.enabled and self.model_name == 'mediapipe':
+                if self._frame_debug.enabled and self.model_name == "mediapipe":
                     from app.analysis.exercises.ytw_raise import YTWRaiseConfig
-                    analyzer = self.exercise_analysis.analyzer if self.exercise_analysis else None
-                    analyzer = getattr(analyzer,'_analyzer',analyzer)
-                    config = getattr(analyzer,'config',None)
-                    config_source = 'active_ytw_analyzer' if isinstance(config,YTWRaiseConfig) else 'ytw_defaults'
-                    config = config if isinstance(config,YTWRaiseConfig) else YTWRaiseConfig()
-                    frame_trace = self._frame_debug.capture(result,keypoints,
-                        frame_id=output_frame_id,timestamp=analysis_timestamp,size=(frame.shape[1],frame.shape[0]),
-                        estimator=self.pose_estimator,config=config,config_source=config_source)
+
+                    analyzer = (
+                        self.exercise_analysis.analyzer
+                        if self.exercise_analysis
+                        else None
+                    )
+                    analyzer = getattr(analyzer, "_analyzer", analyzer)
+                    config = getattr(analyzer, "config", None)
+                    config_source = (
+                        "active_ytw_analyzer"
+                        if isinstance(config, YTWRaiseConfig)
+                        else "ytw_defaults"
+                    )
+                    config = (
+                        config
+                        if isinstance(config, YTWRaiseConfig)
+                        else YTWRaiseConfig()
+                    )
+                    frame_trace = self._frame_debug.capture(
+                        result,
+                        keypoints,
+                        frame_id=output_frame_id,
+                        timestamp=analysis_timestamp,
+                        size=(frame.shape[1], frame.shape[0]),
+                        estimator=self.pose_estimator,
+                        config=config,
+                        config_source=config_source,
+                    )
 
                 self._sync_inferecnce()
-                infer_ms = (
-                    time.perf_counter() - infer_start
-                ) * 1000
+                infer_ms = (time.perf_counter() - infer_start) * 1000
 
                 # 전체 추론 단계에는 전처리/그리기/관절 추출도 포함됩니다.
                 self.metrics.record_duration("inference", infer_ms)
@@ -239,12 +298,11 @@ class PoseStreamService:
                 frame_times.append(time.perf_counter())
 
                 if len(frame_times) >= 2:
-                    duration = (
-                        frame_times[-1] - frame_times[0]
-                    )
+                    duration = frame_times[-1] - frame_times[0]
                     fps = (
                         (len(frame_times) - 1) / duration
-                        if duration > 0 else 0.0
+                        if duration > 0
+                        else 0.0
                     )
                 else:
                     fps = 0.0
@@ -258,24 +316,22 @@ class PoseStreamService:
                     cv2.FONT_HERSHEY_SIMPLEX,
                     0.6,
                     (0, 255, 0),
-                    2
+                    2,
                 )
 
                 # 5. JPEG 인코딩
-                self._frame_debug.overlay(annotated_frame,frame_trace)
+                self._frame_debug.overlay(annotated_frame, frame_trace)
                 encode_start = time.perf_counter()
 
                 jpeg_bytes = encode_jpeg(annotated_frame)
 
-                encode_ms = (
-                    time.perf_counter() - encode_start
-                ) * 1000
+                encode_ms = (time.perf_counter() - encode_start) * 1000
 
                 # encode_jpeg의 압축 및 bytes 복사 시간을 함께 측정합니다.
                 self.metrics.record_duration("jpeg_encoding", encode_ms)
 
                 if jpeg_bytes is None:
-                    self._debug_analysis_pipeline('jpeg_encoding_failed')
+                    self._debug_analysis_pipeline("jpeg_encoding_failed")
                     continue
 
                 # 6. 최신 추론 결과 공유
@@ -286,12 +342,10 @@ class PoseStreamService:
                     # API 반환용 MediaPipe 추론 데이터
                     self.latest_pose = {
                         "frame_id": self.frame_id,
-                        "processed_at": datetime.now(
-                            timezone.utc
-                        ).isoformat(),
+                        "processed_at": datetime.now(timezone.utc).isoformat(),
                         "model": self.model_name,
                         "person_detected": bool(keypoints),
-                        "keypoints": keypoints
+                        "keypoints": keypoints,
                     }
 
                     # 대기 중인 모든 클라이언트에 알림
@@ -301,18 +355,32 @@ class PoseStreamService:
                 self.metrics.record_event("processed")
                 self._frame_debug.publish(frame_trace)
                 # JPEG/API 게시 후 같은 워커에서 분석하며 오래된 결과는 반영하지 않습니다.
-                if self.exercise_analysis is not None and self.model_name == 'mediapipe':
+                if (
+                    self.exercise_analysis is not None
+                    and self.model_name == "mediapipe"
+                ):
                     self.exercise_analysis.process(
-                        analysis_context, keypoints, frame_size=(frame.shape[1], frame.shape[0]),
+                        analysis_context,
+                        keypoints,
+                        frame_size=(frame.shape[1], frame.shape[0]),
                         timestamp=analysis_timestamp,
-                        frame_id=output_frame_id,frame_trace=frame_trace,
+                        frame_id=output_frame_id,
+                        frame_trace=frame_trace,
                     )
-                if self.posture_service is not None and self.model_name == 'mediapipe':
+                if (
+                    self.posture_service is not None
+                    and self.model_name == "mediapipe"
+                ):
                     self.posture_service.submit(
-                        analysis_context, keypoints, frame_id=output_frame_id,
-                        timestamp=analysis_timestamp, frame_size=(frame.shape[1], frame.shape[0]),
+                        analysis_context,
+                        keypoints,
+                        frame_id=output_frame_id,
+                        timestamp=analysis_timestamp,
+                        frame_size=(frame.shape[1], frame.shape[0]),
                         analysis_started_at=infer_start,
-                        analysis_result=getattr(self.exercise_analysis,'last_result',None),
+                        analysis_result=getattr(
+                            self.exercise_analysis, "last_result", None
+                        ),
                     )
 
             except Exception as e:
@@ -332,7 +400,7 @@ class PoseStreamService:
         # Event.wait를 사용해 종료 요청에 즉시 반응합니다.
         logger = logging.getLogger("uvicorn.error")
         # while not self.stop_event.wait(self.metrics_log_interval):
-            # logger.info("[Performance] %s", json.dumps(self.get_metrics()))
+        # logger.info("[Performance] %s", json.dumps(self.get_metrics()))
 
     # 여러 클라이언트에 영상 전송
     def generate_frames(self):
@@ -344,10 +412,9 @@ class PoseStreamService:
                 # 새로운 추론 결과가 생성될 때까지 대기
                 ready = self.condition.wait_for(
                     lambda: (
-                        self.frame_id > last_sent_id
-                        or self.stop_event.is_set()
+                        self.frame_id > last_sent_id or self.stop_event.is_set()
                     ),
-                    timeout=1.0
+                    timeout=1.0,
                 )
 
                 if self.stop_event.is_set():
@@ -364,9 +431,7 @@ class PoseStreamService:
             yield (
                 b"--frame\r\n"
                 b"Content-Type: image/jpeg\r\n"
-                + (
-                    f"Content-Length: {len(jpeg_bytes)}\r\n\r\n"
-                ).encode("ascii")
+                + (f"Content-Length: {len(jpeg_bytes)}\r\n\r\n").encode("ascii")
                 + jpeg_bytes
                 + b"\r\n"
             )

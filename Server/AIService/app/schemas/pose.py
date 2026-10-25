@@ -1,5 +1,7 @@
+"""API 요청·응답의 전송 자료형을 정의합니다. 유효한 JSON 형식과 실제 자세 판정의 정확성은 별개입니다."""
 
 from datetime import datetime
+
 from pydantic import BaseModel, Field
 
 
@@ -22,6 +24,4 @@ class PoseResponse(BaseModel):
     model: str
     person_detected: bool
 
-    keypoints: list[PoseKeypoint] = Field(
-        default_factory=list
-    )
+    keypoints: list[PoseKeypoint] = Field(default_factory=list)

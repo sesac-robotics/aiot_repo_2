@@ -7,19 +7,28 @@ from collections import deque
 
 
 class PipelineMetrics:
-    def __init__(self, window_seconds=5.0, sample_size=300, clock=time.monotonic):
-        if not math.isfinite(window_seconds) or window_seconds <= 0 or sample_size < 1:
+    def __init__(
+        self, window_seconds=5.0, sample_size=300, clock=time.monotonic
+    ):
+        if (
+            not math.isfinite(window_seconds)
+            or window_seconds <= 0
+            or sample_size < 1
+        ):
             raise ValueError("측정 구간과 표본 수는 양수여야 합니다.")
         self.window_seconds = window_seconds
         self.sample_size = sample_size
         self._clock = clock
         self._lock = threading.Lock()
         self._started = clock()
-        self._events = {name: deque() for name in ("capture", "inference", "processed")}
+        self._events = {
+            name: deque() for name in ("capture", "inference", "processed")
+        }
         self._totals = dict.fromkeys(self._events, 0)
-        self._times = {name: deque(maxlen=sample_size) for name in (
-            "inference", "mediapipe_inference", "jpeg_encoding"
-        )}
+        self._times = {
+            name: deque(maxlen=sample_size)
+            for name in ("inference", "mediapipe_inference", "jpeg_encoding")
+        }
         self._latest_capture = None
         self._skipped = 0
 
@@ -51,11 +60,19 @@ class PipelineMetrics:
             elapsed = min(self.window_seconds, max(0.0, now - self._started))
             for events in self._events.values():
                 self._prune(events, now)
-            rates = {name: len(events) / elapsed if elapsed else 0.0
-                     for name, events in self._events.items()}
-            samples = {name: list(values) for name, values in self._times.items()}
+            rates = {
+                name: len(events) / elapsed if elapsed else 0.0
+                for name, events in self._events.items()
+            }
+            samples = {
+                name: list(values) for name, values in self._times.items()
+            }
             totals = dict(self._totals)
-            age = None if self._latest_capture is None else (now - self._latest_capture) * 1000
+            age = (
+                None
+                if self._latest_capture is None
+                else (now - self._latest_capture) * 1000
+            )
             skipped = self._skipped
 
         # P95 정렬은 수신/추론 잠금 밖에서 API 조회 또는 로그 시에만 수행합니다.
@@ -65,7 +82,11 @@ class PipelineMetrics:
             timings[name + "_ms"] = {
                 "latest": values[-1] if values else None,
                 "mean": sum(values) / len(values) if values else None,
-                "p95": ordered[math.ceil(len(ordered) * 0.95) - 1] if ordered else None,
+                "p95": (
+                    ordered[math.ceil(len(ordered) * 0.95) - 1]
+                    if ordered
+                    else None
+                ),
                 "samples": len(values),
             }
         return {

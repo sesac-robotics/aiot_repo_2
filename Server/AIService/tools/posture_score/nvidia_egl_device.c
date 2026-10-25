@@ -6,8 +6,8 @@
 #include <dlfcn.h>
 #include <stddef.h>
 #include <string.h>
-typedef void *EGLDisplay;
-typedef void *EGLDeviceEXT;
+typedef void* EGLDisplay;
+typedef void* EGLDeviceEXT;
 typedef unsigned int EGLBoolean;
 typedef int EGLint;
 /**
@@ -17,25 +17,29 @@ typedef int EGLint;
  * @retval NULL 라이브러리·확장 함수·NVIDIA 장치가 없거나 조회에 실패한 경우.
  * @note 명시한 네이티브 디스플레이는 원래 EGL 함수에 전달한다.
  */
-EGLDisplay eglGetDisplay(void *native_display) {
-    void *lib = dlopen("libEGL.so.1", RTLD_LAZY | RTLD_LOCAL);
-    if (!lib) return NULL;
-    if (native_display != NULL) {
-        EGLDisplay (*original)(void *) = dlsym(lib, "eglGetDisplay");
-        return original ? original(native_display) : NULL;
-    }
-    void *(*getproc)(const char *) = dlsym(lib, "eglGetProcAddress");
-    if (!getproc) return NULL;
-    EGLBoolean (*query)(EGLint,EGLDeviceEXT*,EGLint*) = getproc("eglQueryDevicesEXT");
-    const char *(*string)(EGLDeviceEXT,EGLint) = getproc("eglQueryDeviceStringEXT");
-    EGLDisplay (*platform)(unsigned int,void*,const EGLint*) = getproc("eglGetPlatformDisplayEXT");
-    if (!query || !string || !platform) return NULL;
-    EGLDeviceEXT devices[16]; EGLint count=0;
-    if (!query(16,devices,&count)) return NULL;
-    for (int i=0;i<count;i++) {
-        const char *extensions=string(devices[i],0x3055);
-        if (extensions && strstr(extensions,"EGL_NV_device_cuda"))
-            return platform(0x313F,devices[i],NULL);
-    }
-    return NULL;
+EGLDisplay eglGetDisplay(void* native_display) {
+  void* lib = dlopen("libEGL.so.1", RTLD_LAZY | RTLD_LOCAL);
+  if (!lib) return NULL;
+  if (native_display != NULL) {
+    EGLDisplay (*original)(void*) = dlsym(lib, "eglGetDisplay");
+    return original ? original(native_display) : NULL;
+  }
+  void* (*getproc)(const char*) = dlsym(lib, "eglGetProcAddress");
+  if (!getproc) return NULL;
+  EGLBoolean (*query)(EGLint, EGLDeviceEXT*, EGLint*) =
+      getproc("eglQueryDevicesEXT");
+  const char* (*string)(EGLDeviceEXT, EGLint) =
+      getproc("eglQueryDeviceStringEXT");
+  EGLDisplay (*platform)(unsigned int, void*, const EGLint*) =
+      getproc("eglGetPlatformDisplayEXT");
+  if (!query || !string || !platform) return NULL;
+  EGLDeviceEXT devices[16];
+  EGLint count = 0;
+  if (!query(16, devices, &count)) return NULL;
+  for (int i = 0; i < count; i++) {
+    const char* extensions = string(devices[i], 0x3055);
+    if (extensions && strstr(extensions, "EGL_NV_device_cuda"))
+      return platform(0x313F, devices[i], NULL);
+  }
+  return NULL;
 }

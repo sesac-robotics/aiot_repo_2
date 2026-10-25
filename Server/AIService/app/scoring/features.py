@@ -2,8 +2,13 @@
 
 import numpy as np
 
-from app.scoring import geometry, held_geometry, plank_item_observation
-from app.scoring import three_items, ytw_features
+from app.scoring import (
+    geometry,
+    held_geometry,
+    plank_item_observation,
+    three_items,
+    ytw_features,
+)
 from app.scoring.sequence import PoseSequence
 
 DEFINITIONS = {

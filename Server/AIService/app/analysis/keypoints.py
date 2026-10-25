@@ -1,3 +1,5 @@
+"""추론기별 관절 출력을 운동 분석기가 사용할 좌표·가시성 형식으로 변환합니다. 좌표의 정규화 방식과 누락 관절을 명시적으로 전달합니다."""
+
 import math
 
 # MediaPipe Pose Landmarker 33개 관절 이름
@@ -37,12 +39,13 @@ LANDMARK_NAMES = [
     "right_foot_index",
 ]
 
+
 def extract_mediapipe_keypoints(result):
-    '''
+    """
     MediaPipe Pose Landmarker Result에서 첫 번재 사람의 관절 좌표 추출
 
     반환값: list[dict]
-    '''
+    """
 
     if not result.pose_landmarks:
         return []
@@ -60,22 +63,24 @@ def extract_mediapipe_keypoints(result):
         ):
             continue
 
-        keypoints.append({
-            'id': idx,
-            'name': LANDMARK_NAMES[idx],
-            'x': float(landmark.x),
-            'y': float(landmark.y),
-            'z': float(landmark.z),
-            'visibility': (
-                float(landmark.visibility)
-                if landmark.visibility is not None
-                else None
-            ),
-            'presence': (
-                float(landmark.presence)
-                if landmark.presence is not None
-                else None
-            )
-        })
+        keypoints.append(
+            {
+                "id": idx,
+                "name": LANDMARK_NAMES[idx],
+                "x": float(landmark.x),
+                "y": float(landmark.y),
+                "z": float(landmark.z),
+                "visibility": (
+                    float(landmark.visibility)
+                    if landmark.visibility is not None
+                    else None
+                ),
+                "presence": (
+                    float(landmark.presence)
+                    if landmark.presence is not None
+                    else None
+                ),
+            }
+        )
 
     return keypoints

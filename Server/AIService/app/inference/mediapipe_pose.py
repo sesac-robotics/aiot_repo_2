@@ -1,24 +1,28 @@
-import cv2
-import time
+"""MediaPipe Tasks 추론기를 동일 워커에서 생성·호출·종료합니다. 관절 좌표와 가시성을 반환하는 외부 모델 어댑터입니다."""
+
 import threading
-import numpy as np
+import time
+
+import cv2
 import mediapipe as mp
+import numpy as np
 
 # 부위별 Keypoint 색상 (OpenCV BGR)
 
 KEYPOINT_COLORS = {
-    'face': (0, 165, 255),
-    'upper': (255, 220, 0),
-    'lower': (70, 210, 70)
+    "face": (0, 165, 255),
+    "upper": (255, 220, 0),
+    "lower": (70, 210, 70),
 }
 # 부위별 Skeleton 연결선 색상
 LINE_COLORS = {
-    'face': (0, 110, 220),
-    'upper': (220, 150, 0),
-    'lower': (40, 150, 40)
+    "face": (0, 110, 220),
+    "upper": (220, 150, 0),
+    "lower": (40, 150, 40),
 }
 
 FACE_LANDMARK_IDS = set(range(11))
+
 
 class MediapipePoseEstimator:
     def __init__(
@@ -28,7 +32,7 @@ class MediapipePoseEstimator:
         min_pose_presence_confidence: float = 0.5,
         min_tracking_confidence: float = 0.5,
         min_visibility=0.35,
-        delegate='gpu'
+        delegate="gpu",
     ):
         # 서비스가 주입하는 계측기이며 GPU 객체 생성과는 무관합니다.
         self.metrics = None
@@ -36,18 +40,20 @@ class MediapipePoseEstimator:
         self._owner_thread = threading.current_thread()
         self._closed = False
         self.min_visibility = min_visibility
-        self.num_poses = 1  # 실제 옵션값을 진단에 노출합니다. 선택 정책은 변경하지 않습니다.
+        self.num_poses = (
+            1  # 실제 옵션값을 진단에 노출합니다. 선택 정책은 변경하지 않습니다.
+        )
         self.last_timestamp_ms = -1
 
         delegate = delegate.lower()
-        if delegate == 'gpu':
+        if delegate == "gpu":
             mp_delegate = mp.tasks.BaseOptions.Delegate.GPU
-        elif delegate == 'cpu':
-                mp_delegate = mp.tasks.BaseOptions.Delegate.CPU
+        elif delegate == "cpu":
+            mp_delegate = mp.tasks.BaseOptions.Delegate.CPU
         else:
-            raise ValueError(f'지원하지 않는 MediaPipe delagtae: {delegate}')
-        
-        print(f'[MediaPipe Pose] 모델 로딩 시작: {model_path}')
+            raise ValueError(f"지원하지 않는 MediaPipe delagtae: {delegate}")
+
+        print(f"[MediaPipe Pose] 모델 로딩 시작: {model_path}")
         base_options = mp.tasks.BaseOptions(
             model_asset_path=model_path,
             delegate=mp_delegate,
@@ -62,48 +68,52 @@ class MediapipePoseEstimator:
             min_tracking_confidence=min_tracking_confidence,
         )
 
-        self.landmarker = mp.tasks.vision.PoseLandmarker.create_from_options(options)
+        self.landmarker = mp.tasks.vision.PoseLandmarker.create_from_options(
+            options
+        )
         # 시스템 시계가 바뀌더라도 값이 뒤로 가지 않는 단조 증가 시계이기 때문에 monotonic()을 사용
         # self.start_time = time.monotonic()
 
         # MediaPipe에서 제공하는 공식 관절 연결 정보
-        self.connections = mp.tasks.vision.PoseLandmarksConnections.POSE_LANDMARKS
+        self.connections = (
+            mp.tasks.vision.PoseLandmarksConnections.POSE_LANDMARKS
+        )
 
         print(
-            f'[MediaPipe Pose] 모델 로딩 완료: {model_path}'
-            f'(delegate={delegate})'    
+            f"[MediaPipe Pose] 모델 로딩 완료: {model_path}"
+            f"(delegate={delegate})"
         )
 
     def _get_body_part(self, index):
         # MediaPipe Pose의 33개 관절 인덱스 분류
         if 0 <= index <= 10:
-            return 'face'
+            return "face"
         elif 11 <= index <= 22:
-            return 'upper'
+            return "upper"
         else:
-            return 'lower'
+            return "lower"
 
     def _get_connection_part(self, start, end):
         start_part = self._get_body_part(start)
-        end_part =self._get_body_part(end)
+        end_part = self._get_body_part(end)
 
         # 동일 부위의 연결선은 해당 부위 색상 사용
         if start_part == end_part:
             return start_part
 
         # 상체와 골반 사이 몸통 연결선
-        return 'upper'
+        return "upper"
 
     def _is_valid_landmark(self, landmark):
-        visibility = getattr(landmark, 'visibility', None)
+        visibility = getattr(landmark, "visibility", None)
 
-        presence = getattr(landmark, 'presence', None)
+        presence = getattr(landmark, "presence", None)
 
         if visibility is not None and visibility < self.min_visibility:
             return False
 
         # 화면 밖 좌표는 시각화하지 않음
-        return(
+        return (
             np.isfinite(landmark.x)
             and np.isfinite(landmark.y)
             and 0 <= landmark.x <= 1
@@ -143,12 +153,12 @@ class MediapipePoseEstimator:
             color = LINE_COLORS[part]
 
             cv2.line(
-                frame, 
-                points[start], 
-                points[end], 
-                color, 
-                thickness=2, 
-                lineType=cv2.LINE_AA
+                frame,
+                points[start],
+                points[end],
+                color,
+                thickness=2,
+                lineType=cv2.LINE_AA,
             )
 
         # 2. 연결선 위에 Keypoint 그리기
@@ -159,11 +169,11 @@ class MediapipePoseEstimator:
             # 흰색 외곽선
             cv2.circle(
                 frame,
-                point, 
+                point,
                 radius=5,
                 color=(255, 255, 255),
                 thickness=1,
-                lineType=cv2.LINE_AA
+                lineType=cv2.LINE_AA,
             )
 
             # 부위별 색상의 관절 점
@@ -173,14 +183,16 @@ class MediapipePoseEstimator:
                 radius=3,
                 color=color,
                 thickness=-1,
-                lineType=cv2.LINE_AA
+                lineType=cv2.LINE_AA,
             )
 
         return frame
 
     def _check_owner(self):
         if threading.current_thread() is not self._owner_thread:
-            raise RuntimeError("MediaPipe 생성/추론/종료는 동일한 소유 스레드에서 실행해야 합니다.")
+            raise RuntimeError(
+                "MediaPipe 생성/추론/종료는 동일한 소유 스레드에서 실행해야 합니다."
+            )
 
     def predict(self, frame):
         self._check_owner()
@@ -195,21 +207,24 @@ class MediapipePoseEstimator:
         timestamp_ms = time.monotonic_ns() // 1_000_000
         timestamp_ms = max(timestamp_ms, self.last_timestamp_ms + 1)
         self.last_timestamp_ms = timestamp_ms
-    
+
         # OpenCV로 한 프레임씩 가져오고 있기 때문에 동기식 추론
         # 동기식 MediaPipe 호출만 측정: 색 변환/스켈레톤 그리기는 제외합니다.
         detect_start = time.perf_counter()
         result = self.landmarker.detect_for_video(mp_image, timestamp_ms)
         if self.metrics is not None:
             self.metrics.record_duration(
-                "mediapipe_inference", (time.perf_counter() - detect_start) * 1000
+                "mediapipe_inference",
+                (time.perf_counter() - detect_start) * 1000,
             )
         # 원본 프레임을 복사해서 시각화
         annotated_frame = frame.copy()
 
         if result.pose_landmarks:
             for landmarks in result.pose_landmarks:
-                annotated_frame = self._draw_skeleton(annotated_frame, landmarks)
+                annotated_frame = self._draw_skeleton(
+                    annotated_frame, landmarks
+                )
 
         # 기존 AI Server 인터페이스 유지
         return annotated_frame, result
@@ -230,4 +245,4 @@ class MediapipePoseEstimator:
             return
         self.landmarker.close()
         self._closed = True
-        print('[MediaPipe] 모델 종료')
+        print("[MediaPipe] 모델 종료")
