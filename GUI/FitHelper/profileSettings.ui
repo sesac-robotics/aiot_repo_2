@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>520</width><height>660</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Fitness Hub - Profile Settings</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#profileTitle { font-size: 22px; font-weight: 900; color: #0F172A; }
+#settingsCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 15px; }
+QLabel { font-size: 13px; font-weight: 700; color: #334155; background: transparent; }
+QLineEdit, QComboBox { background-color: #F8FAFC; border: 2px solid #E2E8F0; border-radius: 10px; padding: 4px 10px; color: #0F172A; font-size: 13px; min-height: 24px; }
+QLineEdit:focus, QComboBox:focus { border: 2px solid #0284C7; background-color: #FFFFFF; }
+QLineEdit[readOnly="true"] { background-color: #E2E8F0; color: #64748B; border: 2px solid #CBD5E1; }
+
+#errorMsgLabel { font-size: 12px; font-weight: 700; color: #EF4444; background: transparent; }
+
+#saveButton { background-color: #0284C7; color: #FFFFFF; font-size: 14px; font-weight: 800; border-radius: 12px; min-height: 38px; }
+#saveButton:hover { background-color: #0369A1; }
+
+#changePasswordButton { background-color: #0F766E; color: #FFFFFF; font-size: 13px; font-weight: 800; border-radius: 10px; min-height: 36px; }
+#changePasswordButton:hover { background-color: #115E59; }
+
+#deleteAccountButton { background-color: #FEF2F2; color: #EF4444; font-size: 13px; font-weight: 800; border: 1px solid #FECACA; border-radius: 10px; min-height: 38px; }
+#deleteAccountButton:hover { background-color: #FEE2E2; }
+
+#backDashboardButton { background-color: #FFFFFF; color: #64748B; font-size: 13px; font-weight: 700; border: 1px solid #CBD5E1; border-radius: 10px; min-height: 38px; }
+#backDashboardButton:hover { background-color: #F1F5F9; color: #0F172A; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="profileTitle">
+    <property name="geometry"><rect><x>30</x><y>15</y><width>460</width><height>32</height></rect></property>
+    <property name="text"><string>⚙️ Profile &amp; Account Settings</string></property>
+    <property name="alignment"><set>Qt::AlignCenter</set></property>
+   </widget>
+   <widget class="QFrame" name="settingsCard">
+    <property name="geometry"><rect><x>30</x><y>55</y><width>460</width><height>575</height></rect></property>
+    
+    <!-- 1. 닉네임 (수정 가능) -->
+    <widget class="QLabel" name="labelNickname">
+     <property name="geometry"><rect><x>20</x><y>15</y><width>420</width><height>18</height></rect></property>
+     <property name="text"><string>Nickname</string></property>
+    </widget>
+    <widget class="QLineEdit" name="editNickname">
+     <property name="geometry"><rect><x>20</x><y>33</y><width>420</width><height>32</height></rect></property>
+     <property name="placeholderText"><string>Enter your nickname</string></property>
+    </widget>
+
+    <!-- 2. 이메일 주소 (수정 불가) -->
+    <widget class="QLabel" name="labelEmail">
+     <property name="geometry"><rect><x>20</x><y>72</y><width>420</width><height>18</height></rect></property>
+     <property name="text"><string>Email Address (Cannot be changed)</string></property>
+    </widget>
+    <widget class="QLineEdit" name="editEmail">
+     <property name="geometry"><rect><x>20</x><y>90</y><width>420</width><height>32</height></rect></property>
+     <property name="readOnly"><bool>true</bool></property>
+     <property name="placeholderText"><string>user@example.com</string></property>
+    </widget>
+
+    <!-- 3. 신체 스펙 (수정 가능) -->
+    <widget class="QLabel" name="labelSpecs">
+     <property name="geometry"><rect><x>20</x><y>129</y><width>420</width><height>18</height></rect></property>
+     <property name="text"><string>Body Specs &amp; Metrics</string></property>
+    </widget>
+    <widget class="QLineEdit" name="editAge">
+     <property name="geometry"><rect><x>20</x><y>147</y><width>95</width><height>32</height></rect></property>
+     <property name="placeholderText"><string>Age</string></property>
+    </widget>
+    <widget class="QComboBox" name="comboGender">
+     <property name="geometry"><rect><x>125</x><y>147</y><width>95</width><height>32</height></rect></property>
+     <item><property name="text"><string>Male</string></property></item>
+     <item><property name="text"><string>Female</string></property></item>
+     <item><property name="text"><string>Other</string></property></item>
+    </widget>
+    <widget class="QLineEdit" name="editHeight">
+     <property name="geometry"><rect><x>230</x><y>147</y><width>100</width><height>32</height></rect></property>
+     <property name="placeholderText"><string>Height(cm)</string></property>
+    </widget>
+    <widget class="QLineEdit" name="editWeight">
+     <property name="geometry"><rect><x>340</x><y>147</y><width>100</width><height>32</height></rect></property>
+     <property name="placeholderText"><string>Weight(kg)</string></property>
+    </widget>
+
+    <!-- 프로필 변경사항 저장 버튼 -->
+    <widget class="QPushButton" name="saveButton">
+     <property name="geometry"><rect><x>20</x><y>186</y><width>420</width><height>38</height></rect></property>
+     <property name="text"><string>💾 Save Profile Changes</string></property>
+    </widget>
+
+    <!-- 보안 섹션 -->
+    <widget class="QLabel" name="labelSecurity">
+     <property name="geometry"><rect><x>20</x><y>232</y><width>420</width><height>18</height></rect></property>
+     <property name="text"><string>Security &amp; Account Actions</string></property>
+    </widget>
+
+    <!-- 4. 비밀번호 변경 -->
+    <widget class="QLineEdit" name="editCurrentPassword">
+     <property name="geometry"><rect><x>20</x><y>252</y><width>200</width><height>32</height></rect></property>
+     <property name="echoMode"><enum>QLineEdit::Password</enum></property>
+     <property name="placeholderText"><string>Current Password</string></property>
+    </widget>
+    <widget class="QLineEdit" name="editNewPassword">
+     <property name="geometry"><rect><x>230</x><y>252</y><width>210</width><height>32</height></rect></property>
+     <property name="echoMode"><enum>QLineEdit::Password</enum></property>
+     <property name="placeholderText"><string>New Password</string></property>
+    </widget>
+    <widget class="QLineEdit" name="editConfirmNewPassword">
+     <property name="geometry"><rect><x>20</x><y>290</y><width>420</width><height>32</height></rect></property>
+     <property name="echoMode"><enum>QLineEdit::Password</enum></property>
+     <property name="placeholderText"><string>Confirm New Password</string></property>
+    </widget>
+    <widget class="QPushButton" name="changePasswordButton">
+     <property name="geometry"><rect><x>20</x><y>328</y><width>420</width><height>36</height></rect></property>
+     <property name="text"><string>🔒 Change Password</string></property>
+    </widget>
+
+    <!-- 에러 메시지 라벨 -->
+    <widget class="QLabel" name="errorMsgLabel">
+     <property name="geometry"><rect><x>20</x><y>370</y><width>420</width><height>20</height></rect></property>
+     <property name="text"><string></string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+
+    <!-- 5. 회원 탈퇴 버튼 -->
+    <widget class="QPushButton" name="deleteAccountButton">
+     <property name="geometry"><rect><x>20</x><y>395</y><width>420</width><height>38</height></rect></property>
+     <property name="text"><string>⚠️ Delete Account (Withdrawal)</string></property>
+    </widget>
+
+    <!-- 6. 대시보드로 돌아가기 버튼 -->
+    <widget class="QPushButton" name="backDashboardButton">
+     <property name="geometry"><rect><x>20</x><y>440</y><width>420</width><height>38</height></rect></property>
+     <property name="text"><string>Back to Dashboard</string></property>
+    </widget>
+
+   </widget>
+  </widget>
+ </widget>
+</ui>
