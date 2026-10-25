@@ -1,0 +1,20 @@
+[tool.black]
+line-length = 80
+target-version = ["py314"]
+
+[tool.mypy]
+python_version = "3.14"
+ignore_missing_imports = true
+check_untyped_defs = true
+
+[tool.pylint.format]
+max-line-length = 80
+
+[tool.pylint.main]
+py-version = "3.14"
+
+# OpenCV는 확장 모듈에서 Python 속성을 생성하므로 실제 모듈 분석을 허용한다.
+[tool.pylint.typecheck]
+extension-pkg-allow-list = ["cv2"]
+# cv2의 지연 로딩 속성은 아래 실제 영상 실행 시험으로 별도 확인한다.
+generated-members = ["cv2.*"]
