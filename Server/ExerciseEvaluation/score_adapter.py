@@ -60,7 +60,7 @@ class PoseScoreAdapter:
             if segmented and self.tracker.active
             else ([] if segmented else self.available[-60:])
         )
-        if not current:
+        if not current or not (self.tracker.observation or {}).get("ready"):
             self.live_score = None
             self.live_error = None
         elif tick - self.last_live_tick >= 10 and len(current) >= 10:
