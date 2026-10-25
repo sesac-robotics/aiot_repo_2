@@ -1,13 +1,17 @@
-from uuid import UUID
-from typing import Literal
+"""API 요청·응답의 전송 자료형을 정의합니다. 유효한 JSON 형식과 실제 자세 판정의 정확성은 별개입니다."""
+
 from datetime import datetime
+from typing import Literal
+from uuid import UUID
 
 from pydantic import BaseModel, Field
+
 
 class SessionStartRequest(BaseModel):
     user_id: UUID
     exercise_type: str
-    target_reps = int | None = Field(default=None, ge=1)
+    target_reps: int | None = Field(default=None, ge=1)
+
 
 class KeypointData(BaseModel):
     id: int
@@ -15,6 +19,7 @@ class KeypointData(BaseModel):
     x: float
     y: float
     confidence: float | None = None
+
 
 class LiveAnalysisResult(BaseModel):
     session_id: UUID
@@ -27,18 +32,20 @@ class LiveAnalysisResult(BaseModel):
 
     phase: str
     pose_score: float | None = None
-    feedback: str = ''
+    feedback: str = ""
     error_codes: list[str] = Field(default_factory=list)
 
     person_detected: bool
     keypoints: list[KeypointData] = Field(default_factory=list)
+
 
 class ExerciseRepRecord(BaseModel):
     rep_no: int
     pose_score: float | None = None
     grade: str | None = None
     error_codes: list[str] = Field(default_factory=list)
-    feedback: str = ''
+    feedback: str = ""
+
 
 class SessionResult(BaseModel):
     session_id: UUID
@@ -53,6 +60,6 @@ class SessionResult(BaseModel):
     grade: str | None = None
 
     error_counts: dict[str, int] = Field(default_factory=dict)
-    feedback: str = ''
+    feedback: str = ""
 
     records: list[ExerciseRepRecord] = Field(default_factory=list)

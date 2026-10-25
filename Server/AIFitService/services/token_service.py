@@ -1,14 +1,21 @@
+"""Bearer JWT의 서명·발급 시각·만료와 사용자 존재를 검증합니다. 프레임워크 의존성으로 보호 API에 인증 사용자를 전달합니다."""
+
+import logging
+
 import jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
-from config.settings import JWT_SECRET, JWT_ALGORITHM
+from Server.AIFitService.config.settings import JWT_ALGORITHM, JWT_SECRET
 from Server.AIFitService.repositories.user_repository import find_public_by_id
 
 bearer_scheme = HTTPBearer(auto_error=False)
 
+logger = logging.getLogger(__name__)
+
+
 def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)
+    credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),
 ):
     """Validate Authorization: Bearer <token> and return the current DB user."""
     unauthorized = HTTPException(
@@ -18,7 +25,7 @@ def get_current_user(
     )
 
     if credentials is None or credentials.scheme.lower() != "bearer":
-        print("[AUTH] Protected API rejected: missing Bearer token")
+        logger.info("[AUTH] Protected API rejected")
         raise unauthorized
 
     try:
@@ -36,8 +43,8 @@ def get_current_user(
         if user is None:
             raise unauthorized
 
-        print(f"[AUTH] JWT validated: user_id={subject}")
+        logger.info("[AUTH] JWT validated")
         return dict(user)
     except jwt.InvalidTokenError:
-        print("[AUTH] Protected API rejected: invalid or expired JWT")
+        logger.info("[AUTH] Protected API rejected")
         raise unauthorized

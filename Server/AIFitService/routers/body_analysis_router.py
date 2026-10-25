@@ -1,15 +1,31 @@
+"""사진 수신·백그라운드 분석·DB 저장·조회 API를 연결합니다. 사진은 외부 분석 제공자로 전송되며 생성 루틴은 업무 규칙 검증을 통과한 뒤 저장합니다."""
+
 import json
+import logging
 import random
 import shutil
 from pathlib import Path
 from uuid import UUID, uuid4
 
-from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPException, UploadFile
+from fastapi import (
+    APIRouter,
+    BackgroundTasks,
+    Depends,
+    File,
+    Form,
+    HTTPException,
+    UploadFile,
+)
 
-from config.settings import BASE_DIR
-from database.connection import get_connection
-from Server.AIFitService.services.exercise_names import canonical_exercise_name, canonicalize_routine_exercises
+from Server.AIFitService.config.settings import BASE_DIR
+from Server.AIFitService.database.connection import get_connection
+from Server.AIFitService.services.exercise_names import (
+    canonical_exercise_name,
+    canonicalize_routine_exercises,
+)
 from Server.AIFitService.services.token_service import get_current_user
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(tags=["Body Analysis"])
 UPLOAD_DIR = BASE_DIR / "body_analysis_uploads"
@@ -22,7 +38,11 @@ PHOTO_FIELDS = {
     "right_photo": "right",
     "back_photo": "back",
 }
-ALLOWED_TYPES = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp"}
+ALLOWED_TYPES = {
+    "image/jpeg": ".jpg",
+    "image/png": ".png",
+    "image/webp": ".webp",
+}
 EXERCISE_BY_PART = {
     "chest_status": ("가슴", "push_up"),
     "shoulder_status": ("어깨", "dumbbell_shoulder_press"),
@@ -92,7 +112,9 @@ def init_body_analysis_db():
             )
         """)
         # Upgrade existing SQLite databases without removing previous records.
-        columns = {row[1] for row in conn.execute("PRAGMA table_info(BodyAnalysis)")}
+        columns = {
+            row[1] for row in conn.execute("PRAGMA table_info(BodyAnalysis)")
+        }
         migrations = {
             "analysis_status": "TEXT NOT NULL DEFAULT 'processing'",
             "recognized": "INTEGER",
@@ -105,8 +127,12 @@ def init_body_analysis_db():
         }
         for name, declaration in migrations.items():
             if name not in columns:
-                conn.execute(f"ALTER TABLE BodyAnalysis ADD COLUMN {name} {declaration}")
-        conn.execute("UPDATE BodyAnalysis SET analysis_status = status WHERE analysis_status = 'processing' AND status != 'processing'")
+                conn.execute(
+                    f"ALTER TABLE BodyAnalysis ADD COLUMN {name} {declaration}"
+                )
+        conn.execute(
+            "UPDATE BodyAnalysis SET analysis_status = status WHERE analysis_status = 'processing' AND status != 'processing'"
+        )
         conn.execute("""
             CREATE INDEX IF NOT EXISTS idx_body_analysis_user
             ON BodyAnalysis(user_id)
@@ -144,14 +170,20 @@ def _validated_routine(result: dict) -> dict | None:
         exercises = by_day[day_no]
         expected_count = 1 if day_no <= 5 else None
         if expected_count == 1 and len(exercises) != 1:
-            raise ValueError(f"평일 Day {day_no}에는 운동을 정확히 하나 넣어야 합니다.")
+            raise ValueError(
+                f"평일 Day {day_no}에는 운동을 정확히 하나 넣어야 합니다."
+            )
         if day_no >= 6 and len(exercises) > 1:
-            raise ValueError("토요일과 일요일에는 각각 운동을 최대 하나만 넣을 수 있습니다.")
+            raise ValueError(
+                "토요일과 일요일에는 각각 운동을 최대 하나만 넣을 수 있습니다."
+            )
 
         normalized_exercises = []
         for item in exercises:
             if not isinstance(item, dict):
-                raise ValueError(f"Day {day_no}의 운동 항목 형식이 잘못되었습니다.")
+                raise ValueError(
+                    f"Day {day_no}의 운동 항목 형식이 잘못되었습니다."
+                )
             name = canonical_exercise_name(item.get("exercise_name"))
             sets = item.get("sets")
             reps = item.get("reps")
@@ -161,28 +193,43 @@ def _validated_routine(result: dict) -> dict | None:
             if not isinstance(sets, int) or sets < 1:
                 raise ValueError(f"{name}의 세트 수는 1 이상이어야 합니다.")
             if name == "plank":
-                if reps is not None or not isinstance(duration, (int, float)) or duration <= 0:
-                    raise ValueError("플랭크는 reps=null과 양수 target_duration_sec가 필요합니다.")
+                if (
+                    reps is not None
+                    or not isinstance(duration, (int, float))
+                    or duration <= 0
+                ):
+                    raise ValueError(
+                        "플랭크는 reps=null과 양수 target_duration_sec가 필요합니다."
+                    )
             elif not isinstance(reps, int) or reps < 1 or duration is not None:
-                raise ValueError(f"{name}은 양수 reps와 null target_duration_sec가 필요합니다.")
-            normalized_exercises.append({
-                "exercise_name": name,
-                "sets": sets,
-                "reps": reps,
-                "target_duration_sec": duration,
-            })
-        selected_by_day[day_no] = [item["exercise_name"] for item in normalized_exercises]
-        normalized_days.append({"day_no": day_no, "exercises": normalized_exercises})
+                raise ValueError(
+                    f"{name}은 양수 reps와 null target_duration_sec가 필요합니다."
+                )
+            normalized_exercises.append(
+                {
+                    "exercise_name": name,
+                    "sets": sets,
+                    "reps": reps,
+                    "target_duration_sec": duration,
+                }
+            )
+        selected_by_day[day_no] = [
+            item["exercise_name"] for item in normalized_exercises
+        ]
+        normalized_days.append(
+            {"day_no": day_no, "exercises": normalized_exercises}
+        )
 
     # No identical exercise may appear on two adjacent calendar days.
     for day_no in range(1, 7):
-        if selected_by_day[day_no] and selected_by_day[day_no + 1] and selected_by_day[day_no][0] == selected_by_day[day_no + 1][0]:
+        if (
+            selected_by_day[day_no]
+            and selected_by_day[day_no + 1]
+            and selected_by_day[day_no][0] == selected_by_day[day_no + 1][0]
+        ):
             raise ValueError("같은 운동이 연속된 날에 배치되었습니다.")
 
-    weak_parts = [
-        key for key in EXERCISE_BY_PART
-        if result.get(key) == "bad"
-    ]
+    weak_parts = [key for key in EXERCISE_BY_PART if result.get(key) == "bad"]
     expected_weekend = []
     if len(weak_parts) == 1:
         expected_weekend = [(6, weak_parts[0])]
@@ -198,14 +245,25 @@ def _validated_routine(result: dict) -> dict | None:
             actual = selected_by_day[day_no]
             if expected is None and actual:
                 raise ValueError(f"Day {day_no}는 휴식일이어야 합니다.")
-            if expected is not None and actual != [EXERCISE_BY_PART[expected][1]]:
-                raise ValueError(f"Day {day_no}에 약점 부위의 지정 운동이 필요합니다.")
+            if expected is not None and actual != [
+                EXERCISE_BY_PART[expected][1]
+            ]:
+                raise ValueError(
+                    f"Day {day_no}에 약점 부위의 지정 운동이 필요합니다."
+                )
     else:
-        weekend_names = [selected_by_day[6][0] if selected_by_day[6] else None,
-                         selected_by_day[7][0] if selected_by_day[7] else None]
+        weekend_names = [
+            selected_by_day[6][0] if selected_by_day[6] else None,
+            selected_by_day[7][0] if selected_by_day[7] else None,
+        ]
         weak_exercises = {EXERCISE_BY_PART[key][1] for key in weak_parts}
-        if any(name not in weak_exercises for name in weekend_names) or len(set(weekend_names)) != 2:
-            raise ValueError("약점이 3개 이상이면 서로 다른 약점 운동 2개를 주말에 하나씩 배치해야 합니다.")
+        if (
+            any(name not in weak_exercises for name in weekend_names)
+            or len(set(weekend_names)) != 2
+        ):
+            raise ValueError(
+                "약점이 3개 이상이면 서로 다른 약점 운동 2개를 주말에 하나씩 배치해야 합니다."
+            )
 
     routine_name = routine.get("routine_name")
     description = routine.get("description")
@@ -213,7 +271,9 @@ def _validated_routine(result: dict) -> dict | None:
         raise ValueError("루틴 이름이 비어 있습니다.")
     if not isinstance(description, str):
         raise ValueError("루틴 설명 형식이 잘못되었습니다.")
-    target_body_part = ",".join(EXERCISE_BY_PART[key][0] for key in weak_parts) or "balanced"
+    target_body_part = (
+        ",".join(EXERCISE_BY_PART[key][0] for key in weak_parts) or "balanced"
+    )
     return {
         "routine_name": routine_name.strip(),
         "description": description.strip(),
@@ -235,7 +295,9 @@ def _build_routine_from_statuses(result: dict) -> dict:
     else:
         saturday_part = sunday_part = None
 
-    saturday_name = EXERCISE_BY_PART[saturday_part][1] if saturday_part else None
+    saturday_name = (
+        EXERCISE_BY_PART[saturday_part][1] if saturday_part else None
+    )
     weekend_parts = [EXERCISE_BY_PART[key][0] for key in weak_parts]
     target_body_part = ",".join(weekend_parts) or "balanced"
 
@@ -270,26 +332,50 @@ def _build_routine_from_statuses(result: dict) -> dict:
         {"day_no": day_no, "exercises": [exercise]}
         for day_no, exercise in enumerate(weekdays, start=1)
     ]
-    days.extend([
-        {
-            "day_no": 6,
-            "exercises": ([{
-                "exercise_name": saturday_name,
-                "sets": 3,
-                "reps": None if saturday_name == "plank" else 10,
-                "target_duration_sec": 30 if saturday_name == "plank" else None,
-            }] if saturday_name else []),
-        },
-        {
-            "day_no": 7,
-            "exercises": ([{
-                "exercise_name": EXERCISE_BY_PART[sunday_part][1],
-                "sets": 3,
-                "reps": None if EXERCISE_BY_PART[sunday_part][1] == "plank" else 10,
-                "target_duration_sec": 30 if EXERCISE_BY_PART[sunday_part][1] == "plank" else None,
-            }] if sunday_part else []),
-        },
-    ])
+    days.extend(
+        [
+            {
+                "day_no": 6,
+                "exercises": (
+                    [
+                        {
+                            "exercise_name": saturday_name,
+                            "sets": 3,
+                            "reps": None if saturday_name == "plank" else 10,
+                            "target_duration_sec": (
+                                30 if saturday_name == "plank" else None
+                            ),
+                        }
+                    ]
+                    if saturday_name
+                    else []
+                ),
+            },
+            {
+                "day_no": 7,
+                "exercises": (
+                    [
+                        {
+                            "exercise_name": EXERCISE_BY_PART[sunday_part][1],
+                            "sets": 3,
+                            "reps": (
+                                None
+                                if EXERCISE_BY_PART[sunday_part][1] == "plank"
+                                else 10
+                            ),
+                            "target_duration_sec": (
+                                30
+                                if EXERCISE_BY_PART[sunday_part][1] == "plank"
+                                else None
+                            ),
+                        }
+                    ]
+                    if sunday_part
+                    else []
+                ),
+            },
+        ]
+    )
     return {
         "routine_name": "체형 맞춤 7일 운동 루틴",
         "description": "체형 분석 상태를 반영해 구성한 주간 운동 루틴입니다.",
@@ -333,26 +419,22 @@ def run_body_analysis(body_id: str, processing_paths: dict[str, str]):
         return
 
     try:
-        from Server.AIFitService.services.body_analysis_service import analyze_body_photos
+        from Server.AIFitService.services.body_analysis_service import (
+            analyze_body_photos,
+        )
 
         result = analyze_body_photos(
             processing_paths,
             row["analysis_prompt"],
         )
-        print(
-            f"[BODY_ANALYSIS] ChatGPT response body_id={body_id}: "
-            f"{json.dumps(result, ensure_ascii=False)}",
-            flush=True,
-        )
+        logger.info("Body analysis provider response received")
         try:
             routine = _validated_routine(result)
         except ValueError as exc:
             if not result.get("recognized"):
                 raise
-            print(
-                f"[BODY_ANALYSIS][ROUTINE_FALLBACK] body_id={body_id}: "
-                f"{str(exc)[:300]}; constructing a valid schedule from body statuses",
-                flush=True,
+            logger.warning(
+                "Generated routine failed validation; applying existing fallback policy"
             )
             routine = _build_routine_from_statuses(result)
         with get_connection() as conn:
@@ -364,15 +446,15 @@ def run_body_analysis(body_id: str, processing_paths: dict[str, str]):
                     """INSERT INTO Routine (
                            routine_name, description, target_body_part, routine_plan_json
                        ) VALUES (?, ?, ?, ?)""",
-                    (routine["routine_name"], routine["description"],
-                     routine["target_body_part"], routine_json),
+                    (
+                        routine["routine_name"],
+                        routine["description"],
+                        routine["target_body_part"],
+                        routine_json,
+                    ),
                 )
                 routine_id = cursor.lastrowid
-                print(
-                    f"[BODY_ANALYSIS][ROUTINE_SAVED] body_id={body_id} "
-                    f"routine_id={routine_id} day_count={len(routine['days'])}",
-                    flush=True,
-                )
+                logger.info("Validated routine saved")
 
             body_info = conn.execute(
                 """SELECT body_id FROM UserBodyInfo WHERE user_id = ?
@@ -421,20 +503,28 @@ def run_body_analysis(body_id: str, processing_paths: dict[str, str]):
                        back_status=?, leg_status=?, routine_id=?, routine_json=?,
                        error_message=NULL
                    WHERE body_id=?""",
-                (int(result["recognized"]), result["failure_reason"],
-                 result["chest_status"], result["shoulder_status"],
-                 result["arm_status"], result["back_status"],
-                 result["leg_status"], routine_id, routine_json, body_id),
+                (
+                    int(result["recognized"]),
+                    result["failure_reason"],
+                    result["chest_status"],
+                    result["shoulder_status"],
+                    result["arm_status"],
+                    result["back_status"],
+                    result["leg_status"],
+                    routine_id,
+                    routine_json,
+                    body_id,
+                ),
             )
     except Exception as exc:
         # Show local validation messages for diagnosis, while keeping provider
         # request/response internals and credentials out of logs.
-        detail = str(exc)[:300] if isinstance(exc, ValueError) else type(exc).__name__
-        print(
-            f"[BODY_ANALYSIS] Analysis failed for body_id={body_id}: "
-            f"{type(exc).__name__}: {detail}",
-            flush=True,
+        detail = (
+            str(exc)[:300]
+            if isinstance(exc, ValueError)
+            else type(exc).__name__
         )
+        logger.warning("Body analysis failed: %s", type(exc).__name__)
         with get_connection() as conn:
             conn.execute(
                 """UPDATE BodyAnalysis SET analysis_status='failed', status='failed',
@@ -483,9 +573,13 @@ async def upload_body_analysis(
 
             contents = await file.read()
             if not contents:
-                raise HTTPException(status_code=400, detail=f"{field} 파일이 비어 있습니다.")
+                raise HTTPException(
+                    status_code=400, detail=f"{field} 파일이 비어 있습니다."
+                )
             if len(contents) > 20 * 1024 * 1024:
-                raise HTTPException(status_code=413, detail=f"{field} 파일이 너무 큽니다.")
+                raise HTTPException(
+                    status_code=413, detail=f"{field} 파일이 너무 큽니다."
+                )
 
             side = PHOTO_FIELDS[field]
             processing_path = body_dir / f"{side}{extension}"
@@ -504,21 +598,24 @@ async def upload_body_analysis(
             uploaded_paths[field] = str(latest_path)
 
         with get_connection() as conn:
-            conn.execute("""
+            conn.execute(
+                """
                 INSERT INTO BodyAnalysis (
                     body_id, user_id, status,
                     front_photo_path, left_photo_path,
                 right_photo_path, back_photo_path, analysis_prompt
             ) VALUES (?, ?, 'processing', ?, ?, ?, ?, ?)
-            """, (
-                body_id,
-                user_id,
-                uploaded_paths["front_photo"],
-                uploaded_paths["left_photo"],
-                uploaded_paths["right_photo"],
-                uploaded_paths["back_photo"],
-                prompt,
-            ))
+            """,
+                (
+                    body_id,
+                    user_id,
+                    uploaded_paths["front_photo"],
+                    uploaded_paths["left_photo"],
+                    uploaded_paths["right_photo"],
+                    uploaded_paths["back_photo"],
+                    prompt,
+                ),
+            )
 
     except Exception:
         # 저장이나 DB 기록이 실패하면 이번 업로드 파일을 정리합니다.
@@ -530,7 +627,11 @@ async def upload_body_analysis(
 
     background_tasks.add_task(run_body_analysis, body_id, processing_paths)
 
-    return {"body_id": body_id, "analysis_status": "processing", "status": "processing"}
+    return {
+        "body_id": body_id,
+        "analysis_status": "processing",
+        "status": "processing",
+    }
 
 
 @router.get("/body-analysis/{body_id}")
@@ -539,16 +640,21 @@ def get_body_analysis(
     current_user: dict = Depends(get_current_user),
 ):
     with get_connection() as conn:
-        row = conn.execute("""
+        row = conn.execute(
+            """
             SELECT body_id, analysis_status, recognized, failure_reason,
                    chest_status, shoulder_status, arm_status, back_status,
                    leg_status, routine_id, routine_json, error_message
             FROM BodyAnalysis
             WHERE body_id = ? AND user_id = ?
-        """, (body_id, current_user["user_id"])).fetchone()
+        """,
+            (body_id, current_user["user_id"]),
+        ).fetchone()
 
     if row is None:
-        raise HTTPException(status_code=404, detail="체형 분석 기록을 찾을 수 없습니다.")
+        raise HTTPException(
+            status_code=404, detail="체형 분석 기록을 찾을 수 없습니다."
+        )
 
     response = {
         "body_id": row["body_id"],
@@ -560,11 +666,20 @@ def get_body_analysis(
         routine = None
         if row["routine_json"]:
             try:
-                routine = canonicalize_routine_exercises(json.loads(row["routine_json"]))
+                routine = canonicalize_routine_exercises(
+                    json.loads(row["routine_json"])
+                )
             except json.JSONDecodeError:
-                raise HTTPException(status_code=500, detail="저장된 7일 루틴 JSON 형식이 잘못되었습니다.")
+                raise HTTPException(
+                    status_code=500,
+                    detail="저장된 7일 루틴 JSON 형식이 잘못되었습니다.",
+                )
         response["result"] = {
-            "recognized": bool(row["recognized"]) if row["recognized"] is not None else None,
+            "recognized": (
+                bool(row["recognized"])
+                if row["recognized"] is not None
+                else None
+            ),
             "failure_reason": row["failure_reason"],
             "chest_status": row["chest_status"],
             "shoulder_status": row["shoulder_status"],

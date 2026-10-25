@@ -1,3 +1,5 @@
+"""네 방향 사진을 외부 Responses API 입력으로 변환하고 구조화된 응답을 검증합니다. 외부 모델 이름은 환경 변수로 지정하며 사진으로 의료 진단을 확정하지 않습니다."""
+
 import base64
 import json
 import mimetypes
@@ -5,8 +7,11 @@ from pathlib import Path
 
 from openai import OpenAI
 
-from config.settings import BODY_ANALYSIS_PROMPT, OPENAI_API_KEY, OPENAI_MODEL
-
+from Server.AIFitService.config.settings import (
+    BODY_ANALYSIS_PROMPT,
+    OPENAI_API_KEY,
+    OPENAI_MODEL,
+)
 
 ROUTINE_PROMPT = """
 
@@ -52,7 +57,10 @@ RESULT_SCHEMA = {
                     "items": {
                         "type": "object",
                         "properties": {
-                            "day_no": {"type": "integer", "enum": [1, 2, 3, 4, 5, 6, 7]},
+                            "day_no": {
+                                "type": "integer",
+                                "enum": [1, 2, 3, 4, 5, 6, 7],
+                            },
                             "exercises": {
                                 "type": "array",
                                 "items": {
@@ -60,13 +68,26 @@ RESULT_SCHEMA = {
                                     "properties": {
                                         "exercise_name": {
                                             "type": "string",
-                                            "enum": ["plank", "squat", "dumbbell_shoulder_press", "push_up", "ytw_raise"],
+                                            "enum": [
+                                                "plank",
+                                                "squat",
+                                                "dumbbell_shoulder_press",
+                                                "push_up",
+                                                "ytw_raise",
+                                            ],
                                         },
                                         "sets": {"type": "integer"},
                                         "reps": {"type": ["integer", "null"]},
-                                        "target_duration_sec": {"type": ["number", "null"]},
+                                        "target_duration_sec": {
+                                            "type": ["number", "null"]
+                                        },
                                     },
-                                    "required": ["exercise_name", "sets", "reps", "target_duration_sec"],
+                                    "required": [
+                                        "exercise_name",
+                                        "sets",
+                                        "reps",
+                                        "target_duration_sec",
+                                    ],
                                     "additionalProperties": False,
                                 },
                             },
@@ -76,7 +97,12 @@ RESULT_SCHEMA = {
                     },
                 },
             },
-            "required": ["routine_name", "description", "target_body_part", "days"],
+            "required": [
+                "routine_name",
+                "description",
+                "target_body_part",
+                "days",
+            ],
             "additionalProperties": False,
         },
     },
@@ -94,7 +120,9 @@ RESULT_SCHEMA = {
 }
 
 
-def analyze_body_photos(photo_paths: dict[str, str], user_prompt: str | None) -> dict:
+def analyze_body_photos(
+    photo_paths: dict[str, str], user_prompt: str | None
+) -> dict:
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY is not configured")
 
@@ -175,5 +203,7 @@ def analyze_body_photos(photo_paths: dict[str, str], user_prompt: str | None) ->
             "leg_status",
         )
     ):
-        raise ValueError("Unrecognized photo set must not include status values")
+        raise ValueError(
+            "Unrecognized photo set must not include status values"
+        )
     return result

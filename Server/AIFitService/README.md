@@ -4,8 +4,8 @@
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
-export AIFIT_DB_PATH="$(pwd)/AIFitDB/AIFit.db"
+pip install -r Server/AIFitService/requirements.txt
+export AIFIT_DB_PATH="$(pwd)/Server/AIFitDB/aifit.db"
 export AIFIT_JWT_SECRET="$(python -c 'import secrets; print(secrets.token_hex(32))')"
 export OPENAI_API_KEY="발급받은_API_키"
 # AI Server의 기존 영상 스트림을 AIFit Server가 직접 읽기 위한 설정
@@ -15,7 +15,7 @@ export AI_SERVER_API_KEY="<AI Server가 허용하는 키>"
 export AI_SERVER_STREAM_PATH="/stream"
 # 선택 설정
 export OPENAI_MODEL="gpt-4o-mini"
-python main.py
+python -m Server.AIFitService.main
 ```
 
 `AIFIT_JWT_SECRET`은 서버가 실행되는 동안 고정되어야 합니다. 실제 운영에서는 안전한 환경 변수/비밀 관리 기능을 사용하고 개발용 기본 키를 사용하지 마세요.
@@ -190,3 +190,48 @@ FROM UserInfo ORDER BY user_id
 c.close()
 PY
 ```
+
+<!-- integration-standards-20261025 -->
+
+## 통합 구조와 책임
+
+저장소 루트에서 `python -m Server.AIFitService.main` 또는 `python -m uvicorn Server.AIFitService.main:app --host 127.0.0.1 --port 8000`으로 실행합니다. 파일 단위 실행과 패키지 절대 경로가 섞여 있던 import를 루트 기준으로 통일했습니다. `config/settings.py`는 비어 있던 설정 계약을 복구한 곳이며 `.env.example`의 값을 실제 프로세스 환경으로 공급합니다. `.env.example`을 복사하는 것만으로 자동 로드되지는 않습니다.
+
+`AIFIT_JWT_SECRET`은 최소 32바이트입니다. 설정 파일은 키를 생성하거나 개발용 키를 기본값으로 사용하지 않습니다. `AIFIT_DB_PATH`가 없으면 Server/AIFitDB/aifit.db를 사용합니다. `AIFIT_HOST`, `AIFIT_PORT`, `AIFIT_TOKEN_EXPIRE_MINUTES`를 우선하며 APP_HOST/APP_PORT/JWT_SECRET 등 비접두 호환 이름도 허용합니다. 외부 사진 분석은 OPENAI_API_KEY와 OPENAI_MODEL을 명시해야 합니다. 빈 모델 이름을 임의 모델로 대체하지 않습니다.
+
+lifespan은 설정 검증 → 기본 스키마 생성 → 분석/운동 부가 스키마 초기화 → 앱별 영상 버퍼 생성 → 선택적 AI 영상 수신 순서입니다. 종료 시 수신 태스크를 취소하고 기다립니다. import만으로 DB·네트워크를 열지 않습니다. 기존 DB 스키마를 통째로 삭제하지 않고 CREATE IF NOT EXISTS와 기존 추가 컬럼 마이그레이션을 유지합니다.
+
+HTTP 라우터는 전송·인증과 업무 흐름 조정을 담당합니다. domain/routine.py는 목표 검증과 구버전 루틴 정규화를 담당하고 HTTP 상태 코드에 의존하지 않습니다. RoutineError의 missing/invalid를 라우터가 404/500으로 매핑합니다. 시간 목표의 NaN·무한대·bool을 거부해 잘못된 목표가 AI 서버로 전달되는 것을 막습니다.
+
+AIGateway는 외부 요청 포트이고 HTTPAIGateway는 HTTPX 구현입니다. URL·키·클라이언트를 생성 시 전달합니다. 테스트에서는 MockTransport로 실패를 재현합니다. start/finish 재전송의 중복 실행 위험 때문에 어댑터는 상태 변경 요청을 자동 재시도하지 않습니다. 두 서버의 상태와 SQLite 커밋은 하나의 원자적 트랜잭션이 아니므로 라우터의 보상 처리가 필요하고, 프로세스 장애까지 완전히 복구하는 outbox는 아직 없습니다.
+
+사용자 CRUD는 user_repository가 SQL을 소유합니다. get_connection은 연결마다 외래 키를 켜고 성공 시 커밋·실패 시 롤백한 뒤 반드시 닫습니다. sqlite3.Connection의 기본 with만으로는 연결이 닫히지 않으므로 이 컨텍스트를 사용합니다. 커서와 연결을 블록 밖에서 재사용하지 않습니다. 회원가입 중복은 사전 검사와 DB UNIQUE 제약을 함께 사용해 경합 시에도 409로 처리합니다.
+
+LatestFrameBuffer는 앱마다 새로 생성하고 최신 JPEG 하나만 보관합니다. 서버 재시작과 다중 Uvicorn worker 사이에는 메모리가 공유되지 않습니다. JPEGFrameParser는 shared 패키지의 순수 바이트 파서입니다. 상태 로그에는 비밀번호·토큰·외부 분석 응답 본문을 넣지 않습니다.
+
+`tests/integration/test_backend.py`, `test_streaming.py`는 임시 DB·가짜 전송으로 실행합니다. 실제 사용자 DB, 외부 사진 API, 카메라를 사용하지 않습니다. 테스트 통과는 운영 인증 키 설정이나 실제 사진 분석 결과의 정확성을 대신하지 않습니다.
+
+### 소스별 책임과 공개 진입점
+
+| 소스 | 책임과 해석 | 주요 공개 진입점 |
+|---|---|---|
+| [adapters/ai_gateway.py](adapters/ai_gateway.py) | AI 서버의 HTTP 통신을 업무 흐름에서 분리한 어댑터입니다. | `GatewayError`, `AIGateway`, `HTTPAIGateway` |
+| [adapters/frame_buffer.py](adapters/frame_buffer.py) | 표시용 최신 프레임 한 개를 보관하는 비동기 공유 객체입니다. | `LatestFrameBuffer` |
+| [config/settings.py](config/settings.py) | 환경 변수에서 백엔드 설정을 읽습니다. | `validate_settings` |
+| [database/connection.py](database/connection.py) | SQLite 연결의 트랜잭션과 수명을 함께 관리하는 영속성 어댑터입니다. | `get_connection`, `init_db` |
+| [domain/__init__.py](domain/__init__.py) | 이 디렉터리의 공개 패키지 경계를 정의합니다. 구체적인 역할과 의존 방향은 상위 README의 구성요소 설명에 정리합니다. | 패키지 경계/선언 |
+| [domain/exercise_names.py](domain/exercise_names.py) | 화면 표시 이름을 시스템 운동 식별자로 변환합니다. 외부 I/O는 수행하지 않습니다. | `canonical_exercise_name`, `canonicalize_routine_exercises` |
+| [domain/routine.py](domain/routine.py) | 운동 루틴의 순수 업무 규칙입니다. HTTP 상태 결정은 라우터가 담당합니다. | `RoutineError`, `day_exercises` |
+| [main.py](main.py) | 웹 라우터와 앱 수명을 조립하는 백엔드 진입점입니다. 설정 검증과 스키마 초기화 후 선택적 영상 수신 작업을 만들고 종료 시 취소·회수합니다. | `lifespan`, `log_gui_api_result`, `health` |
+| [models/auth_models.py](models/auth_models.py) | 회원가입·로그인·프로필 API의 입력과 출력 DTO를 정의합니다. Pydantic 검증은 전송 형식의 유효성 검사이며 인증과 영속성은 서비스가 담당합니다. | `RegisterRequest`, `LoginRequest`, `ProfileUpdateRequest`, `PasswordChangeRequest`, `DeleteAccountRequest` |
+| [repositories/user_repository.py](repositories/user_repository.py) | 사용자 조회·등록·수정·연관 데이터 삭제 SQL을 모읍니다. 매 호출은 연결 컨텍스트 안에서 실행하며 외래 키와 트랜잭션을 적용합니다. | `find_by_username`, `find_public_by_id`, `username_exists`, `email_exists`, `email_exists_for_other_user`, `create_user`, `get_password_hash`, `update_profile`, `update_password`, `delete_user_and_related_data` |
+| [routers/auth_router.py](routers/auth_router.py) | 회원가입·로그인 HTTP 요청을 인증 서비스로 전달하고 업무 오류를 상태 코드로 변환합니다. 비밀번호 해시 구현을 라우터에 복제하지 않습니다. | `register`, `login` |
+| [routers/body_analysis_router.py](routers/body_analysis_router.py) | 사진 수신·백그라운드 분석·DB 저장·조회 API를 연결합니다. 사진은 외부 분석 제공자로 전송되며 생성 루틴은 업무 규칙 검증을 통과한 뒤 저장합니다. | `init_body_analysis_db`, `cleanup_old_uploads`, `run_body_analysis`, `upload_body_analysis`, `get_body_analysis` |
+| [routers/exercise_report_router.py](routers/exercise_report_router.py) | 인증 사용자의 완료 세션을 날짜별로 조회해 운동 리포트 응답을 만듭니다. 다른 사용자의 결과가 섞이지 않도록 조회 조건에 사용자 ID를 포함합니다. | `get_exercise_report` |
+| [routers/profile_router.py](routers/profile_router.py) | JWT로 확인한 사용자의 프로필·비밀번호·계정을 관리합니다. 요청 본문의 임의 사용자 ID 대신 인증 의존성이 반환한 사용자를 기준으로 처리합니다. | `get_my_profile`, `update_my_profile`, `change_my_password`, `delete_my_account` |
+| [routers/video_stream_router.py](routers/video_stream_router.py) | 내부 키로 수신한 영상 또는 AI 스트림 영상을 앱별 최신 프레임 버퍼에 게시합니다. GUI에는 JWT로 보호된 MJPEG 스트림을 제공합니다. | `receive_ai_stream`, `receive_frame`, `stream_frames`, `video_status` |
+| [routers/workout_router.py](routers/workout_router.py) | GUI 명령, DB 세션 상태, AI 서버의 세션 명령을 조정합니다. 루틴 규칙은 domain, HTTP 전송은 adapters에 위임하며 두 서버 간 보상 처리와 실패 응답을 담당합니다. | `ExerciseRecordInput`, `init_workout_db`, `start_workout`, `pause_workout`, `resume_or_advance_workout`, `get_live_workout`, `receive_exercise_record`, `finish_workout` |
+| [services/auth_service.py](services/auth_service.py) | 사용자 등록과 로그인을 처리합니다. PBKDF2 비밀번호 해시 검증 후 JWT를 발급하고 SQL은 사용자 저장소에 위임합니다. | `AuthError`, `hash_password`, `verify_password`, `register_user`, `login_user` |
+| [services/body_analysis_service.py](services/body_analysis_service.py) | 네 방향 사진을 외부 Responses API 입력으로 변환하고 구조화된 응답을 검증합니다. 외부 모델 이름은 환경 변수로 지정하며 사진으로 의료 진단을 확정하지 않습니다. | `analyze_body_photos` |
+| [services/exercise_names.py](services/exercise_names.py) | 기존 서비스 import 경로를 유지하는 운동 식별자 호환 어댑터입니다. | 패키지 경계/선언 |
+| [services/token_service.py](services/token_service.py) | Bearer JWT의 서명·발급 시각·만료와 사용자 존재를 검증합니다. 프레임워크 의존성으로 보호 API에 인증 사용자를 전달합니다. | `get_current_user` |

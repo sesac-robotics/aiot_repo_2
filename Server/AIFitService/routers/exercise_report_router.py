@@ -1,9 +1,11 @@
+"""인증 사용자의 완료 세션을 날짜별로 조회해 운동 리포트 응답을 만듭니다. 다른 사용자의 결과가 섞이지 않도록 조회 조건에 사용자 ID를 포함합니다."""
+
 import json
 from datetime import date
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
-from database.connection import get_connection
+from Server.AIFitService.database.connection import get_connection
 from Server.AIFitService.services.token_service import get_current_user
 
 router = APIRouter(tags=["Exercise Reports"])
@@ -11,7 +13,9 @@ router = APIRouter(tags=["Exercise Reports"])
 
 @router.get("/exercise-report")
 def get_exercise_report(
-    report_date: date = Query(..., alias="date", description="운동 날짜 (YYYY-MM-DD)"),
+    report_date: date = Query(
+        ..., alias="date", description="운동 날짜 (YYYY-MM-DD)"
+    ),
     current_user: dict = Depends(get_current_user),
 ):
     """Return the latest completed workout report for the authenticated user and date."""
