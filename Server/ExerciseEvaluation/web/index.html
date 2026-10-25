@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>운동 교정 · 자세 점수</title><link rel="stylesheet" href="/style.css"></head>
+<body><main><h1>운동 교정 · 자세 점수</h1><p>정면 구도에서 측정합니다. 시작을 누르면 선택한 카메라에 연결합니다.</p>
+<form id="options"><label>운동<select name="exercise"><option value="squats">스쿼트</option><option value="shoulder">숄더 프레스</option><option value="pushups">푸시업</option><option value="plank">엘보 플랭크</option><option value="ytw">YTW</option></select></label>
+<label>평가 방식<select name="mode"><option value="combined">교정 + 점수</option><option value="correction">교정만</option><option value="score">점수만</option></select></label>
+<label>카메라<select name="camera"><option value="webcam">노트북 웹캠</option><option value="esp32">ESP32</option><option value="auto">ESP32 우선 · 연결 실패 시 웹캠</option></select></label>
+<label>ESP32 주소<input name="esp32" value="http://192.168.15.208:81/stream"></label><label>웹캠 번호<input name="webcam" type="number" min="0" value="0"></label>
+<div><button type="submit">선택한 설정으로 시작</button><button type="button" id="stop">중지</button></div></form><p id="notice" role="status">측정 대기 중입니다.</p>
+<div class="layout"><section><h2>카메라</h2><img id="preview" alt="시작 후 카메라 영상이 표시됩니다." hidden><p id="camera-status"></p></section><section><h2>운동 교정</h2><p>최근 연속 관측의 선택 오류 분류입니다. 오류 미검출은 전체 정상 판정이 아닙니다.</p><div id="correction"></div><h2>자세 점수</h2><p>완료 반복의 관측 가능한 항목만 표시합니다. 미평가는 0점 또는 만점으로 채우지 않습니다.</p><div id="score"></div></section></div>
+<p>카메라·운동·평가 방식을 바꾸고 시작하면 새 측정이 시작됩니다. 연결 구간이 바뀌면 진행 중 동작과 반복 목록을 초기화합니다.</p><details><summary>현재 상태 상세</summary><pre id="detail"></pre></details></main><script src="/app.js"></script></body></html>
