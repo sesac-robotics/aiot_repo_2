@@ -13,3 +13,5 @@
 원본 LiveEngine·모델·특징·임계값을 유지하고 새 파일에서 기록 호출을 추가합니다. 실행 시 원본과 기록 사본의 루프를 AST로 비교하며 달라지면 실행을 중단합니다. 관절은 실제 처리한 프레임의 33개 x·y·z·visibility 및 world 관절을 저장합니다. `metadata.json`, `frames.jsonl`, `summary.json`과 해시를 기록합니다. 이 원본 교정 모드의 오류 시간창 수는 운동 반복 횟수가 아닙니다. 반복 횟수와 자세 점수는 별도 점수 또는 통합 모드를 사용합니다.
 
 API는 기존 `/api/start`, `/api/stop`, `/api/state`, `/api/frame.jpg`에 새 기록 조회 `/api/sessions`, `/api/sessions/{id}`를 추가합니다. 원본 회원 서버·GUI·스쿼트 보존본은 수정하지 않습니다. ESP32 실장비와 전문가 정답 대비 정확도는 별도 검증 대상입니다.
+
+기존 `GUI.FitHelper.direct_correction_server` 명령은 호환 진입점입니다. 실제 HTTP·교정 루프 사본·파일 기록 구현은 `Server/ExerciseEvaluation/adapters/`에 있으며 GUI에 모델·저장 구현을 두지 않습니다.

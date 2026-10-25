@@ -119,3 +119,33 @@ S의 main 대비 변경 경로와 실제 merge 전달 경로의 합집합입니�
 일반 formatter와 타입·계약 검사 통과는 새 채점 성능의 증거가 아닙니다. 연구/현재 운영 모델 간 채택 관계는 기존 기준서를 따라야 합니다. 원본 브랜치에 이미 있던 모델 파일을 이번에 새로 생성한 것으로 보지 않습니다.
 
 이 문서는 규칙의 적용 근거를 추적하는 기록이며 팀 전체 승인·MISRA 준수 인증·모델 성능 평가가 아닙니다. 이번 추가 작업은 Markdown 문서화이며 실행 소스·동결 자료는 수정하지 않습니다.
+
+## 2026-10-25 후속 동기화와 규칙 적용
+
+### 가져온 이력과 원본 유지
+
+최초 통합 기록 S·A·R은 위의 과거 고정 기준으로 유지합니다. 이번 입력 S2는 [`68d77539`](https://github.com/sesac-robotics/aiot_repo_2/commit/68d77539e8a350e733e687c4e8621ca660e206db)이며, 통합 브랜치의 이전 HEAD는 `2173ecb3be8a4f69a7dbba89a568486ee805c8fb`입니다. S2가 그 후손이므로 `git merge --ff-only feature/exercise-posture-scoring`으로 누락 10커밋을 가져왔습니다. 새로운 분기 병합 충돌이나 한쪽 파일의 강제 선택은 없었습니다.
+
+원격의 main, feature/AIFitServer, feature/ai-service, feature/aifit-server, feature/aiot-ui-integration, feature/db, feature/posture-error-classification, feature/wired-camera-link를 확인했습니다. 각 원격 HEAD의 커밋이 자세 점수 브랜치와 통합 이력에 이미 포함되어 있어 팀원 브랜치에 새로 가져올 커밋은 없었습니다. 실제 원격 상태 확인 시점을 기록하는 것이며 향후 자동 동기화·지속 감시를 구성하지 않습니다.
+
+### 통합 후 수정과 규칙 근거
+
+후속 구현은 [`160f0898`](https://github.com/sesac-robotics/aiot_repo_2/commit/160f089801a8b54977739d7daf8bebd6adbc4537)입니다. 규칙의 최신 Confluence 버전을 직접 다시 읽었으며 공통 기준 v6, Python v3, 설계·모듈화·DDD v3, Git v3, 주석·docstring v2, Git 입문 v4로 기존 참조와 같았습니다. 원문 링크는 [규칙·증거](../rules-and-evidence.md)에 유지합니다.
+
+| 기준 | 가져온 코드에서 수정한 부분 | 이유와 보존 범위 |
+| --- | --- | --- |
+| ARC-01·02 | `GUI/FitHelper/integrated_session.py`의 실제 제어를 `Server/ExerciseEvaluation/application/integrated_session.py`로 이동했습니다. 교정 저장/HTTP와 카메라 구현은 adapters로 옮겼습니다. | 서버가 GUI 구현을 import하지 않도록 하며, GUI의 기존 파일은 호환 facade로 유지합니다. |
+| ARC-03·05 | `application/ports.py`의 교정·점수·저장 포트를 만들고 bootstrap에서 생성자로 주입했습니다. | application이 파일 저장·카메라 구현을 선택하지 않습니다. 새 공개 경계의 타입과 실패 의미를 명시했습니다. |
+| State Machine·ARC-06·07 | `domain/lifecycle.py`가 실행 수명만 소유합니다. | 중복 pause/resume은 제어 이벤트를 증가시키지 않습니다. 기존 반복 추적기·점수 소유권을 바꾸거나 UNKNOWN을 오류로 채우지 않습니다. |
+| Repository·PY-05·06·08 | `adapters/session_repository.py`에서 UUID·요약 ID를 검증하고 기존 JSON 저장/조회·구간 경로 탐색을 담당합니다. | 파일 실패를 성공으로 숨기지 않습니다. 실패 후 동일 세션 재시도를 확인했습니다. 기존 DB 스키마와 개인 기록은 이동하지 않습니다. |
+| PY-03·09·12 | 런타임 import 환경을 서버의 `runtime_environment.py`로 옮기고 모듈 실행·한국어 책임/실패 설명을 유지했습니다. | import만으로 카메라·운동을 시작하지 않으며 실행 중 sys.path 변경을 추가하지 않았습니다. |
+| PY-02·04·ARC-01·02 | Black/isort, 새 domain·port mypy, 계층별 import 금지 검사와 합성 위반 시험을 추가했습니다. | 형식 검사만으로 설계 준수를 주장하지 않도록 상태·저장 실패·의존 방향을 실제로 검사합니다. |
+| GIT-01·03·05·06 | 기존 이력을 보존하고 구현과 설명을 분리하여 두 작업 브랜치에 반영합니다. | main 직접 push·강제 push·자가 리뷰 승인을 하지 않습니다. |
+
+### 검증과 적용 한계
+
+전체 자동 검사 119개 및 subtests 13개, 제어 9개를 통과했습니다. 도메인/포트 포함 지정 mypy, 소스 계약 230파일과 Black/isort를 확인했습니다. 보존 관절 690표본·7회에서 횟수·항목 점수·AI/규칙 총점이 같았습니다. 팀원 원본과 스쿼트 보존 파일 1,183개의 SHA-256도 작업 전과 같았습니다.
+
+새 환경의 실제 Qt 가입·로그인·체형분석 없는 통합 실행·기록 저장/재조회에서 관절33행을 확인했습니다. 기존 영상을 재생했으며 새 물리 웹캠 촬영은 하지 않았습니다. pause 중 완료2회가 유지되고 resume 후 검출3회가 됐으며 전체채점2회·재확인1회였습니다. 이는 전 영상 채점 성공률이나 독립 정확도 검증이 아닙니다.
+
+DDD 폴더 구조를 이유로 전체 운영 서비스를 단일 Aggregate로 바꿨다고 주장하지 않습니다. 기존 모델·연구 파이프라인의 동적 타입과 호환 전역 주입은 보존 경계에 남아 있습니다. 새 도메인·포트는 엄격한 타입·의존 검사를 적용하지만 모든 레거시 파일의 타입·상태 소유권까지 재작성하지 않았습니다. 기존 회원 DB·API·장치·팀원 원본·스쿼트 보존본은 변경하지 않습니다. Confluence 전문이나 개인 운동 기록은 이 기록에 포함하지 않습니다.

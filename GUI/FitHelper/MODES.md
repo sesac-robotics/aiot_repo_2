@@ -51,8 +51,12 @@ python3 tools/check_evaluation_runtime.py
 
 ## 원본 보존과 검증 범위
 
-`mode_gui.py`는 원본 WelcomeWindow를 상속하여 실행 프로세스 안에서 대시보드 연결만 교체합니다. `direct_correction_server.py`는 저장 호출을 제외하면 원본 LiveEngine의 판정 루프와 AST가 같은지 검사하고 다르면 실행을 중단합니다. 저장소의 원본 UI·회원·교정 파일과 스쿼트 체크포인트를 수정하지 않습니다. 팀원 변경으로 계약이 바뀌면 새 연결 파일을 수정합니다. 원본을 이전 버전으로 되돌리지 않습니다.
+`mode_gui.py`는 원본 WelcomeWindow를 상속하여 실행 프로세스 안에서 대시보드 연결만 교체합니다. `Server/ExerciseEvaluation/adapters/correction_server.py`는 저장 호출을 제외하면 원본 LiveEngine의 판정 루프와 AST가 같은지 검사하고 다르면 실행을 중단합니다. 저장소의 원본 UI·회원·교정 파일과 스쿼트 체크포인트를 수정하지 않습니다. 팀원 변경으로 계약이 바뀌면 새 연결 파일을 수정합니다. 원본을 이전 버전으로 되돌리지 않습니다.
 
 점수 모델·임계값은 보존하고 관측이 약한 실제 프레임만 독립 Full IMAGE 검출로 재확인합니다. 관절 보간·누락 복제·미평가 점수의 임의 채움은 하지 않습니다. 교정 확률을 점수로 환산하지 않습니다. 일시정지는 완료 결과를 유지하며 재개 때 진행 중 동작을 초기화합니다.
 
 카메라 없는 회귀 검사, 원본 교정 일치, 저장 관절 점수 보존 및 실제 GUI·저장·재조회를 확인합니다. 영상 재생에서 채점한 사례는 모든 사람·운동의 정확도나 독립 최종 Test 통과를 의미하지 않습니다. 통합 기록의 팀 DB·날짜별 리포트 연결과 새 사람의 실제 운동 평가는 남은 작업입니다.
+
+## 기존 실행 경로 호환
+
+`GUI.FitHelper.direct_correction_server`, `integrated_session`, `correction_session_store`, `runtime_config`는 기존 명령·import를 유지하는 호환 파일입니다. 실제 구현은 `Server/ExerciseEvaluation`의 domain·application·adapters와 런타임 설정에 있습니다. 화면과 원본 workout UI의 배치를 바꾸지 않고 내부 책임만 분리했습니다. 자세한 책임은 [서버 모듈 설명](../../Server/ExerciseEvaluation/README.md#책임-경계와-패턴)에서 확인합니다.

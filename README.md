@@ -18,6 +18,7 @@ AIoT 프로젝트 2팀. AI 기반 운동 자세 분석 및 운동 피드백 시�
 | GUI/FitHelper | 사용자 입력·화면·인증 세션·비동기 요청 | 백엔드 HTTP, JWT, MJPEG | [GUI](GUI/FitHelper/README.md) |
 | Server/AIFitService | 인증·루틴·영속 세션·리포트 | SQLite, AI 내부 HTTP, 외부 사진 분석 API | [백엔드](Server/AIFitService/README.md) |
 | Server/AIService | 관절 추론·운동 완료 이벤트·실시간 세션 | 카메라, 운동 전략, 자세 분류기 | [AI 서비스](Server/AIService/README.md) |
+| Server/ExerciseEvaluation | 기존 교정·점수의 선택/통합 실행·개인 기록 | 생성자 주입 포트, 원본 모델·카메라·파일 어댑터 | [실행·책임 경계](Server/ExerciseEvaluation/README.md) |
 | Server/PostureAnalysis | 제공자 데이터 처리·연구 학습·저장 결과 검토 | 원본·관절 캐시·동결 실험 파일 | [연구 코드](Server/PostureAnalysis/README.md) |
 | Server/AIFitDB | 관계·외래 키·반복 중복 제약 | 백엔드 저장 어댑터 | [DB](Server/AIFitDB/README.md) |
 | Device/ImageStreamer | 카메라 초기화·영상 HTTP 제공 | ESP32 보드·Wi-Fi | [장치](Device/ImageStreamer/README.md) |
@@ -83,3 +84,9 @@ g++ -std=c++17 -Wall -Wextra -Werror -pedantic -I . tests/firmware/test_connecti
 저장소 밖에 있던 코드·라벨·관절 특징·자체 학습 모델·검증 결과는 [최신 작업 스냅샷](checkpoints/workspace-20261025/README.md)에 원래 경로와 SHA-256으로 연결했습니다. [현재 위치 색인](LATEST_WORKSPACE.json)에서 공통 측정 포인터, 별도 4종 연구, 숄더 연구와 저장된 로컬 웹앱을 구분합니다. 과거 스쿼트 보존본·태그·동결 분할은 유지했습니다.
 
 이 게시가 연구 모델의 운영 채택·독립 최종 Test 통과·새 라이브 배포를 뜻하지 않습니다. 원본 데이터셋·영상·검토 이미지·제공자 사전학습 가중치는 별도 보관 목록에 남겼으며, Confluence 공용 문서 본문과 개인 문서 사본은 Git에 넣지 않았습니다.
+
+## 통합 후속 동기화 — 2026-10-25
+
+자세 점수 브랜치의 `68d77539`까지 누락됐던 10개 커밋을 통합 브랜치에 fast-forward로 반영했습니다. 원본 커밋을 cherry-pick으로 재생성하지 않고 기존 이력을 유지했습니다. 원격 전체 브랜치를 확인했으며 다른 팀원의 추가 미반영 커밋은 없었습니다. 이후의 책임 분리·검사·기록 변경은 두 브랜치에 같은 이력으로 반영합니다.
+
+서버 실행·관절 기록 구현을 GUI에서 분리하고 순수 실행 수명, 저장/실행 포트, 기존 교정/카메라 어댑터를 연결했습니다. 기존 GUI 명령과 API·JSON 형식, 스쿼트 동결 모델과 반복 계산은 유지합니다. 팀 설치·실행 절차는 [운동 모드 안내](GUI/FitHelper/MODES.md)를 따릅니다. [브랜치별 후속 기록](branch-change-records/branches/feature-exercise-posture-scoring.md#2026-10-25-후속-동기화와-규칙-적용)에서 원본 고정 커밋·적용 규칙·검증·남은 범위를 확인합니다. Confluence 기준서 원문과 개인 기록은 복사하지 않습니다.
