@@ -79,6 +79,8 @@ g++ -std=c++17 -Wall -Wextra -Werror -pedantic -I . tests/firmware/test_connecti
 
 ## 최신 자세 평가 작업 — 2026-10-25
 
+전체 자세 평가의 설명 범위는 **스쿼트·푸시업·숄더 프레스·YTW·플랭크 5종**입니다. 스쿼트 보존은 코드·모델·라벨·분할의 변경을 제한하며 문서 설명에서 제외하는 뜻이 아닙니다. 아래의 ‘4종 연구’는 스쿼트를 보존한 상태에서 나머지 4종을 보강한 별도 실험만 가리킵니다. 5종 전체의 자료·라벨링·학습·검증 설명은 [프로젝트 실전 과정](https://r2d2sesac.atlassian.net/wiki/spaces/YLI4jLZJ4ELw/pages/13566035), 스쿼트의 기존 학습과 검증은 [스쿼트 적용 가이드](https://r2d2sesac.atlassian.net/wiki/spaces/YLI4jLZJ4ELw/pages/13599029)에서 확인합니다.
+
 `feature/exercise-posture-scoring`에는 기존 준비·복귀 미커밋 작업을 보존하고 `feature/team-integration-standards`의 최신 통합 소스와 규칙 적용 이력을 병합했습니다. 이전 브랜치별 변경 기록은 해당 시점의 고정 커밋 기준으로 유지합니다.
 
 저장소 밖에 있던 코드·라벨·관절 특징·자체 학습 모델·검증 결과는 [최신 작업 스냅샷](checkpoints/workspace-20261025/README.md)에 원래 경로와 SHA-256으로 연결했습니다. [현재 위치 색인](LATEST_WORKSPACE.json)에서 공통 측정 포인터, 별도 4종 연구, 숄더 연구와 저장된 로컬 웹앱을 구분합니다. 과거 스쿼트 보존본·태그·동결 분할은 유지했습니다.
