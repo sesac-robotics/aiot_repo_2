@@ -1,4 +1,7 @@
-"""Small per-account cache of the latest body-analysis record ID."""
+"""사용자별 최근 체형 분석 ID를 저장·조회하고 부위 상태를 화면 문구로 변환합니다. 인증 토큰이나 분석 정답을 저장하는 모듈이 아닙니다.
+
+Small per-account cache of the latest body-analysis record ID."""
+
 import json
 from pathlib import Path
 
@@ -7,8 +10,9 @@ _CACHE_FILE = Path(__file__).resolve().with_name(".body_analysis_cache.json")
 
 def account_key(login_window=None):
     try:
-        import login_client
-        user = getattr(login_client, "_user", None)
+        from GUI.FitHelper import login_client
+
+        user = login_client.get_user()
     except ImportError:
         user = None
     if isinstance(user, dict):
@@ -81,11 +85,20 @@ _AREA_LABELS = {
     "leg_status": "하체",
 }
 _ALIASES = {
-    "chest": "가슴", "가슴": "가슴",
-    "shoulder": "어깨", "shoulders": "어깨", "어깨": "어깨",
-    "arm": "팔", "arms": "팔", "팔": "팔",
-    "back": "등", "등": "등",
-    "leg": "하체", "legs": "하체", "lower body": "하체", "하체": "하체",
+    "chest": "가슴",
+    "가슴": "가슴",
+    "shoulder": "어깨",
+    "shoulders": "어깨",
+    "어깨": "어깨",
+    "arm": "팔",
+    "arms": "팔",
+    "팔": "팔",
+    "back": "등",
+    "등": "등",
+    "leg": "하체",
+    "legs": "하체",
+    "lower body": "하체",
+    "하체": "하체",
 }
 
 
@@ -95,7 +108,16 @@ def _classify(value):
     text = str(value).strip().lower() if value is not None else ""
     if text in {"good", "strength", "strong", "양호", "좋음", "정상", "강점"}:
         return "good"
-    if text in {"bad", "weakness", "weak", "poor", "불량", "나쁨", "취약", "약점"}:
+    if text in {
+        "bad",
+        "weakness",
+        "weak",
+        "poor",
+        "불량",
+        "나쁨",
+        "취약",
+        "약점",
+    }:
         return "bad"
     return "unknown"
 
@@ -126,7 +148,9 @@ def area_groups(response):
     good, bad, unknown = [], [], []
     for key, label in _AREA_LABELS.items():
         status = _classify(data.get(key))
-        target = good if status == "good" else bad if status == "bad" else unknown
+        target = (
+            good if status == "good" else bad if status == "bad" else unknown
+        )
         if label not in target:
             target.append(label)
     _add_regions(data.get("good"), good)
@@ -139,9 +163,13 @@ def area_groups(response):
 
 def format_area_report(response):
     good, bad, unknown = area_groups(response)
+
     def section(title, values):
-        items = "\n".join(f"• {name}" for name in values) if values else "• 없음"
+        items = (
+            "\n".join(f"• {name}" for name in values) if values else "• 없음"
+        )
         return f"{title}\n{items}"
+
     parts = [section("Strength:", good), section("Weakness:", bad)]
     if unknown:
         parts.append(section("판정 불가:", unknown))

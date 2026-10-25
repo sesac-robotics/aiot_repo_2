@@ -1,21 +1,21 @@
+"""로그인·회원가입 입력을 검증하고 요청 작업을 제출합니다. 인증 성공 후 대시보드로 이동하며 요청 중에는 중복 제출을 막습니다."""
 
 import os
 import re
+
 import requests
-
-from PyQt6.QtWidgets import QMainWindow
 from PyQt6 import uic
+from PyQt6.QtWidgets import QMainWindow
 
-import login_client
-
+from GUI.FitHelper import login_client
+from GUI.FitHelper.request_worker import RequestTask
 
 # ============================================================
 # AIFit Server 설정
 # ============================================================
 
 AIFIT_SERVER_URL = os.getenv(
-    "AIFIT_SERVER_URL",
-    "http://192.168.15.118:8000"
+    "AIFIT_SERVER_URL", "http://127.0.0.1:8000"
 ).rstrip("/")
 
 REGISTER_URL = f"{AIFIT_SERVER_URL}/api/auth/register"
@@ -25,6 +25,7 @@ REGISTER_URL = f"{AIFIT_SERVER_URL}/api/auth/register"
 # 회원가입 완료 화면
 # ============================================================
 
+
 class RegistrationCompleteWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__()
@@ -32,15 +33,12 @@ class RegistrationCompleteWindow(QMainWindow):
         self.login_window = parent
 
         ui_path = os.path.join(
-            os.path.dirname(__file__),
-            "registrationComplete.ui"
+            os.path.dirname(__file__), "registrationComplete.ui"
         )
         uic.loadUi(ui_path, self)
 
         if hasattr(self, "goToLoginButton"):
-            self.goToLoginButton.clicked.connect(
-                self.return_to_login
-            )
+            self.goToLoginButton.clicked.connect(self.return_to_login)
 
     def return_to_login(self):
         if self.login_window is not None:
@@ -59,6 +57,7 @@ class RegistrationCompleteWindow(QMainWindow):
 # 회원가입 화면
 # ============================================================
 
+
 class RegistrationWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__()
@@ -66,21 +65,14 @@ class RegistrationWindow(QMainWindow):
         self.login_window = parent
         self.complete_window = None
 
-        ui_path = os.path.join(
-            os.path.dirname(__file__),
-            "registration.ui"
-        )
+        ui_path = os.path.join(os.path.dirname(__file__), "registration.ui")
         uic.loadUi(ui_path, self)
 
         if hasattr(self, "backButton"):
-            self.backButton.clicked.connect(
-                self.return_to_login
-            )
+            self.backButton.clicked.connect(self.return_to_login)
 
         if hasattr(self, "registerButton"):
-            self.registerButton.clicked.connect(
-                self.handle_registration
-            )
+            self.registerButton.clicked.connect(self.handle_registration)
 
     # --------------------------------------------------------
     # 오류 메시지 출력
@@ -135,9 +127,7 @@ class RegistrationWindow(QMainWindow):
         )
 
         age_text = (
-            self.editAge.text().strip()
-            if hasattr(self, "editAge")
-            else ""
+            self.editAge.text().strip() if hasattr(self, "editAge") else ""
         )
 
         height_text = (
@@ -168,15 +158,12 @@ class RegistrationWindow(QMainWindow):
         }
 
         missing_fields = [
-            name
-            for name, value in required_fields.items()
-            if not value
+            name for name, value in required_fields.items() if not value
         ]
 
         if missing_fields:
             self.show_error(
-                "다음 항목을 입력해 주세요: "
-                + ", ".join(missing_fields)
+                "다음 항목을 입력해 주세요: " + ", ".join(missing_fields)
             )
             return
 
@@ -214,9 +201,7 @@ class RegistrationWindow(QMainWindow):
             weight = float(weight_text)
 
         except ValueError:
-            self.show_error(
-                "나이는 정수, 키와 몸무게는 숫자로 입력해 주세요."
-            )
+            self.show_error("나이는 정수, 키와 몸무게는 숫자로 입력해 주세요.")
             return
 
         if age <= 0:
@@ -224,9 +209,7 @@ class RegistrationWindow(QMainWindow):
             return
 
         if height <= 0 or weight <= 0:
-            self.show_error(
-                "키와 몸무게는 0보다 큰 숫자여야 합니다."
-            )
+            self.show_error("키와 몸무게는 0보다 큰 숫자여야 합니다.")
             return
 
         # NaN 및 무한대 입력 방지
@@ -251,109 +234,35 @@ class RegistrationWindow(QMainWindow):
             "weight": weight,
         }
 
-        print(
-            f"[회원가입 요청] 서버 주소: {REGISTER_URL}",
-            flush=True
+        self.registerButton.setEnabled(False)
+        self._registration_task = RequestTask(
+            self,
+            lambda: self._register_request(payload),
+            self._registration_completed,
+            self._registration_failed,
         )
-        print(
-            f"[회원가입 요청] 사용자 ID: {username}",
-            flush=True
+        self._registration_task.start()
+
+    @staticmethod
+    def _register_request(payload):
+        response = requests.post(REGISTER_URL, json=payload, timeout=10)
+        response.raise_for_status()
+        return True
+
+    def _registration_failed(self, error):
+        self.registerButton.setEnabled(True)
+        self.show_error(
+            "회원가입에 실패했습니다. 입력값과 서버 상태를 확인해 주세요."
         )
 
-        # ----------------------------------------------------
-        # 7. AIFit Server에 회원가입 요청
-        # ----------------------------------------------------
-
-        try:
-            response = requests.post(
-                REGISTER_URL,
-                json=payload,
-                timeout=10
-            )
-
-            print(
-                f"[회원가입 응답] HTTP {response.status_code}",
-                flush=True
-            )
-
-            # HTTP 오류 응답 처리
-            if not response.ok:
-                error_message = (
-                    f"서버에서 회원가입을 거부했습니다. "
-                    f"(HTTP {response.status_code})"
-                )
-
-                try:
-                    result = response.json()
-
-                    # FastAPI의 일반적인 오류 응답 형식
-                    if isinstance(result, dict):
-                        detail = result.get("detail")
-
-                        if detail:
-                            error_message = (
-                                f"회원가입 실패: {detail}"
-                            )
-
-                except ValueError:
-                    pass
-
-                self.show_error(error_message)
-
-                print(
-                    f"[회원가입 실패] 응답 내용: "
-                    f"{response.text[:500]}",
-                    flush=True
-                )
-                return
-
-            # 성공 응답 본문은 서버 응답 형식에 따라 확인
-            print(
-                f"[회원가입 성공] 서버가 HTTP "
-                f"{response.status_code} 응답을 반환했습니다.",
-                flush=True
-            )
-
-        except requests.Timeout:
-            self.show_error(
-                "서버 응답 시간이 초과되었습니다. "
-                "서버 상태와 네트워크를 확인해 주세요."
-            )
-            return
-
-        except requests.ConnectionError as e:
-            self.show_error(
-                "서버에 연결할 수 없습니다. "
-                "AIFit Server의 IP 주소와 포트를 확인해 주세요."
-            )
-            print(
-                f"[회원가입 연결 오류] {e}",
-                flush=True
-            )
-            return
-
-        except requests.RequestException as e:
-            self.show_error(
-                "회원가입 요청 중 통신 오류가 발생했습니다."
-            )
-            print(
-                f"[회원가입 통신 오류] {e}",
-                flush=True
-            )
-            return
-
-        # ----------------------------------------------------
-        # 8. 서버 응답이 성공인 경우에만 완료 화면 표시
-        # ----------------------------------------------------
-
+    def _registration_completed(self, result):
+        self.registerButton.setEnabled(True)
         parent_login = self.login_window
 
         self.login_window = None
         self.close()
 
-        self.complete_window = RegistrationCompleteWindow(
-            parent_login
-        )
+        self.complete_window = RegistrationCompleteWindow(parent_login)
         self.complete_window.show()
 
     # --------------------------------------------------------
@@ -377,6 +286,7 @@ class RegistrationWindow(QMainWindow):
 # 로그인 화면
 # ============================================================
 
+
 class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -384,25 +294,25 @@ class LoginWindow(QMainWindow):
         self.welcome_window = None
         self.reg_window = None
 
-        ui_path = os.path.join(
-            os.path.dirname(__file__),
-            "mainLoginWindow.ui"
-        )
+        ui_path = os.path.join(os.path.dirname(__file__), "mainLoginWindow.ui")
         uic.loadUi(ui_path, self)
 
         if hasattr(self, "loginButton"):
-            self.loginButton.clicked.connect(
-                self.handle_login
-            )
+            self.loginButton.clicked.connect(self.handle_login)
 
         if hasattr(self, "registerLinkButton"):
-            self.registerLinkButton.clicked.connect(
-                self.go_to_registration
-            )
+            self.registerLinkButton.clicked.connect(self.go_to_registration)
 
     # --------------------------------------------------------
     # 로그인 처리
     # --------------------------------------------------------
+
+    def closeEvent(self, event):
+        task = getattr(self, "_login_task", None)
+        if task is not None:
+            task.cancel()
+        login_client.logout()
+        event.accept()
 
     def handle_login(self):
         username = (
@@ -412,9 +322,7 @@ class LoginWindow(QMainWindow):
         )
 
         password = (
-            self.passwordEdit.text()
-            if hasattr(self, "passwordEdit")
-            else ""
+            self.passwordEdit.text() if hasattr(self, "passwordEdit") else ""
         )
 
         if hasattr(self, "errorMsgLabel"):
@@ -422,84 +330,30 @@ class LoginWindow(QMainWindow):
 
         if not username or not password:
             if hasattr(self, "errorMsgLabel"):
-                self.errorMsgLabel.setText(
-                    "아이디와 비밀번호를 입력해 주세요."
-                )
+                self.errorMsgLabel.setText("아이디와 비밀번호를 입력해 주세요.")
             return
 
-        print(
-            f"[로그인 요청] 사용자 ID: {username}",
-            flush=True
+        self.loginButton.setEnabled(False)
+        self._login_task = RequestTask(
+            self,
+            lambda: login_client.login(username, password),
+            self._login_completed,
+            self._login_failed,
         )
+        self._login_task.start()
 
-        # Keep the original .ui design while exercising the temporary JWT API.
-        try:
-            import importlib.util
-            from pathlib import Path
+    def _login_failed(self, error):
+        self.loginButton.setEnabled(True)
+        self.errorMsgLabel.setText("로그인 요청을 완료하지 못했습니다.")
 
-            jwt_helper = (
-                Path(__file__).resolve().parent
-                / "jwt요청용 코드 (절대지우지마셈)"
-                / "login.py"
-            )
-            spec = importlib.util.spec_from_file_location(
-                "aifit_jwt_request_helper", jwt_helper
-            )
-            if spec is None or spec.loader is None:
-                raise ImportError(f"JWT 요청 모듈을 찾을 수 없습니다: {jwt_helper}")
-            jwt_module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(jwt_module)
-            request_json = jwt_module.request_json
-            response_message = jwt_module.response_message
-
-            code, body = request_json(
-                "POST", "/api/auth/login",
-                {"username": username, "password": password},
-            )
-            if code != 200 or not body.get("success"):
-                message = response_message(body)
-                raise ValueError(message)
-
-            token = body.get("access_token")
-            if not token:
-                raise ValueError("로그인 응답에 access_token이 없습니다.")
-
-            profile_code, profile = request_json(
-                "GET", "/api/me", token=token
-            )
-            if profile_code != 200 or not profile.get("success"):
-                raise ValueError(
-                    "JWT 인증 확인 실패: " + response_message(profile)
-                )
-
-            login_client._access_token = token
-            login_client._user = body.get("user")
-            try:
-                import body_analysis_client
-                body_analysis_client.set_access_token(token)
-            except ImportError:
-                pass
-
-        except Exception as e:
-            print(f"[JWT 로그인/검증 실패] {type(e).__name__}: {e}", flush=True)
-            if hasattr(self, "errorMsgLabel"):
-                if isinstance(e, ConnectionError):
-                    message = str(e)
-                else:
-                    message = str(e) or "로그인 또는 JWT 검증에 실패했습니다."
-                self.errorMsgLabel.setText(message)
+    def _login_completed(self, success):
+        self.loginButton.setEnabled(True)
+        if not success:
+            self.errorMsgLabel.setText("로그인 또는 인증 확인에 실패했습니다.")
             return
+        self.errorMsgLabel.clear()
+        from GUI.FitHelper.welcome_window import WelcomeWindow
 
-        verified_user = profile.get("user", {})
-        display_name = verified_user.get("nickname") or username
-        print(
-            f"[JWT 로그인 성공] 사용자: {display_name}; GET /api/me 인증 성공",
-            flush=True,
-        )
-        if hasattr(self, "errorMsgLabel"):
-            self.errorMsgLabel.clear()
-
-        from welcome_window import WelcomeWindow
         self.welcome_window = WelcomeWindow(self)
         self.welcome_window.show()
         self.hide()

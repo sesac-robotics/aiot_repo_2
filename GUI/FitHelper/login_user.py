@@ -1,10 +1,12 @@
-import os
-import requests
+"""이전 로그인 API를 시험하던 호환용 클라이언트입니다. 현재 GUI의 인증 진입점은 login_client와 login_window이며 이 파일은 과거 호출 계약 비교용으로 보존합니다."""
 
+import os
+
+import requests
 
 AIFIT_SERVER_URL = os.getenv(
     "AIFIT_SERVER_URL",
-    "http://192.168.15.118:8000",
+    "http://127.0.0.1:8000",
 ).rstrip("/")
 LOGIN_URL = f"{AIFIT_SERVER_URL}/api/login"
 
@@ -71,8 +73,12 @@ def login(username: str, password: str) -> dict:
         )
 
     if not response.ok:
-        detail = body.get("detail", "서버에서 로그인 요청을 처리하지 못했습니다.")
-        print(f"[로그인 실패] HTTP {response.status_code}: {detail}", flush=True)
+        detail = body.get(
+            "detail", "서버에서 로그인 요청을 처리하지 못했습니다."
+        )
+        print(
+            f"[로그인 실패] HTTP {response.status_code}: {detail}", flush=True
+        )
         raise LoginError(
             f"Login failed with HTTP {response.status_code}: {detail}",
             f"로그인에 실패했습니다. (HTTP {response.status_code})",
@@ -81,8 +87,14 @@ def login(username: str, password: str) -> dict:
     access_token = body.get("access_token")
     user = body.get("user")
 
-    if not body.get("success") or not access_token or not isinstance(user, dict):
-        print("[로그인 실패] 응답에 JWT 또는 사용자 정보가 없습니다.", flush=True)
+    if (
+        not body.get("success")
+        or not access_token
+        or not isinstance(user, dict)
+    ):
+        print(
+            "[로그인 실패] 응답에 JWT 또는 사용자 정보가 없습니다.", flush=True
+        )
         raise LoginError(
             "Malformed login response",
             "서버 응답에 인증 토큰이 없습니다. AIFit Server 코드를 확인해 주세요.",

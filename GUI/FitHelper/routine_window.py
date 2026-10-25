@@ -1,4 +1,7 @@
-"""Display the 7-day routine returned by the authenticated AIFit API."""
+"""분석 결과에 포함된 주간 루틴을 조회해 운동 이름·세트·횟수·유지 시간으로 표시합니다. 이전 응답 형식은 화면 경계에서 읽기 형식으로 변환합니다.
+
+Display the 7-day routine returned by the authenticated AIFit API."""
+
 import os
 import sys
 from pathlib import Path
@@ -7,13 +10,12 @@ from PyQt6 import uic
 from PyQt6.QtCore import QThread, pyqtSignal
 from PyQt6.QtWidgets import QMainWindow
 
+from GUI.FitHelper import body_analysis_client as body_api
+from GUI.FitHelper.body_analysis_cache import load_body_id
+from GUI.FitHelper.body_analysis_client import BodyAnalysisAPIError
+
 # The shared authenticated API client and per-account analysis cache live above
 # this GUI package directory.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
-import body_analysis_client as body_api
-from body_analysis_cache import load_body_id
-from body_analysis_client import BodyAnalysisAPIError
 
 
 DAY_NAMES = {
@@ -54,7 +56,11 @@ def _exercise_text(exercise):
     if sets is not None:
         details.append(f"{sets}세트")
     if duration is not None:
-        details.append(f"{duration:g}초 유지" if isinstance(duration, (int, float)) else f"{duration}초 유지")
+        details.append(
+            f"{duration:g}초 유지"
+            if isinstance(duration, (int, float))
+            else f"{duration}초 유지"
+        )
     elif reps is not None:
         details.append(f"{reps}회")
     return name + (" · " + " · ".join(details) if details else "")
@@ -72,7 +78,9 @@ class _RoutineFetchThread(QThread):
         try:
             response = body_api.get_analysis(self.body_id)
             if response.get("status") != "completed":
-                raise BodyAnalysisAPIError("체형 분석이 아직 완료되지 않았습니다.")
+                raise BodyAnalysisAPIError(
+                    "체형 분석이 아직 완료되지 않았습니다."
+                )
             self.succeeded.emit(response)
         except BodyAnalysisAPIError as exc:
             self.failed.emit(str(exc))
@@ -97,7 +105,11 @@ class FullRoutineWindow(QMainWindow):
             return
 
         self._show_message("서버에서 7일 루틴을 불러오는 중입니다.")
-        body_id = analysis_data.get("body_id") if isinstance(analysis_data, dict) else None
+        body_id = (
+            analysis_data.get("body_id")
+            if isinstance(analysis_data, dict)
+            else None
+        )
         if not body_id:
             login_window = getattr(parent, "login_window", None)
             body_id = load_body_id(login_window)
@@ -150,13 +162,17 @@ class FullRoutineWindow(QMainWindow):
             if label is None:
                 continue
             day = days_by_number.get(day_no)
-            exercises = day.get("exercises", []) if isinstance(day, dict) else None
+            exercises = (
+                day.get("exercises", []) if isinstance(day, dict) else None
+            )
             if not isinstance(exercises, list):
                 text = f"{day_name} · 루틴 정보 없음"
             elif not exercises:
                 text = f"{day_name} · 휴식"
             else:
-                text = f"{day_name} · " + " / ".join(_exercise_text(item) for item in exercises)
+                text = f"{day_name} · " + " / ".join(
+                    _exercise_text(item) for item in exercises
+                )
             label.setText(text)
 
     def return_to_welcome(self):

@@ -1,16 +1,16 @@
+"""독립 영상 수신 GUI 시험 화면입니다. 본 서비스의 운동 화면은 workout_window이며 이 파일의 카운터를 업무 세션의 권위로 사용하지 않습니다."""
+
 import os
-import requests
+
 import cv2
 import numpy as np
-
-from PyQt6.QtCore import QThread, pyqtSignal, Qt
+import requests
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QImage, QPixmap
-from PyQt6.QtWidgets import QWidget, QLabel, QPushButton, QVBoxLayout
-
+from PyQt6.QtWidgets import QLabel, QPushButton, QVBoxLayout, QWidget
 
 AIFIT_SERVER_URL = os.getenv(
-    "AIFIT_SERVER_URL",
-    "http://192.168.15.118:8000"
+    "AIFIT_SERVER_URL", "http://127.0.0.1:8000"
 ).rstrip("/")
 STREAM_URL = f"{AIFIT_SERVER_URL}/stream"
 
@@ -26,7 +26,9 @@ class VideoReceiver(QThread):
     def run(self):
         buffer = bytearray()
         try:
-            with requests.get(STREAM_URL, stream=True, timeout=(5, 30)) as response:
+            with requests.get(
+                STREAM_URL, stream=True, timeout=(5, 30)
+            ) as response:
                 self._response = response
                 response.raise_for_status()
                 self.status_changed.emit("서버 연결 성공 · 영상 대기 중")
@@ -51,8 +53,8 @@ class VideoReceiver(QThread):
                                 del buffer[:start]
                             break
 
-                        jpeg_bytes = bytes(buffer[start:end + 2])
-                        del buffer[:end + 2]
+                        jpeg_bytes = bytes(buffer[start : end + 2])
+                        del buffer[: end + 2]
 
                         encoded = np.frombuffer(jpeg_bytes, dtype=np.uint8)
                         frame = cv2.imdecode(encoded, cv2.IMREAD_COLOR)
@@ -62,8 +64,11 @@ class VideoReceiver(QThread):
                         rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                         height, width, _ = rgb.shape
                         image = QImage(
-                            rgb.data, width, height, rgb.strides[0],
-                            QImage.Format.Format_RGB888
+                            rgb.data,
+                            width,
+                            height,
+                            rgb.strides[0],
+                            QImage.Format.Format_RGB888,
                         ).copy()
                         self.frame_received.emit(image)
 
@@ -128,7 +133,7 @@ class VideoWindow(QWidget):
             pixmap.scaled(
                 self.video_label.size(),
                 Qt.AspectRatioMode.KeepAspectRatio,
-                Qt.TransformationMode.FastTransformation
+                Qt.TransformationMode.FastTransformation,
             )
         )
 

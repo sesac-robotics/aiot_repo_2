@@ -1,12 +1,17 @@
-"""Desktop client for the AIFit body-analysis API."""
+"""체형 사진 업로드와 분석 조회를 HTTP 요청으로 변환합니다. 인증 상태는 login_client의 단일 세션에서 읽고, 업로드 파일은 성공·실패와 관계없이 닫습니다.
+
+Desktop client for the AIFit body-analysis API."""
+
 import os
 from pathlib import Path
 
 import requests
 
-AIFIT_SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
+AIFIT_SERVER_URL = os.getenv(
+    "AIFIT_SERVER_URL", "http://127.0.0.1:8000"
+).rstrip("/")
 TIMEOUT_SECONDS = 30
-_access_token: str | None = None
+from GUI.FitHelper import login_client
 
 
 class BodyAnalysisAPIError(Exception):
@@ -15,29 +20,26 @@ class BodyAnalysisAPIError(Exception):
         self.status_code = status_code
 
 
-def set_access_token(token: str | None) -> None:
-    """Call after login succeeds; pass None on logout."""
-    global _access_token
-    _access_token = token
-
-
 def _request(method: str, path: str, **kwargs):
-    token = _access_token
+    token = login_client.get_access_token()
     if not token:
-        try:
-            import login_client
-            token = getattr(login_client, "_access_token", None)
-        except ImportError:
-            token = None
-    if not token:
-        raise BodyAnalysisAPIError("로그인이 필요합니다. 로그인 후 다시 시도해 주세요.")
+        raise BodyAnalysisAPIError(
+            "로그인이 필요합니다. 로그인 후 다시 시도해 주세요."
+        )
     headers = kwargs.pop("headers", {})
     headers["Authorization"] = f"Bearer {token}"
     try:
-        response = requests.request(method, AIFIT_SERVER_URL + path,
-                                    headers=headers, timeout=kwargs.pop("timeout", TIMEOUT_SECONDS), **kwargs)
+        response = requests.request(
+            method,
+            AIFIT_SERVER_URL + path,
+            headers=headers,
+            timeout=kwargs.pop("timeout", TIMEOUT_SECONDS),
+            **kwargs,
+        )
     except requests.Timeout as exc:
-        raise BodyAnalysisAPIError("AIFit Server 응답 시간이 초과되었습니다.") from exc
+        raise BodyAnalysisAPIError(
+            "AIFit Server 응답 시간이 초과되었습니다."
+        ) from exc
     except requests.RequestException as exc:
         raise BodyAnalysisAPIError(f"AIFit Server 통신 오류: {exc}") from exc
     try:
@@ -58,18 +60,24 @@ def upload_photos(photo_paths: dict[str, str]):
     sides = ("front", "left", "right", "back")
     missing = [side for side in sides if not photo_paths.get(side)]
     if missing:
-        raise BodyAnalysisAPIError("사진을 모두 선택해 주세요. 누락: " + ", ".join(missing))
+        raise BodyAnalysisAPIError(
+            "사진을 모두 선택해 주세요. 누락: " + ", ".join(missing)
+        )
     files, opened = {}, []
     try:
         for side in sides:
             path = Path(photo_paths[side])
             handle = path.open("rb")
             opened.append(handle)
-            mime = {".png": "image/png", ".webp": "image/webp"}.get(path.suffix.lower(), "image/jpeg")
+            mime = {".png": "image/png", ".webp": "image/webp"}.get(
+                path.suffix.lower(), "image/jpeg"
+            )
             files[f"{side}_photo"] = (path.name, handle, mime)
         return _request("POST", "/body-analysis", files=files)
     except OSError as exc:
-        raise BodyAnalysisAPIError(f"사진 파일을 열 수 없습니다: {exc}") from exc
+        raise BodyAnalysisAPIError(
+            f"사진 파일을 열 수 없습니다: {exc}"
+        ) from exc
     finally:
         for handle in opened:
             handle.close()

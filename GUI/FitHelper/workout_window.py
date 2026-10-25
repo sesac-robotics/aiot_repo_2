@@ -1,4 +1,7 @@
-"""Workout UI connected to AIFit Server session orchestration and video stream."""
+"""운동 시작·중지·재개·종료 명령과 라이브 상태 조회를 연결합니다. 화면 카운터는 서버 응답의 투영이며 별도 운동 횟수 판정자가 아닙니다.
+
+Workout UI connected to AIFit Server session orchestration and video stream."""
+
 import os
 
 import requests
@@ -7,9 +10,11 @@ from PyQt6.QtCore import Qt, QThread, QTimer, pyqtSignal
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QMainWindow
 
-from video_receiver import VideoReceiver
+from GUI.FitHelper.video_receiver import VideoReceiver
 
-AIFIT_SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
+AIFIT_SERVER_URL = os.getenv(
+    "AIFIT_SERVER_URL", "http://127.0.0.1:8000"
+).rstrip("/")
 STREAM_URL = f"{AIFIT_SERVER_URL}/api/video/stream"
 REQUEST_TIMEOUT = 15
 
@@ -41,7 +46,9 @@ class _ApiRequestThread(QThread):
                 raise RuntimeError(str(detail))
             self.completed.emit(self.operation, body, None)
         except requests.RequestException as exc:
-            self.completed.emit(self.operation, None, f"AIFit Server 통신 오류: {exc}")
+            self.completed.emit(
+                self.operation, None, f"AIFit Server 통신 오류: {exc}"
+            )
         except Exception as exc:
             self.completed.emit(self.operation, None, str(exc))
 
@@ -79,8 +86,9 @@ class WorkoutWindow(QMainWindow):
 
     def _access_token(self):
         try:
-            import login_client
-            return getattr(login_client, "_access_token", None)
+            from GUI.FitHelper import login_client
+
+            return login_client.get_access_token()
         except ImportError:
             return None
 
@@ -97,7 +105,9 @@ class WorkoutWindow(QMainWindow):
         thread = _ApiRequestThread(operation, method, path, token, self)
         self._request_threads.add(thread)
         thread.completed.connect(self._handle_api_result)
-        thread.finished.connect(lambda thread=thread: self._request_threads.discard(thread))
+        thread.finished.connect(
+            lambda thread=thread: self._request_threads.discard(thread)
+        )
         thread.finished.connect(thread.deleteLater)
         thread.start()
 
@@ -113,9 +123,14 @@ class WorkoutWindow(QMainWindow):
             self._active_operation = None
 
         if error:
-            print(f"[WORKOUT][ERROR] operation={operation} detail={error}", flush=True)
+            print(
+                f"[WORKOUT][ERROR] operation={operation} detail={error}",
+                flush=True,
+            )
             self.update_status(f"요청 실패: {error}")
-            if operation == "create_session" and hasattr(self, "pauseResumeButton"):
+            if operation == "create_session" and hasattr(
+                self, "pauseResumeButton"
+            ):
                 self.pauseResumeButton.setText("다시 시도")
                 self.pauseResumeButton.setEnabled(True)
             if operation == "finish" and hasattr(self, "endWorkoutButton"):
@@ -131,7 +146,9 @@ class WorkoutWindow(QMainWindow):
             self.exercise_id = exercise.get("exercise_id")
             self.session_status = result.get("session_status", "IN_PROGRESS")
             if not self.session_id or not self.exercise_id:
-                self.update_status("세션 응답에 session_id 또는 exercise_id가 없습니다.")
+                self.update_status(
+                    "세션 응답에 session_id 또는 exercise_id가 없습니다."
+                )
                 return
             print(
                 f"[WORKOUT][SESSION] session_id={self.session_id} "
@@ -150,7 +167,9 @@ class WorkoutWindow(QMainWindow):
         elif operation == "live":
             self._apply_live_status(result)
         elif operation in {"pause", "resume"}:
-            self.session_status = result.get("session_status", self.session_status)
+            self.session_status = result.get(
+                "session_status", self.session_status
+            )
             if result.get("exercise_id"):
                 self.exercise_id = result["exercise_id"]
             if operation == "resume":
@@ -177,10 +196,14 @@ class WorkoutWindow(QMainWindow):
         else:
             goal = "목표 확인 중"
         if hasattr(self, "feedbackLabel"):
-            self.feedbackLabel.setText(f"💡 {name} · {set_no}/{sets}세트 · 목표 {goal}")
+            self.feedbackLabel.setText(
+                f"💡 {name} · {set_no}/{sets}세트 · 목표 {goal}"
+            )
         if hasattr(self, "counterLabel"):
             current = "0초" if duration is not None else "0"
-            target = f"{duration}초" if duration is not None else str(reps or "?")
+            target = (
+                f"{duration}초" if duration is not None else str(reps or "?")
+            )
             self.counterLabel.setText(f"🔥 {current} / {target}")
 
     def start_video(self):
@@ -201,7 +224,11 @@ class WorkoutWindow(QMainWindow):
         self.receiver.start()
 
     def fetch_live_status(self):
-        if self.session_id is None or self._active_operation is not None or self.session_complete:
+        if (
+            self.session_id is None
+            or self._active_operation is not None
+            or self.session_complete
+        ):
             return
         self._send_api(
             "live",
@@ -215,7 +242,9 @@ class WorkoutWindow(QMainWindow):
         self.exercise_id = data.get("current_exercise_id", self.exercise_id)
         current_set = data.get("current_set_no", 1)
         snapshot = data.get("ai_server") or {}
-        ai_exercise = snapshot.get("exercise") if isinstance(snapshot, dict) else None
+        ai_exercise = (
+            snapshot.get("exercise") if isinstance(snapshot, dict) else None
+        )
         ai_exercise = ai_exercise if isinstance(ai_exercise, dict) else {}
         rep_count = ai_exercise.get("rep_count")
         hold_seconds = ai_exercise.get("current_hold_sec")
@@ -225,7 +254,9 @@ class WorkoutWindow(QMainWindow):
         if hasattr(self, "counterLabel"):
             if target_duration is not None:
                 current = int(hold_seconds or 0)
-                self.counterLabel.setText(f"🔥 {current}초 / {target_duration}초")
+                self.counterLabel.setText(
+                    f"🔥 {current}초 / {target_duration}초"
+                )
             elif rep_count is not None:
                 target = target_reps if target_reps is not None else "?"
                 self.counterLabel.setText(f"🔥 Reps: {rep_count} / {target}")
@@ -256,7 +287,9 @@ class WorkoutWindow(QMainWindow):
             self._live_timer.stop()
             self.update_status("오늘 루틴을 모두 완료했습니다.")
         elif waiting:
-            self.update_status("세트가 완료되었습니다. Start를 눌러 다음 세트를 시작하세요.")
+            self.update_status(
+                "세트가 완료되었습니다. Start를 눌러 다음 세트를 시작하세요."
+            )
 
     def update_frame(self, image):
         # 일시정지 중에도 영상은 계속 수신하지만 화면 표시만 유지합니다.

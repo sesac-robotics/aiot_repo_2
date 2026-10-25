@@ -1,4 +1,7 @@
-"""Photo selection, upload, and server-driven status polling for the GUI."""
+"""정면·좌측·우측·후면 사진 선택, 비동기 업로드, 분석 상태 폴링을 연결합니다. 작업 완료 신호를 받은 GUI 스레드에서 화면을 갱신합니다.
+
+Photo selection, upload, and server-driven status polling for the GUI."""
+
 import os
 import sys
 from pathlib import Path
@@ -7,13 +10,16 @@ from PyQt6 import uic
 from PyQt6.QtCore import QThread, QTimer, pyqtSignal
 from PyQt6.QtWidgets import QFileDialog, QMainWindow
 
-# The shared API client is saved beside the original AFS/QT files.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from GUI.FitHelper import body_analysis_client as body_api
+from GUI.FitHelper.body_analysis_cache import (
+    area_groups,
+    format_area_report,
+    save_body_id,
+)
+from GUI.FitHelper.body_analysis_client import BodyAnalysisAPIError
+from GUI.FitHelper.body_analysis_report import BodyAnalysisReportWindow
 
-import body_analysis_client as body_api
-from body_analysis_client import BodyAnalysisAPIError
-from body_analysis_report import BodyAnalysisReportWindow
-from body_analysis_cache import area_groups, format_area_report, save_body_id
+# The shared API client is saved beside the original AFS/QT files.
 
 
 class _RequestThread(QThread):
@@ -36,8 +42,13 @@ class _RequestThread(QThread):
 class BodyAnalysisLoadingWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
-        uic.loadUi(os.path.join(os.path.dirname(__file__), "bodyAnalysisLoading.ui"), self)
-        self.analysisProgressBar.setRange(0, 0)  # Indeterminate until the server finishes.
+        uic.loadUi(
+            os.path.join(os.path.dirname(__file__), "bodyAnalysisLoading.ui"),
+            self,
+        )
+        self.analysisProgressBar.setRange(
+            0, 0
+        )  # Indeterminate until the server finishes.
 
 
 class BodyUploadWindow(QMainWindow):
@@ -58,18 +69,21 @@ class BodyUploadWindow(QMainWindow):
         # Pass the token from the successful login response when opening this window.
         if not access_token:
             try:
-                import login_client
-                access_token = getattr(login_client, "_access_token", None)
+                from GUI.FitHelper import login_client
+
+                access_token = login_client.get_access_token()
             except ImportError:
                 access_token = None
-        if access_token:
-            body_api.set_access_token(access_token)
         self.access_token = access_token
 
-        uic.loadUi(os.path.join(os.path.dirname(__file__), "bodyUpload.ui"), self)
+        uic.loadUi(
+            os.path.join(os.path.dirname(__file__), "bodyUpload.ui"), self
+        )
         for index in range(1, 5):
             button = getattr(self, f"uploadPhoto{index}Button")
-            button.clicked.connect(lambda checked=False, i=index: self.select_photo(i))
+            button.clicked.connect(
+                lambda checked=False, i=index: self.select_photo(i)
+            )
         self.submitAnalysisButton.clicked.connect(self.submit_analysis)
         self.backDashboardButton.clicked.connect(self.return_to_welcome)
         # Status lookup is intentionally omitted: the server does not provide
@@ -80,10 +94,17 @@ class BodyUploadWindow(QMainWindow):
             )
 
     def select_photo(self, index):
-        name, _ = QFileDialog.getOpenFileName(self, f"{self.LABELS[index]} 사진 선택", "", "Images (*.png *.jpg *.jpeg *.webp)")
+        name, _ = QFileDialog.getOpenFileName(
+            self,
+            f"{self.LABELS[index]} 사진 선택",
+            "",
+            "Images (*.png *.jpg *.jpeg *.webp)",
+        )
         if name:
             self.uploaded_photos[index] = name
-            getattr(self, f"uploadPhoto{index}Button").setText(f"✔ {self.LABELS[index]}\n({os.path.basename(name)[:18]})")
+            getattr(self, f"uploadPhoto{index}Button").setText(
+                f"✔ {self.LABELS[index]}\n({os.path.basename(name)[:18]})"
+            )
 
     def submit_analysis(self):
         if not self.access_token:
@@ -91,17 +112,27 @@ class BodyUploadWindow(QMainWindow):
                 "로그인 토큰을 확인하지 못해 서버에 요청할 수 없습니다. 다시 로그인해 주세요."
             )
             return
-        missing = [self.LABELS[i] for i, path in self.uploaded_photos.items() if not path]
+        missing = [
+            self.LABELS[i]
+            for i, path in self.uploaded_photos.items()
+            if not path
+        ]
         if missing:
-            self.errorMsgLabel.setText("누락된 사진을 등록해 주세요: " + ", ".join(missing))
+            self.errorMsgLabel.setText(
+                "누락된 사진을 등록해 주세요: " + ", ".join(missing)
+            )
             return
         self.errorMsgLabel.clear()
         self.submitAnalysisButton.setEnabled(False)
         self.loading_window = BodyAnalysisLoadingWindow(self.welcome_window)
-        self.loading_window.analyzingStatusLabel.setText("사진을 서버에 업로드하고 있습니다...")
+        self.loading_window.analyzingStatusLabel.setText(
+            "사진을 서버에 업로드하고 있습니다..."
+        )
         self.loading_window.show()
         self.hide()
-        paths = {self.SIDES[i]: path for i, path in self.uploaded_photos.items()}
+        paths = {
+            self.SIDES[i]: path for i, path in self.uploaded_photos.items()
+        }
         self._run_request(body_api.upload_photos, paths, self._upload_succeeded)
 
     def _run_request(self, function, *args_and_callback):
@@ -115,9 +146,13 @@ class BodyUploadWindow(QMainWindow):
     def _upload_succeeded(self, response):
         self.body_id = response.get("body_id")
         if not self.body_id or response.get("status") != "processing":
-            self._request_failed("서버 업로드 응답에 body_id 또는 processing 상태가 없습니다.")
+            self._request_failed(
+                "서버 업로드 응답에 body_id 또는 processing 상태가 없습니다."
+            )
             return
-        self.loading_window.analyzingStatusLabel.setText("AI가 사진을 분석하고 있습니다...")
+        self.loading_window.analyzingStatusLabel.setText(
+            "AI가 사진을 분석하고 있습니다..."
+        )
         self.poll_timer = QTimer(self)
         self.poll_timer.setInterval(2500)
         self.poll_timer.timeout.connect(self._poll_status)
@@ -128,7 +163,9 @@ class BodyUploadWindow(QMainWindow):
             return
         self._polling = True
         self.poll_timer.stop()
-        self._run_request(body_api.get_analysis, self.body_id, self._poll_succeeded)
+        self._run_request(
+            body_api.get_analysis, self.body_id, self._poll_succeeded
+        )
 
     def _poll_succeeded(self, response):
         self._polling = False
@@ -149,9 +186,13 @@ class BodyUploadWindow(QMainWindow):
                 return
             self._show_report(result, response)
         elif state == "failed":
-            self._request_failed("AI 체형 분석에 실패했습니다. 사진을 확인한 뒤 다시 시도해 주세요.")
+            self._request_failed(
+                "AI 체형 분석에 실패했습니다. 사진을 확인한 뒤 다시 시도해 주세요."
+            )
         else:
-            self.loading_window.analyzingStatusLabel.setText("AI가 체형 분석을 진행 중입니다...")
+            self.loading_window.analyzingStatusLabel.setText(
+                "AI가 체형 분석을 진행 중입니다..."
+            )
             self.poll_timer.start()
 
     def _request_failed(self, message):

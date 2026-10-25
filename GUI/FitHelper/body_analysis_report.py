@@ -1,26 +1,35 @@
+"""서버의 체형 분석 결과를 표시하고 루틴 화면으로 이동합니다. 화면은 모델 추론이나 DB 쿼리를 수행하지 않습니다."""
+
 import os
-from PyQt6.QtWidgets import QMainWindow, QPushButton
-from PyQt6.QtCore import Qt
+
 from PyQt6 import uic
-from routine_window import FullRoutineWindow
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QMainWindow, QPushButton
+
+from GUI.FitHelper.routine_window import FullRoutineWindow
+
 
 class BodyAnalysisReportWindow(QMainWindow):
     def __init__(self, parent=None, analysis_data=None):
         super().__init__()
         self.welcome_window = parent
-        self.analysis_data = analysis_data if isinstance(analysis_data, dict) else {}
-        
-        ui_path = os.path.join(os.path.dirname(__file__), "bodyAnalysisResult.ui")
+        self.analysis_data = (
+            analysis_data if isinstance(analysis_data, dict) else {}
+        )
+
+        ui_path = os.path.join(
+            os.path.dirname(__file__), "bodyAnalysisResult.ui"
+        )
         uic.loadUi(ui_path, self)
 
         # 1. View 7-Day Recommended Routine 버튼 클릭 시 full_routine.ui 창 오픈 연결
-        if hasattr(self, 'viewRoutineButton'):
+        if hasattr(self, "viewRoutineButton"):
             self.viewRoutineButton.clicked.connect(self.open_full_routine)
 
         # 2. 대시보드로 돌아가는 버튼 연결
         for btn in self.findChildren(QPushButton):
             text = btn.text().lower()
-            if 'back' in text or 'dashboard' in text or '홈' in text:
+            if "back" in text or "dashboard" in text or "홈" in text:
                 btn.clicked.connect(self.return_to_welcome)
                 break
 

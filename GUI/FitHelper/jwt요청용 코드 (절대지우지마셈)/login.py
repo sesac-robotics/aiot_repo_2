@@ -1,3 +1,5 @@
+"""이 파일의 구체적인 계약은 공개 함수와 상위 README에 명시합니다."""
+
 import json
 import os
 import urllib.error
@@ -5,13 +7,26 @@ import urllib.request
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
-    QMainWindow, QWidget, QStackedWidget, QVBoxLayout, QFormLayout,
-    QLabel, QLineEdit, QPushButton, QMessageBox, QFrame, QComboBox,
-    QSpinBox, QDoubleSpinBox
+    QComboBox,
+    QDoubleSpinBox,
+    QFormLayout,
+    QFrame,
+    QLabel,
+    QLineEdit,
+    QMainWindow,
+    QMessageBox,
+    QPushButton,
+    QSpinBox,
+    QStackedWidget,
+    QVBoxLayout,
+    QWidget,
 )
 
-SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
+SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip(
+    "/"
+)
 REQUEST_TIMEOUT = 8
+
 
 def request_json(method, path, payload=None, token=None):
     headers = {"Accept": "application/json"}
@@ -26,7 +41,9 @@ def request_json(method, path, payload=None, token=None):
         f"{SERVER_URL}{path}", data=body, headers=headers, method=method
     )
     try:
-        with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
+        with urllib.request.urlopen(
+            request, timeout=REQUEST_TIMEOUT
+        ) as response:
             raw = response.read().decode("utf-8")
             return response.status, json.loads(raw) if raw else {}
     except urllib.error.HTTPError as exc:
@@ -41,11 +58,15 @@ def request_json(method, path, payload=None, token=None):
             "서버 실행 상태, IP 주소, 포트 및 방화벽을 확인해 주세요."
         ) from exc
 
+
 def response_message(body):
     detail = body.get("detail", "요청을 처리하지 못했습니다.")
     if isinstance(detail, list):
-        return "\n".join(f"- {item.get('msg', '입력값 오류')}" for item in detail)
+        return "\n".join(
+            f"- {item.get('msg', '입력값 오류')}" for item in detail
+        )
     return str(detail)
+
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -116,7 +137,9 @@ class LoginWindow(QMainWindow):
         login_button.clicked.connect(self.handle_login)
         register_button = QPushButton("Create Account & Profile")
         register_button.setObjectName("secondary")
-        register_button.clicked.connect(lambda: self.stack.setCurrentWidget(self.register_page))
+        register_button.clicked.connect(
+            lambda: self.stack.setCurrentWidget(self.register_page)
+        )
         layout.addWidget(login_button)
         layout.addWidget(register_button)
         root.addWidget(panel)
@@ -174,8 +197,11 @@ class LoginWindow(QMainWindow):
             ("Email Address", self.reg_email),
             ("Password", self.reg_password),
             ("Re-Enter Password", self.reg_confirm_password),
-            ("Nickname", self.reg_nickname), ("Gender", self.reg_gender),
-            ("Age", self.reg_age), ("Height", self.reg_height), ("Weight", self.reg_weight)
+            ("Nickname", self.reg_nickname),
+            ("Gender", self.reg_gender),
+            ("Age", self.reg_age),
+            ("Height", self.reg_height),
+            ("Weight", self.reg_weight),
         ]:
             form.addRow(label, widget)
         layout.addLayout(form)
@@ -201,23 +227,42 @@ class LoginWindow(QMainWindow):
         confirm = self.reg_confirm_password.text()
         nickname = self.reg_nickname.text().strip()
 
-        missing = [label for label, value in [
-            ("Username", username), ("Email Address", email), ("Password", password),
-            ("Re-Enter Password", confirm), ("Nickname", nickname)
-        ] if not value]
+        missing = [
+            label
+            for label, value in [
+                ("Username", username),
+                ("Email Address", email),
+                ("Password", password),
+                ("Re-Enter Password", confirm),
+                ("Nickname", nickname),
+            ]
+            if not value
+        ]
         if missing:
-            QMessageBox.warning(self, "Input Required", "다음 항목을 입력해 주세요:\n" + "\n".join(missing))
+            QMessageBox.warning(
+                self,
+                "Input Required",
+                "다음 항목을 입력해 주세요:\n" + "\n".join(missing),
+            )
             return
         if password != confirm:
-            QMessageBox.warning(self, "Password Mismatch", "비밀번호가 일치하지 않습니다. 다시 입력해 주세요.")
+            QMessageBox.warning(
+                self,
+                "Password Mismatch",
+                "비밀번호가 일치하지 않습니다. 다시 입력해 주세요.",
+            )
             self.reg_confirm_password.clear()
             self.reg_confirm_password.setFocus()
             return
         if len(password) < 8:
-            QMessageBox.warning(self, "Password Too Short", "비밀번호는 8자 이상 입력해 주세요.")
+            QMessageBox.warning(
+                self, "Password Too Short", "비밀번호는 8자 이상 입력해 주세요."
+            )
             return
         if "@" not in email or "." not in email.rsplit("@", 1)[-1]:
-            QMessageBox.warning(self, "Invalid Email", "올바른 이메일 주소를 입력해 주세요.")
+            QMessageBox.warning(
+                self, "Invalid Email", "올바른 이메일 주소를 입력해 주세요."
+            )
             self.reg_email.setFocus()
             return
 
@@ -239,8 +284,11 @@ class LoginWindow(QMainWindow):
             return
 
         if code == 201 and body.get("success"):
-            QMessageBox.information(self, "Registration Complete",
-                f"회원가입이 완료되었습니다.\n사용자 ID: {body['user_id']}\n로그인해 주세요.")
+            QMessageBox.information(
+                self,
+                "Registration Complete",
+                f"회원가입이 완료되었습니다.\n사용자 ID: {body['user_id']}\n로그인해 주세요.",
+            )
             self.login_username.setText(username)
             self.login_password.clear()
             self.login_status.setText("회원가입 성공. 로그인해 주세요.")
@@ -254,13 +302,19 @@ class LoginWindow(QMainWindow):
         username = self.login_username.text().strip()
         password = self.login_password.text()
         if not username or not password:
-            QMessageBox.warning(self, "Input Required", "username과 password를 모두 입력해 주세요.")
+            QMessageBox.warning(
+                self,
+                "Input Required",
+                "username과 password를 모두 입력해 주세요.",
+            )
             return
 
         try:
-            code, body = request_json("POST", "/api/auth/login", {
-                "username": username, "password": password
-            })
+            code, body = request_json(
+                "POST",
+                "/api/auth/login",
+                {"username": username, "password": password},
+            )
         except ConnectionError as exc:
             self.login_status.setText(str(exc))
             QMessageBox.critical(self, "Connection Error", str(exc))
@@ -292,15 +346,18 @@ class LoginWindow(QMainWindow):
                 "JWT 검증 성공: 보호된 API 접근 허용"
             )
             QMessageBox.information(
-                self, "Login Success",
+                self,
+                "Login Success",
                 f"{user['nickname']}님, 로그인에 성공했습니다.\n"
-                "JWT 발급 및 보호된 API의 토큰 검증까지 성공했습니다."
+                "JWT 발급 및 보호된 API의 토큰 검증까지 성공했습니다.",
             )
             print("[AUTH] Login successful; JWT sent as Authorization: Bearer.")
             print("[AUTH] Protected GET /api/me returned 200.")
         else:
             message = response_message(profile_body)
-            self.login_status.setText("로그인은 성공했지만 JWT 검증에 실패했습니다.\n" + message)
+            self.login_status.setText(
+                "로그인은 성공했지만 JWT 검증에 실패했습니다.\n" + message
+            )
             QMessageBox.warning(self, "JWT Validation Failed", message)
             if profile_code == 401:
                 self.access_token = None
