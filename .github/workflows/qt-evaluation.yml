@@ -2,7 +2,7 @@ name: Qt evaluation GUI
 on:
   pull_request:
   push:
-    branches: [feature/exercise-posture-scoring]
+    branches: [feature/exercise-posture-scoring, feature/team-integration-standards]
 jobs:
   qt-without-camera:
     runs-on: ubuntu-latest
@@ -26,3 +26,4 @@ jobs:
           tests/integration/test_score_observation.py
           tests/integration/test_score_preview_privacy.py
           tests/integration/test_evaluation_portability.py
+          tests/integration/test_evaluation_architecture.py

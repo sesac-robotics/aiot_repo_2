@@ -104,7 +104,9 @@ class RecordingTests(unittest.TestCase):
             ).read_text()
         )
         copied = ast.parse(
-            (repo / "GUI/FitHelper/direct_correction_server.py").read_text()
+            (
+                repo / "Server/ExerciseEvaluation/adapters/correction_server.py"
+            ).read_text()
         )
 
         def get_run(tree, name):

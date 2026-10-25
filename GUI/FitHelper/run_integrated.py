@@ -6,14 +6,20 @@ import signal
 import threading
 from pathlib import Path
 
-from GUI.FitHelper.integrated_session import (
-    IntegratedSession,
+from Server.ExerciseEvaluation.adapters.integrated_camera import (
+    make_score_coordinator,
     original_recording_engine,
 )
-from GUI.FitHelper.runtime_config import (
-    ensure_correction_imports,
+from Server.ExerciseEvaluation.adapters.session_repository import (
+    JsonSessionRepository,
+)
+from Server.ExerciseEvaluation.application.integrated_session import (
+    IntegratedSession,
 )
 from Server.ExerciseEvaluation.paths import CORRECTION, DATA_ROOT, REPO
+from Server.ExerciseEvaluation.runtime_environment import (
+    ensure_correction_imports,
+)
 from Server.ExerciseEvaluation.server import make_server
 
 
@@ -39,10 +45,13 @@ def main():
         args.correction_root, DATA_ROOT / "correction-sessions"
     )
     bridge = IntegratedSession(
-        engine,
-        args.score_python,
-        DATA_ROOT / "integrated-sessions",
-        str(args.replay_file) if args.replay_file else None,
+        engine=engine,
+        sessions_root=DATA_ROOT / "integrated-sessions",
+        repository=JsonSessionRepository(DATA_ROOT / "integrated-sessions"),
+        score_factory=lambda bridge: make_score_coordinator(
+            bridge, args.score_python
+        ),
+        replay_source=str(args.replay_file) if args.replay_file else None,
     )
     server = make_server(args.port, bridge)
     base = server.RequestHandlerClass
@@ -78,13 +87,10 @@ def main():
 
         def do_GET(self):
             if self.path == "/api/integrated-sessions":
-                records = [
-                    json.loads(p.read_text())
-                    for p in (DATA_ROOT / "integrated-sessions").glob(
-                        "*/summary.json"
-                    )
-                ]
-                self.json(200, {"sessions": records})
+                try:
+                    self.json(200, {"sessions": bridge.list_sessions()})
+                except (OSError, ValueError):
+                    self.json(500, {"error": "통합 기록을 읽지 못했습니다."})
             else:
                 super().do_GET()
 

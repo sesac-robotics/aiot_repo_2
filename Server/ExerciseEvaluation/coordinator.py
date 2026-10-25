@@ -192,6 +192,25 @@ class Coordinator:
                     }
             return state
 
+    def bind_session(self, session_id: str) -> None:
+        """공유 카메라 입력을 열기 전에 공통 세션 ID를 연결합니다."""
+        if not session_id:
+            raise ValueError("세션 ID가 필요합니다.")
+        with self.lock:
+            self.state["session_id"] = session_id
+
+    def retained_score(self) -> dict:
+        """일시정지 표시용 마지막 결과를 잠금 안에서 복사합니다."""
+        with self.lock:
+            return copy.deepcopy(self.state.get("score", {}))
+
+    def reset_motion(self) -> None:
+        """점수 Worker의 진행 중 동작만 초기화하며 완료 결과는 유지합니다."""
+        with self.lock:
+            worker = self.workers.get("score")
+            if worker:
+                worker.reset_motion()
+
     def receive(self, kind, result):
         """현재 세션·연결 구간에서 나온 최신 결과만 게시합니다."""
         with self.lock:

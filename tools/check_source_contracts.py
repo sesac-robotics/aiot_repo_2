@@ -15,6 +15,7 @@ PURE_ROOTS = (
     "GUI/FitHelper/domain",
     "Server/AIFitService/domain",
     "Server/AIService/app/session",
+    "Server/ExerciseEvaluation/domain",
 )
 
 
@@ -57,11 +58,33 @@ def check_sources(root: Path = ROOT) -> tuple[int, list[str]]:
                                 "app.session",
                                 "GUI.FitHelper.domain",
                                 "Server.AIFitService.domain",
+                                "Server.ExerciseEvaluation.domain",
                             )
                         )
                     ):
                         failures.append(
                             f"{relative}:{node.lineno}: non-domain dependency {module}"
+                        )
+                    if relative.startswith(
+                        "Server/ExerciseEvaluation/"
+                    ) and module.startswith(("GUI", "PyQt")):
+                        failures.append(
+                            f"{relative}:{node.lineno}: evaluation depends on presentation {module}"
+                        )
+                    if relative.startswith(
+                        "Server/ExerciseEvaluation/application/"
+                    ) and not (
+                        module.split(".")[0] in sys.stdlib_module_names
+                        or module.startswith(
+                            (
+                                "Server.ExerciseEvaluation.domain",
+                                "Server.ExerciseEvaluation.application",
+                                "Server.ExerciseEvaluation.contracts",
+                            )
+                        )
+                    ):
+                        failures.append(
+                            f"{relative}:{node.lineno}: application depends on implementation {module}"
                         )
                 if isinstance(node, ast.Call) and isinstance(
                     node.func, ast.Attribute
