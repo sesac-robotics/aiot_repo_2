@@ -8,8 +8,7 @@ from typing import Any
 
 import numpy as np
 
-from app.scoring import geometry
-from app.scoring import rule_score
+from app.scoring import geometry, rule_score
 
 ITEMS = [
     "trunk_line",

@@ -1,0 +1,36 @@
+name: Source contracts
+
+on:
+  pull_request:
+  push:
+    branches:
+      - feature/team-integration-standards
+
+jobs:
+  static-and-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install verification dependencies
+        run: >-
+          python -m pip install black==26.10.1 isort==9.0.2 mypy==2.4.0
+          pytest==9.1.1 -r Server/AIFitService/requirements.txt
+      - name: Check source and architecture
+        run: |
+          python -m black --check GUI Server Device tools shared tests
+          python -m isort --check-only GUI Server Device tools shared tests
+          python tools/check_source_contracts.py
+          python -m mypy
+          MYPYPATH=Server/AIService python -m mypy -p app.session
+      - name: Verify backend and frame transport without devices
+        run: >-
+          python -m pytest tests/integration/test_backend.py
+          tests/integration/test_streaming.py
+          tests/integration/test_session_boundaries.py
+      - name: Verify firmware state with C++17
+        run: |
+          g++ -std=c++17 -Wall -Wextra -Werror -pedantic -I . tests/firmware/test_connection_state.cpp -o /tmp/aifit-state-test
+          /tmp/aifit-state-test

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WorkoutWindow</class>
+ <widget class="QMainWindow" name="WorkoutWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Live Pose Coaching - VGA (640x480)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="videoLabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>640</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string>background-color: #0F172A; color: #94A3B8; font-size: 15px; font-weight: bold;</string>
+    </property>
+    <property name="text">
+     <string>Webcam Feed &amp; YOLO Pose (640x480 VGA)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="topOverlayFrame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>600</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string>background-color: rgba(15, 23, 42, 190); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 40);</string>
+    </property>
+    <widget class="QLabel" name="counterLabel">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>12</y>
+       <width>140</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>font-size: 15px; font-weight: 800; color: #FFFFFF; background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>🔥 Reps: 0 / 10</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="liveScoreLabel">
+     <property name="geometry">
+      <rect>
+       <x>158</x>
+       <y>12</y>
+       <width>95</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>font-size: 14px; font-weight: 800; color: #38BDF8; background-color: rgba(56, 189, 248, 30); border-radius: 10px;</string>
+     </property>
+     <property name="text">
+      <string>⭐ 96</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pauseResumeButton">
+     <property name="geometry">
+      <rect>
+       <x>263</x>
+       <y>12</y>
+       <width>110</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>background-color: #F59E0B; color: white; font-size: 13px; font-weight: 700; border-radius: 8px;</string>
+     </property>
+     <property name="text">
+      <string>⏸ Pause</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="endWorkoutButton">
+     <property name="geometry">
+      <rect>
+       <x>383</x>
+       <y>12</y>
+       <width>205</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>background-color: #EF4444; color: white; font-size: 13px; font-weight: 700; border-radius: 8px;</string>
+     </property>
+     <property name="text">
+      <string>End Workout</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="bottomOverlayFrame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>395</y>
+      <width>600</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string>background-color: rgba(255, 255, 255, 235); border-radius: 14px; border: 1px solid rgba(226, 232, 240, 200);</string>
+    </property>
+    <widget class="QLabel" name="feedbackLabel">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>10</y>
+       <width>570</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>font-size: 13px; font-weight: 700; color: #0F172A; background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>💡 AI Coach: Keep your shoulders relaxed and back straight.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

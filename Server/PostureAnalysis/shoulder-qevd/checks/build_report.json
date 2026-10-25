@@ -1,0 +1,34 @@
+{
+  "dataset": "shoulder-qevd",
+  "version": "0.1-draft",
+  "created_date": "2026-10-21",
+  "schema_compatible_with": "qevd-selected local short-clip JSON and CSV key sets",
+  "original_videos_copied_without_transcoding": true,
+  "original_files_sha256_matched": true,
+  "qevd_source_modified": false,
+  "counts": {
+    "source_videos": 150,
+    "labeled_draft_videos": 100,
+    "source_good_weak_labels": 70,
+    "visual_error_candidates": 30,
+    "error_examples_with_detailed_evidence": 10,
+    "pending_videos": 40,
+    "quarantine_videos": 10,
+    "label_counts": {
+      "shoulder press - no obvious issue": 70,
+      "shoulder press - arms too wide at the top": 6,
+      "shoulder press - incomplete upward range": 3,
+      "shoulder press - hands move behind the head": 4,
+      "shoulder press - forearms tilt inward": 10,
+      "shoulder press - elbow path narrower than reference": 6,
+      "shoulder press - uneven arm height and timing": 1
+    },
+    "split_counts": {
+      "test": 16,
+      "train": 84
+    },
+    "source_subjects": 25,
+    "expert_verified": 0,
+    "training_ready": 0
+  }
+}

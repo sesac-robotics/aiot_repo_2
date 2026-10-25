@@ -4,6 +4,7 @@ Y·전경 깊이·총점을 추정하지 않는다. 규칙 점수·라벨을 입
 """
 
 import numpy as np
+
 from app.scoring import ytw_phases
 
 VERSION = "ytw-observed-TW-partial-trial-v6"

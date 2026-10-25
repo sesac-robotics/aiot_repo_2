@@ -1,8 +1,8 @@
 """T 다음 복귀와 실제 팔 굽힘이 분리된 경우 W 후보 시점을 보완한다."""
 
 import numpy as np
-from app.scoring import geometry
-from app.scoring import ytw_partial_trial
+
+from app.scoring import geometry, ytw_partial_trial
 
 
 def detect(sequence: np.ndarray, sample_hz: float = 10) -> dict:

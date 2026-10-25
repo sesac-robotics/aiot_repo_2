@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>520</width><height>700</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Fitness Hub - Body Analysis Upload</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#uploadCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 20px; }
+#missingAnalysisTitle { font-size: 20px; font-weight: 900; color: #0284C7; }
+#missingAnalysisDesc { font-size: 13px; font-weight: 600; color: #64748B; }
+#uploadPhoto1Button, #uploadPhoto2Button, #uploadPhoto3Button, #uploadPhoto4Button { background-color: #F8FAFC; color: #334155; font-size: 11px; font-weight: 700; border: 2px dashed #CBD5E1; border-radius: 12px; }
+#uploadPhoto1Button:hover, #uploadPhoto2Button:hover, #uploadPhoto3Button:hover, #uploadPhoto4Button:hover { background-color: #F0F9FF; border: 2px dashed #0284C7; color: #0284C7; }
+
+/* 에러 메시지 라벨 스타일 */
+#errorMsgLabel { font-size: 12px; font-weight: 700; color: #EF4444; background: transparent; }
+
+#submitAnalysisButton { background-color: #0284C7; color: #FFFFFF; font-size: 15px; font-weight: 800; border-radius: 14px; min-height: 48px; }
+#submitAnalysisButton:hover { background-color: #0369A1; }
+
+#backDashboardButton { background-color: #FFFFFF; color: #64748B; font-size: 14px; font-weight: 700; border: 1px solid #CBD5E1; border-radius: 14px; min-height: 46px; }
+#backDashboardButton:hover { background-color: #F1F5F9; color: #0F172A; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="uploadCard">
+    <property name="geometry"><rect><x>30</x><y>20</y><width>460</width><height>645</height></rect></property>
+    <widget class="QLabel" name="missingAnalysisTitle">
+     <property name="geometry"><rect><x>15</x><y>15</y><width>430</width><height>30</height></rect></property>
+     <property name="text"><string>📸 Body Analysis Photo Upload</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+    <widget class="QLabel" name="missingAnalysisDesc">
+     <property name="geometry"><rect><x>15</x><y>48</y><width>430</width><height>25</height></rect></property>
+     <property name="text"><string>Please upload all 4 photos for precise AI posture assessment.</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+    <widget class="QPushButton" name="uploadPhoto1Button">
+     <property name="geometry"><rect><x>20</x><y>88</y><width>190</width><height>115</height></rect></property>
+     <property name="text"><string>📷 Front View</string></property>
+    </widget>
+    <widget class="QPushButton" name="uploadPhoto2Button">
+     <property name="geometry"><rect><x>230</x><y>88</y><width>190</width><height>115</height></rect></property>
+     <property name="text"><string>📷 Left Side</string></property>
+    </widget>
+    <widget class="QPushButton" name="uploadPhoto3Button">
+     <property name="geometry"><rect><x>20</x><y>215</y><width>190</width><height>115</height></rect></property>
+     <property name="text"><string>📷 Right Side</string></property>
+    </widget>
+    <widget class="QPushButton" name="uploadPhoto4Button">
+     <property name="geometry"><rect><x>230</x><y>215</y><width>190</width><height>115</height></rect></property>
+     <property name="text"><string>📷 Back View</string></property>
+    </widget>
+    
+    <!-- 에러 메시지 표시용 라벨 -->
+    <widget class="QLabel" name="errorMsgLabel">
+     <property name="geometry"><rect><x>20</x><y>342</y><width>400</width><height>25</height></rect></property>
+     <property name="text"><string></string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+
+    <widget class="QPushButton" name="submitAnalysisButton">
+     <property name="geometry"><rect><x>20</x><y>378</y><width>400</width><height>48</height></rect></property>
+     <property name="text"><string>Start AI Body Analysis 🚀</string></property>
+    </widget>
+
+    <!-- 대시보드로 돌아가기 버튼 -->
+    <widget class="QPushButton" name="backDashboardButton">
+     <property name="geometry"><rect><x>20</x><y>438</y><width>400</width><height>46</height></rect></property>
+     <property name="text"><string>Back to Dashboard</string></property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+</ui>

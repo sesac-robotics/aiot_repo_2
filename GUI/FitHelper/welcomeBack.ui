@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>520</width><height>730</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Fitness Hub - Main Dashboard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#welcomeTitle { font-size: 26px; font-weight: 900; color: #0F172A; background: transparent; }
+#profileButton { background-color: #FFFFFF; color: #0284C7; font-size: 13px; font-weight: 800; border: 1px solid #E2E8F0; border-radius: 12px; }
+#profileButton:hover { background-color: #F0F9FF; border: 1px solid #0284C7; }
+
+/* 로그아웃 버튼 스타일 */
+#logoutButton { background-color: #FEF2F2; color: #EF4444; font-size: 13px; font-weight: 800; border: 1px solid #FECACA; border-radius: 12px; }
+#logoutButton:hover { background-color: #FEE2E2; border: 1px solid #EF4444; }
+
+/* 체형 분석 유도 배너 카드 스타일 */
+#analysisNudgeCard { background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0284C7, stop:1 #0369A1); border-radius: 18px; padding: 15px; }
+#nudgeTitleLabel { font-size: 15px; font-weight: 800; color: #FFFFFF; background: transparent; }
+#nudgeDescLabel { font-size: 12px; font-weight: 600; color: #E0F2FE; background: transparent; }
+#startAnalysisBannerButton { background-color: #FFFFFF; color: #0284C7; font-size: 13px; font-weight: 800; border-radius: 10px; }
+#startAnalysisBannerButton:hover { background-color: #F8FAFC; }
+
+/* 오늘의 운동 카드 스타일 (AI 맞춤형) */
+#todayRoutineCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 16px; }
+#todayRoutineLabel { font-size: 15px; font-weight: 800; color: #1E293B; background: transparent; }
+#todayDescLabel { font-size: 13px; font-weight: 600; color: #64748B; background: transparent; }
+
+/* 토글 버튼 스타일 (7일 전체 보기 토글) */
+#toggleRoutineButton { background-color: #F1F5F9; color: #475569; font-size: 11px; font-weight: 800; border: 1px solid #CBD5E1; border-radius: 8px; }
+#toggleRoutineButton:checked { background-color: #0284C7; color: #FFFFFF; border: 1px solid #0284C7; }
+
+#startWorkoutButton { background-color: #0284C7; color: #FFFFFF; font-size: 14px; font-weight: 900; border-radius: 12px; min-height: 42px; }
+#startWorkoutButton:hover { background-color: #0369A1; }
+
+/* 7일 전체 루틴 리스트 스타일 */
+#day1Item, #day2Item, #day3Item, #day4Item, #day5Item, #day6Item, #day7Item { font-size: 12px; font-weight: 700; color: #334155; background-color: #F8FAFC; border-radius: 6px; padding-left: 8px; }
+
+/* 하단 운동 히스토리 버튼 스타일 */
+#historyButton { background-color: #FFFFFF; color: #64748B; font-size: 13px; font-weight: 800; border: 1px solid #CBD5E1; border-radius: 14px; min-height: 44px; }
+#historyButton:hover { background-color: #F1F5F9; color: #0F172A; }
+
+#bodyAnalysisSummaryCard { background-color: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 14px; }
+#bodyAnalysisSummaryTitle { color: #15803D; font-size: 14px; font-weight: 800; background: transparent; }
+#bodyAnalysisSummaryLabel { color: #334155; font-size: 12px; font-weight: 700; background: transparent; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="welcomeTitle">
+    <property name="geometry"><rect><x>30</x><y>18</y><width>220</width><height>32</height></rect></property>
+    <property name="text"><string>Welcome back! 👋</string></property>
+   </widget>
+
+   <!-- 상단 프로필 및 로그아웃 버튼 -->
+   <widget class="QPushButton" name="profileButton">
+    <property name="geometry"><rect><x>280</x><y>20</y><width>105</width><height>36</height></rect></property>
+    <property name="text"><string>👤 Profile</string></property>
+   </widget>
+   <widget class="QPushButton" name="logoutButton">
+    <property name="geometry"><rect><x>395</x><y>20</y><width>95</width><height>36</height></rect></property>
+    <property name="text"><string>🚪 Logout</string></property>
+   </widget>
+
+   <!-- 체형 분석 유도 배너 카드 (미완료 유저용) -->
+   <widget class="QFrame" name="analysisNudgeCard">
+    <property name="geometry"><rect><x>30</x><y>90</y><width>460</width><height>85</height></rect></property>
+    <widget class="QLabel" name="nudgeTitleLabel">
+     <property name="geometry"><rect><x>15</x><y>10</y><width>430</width><height>20</height></rect></property>
+     <property name="text"><string>✨ Unlock Your Custom AI Routine</string></property>
+    </widget>
+    <widget class="QLabel" name="nudgeDescLabel">
+     <property name="geometry"><rect><x>15</x><y>32</y><width>310</width><height>40</height></rect></property>
+     <property name="text"><string>Complete a 1-minute body analysis to get personalized posture coaching and workouts.</string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+    </widget>
+    <widget class="QPushButton" name="startAnalysisBannerButton">
+     <property name="geometry"><rect><x>335</x><y>28</y><width>110</width><height>35</height></rect></property>
+     <property name="text"><string>Analyze Now 📸</string></property>
+    </widget>
+   </widget>
+
+   <!-- 오늘의 운동 카드 (AI 맞춤형 - 토글 기능 포함) -->
+   <widget class="QFrame" name="todayRoutineCard">
+    <property name="geometry"><rect><x>30</x><y>185</y><width>460</width><height>310</height></rect></property>
+    <widget class="QLabel" name="todayRoutineLabel">
+     <property name="geometry"><rect><x>15</x><y>12</y><width>280</width><height>22</height></rect></property>
+     <property name="text"><string>⚡ TODAY'S AI WORKOUT</string></property>
+    </widget>
+    
+    <!-- 7일 전체 보기 토글 버튼 -->
+    <widget class="QPushButton" name="toggleRoutineButton">
+     <property name="geometry"><rect><x>310</x><y>10</y><width>135</width><height>26</height></rect></property>
+     <property name="text"><string>📅 View All Days (Off)</string></property>
+     <property name="checkable"><bool>true</bool></property>
+     <property name="checked"><bool>false</bool></property>
+    </widget>
+
+    <!-- 오늘 운동 설명 라벨 ("요일: 운동" 형식) -->
+    <widget class="QLabel" name="todayDescLabel">
+     <property name="geometry"><rect><x>15</x><y>42</y><width>430</width><height>30</height></rect></property>
+     <property name="text"><string>Wednesday: [Day 1] Shoulder Mobility &amp; Release</string></property>
+    </widget>
+
+    <!-- START WORKOUT 버튼 -->
+    <widget class="QPushButton" name="startWorkoutButton">
+     <property name="geometry"><rect><x>15</x><y>78</y><width>430</width><height>42</height></rect></property>
+     <property name="text"><string>🚀 START WORKOUT NOW</string></property>
+    </widget>
+
+    <!-- Day 1 ~ Day 7 전체 목록 라벨들 (토글 켜질 때 표시) -->
+    <widget class="QLabel" name="allDaysContainerLabel">
+     <property name="geometry"><rect><x>15</x><y>128</y><width>430</width><height>170</height></rect></property>
+     <property name="text"><string></string></property>
+    </widget>
+    
+    <widget class="QLabel" name="day1Item">
+     <property name="geometry"><rect><x>20</x><y>133</y><width>420</width><height>22</height></rect></property>
+     <property name="text"><string>• [Day 1] Wednesday: Shoulder Mobility &amp; Release</string></property>
+    </widget>
+    <widget class="QLabel" name="day2Item">
+     <property name="geometry"><rect><x>20</x><y>155</y><width>420</width><height>22</height></rect></property>
+     <property name="text"><string>• [Day 2] Thursday: Core Stability &amp; Balance</string></property>
+    </widget>
+    <widget class="QLabel" name="day3Item">
+     <property name="geometry"><rect><x>20</x><y>177</y><width>420</width><height>22</height></rect></property>
+     <property name="text"><string>• [Day 3] Friday: Lower Body Strength &amp; Posture</string></property>
+    </widget>
+    <widget class="QLabel" name="day4Item">
+     <property name="geometry"><rect><x>20</x><y>199</y><width>420</width><height>22</height></rect></property>
+     <property name="text"><string>• [Day 4] Saturday: Active Recovery &amp; Stretching</string></property>
+    </widget>
+    <widget class="QLabel" name="day5Item">
+     <property name="geometry"><rect><x>20</x><y>221</y><width>420</width><height>22</height></rect></property>
+     <property name="text"><string>• [Day 5] Sunday: Upper Body Posture Correction</string></property>
+    </widget>
+    <widget class="QLabel" name="day6Item">
+     <property name="geometry"><rect><x>20</x><y>243</y><width>420</width><height>22</height></rect></property>
+     <property name="text"><string>• [Day 6] Monday: Full Body HIIT &amp; Cardio</string></property>
+    </widget>
+    <widget class="QLabel" name="day7Item">
+     <property name="geometry"><rect><x>20</x><y>265</y><width>420</width><height>22</height></rect></property>
+     <property name="text"><string>• [Day 7] Tuesday: Weekly Review &amp; Flexibility Test</string></property>
+    </widget>
+   </widget>
+
+   <!-- 하단 운동 히스토리 버튼 -->
+   <widget class="QPushButton" name="historyButton">
+    <property name="geometry"><rect><x>30</x><y>510</y><width>460</width><height>44</height></rect></property>
+    <property name="text"><string>📅 View Workout History &amp; Posture Timeline</string></property>
+   </widget>
+
+   <!-- 완료된 계정에만 표시하는 체형 분석 요약 -->
+   <widget class="QFrame" name="bodyAnalysisSummaryCard">
+    <property name="geometry"><rect><x>30</x><y>562</y><width>460</width><height>120</height></rect></property>
+    <widget class="QLabel" name="bodyAnalysisSummaryTitle">
+     <property name="geometry"><rect><x>15</x><y>10</y><width>430</width><height>24</height></rect></property>
+     <property name="text"><string>📊 MY BODY ANALYSIS</string></property>
+    </widget>
+    <widget class="QLabel" name="bodyAnalysisSummaryLabel">
+     <property name="geometry"><rect><x>15</x><y>38</y><width>430</width><height>72</height></rect></property>
+     <property name="text"><string></string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+</ui>
