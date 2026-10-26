@@ -8,8 +8,8 @@ from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPExcepti
 
 from config.settings import BASE_DIR
 from database.connection import get_connection
-from Server.AIFitService.services.exercise_names import canonical_exercise_name, canonicalize_routine_exercises
-from Server.AIFitService.services.token_service import get_current_user
+from services.exercise_names import canonical_exercise_name, canonicalize_routine_exercises
+from services.token_service import get_current_user
 
 router = APIRouter(tags=["Body Analysis"])
 UPLOAD_DIR = BASE_DIR / "body_analysis_uploads"
@@ -333,7 +333,7 @@ def run_body_analysis(body_id: str, processing_paths: dict[str, str]):
         return
 
     try:
-        from Server.AIFitService.services.body_analysis_service import analyze_body_photos
+        from services.body_analysis_service import analyze_body_photos
 
         result = analyze_body_photos(
             processing_paths,

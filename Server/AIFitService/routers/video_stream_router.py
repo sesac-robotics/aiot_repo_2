@@ -16,7 +16,7 @@ from config.settings import (
     AI_SERVER_STREAM_PATH,
     VIDEO_INGEST_API_KEY,
 )
-from Server.AIFitService.services.token_service import get_current_user
+from services.token_service import get_current_user
 
 
 router = APIRouter(prefix="/api/video", tags=["Video Stream"])

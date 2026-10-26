@@ -4,7 +4,7 @@ from datetime import date
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from database.connection import get_connection
-from Server.AIFitService.services.token_service import get_current_user
+from services.token_service import get_current_user
 
 router = APIRouter(tags=["Exercise Reports"])
 
