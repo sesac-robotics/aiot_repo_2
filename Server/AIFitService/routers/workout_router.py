@@ -11,7 +11,11 @@ import httpx
 from fastapi import APIRouter, Depends, Header, HTTPException
 from pydantic import BaseModel, Field
 
-from config.settings import AI_SERVER_API_KEY, AI_SERVER_BASE_URL
+from config.settings import (
+    AI_SERVER_API_KEY,
+    AI_SERVER_BASE_URL,
+    SESSION_HEARTBEAT_TIMEOUT_SECONDS,
+)
 from database.connection import get_connection
 from services.exercise_names import canonical_exercise_name
 from services.token_service import get_current_user
@@ -44,6 +48,18 @@ def init_workout_db() -> None:
         if "target_duration_sec" not in exercise_columns:
             conn.execute("ALTER TABLE Exercise ADD COLUMN target_duration_sec REAL")
 
+        session_columns = {
+            row[1] for row in conn.execute("PRAGMA table_info(ExerciseSession)")
+        }
+        if "last_activity_at" not in session_columns:
+            conn.execute("ALTER TABLE ExerciseSession ADD COLUMN last_activity_at TEXT")
+        conn.execute("""
+            UPDATE ExerciseSession
+            SET last_activity_at = started_at
+            WHERE last_activity_at IS NULL
+              AND session_status = 'IN_PROGRESS'
+        """)
+
         conn.execute("""
             CREATE TABLE IF NOT EXISTS ExerciseSessionRuntime (
                 session_id INTEGER PRIMARY KEY,
@@ -57,6 +73,56 @@ def init_workout_db() -> None:
                     ON DELETE CASCADE
             )
         """)
+
+
+async def pause_stale_workout_sessions() -> None:
+    """Pause sessions whose GUI heartbeat has stopped for too long."""
+    stale_sessions = []
+    with get_connection() as conn:
+        candidates = conn.execute("""
+            SELECT session_id, COALESCE(last_activity_at, started_at) AS last_seen
+            FROM ExerciseSession
+            WHERE session_status = 'IN_PROGRESS'
+              AND julianday(COALESCE(last_activity_at, started_at))
+                    <= julianday('now') - (? / 86400.0)
+        """, (SESSION_HEARTBEAT_TIMEOUT_SECONDS,)).fetchall()
+
+        for candidate in candidates:
+            now = datetime.now().astimezone().isoformat(timespec="seconds")
+            updated = conn.execute("""
+                UPDATE ExerciseSession
+                SET session_status='PAUSED', paused_at=?, last_activity_at=?
+                WHERE session_id=? AND session_status='IN_PROGRESS'
+                  AND COALESCE(last_activity_at, started_at)=?
+            """, (now, now, candidate["session_id"], candidate["last_seen"]))
+            if updated.rowcount:
+                conn.execute("""
+                    UPDATE ExerciseSessionRuntime
+                    SET awaiting_start=0, set_pause=0
+                    WHERE session_id=?
+                """, (candidate["session_id"],))
+                stale_sessions.append(candidate["session_id"])
+
+    for session_id in stale_sessions:
+        try:
+            await _ai_request("POST", f"/internal/sessions/{session_id}/pause")
+            logger.info("[SESSION][AUTO_PAUSED] session_id=%s reason=heartbeat_timeout", session_id)
+        except HTTPException:
+            # Persist PAUSED locally even if AI Server is temporarily unreachable.
+            logger.exception("[SESSION][AI_PAUSE_FAILED] session_id=%s", session_id)
+
+
+async def workout_session_watchdog() -> None:
+    """Periodically pause sessions abandoned by a closed or disconnected GUI."""
+    interval = min(5, SESSION_HEARTBEAT_TIMEOUT_SECONDS)
+    while True:
+        await asyncio.sleep(interval)
+        try:
+            await pause_stale_workout_sessions()
+        except asyncio.CancelledError:
+            raise
+        except Exception:
+            logger.exception("[SESSION][WATCHDOG_ERROR]")
 
 
 def _ai_url(path: str) -> str:
@@ -319,16 +385,49 @@ async def start_workout(current_user: dict = Depends(get_current_user)):
 
     with get_connection() as conn:
         active = conn.execute("""
-            SELECT session_id FROM ExerciseSession
+            SELECT session_id, session_status FROM ExerciseSession
             WHERE user_id = ? AND session_status IN ('IN_PROGRESS', 'PAUSED')
+            ORDER BY started_at DESC, session_id DESC
             LIMIT 1
         """, (user_id,)).fetchone()
-        if active:
-            raise HTTPException(
-                status_code=409,
-                detail=f"이미 진행 중인 운동 세션이 있습니다 (session_id={active['session_id']}).",
-            )
 
+    if active:
+        if active["session_status"] == "PAUSED":
+            # Re-entering the workout should resume the retained session,
+            # rather than trying to create a second session for the day.
+            resumed = await resume_or_advance_workout(active["session_id"], current_user)
+            runtime = _current_workout(active["session_id"])
+            with get_connection() as resume_conn:
+                session_info = resume_conn.execute("""
+                    SELECT routine_id, day_no FROM ExerciseSession
+                    WHERE session_id = ? AND user_id = ?
+                """, (active["session_id"], user_id)).fetchone()
+                exercises = resume_conn.execute("""
+                    SELECT exercise_id, exercise_name, sets, reps, order_no,
+                           target_duration_sec
+                    FROM Exercise WHERE session_id = ? ORDER BY order_no, exercise_id
+                """, (active["session_id"],)).fetchall()
+                current_exercise = resume_conn.execute("""
+                    SELECT exercise_id, exercise_name, sets, reps, order_no,
+                           target_duration_sec
+                    FROM Exercise WHERE exercise_id = ?
+                """, (runtime["current_exercise_id"],)).fetchone()
+            return {
+                "session_id": active["session_id"],
+                "routine_id": session_info["routine_id"],
+                "day_no": session_info["day_no"],
+                "session_status": "IN_PROGRESS",
+                "current_set_no": resumed["current_set_no"],
+                "exercise": dict(current_exercise),
+                "exercises": [dict(exercise) for exercise in exercises],
+                "ai_server": resumed["ai_server"],
+            }
+        raise HTTPException(
+            status_code=409,
+            detail=f"이미 진행 중인 운동 세션이 있습니다 (session_id={active['session_id']}).",
+        )
+
+    with get_connection() as conn:
         body = conn.execute("""
             SELECT routine.routine_id, routine.routine_plan_json
             FROM UserBodyInfo AS body
@@ -343,9 +442,10 @@ async def start_workout(current_user: dict = Depends(get_current_user)):
         exercises = _day_exercises(body["routine_plan_json"], day_no)
         now = datetime.now().astimezone().isoformat(timespec="seconds")
         cursor = conn.execute("""
-            INSERT INTO ExerciseSession (user_id, routine_id, day_no, started_at, session_status)
-            VALUES (?, ?, ?, ?, 'IN_PROGRESS')
-        """, (user_id, body["routine_id"], day_no, now))
+            INSERT INTO ExerciseSession (
+                user_id, routine_id, day_no, started_at, session_status, last_activity_at
+            ) VALUES (?, ?, ?, ?, 'IN_PROGRESS', ?)
+        """, (user_id, body["routine_id"], day_no, now, now))
         session_id = cursor.lastrowid
 
         inserted_exercises = []
@@ -418,6 +518,24 @@ async def pause_workout(session_id: int, current_user: dict = Depends(get_curren
     return {"session_id": session_id, "session_status": "PAUSED", "ai_server": ai_result}
 
 
+@router.post("/{session_id}/heartbeat")
+def workout_heartbeat(session_id: int, current_user: dict = Depends(get_current_user)):
+    """Record that the GUI is still connected to an active workout."""
+    now = datetime.now().astimezone().isoformat(timespec="seconds")
+    with get_connection() as conn:
+        updated = conn.execute("""
+            UPDATE ExerciseSession SET last_activity_at=?
+            WHERE session_id=? AND user_id=? AND session_status='IN_PROGRESS'
+        """, (now, session_id, current_user["user_id"]))
+    if not updated.rowcount:
+        session = _get_owned_session(session_id, current_user["user_id"])
+        raise HTTPException(
+            status_code=409,
+            detail=f"세션이 진행 중이 아닙니다 (현재 상태: {session['session_status']}).",
+        )
+    return {"session_id": session_id, "session_status": "IN_PROGRESS", "heartbeat": "ok"}
+
+
 @router.post("/{session_id}/start")
 async def resume_or_advance_workout(
     session_id: int,
@@ -479,12 +597,13 @@ async def resume_or_advance_workout(
         conn.execute("""
             UPDATE ExerciseSession
             SET session_status='IN_PROGRESS',
+                last_activity_at=?,
                 paused_duration=paused_duration + CASE
                     WHEN paused_at IS NOT NULL THEN MAX(0, CAST((julianday(?) - julianday(paused_at)) * 86400 AS INTEGER))
                     ELSE 0 END,
                 paused_at=NULL
             WHERE session_id=? AND user_id=?
-        """, (now, session_id, user_id))
+        """, (now, now, session_id, user_id))
         if runtime["set_pause"]:
             conn.execute("""
                 UPDATE ExerciseSessionRuntime
@@ -505,6 +624,13 @@ async def resume_or_advance_workout(
 async def get_live_workout(session_id: int, current_user: dict = Depends(get_current_user)):
     """Proxy AI Server's live session snapshot and pause when this set reaches its goal."""
     session = _get_owned_session(session_id, current_user["user_id"])
+    if session["session_status"] == "IN_PROGRESS":
+        now = datetime.now().astimezone().isoformat(timespec="seconds")
+        with get_connection() as conn:
+            conn.execute("""
+                UPDATE ExerciseSession SET last_activity_at=?
+                WHERE session_id=? AND user_id=? AND session_status='IN_PROGRESS'
+            """, (now, session_id, current_user["user_id"]))
     runtime = _current_workout(session_id)
     if runtime is None:
         raise HTTPException(status_code=409, detail="세션의 현재 운동 상태를 찾을 수 없습니다.")
