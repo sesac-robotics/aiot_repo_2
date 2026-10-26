@@ -11,6 +11,10 @@ from uuid import uuid4
 from app.analysis.exercise import AnalysisResult, RepCompleted
 
 
+class _TransientPoseError(ValueError):
+    """좌표를 추정하지 않고 잠깐 기다릴 수 있는 관측 실패만 구분합니다."""
+
+
 @dataclass(frozen=True)
 class SquatConfig:
     standing_enter_deg: float = 165.0
@@ -25,6 +29,7 @@ class SquatConfig:
     min_rep_duration_sec: float = .8
     max_rep_duration_sec: float = 10.0
     max_frame_gap_sec: float = .75
+    occlusion_grace_sec: float = .35
 
     def __post_init__(self):
         # 잘못된 임계값으로 상태 전이/시간 검증이 무력화되지 않도록 확인합니다.
@@ -38,6 +43,7 @@ class SquatConfig:
                 and 0 < self.max_leg_difference_deg <= 180):
             raise ValueError('관절 신뢰도 또는 좌우 각도 차이 설정이 올바르지 않습니다.')
         if (self.transition_duration_sec <= 0 or self.max_frame_gap_sec <= 0
+                or not 0 < self.occlusion_grace_sec <= self.max_frame_gap_sec
                 or type(self.transition_samples) is not int or self.transition_samples < 2
                 or not 0 < self.min_rep_duration_sec < self.max_rep_duration_sec):
             raise ValueError('안정화/반복 시간 설정이 올바르지 않습니다.')
@@ -72,6 +78,8 @@ class SquatAnalyzer:
         self._candidate_since = None
         self._candidate_samples = 0
         self._cycle_started = None
+        self._invalid_since = None
+        self._last_valid_timestamp = None
 
     def reset(self):
         self._clear_motion()
@@ -104,14 +112,16 @@ class SquatAnalyzer:
             if (not self._finite_number(visibility) or not self.config.min_visibility <= visibility <= 1
                     or (presence is not None and (not self._finite_number(presence)
                                                  or not self.config.min_presence <= presence <= 1))):
-                raise ValueError('관절 신뢰도가 부족합니다.')
+                raise _TransientPoseError('관절 신뢰도가 부족합니다.')
             points[ident] = point
         if set(points) != required:
-            raise ValueError('양쪽 하체 관절이 모두 필요합니다.')
+            if not points:
+                raise ValueError('하체 관절이 없습니다.')
+            raise _TransientPoseError('양쪽 하체 관절이 모두 필요합니다.')
         left = knee_angle(points[23], points[25], points[27], frame_size)
         right = knee_angle(points[24], points[26], points[28], frame_size)
         if abs(left - right) > self.config.max_leg_difference_deg:
-            raise ValueError('좌우 무릎 각도 차이가 큽니다.')
+            raise _TransientPoseError('좌우 무릎 각도 차이가 큽니다.')
         return (left + right) / 2
 
     def _stable(self, candidate, timestamp):
@@ -141,15 +151,10 @@ class SquatAnalyzer:
                 or context.exercise_name != 'squat'):
             self._clear_motion()
             return self._result(time.monotonic(), phase='invalid')
-        try:
-            angle = self._angles(keypoints, frame_size)
-        except (ValueError, TypeError, OverflowError):
-            self._clear_motion()
-            return self._result(timestamp, phase='invalid')
         if self._last_timestamp is not None:
             if timestamp == self._last_timestamp:
                 # 같은 표본 재전달은 안정화 시간/표본 수나 이벤트를 증가시키지 않습니다.
-                return self._result(timestamp)
+                return self._result(timestamp, phase='invalid' if self._invalid_since is not None else None)
             if timestamp < self._last_timestamp:
                 self._clear_motion()
                 return self._result(timestamp, phase='invalid')
@@ -159,6 +164,26 @@ class SquatAnalyzer:
         if (self._cycle_started is not None
                 and timestamp - self._cycle_started > self.config.max_rep_duration_sec):
             self._clear_motion()
+
+        try:
+            angle = self._angles(keypoints, frame_size)
+        except _TransientPoseError:
+            # 무효 표본은 후보 표본 수/안정화 시간에 포함하지 않습니다.
+            self._stable(None, timestamp)
+            if self._invalid_since is None:
+                self._invalid_since = timestamp
+            if timestamp-self._invalid_since+1e-9 >= self.config.occlusion_grace_sec:
+                self._clear_motion()
+            return self._result(timestamp, phase='invalid')
+        except (ValueError, TypeError, OverflowError):
+            self._clear_motion()
+            return self._result(timestamp, phase='invalid')
+        # 만료 직전에 무효 프레임이 없었어도 복구 시 유예 시간을 다시 검사합니다.
+        if (self._invalid_since is not None
+                and timestamp-self._invalid_since+1e-9 >= self.config.occlusion_grace_sec):
+            self._clear_motion()
+        self._invalid_since = None
+        self._last_valid_timestamp = timestamp
 
         cfg = self.config
         candidate = None

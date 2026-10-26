@@ -222,3 +222,30 @@ python -m unittest discover -s tests -v
 5종 모델의 실제 입력·출력, V2 피드백, `.env`, Live 확장 및 검증 한계는
 [자세 평가 통합 문서](analysis/posture/README.md)를 참고하세요.
 Reps/Hold 계산과 독립된 단일 슬롯 워커를 사용하며 기능 OFF에서는 기존 응답을 유지합니다.
+
+## 반복별 AIFit records 전송
+
+`AIFIT_RECORDS_URL`에 전체 URL 템플릿을 지정하면 승인된 반복마다 별도 워커가 POST합니다.
+예: `http://10.17.178.246:8000/api/workout-sessions/{session_id}/records`.
+헤더 `X-Internal-API-Key`는 `AIFIT_INTERNAL_API_KEY`, 미설정 시 `INTERNAL_API_KEY`를 사용합니다.
+주소가 비어 있으면 전송하지 않습니다. 설정 변경 후 서버를 재시작합니다.
+
+운동 시작 요청에 `set_no`(기본 1)를 추가할 수 있습니다. 본문에는 exercise_id, set_no,
+rep_no(승인 후 rep_count), pose_state, score, error_codes가 포함됩니다. score는 `/live`의
+exercise.score와 같은 임시 70~90 랜덤 점수이며 실제 자세 평가 점수가 아닙니다.
+중복/거절 이벤트와 `/live` 조회는 전송을 발생시키지 않습니다. 플랭크 유지 시간은 반복
+이벤트가 아니므로 이 전송 대상이 아닙니다.
+
+pose_state는 반복 승인 순간의 최신 유효 자세 결과를 사용해 NORMAL→CORRECT,
+ERROR→INCORRECT로 변환합니다. 이는 전체 반복을 재평가한 결과가 아닙니다.
+결측/오래된 결과/보류에는 UNKNOWN을 보냅니다(수신 서버가 이 값을 허용해야 합니다).
+SQUAT_KNEE_VALGUS는 error_codes의 KNEE_VALGUS, feedback_code의 KNEE_ALIGNMENT로
+변환하며, 다른 오류는 기존 코드 이름을 유지합니다. 오류 안내는 실제 posture_errors의
+feedback을 사용하며, 무판정/정상에 오류 문구를 만들지 않습니다.
+
+`[Records] saved`는 HTTP 2xx 수신을 뜻합니다. 실제 DB 트랜잭션 여부는 수신 서버에서
+확인해야 합니다. 네트워크는 세션 잠금/영상 워커 밖에서 실행되고, 타임아웃은 3초입니다.
+실패(HTTP 코드/타임아웃/큐 초과/종료 시 대기 요청)는 인증 키 없이
+`logs/records_failed.jsonl`에 보관합니다. 서버의 중복 방지 계약이 없어 타임아웃 요청을
+자동 재전송하지 않습니다. 실패 파일은 원인 수정 후 서버 저장 여부를 확인하고 재처리해야 합니다.
+인메모리 큐이므로 강제 프로세스 종료/크래시 시 대기 요청은 유실될 수 있습니다.

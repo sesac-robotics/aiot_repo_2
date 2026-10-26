@@ -10,6 +10,7 @@ class ExerciseStartRequest(BaseModel):
     order_no: Annotated[int, Field(strict=True, gt=0)]
     target_reps: Annotated[int, Field(strict=True, gt=0)] | None = None
     target_duration_sec: Annotated[float, Field(strict=True,gt=0,allow_inf_nan=False)] | None = None
+    set_no: Annotated[int, Field(strict=True,ge=1)] = 1
 
 
 class SessionSnapshot(BaseModel):
@@ -28,6 +29,8 @@ class ExerciseSnapshot(BaseModel):
     order_no: int
     target_reps: int | None
     rep_count: int
+    score: int | None = None
+    set_no: int = 1
     exercise_status: Literal['running', 'finished']
 
 

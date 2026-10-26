@@ -78,7 +78,7 @@ def start_exercise(session_id: PositiveID, exercise_id: PositiveID,
                    body: ExerciseStartRequest, manager: Manager):
     with manager.target_session(session_id):
         return manager.start_exercise(exercise_id, body.exercise_name, body.order_no, body.target_reps,
-                                      target_duration_sec=body.target_duration_sec)
+                                      target_duration_sec=body.target_duration_sec,set_no=body.set_no)
 
 
 @router.post('/{session_id}/pause', response_model=SessionLiveResponse, response_model_exclude_unset=True)

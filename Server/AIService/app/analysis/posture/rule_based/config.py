@@ -12,6 +12,8 @@ class RuleConfig:
     max_frame_gap_sec: float = .75
     max_cycle_sec: float = 12.
     normal_confirm_sec: float = .4
+    squat_pose_grace_sec: float = .35
+    squat_result_hold_sec: float = 2.
     hip_deviation_enter: float = .12
     hip_deviation_exit: float = .08
     body_alignment_enter_deg: float = 145.
@@ -22,8 +24,13 @@ class RuleConfig:
     squat_min_motion_deg: float = 25.
     squat_lean_enter_deg: float = 50.
     squat_lean_exit_deg: float = 40.
-    valgus_enter_ratio: float = .65
-    valgus_exit_ratio: float = .75
+    valgus_enter_ratio: float = .75
+    valgus_exit_ratio: float = .85
+    # 정면 투영의 최소 해상도와 신체 크기 대비 폭을 함께 검사합니다(실험값).
+    squat_front_min_hip_width: float = .04
+    squat_front_min_hip_to_leg_ratio: float = .10
+    squat_front_min_leg_height: float = .15
+    squat_front_min_ankle_to_hip_ratio: float = .5
     pushup_depth_deg: float = 120.
     pushup_min_motion_deg: float = 25.
     ytw_elbow_enter_deg: float = 150.

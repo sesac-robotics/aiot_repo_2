@@ -1,0 +1,36 @@
+{
+  "new_posture_tests": 32,
+  "new_posture_passed": 32,
+  "full_tests": 391,
+  "passed": 383,
+  "existing_failures": 8,
+  "new_regressions": 0,
+  "baseline_tests_excluding_camera_and_new_posture_tests": 338,
+  "baseline_existing_failures": 8,
+  "baseline_failure_names": [
+    "test_logger_during_idle_and_stop",
+    "test_angle_met_but_small_shoulder_drop_is_explained",
+    "test_relaxed_defaults_preserve_other_settings",
+    "test_logs_measurements_confidence_event_and_throttles_idle",
+    "test_stale_generated_event_rejection_and_paused_dispatch_are_visible",
+    "test_w_hold_waits_for_rearm_and_next_y_rearms",
+    "test_wrong_order_and_reset_reason_are_logged",
+    "test_y_t_w_success_conditions_and_original_measurements"
+  ],
+  "protected_files_unchanged_since_integration_started": {
+    "app/camera/stream.py": true,
+    "app/inference/mediapipe_pose.py": true,
+    "app/analysis/exercises/squat.py": true,
+    "app/analysis/exercises/shoulder_press.py": true,
+    "app/analysis/exercises/push_up.py": true,
+    "app/analysis/exercises/ytw_raise.py": true,
+    "app/analysis/exercises/plank.py": true
+  },
+  "not_tested": [
+    "live_camera_off_on_fps",
+    "MediaPipe_GPU_concurrent_run",
+    "successful_posture_CUDA_inference",
+    "Backend_POST",
+    "long_duration_network_stream"
+  ]
+}

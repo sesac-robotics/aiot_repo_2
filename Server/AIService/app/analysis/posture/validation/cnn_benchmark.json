@@ -1,0 +1,88 @@
+{
+  "camera_connected": false,
+  "input": "provided single QEVD landmark cache; non-squat runs are shape smoke tests",
+  "torch": "2.14.1+cu130",
+  "numpy": "2.5.4",
+  "cpu_threads": 14,
+  "architecture": "cnn",
+  "device": "cpu",
+  "models": [
+    {
+      "exercise": "squat",
+      "loaded": true,
+      "load_ms": 5.975860054604709,
+      "input_shape": [
+        32,
+        69
+      ],
+      "output_count": 2,
+      "samples": 30,
+      "mean_ms": 4.476102024394398,
+      "p95_ms": 15.44000733410937,
+      "status": "NORMAL",
+      "reason": null
+    },
+    {
+      "exercise": "push_up",
+      "loaded": true,
+      "load_ms": 2.350838971324265,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 7,
+      "samples": 30,
+      "mean_ms": 13.951566570904106,
+      "p95_ms": 32.60681029350962,
+      "status": "ERROR",
+      "reason": null
+    },
+    {
+      "exercise": "ytw_raise",
+      "loaded": true,
+      "load_ms": 2.8830269584432244,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 5,
+      "samples": 30,
+      "mean_ms": 2.7778467939545712,
+      "p95_ms": 2.8683747485047206,
+      "status": "ERROR",
+      "reason": null
+    },
+    {
+      "exercise": "plank",
+      "loaded": true,
+      "load_ms": 3.10777296544984,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 9,
+      "samples": 30,
+      "mean_ms": 6.630488997325301,
+      "p95_ms": 19.61117344035301,
+      "status": "ERROR",
+      "reason": null
+    },
+    {
+      "exercise": "dumbbell_shoulder_press",
+      "loaded": true,
+      "load_ms": 2.869976044166833,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 7,
+      "samples": 30,
+      "mean_ms": 2.88238757251141,
+      "p95_ms": 3.17798860487528,
+      "status": "UNKNOWN",
+      "reason": "unverified_exercise_label_scope"
+    }
+  ],
+  "process_peak_rss_mb": 500.921875,
+  "cuda_allocated_mb": null
+}

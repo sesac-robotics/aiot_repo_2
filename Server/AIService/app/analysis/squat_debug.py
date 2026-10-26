@@ -105,6 +105,10 @@ class SquatDebug:
                 candidate_duration_sec=timestamp-since if self._finite(timestamp) and self._finite(since) else None,
                 frame_gap_sec=timestamp-previous_timestamp if self._finite(timestamp) and self._finite(previous_timestamp) else None,
                 cycle_duration_sec=cycle_duration,
+                invalid_elapsed_sec=timestamp-active._invalid_since
+                    if self._finite(timestamp) and self._finite(getattr(active,'_invalid_since',None)) else None,
+                cycle_preserved_during_invalid=not valid and phase in ('standing','descending','bottom','ascending'),
+                last_valid_timestamp=getattr(active,'_last_valid_timestamp',None),
                 cycle_duration_valid=(cfg.min_rep_duration_sec <= cycle_duration <= cfg.max_rep_duration_sec)
                     if cycle_duration is not None else None,
                 joints=joints,left_knee_deg=angles['left'],right_knee_deg=angles['right'],

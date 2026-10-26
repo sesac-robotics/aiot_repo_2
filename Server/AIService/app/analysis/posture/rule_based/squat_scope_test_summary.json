@@ -1,0 +1,56 @@
+{
+  "new_tests": 20,
+  "new_tests_passed": 20,
+  "full_tests": 449,
+  "passed_current_tree": 440,
+  "failures_current_tree": 9,
+  "existing_failures_at_start": 8,
+  "concurrent_camera_log_change_failure": 1,
+  "regressions_from_this_squat_change": 0,
+  "before_concurrent_camera_change": {
+    "full_tests": 449,
+    "passed": 441,
+    "failures": 8
+  },
+  "baseline_full_tests": 429,
+  "baseline_failures": 8,
+  "reps_same_input_off_front_side": [
+    5,
+    5,
+    5
+  ],
+  "actual_failed_video_available": false,
+  "actual_reps_failure_root_cause_confirmed": false,
+  "protected_files_unchanged": {
+    "app/session/manager.py": true,
+    "app/schemas/session.py": true,
+    "app/routers/internal_sessions.py": true,
+    "app/camera/stream.py": false,
+    "app/inference/mediapipe_pose.py": true,
+    "app/analysis/posture/predictor.py": true,
+    "app/analysis/exercises/squat.py": true,
+    "app/analysis/exercises/ytw_raise.py": true,
+    "app/analysis/exercises/__init__.py": true,
+    "app/analysis/exercises/shoulder_press.py": true,
+    "app/analysis/exercises/plank.py": true,
+    "app/analysis/exercises/push_up.py": true,
+    "app/analysis/posture/vendor/__init__.py": true,
+    "app/analysis/posture/vendor/networks.py": true,
+    "app/analysis/posture/vendor/squat_features.py": true,
+    "app/analysis/posture/vendor/classifier.py": true,
+    "app/analysis/posture/vendor/suite_features.py": true,
+    "app/analysis/posture/vendor/feedback_policy.py": true
+  },
+  "camera_change_note": "CameraMetrics logging was commented during this task by a separate edit; preserved without modification",
+  "failure_names": [
+    "test_diagnostics_are_throttled_and_measured (test_camera_sources.CameraCaptureTests.test_diagnostics_are_throttled_and_measured)",
+    "test_logger_during_idle_and_stop (test_pipeline_metrics.PipelineTests.test_logger_during_idle_and_stop)",
+    "test_angle_met_but_small_shoulder_drop_is_explained (test_session_push_up.PushUpDiagnosticTests.test_angle_met_but_small_shoulder_drop_is_explained)",
+    "test_relaxed_defaults_preserve_other_settings (test_session_push_up.PushUpTests.test_relaxed_defaults_preserve_other_settings)",
+    "test_logs_measurements_confidence_event_and_throttles_idle (test_session_ytw_raise.YTWDebugTests.test_logs_measurements_confidence_event_and_throttles_idle)",
+    "test_stale_generated_event_rejection_and_paused_dispatch_are_visible (test_ytw_diagnostics.YTWBridgeDiagnosticsTests.test_stale_generated_event_rejection_and_paused_dispatch_are_visible)",
+    "test_w_hold_waits_for_rearm_and_next_y_rearms (test_ytw_diagnostics.YTWDiagnosticsTests.test_w_hold_waits_for_rearm_and_next_y_rearms)",
+    "test_wrong_order_and_reset_reason_are_logged (test_ytw_diagnostics.YTWDiagnosticsTests.test_wrong_order_and_reset_reason_are_logged)",
+    "test_y_t_w_success_conditions_and_original_measurements (test_ytw_diagnostics.YTWDiagnosticsTests.test_y_t_w_success_conditions_and_original_measurements)"
+  ]
+}

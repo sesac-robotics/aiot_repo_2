@@ -13,6 +13,8 @@ from datetime import datetime, timezone
 import threading
 import time
 import math
+import random
+import logging
 from typing import Callable
 
 from app.session.models import (
@@ -23,11 +25,12 @@ from app.session.models import (
 
 class SessionManager:
     def __init__(self, *, monotonic: Callable[[], float] = time.monotonic,
-                 utc_now: Callable[[], datetime] | None = None):
+                 utc_now: Callable[[], datetime] | None = None, rep_record_sink=None):
         # 두 시계는 테스트에서 주입하며 경과 시간 계산에는 UTC 시계를 쓰지 않습니다.
         self._clock = monotonic
         self._utc_now = utc_now or (lambda: datetime.now(timezone.utc))
         self._lock = threading.RLock()
+        self._rep_record_sink = rep_record_sink
         self._session = SessionState()
         self._exercise: ExerciseState | None = None
         self._started_mono: float | None = None
@@ -115,9 +118,10 @@ class SessionManager:
             self._analysis_revision += 1
             return self._snapshot(now)
 
-    def start_exercise(self, exercise_id, exercise_name, order_no, target_reps=None, *, target_duration_sec=None):
+    def start_exercise(self, exercise_id, exercise_name, order_no, target_reps=None, *, target_duration_sec=None,set_no=1):
         self._positive_int('exercise_id', exercise_id)
         self._positive_int('order_no', order_no)
+        self._positive_int('set_no', set_no)
         if target_reps is not None:
             self._positive_int('target_reps', target_reps)
         if not isinstance(exercise_name, str) or not exercise_name.strip():
@@ -138,6 +142,7 @@ class SessionManager:
             if exercise_id in self._exercise_ids:
                 raise SessionConflict('이 세션에서 이미 사용한 운동 ID입니다.')
             self._exercise = ExerciseState(exercise_id, exercise_name.strip(), order_no, target_reps)
+            self._exercise.set_no = set_no
             self._hold_state=HoldState(target_duration_sec=target_duration_sec) if exercise_name=='plank' else None
             self._hold_timestamp=None
             self._exercise_ids.add(exercise_id)
@@ -228,6 +233,14 @@ class SessionManager:
                 return False
             self._rep_event_ids.add(event_id)
             self._exercise.rep_count += 1
+            self._exercise.score = random.randint(70, 90)
+            if self._rep_record_sink is not None:
+                try:
+                    from app.record_delivery import record_payload
+                    snapshot = self._snapshot(self._clock())
+                    self._rep_record_sink(session_id,record_payload(snapshot['exercise'],snapshot.get('posture_analysis')))
+                except Exception:
+                    logging.getLogger('uvicorn.error').exception('[Records] could not enqueue accepted repetition')
             return True
 
     def enable_posture_analysis(self, *, unavailable_reason=None):

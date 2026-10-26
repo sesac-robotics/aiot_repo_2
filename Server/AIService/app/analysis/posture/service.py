@@ -5,6 +5,7 @@ import logging
 import os
 import threading
 import time
+from pathlib import Path
 from copy import deepcopy
 
 from app.analysis.posture_state import posture_state as empty_result
@@ -49,6 +50,9 @@ class PostureService:
             LOGGER.warning('[Posture] invalid POSTURE_MODEL_ENABLED; disabled')
             return None
         mode = explicit.strip().lower() if explicit is not None else 'model' if enabled in ('true','1') else 'off'
+        LOGGER.info('[PostureStartup] mode=%r source=%s service_file=%s',
+                    mode, 'POSTURE_EVALUATION_MODE' if explicit is not None else 'POSTURE_MODEL_ENABLED',
+                    str(Path(__file__).resolve()))
         if mode == 'off':
             return None
         try:
@@ -60,14 +64,17 @@ class PostureService:
                 from .rule_based import RuleConfig
                 config = RuleConfig(**json.loads(os.getenv('POSTURE_RULE_CONFIG','{}')))
                 camera_views = json.loads(os.getenv('POSTURE_CAMERA_VIEWS','{}'))
-            return cls(manager,os.getenv('POSTURE_MODEL_DIR','~/Desktop/posture_classification_handoff_v2_feedback'),
+            service = cls(manager,os.getenv('POSTURE_MODEL_DIR','~/Desktop/posture_classification_handoff_v2_feedback'),
                        architecture=os.getenv('POSTURE_MODEL_ARCHITECTURE','cnn'),
                        device=os.getenv('POSTURE_MODEL_DEVICE','cpu'),mode=mode,
                        camera_view=os.getenv('POSTURE_CAMERA_VIEW','unknown').strip().lower(),
                        rule_config=config,camera_views=camera_views)
+            LOGGER.info('[PostureStartup] initialized mode=%s predictor=%s camera_views=%s',
+                        mode, type(service.predictor).__name__, camera_views)
+            return service
         except Exception as error:
             manager.enable_posture_analysis(unavailable_reason=type(error).__name__)
-            LOGGER.warning('[Posture] configuration unavailable reason=%s',type(error).__name__)
+            LOGGER.exception('[Posture] configuration unavailable mode=%r reason=%s',mode,type(error).__name__)
             return None
 
     def start(self):
@@ -135,8 +142,9 @@ class PostureService:
         self.manager.record_posture_analysis(context, result)
         now = time.monotonic()
         if now - self._last_log >= 1:
-            LOGGER.warning('[Posture] unavailable exercise=%s reason=%s',
-                           getattr(context, 'exercise_name', None), type(error).__name__)
+            LOGGER.error('[Posture] unavailable mode=%s exercise=%s reason=%s',
+                         self.mode, getattr(context, 'exercise_name', None), type(error).__name__,
+                         exc_info=(type(error),error,error.__traceback__))
             self._last_log = now
         self.predictor.reset()
 

@@ -53,6 +53,9 @@ class ExerciseState:
     rep_count: int = 0
     # Pause는 세션 상태로 표현하며 현재 운동은 종료 전까지 running입니다.
     exercise_status: Literal['running', 'finished'] = 'running'
+    # 요청된 임시 랜덤 점수이며 실제 자세 평가 결과가 아닙니다.
+    score: int | None = None
+    set_no: int = 1
 
 
 @dataclass

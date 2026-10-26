@@ -21,6 +21,7 @@ from app.inference.yolo_pose import YOLOPoseEstimator
 from app.inference.mediapipe_pose import MediapipePoseEstimator
 from app.streaming.pose_stream import PoseStreamService
 from app.debug_logging import debug_log_files
+from app.record_delivery import RecordDelivery
 
 load_dotenv()
 
@@ -107,7 +108,10 @@ async def _service_lifespan(app: FastAPI):
     # 선택한 카메라 설정만 검증하며 잘못된 설정이면 GPU 생성 전에 실패합니다.
     camera_source_type, stream_url, rtsp_transport = read_camera_settings()
     # 프로세스당 하나를 생성하여 API와 향후 추론 워커가 공유합니다.
-    app.state.session_manager = SessionManager()
+    record_delivery = RecordDelivery.from_env()
+    app.state.session_manager = SessionManager(
+        rep_record_sink=record_delivery.submit if record_delivery is not None else None)
+    app.state.record_delivery = record_delivery
     app.state.internal_api_key = os.getenv("INTERNAL_API_KEY")
     # OFF일 때는 자세 모델/torch 모듈도 추가 import/생성하지 않습니다.
     posture_service = None
@@ -142,6 +146,8 @@ async def _service_lifespan(app: FastAPI):
     app.state.pose_stream = pose_stream
 
     try:
+        if record_delivery is not None:
+            record_delivery.start()
         if posture_service is not None:
             posture_service.start()
         pose_stream.start()
@@ -154,7 +160,11 @@ async def _service_lifespan(app: FastAPI):
             if posture_service is not None:
                 posture_service.stop()
         finally:
-            pose_stream.stop()
+            try:
+                pose_stream.stop()
+            finally:
+                if record_delivery is not None:
+                    record_delivery.close()
         print("[AI Service] 스트리밍 서비스 종료")
 
 

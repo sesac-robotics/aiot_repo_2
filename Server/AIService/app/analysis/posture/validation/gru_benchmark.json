@@ -1,0 +1,88 @@
+{
+  "camera_connected": false,
+  "input": "provided single QEVD landmark cache; non-squat runs are shape smoke tests",
+  "torch": "2.14.1+cu130",
+  "numpy": "2.5.4",
+  "cpu_threads": 14,
+  "architecture": "gru",
+  "device": "cpu",
+  "models": [
+    {
+      "exercise": "squat",
+      "loaded": true,
+      "load_ms": 5.826163978781551,
+      "input_shape": [
+        32,
+        69
+      ],
+      "output_count": 2,
+      "samples": 30,
+      "mean_ms": 4.8594781663268805,
+      "p95_ms": 6.70138691784814,
+      "status": "UNKNOWN",
+      "reason": "quality_and_error_type_evidence_conflict"
+    },
+    {
+      "exercise": "push_up",
+      "loaded": true,
+      "load_ms": 2.763130993116647,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 7,
+      "samples": 30,
+      "mean_ms": 1.7620923308034737,
+      "p95_ms": 1.8492517352569848,
+      "status": "ERROR",
+      "reason": null
+    },
+    {
+      "exercise": "ytw_raise",
+      "loaded": true,
+      "load_ms": 1.5973999979905784,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 5,
+      "samples": 30,
+      "mean_ms": 1.9613129261415452,
+      "p95_ms": 2.6941033225739366,
+      "status": "ERROR",
+      "reason": null
+    },
+    {
+      "exercise": "plank",
+      "loaded": true,
+      "load_ms": 1.5750050079077482,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 9,
+      "samples": 30,
+      "mean_ms": 2.1289927690910795,
+      "p95_ms": 4.0163364028558135,
+      "status": "ERROR",
+      "reason": null
+    },
+    {
+      "exercise": "dumbbell_shoulder_press",
+      "loaded": true,
+      "load_ms": 1.585416030138731,
+      "input_shape": [
+        32,
+        109
+      ],
+      "output_count": 7,
+      "samples": 30,
+      "mean_ms": 1.8659969364913802,
+      "p95_ms": 2.359403934678994,
+      "status": "UNKNOWN",
+      "reason": "unverified_exercise_label_scope"
+    }
+  ],
+  "process_peak_rss_mb": 503.26171875,
+  "cuda_allocated_mb": null
+}

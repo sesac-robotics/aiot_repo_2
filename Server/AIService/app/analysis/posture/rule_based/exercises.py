@@ -25,9 +25,11 @@ class SquatPosture:
     def __init__(self, cfg):
         self.cfg = cfg
         self.motion = MotionRange(cfg.max_cycle_sec)
+        self.diagnostics = {}
 
     def reset(self):
         self.motion.reset()
+        self.diagnostics = {}
 
     def applicable_codes(self, view):
         # 반대 방향 전용 검사는 정상 집계 대상에서 제외합니다.
@@ -35,6 +37,8 @@ class SquatPosture:
 
     def observe(self, pose, phase, timestamp, view):
         cfg = self.cfg
+        # 실제 판정에서 계산한 값만 진단에 보관하며 별도 좌표 추정은 하지 않습니다.
+        self.diagnostics = {}
         if view not in ('front','side'):
             return unavailable(self.codes,'camera_view_unknown')
         if phase not in ('standing','descending','bottom','ascending'):
@@ -46,7 +50,28 @@ class SquatPosture:
             pose.require(23,24,25,26,27,28)
             hip_width, ankle_width, knee_width = (abs(pose.xy(a)[0]-pose.xy(b)[0])
                                                  for a,b in ((23,24),(27,28),(25,26)))
-            if hip_width < .08 or ankle_width < hip_width*.5:
+            # 이미지 높이 단위의 절대 폭만으로 멀리 선 사용자를 거부하지 않습니다.
+            # 양쪽 하체의 크기와 위아래 순서도 확인하여 퇴화/측면 투영은 보류합니다.
+            leg_height = sum(pose.xy(a)[1]-pose.xy(h)[1] for h,a in ((23,27),(24,28)))/2
+            leg_order_valid = all(pose.xy(h)[1] < pose.xy(k)[1] < pose.xy(a)[1]
+                                  for h,k,a in ((23,25,27),(24,26,28)))
+            hip_width_valid = (hip_width >= cfg.squat_front_min_hip_width
+                               and hip_width >= leg_height*cfg.squat_front_min_hip_to_leg_ratio)
+            stance_width_valid = ankle_width >= hip_width*cfg.squat_front_min_ankle_to_hip_ratio
+            lower_body_valid = leg_height >= cfg.squat_front_min_leg_height and leg_order_valid
+            self.diagnostics = dict(
+                hip_width=hip_width, ankle_width=ankle_width, knee_width=knee_width,
+                knee_ankle_width_ratio=knee_width/ankle_width if ankle_width > 0 else None,
+                hip_width_valid=hip_width_valid, stance_width_valid=stance_width_valid,
+                leg_height=leg_height, leg_order_valid=leg_order_valid, lower_body_valid=lower_body_valid,
+                hip_to_leg_ratio=hip_width/leg_height if leg_height > 0 else None,
+                min_hip_width=cfg.squat_front_min_hip_width,
+                min_hip_to_leg_ratio=cfg.squat_front_min_hip_to_leg_ratio,
+                min_leg_height=cfg.squat_front_min_leg_height,
+                min_ankle_to_hip_width_ratio=cfg.squat_front_min_ankle_to_hip_ratio,
+                coordinate_units='image_height',
+            )
+            if not (hip_width_valid and stance_width_valid and lower_body_valid):
                 return unavailable(self.codes,'front_projection_or_stance_unreliable')
             ratio = knee_width/ankle_width
             return [Check(self.codes[0],ratio < cfg.valgus_enter_ratio,ratio > cfg.valgus_exit_ratio,value=ratio)]

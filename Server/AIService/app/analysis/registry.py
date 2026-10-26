@@ -12,7 +12,6 @@ from app.analysis.exercises.ytw_raise import YtwRaiseAnalyzer
 from app.analysis.exercises.plank import PlankAnalyzer
 from app.session.models import AnalysisContext, InvalidSessionInput
 
-
 @dataclass(frozen=True)
 class ExerciseDefinition:
     exercise_name: str

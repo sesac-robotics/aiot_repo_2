@@ -1,5 +1,22 @@
 # 학습 기반 자세 평가 통합
 
+## 모델 진단 로그
+
+학습 모델 모드에서는 `logs/debug.jsonl`과 같은 폴더의 `logs/model_debug.json`에
+진단을 자동 기록합니다. 파일명 확장자는 `.json`이지만 기존 디버그 로그처럼
+한 줄에 JSON 객체 하나를 저장하며, 10 MiB마다 회전하고 백업 5개를 유지합니다.
+첫 진단 시 파일이 생성됩니다. `MODEL_DEBUG=0`으로 기록을 끌 수 있습니다.
+
+필수 관절 ID별 visibility/유효 여부/실패 이유, 누락·중복 관절, 입력 크기·영상 비율,
+처리 전후 버퍼 길이와 초기화 원인, 샘플 간격, 원시 분류 점수와 최종 상태,
+화면 피드백을 기록합니다. 원본 영상은 저장하지 않습니다.
+`not_sampled_this_frame`은 기록하지 않으며, `timestamp`로 스트림 시각을 대조합니다.
+`classification.model_outputs`가 없으면 해당 기록은 추론 전의 입력 실패·준비 상태입니다.
+
+```bash
+tail -f logs/model_debug.json
+```
+
 이 모듈은 팀에서 전달한 `posture_classification_handoff_v2_feedback`의 실제 PyTorch
 모델·전처리·시퀀스·분류 및 V2 표시 정책을 사용합니다. Rule-based Reps/Plank 유지 시간은
 변경하지 않습니다. 최종 화면에는 `display_feedback.text`를 사용합니다.

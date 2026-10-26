@@ -10,6 +10,7 @@ import threading
 
 
 DEBUG_LOG_PATH = Path(__file__).resolve().parents[1] / 'logs' / 'debug.jsonl'
+MODEL_DEBUG_LOG_PATH = DEBUG_LOG_PATH.with_name('model_debug.json')
 DEBUG_TAGS = ('SquatDebug', 'ShoulderPressDebug', 'PushUpDebug', 'YTWDebug', 'PlankDebug')
 
 
@@ -31,11 +32,15 @@ class _JsonFormatter(logging.Formatter):
 
 
 class _DebugFileFilter(logging.Filter):
-    def __init__(self, handler):
+    def __init__(self, handler, model_handler):
         super().__init__()
         self.handler = handler
+        self.model_handler = model_handler
 
     def filter(self, record):
+        if record.getMessage().startswith('[ModelDebug]'):
+            self.model_handler.handle(record)
+            return False
         # logger 단계에서 분리하므로 Uvicorn/root의 터미널 핸들러로 전파되지 않습니다.
         if record.getMessage().startswith(tuple('[' + tag + ']' for tag in DEBUG_TAGS)):
             self.handler.handle(record)
@@ -62,7 +67,13 @@ def debug_log_files():
                 encoding='utf-8', delay=True,
             )
             handler.setFormatter(_JsonFormatter())
-            _filter = _DebugFileFilter(handler)
+            MODEL_DEBUG_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+            model_handler = RotatingFileHandler(
+                MODEL_DEBUG_LOG_PATH, maxBytes=10 * 1024 * 1024, backupCount=5,
+                encoding='utf-8', delay=True,
+            )
+            model_handler.setFormatter(_JsonFormatter())
+            _filter = _DebugFileFilter(handler, model_handler)
             logger.addFilter(_filter)
         _users += 1
     try:
@@ -73,4 +84,5 @@ def debug_log_files():
             if _users == 0:
                 logger.removeFilter(_filter)
                 _filter.handler.close()
+                _filter.model_handler.close()
                 _filter = None

@@ -2,6 +2,9 @@
 from pathlib import Path
 import logging
 import math
+import os
+import json
+from collections import Counter
 
 import numpy as np
 
@@ -100,12 +103,16 @@ class PosturePredictor:
             return empty_result('unavailable', 'model_unavailable:' + str(model.load_error))
         width, height = frame_size
         array = landmark_array(keypoints)
+        before = dict(buffer_frames=len(self.sequence.frames),
+                      last_seen=self.sequence.last_seen, last_sample=self.sequence.last_sample,
+                      aspect=self.sequence.aspect, subject_token=self.sequence.subject_token)
         # SequenceSession의 원래 missing_or_invalid_pose 정책으로 버퍼를 초기화합니다.
         raw = self.sequence.push(array, timestamp, width / height,
                                  subject_token=(context.session_id, context.exercise_id, context.revision))
         if not raw.get('updated', True):
             return None  # 생략한 샘플은 신규 예측/피드백 투표가 아닙니다.
         result = self.policy.apply(raw, timestamp)
+        self._debug(context, keypoints, array, timestamp, frame_size, before, raw, result)
         reason = raw.get('reason')
         if raw.get('model_outputs') is not None:
             status = 'ready'
@@ -128,3 +135,45 @@ class PosturePredictor:
                                          confidence_kind='uncalibrated_sigmoid_not_accuracy',
                                          feedback=feedbacks.get(name)) for name in raw.get('error_types', [])]
         return json_safe(output)
+
+    def _debug(self, context, keypoints, array, timestamp, frame_size, before, raw, result):
+        """진단 실패는 추론/피드백에 영향을 주지 않습니다. 원본 영상은 저장하지 않습니다."""
+        if os.getenv('MODEL_DEBUG', '1').strip().lower() not in ('1', 'true'):
+            return
+        try:
+            model = self.sequence.classifier
+            counts = Counter(p.get('id') for p in keypoints if isinstance(p, dict))
+            joints = []
+            for ident in model.required:
+                point = next((p for p in keypoints if isinstance(p, dict) and p.get('id') == ident), {})
+                visibility = point.get('visibility')
+                finite = all(isinstance(point.get(k), (int, float)) and math.isfinite(point[k])
+                             for k in ('x', 'y', 'z', 'visibility'))
+                reason = ('missing_or_duplicate' if counts[ident] != 1 else
+                          'nonfinite_or_missing_value' if not finite else
+                          'low_visibility' if visibility < .3 else None)
+                joints.append(dict(id=ident, visibility=visibility if isinstance(visibility, (int, float))
+                                   and math.isfinite(visibility) else None, valid=reason is None, reason=reason))
+            reset_reason = raw.get('reason') if len(self.sequence.frames) == 0 else None
+            if before['last_seen'] is not None and timestamp - before['last_seen'] > 1:
+                reset_reason = reset_reason or 'stream_gap'
+            if before['aspect'] is not None and abs(frame_size[0] / frame_size[1] - before['aspect']) > .01:
+                reset_reason = reset_reason or 'aspect_or_orientation_changed'
+            intervals = np.diff(self.sequence.times)
+            row = dict(session_id=context.session_id, exercise_id=context.exercise_id,
+                       revision=context.revision, exercise_name=context.exercise_name,
+                       timestamp=timestamp, model_name=raw.get('model_name'), device=self.device,
+                       frame_size=list(frame_size), aspect=frame_size[0] / frame_size[1],
+                       input_shape=list(array.shape) if array is not None else None,
+                       keypoint_count=len(keypoints), required_joints=joints,
+                       missing_joint_ids=[i for i in range(33) if counts[i] == 0],
+                       duplicate_joint_ids=[i for i, count in counts.items() if count > 1],
+                       buffer_before=before['buffer_frames'], buffer_after=len(self.sequence.frames),
+                       required_frames=model.length, reset_reason=reset_reason,
+                       sample_interval_max=float(intervals.max()) if len(intervals) else None,
+                       sample_interval_median=float(np.median(intervals)) if len(intervals) else None,
+                       classification=raw, display_feedback=result['display_feedback'])
+            logging.getLogger('uvicorn.error').info('[ModelDebug] %s', json.dumps(
+                json_safe(row), ensure_ascii=False, allow_nan=False))
+        except Exception:
+            logging.getLogger('uvicorn.error').exception('[Posture] model diagnostic failed')

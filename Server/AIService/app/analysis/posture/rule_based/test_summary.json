@@ -1,0 +1,43 @@
+{
+  "new_tests": 38,
+  "new_tests_passed": 38,
+  "full_tests": 429,
+  "passed": 421,
+  "existing_failures": 8,
+  "new_regressions": 0,
+  "baseline_full_tests": 391,
+  "baseline_failures": 8,
+  "failure_names": [
+    "test_logger_during_idle_and_stop (test_pipeline_metrics.PipelineTests.test_logger_during_idle_and_stop)",
+    "test_angle_met_but_small_shoulder_drop_is_explained (test_session_push_up.PushUpDiagnosticTests.test_angle_met_but_small_shoulder_drop_is_explained)",
+    "test_relaxed_defaults_preserve_other_settings (test_session_push_up.PushUpTests.test_relaxed_defaults_preserve_other_settings)",
+    "test_logs_measurements_confidence_event_and_throttles_idle (test_session_ytw_raise.YTWDebugTests.test_logs_measurements_confidence_event_and_throttles_idle)",
+    "test_stale_generated_event_rejection_and_paused_dispatch_are_visible (test_ytw_diagnostics.YTWBridgeDiagnosticsTests.test_stale_generated_event_rejection_and_paused_dispatch_are_visible)",
+    "test_w_hold_waits_for_rearm_and_next_y_rearms (test_ytw_diagnostics.YTWDiagnosticsTests.test_w_hold_waits_for_rearm_and_next_y_rearms)",
+    "test_wrong_order_and_reset_reason_are_logged (test_ytw_diagnostics.YTWDiagnosticsTests.test_wrong_order_and_reset_reason_are_logged)",
+    "test_y_t_w_success_conditions_and_original_measurements (test_ytw_diagnostics.YTWDiagnosticsTests.test_y_t_w_success_conditions_and_original_measurements)"
+  ],
+  "protected_files_unchanged": {
+    "app/session/manager.py": true,
+    "app/schemas/session.py": true,
+    "app/routers/internal_sessions.py": true,
+    "app/camera/stream.py": true,
+    "app/inference/mediapipe_pose.py": true,
+    "app/analysis/posture/predictor.py": true,
+    "app/analysis/exercises/squat.py": true,
+    "app/analysis/exercises/ytw_raise.py": true,
+    "app/analysis/exercises/__init__.py": true,
+    "app/analysis/exercises/shoulder_press.py": true,
+    "app/analysis/exercises/plank.py": true,
+    "app/analysis/exercises/push_up.py": true,
+    "app/analysis/posture/vendor/__init__.py": true,
+    "app/analysis/posture/vendor/networks.py": true,
+    "app/analysis/posture/vendor/squat_features.py": true,
+    "app/analysis/posture/vendor/classifier.py": true,
+    "app/analysis/posture/vendor/suite_features.py": true,
+    "app/analysis/posture/vendor/feedback_policy.py": true
+  },
+  "tested_with_real_camera": false,
+  "rule_based_imports_torch": false,
+  "real_env_modified": false
+}

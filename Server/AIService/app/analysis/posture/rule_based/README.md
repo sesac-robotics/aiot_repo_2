@@ -251,6 +251,56 @@ manager_called=true/event_accepted=false이면 중복/상태 변경 등 관리�
 카메라 프레임이 오지 않으면 별도 pipeline 로그에서 analyzer_called=false를 출력합니다.
 DEBUG OFF에서는 추가 관절 계산/로그를 실행하지 않습니다.
 
+### 정면 스쿼트 자세 평가 진단
+
+`SQUAT_DEBUG=1`로 서버를 재시작하면 `logs/debug.jsonl`의
+`debug_type=SquatDebug`, `data.kind=posture`에서 자세 평가 경로를 확인할 수 있습니다.
+Reps 경로의 `kind=reps`와 별도이며 판정 임계값은 변경하지 않습니다.
+일반 기록은 약 1초 간격, 단계/평가 사유 변경은 즉시 기록합니다.
+
+- `effective_camera_view`, `camera_view_source`: 운동별 JSON 설정이 공통 설정보다 우선합니다.
+- `check_enabled`, `check_evaluated`, `check_pending_reason`: 정면 무릎 모임 검사 활성화/실행 및 보류·불가 사유입니다.
+- `knee_ankle_width_ratio`, `projection`: 실제 검사에 사용한 무릎/발목 폭 비율과 투영 검증값입니다.
+- `joints`: Hip/Knee/Ankle(23~28)의 원본 좌표·Visibility/Presence 및 실제 유효성 검사 결과입니다.
+- `phase`, `analyzer_phase`, `analyzer_timestamp`, `timestamp`: 동일 운동·동일 시각의 분석 단계인지 확인합니다.
+- `temporal_pending_reason`, 오류/정상 후보 표본 수·지속시간, `frame_gap_sec`: 평가 실행과 시간 안정화 대기를 구분합니다.
+
+정면에서는 골반 폭이 이미지 높이 기준 `squat_front_min_hip_width=0.04` 이상,
+골반~발목 높이의 `squat_front_min_hip_to_leg_ratio=0.10` 이상이어야 합니다.
+골반~발목 높이는 `squat_front_min_leg_height=0.15` 이상이어야 하며 양쪽 모두
+Hip/Knee/Ankle의 위아래 순서와 좌표/신뢰도를 확인합니다. 발목 폭은 골반 폭의
+`squat_front_min_ankle_to_hip_ratio=0.5` 이상이어야 합니다.
+기존 고정 0.08은 영상 높이에 대한 실험용 절대 폭으로 신체 크기 대비 폭이 아니며,
+실영상으로 보정된 근거는 없었습니다. 새 설정도 검증 전 실험값이며 `POSTURE_RULE_CONFIG`로
+조정할 수 있습니다. `projection`에는 모든 사용값과 조건별 결과를 기록합니다.
+투영 조건 실패는 `front_projection_or_stance_unreliable`로,
+필수 관절 실패는 `joint_숫자_사유`로 기록됩니다. 서 있는 단계는
+`active_squat_phase_required`로 보류하며, 같은 시각의 운동 단계가 없으면
+`phase_unconfirmed`입니다. 정상/오류 확정에는 각각 기본 0.4초와 2개 이상 표본이
+필요합니다. 측면 전용 두 검사는 `not_applicable_checks`에 들어가며 정면 판정을 막지 않습니다.
+
+### Squat 관측 실패 유예와 비교 검증
+
+Reps의 각도/좌우 차이 기준은 유지합니다. `SquatConfig.occlusion_grace_sec=0.35`
+(0보다 크고 `max_frame_gap_sec` 이하여야 함) 동안의 부분 관절 누락, 신뢰도 저하,
+좌우 각도 불일치는 phase를 보존하되 결과는 `invalid`로 반환합니다.
+무효 표본은 각도 평균이나 안정화에 사용하지 않고 후보 시간/표본 수를 지웁니다.
+복구 후 실제 유효 표본으로 각 단계를 다시 안정화해야 하며, 보지 못한 Bottom을 추정하지 않습니다.
+유예 만료 시점에 다시 관측되더라도 사이클을 폐기합니다. NaN/화면 이탈/중복 관절/
+퇴화 벡터/하체 전체 누락, 큰 프레임 간격, 시간 역행, 세션 세대 변경은 계속 초기화합니다.
+`SquatDebug`의 `invalid_elapsed_sec`, `cycle_preserved_during_invalid`,
+`last_valid_timestamp`로 보류 상태를 확인합니다. 지속적인 잘못된 추정을 복구하는 정책은 아닙니다.
+
+`5564e83`, 수정 전 HEAD, 수정 후에 같은 합성 5회 시퀀스를 입력한 결과,
+정상 입력은 모두 5회였습니다. 반복마다 짧은 좌우 각도 불일치 1표본을 넣으면
+이전 두 버전은 0회, 수정 후는 5회였습니다. OFF/rule_based에서도 동일 입력의
+단계와 이벤트 수락 결과가 같았습니다.
+저장된 실제 정면 관측 6건은 골반 폭 때문에 모두 평가 불가였으나 변경 후 모두
+평가됐습니다. 이 비교는 로그의 보정된 골반 폭/원본 x 차이로 w/h를 복원해 수행했습니다.
+로그는 전 프레임 시퀀스가 아니므로 실제 영상 Reps를 재현했다고 볼 수 없습니다.
+관측 비율 약 0.68~1.175에는 정상/오류 정답 라벨이 없어 `valgus_enter_ratio=0.65`와
+해제 0.75는 유지했습니다. 비율 0.65~0.75의 경계 구간은 평가되더라도 정상으로 확정되지 않을 수 있습니다.
+
 추가 테스트는 tests/test_squat_assessment_scope.py이며 아래처럼 실행합니다.
 
 ```bash
@@ -281,3 +331,24 @@ SquatAnalyzer/다른 운동 Analyzer/MediaPipe/CNN·GRU/SessionManager/API 스�
 squat_scope_test_summary.json; 신규 app/analysis/squat_debug.py, tests/test_squat_assessment_scope.py;
 연결부 exercise.py, streaming/pose_stream.py, .env.example; 관련 기존 테스트
 테스트 기대값/환경 격리만 수정했습니다. 실제 .env는 수정하지 않았습니다.
+# 정면 스쿼트의 관측 연속성
+
+정면에서는 Reps 단계가 없거나 invalid/unknown이어도 자세 전용 움직임 관측을 사용합니다.
+유효한 양쪽 골반·무릎·발목으로 무릎 각도 155도 이상, 수직 신장 비율 0.85 이상인
+입위를 0.3초/3샘플 이상 관측해 기준을 잡습니다. 다리 길이로 정규화한 골반~발목
+수직 거리 비율이 기준보다 0.08 이상 감소하면 운동 중으로 보고, 감소가 0.035 이하로
+돌아오면 입위로 봅니다. 이는 정면 무릎 정렬 검사를 위한 실험 기준이며 깊이 판정이 아닙니다.
+기존의 유효한 Reps 단계도 사용할 수 있지만 자세 전용 관측이 운동 중이면 우선합니다.
+관절 신뢰도 기준은 완화하지 않으며 긴 누락/시간 역행/세션 변경에는 기준을 다시 잡습니다.
+`debug.jsonl`의 posture 기록에 `phase_source=front_pose_motion`, `front_motion`의
+extension_ratio/baseline/hip_drop_ratio를 남깁니다. 기준 확보 대기는
+`front_motion_baseline_required`로 구분합니다. 횟수/Rep 이벤트는 생성하거나 변경하지 않습니다.
+
+정면 스쿼트 자세 평가만 짧은 누락을 `squat_pose_grace_sec`(기본 0.35초) 동안
+허용합니다. 결측/단계 미확정 중에는 UNKNOWN을 반환하며, 결측 시간은 확인 시간에
+누적하지 않습니다. 유예를 넘기거나 문맥/시간이 초기화되면 후보와 저장 결과를 지웁니다.
+운동 중 확정한 정상/오류는 standing에서 최대 `squat_result_hold_sec`(기본 2초) 동안
+표시합니다. `assessment_held=true`, `assessment_observed_at`, `assessment_age_sec`,
+`assessment_scope=last_confirmed_active_phase`로 과거 관측임을 구분합니다.
+새 동작을 시작하면 이전 결과는 해제합니다. 시작부터 standing이면 정상으로 간주하지 않습니다.
+깊이·상체 숙임의 정면 제외 정책, 관절 신뢰도·오류 임계값, Reps/rep_count는 바꾸지 않습니다.
