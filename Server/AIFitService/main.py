@@ -17,7 +17,11 @@ from routers.body_analysis_router import (
     init_body_analysis_db,
 )
 from routers.exercise_report_router import router as exercise_report_router
-from routers.workout_router import router as workout_router, init_workout_db
+from routers.workout_router import (
+    router as workout_router,
+    init_workout_db,
+    workout_session_watchdog,
+)
 from routers.video_stream_router import (
     receive_ai_stream,
     router as video_stream_router,
@@ -80,9 +84,27 @@ async def start_ai_video_receiver():
         )
 
 
+@app.on_event("startup")
+async def start_workout_session_watchdog():
+    app.state.workout_session_watchdog_task = asyncio.create_task(
+        workout_session_watchdog()
+    )
+
+
 @app.on_event("shutdown")
 async def stop_ai_video_receiver():
     task = getattr(app.state, "ai_video_receiver_task", None)
+    if task is not None:
+        task.cancel()
+        try:
+            await task
+        except asyncio.CancelledError:
+            pass
+
+
+@app.on_event("shutdown")
+async def stop_workout_session_watchdog():
+    task = getattr(app.state, "workout_session_watchdog_task", None)
     if task is not None:
         task.cancel()
         try:
