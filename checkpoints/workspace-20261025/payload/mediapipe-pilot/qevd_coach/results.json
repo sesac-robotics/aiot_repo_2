@@ -1,0 +1,3749 @@
+{
+  "heavy": {
+    "pushups": {
+      "name": "푸시업",
+      "extraction": "heavy",
+      "errors": {
+        "elevated hips": {
+          "name": "엉덩이가 높음",
+          "advice": "몸통과 골반 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 98,
+              "1": 165
+            },
+            "validation": {
+              "0": 13,
+              "1": 21
+            },
+            "test": {
+              "0": 9,
+              "1": 7
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.6,
+              "recall": 0.9230769230769231,
+              "f1-score": 0.7272727272727273,
+              "support": 13.0
+            },
+            "1": {
+              "precision": 0.9285714285714286,
+              "recall": 0.6190476190476191,
+              "f1-score": 0.7428571428571429,
+              "support": 21.0
+            },
+            "accuracy": 0.7352941176470589,
+            "macro avg": {
+              "precision": 0.7642857142857142,
+              "recall": 0.7710622710622711,
+              "f1-score": 0.7350649350649351,
+              "support": 34.0
+            },
+            "weighted avg": {
+              "precision": 0.8029411764705883,
+              "recall": 0.7352941176470589,
+              "f1-score": 0.7368983957219252,
+              "support": 34.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.875,
+              "recall": 0.7777777777777778,
+              "f1-score": 0.8235294117647058,
+              "support": 9.0
+            },
+            "1": {
+              "precision": 0.75,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.8,
+              "support": 7.0
+            },
+            "accuracy": 0.8125,
+            "macro avg": {
+              "precision": 0.8125,
+              "recall": 0.8174603174603174,
+              "f1-score": 0.8117647058823529,
+              "support": 16.0
+            },
+            "weighted avg": {
+              "precision": 0.8203125,
+              "recall": 0.8125,
+              "f1-score": 0.8132352941176471,
+              "support": 16.0
+            }
+          },
+          "threshold": 0.65,
+          "status": "experimental",
+          "model_file": "pushups-6e06776e032d.joblib"
+        },
+        "shallow": {
+          "name": "내려가는 깊이 부족",
+          "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 98,
+              "1": 343
+            },
+            "validation": {
+              "0": 13,
+              "1": 66
+            },
+            "test": {
+              "0": 9,
+              "1": 24
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.37037037037037035,
+              "recall": 0.7692307692307693,
+              "f1-score": 0.5,
+              "support": 13.0
+            },
+            "1": {
+              "precision": 0.9423076923076923,
+              "recall": 0.7424242424242424,
+              "f1-score": 0.8305084745762712,
+              "support": 66.0
+            },
+            "accuracy": 0.7468354430379747,
+            "macro avg": {
+              "precision": 0.6563390313390314,
+              "recall": 0.7558275058275059,
+              "f1-score": 0.6652542372881356,
+              "support": 79.0
+            },
+            "weighted avg": {
+              "precision": 0.8481914241407912,
+              "recall": 0.7468354430379747,
+              "f1-score": 0.7761210040763784,
+              "support": 79.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.46153846153846156,
+              "recall": 0.6666666666666666,
+              "f1-score": 0.5454545454545454,
+              "support": 9.0
+            },
+            "1": {
+              "precision": 0.85,
+              "recall": 0.7083333333333334,
+              "f1-score": 0.7727272727272727,
+              "support": 24.0
+            },
+            "accuracy": 0.696969696969697,
+            "macro avg": {
+              "precision": 0.6557692307692308,
+              "recall": 0.6875,
+              "f1-score": 0.6590909090909091,
+              "support": 33.0
+            },
+            "weighted avg": {
+              "precision": 0.744055944055944,
+              "recall": 0.696969696969697,
+              "f1-score": 0.7107438016528925,
+              "support": 33.0
+            }
+          },
+          "threshold": 0.65,
+          "status": "experimental",
+          "model_file": "pushups-91d80a4942da.joblib"
+        },
+        "butt sinking": {
+          "name": "골반이 처짐",
+          "advice": "골반이 아래로 처지는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 98,
+              "1": 81
+            },
+            "validation": {
+              "0": 13,
+              "1": 20
+            },
+            "test": {
+              "0": 9,
+              "1": 17
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.5789473684210527,
+              "recall": 0.8461538461538461,
+              "f1-score": 0.6875,
+              "support": 13.0
+            },
+            "1": {
+              "precision": 0.8571428571428571,
+              "recall": 0.6,
+              "f1-score": 0.7058823529411765,
+              "support": 20.0
+            },
+            "accuracy": 0.696969696969697,
+            "macro avg": {
+              "precision": 0.7180451127819549,
+              "recall": 0.7230769230769231,
+              "f1-score": 0.6966911764705883,
+              "support": 33.0
+            },
+            "weighted avg": {
+              "precision": 0.747550694919116,
+              "recall": 0.696969696969697,
+              "f1-score": 0.6986408199643493,
+              "support": 33.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.5714285714285714,
+              "recall": 0.4444444444444444,
+              "f1-score": 0.5,
+              "support": 9.0
+            },
+            "1": {
+              "precision": 0.7368421052631579,
+              "recall": 0.8235294117647058,
+              "f1-score": 0.7777777777777778,
+              "support": 17.0
+            },
+            "accuracy": 0.6923076923076923,
+            "macro avg": {
+              "precision": 0.6541353383458646,
+              "recall": 0.6339869281045751,
+              "f1-score": 0.6388888888888888,
+              "support": 26.0
+            },
+            "weighted avg": {
+              "precision": 0.6795835743204163,
+              "recall": 0.6923076923076923,
+              "f1-score": 0.6816239316239316,
+              "support": 26.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "pushups-b8170b761d44.joblib"
+        },
+        "legs on the floor": {
+          "name": "다리가 바닥에 닿음",
+          "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 98,
+              "1": 149
+            },
+            "validation": {
+              "0": 13,
+              "1": 29
+            },
+            "test": {
+              "0": 9,
+              "1": 10
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.8571428571428571,
+              "recall": 0.9230769230769231,
+              "f1-score": 0.8888888888888888,
+              "support": 13.0
+            },
+            "1": {
+              "precision": 0.9642857142857143,
+              "recall": 0.9310344827586207,
+              "f1-score": 0.9473684210526315,
+              "support": 29.0
+            },
+            "accuracy": 0.9285714285714286,
+            "macro avg": {
+              "precision": 0.9107142857142857,
+              "recall": 0.927055702917772,
+              "f1-score": 0.9181286549707601,
+              "support": 42.0
+            },
+            "weighted avg": {
+              "precision": 0.931122448979592,
+              "recall": 0.9285714285714286,
+              "f1-score": 0.9292676134781398,
+              "support": 42.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.7272727272727273,
+              "recall": 0.8888888888888888,
+              "f1-score": 0.8,
+              "support": 9.0
+            },
+            "1": {
+              "precision": 0.875,
+              "recall": 0.7,
+              "f1-score": 0.7777777777777778,
+              "support": 10.0
+            },
+            "accuracy": 0.7894736842105263,
+            "macro avg": {
+              "precision": 0.8011363636363636,
+              "recall": 0.7944444444444444,
+              "f1-score": 0.788888888888889,
+              "support": 19.0
+            },
+            "weighted avg": {
+              "precision": 0.8050239234449762,
+              "recall": 0.7894736842105263,
+              "f1-score": 0.7883040935672515,
+              "support": 19.0
+            }
+          },
+          "threshold": 0.65,
+          "status": "experimental",
+          "model_file": "pushups-7517fc194ad0.joblib"
+        },
+        "head down": {
+          "name": "고개를 숙임",
+          "advice": "목과 몸통 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 98,
+              "1": 34
+            },
+            "validation": {
+              "0": 13,
+              "1": 4
+            },
+            "test": {
+              "0": 9,
+              "1": 4
+            }
+          },
+          "status": "unsupported_insufficient_samples"
+        }
+      },
+      "demos": [
+        {
+          "id": "00282866",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282866.mp4",
+          "worker": "128",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - deep",
+            "pushups - shoulder-width"
+          ],
+          "errors": [],
+          "reference": true,
+          "predictions": [
+            {
+              "error": "elevated hips",
+              "name": "엉덩이가 높음",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.4718226364269925,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "내려가는 깊이 부족",
+              "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+              "probability": 0.6978165993125229,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.4740415693237455,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs on the floor",
+              "name": "다리가 바닥에 닿음",
+              "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+              "probability": 0.6203921973644546,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00283116",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00283116.mp4",
+          "worker": "128",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - shallow",
+            "pushups - wide"
+          ],
+          "errors": [
+            "shallow"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "elevated hips",
+              "name": "엉덩이가 높음",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.4530012434788707,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "내려가는 깊이 부족",
+              "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+              "probability": 0.7886386361400746,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.5499711468597055,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "legs on the floor",
+              "name": "다리가 바닥에 닿음",
+              "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+              "probability": 0.4794770032238508,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00284346",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00284346.mp4",
+          "worker": "2869",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - 90 degrees",
+            "pushups - head down",
+            "pushups - shoulder-width"
+          ],
+          "errors": [
+            "head down"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "elevated hips",
+              "name": "엉덩이가 높음",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.7627952502668138,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "내려가는 깊이 부족",
+              "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+              "probability": 0.6957503452163777,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.49257370434020376,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs on the floor",
+              "name": "다리가 바닥에 닿음",
+              "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+              "probability": 0.3167517928745418,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00285015",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00285015.mp4",
+          "worker": "128",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - legs on the floor"
+          ],
+          "errors": [
+            "legs on the floor"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "elevated hips",
+              "name": "엉덩이가 높음",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.4062386130344918,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "내려가는 깊이 부족",
+              "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+              "probability": 0.6226288022239908,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.47290055109067436,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs on the floor",
+              "name": "다리가 바닥에 닿음",
+              "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+              "probability": 0.814100385941134,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00285666",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00285666.mp4",
+          "worker": "1709",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - 90 degrees",
+            "pushups - elevated hips",
+            "pushups - head down",
+            "pushups - moving head"
+          ],
+          "errors": [
+            "elevated hips",
+            "head down"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "elevated hips",
+              "name": "엉덩이가 높음",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.7559572945274072,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "내려가는 깊이 부족",
+              "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+              "probability": 0.39394634701580034,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.37192306440385325,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs on the floor",
+              "name": "다리가 바닥에 닿음",
+              "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+              "probability": 0.0983884178612841,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00285991",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00285991.mp4",
+          "worker": "2152",
+          "exercise": "pushups",
+          "split": "test",
+          "labels": [
+            "pushups - 90 degrees",
+            "pushups - butt sinking",
+            "pushups - very wide"
+          ],
+          "errors": [
+            "butt sinking"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "elevated hips",
+              "name": "엉덩이가 높음",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.6927294200588431,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "내려가는 깊이 부족",
+              "advice": "팔꿈치 굽힘과 내려가는 범위를 확인하세요.",
+              "probability": 0.9560631313131311,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.7443168892226897,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "legs on the floor",
+              "name": "다리가 바닥에 닿음",
+              "advice": "선택한 일반 푸시업 자세인지 확인하세요.",
+              "probability": 0.2917434223745269,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        }
+      ],
+      "valid_clips": {
+        "train": 775,
+        "validation": 138,
+        "test": 64
+      }
+    },
+    "squats": {
+      "name": "스쿼트",
+      "extraction": "heavy",
+      "errors": {
+        "back not straight": {
+          "name": "등 정렬 흐트러짐",
+          "advice": "등과 몸통 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 577,
+              "1": 467
+            },
+            "validation": {
+              "0": 158,
+              "1": 141
+            },
+            "test": {
+              "0": 33,
+              "1": 40
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.7894736842105263,
+              "recall": 0.9493670886075949,
+              "f1-score": 0.8620689655172413,
+              "support": 158.0
+            },
+            "1": {
+              "precision": 0.926605504587156,
+              "recall": 0.7163120567375887,
+              "f1-score": 0.808,
+              "support": 141.0
+            },
+            "accuracy": 0.8394648829431438,
+            "macro avg": {
+              "precision": 0.8580395943988411,
+              "recall": 0.8328395726725918,
+              "f1-score": 0.8350344827586207,
+              "support": 299.0
+            },
+            "weighted avg": {
+              "precision": 0.8541411981673984,
+              "recall": 0.8394648829431438,
+              "f1-score": 0.8365715603736593,
+              "support": 299.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.775,
+              "recall": 0.9393939393939394,
+              "f1-score": 0.8493150684931506,
+              "support": 33.0
+            },
+            "1": {
+              "precision": 0.9393939393939394,
+              "recall": 0.775,
+              "f1-score": 0.8493150684931506,
+              "support": 40.0
+            },
+            "accuracy": 0.8493150684931506,
+            "macro avg": {
+              "precision": 0.8571969696969697,
+              "recall": 0.8571969696969697,
+              "f1-score": 0.8493150684931506,
+              "support": 73.0
+            },
+            "weighted avg": {
+              "precision": 0.8650788709007888,
+              "recall": 0.8493150684931506,
+              "f1-score": 0.8493150684931506,
+              "support": 73.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "squats-653a58f3c94c.joblib"
+        },
+        "shallow": {
+          "name": "앉는 깊이 부족",
+          "advice": "앉는 깊이가 충분한지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 577,
+              "1": 651
+            },
+            "validation": {
+              "0": 158,
+              "1": 175
+            },
+            "test": {
+              "0": 33,
+              "1": 40
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.863013698630137,
+              "recall": 0.7974683544303798,
+              "f1-score": 0.8289473684210527,
+              "support": 158.0
+            },
+            "1": {
+              "precision": 0.8288770053475936,
+              "recall": 0.8857142857142857,
+              "f1-score": 0.856353591160221,
+              "support": 175.0
+            },
+            "accuracy": 0.8438438438438438,
+            "macro avg": {
+              "precision": 0.8459453519888653,
+              "recall": 0.8415913200723327,
+              "f1-score": 0.8426504797906369,
+              "support": 333.0
+            },
+            "weighted avg": {
+              "precision": 0.8450739949531246,
+              "recall": 0.8438438438438438,
+              "f1-score": 0.8433500380287239,
+              "support": 333.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.75,
+              "recall": 0.9090909090909091,
+              "f1-score": 0.821917808219178,
+              "support": 33.0
+            },
+            "1": {
+              "precision": 0.9090909090909091,
+              "recall": 0.75,
+              "f1-score": 0.821917808219178,
+              "support": 40.0
+            },
+            "accuracy": 0.821917808219178,
+            "macro avg": {
+              "precision": 0.8295454545454546,
+              "recall": 0.8295454545454546,
+              "f1-score": 0.821917808219178,
+              "support": 73.0
+            },
+            "weighted avg": {
+              "precision": 0.8371731008717309,
+              "recall": 0.821917808219178,
+              "f1-score": 0.821917808219178,
+              "support": 73.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "squats-91d80a4942da.joblib"
+        }
+      },
+      "demos": [
+        {
+          "id": "00282099",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282099.mp4",
+          "worker": "97",
+          "exercise": "squats",
+          "split": "test",
+          "labels": [
+            "squats - shoulder-width",
+            "squats - 90 degrees",
+            "squats - no obvious issue"
+          ],
+          "errors": [],
+          "reference": true,
+          "predictions": [
+            {
+              "error": "back not straight",
+              "name": "등 정렬 흐트러짐",
+              "advice": "등과 몸통 정렬을 확인하세요.",
+              "probability": 0.05550971966907251,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "앉는 깊이 부족",
+              "advice": "앉는 깊이가 충분한지 확인하세요.",
+              "probability": 0.07379688706073126,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282146",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282146.mp4",
+          "worker": "1493",
+          "exercise": "squats",
+          "split": "test",
+          "labels": [
+            "squats - back not straight",
+            "squats - insufficient",
+            "squats - shoulder-width"
+          ],
+          "errors": [
+            "back not straight"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight",
+              "name": "등 정렬 흐트러짐",
+              "advice": "등과 몸통 정렬을 확인하세요.",
+              "probability": 0.7210684396951695,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "앉는 깊이 부족",
+              "advice": "앉는 깊이가 충분한지 확인하세요.",
+              "probability": 0.9155200208507457,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00284711",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00284711.mp4",
+          "worker": "1493",
+          "exercise": "squats",
+          "split": "test",
+          "labels": [
+            "squats - narrow",
+            "squats - shallow",
+            "squats - no obvious issue"
+          ],
+          "errors": [
+            "shallow"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight",
+              "name": "등 정렬 흐트러짐",
+              "advice": "등과 몸통 정렬을 확인하세요.",
+              "probability": 0.5835405248658998,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "shallow",
+              "name": "앉는 깊이 부족",
+              "advice": "앉는 깊이가 충분한지 확인하세요.",
+              "probability": 0.7053057041935965,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        }
+      ],
+      "valid_clips": {
+        "validation": 439,
+        "train": 1517,
+        "test": 96
+      }
+    },
+    "plank": {
+      "name": "팔꿈치 플랭크",
+      "extraction": "heavy",
+      "errors": {
+        "high hips": {
+          "name": "엉덩이가 높음",
+          "advice": "어깨·골반·발목 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 355,
+              "1": 278
+            },
+            "validation": {
+              "0": 60,
+              "1": 53
+            },
+            "test": {
+              "0": 16,
+              "1": 18
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.7959183673469388,
+              "recall": 0.65,
+              "f1-score": 0.7155963302752294,
+              "support": 60.0
+            },
+            "1": {
+              "precision": 0.671875,
+              "recall": 0.8113207547169812,
+              "f1-score": 0.7350427350427351,
+              "support": 53.0
+            },
+            "accuracy": 0.7256637168141593,
+            "macro avg": {
+              "precision": 0.7338966836734694,
+              "recall": 0.7306603773584905,
+              "f1-score": 0.7253195326589823,
+              "support": 113.0
+            },
+            "weighted avg": {
+              "precision": 0.7377387348744807,
+              "recall": 0.7256637168141593,
+              "f1-score": 0.7247172103874223,
+              "support": 113.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.8,
+              "recall": 0.75,
+              "f1-score": 0.7741935483870968,
+              "support": 16.0
+            },
+            "1": {
+              "precision": 0.7894736842105263,
+              "recall": 0.8333333333333334,
+              "f1-score": 0.8108108108108109,
+              "support": 18.0
+            },
+            "accuracy": 0.7941176470588235,
+            "macro avg": {
+              "precision": 0.7947368421052632,
+              "recall": 0.7916666666666667,
+              "f1-score": 0.7925021795989537,
+              "support": 34.0
+            },
+            "weighted avg": {
+              "precision": 0.7944272445820434,
+              "recall": 0.7941176470588235,
+              "f1-score": 0.7935791579055336,
+              "support": 34.0
+            }
+          },
+          "threshold": 0.35,
+          "status": "experimental",
+          "model_file": "plank-0abe3a7cba41.joblib"
+        },
+        "butt sinking": {
+          "name": "골반이 처짐",
+          "advice": "골반이 아래로 처지는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 355,
+              "1": 362
+            },
+            "validation": {
+              "0": 60,
+              "1": 65
+            },
+            "test": {
+              "0": 16,
+              "1": 17
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.684931506849315,
+              "recall": 0.8333333333333334,
+              "f1-score": 0.7518796992481203,
+              "support": 60.0
+            },
+            "1": {
+              "precision": 0.8076923076923077,
+              "recall": 0.6461538461538462,
+              "f1-score": 0.717948717948718,
+              "support": 65.0
+            },
+            "accuracy": 0.736,
+            "macro avg": {
+              "precision": 0.7463119072708113,
+              "recall": 0.7397435897435898,
+              "f1-score": 0.734914208598419,
+              "support": 125.0
+            },
+            "weighted avg": {
+              "precision": 0.7487671232876713,
+              "recall": 0.736,
+              "f1-score": 0.734235588972431,
+              "support": 125.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.7058823529411765,
+              "recall": 0.75,
+              "f1-score": 0.7272727272727273,
+              "support": 16.0
+            },
+            "1": {
+              "precision": 0.75,
+              "recall": 0.7058823529411765,
+              "f1-score": 0.7272727272727273,
+              "support": 17.0
+            },
+            "accuracy": 0.7272727272727273,
+            "macro avg": {
+              "precision": 0.7279411764705883,
+              "recall": 0.7279411764705883,
+              "f1-score": 0.7272727272727273,
+              "support": 33.0
+            },
+            "weighted avg": {
+              "precision": 0.7286096256684492,
+              "recall": 0.7272727272727273,
+              "f1-score": 0.7272727272727273,
+              "support": 33.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "plank-b8170b761d44.joblib"
+        },
+        "legs and hips on the floor": {
+          "name": "다리와 골반이 바닥에 닿음",
+          "advice": "버티는 자세가 유지되는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 355,
+              "1": 353
+            },
+            "validation": {
+              "0": 60,
+              "1": 75
+            },
+            "test": {
+              "0": 16,
+              "1": 12
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.9827586206896551,
+              "recall": 0.95,
+              "f1-score": 0.9661016949152542,
+              "support": 60.0
+            },
+            "1": {
+              "precision": 0.961038961038961,
+              "recall": 0.9866666666666667,
+              "f1-score": 0.9736842105263158,
+              "support": 75.0
+            },
+            "accuracy": 0.9703703703703703,
+            "macro avg": {
+              "precision": 0.9718987908643081,
+              "recall": 0.9683333333333333,
+              "f1-score": 0.969892952720785,
+              "support": 135.0
+            },
+            "weighted avg": {
+              "precision": 0.9706921431059363,
+              "recall": 0.9703703703703703,
+              "f1-score": 0.9703142035880662,
+              "support": 135.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.9285714285714286,
+              "recall": 0.8125,
+              "f1-score": 0.8666666666666667,
+              "support": 16.0
+            },
+            "1": {
+              "precision": 0.7857142857142857,
+              "recall": 0.9166666666666666,
+              "f1-score": 0.8461538461538461,
+              "support": 12.0
+            },
+            "accuracy": 0.8571428571428571,
+            "macro avg": {
+              "precision": 0.8571428571428572,
+              "recall": 0.8645833333333333,
+              "f1-score": 0.8564102564102565,
+              "support": 28.0
+            },
+            "weighted avg": {
+              "precision": 0.8673469387755102,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.8578754578754578,
+              "support": 28.0
+            }
+          },
+          "threshold": 0.35,
+          "status": "experimental",
+          "model_file": "plank-01338af3643e.joblib"
+        },
+        "on knees": {
+          "name": "무릎을 대고 수행",
+          "advice": "일반형과 무릎 지지형을 구분하세요.",
+          "counts": {
+            "train": {
+              "0": 355,
+              "1": 336
+            },
+            "validation": {
+              "0": 60,
+              "1": 69
+            },
+            "test": {
+              "0": 16,
+              "1": 18
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.7222222222222222,
+              "recall": 0.8666666666666667,
+              "f1-score": 0.7878787878787878,
+              "support": 60.0
+            },
+            "1": {
+              "precision": 0.8596491228070176,
+              "recall": 0.7101449275362319,
+              "f1-score": 0.7777777777777778,
+              "support": 69.0
+            },
+            "accuracy": 0.7829457364341085,
+            "macro avg": {
+              "precision": 0.7909356725146199,
+              "recall": 0.7884057971014493,
+              "f1-score": 0.7828282828282829,
+              "support": 129.0
+            },
+            "weighted avg": {
+              "precision": 0.7957296341629267,
+              "recall": 0.7829457364341085,
+              "f1-score": 0.7824759220108057,
+              "support": 129.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.625,
+              "recall": 0.625,
+              "f1-score": 0.625,
+              "support": 16.0
+            },
+            "1": {
+              "precision": 0.6666666666666666,
+              "recall": 0.6666666666666666,
+              "f1-score": 0.6666666666666666,
+              "support": 18.0
+            },
+            "accuracy": 0.6470588235294118,
+            "macro avg": {
+              "precision": 0.6458333333333333,
+              "recall": 0.6458333333333333,
+              "f1-score": 0.6458333333333333,
+              "support": 34.0
+            },
+            "weighted avg": {
+              "precision": 0.6470588235294118,
+              "recall": 0.6470588235294118,
+              "f1-score": 0.6470588235294118,
+              "support": 34.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "plank-2af5ee8d0a18.joblib"
+        },
+        "head up": {
+          "name": "고개를 듦",
+          "advice": "목이 과하게 젖혀지는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 355,
+              "1": 370
+            },
+            "validation": {
+              "0": 60,
+              "1": 67
+            },
+            "test": {
+              "0": 16,
+              "1": 23
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.9122807017543859,
+              "recall": 0.8666666666666667,
+              "f1-score": 0.8888888888888888,
+              "support": 60.0
+            },
+            "1": {
+              "precision": 0.8857142857142857,
+              "recall": 0.9253731343283582,
+              "f1-score": 0.9051094890510949,
+              "support": 67.0
+            },
+            "accuracy": 0.8976377952755905,
+            "macro avg": {
+              "precision": 0.8989974937343358,
+              "recall": 0.8960199004975125,
+              "f1-score": 0.8969991889699919,
+              "support": 127.0
+            },
+            "weighted avg": {
+              "precision": 0.8982653484103961,
+              "recall": 0.8976377952755905,
+              "f1-score": 0.897446213383911,
+              "support": 127.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.75,
+              "recall": 0.75,
+              "f1-score": 0.75,
+              "support": 16.0
+            },
+            "1": {
+              "precision": 0.8260869565217391,
+              "recall": 0.8260869565217391,
+              "f1-score": 0.8260869565217391,
+              "support": 23.0
+            },
+            "accuracy": 0.7948717948717948,
+            "macro avg": {
+              "precision": 0.7880434782608696,
+              "recall": 0.7880434782608696,
+              "f1-score": 0.7880434782608696,
+              "support": 39.0
+            },
+            "weighted avg": {
+              "precision": 0.7948717948717948,
+              "recall": 0.7948717948717948,
+              "f1-score": 0.7948717948717948,
+              "support": 39.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "plank-bec912bbacfc.joblib"
+        },
+        "head down": {
+          "name": "고개를 숙임",
+          "advice": "목과 몸통 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 355,
+              "1": 180
+            },
+            "validation": {
+              "0": 60,
+              "1": 32
+            },
+            "test": {
+              "0": 16,
+              "1": 15
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.9206349206349206,
+              "recall": 0.9666666666666667,
+              "f1-score": 0.943089430894309,
+              "support": 60.0
+            },
+            "1": {
+              "precision": 0.9310344827586207,
+              "recall": 0.84375,
+              "f1-score": 0.8852459016393442,
+              "support": 32.0
+            },
+            "accuracy": 0.9239130434782609,
+            "macro avg": {
+              "precision": 0.9258347016967706,
+              "recall": 0.9052083333333334,
+              "f1-score": 0.9141676662668266,
+              "support": 92.0
+            },
+            "weighted avg": {
+              "precision": 0.9242521596344685,
+              "recall": 0.9239130434782609,
+              "f1-score": 0.9229699424577994,
+              "support": 92.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.7894736842105263,
+              "recall": 0.9375,
+              "f1-score": 0.8571428571428571,
+              "support": 16.0
+            },
+            "1": {
+              "precision": 0.9166666666666666,
+              "recall": 0.7333333333333333,
+              "f1-score": 0.8148148148148148,
+              "support": 15.0
+            },
+            "accuracy": 0.8387096774193549,
+            "macro avg": {
+              "precision": 0.8530701754385965,
+              "recall": 0.8354166666666667,
+              "f1-score": 0.8359788359788359,
+              "support": 31.0
+            },
+            "weighted avg": {
+              "precision": 0.851018675721562,
+              "recall": 0.8387096774193549,
+              "f1-score": 0.8366615463389657,
+              "support": 31.0
+            }
+          },
+          "threshold": 0.65,
+          "status": "experimental",
+          "model_file": "plank-67e403c15fd4.joblib"
+        },
+        "arms too wide": {
+          "name": "팔 간격이 넓음",
+          "advice": "팔꿈치 위치와 간격을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 355,
+              "1": 162
+            },
+            "validation": {
+              "0": 60,
+              "1": 40
+            },
+            "test": {
+              "0": 16,
+              "1": 7
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.9298245614035088,
+              "recall": 0.8833333333333333,
+              "f1-score": 0.905982905982906,
+              "support": 60.0
+            },
+            "1": {
+              "precision": 0.8372093023255814,
+              "recall": 0.9,
+              "f1-score": 0.8674698795180723,
+              "support": 40.0
+            },
+            "accuracy": 0.89,
+            "macro avg": {
+              "precision": 0.883516931864545,
+              "recall": 0.8916666666666666,
+              "f1-score": 0.8867263927504891,
+              "support": 100.0
+            },
+            "weighted avg": {
+              "precision": 0.8927784577723378,
+              "recall": 0.89,
+              "f1-score": 0.8905776953969725,
+              "support": 100.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.7777777777777778,
+              "recall": 0.875,
+              "f1-score": 0.8235294117647058,
+              "support": 16.0
+            },
+            "1": {
+              "precision": 0.6,
+              "recall": 0.42857142857142855,
+              "f1-score": 0.5,
+              "support": 7.0
+            },
+            "accuracy": 0.7391304347826086,
+            "macro avg": {
+              "precision": 0.6888888888888889,
+              "recall": 0.6517857142857143,
+              "f1-score": 0.6617647058823529,
+              "support": 23.0
+            },
+            "weighted avg": {
+              "precision": 0.7236714975845411,
+              "recall": 0.7391304347826086,
+              "f1-score": 0.7250639386189258,
+              "support": 23.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "plank-1a7d104e409a.joblib"
+        }
+      },
+      "demos": [
+        {
+          "id": "00281789",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00281789.mp4",
+          "worker": "294",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - head down"
+          ],
+          "errors": [
+            "head down"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.9371183489384766,
+              "threshold": 0.35,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.3369953245607421,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.1978328288230884,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.17057636752959598,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.26133429924607743,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.9873406283291735,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.822133235324387,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00281826",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00281826.mp4",
+          "worker": "2469",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - arms too wide"
+          ],
+          "errors": [
+            "arms too wide"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.569290714899047,
+              "threshold": 0.35,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.18424088170497288,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.07136461890963103,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.06827282560317081,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.17208073385234596,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.42687031811649884,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.48181209322745,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282786",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282786.mp4",
+          "worker": "79",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - average"
+          ],
+          "errors": [],
+          "reference": true,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.28364818199891567,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.24355222342478103,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.008993586489941752,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.23679260074710365,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.13351117528076578,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.02965149938399132,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.08959386701239522,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282825",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282825.mp4",
+          "worker": "688",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - on knees"
+          ],
+          "errors": [
+            "on knees"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.1051162927207514,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.5375532369794099,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.07149213140411757,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.6988715088825272,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.17131320085818222,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.004985955056179775,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.041624852507824474,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282885",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282885.mp4",
+          "worker": "2221",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - high hips"
+          ],
+          "errors": [
+            "high hips"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.9379639932687043,
+              "threshold": 0.35,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.3471770959056174,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.13604434638043938,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.2213544309314191,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.26540377681682165,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.9794831805513804,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.7676857470164664,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00284104",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00284104.mp4",
+          "worker": "128",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - head up"
+          ],
+          "errors": [
+            "head up"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.09700376628609515,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.4140748446055021,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.20220927340908004,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.5307406257317665,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.654653476161285,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.04428198643632977,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.22827270200900113,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00285038",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00285038.mp4",
+          "worker": "688",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - butt sinking"
+          ],
+          "errors": [
+            "butt sinking"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.09936725094045566,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.4193379491869821,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.00417450611476952,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.4775598642636609,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.07181209806814666,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.006206293706293707,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.02180197453756874,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00285459",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00285459.mp4",
+          "worker": "977",
+          "exercise": "plank",
+          "split": "test",
+          "labels": [
+            "elbow plank - legs and hips on the floor"
+          ],
+          "errors": [
+            "legs and hips on the floor"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "high hips",
+              "name": "엉덩이가 높음",
+              "advice": "어깨·골반·발목 정렬을 확인하세요.",
+              "probability": 0.034708170450202955,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "butt sinking",
+              "name": "골반이 처짐",
+              "advice": "골반이 아래로 처지는지 확인하세요.",
+              "probability": 0.8785940530757103,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "legs and hips on the floor",
+              "name": "다리와 골반이 바닥에 닿음",
+              "advice": "버티는 자세가 유지되는지 확인하세요.",
+              "probability": 0.9241043879854791,
+              "threshold": 0.35,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "on knees",
+              "name": "무릎을 대고 수행",
+              "advice": "일반형과 무릎 지지형을 구분하세요.",
+              "probability": 0.9306435425726283,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "head up",
+              "name": "고개를 듦",
+              "advice": "목이 과하게 젖혀지는지 확인하세요.",
+              "probability": 0.9330967210312078,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "head down",
+              "name": "고개를 숙임",
+              "advice": "목과 몸통 정렬을 확인하세요.",
+              "probability": 0.12804965844829735,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "arms too wide",
+              "name": "팔 간격이 넓음",
+              "advice": "팔꿈치 위치와 간격을 확인하세요.",
+              "probability": 0.33261214854824345,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        }
+      ],
+      "valid_clips": {
+        "train": 2396,
+        "validation": 461,
+        "test": 126
+      }
+    },
+    "bird_dog": {
+      "name": "버드독 대응 동작",
+      "extraction": "heavy",
+      "errors": {
+        "back not straight, arching up": {
+          "name": "등을 위로 둥글게 말음",
+          "advice": "등이 위로 굽는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 210
+            },
+            "validation": {
+              "0": 51,
+              "1": 57
+            },
+            "test": {
+              "0": 14,
+              "1": 17
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.8888888888888888,
+              "recall": 0.9411764705882353,
+              "f1-score": 0.9142857142857143,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.9444444444444444,
+              "recall": 0.8947368421052632,
+              "f1-score": 0.918918918918919,
+              "support": 57.0
+            },
+            "accuracy": 0.9166666666666666,
+            "macro avg": {
+              "precision": 0.9166666666666666,
+              "recall": 0.9179566563467492,
+              "f1-score": 0.9166023166023166,
+              "support": 108.0
+            },
+            "weighted avg": {
+              "precision": 0.9182098765432097,
+              "recall": 0.9166666666666666,
+              "f1-score": 0.9167310167310168,
+              "support": 108.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.9333333333333333,
+              "recall": 1.0,
+              "f1-score": 0.9655172413793104,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 1.0,
+              "recall": 0.9411764705882353,
+              "f1-score": 0.9696969696969697,
+              "support": 17.0
+            },
+            "accuracy": 0.967741935483871,
+            "macro avg": {
+              "precision": 0.9666666666666667,
+              "recall": 0.9705882352941176,
+              "f1-score": 0.9676071055381401,
+              "support": 31.0
+            },
+            "weighted avg": {
+              "precision": 0.9698924731182795,
+              "recall": 0.967741935483871,
+              "f1-score": 0.9678093504567364,
+              "support": 31.0
+            }
+          },
+          "threshold": 0.65,
+          "status": "experimental",
+          "model_file": "bird_dog-3bb741140f39.joblib"
+        },
+        "back not straight, dropping down": {
+          "name": "등이 아래로 처짐",
+          "advice": "몸통과 골반 정렬을 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 182
+            },
+            "validation": {
+              "0": 51,
+              "1": 54
+            },
+            "test": {
+              "0": 14,
+              "1": 12
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.6428571428571429,
+              "recall": 0.5294117647058824,
+              "f1-score": 0.5806451612903226,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.6190476190476191,
+              "recall": 0.7222222222222222,
+              "f1-score": 0.6666666666666666,
+              "support": 54.0
+            },
+            "accuracy": 0.6285714285714286,
+            "macro avg": {
+              "precision": 0.6309523809523809,
+              "recall": 0.6258169934640523,
+              "f1-score": 0.6236559139784946,
+              "support": 105.0
+            },
+            "weighted avg": {
+              "precision": 0.6306122448979593,
+              "recall": 0.6285714285714286,
+              "f1-score": 0.624884792626728,
+              "support": 105.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.6666666666666666,
+              "recall": 0.7142857142857143,
+              "f1-score": 0.6896551724137931,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 0.6363636363636364,
+              "recall": 0.5833333333333334,
+              "f1-score": 0.6086956521739131,
+              "support": 12.0
+            },
+            "accuracy": 0.6538461538461539,
+            "macro avg": {
+              "precision": 0.6515151515151515,
+              "recall": 0.6488095238095238,
+              "f1-score": 0.6491754122938531,
+              "support": 26.0
+            },
+            "weighted avg": {
+              "precision": 0.6526806526806527,
+              "recall": 0.6538461538461539,
+              "f1-score": 0.6522892399953869,
+              "support": 26.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "low_validation",
+          "model_file": "bird_dog-baf5d3b9c26f.joblib"
+        },
+        "only arms": {
+          "name": "팔만 듦",
+          "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 191
+            },
+            "validation": {
+              "0": 51,
+              "1": 56
+            },
+            "test": {
+              "0": 14,
+              "1": 14
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.9803921568627451,
+              "recall": 0.9803921568627451,
+              "f1-score": 0.9803921568627451,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.9821428571428571,
+              "recall": 0.9821428571428571,
+              "f1-score": 0.9821428571428571,
+              "support": 56.0
+            },
+            "accuracy": 0.9813084112149533,
+            "macro avg": {
+              "precision": 0.9812675070028011,
+              "recall": 0.9812675070028011,
+              "f1-score": 0.9812675070028011,
+              "support": 107.0
+            },
+            "weighted avg": {
+              "precision": 0.9813084112149533,
+              "recall": 0.9813084112149533,
+              "f1-score": 0.9813084112149533,
+              "support": 107.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 1.0,
+              "recall": 0.9285714285714286,
+              "f1-score": 0.9629629629629629,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 0.9333333333333333,
+              "recall": 1.0,
+              "f1-score": 0.9655172413793104,
+              "support": 14.0
+            },
+            "accuracy": 0.9642857142857143,
+            "macro avg": {
+              "precision": 0.9666666666666667,
+              "recall": 0.9642857142857143,
+              "f1-score": 0.9642401021711366,
+              "support": 28.0
+            },
+            "weighted avg": {
+              "precision": 0.9666666666666667,
+              "recall": 0.9642857142857143,
+              "f1-score": 0.9642401021711366,
+              "support": 28.0
+            }
+          },
+          "threshold": 0.35,
+          "status": "experimental",
+          "model_file": "bird_dog-1ae6fdf0eb1c.joblib"
+        },
+        "only legs": {
+          "name": "다리만 듦",
+          "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 192
+            },
+            "validation": {
+              "0": 51,
+              "1": 55
+            },
+            "test": {
+              "0": 14,
+              "1": 16
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.96,
+              "recall": 0.9411764705882353,
+              "f1-score": 0.9504950495049505,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.9464285714285714,
+              "recall": 0.9636363636363636,
+              "f1-score": 0.954954954954955,
+              "support": 55.0
+            },
+            "accuracy": 0.9528301886792453,
+            "macro avg": {
+              "precision": 0.9532142857142857,
+              "recall": 0.9524064171122995,
+              "f1-score": 0.9527250022299527,
+              "support": 106.0
+            },
+            "weighted avg": {
+              "precision": 0.9529582210242588,
+              "recall": 0.9528301886792453,
+              "f1-score": 0.9528091513893868,
+              "support": 106.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 16.0
+            },
+            "accuracy": 1.0,
+            "macro avg": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 30.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 30.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "bird_dog-fa39e4b0e412.joblib"
+        },
+        "low arm and leg": {
+          "name": "팔·다리 높이가 낮음",
+          "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 192
+            },
+            "validation": {
+              "0": 51,
+              "1": 55
+            },
+            "test": {
+              "0": 14,
+              "1": 15
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.8863636363636364,
+              "recall": 0.7647058823529411,
+              "f1-score": 0.8210526315789474,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.8064516129032258,
+              "recall": 0.9090909090909091,
+              "f1-score": 0.8547008547008547,
+              "support": 55.0
+            },
+            "accuracy": 0.839622641509434,
+            "macro avg": {
+              "precision": 0.8464076246334311,
+              "recall": 0.8368983957219251,
+              "f1-score": 0.837876743139901,
+              "support": 106.0
+            },
+            "weighted avg": {
+              "precision": 0.8448998506058762,
+              "recall": 0.839622641509434,
+              "f1-score": 0.8385116152742766,
+              "support": 106.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.8,
+              "recall": 0.8571428571428571,
+              "f1-score": 0.8275862068965517,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 0.8571428571428571,
+              "recall": 0.8,
+              "f1-score": 0.8275862068965517,
+              "support": 15.0
+            },
+            "accuracy": 0.8275862068965517,
+            "macro avg": {
+              "precision": 0.8285714285714285,
+              "recall": 0.8285714285714285,
+              "f1-score": 0.8275862068965517,
+              "support": 29.0
+            },
+            "weighted avg": {
+              "precision": 0.8295566502463054,
+              "recall": 0.8275862068965517,
+              "f1-score": 0.8275862068965517,
+              "support": 29.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "bird_dog-f4851212917c.joblib"
+        },
+        "not alternating": {
+          "name": "좌우 교대하지 않음",
+          "advice": "동작 중 좌우 교대를 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 198
+            },
+            "validation": {
+              "0": 51,
+              "1": 55
+            },
+            "test": {
+              "0": 14,
+              "1": 11
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.8225806451612904,
+              "recall": 1.0,
+              "f1-score": 0.9026548672566371,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1-score": 0.8888888888888888,
+              "support": 55.0
+            },
+            "accuracy": 0.8962264150943396,
+            "macro avg": {
+              "precision": 0.9112903225806452,
+              "recall": 0.9,
+              "f1-score": 0.895771878072763,
+              "support": 106.0
+            },
+            "weighted avg": {
+              "precision": 0.914637857577602,
+              "recall": 0.8962264150943396,
+              "f1-score": 0.8955121426318622,
+              "support": 106.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.875,
+              "recall": 1.0,
+              "f1-score": 0.9333333333333333,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 1.0,
+              "recall": 0.8181818181818182,
+              "f1-score": 0.9,
+              "support": 11.0
+            },
+            "accuracy": 0.92,
+            "macro avg": {
+              "precision": 0.9375,
+              "recall": 0.9090909090909092,
+              "f1-score": 0.9166666666666667,
+              "support": 25.0
+            },
+            "weighted avg": {
+              "precision": 0.93,
+              "recall": 0.92,
+              "f1-score": 0.9186666666666667,
+              "support": 25.0
+            }
+          },
+          "threshold": 0.65,
+          "status": "experimental",
+          "model_file": "bird_dog-09be89196888.joblib"
+        },
+        "hands too far forward, not under shoulders": {
+          "name": "손이 어깨보다 앞에 있음",
+          "advice": "손과 어깨 위치를 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 198
+            },
+            "validation": {
+              "0": 51,
+              "1": 57
+            },
+            "test": {
+              "0": 14,
+              "1": 13
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.6666666666666666,
+              "recall": 0.5882352941176471,
+              "f1-score": 0.625,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.6666666666666666,
+              "recall": 0.7368421052631579,
+              "f1-score": 0.7,
+              "support": 57.0
+            },
+            "accuracy": 0.6666666666666666,
+            "macro avg": {
+              "precision": 0.6666666666666666,
+              "recall": 0.6625386996904025,
+              "f1-score": 0.6625,
+              "support": 108.0
+            },
+            "weighted avg": {
+              "precision": 0.6666666666666666,
+              "recall": 0.6666666666666666,
+              "f1-score": 0.6645833333333334,
+              "support": 108.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.6666666666666666,
+              "recall": 0.2857142857142857,
+              "f1-score": 0.4,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 0.5238095238095238,
+              "recall": 0.8461538461538461,
+              "f1-score": 0.6470588235294118,
+              "support": 13.0
+            },
+            "accuracy": 0.5555555555555556,
+            "macro avg": {
+              "precision": 0.5952380952380952,
+              "recall": 0.5659340659340659,
+              "f1-score": 0.5235294117647059,
+              "support": 27.0
+            },
+            "weighted avg": {
+              "precision": 0.5978835978835979,
+              "recall": 0.5555555555555556,
+              "f1-score": 0.5189542483660131,
+              "support": 27.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "bird_dog-34fc1d3d0bb2.joblib"
+        },
+        "knees not under hips": {
+          "name": "무릎과 골반 위치 불일치",
+          "advice": "무릎이 골반 아래인지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 200
+            },
+            "validation": {
+              "0": 51,
+              "1": 55
+            },
+            "test": {
+              "0": 14,
+              "1": 13
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.7,
+              "recall": 0.6862745098039216,
+              "f1-score": 0.693069306930693,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.7142857142857143,
+              "recall": 0.7272727272727273,
+              "f1-score": 0.7207207207207207,
+              "support": 55.0
+            },
+            "accuracy": 0.7075471698113207,
+            "macro avg": {
+              "precision": 0.7071428571428571,
+              "recall": 0.7067736185383244,
+              "f1-score": 0.7068950138257069,
+              "support": 106.0
+            },
+            "weighted avg": {
+              "precision": 0.7074123989218328,
+              "recall": 0.7075471698113207,
+              "f1-score": 0.707416738614198,
+              "support": 106.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.5,
+              "recall": 0.14285714285714285,
+              "f1-score": 0.2222222222222222,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 0.4782608695652174,
+              "recall": 0.8461538461538461,
+              "f1-score": 0.6111111111111112,
+              "support": 13.0
+            },
+            "accuracy": 0.48148148148148145,
+            "macro avg": {
+              "precision": 0.4891304347826087,
+              "recall": 0.4945054945054945,
+              "f1-score": 0.4166666666666667,
+              "support": 27.0
+            },
+            "weighted avg": {
+              "precision": 0.4895330112721417,
+              "recall": 0.48148148148148145,
+              "f1-score": 0.40946502057613166,
+              "support": 27.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "bird_dog-f4956551be20.joblib"
+        },
+        "losing balance": {
+          "name": "균형 흔들림",
+          "advice": "몸통이 흔들리는지 확인하세요.",
+          "counts": {
+            "train": {
+              "0": 193,
+              "1": 196
+            },
+            "validation": {
+              "0": 51,
+              "1": 56
+            },
+            "test": {
+              "0": 14,
+              "1": 14
+            }
+          },
+          "validation": {
+            "0": {
+              "precision": 0.6491228070175439,
+              "recall": 0.7254901960784313,
+              "f1-score": 0.6851851851851852,
+              "support": 51.0
+            },
+            "1": {
+              "precision": 0.72,
+              "recall": 0.6428571428571429,
+              "f1-score": 0.6792452830188679,
+              "support": 56.0
+            },
+            "accuracy": 0.6822429906542056,
+            "macro avg": {
+              "precision": 0.6845614035087719,
+              "recall": 0.6841736694677871,
+              "f1-score": 0.6822152341020266,
+              "support": 107.0
+            },
+            "weighted avg": {
+              "precision": 0.686217412690605,
+              "recall": 0.6822429906542056,
+              "f1-score": 0.6820764513411313,
+              "support": 107.0
+            }
+          },
+          "test": {
+            "0": {
+              "precision": 0.6666666666666666,
+              "recall": 0.5714285714285714,
+              "f1-score": 0.6153846153846154,
+              "support": 14.0
+            },
+            "1": {
+              "precision": 0.625,
+              "recall": 0.7142857142857143,
+              "f1-score": 0.6666666666666666,
+              "support": 14.0
+            },
+            "accuracy": 0.6428571428571429,
+            "macro avg": {
+              "precision": 0.6458333333333333,
+              "recall": 0.6428571428571428,
+              "f1-score": 0.641025641025641,
+              "support": 28.0
+            },
+            "weighted avg": {
+              "precision": 0.6458333333333333,
+              "recall": 0.6428571428571429,
+              "f1-score": 0.6410256410256411,
+              "support": 28.0
+            }
+          },
+          "threshold": 0.5,
+          "status": "experimental",
+          "model_file": "bird_dog-5a4823285098.joblib"
+        }
+      },
+      "demos": [
+        {
+          "id": "00282097",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282097.mp4",
+          "worker": "2612",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - only arms"
+          ],
+          "errors": [
+            "only arms"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.25065967842626535,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.4944858873576304,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.9785312351576068,
+              "threshold": 0.35,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.12934452190722187,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.568849904677905,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.5271977545536962,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.5491579663484528,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.4673050100876634,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.6868192611746697,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282356",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282356.mp4",
+          "worker": "2221",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - back not straight, arching up"
+          ],
+          "errors": [
+            "back not straight, arching up"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.8439916557062779,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.3505110875699272,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.19032723269799218,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.5225172593404268,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.30459484323296543,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.438930597190056,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.6119153704167731,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.6309194449626654,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.6895952759920254,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282478",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282478.mp4",
+          "worker": "2612",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - average"
+          ],
+          "errors": [],
+          "reference": true,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.2507918728922193,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.2930630084751403,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.06629507398614456,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.2451231238752824,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.42175210999865315,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.2584016188774415,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.5855564219741547,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.5839908871555328,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.6005757129813944,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282607",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282607.mp4",
+          "worker": "2612",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - only legs"
+          ],
+          "errors": [
+            "only legs"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.6193656071886631,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.5429401394690367,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.020932058196281265,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.9623918601046191,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.40187550178676457,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.5212203232488022,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.6533632455808666,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.6460155539249063,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.4477103570756468,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282628",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282628.mp4",
+          "worker": "2612",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - low arm and leg"
+          ],
+          "errors": [
+            "low arm and leg"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.39365019145528174,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.3034510362840032,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.1752242150318128,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.3404900088436334,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.8624543211590385,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.3546870436565423,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.475361140772568,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.4582083215300267,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.44216587991844214,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00282936",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00282936.mp4",
+          "worker": "2221",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - back not straight, dropping down"
+          ],
+          "errors": [
+            "back not straight, dropping down"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.16629718969996304,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.573922108691786,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.12003440200559912,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.32775134018322627,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.31611936524929074,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.3213542547008369,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.44821082964490466,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.5125118239681984,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.3156358638157214,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00283478",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00283478.mp4",
+          "worker": "2221",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - losing balance"
+          ],
+          "errors": [
+            "losing balance"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.4109502553535309,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.3893777661469021,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.15952482742051852,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.405604927019448,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.5631366407718944,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.4622317251652632,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.5861664798839168,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.7949837283417314,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.49561744153759174,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00283677",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00283677.mp4",
+          "worker": "1709",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - knees not under hips"
+          ],
+          "errors": [
+            "knees not under hips"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.14291576348466553,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.505540199272963,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.17105886914418517,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.19693027234759888,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.39309713948918884,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.42958933726055903,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.4293241704784208,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.5318930714638258,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.41848667183591226,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00284550",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00284550.mp4",
+          "worker": "2221",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - hands too far forward, not under shoulders"
+          ],
+          "errors": [
+            "hands too far forward, not under shoulders"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.5688220606458415,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.3596690764078929,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.6153328939342457,
+              "threshold": 0.35,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.3671008964430479,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.5652558996531735,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.5638297846108691,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.7847937871255961,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.7688274033155739,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.6086365675740916,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            }
+          ]
+        },
+        {
+          "id": "00285498",
+          "path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00285498.mp4",
+          "worker": "2221",
+          "exercise": "bird_dog",
+          "split": "test",
+          "labels": [
+            "opposite arm and leg lifts (on knees) - not alternating"
+          ],
+          "errors": [
+            "not alternating"
+          ],
+          "reference": false,
+          "predictions": [
+            {
+              "error": "back not straight, arching up",
+              "name": "등을 위로 둥글게 말음",
+              "advice": "등이 위로 굽는지 확인하세요.",
+              "probability": 0.4813436533836809,
+              "threshold": 0.65,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "back not straight, dropping down",
+              "name": "등이 아래로 처짐",
+              "advice": "몸통과 골반 정렬을 확인하세요.",
+              "probability": 0.47325207943046604,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": false
+            },
+            {
+              "error": "only arms",
+              "name": "팔만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.1487383745493189,
+              "threshold": 0.35,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "only legs",
+              "name": "다리만 듦",
+              "advice": "반대쪽 팔과 다리를 함께 움직이는지 확인하세요.",
+              "probability": 0.7116003042388869,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "low arm and leg",
+              "name": "팔·다리 높이가 낮음",
+              "advice": "팔과 다리의 뻗는 범위를 확인하세요.",
+              "probability": 0.4947574144951159,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "not alternating",
+              "name": "좌우 교대하지 않음",
+              "advice": "동작 중 좌우 교대를 확인하세요.",
+              "probability": 0.7957514111518679,
+              "threshold": 0.65,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "hands too far forward, not under shoulders",
+              "name": "손이 어깨보다 앞에 있음",
+              "advice": "손과 어깨 위치를 확인하세요.",
+              "probability": 0.4697301430741005,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            },
+            {
+              "error": "knees not under hips",
+              "name": "무릎과 골반 위치 불일치",
+              "advice": "무릎이 골반 아래인지 확인하세요.",
+              "probability": 0.5046821122385354,
+              "threshold": 0.5,
+              "detected": true,
+              "usable": true
+            },
+            {
+              "error": "losing balance",
+              "name": "균형 흔들림",
+              "advice": "몸통이 흔들리는지 확인하세요.",
+              "probability": 0.3104444388907497,
+              "threshold": 0.5,
+              "detected": false,
+              "usable": true
+            }
+          ]
+        }
+      ],
+      "valid_clips": {
+        "train": 1952,
+        "validation": 551,
+        "test": 139
+      }
+    }
+  }
+}

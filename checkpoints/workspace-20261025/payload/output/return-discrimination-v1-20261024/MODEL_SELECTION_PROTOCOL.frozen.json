@@ -1,0 +1,35 @@
+{
+  "frozen_at": "2026-10-24T11:16:33.629265+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/mild-return-calibrated-20261024",
+  "new_bank": "standing_support_extension_v1",
+  "feature_names": [
+    "hip_height_deficit_mean",
+    "hip_height_deficit_max",
+    "shoulder_height_deficit_mean",
+    "shoulder_height_deficit_max",
+    "knee_extension_deficit_mean",
+    "knee_extension_deficit_max",
+    "hip_extension_deficit_mean",
+    "hip_extension_deficit_max",
+    "torso_vertical_deficit_mean",
+    "torso_vertical_deficit_max"
+  ],
+  "feature_code_sha256": "7ba11d6371998030b7a437ecbe4aae039f8558443aa36adf8c8888b733bef70f",
+  "model_code_sha256": "0391505f48004721c7e59c812b73fe7824fd9652e0c44150240bff0a542e7a92",
+  "new_labels_this_experiment": 0,
+  "selection": "nested participant-group CV; train mild subset same5 IDs; first require recall>=.65 and FP<=.15, maximize mild recall then total recall then minimize FP, balanced group MAE",
+  "candidate_models": [
+    "positive_deficit",
+    "logistic"
+  ],
+  "C": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "outer_folds": 4,
+  "inner_folds": 3,
+  "threshold_fit_Train_only": true,
+  "Test_feature_only_augmentation": "same51rows, original labels/features and source roles retained",
+  "production_replacement": false
+}

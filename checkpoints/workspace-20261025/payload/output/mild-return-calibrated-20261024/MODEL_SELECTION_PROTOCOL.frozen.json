@@ -1,0 +1,28 @@
+{
+  "frozen_at": "2026-10-24T11:08:07.608518+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/return-root-cause-v3-20261024",
+  "data_parent": "/home/jayden/SeSACPAI-Mid/output/mild-return-fit-20261024",
+  "mild_Train_ids": [
+    "return_squat_diag_m2_8_6_r11",
+    "return_squat_diag_m2_8_6_r12",
+    "return_squat_front_w1_9_3_r08",
+    "reviewed_return_squat_diag_m4_5_7_r10",
+    "reviewed_return_squat_diag_m4_5_7_r11"
+  ],
+  "mild_definition": "lower half of Train error max(hip,shoulder) amplitude; not a development cutoff",
+  "selection": "nested participant-group CV on Train; inner OOF fits normal probability cutoff under 15 percent normal FP cap, outer held groups evaluate full pipeline",
+  "normal_false_alarm_cap": 0.15,
+  "bank_selection_policy": "Train_mild_priority",
+  "candidate_C": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "development_used_only_after_selection": true,
+  "Test_used_for_selection": false,
+  "Test_input_sha256": "4d43cc5008af55e9677329bcfac3401197dec0f76fd8ff21b8cbf13061cbe500",
+  "training_input_sha256": "c275a5e292a2d67f659ac3248438b2c96501b6ff9a4a4ef4360a0c40402e9703",
+  "code_sha256": "137a122a5ed4ad09c991d97f4c4ce52d48b09ec916ac95caacc6dbe1ff8d69ac",
+  "models_code_sha256": "1dfef2f9c262501261f8f20b643c0d21f324041781640260595e6f5cdeafeac2",
+  "production_replacement": false
+}

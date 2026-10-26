@@ -1,0 +1,70 @@
+{
+  "sources_or_intervals_reviewed": 65,
+  "previous_labels_hidden_on_sheets": true,
+  "frames_per_interval": 6,
+  "team_train_sources": 7,
+  "external_side_intervals": 58,
+  "annotation_status": "Non-expert sampled visual recheck; cannot certify every frame or contact load.",
+  "label_changes": [],
+  "targets_not_changed_to_match_model": true,
+  "findings": [
+    "No justification found to turn P04 normal Test targets into faults.",
+    "Train MultiView caches inspected contain short exercise windows; hypothesis of wholesale setup frames is not supported for these exact intervals.",
+    "D016 and D038 same-source attempts were additionally inspected at 12 frames each; different chest lowering is visible, no score correction was forced.",
+    "V35 lower-leg contact remains visually uncertain under loose clothing, so support remains held.",
+    "D034 old pose missed feet that are present in the raw source; first ROI cut them out. Full-frame fallback fixes the crop contract before training."
+  ],
+  "sheets": [
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-01.jpg",
+      "sha256": "46b7987a158028917bf38dec14acdee7013d0b4b05192367b3d50c7489d98de2"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-02.jpg",
+      "sha256": "c503a83d487f4baa51bfcd64b6a4f5b9ce52d54a48b9b4736df00b27853d7ecd"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-03.jpg",
+      "sha256": "ba76b32cd5212a9659ffde2b1c1a29d44bb1d6e41f682d94517aff0af288822d"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-04.jpg",
+      "sha256": "272571ff0eb9dd8d5239bd69fb8c5d6d92eaaae6304dc79926c96079ce3d62cd"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-05.jpg",
+      "sha256": "5ddd8402a7e7c9f6bc9344e7be2e9675fb7521dbad92de46c455ebb61f871989"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-06.jpg",
+      "sha256": "37f994225bc2b318eae13ae41643001b624ea6f62b1e109db1fba0ed6476e368"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-07.jpg",
+      "sha256": "d73881707da1538206c1ec008d88a9b0ea5ccdc30deb0a26468d0f92b893a1df"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-08.jpg",
+      "sha256": "eba5e72b509a7eccc2e4873bbab8f9e023de074e26741b6f8e5cd9aa72dc4cde"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-09.jpg",
+      "sha256": "264315f76b112ce99d52ab3ef79a62039019d1f86784525b67e00d6c674190c7"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-10.jpg",
+      "sha256": "e0c20d5fd08a70c3d3a4f5788e3c6bfeedc6fbdd2a1a35c7e5b982f59ef35798"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/pushup-root-cause-20261024/source-atlas-11.jpg",
+      "sha256": "fa18aa456078a77612d467f0c6d492d0ee5ead61d5500cdb210c7d2fb8e06da4"
+    }
+  ],
+  "detail_sheets": [
+    "D016-detail.jpg",
+    "D038-detail.jpg",
+    "D034-original.jpg"
+  ],
+  "criteria_source": "https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/",
+  "criteria_application": "Project labels separate body alignment, chest lowering, ending arm extension and extra support. No numerical project grade threshold is attributed to ACE."
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "four-exercise-Train-review-v1",
+  "exercises": [
+    "shoulder",
+    "pushups",
+    "ytw",
+    "plank"
+  ],
+  "selection_limit_per_exercise": 16,
+  "source_of_labels": "new_direct_source_frame_review_not_model_predictions",
+  "label_target": "existing_project_item_criteria_with_variant_separation",
+  "grade_values": {
+    "2": "observed_criterion_met",
+    "1": "observed_partial_deficit",
+    "0": "observed_clear_deficit",
+    "null": "unobservable_or_protocol_mismatch"
+  },
+  "evaluation": {
+    "type": "Train_only_person_source_connected_GroupKFold_fixed_4fold",
+    "fixed_models": [
+      "balanced_logistic_C1",
+      "ExtraTrees64_minleaf3"
+    ],
+    "selection": "no_new_Test_reading; compare_new_labels_and_parent_models_on_held_groups",
+    "adoption": "No live promotion from Train review CV alone; record error_recall/normal_false_alarm/abstentions and group support",
+    "score_training_only_Train": true
+  },
+  "squat_changed": false
+}

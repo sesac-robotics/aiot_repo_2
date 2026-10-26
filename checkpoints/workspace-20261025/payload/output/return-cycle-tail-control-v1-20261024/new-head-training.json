@@ -1,0 +1,4142 @@
+{
+  "key": [
+    "pushups",
+    "return_extension",
+    "observed_elbow_cycle_v1"
+  ],
+  "train_count": 36,
+  "validation_count": 0,
+  "grade_counts": {
+    "2": 30,
+    "1": 6
+  },
+  "normal_groups": 11,
+  "error_groups": 5,
+  "source_families": {
+    "R2D2": 20,
+    "QEVD": 16
+  },
+  "status": "trained_experimental",
+  "selected": "monotone_extension_ensemble_C0.1",
+  "normal_probability_cutoff": 0.08763997066278582,
+  "group_cv": {
+    "balanced_group_MAE": 0.425974025974026,
+    "n": 36,
+    "groups": 15,
+    "MAE": 0.25,
+    "group_MAE": 0.2714285714285714,
+    "error_n": 6,
+    "normal_n": 30,
+    "error_recall": 0.16666666666666666,
+    "normal_false_alarm": 0.13333333333333333
+  },
+  "constant_group_cv": {
+    "balanced_group_MAE": 0.5,
+    "n": 36,
+    "groups": 15,
+    "MAE": 0.5,
+    "group_MAE": 0.5,
+    "error_n": 6,
+    "normal_n": 30,
+    "error_recall": 0.0,
+    "normal_false_alarm": 0.0
+  },
+  "candidate_gate_passed": false,
+  "runtime_replacement": false,
+  "acceptance": {
+    "passed": false,
+    "reasons": [
+      "development_requires_at_least_three_normal_and_error_segments",
+      "development_requires_at_least_two_normal_and_error_person_source_groups",
+      "training_group_cv_error_recall_below_65_percent_or_unknown",
+      "fixed_development_error_recall_below_65_percent_or_unknown",
+      "fixed_development_false_alarm_above_15_percent_or_unknown"
+    ],
+    "validation_support": {
+      "n": 0,
+      "normal_n": 0,
+      "error_n": 0,
+      "normal_groups": 0,
+      "error_groups": 0
+    },
+    "independent_final_test_required": true,
+    "production_replacement": false
+  },
+  "selected_oof_predictions": [
+    {
+      "id": "r2d2_V35_000000_002250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7193336902871038,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V35_002250_004750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7263684983229907,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V35_004750_006750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.6600945412300795,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V35_009500_012100",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8912774978702825,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V36_001000_004250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8317559762752793,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V36_004250_009250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.9018299035313884,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V36_009250_012750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8819280006609882,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V36_012750_015750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8688409358546423,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V36_030000_032750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.9105271019338412,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V30_002750_005500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8891171574120279,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V30_005500_008500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.870140740608835,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V30_008500_011250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8449713271711724,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V31_000000_003250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.07377229978295335,
+      "prediction": 1.0
+    },
+    {
+      "id": "r2d2_V32_003250_006500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.27189806392549565,
+      "prediction": 1.0
+    },
+    {
+      "id": "r2d2_V32_006500_009500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.0013153570652426653,
+      "prediction": 1.0
+    },
+    {
+      "id": "r2d2_V32_009500_013500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.09547720558717547,
+      "prediction": 1.0
+    },
+    {
+      "id": "failure-expansion-F006-00231574",
+      "person": "qevd_1396",
+      "group": "461",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.030708305683976044,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_more_N001_000500_003000",
+      "person": "qevd_1030",
+      "group": "157",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.7861029547396831,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V28_004250_007000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.711167991987907,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V28_007000_010000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7296912921349941,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V28_010000_012750",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7257219896191904,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V29_012500_015500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8239217385570505,
+      "prediction": 2.0
+    },
+    {
+      "id": "failure-expansion-F001-00220182",
+      "person": "qevd_1802",
+      "group": "328",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.4601822650421304,
+      "prediction": 2.0
+    },
+    {
+      "id": "failure-expansion-F008-00279851",
+      "person": "qevd_1232",
+      "group": "qevd_1232",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.3011453099875375,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N003_001250_004140",
+      "person": "qevd_103",
+      "group": "156",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8227807966378432,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_v3_E06_000200_001450",
+      "person": "qevd_1531",
+      "group": "315",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.9214020316951406,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_v3_E06_001450_002650",
+      "person": "qevd_1531",
+      "group": "315",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.9169834680311346,
+      "prediction": 2.0
+    },
+    {
+      "id": "failure-expansion-F002-00132378",
+      "person": "qevd_2726",
+      "group": "317",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.7925430888036316,
+      "prediction": 2.0
+    },
+    {
+      "id": "failure-expansion-F003-00276861",
+      "person": "qevd_2355",
+      "group": "qevd_2355",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.16656245928261038,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N002_001000_003270",
+      "person": "qevd_2574",
+      "group": "153",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8333955046051258,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N004_000500_003000",
+      "person": "qevd_2726",
+      "group": "317",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.887051408995659,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N005_000400_001800",
+      "person": "qevd_2355",
+      "group": "qevd_2355",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8011030457311096,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N010_000500_002370",
+      "person": "qevd_129",
+      "group": "184",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.31529281541575266,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N010_002370_004140",
+      "person": "qevd_129",
+      "group": "184",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.19948876938020646,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N012_000750_002870",
+      "person": "qevd_1286",
+      "group": "524",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.7953099404291243,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_more_N014_001300_003800",
+      "person": "qevd_1813",
+      "group": "185",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8872967910279308,
+      "prediction": 2.0
+    }
+  ],
+  "validation_predictions": [],
+  "fixed_development_validation": null,
+  "nested_CV_folds": [
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "outer_ids": [
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "589"
+      ],
+      "inner_members": [
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N002_001000_003270"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "153"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N003_001250_004140"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "156"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N001_000500_003000"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "157"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "184"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N014_001300_003800"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "185"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "315"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F002-00132378",
+            "return_more_N004_000500_003000"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "317"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F001-00220182"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "328"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F006-00231574"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "461"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N012_000750_002870"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "555",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "524"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "571",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "555"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "571"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F008-00279851"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "qevd_1232"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F003-00276861",
+            "return_more_N005_000400_001800"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "157",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "461",
+            "524",
+            "555",
+            "571",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "qevd_2355"
+          ]
+        }
+      ],
+      "cutoff": 0.0
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F008-00279851",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "outer_ids": [
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "failure-expansion-F006-00231574",
+        "return_more_N001_000500_003000"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "524",
+        "555",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "157",
+        "461",
+        "571"
+      ],
+      "inner_members": [
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N002_001000_003270"
+          ],
+          "fit_groups": [
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "153"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N003_001250_004140"
+          ],
+          "fit_groups": [
+            "153",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "156"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "184"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N014_001300_003800"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "185"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "317",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "315"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F002-00132378",
+            "return_more_N004_000500_003000"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "317"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F001-00220182"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "524",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "328"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N012_000750_002870"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "555",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "524"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "589",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "555"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "qevd_1232",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "589"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F008-00279851"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "qevd_1232"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F008-00279851",
+            "return_more_N002_001000_003270",
+            "return_more_N003_001250_004140",
+            "return_more_N004_000500_003000",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F003-00276861",
+            "return_more_N005_000400_001800"
+          ],
+          "fit_groups": [
+            "153",
+            "156",
+            "184",
+            "185",
+            "315",
+            "317",
+            "328",
+            "524",
+            "555",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "qevd_2355"
+          ]
+        }
+      ],
+      "cutoff": 0.44162253096956333
+    },
+    {
+      "fit_ids": [
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800"
+      ],
+      "outer_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F008-00279851",
+        "return_more_N003_001250_004140",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "fit_groups": [
+        "153",
+        "157",
+        "184",
+        "185",
+        "317",
+        "461",
+        "524",
+        "571",
+        "589",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "156",
+        "315",
+        "328",
+        "555",
+        "qevd_1232"
+      ],
+      "inner_members": [
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "return_more_N002_001000_003270"
+          ],
+          "fit_groups": [
+            "157",
+            "184",
+            "185",
+            "317",
+            "461",
+            "524",
+            "571",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "153"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "return_more_N001_000500_003000"
+          ],
+          "fit_groups": [
+            "153",
+            "184",
+            "185",
+            "317",
+            "461",
+            "524",
+            "571",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "157"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "185",
+            "317",
+            "461",
+            "524",
+            "571",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "184"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870"
+          ],
+          "held_ids": [
+            "return_more_N014_001300_003800"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "317",
+            "461",
+            "524",
+            "571",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "185"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "failure-expansion-F002-00132378",
+            "return_more_N004_000500_003000"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "185",
+            "461",
+            "524",
+            "571",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "317"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "failure-expansion-F006-00231574"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "185",
+            "317",
+            "524",
+            "571",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "461"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "return_more_N012_000750_002870"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "185",
+            "317",
+            "461",
+            "571",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "524"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "185",
+            "317",
+            "461",
+            "524",
+            "589",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "571"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F003-00276861",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N005_000400_001800",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "185",
+            "317",
+            "461",
+            "524",
+            "571",
+            "qevd_2355"
+          ],
+          "held_groups": [
+            "589"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F002-00132378",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N002_001000_003270",
+            "return_more_N004_000500_003000",
+            "return_more_N010_000500_002370",
+            "return_more_N010_002370_004140",
+            "return_more_N012_000750_002870",
+            "return_more_N014_001300_003800"
+          ],
+          "held_ids": [
+            "failure-expansion-F003-00276861",
+            "return_more_N005_000400_001800"
+          ],
+          "fit_groups": [
+            "153",
+            "157",
+            "184",
+            "185",
+            "317",
+            "461",
+            "524",
+            "571",
+            "589"
+          ],
+          "held_groups": [
+            "qevd_2355"
+          ]
+        }
+      ],
+      "cutoff": 0.16214849478741206
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N003_001250_004140",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "outer_ids": [
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "return_more_N002_001000_003270",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800"
+      ],
+      "fit_groups": [
+        "156",
+        "157",
+        "315",
+        "328",
+        "461",
+        "555",
+        "571",
+        "589",
+        "qevd_1232"
+      ],
+      "held_groups": [
+        "153",
+        "184",
+        "185",
+        "317",
+        "524",
+        "qevd_2355"
+      ],
+      "inner_members": [
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N003_001250_004140"
+          ],
+          "fit_groups": [
+            "157",
+            "315",
+            "328",
+            "461",
+            "555",
+            "571",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "156"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N003_001250_004140",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "return_more_N001_000500_003000"
+          ],
+          "fit_groups": [
+            "156",
+            "315",
+            "328",
+            "461",
+            "555",
+            "571",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "157"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140"
+          ],
+          "held_ids": [
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "328",
+            "461",
+            "555",
+            "571",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "315"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F001-00220182"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "315",
+            "461",
+            "555",
+            "571",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "328"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F006-00231574"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "315",
+            "328",
+            "555",
+            "571",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "461"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "315",
+            "328",
+            "461",
+            "571",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "555"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "315",
+            "328",
+            "461",
+            "555",
+            "589",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "571"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F006-00231574",
+            "failure-expansion-F008-00279851",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "315",
+            "328",
+            "461",
+            "555",
+            "571",
+            "qevd_1232"
+          ],
+          "held_groups": [
+            "589"
+          ]
+        },
+        {
+          "fit_ids": [
+            "r2d2_V28_004250_007000",
+            "r2d2_V28_007000_010000",
+            "r2d2_V28_010000_012750",
+            "r2d2_V29_012500_015500",
+            "r2d2_V30_002750_005500",
+            "r2d2_V30_005500_008500",
+            "r2d2_V30_008500_011250",
+            "r2d2_V31_000000_003250",
+            "r2d2_V32_003250_006500",
+            "r2d2_V32_006500_009500",
+            "r2d2_V32_009500_013500",
+            "r2d2_V35_000000_002250",
+            "r2d2_V35_002250_004750",
+            "r2d2_V35_004750_006750",
+            "r2d2_V35_009500_012100",
+            "r2d2_V36_001000_004250",
+            "r2d2_V36_004250_009250",
+            "r2d2_V36_009250_012750",
+            "r2d2_V36_012750_015750",
+            "r2d2_V36_030000_032750",
+            "failure-expansion-F001-00220182",
+            "failure-expansion-F006-00231574",
+            "return_more_N001_000500_003000",
+            "return_more_N003_001250_004140",
+            "return_v3_E06_000200_001450",
+            "return_v3_E06_001450_002650"
+          ],
+          "held_ids": [
+            "failure-expansion-F008-00279851"
+          ],
+          "fit_groups": [
+            "156",
+            "157",
+            "315",
+            "328",
+            "461",
+            "555",
+            "571",
+            "589"
+          ],
+          "held_groups": [
+            "qevd_1232"
+          ]
+        }
+      ],
+      "cutoff": 0.10887111735853727
+    }
+  ],
+  "component_training": [
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "return_more_N002_001000_003270"
+      ],
+      "fit_groups": [
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "153"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "return_more_N003_001250_004140"
+      ],
+      "fit_groups": [
+        "153",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "156"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "return_more_N001_000500_003000"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "157"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "184"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "return_more_N014_001300_003800"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "185"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800"
+      ],
+      "held_ids": [
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "315"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "failure-expansion-F002-00132378",
+        "return_more_N004_000500_003000"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "317"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "failure-expansion-F001-00220182"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "328"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "failure-expansion-F006-00231574"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "461"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "return_more_N012_000750_002870"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "555",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "524"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "571",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "555"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "589",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "571"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "qevd_1232",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "589"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F003-00276861",
+        "failure-expansion-F006-00231574",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N005_000400_001800",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "failure-expansion-F008-00279851"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_2355"
+      ],
+      "held_groups": [
+        "qevd_1232"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V28_004250_007000",
+        "r2d2_V28_007000_010000",
+        "r2d2_V28_010000_012750",
+        "r2d2_V29_012500_015500",
+        "r2d2_V30_002750_005500",
+        "r2d2_V30_005500_008500",
+        "r2d2_V30_008500_011250",
+        "r2d2_V31_000000_003250",
+        "r2d2_V32_003250_006500",
+        "r2d2_V32_006500_009500",
+        "r2d2_V32_009500_013500",
+        "r2d2_V35_000000_002250",
+        "r2d2_V35_002250_004750",
+        "r2d2_V35_004750_006750",
+        "r2d2_V35_009500_012100",
+        "r2d2_V36_001000_004250",
+        "r2d2_V36_004250_009250",
+        "r2d2_V36_009250_012750",
+        "r2d2_V36_012750_015750",
+        "r2d2_V36_030000_032750",
+        "failure-expansion-F001-00220182",
+        "failure-expansion-F002-00132378",
+        "failure-expansion-F006-00231574",
+        "failure-expansion-F008-00279851",
+        "return_more_N001_000500_003000",
+        "return_more_N002_001000_003270",
+        "return_more_N003_001250_004140",
+        "return_more_N004_000500_003000",
+        "return_more_N010_000500_002370",
+        "return_more_N010_002370_004140",
+        "return_more_N012_000750_002870",
+        "return_more_N014_001300_003800",
+        "return_v3_E06_000200_001450",
+        "return_v3_E06_001450_002650"
+      ],
+      "held_ids": [
+        "failure-expansion-F003-00276861",
+        "return_more_N005_000400_001800"
+      ],
+      "fit_groups": [
+        "153",
+        "156",
+        "157",
+        "184",
+        "185",
+        "315",
+        "317",
+        "328",
+        "461",
+        "524",
+        "555",
+        "571",
+        "589",
+        "qevd_1232"
+      ],
+      "held_groups": [
+        "qevd_2355"
+      ]
+    }
+  ],
+  "cutoff_Train_oof": [
+    {
+      "id": "return_more_N002_001000_003270",
+      "person": "qevd_2574",
+      "group": "153",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8714550061701226
+    },
+    {
+      "id": "return_more_N003_001250_004140",
+      "person": "qevd_103",
+      "group": "156",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8417493389862274
+    },
+    {
+      "id": "return_more_N001_000500_003000",
+      "person": "qevd_1030",
+      "group": "157",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8057274849986431
+    },
+    {
+      "id": "return_more_N010_000500_002370",
+      "person": "qevd_129",
+      "group": "184",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.3095870677488052
+    },
+    {
+      "id": "return_more_N010_002370_004140",
+      "person": "qevd_129",
+      "group": "184",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.18191438941595925
+    },
+    {
+      "id": "return_more_N014_001300_003800",
+      "person": "qevd_1813",
+      "group": "185",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.9248842879913683
+    },
+    {
+      "id": "return_v3_E06_000200_001450",
+      "person": "qevd_1531",
+      "group": "315",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.9492650688529776
+    },
+    {
+      "id": "return_v3_E06_001450_002650",
+      "person": "qevd_1531",
+      "group": "315",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.945383211799638
+    },
+    {
+      "id": "failure-expansion-F002-00132378",
+      "person": "qevd_2726",
+      "group": "317",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.831614354934784
+    },
+    {
+      "id": "return_more_N004_000500_003000",
+      "person": "qevd_2726",
+      "group": "317",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.9192223463366369
+    },
+    {
+      "id": "failure-expansion-F001-00220182",
+      "person": "qevd_1802",
+      "group": "328",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.4301739859962831
+    },
+    {
+      "id": "failure-expansion-F006-00231574",
+      "person": "qevd_1396",
+      "group": "461",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.07416068831430543
+    },
+    {
+      "id": "return_more_N012_000750_002870",
+      "person": "qevd_1286",
+      "group": "524",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8339562901283731
+    },
+    {
+      "id": "r2d2_V28_004250_007000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.6797650619141639
+    },
+    {
+      "id": "r2d2_V28_007000_010000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7008724679589126
+    },
+    {
+      "id": "r2d2_V28_010000_012750",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.6947653705831344
+    },
+    {
+      "id": "r2d2_V29_012500_015500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8129655103725667
+    },
+    {
+      "id": "r2d2_V30_002750_005500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8976431555915203
+    },
+    {
+      "id": "r2d2_V30_005500_008500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.881876647772009
+    },
+    {
+      "id": "r2d2_V30_008500_011250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8639379742021535
+    },
+    {
+      "id": "r2d2_V31_000000_003250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.10111925301126622
+    },
+    {
+      "id": "r2d2_V32_003250_006500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.32996443742069825
+    },
+    {
+      "id": "r2d2_V32_006500_009500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.0016586492523126479
+    },
+    {
+      "id": "r2d2_V32_009500_013500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.1345122081755475
+    },
+    {
+      "id": "r2d2_V35_000000_002250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.724151607615151
+    },
+    {
+      "id": "r2d2_V35_002250_004750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7311600682542552
+    },
+    {
+      "id": "r2d2_V35_004750_006750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.668310122198981
+    },
+    {
+      "id": "r2d2_V35_009500_012100",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8968191824704153
+    },
+    {
+      "id": "r2d2_V36_001000_004250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8373421975856429
+    },
+    {
+      "id": "r2d2_V36_004250_009250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.9072769077963264
+    },
+    {
+      "id": "r2d2_V36_009250_012750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8874710862593601
+    },
+    {
+      "id": "r2d2_V36_012750_015750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8746001377851969
+    },
+    {
+      "id": "r2d2_V36_030000_032750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.9159259203152864
+    },
+    {
+      "id": "failure-expansion-F008-00279851",
+      "person": "qevd_1232",
+      "group": "qevd_1232",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.2159669447324516
+    },
+    {
+      "id": "failure-expansion-F003-00276861",
+      "person": "qevd_2355",
+      "group": "qevd_2355",
+      "family": "QEVD",
+      "target": 1,
+      "normal_probability": 0.13258890620829628
+    },
+    {
+      "id": "return_more_N005_000400_001800",
+      "person": "qevd_2355",
+      "group": "qevd_2355",
+      "family": "QEVD",
+      "target": 2,
+      "normal_probability": 0.8284392545068661
+    }
+  ],
+  "candidate_cv": [
+    {
+      "C": 0.1,
+      "rank": [
+        true,
+        true,
+        0.8333333333333334,
+        0.13333333333333333,
+        0.425974025974026
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.425974025974026,
+        "n": 36,
+        "groups": 15,
+        "MAE": 0.25,
+        "group_MAE": 0.2714285714285714,
+        "error_n": 6,
+        "normal_n": 30,
+        "error_recall": 0.16666666666666666,
+        "normal_false_alarm": 0.13333333333333333
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.5,
+        "n": 36,
+        "groups": 15,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 6,
+        "normal_n": 30,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "C": 1.0,
+      "rank": [
+        true,
+        true,
+        0.8333333333333334,
+        0.13333333333333333,
+        0.425974025974026
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.425974025974026,
+        "n": 36,
+        "groups": 15,
+        "MAE": 0.25,
+        "group_MAE": 0.2714285714285714,
+        "error_n": 6,
+        "normal_n": 30,
+        "error_recall": 0.16666666666666666,
+        "normal_false_alarm": 0.13333333333333333
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.5,
+        "n": 36,
+        "groups": 15,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 6,
+        "normal_n": 30,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "C": 10.0,
+      "rank": [
+        true,
+        true,
+        0.8333333333333334,
+        0.13333333333333333,
+        0.425974025974026
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.425974025974026,
+        "n": 36,
+        "groups": 15,
+        "MAE": 0.25,
+        "group_MAE": 0.2714285714285714,
+        "error_n": 6,
+        "normal_n": 30,
+        "error_recall": 0.16666666666666666,
+        "normal_false_alarm": 0.13333333333333333
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.5,
+        "n": 36,
+        "groups": 15,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 6,
+        "normal_n": 30,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    }
+  ]
+}

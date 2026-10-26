@@ -1,0 +1,3662 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>5종 보유 자료 보강·후보 비교</title><style>body{font:16px/1.6 sans-serif;max-width:1250px;margin:24px auto;padding:16px;background:#f5f7fa;color:#213047}table{width:100%;border-collapse:collapse;background:white}th,td{border:1px solid #cbd4df;padding:9px;text-align:left;overflow-wrap:anywhere}details{background:white;padding:12px;margin:14px 0}img{max-width:100%}video{max-width:100%;max-height:550px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<h1>5종 보유 자료 우선 보강 — 별도 후보</h1><p><a href="../index.html">보존된 5종 기준 결과</a> · <a href="../multiview_squat/batch2/index.html">앞선 스쿼트 후보</a></p>
+<p>QEVD 20개 원본(푸시업 4·스쿼트 4·플랭크 8·YTW 4)과 보유 MultiView 숄더 프레스 4개의 시간순 표본을 직접 검토했습니다. 앉아서 수행한 숄더 1개는 목표 변형에서 제외했습니다. 플랭크는 보유 해군 측면 원본의 겹치지 않는 2개 유지 구간을 추가 검토했습니다. 같은 원본·참여자의 반복을 새 참여자로 세지 않습니다.</p>
+<p>점수 초안 18구간과 별도 상지 변경 사건 주석 8개입니다. 직접 검토는 시간순 표본 검토이며 연속 전체 영상·전문가 정답이 아닙니다. 제공자 문자열·Rule 결과를 점수 정답으로 변환하지 않았습니다. 관절 표시 25구간의 필수 부위만 직접 대조했고, 불안정 프레임·불일치 단계를 제외했습니다. 초안 수가 곧 학습 입력 수는 아닙니다.</p>
+<p>새 구간은 기존 train 역할을 유지했습니다. 고정 개발 검증은 재학습에 넣지 않았고, 새 학습 입력은 연결된 참여자·원본·녹화 그룹을 통째로 제외하는 3폴드에서 비교했습니다. 아래 고정 검증은 이미 확인한 개발 자료이며 독립 최종 시험이 아닙니다.</p>
+<p>MediaPipe Heavy는 관절 추출기이며 별도 ExtraTrees AI 점수와 기하 Rule Base를 비교합니다. 측면 발 기울기는 화면 투영 특징으로 실제 지면 접촉을 보증하지 않습니다. W 단계·형태 후보는 이전 개발 실패를 계기로 설계했으며 숫자 선택은 각 학습 폴드에서만 수행했습니다. 기본 후보에서는 정면 Y·전경의 Rule 총점을 채우지 않았습니다. 별도 투영 규칙 실험은 아래에서 직접 확인된 관측 교집합으로만 비교합니다.</p>
+<h2>실제 사용 수와 고정 개발 검증</h2><table><tr><th>운동</th><th>학습 구간 / 메타 그룹 / 총점 조건 충족</th><th>새 초안 / 사용 항목 라벨</th><th>공통 총점 수</th><th>AI 오차 전→후</th><th>Rule 오차 전→후</th></tr>
+<tr><td>푸시업</td><td>80 / 49 / 28</td><td>4 / 8</td><td>6</td><td>14.788414640197987 → 14.788414640197987</td><td>15.833333333333334 → 15.833333333333334</td></tr>
+<tr><td>스쿼트</td><td>89 / 44 / 47</td><td>4 / 9</td><td>5</td><td>13.735087821784527 → 16.754298282452847</td><td>12.0 → 12.0</td></tr>
+<tr><td>숄더 프레스</td><td>76 / 15 / 42</td><td>3 / 11</td><td>5</td><td>9.37156438372249 → 9.034630665700812</td><td>10.0 → 10.0</td></tr>
+<tr><td>플랭크</td><td>17 / 10 / 13</td><td>3 / 8</td><td>2</td><td>7.82006385258763 → 6.635896591975104</td><td>6.25 → 6.25</td></tr>
+<tr><td>YTW</td><td>94 / 77 / 44</td><td>4 / 10</td><td>0</td><td>None → None</td><td>None → None</td></tr>
+</table><p>총점 오차는 100점 단위이며 기준·후보의 AI·규칙 네 출력이 모두 있는 같은 구간만 비교했습니다. 전체 제출·판정 가능 수와 항목별 비교는 아래에 별도 표시합니다. 학습 구간 수에는 부분 항목만 사용하는 구간도 포함됩니다.</p>
+<h2>푸시업</h2><h3>같은 항목의 전후 오차 (등급 0~2)</h3><table><tr><th>항목</th><th>공통 수</th><th>AI 전→후</th><th>Rule 전→후</th></tr>
+<tr><td>trunk_line</td><td>7</td><td>0.5416 → 0.5416</td><td>0.4286 → 0.4286</td></tr>
+<tr><td>descent_range</td><td>10</td><td>0.0928 → 0.0928</td><td>0.3000 → 0.3000</td></tr>
+<tr><td>return_extension</td><td>10</td><td>0.2861 → 0.2861</td><td>0.2000 → 0.2000</td></tr>
+<tr><td>support</td><td>7</td><td>0.0836 → 0.0836</td><td>0.0000 → 0.0000</td></tr>
+</table><details><summary>학습 등급 분포·단일 등급·관측률·교차검증</summary><pre>{
+  &quot;heads&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 36,
+      &quot;metadata_groups&quot;: 13,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 21,
+        &quot;0&quot;: 13,
+        &quot;1&quot;: 2
+      },
+      &quot;error_metadata_groups&quot;: 11,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        168,
+        150
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 41,
+      &quot;metadata_groups&quot;: 15,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 36,
+        &quot;1&quot;: 3,
+        &quot;0&quot;: 2
+      },
+      &quot;error_metadata_groups&quot;: 3,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        110,
+        145
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 44,
+      &quot;metadata_groups&quot;: 15,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 43,
+        &quot;1&quot;: 1
+      },
+      &quot;error_metadata_groups&quot;: 1,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        160,
+        140
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;support&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 29,
+      &quot;metadata_groups&quot;: 13,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 26,
+        &quot;0&quot;: 1,
+        &quot;1&quot;: 2
+      },
+      &quot;error_metadata_groups&quot;: 3,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        0.15,
+        0.05
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 28,
+      &quot;metadata_groups&quot;: 27,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 25,
+        &quot;1&quot;: 2,
+        &quot;0&quot;: 1
+      },
+      &quot;error_metadata_groups&quot;: 3,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 34,
+      &quot;metadata_groups&quot;: 33,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 31,
+        &quot;1&quot;: 3
+      },
+      &quot;error_metadata_groups&quot;: 3,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        150,
+        130
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    }
+  ],
+  &quot;fixed_baseline&quot;: {
+    &quot;submitted&quot;: 19,
+    &quot;paired_total_records&quot;: 6,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 14.788414640197987,
+      &quot;rule_score&quot;: 15.833333333333334
+    },
+    &quot;items&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;paired_records&quot;: 7,
+        &quot;ai_MAE_grade_units&quot;: 0.5415988951971766,
+        &quot;rule_MAE_grade_units&quot;: 0.42857142857142855
+      },
+      &quot;descent_range&quot;: {
+        &quot;paired_records&quot;: 10,
+        &quot;ai_MAE_grade_units&quot;: 0.09275366018262746,
+        &quot;rule_MAE_grade_units&quot;: 0.3
+      },
+      &quot;return_extension&quot;: {
+        &quot;paired_records&quot;: 10,
+        &quot;ai_MAE_grade_units&quot;: 0.2861445381575229,
+        &quot;rule_MAE_grade_units&quot;: 0.2
+      },
+      &quot;support&quot;: {
+        &quot;paired_records&quot;: 7,
+        &quot;ai_MAE_grade_units&quot;: 0.08359345906867392,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      }
+    },
+    &quot;ai_total_available&quot;: 8,
+    &quot;rule_total_available&quot;: 8
+  },
+  &quot;fixed_candidate&quot;: {
+    &quot;submitted&quot;: 19,
+    &quot;paired_total_records&quot;: 6,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 14.788414640197987,
+      &quot;rule_score&quot;: 15.833333333333334
+    },
+    &quot;items&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;paired_records&quot;: 7,
+        &quot;ai_MAE_grade_units&quot;: 0.5415988951971766,
+        &quot;rule_MAE_grade_units&quot;: 0.42857142857142855
+      },
+      &quot;descent_range&quot;: {
+        &quot;paired_records&quot;: 10,
+        &quot;ai_MAE_grade_units&quot;: 0.09275366018262746,
+        &quot;rule_MAE_grade_units&quot;: 0.3
+      },
+      &quot;return_extension&quot;: {
+        &quot;paired_records&quot;: 15,
+        &quot;ai_MAE_grade_units&quot;: 0.2788592212111746,
+        &quot;rule_MAE_grade_units&quot;: 0.13333333333333333
+      },
+      &quot;support&quot;: {
+        &quot;paired_records&quot;: 7,
+        &quot;ai_MAE_grade_units&quot;: 0.08359345906867392,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      }
+    },
+    &quot;ai_total_available&quot;: 8,
+    &quot;rule_total_available&quot;: 8
+  },
+  &quot;group_cv&quot;: {
+    &quot;submitted&quot;: 95,
+    &quot;paired_total_records&quot;: 28,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 19.33989729987771,
+      &quot;rule_score&quot;: 20.714285714285715
+    },
+    &quot;items&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;paired_records&quot;: 36,
+        &quot;ai_MAE_grade_units&quot;: 0.7909243770840076,
+        &quot;rule_MAE_grade_units&quot;: 0.6388888888888888
+      },
+      &quot;descent_range&quot;: {
+        &quot;paired_records&quot;: 50,
+        &quot;ai_MAE_grade_units&quot;: 0.2205667754036363,
+        &quot;rule_MAE_grade_units&quot;: 0.46
+      },
+      &quot;return_extension&quot;: {
+        &quot;paired_records&quot;: 66,
+        &quot;ai_MAE_grade_units&quot;: 0.13913571301553848,
+        &quot;rule_MAE_grade_units&quot;: 0.25757575757575757
+      },
+      &quot;support&quot;: {
+        &quot;paired_records&quot;: 29,
+        &quot;ai_MAE_grade_units&quot;: 0.2535693335269598,
+        &quot;rule_MAE_grade_units&quot;: 0.13793103448275862
+      }
+    },
+    &quot;ai_total_available&quot;: 29,
+    &quot;rule_total_available&quot;: 29
+  }
+}</pre></details>
+<p>정상 또는 오류 한 등급만 학습한 항목은 다른 등급을 구분하는 능력이 확인되지 않았습니다. 교차검증은 학습 내부 평가이며 고정 검증과 섞지 않습니다.</p>
+<p>qevd_00191345_round1_score — 학습 시 해당 연결 그룹 전체를 제외한 예측입니다. 총점이 없으면 N/A로 표시합니다.</p><video controls preload="metadata" src="previews/qevd_00191345_round1_score/overlay.mp4"></video>
+<details><summary>qevd_00191345_round1_score</summary><p>정면 하강에서 가슴이 충분히 낮아지지만 선택 상단에도 팔 굽힘이 남는다. 측면 몸통 정렬·발 접점은 가려져 채우지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    2,
+    1,
+    null
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        82.78758285151046,
+        83.10722268100963,
+        86.3975068841302,
+        108.38403763792414,
+        146.31894534238108,
+        159.32465960693264,
+        176.79565113059988,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        150.53378657583588,
+        152.62069014562917,
+        158.881400855009,
+        170.8513838591363,
+        179.43852799524834,
+        179.61012874220071,
+        179.66732899118483,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;support&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00191345.jpg">
+<img loading="lazy" src="review/qevd_00191345_dense.jpg">
+<img loading="lazy" src="review/qevd_00191345_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00129204_round1_score</summary><p>선택 반복에서 낮은 가슴 위치와 상단 팔 펴기를 확인했다. 무릎을 바닥에 둔 지지가 직접 보여 일반 푸시업 지지 항목은 0이다. 무릎 변형 자체를 임상적으로 잘못된 운동이라 부르지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    2,
+    2,
+    0
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_tracking_review_unreliable_geometry&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        96.90127116708793,
+        97.88592507551355,
+        101.6157131238926,
+        123.10097376850223,
+        150.61212202700597,
+        160.62697486962398,
+        164.93124451580857,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        132.8246078614548,
+        133.69514860099082,
+        136.30677081959885,
+        140.65947451727894,
+        145.01217821495902,
+        147.62380043356706,
+        148.49434117310307,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;support&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_tracking_review_unreliable_geometry&quot;
+      ]
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00129204.jpg">
+<img loading="lazy" src="review/qevd_00129204_dense.jpg">
+<img loading="lazy" src="review/qevd_00129204_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00211664_round1_score</summary><p>선택 상단–하단–상단에서 가슴을 낮추고 팔을 펴 복귀한다. 골반·다리 접점은 구도상 확정하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    2,
+    2,
+    null
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        104.53297774626263,
+        106.19461204656108,
+        115.18977949463213,
+        148.44056291872013,
+        172.12439959682538,
+        174.00786386989006,
+        175.157243721892,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        174.12118921492183,
+        174.26584063630816,
+        174.6997949004671,
+        175.42305200739872,
+        176.14630911433036,
+        176.58026337848932,
+        176.72491479987565,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;support&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00211664.jpg">
+<img loading="lazy" src="review/qevd_00211664_dense.jpg">
+<img loading="lazy" src="review/qevd_00211664_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00252077_round1_score</summary><p>하단 가슴 위치는 낮지만 복귀 상단에도 팔꿈치 굽힘이 남는 부분 복귀다. 머리 움직임과 지지·몸통 점수는 혼동하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    2,
+    1,
+    null
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        86.5112291287484,
+        92.27102218831251,
+        112.96486269018305,
+        150.00733849251054,
+        168.03601721923542,
+        172.95148714188983,
+        174.06671691637152,
+        0.9090909090909091
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        172.95148714188983,
+        173.07434846194454,
+        173.4429324221087,
+        174.05723902238225,
+        174.15201796227484,
+        174.20888532621038,
+        174.2278411141889,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;support&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00252077.jpg">
+<img loading="lazy" src="review/qevd_00252077_dense.jpg">
+<img loading="lazy" src="review/qevd_00252077_round1_score_joints.jpg">
+</details>
+<h2>스쿼트</h2><h3>같은 항목의 전후 오차 (등급 0~2)</h3><table><tr><th>항목</th><th>공통 수</th><th>AI 전→후</th><th>Rule 전→후</th></tr>
+<tr><td>descent_range</td><td>13</td><td>0.3379 → 0.3392</td><td>0.2308 → 0.2308</td></tr>
+<tr><td>trunk_balance</td><td>17</td><td>0.0000 → 0.0000</td><td>0.0000 → 0.0000</td></tr>
+<tr><td>return_extension</td><td>8</td><td>0.0000 → 0.0000</td><td>0.0000 → 0.0000</td></tr>
+<tr><td>knee_foot</td><td>6</td><td>0.9263 → 0.9486</td><td>0.8333 → 0.8333</td></tr>
+</table><details><summary>학습 등급 분포·단일 등급·관측률·교차검증</summary><pre>{
+  &quot;heads&quot;: [
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 51,
+      &quot;metadata_groups&quot;: 12,
+      &quot;grade_counts&quot;: {
+        &quot;1&quot;: 18,
+        &quot;2&quot;: 33
+      },
+      &quot;error_metadata_groups&quot;: 7,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        0.3,
+        0.8
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 49,
+      &quot;metadata_groups&quot;: 11,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 49
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: [
+        160,
+        140
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;view&quot;: &quot;side_pitch_v1&quot;,
+      &quot;records&quot;: 50,
+      &quot;metadata_groups&quot;: 12,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 34,
+        &quot;0&quot;: 16
+      },
+      &quot;error_metadata_groups&quot;: 7,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        0.15,
+        0.35,
+        0.04,
+        0.06
+      ],
+      &quot;explicit_rule_kind&quot;: &quot;knee_heel_pitch_v1&quot;,
+      &quot;rule_calibration&quot;: {
+        &quot;training_only&quot;: true,
+        &quot;selected_pitch_boundaries_degrees&quot;: null,
+        &quot;training_weighted_MAE&quot;: 0.6034632034632035,
+        &quot;pitch_condition_can_be_disabled&quot;: true
+      }
+    },
+    {
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 85,
+      &quot;metadata_groups&quot;: 41,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 85
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: [
+        8,
+        15
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 10,
+      &quot;metadata_groups&quot;: 10,
+      &quot;grade_counts&quot;: {
+        &quot;0&quot;: 8,
+        &quot;2&quot;: 2
+      },
+      &quot;error_metadata_groups&quot;: 8,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        0,
+        0.5
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 23,
+      &quot;metadata_groups&quot;: 23,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 23
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    }
+  ],
+  &quot;fixed_baseline&quot;: {
+    &quot;submitted&quot;: 18,
+    &quot;paired_total_records&quot;: 5,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 13.735087821784527,
+      &quot;rule_score&quot;: 12.0
+    },
+    &quot;items&quot;: {
+      &quot;descent_range&quot;: {
+        &quot;paired_records&quot;: 13,
+        &quot;ai_MAE_grade_units&quot;: 0.3378619747274374,
+        &quot;rule_MAE_grade_units&quot;: 0.23076923076923078
+      },
+      &quot;trunk_balance&quot;: {
+        &quot;paired_records&quot;: 17,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      },
+      &quot;return_extension&quot;: {
+        &quot;paired_records&quot;: 8,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      },
+      &quot;knee_foot&quot;: {
+        &quot;paired_records&quot;: 6,
+        &quot;ai_MAE_grade_units&quot;: 0.9263148869144143,
+        &quot;rule_MAE_grade_units&quot;: 0.8333333333333334
+      }
+    },
+    &quot;ai_total_available&quot;: 5,
+    &quot;rule_total_available&quot;: 5
+  },
+  &quot;fixed_candidate&quot;: {
+    &quot;submitted&quot;: 18,
+    &quot;paired_total_records&quot;: 5,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 16.754298282452847,
+      &quot;rule_score&quot;: 12.0
+    },
+    &quot;items&quot;: {
+      &quot;descent_range&quot;: {
+        &quot;paired_records&quot;: 13,
+        &quot;ai_MAE_grade_units&quot;: 0.33924441973969005,
+        &quot;rule_MAE_grade_units&quot;: 0.23076923076923078
+      },
+      &quot;trunk_balance&quot;: {
+        &quot;paired_records&quot;: 17,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      },
+      &quot;return_extension&quot;: {
+        &quot;paired_records&quot;: 8,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      },
+      &quot;knee_foot&quot;: {
+        &quot;paired_records&quot;: 6,
+        &quot;ai_MAE_grade_units&quot;: 0.9485978674786848,
+        &quot;rule_MAE_grade_units&quot;: 0.8333333333333334
+      }
+    },
+    &quot;ai_total_available&quot;: 5,
+    &quot;rule_total_available&quot;: 5
+  },
+  &quot;group_cv&quot;: {
+    &quot;submitted&quot;: 89,
+    &quot;paired_total_records&quot;: 47,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 10.019707059023743,
+      &quot;rule_score&quot;: 16.914893617021278
+    },
+    &quot;items&quot;: {
+      &quot;descent_range&quot;: {
+        &quot;paired_records&quot;: 53,
+        &quot;ai_MAE_grade_units&quot;: 0.3014875767316646,
+        &quot;rule_MAE_grade_units&quot;: 0.24528301886792453
+      },
+      &quot;return_extension&quot;: {
+        &quot;paired_records&quot;: 49,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.04081632653061224
+      },
+      &quot;knee_foot&quot;: {
+        &quot;paired_records&quot;: 50,
+        &quot;ai_MAE_grade_units&quot;: 0.5899249958807914,
+        &quot;rule_MAE_grade_units&quot;: 0.88
+      },
+      &quot;trunk_balance&quot;: {
+        &quot;paired_records&quot;: 85,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.11764705882352941
+      }
+    },
+    &quot;ai_total_available&quot;: 47,
+    &quot;rule_total_available&quot;: 47
+  }
+}</pre></details>
+<p>정상 또는 오류 한 등급만 학습한 항목은 다른 등급을 구분하는 능력이 확인되지 않았습니다. 교차검증은 학습 내부 평가이며 고정 검증과 섞지 않습니다.</p>
+<p>qevd_00191433_round1_score — 학습 시 해당 연결 그룹 전체를 제외한 예측입니다. 총점이 없으면 N/A로 표시합니다.</p><video controls preload="metadata" src="previews/qevd_00191433_round1_score/overlay.mp4"></video>
+<details><summary>qevd_00191433_round1_score</summary><p>무릎·엉덩이 굽힘이 작은 얕은 하강 뒤 원래 서기로 돌아온다. 정면 몸통 좌우는 안정적이다. 측면 접지 근거 없이 무릎·발 항목은 채우지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    0,
+    2,
+    null,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.9868635535240173,
+        0.9869444966316223,
+        0.9889684319496155,
+        0.9945375919342041,
+        0.9965387582778931,
+        0.99776291847229,
+        0.9980767965316772,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        179.3412115720035,
+        179.34544353460558,
+        179.3581394224119,
+        179.37929923542242,
+        179.56482789393647,
+        179.67614508904492,
+        179.71325082074773,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.047486228795326026,
+        0.05613675637612035,
+        0.2001835512423537,
+        0.4152013208424554,
+        0.7529039273075712,
+        0.892797284711747,
+        0.907975454422518,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00191433.jpg">
+<img loading="lazy" src="review/qevd_00191433_dense.jpg">
+<img loading="lazy" src="review/qevd_00191433_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00208748_round1_score</summary><p>무릎 이하가 잘려 하강·신전·접지를 확정하지 않는다. 보이는 어깨·골반의 큰 좌우 기울기는 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    null,
+    null,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;side_heel_and_toe_missing&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.548500604944635,
+        0.8074819903513735,
+        1.1082457779686457,
+        1.2579131331430622,
+        1.5138859109718552,
+        2.2826185764968865,
+        2.3133565717731943,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00208748.jpg">
+<img loading="lazy" src="review/qevd_00208748_dense.jpg">
+<img loading="lazy" src="review/qevd_00208748_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00040723_round1_score</summary><p>보이는 무릎·허벅지와 골반 하강이 작고 서기 높이로 돌아온다. 발 접점은 잘려 정렬·접지 복합 항목을 채우지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    0,
+    2,
+    null,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.9919260740280151,
+        0.9924535751342773,
+        0.9940857291221619,
+        0.9965231418609619,
+        0.9971656203269958,
+        0.9973035454750061,
+        0.9974150657653809,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;,
+        &quot;required_measurement_unavailable&quot;,
+        &quot;side_heel_and_toe_missing&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        1.0942006041371928,
+        1.1333238128166048,
+        1.366459404258337,
+        1.6886122880941514,
+        2.423600192329435,
+        2.692664302542309,
+        2.7245111213530553,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00040723.jpg">
+<img loading="lazy" src="review/qevd_00040723_dense.jpg">
+<img loading="lazy" src="review/qevd_00040723_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00205235_round1_score</summary><p>선택 첫 반복은 무릎·골반 굽힘이 작고 복귀한다. 더 깊은 후반 반복과 섞지 않는다. 발 접점과 측면 정렬은 확정하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    0,
+    2,
+    null,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.987611711025238,
+        0.9904542565345764,
+        0.9927548766136169,
+        0.9969083070755005,
+        0.9978650808334351,
+        0.9985067248344421,
+        0.9989926815032959,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        171.68446978229713,
+        171.71736334219457,
+        171.81604402188688,
+        172.36895248813232,
+        172.96761559238513,
+        173.14865462049062,
+        173.20900096319244,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_measurement_unavailable&quot;,
+        &quot;side_heel_and_toe_missing&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.8711465250087632,
+        0.9975759115630448,
+        1.1534744117861881,
+        1.4798120940212767,
+        1.863931185055423,
+        2.2620188306482127,
+        2.3982232546731863,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00205235.jpg">
+<img loading="lazy" src="review/qevd_00205235_dense.jpg">
+<img loading="lazy" src="review/qevd_00205235_round1_score_joints.jpg">
+</details>
+<h2>숄더 프레스</h2><h3>같은 항목의 전후 오차 (등급 0~2)</h3><table><tr><th>항목</th><th>공통 수</th><th>AI 전→후</th><th>Rule 전→후</th></tr>
+<tr><td>overhead_reach</td><td>5</td><td>0.2736 → 0.2590</td><td>0.0000 → 0.0000</td></tr>
+<tr><td>lower_return</td><td>10</td><td>0.0000 → 0.0000</td><td>0.3000 → 0.3000</td></tr>
+<tr><td>bilateral_timing</td><td>5</td><td>0.5739 → 0.5580</td><td>0.6000 → 0.6000</td></tr>
+<tr><td>frontal_trunk_hold</td><td>11</td><td>0.0000 → 0.0000</td><td>0.0000 → 0.0000</td></tr>
+</table><details><summary>학습 등급 분포·단일 등급·관측률·교차검증</summary><pre>{
+  &quot;heads&quot;: [
+    {
+      &quot;item&quot;: &quot;lower_return&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 61,
+      &quot;metadata_groups&quot;: 13,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 61
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: [
+        110,
+        140
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;frontal_trunk_hold&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 66,
+      &quot;metadata_groups&quot;: 13,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 66
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: [
+        8,
+        15
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;overhead_reach&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 45,
+      &quot;metadata_groups&quot;: 12,
+      &quot;grade_counts&quot;: {
+        &quot;1&quot;: 17,
+        &quot;2&quot;: 28
+      },
+      &quot;error_metadata_groups&quot;: 8,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        145,
+        100
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;bilateral_timing&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 56,
+      &quot;metadata_groups&quot;: 12,
+      &quot;grade_counts&quot;: {
+        &quot;0&quot;: 3,
+        &quot;2&quot;: 46,
+        &quot;1&quot;: 7
+      },
+      &quot;error_metadata_groups&quot;: 7,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        0.08,
+        0.3
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;overhead_reach&quot;,
+      &quot;view&quot;: &quot;front_oblique&quot;,
+      &quot;records&quot;: 5,
+      &quot;metadata_groups&quot;: 3,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 5
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: [
+        150,
+        125
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;lower_return&quot;,
+      &quot;view&quot;: &quot;front_oblique&quot;,
+      &quot;records&quot;: 5,
+      &quot;metadata_groups&quot;: 3,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 5
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: [
+        110,
+        140
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;bilateral_timing&quot;,
+      &quot;view&quot;: &quot;front_oblique&quot;,
+      &quot;records&quot;: 6,
+      &quot;metadata_groups&quot;: 4,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 6
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;single_grade_model&quot;: true,
+      &quot;boundary&quot;: [
+        0.15,
+        0.35
+      ],
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    }
+  ],
+  &quot;fixed_baseline&quot;: {
+    &quot;submitted&quot;: 11,
+    &quot;paired_total_records&quot;: 5,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 9.37156438372249,
+      &quot;rule_score&quot;: 10.0
+    },
+    &quot;items&quot;: {
+      &quot;overhead_reach&quot;: {
+        &quot;paired_records&quot;: 5,
+        &quot;ai_MAE_grade_units&quot;: 0.2735708818802033,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      },
+      &quot;lower_return&quot;: {
+        &quot;paired_records&quot;: 10,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.3
+      },
+      &quot;bilateral_timing&quot;: {
+        &quot;paired_records&quot;: 5,
+        &quot;ai_MAE_grade_units&quot;: 0.5738804742563726,
+        &quot;rule_MAE_grade_units&quot;: 0.6
+      },
+      &quot;frontal_trunk_hold&quot;: {
+        &quot;paired_records&quot;: 11,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      }
+    },
+    &quot;ai_total_available&quot;: 5,
+    &quot;rule_total_available&quot;: 5
+  },
+  &quot;fixed_candidate&quot;: {
+    &quot;submitted&quot;: 11,
+    &quot;paired_total_records&quot;: 5,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 9.034630665700812,
+      &quot;rule_score&quot;: 10.0
+    },
+    &quot;items&quot;: {
+      &quot;overhead_reach&quot;: {
+        &quot;paired_records&quot;: 5,
+        &quot;ai_MAE_grade_units&quot;: 0.2589842897167131,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      },
+      &quot;lower_return&quot;: {
+        &quot;paired_records&quot;: 10,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.3
+      },
+      &quot;bilateral_timing&quot;: {
+        &quot;paired_records&quot;: 5,
+        &quot;ai_MAE_grade_units&quot;: 0.5580136458390992,
+        &quot;rule_MAE_grade_units&quot;: 0.6
+      },
+      &quot;frontal_trunk_hold&quot;: {
+        &quot;paired_records&quot;: 11,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      }
+    },
+    &quot;ai_total_available&quot;: 5,
+    &quot;rule_total_available&quot;: 5
+  },
+  &quot;group_cv&quot;: {
+    &quot;submitted&quot;: 80,
+    &quot;paired_total_records&quot;: 42,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 10.363347628339941,
+      &quot;rule_score&quot;: 13.154761904761905
+    },
+    &quot;items&quot;: {
+      &quot;overhead_reach&quot;: {
+        &quot;paired_records&quot;: 50,
+        &quot;ai_MAE_grade_units&quot;: 0.3877401535912483,
+        &quot;rule_MAE_grade_units&quot;: 0.38
+      },
+      &quot;lower_return&quot;: {
+        &quot;paired_records&quot;: 66,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.13636363636363635
+      },
+      &quot;bilateral_timing&quot;: {
+        &quot;paired_records&quot;: 62,
+        &quot;ai_MAE_grade_units&quot;: 0.4263552856524776,
+        &quot;rule_MAE_grade_units&quot;: 0.7580645161290323
+      },
+      &quot;frontal_trunk_hold&quot;: {
+        &quot;paired_records&quot;: 66,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.030303030303030304
+      }
+    },
+    &quot;ai_total_available&quot;: 42,
+    &quot;rule_total_available&quot;: 42
+  }
+}</pre></details>
+<p>정상 또는 오류 한 등급만 학습한 항목은 다른 등급을 구분하는 능력이 확인되지 않았습니다. 교차검증은 학습 내부 평가이며 고정 검증과 섞지 않습니다.</p>
+<p>subject_013_shoulder_bad_front_round1_late_round1_score — 학습 시 해당 연결 그룹 전체를 제외한 예측입니다. 총점이 없으면 N/A로 표시합니다.</p><video controls preload="metadata" src="previews/subject_013_shoulder_bad_front_round1_late_round1_score/overlay.mp4"></video>
+<details><summary>subject_019_shoulder_bad_front_round1_late_round1_score</summary><p>230–255 경계 확대 표본에서 어깨 높이 하단–머리 위 도달–하단 복귀를 확인했다. 정면 핵심 네 항목의 큰 오류는 보이지 않는다. 제공자 bad를 오류 점수로 강제하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;overhead_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        90.20124422785429,
+        92.13231331627446,
+        102.14017029289391,
+        131.304689692514,
+        149.22875054546247,
+        156.44909819763527,
+        156.91865216199636,
+        0.8235294117647058
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;lower_return&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;bilateral_timing&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.018958574160933495,
+        0.019630633294582367,
+        0.02535213530063629,
+        0.0692903995513916,
+        0.11408988386392593,
+        0.1649731993675232,
+        0.2936129868030548,
+        0.8235294117647058
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;frontal_trunk_hold&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        2.4002230058473395,
+        2.8361577616349987,
+        3.492877142082345,
+        3.8131453686885073,
+        4.3044823868669715,
+        4.643365657810296,
+        4.74680005301461,
+        0.8235294117647058
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_019_shoulder_bad_front_round1_late.jpg">
+<img loading="lazy" src="review/subject_019_shoulder_bad_front_round1_late_dense.jpg">
+<img loading="lazy" src="review/subject_019_shoulder_bad_front_round1_late_boundary.jpg">
+<img loading="lazy" src="review/subject_019_shoulder_bad_front_round1_late_round1_score_joints.jpg">
+</details>
+<details><summary>subject_013_shoulder_bad_front_round1_late_round1_score</summary><p>한 팔이 먼저 올라가고 반대 팔이 뒤따르며 하강에서도 큰 시차가 직접 보인다. 각 팔의 머리 위 도달·어깨 높이 복귀는 확인된다. 정면 몸통의 큰 기울기는 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    0,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;overhead_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        10.314234550115613,
+        16.728176691528578,
+        36.24332990394659,
+        42.60887963570981,
+        95.69054883383987,
+        134.5553756719318,
+        147.89322016152929,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;lower_return&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        44.76709766290591,
+        44.79005334269526,
+        44.8589203820633,
+        47.274507880863666,
+        50.95467054375865,
+        53.29977287849703,
+        54.08147365674316,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;bilateral_timing&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.007922500371932983,
+        0.021925747394561768,
+        0.043802179396152496,
+        0.07540023326873779,
+        0.12376391887664795,
+        0.14158280193805695,
+        0.15021918714046478,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;frontal_trunk_hold&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.14834774877093576,
+        0.26303653106367114,
+        0.39014622562870815,
+        0.6645299404888758,
+        1.1341830211330572,
+        1.3688022051392739,
+        1.6489743554481548,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_013_shoulder_bad_front_round1_late.jpg">
+<img loading="lazy" src="review/subject_013_shoulder_bad_front_round1_late_dense.jpg">
+<img loading="lazy" src="review/subject_013_shoulder_bad_front_round1_late_round1_score_joints.jpg">
+</details>
+<details><summary>subject_007_shoulder_bad_front_round1_late_round1_score</summary><p>선택 하단–상단–하단의 양팔 도달·복귀가 확인된다. 큰 시차·몸통 좌우 이탈은 보이지 않는다. 제공자 bad를 현재 항목의 오류로 강제하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;overhead_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        46.1315663367496,
+        46.856387689558126,
+        47.6850139924044,
+        77.26823550198252,
+        130.19310087250804,
+        154.06088544517553,
+        154.53677096107148,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;lower_return&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        52.41504637425476,
+        52.49901305537927,
+        52.75091309875282,
+        53.1707465043754,
+        53.44439671573679,
+        53.60858684255361,
+        53.66331688482589,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;bilateral_timing&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.01012458186596632,
+        0.020367825403809547,
+        0.05074590444564819,
+        0.07966844737529755,
+        0.11225597560405731,
+        0.14585819840431213,
+        0.16725629568099976,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;frontal_trunk_hold&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.0943676433731808,
+        0.2622592793322076,
+        0.7635110042890831,
+        1.0923159349794855,
+        1.433721105607015,
+        1.7204708233645774,
+        1.8442839025403908,
+        1.0
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_007_shoulder_bad_front_round1_late.jpg">
+<img loading="lazy" src="review/subject_007_shoulder_bad_front_round1_late_dense.jpg">
+<img loading="lazy" src="review/subject_007_shoulder_bad_front_round1_late_round1_score_joints.jpg">
+</details>
+<h2>플랭크</h2><h3>같은 항목의 전후 오차 (등급 0~2)</h3><table><tr><th>항목</th><th>공통 수</th><th>AI 전→후</th><th>Rule 전→후</th></tr>
+<tr><td>trunk_line</td><td>3</td><td>0.1939 → 0.2031</td><td>0.3333 → 0.3333</td></tr>
+<tr><td>elbow_sagittal_position</td><td>2</td><td>0.0374 → 0.0038</td><td>0.5000 → 0.5000</td></tr>
+<tr><td>leg_and_body_support</td><td>4</td><td>0.6313 → 0.5745</td><td>0.5000 → 0.5000</td></tr>
+<tr><td>support_continuity</td><td>4</td><td>0.1582 → 0.1691</td><td>0.5000 → 0.5000</td></tr>
+</table><details><summary>학습 등급 분포·단일 등급·관측률·교차검증</summary><pre>{
+  &quot;heads&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;view&quot;: &quot;side_video&quot;,
+      &quot;records&quot;: 14,
+      &quot;metadata_groups&quot;: 9,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 10,
+        &quot;0&quot;: 4
+      },
+      &quot;error_metadata_groups&quot;: 3,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        165,
+        155
+      ],
+      &quot;explicit_rule_kind&quot;: &quot;plank_scalar_v1&quot;,
+      &quot;rule_calibration&quot;: {
+        &quot;default&quot;: [
+          168,
+          155
+        ],
+        &quot;selected&quot;: [
+          165,
+          155
+        ],
+        &quot;training_weighted_MAE_before&quot;: 0.5555555555555556,
+        &quot;training_weighted_MAE_after&quot;: 0.4444444444444444,
+        &quot;training_only&quot;: true
+      }
+    },
+    {
+      &quot;item&quot;: &quot;elbow_sagittal_position&quot;,
+      &quot;view&quot;: &quot;side_video&quot;,
+      &quot;records&quot;: 15,
+      &quot;metadata_groups&quot;: 10,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 14,
+        &quot;1&quot;: 1
+      },
+      &quot;error_metadata_groups&quot;: 1,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;leg_and_body_support&quot;,
+      &quot;view&quot;: &quot;side_video&quot;,
+      &quot;records&quot;: 13,
+      &quot;metadata_groups&quot;: 9,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 10,
+        &quot;0&quot;: 3
+      },
+      &quot;error_metadata_groups&quot;: 2,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: [
+        160,
+        145
+      ],
+      &quot;explicit_rule_kind&quot;: &quot;plank_scalar_v1&quot;,
+      &quot;rule_calibration&quot;: {
+        &quot;default&quot;: [
+          165,
+          145
+        ],
+        &quot;selected&quot;: [
+          160,
+          145
+        ],
+        &quot;training_weighted_MAE_before&quot;: 0.8611111111111112,
+        &quot;training_weighted_MAE_after&quot;: 0.8055555555555556,
+        &quot;training_only&quot;: true
+      }
+    },
+    {
+      &quot;item&quot;: &quot;support_continuity&quot;,
+      &quot;view&quot;: &quot;side_video&quot;,
+      &quot;records&quot;: 14,
+      &quot;metadata_groups&quot;: 9,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 13,
+        &quot;0&quot;: 1
+      },
+      &quot;error_metadata_groups&quot;: 1,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    }
+  ],
+  &quot;fixed_baseline&quot;: {
+    &quot;submitted&quot;: 4,
+    &quot;paired_total_records&quot;: 2,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 7.82006385258763,
+      &quot;rule_score&quot;: 6.25
+    },
+    &quot;items&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;paired_records&quot;: 3,
+        &quot;ai_MAE_grade_units&quot;: 0.19387617590742603,
+        &quot;rule_MAE_grade_units&quot;: 0.3333333333333333
+      },
+      &quot;elbow_sagittal_position&quot;: {
+        &quot;paired_records&quot;: 2,
+        &quot;ai_MAE_grade_units&quot;: 0.037364130434782705,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;leg_and_body_support&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.6313319493006989,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;support_continuity&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.1582370343472316,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      }
+    },
+    &quot;ai_total_available&quot;: 2,
+    &quot;rule_total_available&quot;: 2
+  },
+  &quot;fixed_candidate&quot;: {
+    &quot;submitted&quot;: 4,
+    &quot;paired_total_records&quot;: 2,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 6.635896591975104,
+      &quot;rule_score&quot;: 6.25
+    },
+    &quot;items&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;paired_records&quot;: 3,
+        &quot;ai_MAE_grade_units&quot;: 0.20305501789876804,
+        &quot;rule_MAE_grade_units&quot;: 0.3333333333333333
+      },
+      &quot;elbow_sagittal_position&quot;: {
+        &quot;paired_records&quot;: 2,
+        &quot;ai_MAE_grade_units&quot;: 0.003810975609756073,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;leg_and_body_support&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.5745198161213785,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;support_continuity&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.1690590737054552,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      }
+    },
+    &quot;ai_total_available&quot;: 2,
+    &quot;rule_total_available&quot;: 2
+  },
+  &quot;group_cv&quot;: {
+    &quot;submitted&quot;: 21,
+    &quot;paired_total_records&quot;: 13,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 19.578732052702904,
+      &quot;rule_score&quot;: 14.23076923076923
+    },
+    &quot;items&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;paired_records&quot;: 14,
+        &quot;ai_MAE_grade_units&quot;: 0.5595450680272108,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;elbow_sagittal_position&quot;: {
+        &quot;paired_records&quot;: 15,
+        &quot;ai_MAE_grade_units&quot;: 0.14368489583333333,
+        &quot;rule_MAE_grade_units&quot;: 0.3333333333333333
+      },
+      &quot;leg_and_body_support&quot;: {
+        &quot;paired_records&quot;: 13,
+        &quot;ai_MAE_grade_units&quot;: 0.8501933763352032,
+        &quot;rule_MAE_grade_units&quot;: 0.46153846153846156
+      },
+      &quot;support_continuity&quot;: {
+        &quot;paired_records&quot;: 14,
+        &quot;ai_MAE_grade_units&quot;: 0.5241437320120353,
+        &quot;rule_MAE_grade_units&quot;: 0.0
+      }
+    },
+    &quot;ai_total_available&quot;: 13,
+    &quot;rule_total_available&quot;: 13
+  }
+}</pre></details>
+<p>정상 또는 오류 한 등급만 학습한 항목은 다른 등급을 구분하는 능력이 확인되지 않았습니다. 교차검증은 학습 내부 평가이며 고정 검증과 섞지 않습니다.</p>
+<p>held_navy773312_3100_3200_round1_score — 학습 시 해당 연결 그룹 전체를 제외한 예측입니다. 총점이 없으면 N/A로 표시합니다.</p><video controls preload="metadata" src="previews/held_navy773312_3100_3200_round1_score/overlay.mp4"></video>
+<details><summary>held_navy773312_3100_3200_round1_score</summary><p>몸통·골반·무릎을 바닥에 둔 추가 지지와 큰 처짐이 보인다. 팔꿈치는 어깨 아래에 대체로 있고 나쁜 정렬의 지지 상태 자체는 선택 구간 동안 유지한다.</p><pre>{
+  &quot;levels&quot;: [
+    0,
+    2,
+    0,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        151.9720688970258,
+        152.0259098903876,
+        152.64389180118977,
+        153.70593552423628,
+        154.00098751687645,
+        154.38604996264692,
+        154.8004066866596
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;elbow_sagittal_position&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.24557799158328147,
+        0.2517713979174036,
+        0.2608108705647804,
+        0.26505186724486435,
+        0.2809491498448212,
+        0.28468290580313416,
+        0.2981147238897483
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;leg_and_body_support&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        154.64262183348023,
+        155.17561162821508,
+        155.6441259279168,
+        156.40814804901453,
+        156.6477700556112,
+        156.75728327986286,
+        156.90805359447523
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;support_continuity&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        154.64262183348023,
+        155.17561162821508,
+        155.6441259279168,
+        156.40814804901453,
+        156.6477700556112,
+        156.75728327986286,
+        156.90805359447523
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/held_navy773312_3100_3200.jpg">
+<img loading="lazy" src="review/held_navy773312_3100_3200_round1_score_joints.jpg">
+</details>
+<details><summary>held_navy773312_3800_3900_round1_score</summary><p>측면에서 몸통·골반 정렬, 어깨 아래 팔꿈치, 편 다리·발끝 지지를 3초 이상 유지한다. 같은 기존 해군 참여자의 추가 정상 구간이다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        174.1316956237955,
+        175.50192398631998,
+        175.60446451320328,
+        175.90233355901591,
+        176.53985340845378,
+        176.90346742440047,
+        177.05496673248624
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;elbow_sagittal_position&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.09937719232557779,
+        0.10123785134222604,
+        0.10380521781882236,
+        0.11361731835018363,
+        0.12100484716694013,
+        0.1259432859333943,
+        0.13461462966296925
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;leg_and_body_support&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        172.2161780338869,
+        172.30813932426275,
+        172.58471534854857,
+        172.85244235515705,
+        173.5104998901404,
+        174.89629741642605,
+        176.53936778269477
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;support_continuity&quot;,
+      &quot;bank&quot;: &quot;side_video&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        172.2161780338869,
+        172.30813932426275,
+        172.58471534854857,
+        172.85244235515705,
+        173.5104998901404,
+        174.89629741642605,
+        176.53936778269477
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/held_navy773312_3800_3900.jpg">
+<img loading="lazy" src="review/held_navy773312_3800_3900_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00276875_round1_score</summary><p>팔꿈치 지지 상태에서 상체를 바닥으로 내려 쉬는 명확한 지지 중단을 직접 확인했다. 하체·측면 정렬은 보이지 않아 정상 점수나 총점은 만들지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    null,
+    null,
+    0
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;bank&quot;: &quot;front_visible_interruption&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;not_a_full_plank_observation&quot;,
+        &quot;direct_tracking_review_unreliable_geometry&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;elbow_sagittal_position&quot;,
+      &quot;bank&quot;: &quot;front_visible_interruption&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;not_a_full_plank_observation&quot;,
+        &quot;direct_tracking_review_unreliable_geometry&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;leg_and_body_support&quot;,
+      &quot;bank&quot;: &quot;front_visible_interruption&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;not_a_full_plank_observation&quot;,
+        &quot;direct_tracking_review_unreliable_geometry&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;support_continuity&quot;,
+      &quot;bank&quot;: &quot;front_visible_interruption&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;not_a_full_plank_observation&quot;
+      ]
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00276875.jpg">
+<img loading="lazy" src="review/qevd_00276875_round1_score_joints.jpg">
+</details>
+<h2>YTW</h2><h3>같은 항목의 전후 오차 (등급 0~2)</h3><table><tr><th>항목</th><th>공통 수</th><th>AI 전→후</th><th>Rule 전→후</th></tr>
+<tr><td>t_reach</td><td>4</td><td>0.2182 → 0.2120</td><td>0.2500 → 0.2500</td></tr>
+<tr><td>w_shape</td><td>4</td><td>0.7560 → 0.6694</td><td>0.7500 → 0.5000</td></tr>
+</table><details><summary>학습 등급 분포·단일 등급·관측률·교차검증</summary><pre>{
+  &quot;heads&quot;: [
+    {
+      &quot;item&quot;: &quot;y_reach&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 55,
+      &quot;metadata_groups&quot;: 45,
+      &quot;grade_counts&quot;: {
+        &quot;1&quot;: 52,
+        &quot;0&quot;: 1,
+        &quot;2&quot;: 2
+      },
+      &quot;error_metadata_groups&quot;: 44,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;t_reach&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 80,
+      &quot;metadata_groups&quot;: 68,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 69,
+        &quot;1&quot;: 11
+      },
+      &quot;error_metadata_groups&quot;: 11,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    },
+    {
+      &quot;item&quot;: &quot;w_shape&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 77,
+      &quot;metadata_groups&quot;: 68,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 26,
+        &quot;1&quot;: 44,
+        &quot;0&quot;: 7
+      },
+      &quot;error_metadata_groups&quot;: 46,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: &quot;W_shape_v1&quot;,
+      &quot;rule_calibration&quot;: {
+        &quot;training_only&quot;: true,
+        &quot;weighted_grade_MAE&quot;: 0.35677655677655684,
+        &quot;candidate_policies&quot;: 64,
+        &quot;structure_previously_informed_by_development_failures&quot;: true
+      }
+    },
+    {
+      &quot;item&quot;: &quot;hinge_and_trunk_hold&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 92,
+      &quot;metadata_groups&quot;: 76,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 44,
+        &quot;1&quot;: 35,
+        &quot;0&quot;: 13
+      },
+      &quot;error_metadata_groups&quot;: 43,
+      &quot;single_grade_model&quot;: false,
+      &quot;boundary&quot;: null,
+      &quot;explicit_rule_kind&quot;: null,
+      &quot;rule_calibration&quot;: null
+    }
+  ],
+  &quot;fixed_baseline&quot;: {
+    &quot;submitted&quot;: 4,
+    &quot;paired_total_records&quot;: 0,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: null,
+      &quot;rule_score&quot;: null
+    },
+    &quot;items&quot;: {
+      &quot;t_reach&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.21820633621745322,
+        &quot;rule_MAE_grade_units&quot;: 0.25
+      },
+      &quot;w_shape&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.7559903500462644,
+        &quot;rule_MAE_grade_units&quot;: 0.75
+      }
+    },
+    &quot;ai_total_available&quot;: 3,
+    &quot;rule_total_available&quot;: 0
+  },
+  &quot;fixed_candidate&quot;: {
+    &quot;submitted&quot;: 4,
+    &quot;paired_total_records&quot;: 0,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: null,
+      &quot;rule_score&quot;: null
+    },
+    &quot;items&quot;: {
+      &quot;t_reach&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.2120449000452415,
+        &quot;rule_MAE_grade_units&quot;: 0.25
+      },
+      &quot;w_shape&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.6694288405065454,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      }
+    },
+    &quot;ai_total_available&quot;: 3,
+    &quot;rule_total_available&quot;: 0
+  },
+  &quot;group_cv&quot;: {
+    &quot;submitted&quot;: 94,
+    &quot;paired_total_records&quot;: 0,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: null,
+      &quot;rule_score&quot;: null
+    },
+    &quot;items&quot;: {
+      &quot;t_reach&quot;: {
+        &quot;paired_records&quot;: 80,
+        &quot;ai_MAE_grade_units&quot;: 0.1521523582695951,
+        &quot;rule_MAE_grade_units&quot;: 0.2375
+      },
+      &quot;w_shape&quot;: {
+        &quot;paired_records&quot;: 77,
+        &quot;ai_MAE_grade_units&quot;: 0.4710969662893191,
+        &quot;rule_MAE_grade_units&quot;: 0.4025974025974026
+      }
+    },
+    &quot;ai_total_available&quot;: 51,
+    &quot;rule_total_available&quot;: 0
+  }
+}</pre></details>
+<p>정상 또는 오류 한 등급만 학습한 항목은 다른 등급을 구분하는 능력이 확인되지 않았습니다. 교차검증은 학습 내부 평가이며 고정 검증과 섞지 않습니다.</p>
+<p>qevd_00025409_round1_score — 학습 시 해당 연결 그룹 전체를 제외한 예측입니다. 총점이 없으면 N/A로 표시합니다.</p><video controls preload="metadata" src="previews/qevd_00025409_round1_score/overlay.mp4"></video>
+<details><summary>qevd_00026168_round1_score</summary><p>Y 시점 손·팔 끝이 상단 밖으로 잘려 Y는 판정하지 않는다. T 양옆 펼침, 팔꿈치 굽힘과 손을 위로 둔 W, 분명한 전경은 보인다. 시작 자세가 이미 굽힌 팔이어서 완결 총점은 허용하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    2,
+    2,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;y_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;direct_tracking_review_unreliable_geometry&quot;,
+        &quot;direct_item_not_observable_or_grade_boundary_unresolved&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;t_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        107.29819312293364,
+        108.15865853048203,
+        121.87441556359997,
+        163.84730730367798,
+        165.39153306487978,
+        170.07968725823383
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;w_shape&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        60.35428831538805,
+        0.8340763767675663,
+        0.30594251661495836,
+        75.95101305927426,
+        0.9175076414050133,
+        0.19576980255323476,
+        15.596724743886213
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;hinge_and_trunk_hold&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.8952597975730896,
+        1.3871829509735107,
+        1.5867576599121094,
+        -2.0275142192840576,
+        -0.8373490571975708,
+        0.2617374658584595
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00026168.jpg">
+<img loading="lazy" src="review/qevd_00026168_dense.jpg">
+<img loading="lazy" src="review/qevd_00026168_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00025409_round1_score</summary><p>Y에서 팔꿈치 굽힘이 크게 남고 T는 양옆으로 펼친다. T 뒤 손이 아래로 내려가며 W의 손이 팔꿈치 위에 놓이는 모양은 명확히 미달한다. 전경은 유지한다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    0,
+    2
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;y_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;automatic_phase_does_not_match_direct_label_interval&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;t_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;automatic_phase_does_not_match_direct_label_interval&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;w_shape&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;automatic_phase_does_not_match_direct_label_interval&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;hinge_and_trunk_hold&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.8668441772460938,
+        0.9959383606910706,
+        1.2501975297927856,
+        -5.996819496154785,
+        -4.676883220672607,
+        0.015386013314127922
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00025409.jpg">
+<img loading="lazy" src="review/qevd_00025409_dense.jpg">
+<img loading="lazy" src="review/qevd_00025409_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00036790_round1_score</summary><p>Y 도달이 낮고 굽힘이 남으며 T는 양옆으로 펼친다. 이어지는 구간은 손이 아래로 떨어져 W 모양이 미달한다. 몸통은 얕은 전경이다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    0,
+    1
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;y_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        12.064922985998951,
+        111.55557194282369,
+        148.60317511228737,
+        113.36213910820571,
+        145.98759517165996,
+        165.84167412127104
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;t_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        82.49924155979221,
+        89.53559548006739,
+        107.23361678644235,
+        165.50220147059576,
+        167.5294939117278,
+        168.57687316705585
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;w_shape&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;automatic_phase_does_not_match_direct_label_interval&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;hinge_and_trunk_hold&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.5885963439941406,
+        0.6847401857376099,
+        0.7969315052032471,
+        -2.840146541595459,
+        -1.3904788494110107,
+        0.5491843223571777
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00036790.jpg">
+<img loading="lazy" src="review/qevd_00036790_dense.jpg">
+<img loading="lazy" src="review/qevd_00036790_round1_score_joints.jpg">
+</details>
+<details><summary>qevd_00190168_round1_score</summary><p>Y의 큰 팔 굽힘, T 양옆 펼침, W의 일부 굽힘과 팔꿈치가 낮게 붙는 모양을 대조했다. 얕은 전경이며 끝이 W 유지여서 원위치 복귀를 확인하지 못했다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    1,
+    1
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;item&quot;: &quot;y_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: false,
+      &quot;feature&quot;: null,
+      &quot;holds&quot;: [
+        &quot;automatic_phase_does_not_match_direct_label_interval&quot;
+      ]
+    },
+    {
+      &quot;item&quot;: &quot;t_reach&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        58.684431123139184,
+        77.53398263900158,
+        96.69026519376338,
+        152.35334837697206,
+        159.0143879368709,
+        163.57750496784752
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;w_shape&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        68.57953750489395,
+        0.1689154620719703,
+        -0.01958217387386354,
+        44.524000960742626,
+        0.12077968018100736,
+        -0.3940857749979759,
+        24.055536544151323
+      ],
+      &quot;holds&quot;: []
+    },
+    {
+      &quot;item&quot;: &quot;hinge_and_trunk_hold&quot;,
+      &quot;bank&quot;: &quot;front&quot;,
+      &quot;eligible&quot;: true,
+      &quot;feature&quot;: [
+        0.8847686052322388,
+        1.1365656852722168,
+        1.461812973022461,
+        0.7744777202606201,
+        1.8657331466674805,
+        4.3846611976623535
+      ],
+      &quot;holds&quot;: []
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/qevd_00190168.jpg">
+<img loading="lazy" src="review/qevd_00190168_dense.jpg">
+<img loading="lazy" src="review/qevd_00190168_round1_score_joints.jpg">
+</details>
+<h2>플랭크 정면의 상지 변경 사건 — 점수와 별도</h2><p>보이는 상지 지지 위치 변경·중단의 확률·사건 비교입니다. 사건 미관측을 정상 자세 등급이나 총점으로 바꾸지 않습니다.</p><pre>{
+  &quot;training_records&quot;: 20,
+  &quot;new_eligible_events&quot;: 4,
+  &quot;new_event_targets&quot;: {
+    &quot;0&quot;: 4
+  },
+  &quot;metadata_groups&quot;: 17,
+  &quot;unavailable&quot;: [
+    {
+      &quot;id&quot;: &quot;qevd_00276875&quot;,
+      &quot;reason&quot;: &quot;required_upper_arm_not_observed_or_direct_tracking_not_permitted&quot;,
+      &quot;observation&quot;: {
+        &quot;coverage&quot;: 0.41379310344827586,
+        &quot;selected_side&quot;: &quot;left&quot;,
+        &quot;relative_displacement&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00279506&quot;,
+      &quot;reason&quot;: &quot;required_upper_arm_not_observed_or_direct_tracking_not_permitted&quot;,
+      &quot;observation&quot;: {
+        &quot;coverage&quot;: 1.0,
+        &quot;selected_side&quot;: &quot;left&quot;,
+        &quot;relative_displacement&quot;: 0.2769496639115268
+      }
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00123100&quot;,
+      &quot;reason&quot;: &quot;required_upper_arm_not_observed_or_direct_tracking_not_permitted&quot;,
+      &quot;observation&quot;: {
+        &quot;coverage&quot;: 0.0,
+        &quot;selected_side&quot;: &quot;left&quot;,
+        &quot;relative_displacement&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00277150&quot;,
+      &quot;reason&quot;: &quot;required_upper_arm_not_observed_or_direct_tracking_not_permitted&quot;,
+      &quot;observation&quot;: {
+        &quot;coverage&quot;: 1.0,
+        &quot;selected_side&quot;: &quot;left&quot;,
+        &quot;relative_displacement&quot;: 0.07893917579619741
+      }
+    }
+  ],
+  &quot;group_cv_predictions&quot;: [
+    {
+      &quot;id&quot;: &quot;dvids_navy805472_599_689&quot;,
+      &quot;person&quot;: &quot;dvids_navy805472_performer&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.08389877585649647,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;dvids_gates640237_side_75_165&quot;,
+      &quot;person&quot;: &quot;dvids_gysgt_gates&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.10222836293608352,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;youtube_jonple_error&quot;,
+      &quot;person&quot;: &quot;youtube_channel_UCIjeq5EDjLxytQBHkv_erMw&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.08937663133435193,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;youtube_jonple_normal&quot;,
+      &quot;person&quot;: &quot;youtube_channel_UCIjeq5EDjLxytQBHkv_erMw&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.1222060415075121,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;youtube_avid_normal&quot;,
+      &quot;person&quot;: &quot;youtube_channel_UC7_LFnyBTIbN9e6p98YgIgw&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.10760579800101859,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;upper_qevd_00268443&quot;,
+      &quot;person&quot;: &quot;qevd_260&quot;,
+      &quot;target&quot;: 1,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.38291646877052243,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00194967_round1_event&quot;,
+      &quot;person&quot;: &quot;qevd_1517&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: true,
+      &quot;ai_probability&quot;: 0.104423303412274,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;dvids_airforce_300_390&quot;,
+      &quot;person&quot;: &quot;dvids_airforce_target_performer&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.09299482786235504,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;dvids_navy773312_2997_3087&quot;,
+      &quot;person&quot;: &quot;dvids_773312_single_performer&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.18847727793040292,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;dvids_navy773312_3656_3746&quot;,
+      &quot;person&quot;: &quot;dvids_773312_single_performer&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.11769142316017317,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;youtube_chris_basic&quot;,
+      &quot;person&quot;: &quot;youtube_chris_ellerby_hemmings&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.2815697945623218,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;upper_qevd_00224536&quot;,
+      &quot;person&quot;: &quot;qevd_717&quot;,
+      &quot;target&quot;: 1,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.466519678238428,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: true
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00135076_round1_event&quot;,
+      &quot;person&quot;: &quot;qevd_2762&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: true,
+      &quot;ai_probability&quot;: 0.16841810250437966,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00073378_round1_event&quot;,
+      &quot;person&quot;: &quot;qevd_271&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: true,
+      &quot;ai_probability&quot;: 0.11772290209790212,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;dvids_fao947417_background_5430_5520&quot;,
+      &quot;person&quot;: &quot;dvids_947417_background_black_beanie&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.06218545930172769,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;error_review_pannell_normal_core&quot;,
+      &quot;person&quot;: &quot;youtube_channel_UC4gfY04USI_IuTEqBzp5grg&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.2663229347112819,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;error_review_colossus_forward_core&quot;,
+      &quot;person&quot;: &quot;youtube_channel_UCqV2z4XYLcOLT27AmGT0M6w&quot;,
+      &quot;target&quot;: 1,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.5940651794457138,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: true
+    },
+    {
+      &quot;id&quot;: &quot;support_pannell_stop&quot;,
+      &quot;person&quot;: &quot;youtube_channel_UC4gfY04USI_IuTEqBzp5grg&quot;,
+      &quot;target&quot;: 1,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.5133446516718574,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: true
+    },
+    {
+      &quot;id&quot;: &quot;upper_qevd_00185879&quot;,
+      &quot;person&quot;: &quot;qevd_2212&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: false,
+      &quot;ai_probability&quot;: 0.7930091391318608,
+      &quot;ai_event&quot;: true,
+      &quot;rule_event&quot;: true
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00153434_round1_event&quot;,
+      &quot;person&quot;: &quot;qevd_1163&quot;,
+      &quot;target&quot;: 0,
+      &quot;new&quot;: true,
+      &quot;ai_probability&quot;: 0.4170959897812119,
+      &quot;ai_event&quot;: false,
+      &quot;rule_event&quot;: false
+    }
+  ],
+  &quot;group_cv_metrics&quot;: {
+    &quot;ai_event&quot;: {
+      &quot;TP&quot;: 0,
+      &quot;FN&quot;: 4,
+      &quot;FP&quot;: 1,
+      &quot;TN&quot;: 15
+    },
+    &quot;rule_event&quot;: {
+      &quot;TP&quot;: 3,
+      &quot;FN&quot;: 1,
+      &quot;FP&quot;: 1,
+      &quot;TN&quot;: 15
+    }
+  },
+  &quot;same_new_group_cv_metrics&quot;: {
+    &quot;ai_event&quot;: {
+      &quot;TP&quot;: 0,
+      &quot;FN&quot;: 0,
+      &quot;FP&quot;: 0,
+      &quot;TN&quot;: 4
+    },
+    &quot;rule_event&quot;: {
+      &quot;TP&quot;: 0,
+      &quot;FN&quot;: 0,
+      &quot;FP&quot;: 0,
+      &quot;TN&quot;: 4
+    }
+  },
+  &quot;model_sha256&quot;: &quot;ea28c3d49600a0e5955cfeaea5afdf77dbbaa29fa4ff25f743de3564a3dbd9e7&quot;,
+  &quot;preserved_model_sha256&quot;: &quot;dcb31f8c205c6af7ade5f6c2ed80fd19d004700844c8ad430b42d6def19a0215&quot;,
+  &quot;absence_does_not_mean_normal_grade&quot;: true,
+  &quot;posture_total&quot;: null,
+  &quot;independent_final_test&quot;: false,
+  &quot;expert_reference&quot;: false,
+  &quot;code_sha256&quot;: &quot;6f4d0a393d05e9708a90d94fed82842d197f3a76f55dd3c1b5468b50b9101732&quot;,
+  &quot;direct_sha256&quot;: &quot;5e65ddd2e13d4d406f123fc794356af4d2a2d231cbc696730fc3c2c764d86154&quot;
+}</pre>
+<h2>학습 내부 AI 방식·특징 선택 추가 실험</h2><p>선택용 내부 교차검증 오차는 독립 정확도가 아닙니다. 같은 고정 개발 검증에서 악화된 종목도 표시하며 자동 승격하지 않습니다.</p><pre>[
+  {
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;selection&quot;: [
+      {
+        &quot;item&quot;: &quot;descent_range&quot;,
+        &quot;view&quot;: &quot;side&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;regression&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.5489470156589675
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.5489470156589675
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.7111111111111109
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      },
+      {
+        &quot;item&quot;: &quot;return_extension&quot;,
+        &quot;view&quot;: &quot;front&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.5666666666666668
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.5776043214359002
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.5666666666666668
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      }
+    ],
+    &quot;paired_comparison&quot;: {
+      &quot;submitted&quot;: 19,
+      &quot;common_total_records&quot;: 6,
+      &quot;total&quot;: {
+        &quot;baseline&quot;: {
+          &quot;ai_score&quot;: 14.788414640197987,
+          &quot;rule_score&quot;: 15.833333333333334
+        },
+        &quot;candidate&quot;: {
+          &quot;ai_score&quot;: 14.788414640197987,
+          &quot;rule_score&quot;: 15.833333333333334
+        }
+      },
+      &quot;common_items&quot;: {
+        &quot;trunk_line&quot;: {
+          &quot;records&quot;: 7,
+          &quot;baseline_ai&quot;: 0.5415988951971766,
+          &quot;baseline_rule&quot;: 0.42857142857142855,
+          &quot;candidate_ai&quot;: 0.5415988951971766,
+          &quot;candidate_rule&quot;: 0.42857142857142855
+        },
+        &quot;descent_range&quot;: {
+          &quot;records&quot;: 10,
+          &quot;baseline_ai&quot;: 0.09275366018262746,
+          &quot;baseline_rule&quot;: 0.3,
+          &quot;candidate_ai&quot;: 0.09275366018262746,
+          &quot;candidate_rule&quot;: 0.3
+        },
+        &quot;return_extension&quot;: {
+          &quot;records&quot;: 15,
+          &quot;baseline_ai&quot;: 0.2788592212111746,
+          &quot;baseline_rule&quot;: 0.13333333333333333,
+          &quot;candidate_ai&quot;: 0.3240963587716819,
+          &quot;candidate_rule&quot;: 0.13333333333333333
+        },
+        &quot;support&quot;: {
+          &quot;records&quot;: 7,
+          &quot;baseline_ai&quot;: 0.08359345906867392,
+          &quot;baseline_rule&quot;: 0.0,
+          &quot;candidate_ai&quot;: 0.08359345906867392,
+          &quot;candidate_rule&quot;: 0.0
+        }
+      }
+    }
+  },
+  {
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;selection&quot;: [
+      {
+        &quot;item&quot;: &quot;descent_range&quot;,
+        &quot;view&quot;: &quot;side&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.2541666666666667
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.30184048819780424
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.2541666666666667
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      },
+      {
+        &quot;item&quot;: &quot;knee_foot&quot;,
+        &quot;view&quot;: &quot;side_pitch_v1&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.4727272727272727
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.5696012885099665
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.4727272727272727
+          },
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              10
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.6144003994730752
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              10
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.537878787878788
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      },
+      {
+        &quot;item&quot;: &quot;descent_range&quot;,
+        &quot;view&quot;: &quot;front&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.5
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.6748542906746036
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.5
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      }
+    ],
+    &quot;paired_comparison&quot;: {
+      &quot;submitted&quot;: 18,
+      &quot;common_total_records&quot;: 5,
+      &quot;total&quot;: {
+        &quot;baseline&quot;: {
+          &quot;ai_score&quot;: 16.754298282452847,
+          &quot;rule_score&quot;: 12.0
+        },
+        &quot;candidate&quot;: {
+          &quot;ai_score&quot;: 15.0,
+          &quot;rule_score&quot;: 12.0
+        }
+      },
+      &quot;common_items&quot;: {
+        &quot;descent_range&quot;: {
+          &quot;records&quot;: 13,
+          &quot;baseline_ai&quot;: 0.33924441973969005,
+          &quot;baseline_rule&quot;: 0.23076923076923078,
+          &quot;candidate_ai&quot;: 0.38461538461538464,
+          &quot;candidate_rule&quot;: 0.23076923076923078
+        },
+        &quot;trunk_balance&quot;: {
+          &quot;records&quot;: 17,
+          &quot;baseline_ai&quot;: 0.0,
+          &quot;baseline_rule&quot;: 0.0,
+          &quot;candidate_ai&quot;: 0.0,
+          &quot;candidate_rule&quot;: 0.0
+        },
+        &quot;return_extension&quot;: {
+          &quot;records&quot;: 8,
+          &quot;baseline_ai&quot;: 0.0,
+          &quot;baseline_rule&quot;: 0.0,
+          &quot;candidate_ai&quot;: 0.0,
+          &quot;candidate_rule&quot;: 0.0
+        },
+        &quot;knee_foot&quot;: {
+          &quot;records&quot;: 6,
+          &quot;baseline_ai&quot;: 0.9485978674786848,
+          &quot;baseline_rule&quot;: 0.8333333333333334,
+          &quot;candidate_ai&quot;: 0.6666666666666666,
+          &quot;candidate_rule&quot;: 0.8333333333333334
+        }
+      }
+    }
+  },
+  {
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;selection&quot;: [
+      {
+        &quot;item&quot;: &quot;overhead_reach&quot;,
+        &quot;view&quot;: &quot;front&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;regression&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.4978578619006579
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.4978578619006579
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.5716666666666667
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      },
+      {
+        &quot;item&quot;: &quot;bilateral_timing&quot;,
+        &quot;view&quot;: &quot;front&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;regression&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.8587907054001155
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.8587907054001155
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.8742424242424242
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      }
+    ],
+    &quot;paired_comparison&quot;: {
+      &quot;submitted&quot;: 11,
+      &quot;common_total_records&quot;: 5,
+      &quot;total&quot;: {
+        &quot;baseline&quot;: {
+          &quot;ai_score&quot;: 9.034630665700812,
+          &quot;rule_score&quot;: 10.0
+        },
+        &quot;candidate&quot;: {
+          &quot;ai_score&quot;: 9.034630665700812,
+          &quot;rule_score&quot;: 10.0
+        }
+      },
+      &quot;common_items&quot;: {
+        &quot;overhead_reach&quot;: {
+          &quot;records&quot;: 5,
+          &quot;baseline_ai&quot;: 0.2589842897167131,
+          &quot;baseline_rule&quot;: 0.0,
+          &quot;candidate_ai&quot;: 0.2589842897167131,
+          &quot;candidate_rule&quot;: 0.0
+        },
+        &quot;lower_return&quot;: {
+          &quot;records&quot;: 10,
+          &quot;baseline_ai&quot;: 0.0,
+          &quot;baseline_rule&quot;: 0.3,
+          &quot;candidate_ai&quot;: 0.0,
+          &quot;candidate_rule&quot;: 0.3
+        },
+        &quot;bilateral_timing&quot;: {
+          &quot;records&quot;: 5,
+          &quot;baseline_ai&quot;: 0.5580136458390992,
+          &quot;baseline_rule&quot;: 0.6,
+          &quot;candidate_ai&quot;: 0.5580136458390992,
+          &quot;candidate_rule&quot;: 0.6
+        },
+        &quot;frontal_trunk_hold&quot;: {
+          &quot;records&quot;: 11,
+          &quot;baseline_ai&quot;: 0.0,
+          &quot;baseline_rule&quot;: 0.0,
+          &quot;candidate_ai&quot;: 0.0,
+          &quot;candidate_rule&quot;: 0.0
+        }
+      }
+    }
+  },
+  {
+    &quot;exercise&quot;: &quot;plank&quot;,
+    &quot;selection&quot;: [
+      {
+        &quot;item&quot;: &quot;trunk_line&quot;,
+        &quot;view&quot;: &quot;side_video&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.5555555555555556
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.7877388790800246
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.5555555555555556
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      },
+      {
+        &quot;item&quot;: &quot;leg_and_body_support&quot;,
+        &quot;view&quot;: &quot;side_video&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          &quot;selection_group_cv_MAE&quot;: 1.2222222222222223
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            &quot;selection_group_cv_MAE&quot;: 1.284016410383598
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            &quot;selection_group_cv_MAE&quot;: 1.2222222222222223
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      }
+    ],
+    &quot;paired_comparison&quot;: {
+      &quot;submitted&quot;: 4,
+      &quot;common_total_records&quot;: 2,
+      &quot;total&quot;: {
+        &quot;baseline&quot;: {
+          &quot;ai_score&quot;: 6.635896591975104,
+          &quot;rule_score&quot;: 6.25
+        },
+        &quot;candidate&quot;: {
+          &quot;ai_score&quot;: 10.32939450031676,
+          &quot;rule_score&quot;: 6.25
+        }
+      },
+      &quot;common_items&quot;: {
+        &quot;trunk_line&quot;: {
+          &quot;records&quot;: 3,
+          &quot;baseline_ai&quot;: 0.20305501789876804,
+          &quot;baseline_rule&quot;: 0.3333333333333333,
+          &quot;candidate_ai&quot;: 0.3333333333333333,
+          &quot;candidate_rule&quot;: 0.3333333333333333
+        },
+        &quot;elbow_sagittal_position&quot;: {
+          &quot;records&quot;: 2,
+          &quot;baseline_ai&quot;: 0.003810975609756073,
+          &quot;baseline_rule&quot;: 0.5,
+          &quot;candidate_ai&quot;: 0.003810975609756073,
+          &quot;candidate_rule&quot;: 0.5
+        },
+        &quot;leg_and_body_support&quot;: {
+          &quot;records&quot;: 4,
+          &quot;baseline_ai&quot;: 0.5745198161213785,
+          &quot;baseline_rule&quot;: 0.5,
+          &quot;candidate_ai&quot;: 0.75,
+          &quot;candidate_rule&quot;: 0.5
+        },
+        &quot;support_continuity&quot;: {
+          &quot;records&quot;: 4,
+          &quot;baseline_ai&quot;: 0.1690590737054552,
+          &quot;baseline_rule&quot;: 0.5,
+          &quot;candidate_ai&quot;: 0.1690590737054552,
+          &quot;candidate_rule&quot;: 0.5
+        }
+      }
+    }
+  },
+  {
+    &quot;exercise&quot;: &quot;ytw&quot;,
+    &quot;selection&quot;: [
+      {
+        &quot;item&quot;: &quot;t_reach&quot;,
+        &quot;view&quot;: &quot;front&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.261171032357473
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.30769882376489804
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.261171032357473
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      },
+      {
+        &quot;item&quot;: &quot;w_shape&quot;,
+        &quot;view&quot;: &quot;front&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.6044444444444445
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.6552521279268555
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.6044444444444445
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      },
+      {
+        &quot;item&quot;: &quot;hinge_and_trunk_hold&quot;,
+        &quot;view&quot;: &quot;front&quot;,
+        &quot;selected&quot;: {
+          &quot;kind&quot;: &quot;ordinal_classification&quot;,
+          &quot;columns&quot;: [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          &quot;selection_group_cv_MAE&quot;: 0.43079680176454366
+        },
+        &quot;candidates&quot;: [
+          {
+            &quot;kind&quot;: &quot;regression&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.4734709066637026
+          },
+          {
+            &quot;kind&quot;: &quot;ordinal_classification&quot;,
+            &quot;columns&quot;: [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            &quot;selection_group_cv_MAE&quot;: 0.43079680176454366
+          }
+        ],
+        &quot;training_only&quot;: true,
+        &quot;selection_metric_is_not_independent_evaluation&quot;: true,
+        &quot;group_folds&quot;: 3
+      }
+    ],
+    &quot;paired_comparison&quot;: {
+      &quot;submitted&quot;: 4,
+      &quot;common_total_records&quot;: 0,
+      &quot;total&quot;: {
+        &quot;baseline&quot;: {
+          &quot;ai_score&quot;: null,
+          &quot;rule_score&quot;: null
+        },
+        &quot;candidate&quot;: {
+          &quot;ai_score&quot;: null,
+          &quot;rule_score&quot;: null
+        }
+      },
+      &quot;common_items&quot;: {
+        &quot;t_reach&quot;: {
+          &quot;records&quot;: 4,
+          &quot;baseline_ai&quot;: 0.2120449000452415,
+          &quot;baseline_rule&quot;: 0.25,
+          &quot;candidate_ai&quot;: 0.25,
+          &quot;candidate_rule&quot;: 0.25
+        },
+        &quot;w_shape&quot;: {
+          &quot;records&quot;: 4,
+          &quot;baseline_ai&quot;: 0.6694288405065454,
+          &quot;baseline_rule&quot;: 0.5,
+          &quot;candidate_ai&quot;: 0.75,
+          &quot;candidate_rule&quot;: 0.5
+        }
+      }
+    }
+  }
+]</pre><p><a href="ordinal_trial/comparison.json">전체 실험 JSON</a></p>
+<h2>YTW 네 항목 투영 규칙 후보</h2><p>Y·T 도달과 팔 펴기, W의 팔 굽힘·손·팔꿈치 위치, 전경의 몸통 투영 비율·좌우 흔들림을 명시 조건으로 계산했습니다. 보이는 특징과 직접 라벨이 모두 있는 오프라인 교집합의 비교입니다. 실제 고관절 각도·서비스 자동 구도 판정·독립 최종 시험은 검증하지 않았습니다.</p><pre>{
+  &quot;training_heads&quot;: [
+    {
+      &quot;item&quot;: 0,
+      &quot;policy&quot;: [
+        135,
+        95,
+        150,
+        100
+      ],
+      &quot;records&quot;: 55,
+      &quot;grade_counts&quot;: {
+        &quot;1&quot;: 52,
+        &quot;0&quot;: 1,
+        &quot;2&quot;: 2
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;1&quot;: 43,
+        &quot;0&quot;: 1,
+        &quot;2&quot;: 2
+      },
+      &quot;training_only&quot;: true,
+      &quot;used_default_for_insufficient_grade_groups&quot;: true
+    },
+    {
+      &quot;item&quot;: 1,
+      &quot;policy&quot;: [
+        65,
+        40,
+        160,
+        80
+      ],
+      &quot;records&quot;: 80,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 69,
+        &quot;1&quot;: 11
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 59,
+        &quot;1&quot;: 11
+      },
+      &quot;training_only&quot;: true,
+      &quot;used_default_for_insufficient_grade_groups&quot;: false
+    },
+    {
+      &quot;item&quot;: 2,
+      &quot;policy&quot;: [
+        20.0,
+        8.0,
+        0.025,
+        -0.05,
+        0.25,
+        0.5,
+        35.0,
+        -0.95,
+        -1.0
+      ],
+      &quot;records&quot;: 77,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 26,
+        &quot;1&quot;: 44,
+        &quot;0&quot;: 7
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 25,
+        &quot;1&quot;: 39,
+        &quot;0&quot;: 7
+      },
+      &quot;training_only&quot;: true,
+      &quot;used_default_for_insufficient_grade_groups&quot;: false
+    },
+    {
+      &quot;item&quot;: 3,
+      &quot;policy&quot;: [
+        1.2,
+        0.7,
+        10,
+        15
+      ],
+      &quot;records&quot;: 92,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 44,
+        &quot;1&quot;: 35,
+        &quot;0&quot;: 13
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 39,
+        &quot;1&quot;: 31,
+        &quot;0&quot;: 13
+      },
+      &quot;training_only&quot;: true,
+      &quot;used_default_for_insufficient_grade_groups&quot;: false
+    }
+  ],
+  &quot;connected_group_cv&quot;: {
+    &quot;submitted&quot;: 94,
+    &quot;paired_total_records&quot;: 44,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 9.6637421978377,
+      &quot;rule_score&quot;: 17.84090909090909
+    },
+    &quot;items&quot;: {
+      &quot;y_reach&quot;: {
+        &quot;paired_records&quot;: 55,
+        &quot;ai_MAE_grade_units&quot;: 0.12694445489746142,
+        &quot;rule_MAE_grade_units&quot;: 0.6909090909090909
+      },
+      &quot;t_reach&quot;: {
+        &quot;paired_records&quot;: 80,
+        &quot;ai_MAE_grade_units&quot;: 0.1521523582695951,
+        &quot;rule_MAE_grade_units&quot;: 0.175
+      },
+      &quot;w_shape&quot;: {
+        &quot;paired_records&quot;: 77,
+        &quot;ai_MAE_grade_units&quot;: 0.4710969662893191,
+        &quot;rule_MAE_grade_units&quot;: 0.4155844155844156
+      },
+      &quot;hinge_and_trunk_hold&quot;: {
+        &quot;paired_records&quot;: 92,
+        &quot;ai_MAE_grade_units&quot;: 0.4723596566702755,
+        &quot;rule_MAE_grade_units&quot;: 0.4782608695652174
+      }
+    },
+    &quot;ai_total_available&quot;: 44,
+    &quot;rule_total_available&quot;: 44
+  },
+  &quot;fixed_development&quot;: {
+    &quot;submitted&quot;: 4,
+    &quot;paired_total_records&quot;: 3,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 9.129138304347686,
+      &quot;rule_score&quot;: 27.5
+    },
+    &quot;items&quot;: {
+      &quot;t_reach&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.2120449000452415,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;w_shape&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.6694288405065454,
+        &quot;rule_MAE_grade_units&quot;: 0.25
+      },
+      &quot;hinge_and_trunk_hold&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.6369935508510395,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;y_reach&quot;: {
+        &quot;paired_records&quot;: 3,
+        &quot;ai_MAE_grade_units&quot;: 0.08749496130489794,
+        &quot;rule_MAE_grade_units&quot;: 1.0
+      }
+    },
+    &quot;ai_total_available&quot;: 3,
+    &quot;rule_total_available&quot;: 3
+  },
+  &quot;manual_observability_intersection&quot;: true,
+  &quot;automatic_deployment_view_gate_verified&quot;: false,
+  &quot;anatomical_hinge_angle_measured&quot;: false
+}</pre><p><a href="ytw_projected_rule_trial/comparison.json">전체 실험 JSON</a></p>
+<h2>같은 입력의 계산 시간·일관성</h2><p>CPU 25%·메모리 3GiB 보호 환경의 동일 관측 특징 3회 중앙값 ms입니다. 공통 Heavy·특징 추출·디코딩 비용을 제외하므로 서비스 전체 지연이나 실제 재촬영 일관성은 아닙니다.</p><pre>[
+  {
+    &quot;id&quot;: &quot;qevd_00191345_round1_score&quot;,
+    &quot;common_items&quot;: 1,
+    &quot;ai_median_ms&quot;: 68.46836299882852,
+    &quot;rule_median_ms&quot;: 0.020592997316271067,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00191433_round1_score&quot;,
+    &quot;common_items&quot;: 2,
+    &quot;ai_median_ms&quot;: 120.42047400245792,
+    &quot;rule_median_ms&quot;: 0.01951300146174617,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_019_shoulder_bad_front_round1_late_round1_score&quot;,
+    &quot;common_items&quot;: 3,
+    &quot;ai_median_ms&quot;: 200.28806300251745,
+    &quot;rule_median_ms&quot;: 0.020243998733349144,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;held_navy773312_3100_3200_round1_score&quot;,
+    &quot;common_items&quot;: 4,
+    &quot;ai_median_ms&quot;: 169.75277800156618,
+    &quot;rule_median_ms&quot;: 0.017964997823582962,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00026168_round1_score&quot;,
+    &quot;common_items&quot;: 2,
+    &quot;ai_median_ms&quot;: 148.07489099985105,
+    &quot;rule_median_ms&quot;: 0.23119899924495257,
+    &quot;same_feature_repeats&quot;: 3,
+    &quot;consistent&quot;: true,
+    &quot;Heavy_features_decode_excluded&quot;: true
+  }
+]</pre>
+<p><a href="comparison.json">comparison.json</a></p>
+<p><a href="paired_development_comparison.json">paired_development_comparison.json</a></p>
+<p><a href="score_annotations.json">score_annotations.json</a></p>
+<p><a href="fine_grained_labels.json">fine_grained_labels.json</a></p>
+<p><a href="fine_grained_labels_with_worker_ids.json">fine_grained_labels_with_worker_ids.json</a></p>
+<p><a href="manual_decisions.json">manual_decisions.json</a></p>
+<p><a href="subject_tracking_review.json">subject_tracking_review.json</a></p>
+<p><a href="candidate_input_manifest.json">candidate_input_manifest.json</a></p>
+<p><a href="feature_changes.json">feature_changes.json</a></p>
+<!-- OBSERVED_W_START --><section id="observed-W-return"><h2>W 미수행 관측 후보 — 구간별 제한 검증</h2><p>T 뒤 충분히 관측된 팔 내림과 중간 W 손·굽힘 근거의 부재를 확인하는 별도 후보입니다. 가림이나 단순 인식 실패를 0점으로 바꾸지 않습니다. 새 직접 시점·관절 검토와 일치한 1구간의 기존 W 0등급 라벨에 관측 특징을 연결했습니다. 규칙 결과를 새 라벨로 복사하지 않았습니다.</p><p>자동 진단 11개 중 기존 정상 W 초안과 충돌하는 2개도 발견했습니다. 이 진단들은 이번에 직접 재검토·학습 승인하지 않았고 공통 규칙에 반영하지 않았습니다. 규칙의 전역 적용은 아직 부적절합니다.</p><pre>{
+  &quot;qualification&quot;: {
+    &quot;automatic_candidates&quot;: 11,
+    &quot;new_direct_window_and_tracking_approved_features&quot;: 1,
+    &quot;existing_normal_draft_conflicts&quot;: 2,
+    &quot;existing_conflicts_automatically_adopted&quot;: false,
+    &quot;score_labels_created&quot;: 0,
+    &quot;full_posture_approval&quot;: false,
+    &quot;common_rule_promoted&quot;: false
+  },
+  &quot;fixed_development&quot;: {
+    &quot;submitted&quot;: 4,
+    &quot;paired_total_records&quot;: 3,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 9.175151022526885,
+      &quot;rule_score&quot;: 27.5
+    },
+    &quot;items&quot;: {
+      &quot;t_reach&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.2120449000452415,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;w_shape&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.6424666651039472,
+        &quot;rule_MAE_grade_units&quot;: 0.25
+      },
+      &quot;hinge_and_trunk_hold&quot;: {
+        &quot;paired_records&quot;: 4,
+        &quot;ai_MAE_grade_units&quot;: 0.6369935508510395,
+        &quot;rule_MAE_grade_units&quot;: 0.5
+      },
+      &quot;y_reach&quot;: {
+        &quot;paired_records&quot;: 3,
+        &quot;ai_MAE_grade_units&quot;: 0.08749496130489794,
+        &quot;rule_MAE_grade_units&quot;: 1.0
+      }
+    },
+    &quot;ai_total_available&quot;: 3,
+    &quot;rule_total_available&quot;: 3
+  },
+  &quot;group_cv&quot;: {
+    &quot;submitted&quot;: 94,
+    &quot;paired_total_records&quot;: 44,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 9.755126151537333,
+      &quot;rule_score&quot;: 17.84090909090909
+    },
+    &quot;items&quot;: {
+      &quot;y_reach&quot;: {
+        &quot;paired_records&quot;: 55,
+        &quot;ai_MAE_grade_units&quot;: 0.12694445489746142,
+        &quot;rule_MAE_grade_units&quot;: 0.6909090909090909
+      },
+      &quot;t_reach&quot;: {
+        &quot;paired_records&quot;: 80,
+        &quot;ai_MAE_grade_units&quot;: 0.1521523582695951,
+        &quot;rule_MAE_grade_units&quot;: 0.175
+      },
+      &quot;w_shape&quot;: {
+        &quot;paired_records&quot;: 78,
+        &quot;ai_MAE_grade_units&quot;: 0.466248295653954,
+        &quot;rule_MAE_grade_units&quot;: 0.41025641025641024
+      },
+      &quot;hinge_and_trunk_hold&quot;: {
+        &quot;paired_records&quot;: 92,
+        &quot;ai_MAE_grade_units&quot;: 0.4723596566702755,
+        &quot;rule_MAE_grade_units&quot;: 0.4782608695652174
+      }
+    },
+    &quot;ai_total_available&quot;: 44,
+    &quot;rule_total_available&quot;: 44
+  }
+}</pre><video controls preload="metadata" src="w_observed_absence_trial/previews/qevd_00025409_round1_score/overlay.mp4"></video><p>영상은 해당 연결 그룹을 학습에서 제외한 예측입니다. Y 등 미관측 항목이 남아 총점은 N/A이며, W 표시만 추가 근거로 확인합니다.</p><p><a href="w_observed_absence_trial/comparison.json">W 추가 실험 전체</a> · <a href="failure_analysis.json">5종 실패 분석</a> · <a href="phase_alignment_verification.json">새 YTW 단계·라벨 구간 대조</a></p></section><!-- OBSERVED_W_END -->

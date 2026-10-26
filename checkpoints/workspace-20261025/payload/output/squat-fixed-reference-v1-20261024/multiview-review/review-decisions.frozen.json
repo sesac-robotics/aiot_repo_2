@@ -1,0 +1,73 @@
+{
+  "reviewed": [
+    {
+      "id": "subject_001_squat_bad_side",
+      "person": "shoulder_001",
+      "split": "train",
+      "source_sha256": "68e23ba81449591d793cb71c93bff36083d2c3c552ac984309b8ddb834f12c04",
+      "grade": null,
+      "train_eligible": false,
+      "reason": "starts squatted; later full standing observed; no new failed-return interval established by overview",
+      "evidence": "output/squat-fixed-reference-v1-20261024/multiview-review/S01.jpg",
+      "extra_evidence": null
+    },
+    {
+      "id": "subject_006_squat_bad_side",
+      "person": "shoulder_006",
+      "split": "train",
+      "source_sha256": "7ddfce41ffdd67a7cd4a25fbb8ae62b88ba71bb0b4aaf6953a77c9137fc14648",
+      "grade": null,
+      "train_eligible": false,
+      "reason": "all sampled upper positions flexed but no verified earlier full standing reference; cannot assign relative-height failure",
+      "evidence": "output/squat-fixed-reference-v1-20261024/multiview-review/S02.jpg",
+      "extra_evidence": null
+    },
+    {
+      "id": "subject_010_squat_bad_side",
+      "person": "shoulder_010",
+      "split": "train",
+      "source_sha256": "96553c9dec7359d4c0fef70054e979bb3576e831915a5f8cda0e7ed44758dced",
+      "grade": null,
+      "train_eligible": false,
+      "reason": "sampled returns include standing; no confident new failed return without dense cycle annotation",
+      "evidence": "output/squat-fixed-reference-v1-20261024/multiview-review/S03.jpg",
+      "extra_evidence": null
+    },
+    {
+      "id": "subject_011_squat_bad_side",
+      "person": "shoulder_011",
+      "split": "train",
+      "source_sha256": "73ae982fff369006ae27c4a67fe4c10c09466dbe4fa7e054dc44ab2fdafcebd9",
+      "grade": null,
+      "train_eligible": false,
+      "reason": "upper phases stay bent until final stance; future final standing cannot calibrate earlier attempts",
+      "evidence": "output/squat-fixed-reference-v1-20261024/multiview-review/S04.jpg",
+      "extra_evidence": null
+    },
+    {
+      "id": "subject_013_squat_bad_side",
+      "person": "shoulder_013",
+      "split": "train",
+      "source_sha256": "27cd1d84ad784d38364cc108b6491777a8a378d224b02dda66948b032617de44",
+      "grade": null,
+      "train_eligible": false,
+      "reason": "observed full standing returns; sampled lower poses are not evidence of return failure",
+      "evidence": "output/squat-fixed-reference-v1-20261024/multiview-review/S05.jpg",
+      "extra_evidence": null
+    },
+    {
+      "id": "subject_014_squat_bad_side",
+      "person": "shoulder_014",
+      "split": "train",
+      "source_sha256": "ae1316e5f6c911487f7984d8c4cccc945712e5042c7859145217cf8a303fdf5a",
+      "grade": null,
+      "train_eligible": false,
+      "reason": "dense f300..363 shows full standing at f321..327 and f351..357, before next descents; reject mid-ascent partial-return suspicion",
+      "evidence": "output/squat-fixed-reference-v1-20261024/multiview-review/S06.jpg",
+      "extra_evidence": "output/squat-fixed-reference-v1-20261024/multiview-review/S06-upper-dense.jpg"
+    }
+  ],
+  "confirmed_new_height_failure_labels": 0,
+  "no_Test_or_development_sources_added": true,
+  "expert_verified": false
+}

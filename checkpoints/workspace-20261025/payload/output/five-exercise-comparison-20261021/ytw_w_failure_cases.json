@@ -1,0 +1,230 @@
+{
+  "cases": [
+    {
+      "id": "qevd_00196196",
+      "label_draft_W_grade": 2,
+      "rule_W_grade": 1,
+      "ai_W_grade": 1.61328125,
+      "evidence": {
+        "morphology": {
+          "version": "W-visible-morphology-v2-development",
+          "grade": 1,
+          "policy": {
+            "observed_fraction": 0.8,
+            "minimum_samples": 3,
+            "bend_good_deg": 20.0,
+            "bend_partial_deg": 8.0,
+            "hand_good_torso_ratio": 0.05,
+            "hand_partial_torso_ratio": -0.05,
+            "symmetry_good_deg": 35.0,
+            "elbow_up_good_arm_ratio": 0.25,
+            "elbow_up_partial_arm_ratio": 0.5
+          },
+          "arms": {
+            "left": {
+              "observed_fraction": 1.0,
+              "projected_bend_deg": 26.153439387784942,
+              "hand_above_elbow_torso_ratio": 0.0005812985048218383,
+              "elbow_up_upper_arm_ratio": -0.3298273732336488,
+              "elbow_position_grade": 2,
+              "bend_grade": 2,
+              "hand_grade": 1,
+              "grade": 1
+            },
+            "right": {
+              "observed_fraction": 1.0,
+              "projected_bend_deg": 34.203945586653845,
+              "hand_above_elbow_torso_ratio": 0.0758042082205132,
+              "elbow_up_upper_arm_ratio": -0.24746525391828858,
+              "elbow_position_grade": 2,
+              "bend_grade": 2,
+              "hand_grade": 2,
+              "grade": 2
+            }
+          },
+          "independent_validated": false,
+          "scope": "visible_projected_W_shape_only",
+          "hold_reason": null,
+          "bilateral_bend_difference_deg": 8.050506198868902,
+          "bilateral_shape_grade": 2
+        },
+        "window": {
+          "start_index": 18,
+          "end_index": 22,
+          "anchor_index": 20,
+          "samples": 5,
+          "median_lateral_span": 0.8432850913472402
+        },
+        "retired_90_degree_proxy": {
+          "measured_median_deg": 151.50902272711036,
+          "target_deg": 90,
+          "good_error_deg": 20,
+          "partial_error_deg": 40,
+          "window": {
+            "start_index": 18,
+            "end_index": 22,
+            "anchor_index": 20,
+            "samples": 5,
+            "median_lateral_span": 0.8432850913472402
+          }
+        },
+        "scope_ko": "라벨에 명시한 화면상 양팔 굽힘·손 위쪽 위치·양팔 모양의 개발 규칙. 실제 3D 외회전·견갑 기능을 판정하지 않음."
+      },
+      "phase_detection": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 2,
+            "end_index": 6,
+            "anchor_index": 4,
+            "samples": 5,
+            "median_lateral_span": 0.9641288592796542
+          },
+          "T_attempt": {
+            "start_index": 7,
+            "end_index": 17,
+            "anchor_index": 12,
+            "samples": 11,
+            "median_lateral_span": 1.675661572307047
+          },
+          "W_attempt": {
+            "start_index": 18,
+            "end_index": 22,
+            "anchor_index": 20,
+            "samples": 5,
+            "median_lateral_span": 0.8432850913472402
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.724168589499665,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "expert_validated": false,
+      "label_changed_to_match_rule": false,
+      "next_review_ko": "측면·사선 전완 방향을 확인할 수 있는 영상 보충과 독립 항목 재검토. 노출된 개발 검증 점수에 맞춘 경계 조정은 하지 않음."
+    },
+    {
+      "id": "qevd_00265931",
+      "label_draft_W_grade": 2,
+      "rule_W_grade": 1,
+      "ai_W_grade": 1.25,
+      "evidence": {
+        "morphology": {
+          "version": "W-visible-morphology-v2-development",
+          "grade": 1,
+          "policy": {
+            "observed_fraction": 0.8,
+            "minimum_samples": 3,
+            "bend_good_deg": 20.0,
+            "bend_partial_deg": 8.0,
+            "hand_good_torso_ratio": 0.05,
+            "hand_partial_torso_ratio": -0.05,
+            "symmetry_good_deg": 35.0,
+            "elbow_up_good_arm_ratio": 0.25,
+            "elbow_up_partial_arm_ratio": 0.5
+          },
+          "arms": {
+            "left": {
+              "observed_fraction": 1.0,
+              "projected_bend_deg": 33.06089840797591,
+              "hand_above_elbow_torso_ratio": 0.027042360590423947,
+              "elbow_up_upper_arm_ratio": -0.4832340181036593,
+              "elbow_position_grade": 2,
+              "bend_grade": 2,
+              "hand_grade": 1,
+              "grade": 1
+            },
+            "right": {
+              "observed_fraction": 1.0,
+              "projected_bend_deg": 29.18259931379029,
+              "hand_above_elbow_torso_ratio": 0.11187262919619576,
+              "elbow_up_upper_arm_ratio": -0.1606856775944554,
+              "elbow_position_grade": 2,
+              "bend_grade": 2,
+              "hand_grade": 2,
+              "grade": 2
+            }
+          },
+          "independent_validated": false,
+          "scope": "visible_projected_W_shape_only",
+          "hold_reason": null,
+          "bilateral_bend_difference_deg": 3.8782990941856212,
+          "bilateral_shape_grade": 2
+        },
+        "window": {
+          "start_index": 32,
+          "end_index": 37,
+          "anchor_index": 34,
+          "samples": 6,
+          "median_lateral_span": 1.0440064933494324
+        },
+        "retired_90_degree_proxy": {
+          "measured_median_deg": 147.87322839785995,
+          "target_deg": 90,
+          "good_error_deg": 20,
+          "partial_error_deg": 40,
+          "window": {
+            "start_index": 32,
+            "end_index": 37,
+            "anchor_index": 34,
+            "samples": 6,
+            "median_lateral_span": 1.0440064933494324
+          }
+        },
+        "scope_ko": "라벨에 명시한 화면상 양팔 굽힘·손 위쪽 위치·양팔 모양의 개발 규칙. 실제 3D 외회전·견갑 기능을 판정하지 않음."
+      },
+      "phase_detection": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 10,
+            "end_index": 15,
+            "anchor_index": 12,
+            "samples": 6,
+            "median_lateral_span": 1.1897521474406263
+          },
+          "T_attempt": {
+            "start_index": 16,
+            "end_index": 31,
+            "anchor_index": 23,
+            "samples": 16,
+            "median_lateral_span": 1.7922275542875998
+          },
+          "W_attempt": {
+            "start_index": 32,
+            "end_index": 37,
+            "anchor_index": 34,
+            "samples": 6,
+            "median_lateral_span": 1.0440064933494324
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.9784748852582141,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "expert_validated": false,
+      "label_changed_to_match_rule": false,
+      "next_review_ko": "측면·사선 전완 방향을 확인할 수 있는 영상 보충과 독립 항목 재검토. 노출된 개발 검증 점수에 맞춘 경계 조정은 하지 않음."
+    }
+  ],
+  "historical_cases_path": "snapshots/pre_w_contract_fix/ytw_w_failure_cases.json",
+  "current_rule_version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+  "independent_final_test": false,
+  "score_labels_modified": false
+}

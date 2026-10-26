@@ -1,0 +1,284 @@
+{
+  "status": "실시간 관절 추출 중 · 얼굴 모자이크 적용",
+  "collecting": false,
+  "result": null,
+  "tick": 4989,
+  "visible": 13,
+  "exercise": "shoulder",
+  "view": "front",
+  "live_result": null,
+  "live_error": null,
+  "generation": 0,
+  "started_at": null,
+  "movement": {
+    "detection_version": "front-hysteresis-v3-border-contract",
+    "observation_version": "live-observation-border2-v1",
+    "observation": null,
+    "standing_state_version": "initial-standing-state-v1",
+    "uncertain_attempts": [],
+    "phase": "준비 자세 확인 중",
+    "count": 0,
+    "completion_observation_coverage": null,
+    "angle": null,
+    "hip_drop": null,
+    "active": false,
+    "movement_seconds": 0.0,
+    "hold_seconds": 0.0,
+    "scope": "experimental_2d_motion_boundaries"
+  },
+  "repetitions": [],
+  "last_rep": null,
+  "item_observation_version": "front-item-observation-v1",
+  "standing_state_version": "initial-standing-state-v1",
+  "standing_state_model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+  "source_commit": "55fae6974bee80a71c50c8acbf2ce5fa782c58a6",
+  "source_dirty": true,
+  "loaded_code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "update_available": false,
+  "source_check_error": null,
+  "extraction_delegate": "CPU",
+  "camera_at": 28040.814756269,
+  "sample_cadence": {
+    "actual_hz": 10.0,
+    "observed_slot_fraction": 1.0,
+    "required_hz": 10,
+    "minimum_observed_fraction": 0.8
+  },
+  "width": 640,
+  "height": 480,
+  "front_squat_observation": {
+    "visible": 2,
+    "required": 6,
+    "missing": [
+      "왼쪽 골반",
+      "오른쪽 골반",
+      "왼쪽 무릎",
+      "오른쪽 무릎"
+    ]
+  },
+  "live_observation_version": "live-observation-border2-v1",
+  "observation_options": {
+    "squats": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      }
+    },
+    "shoulder": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      }
+    },
+    "pushups": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      }
+    },
+    "plank": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      }
+    },
+    "ytw": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "YTW 자동 반복 구분은 아직 미지원입니다. 관절 저장과 완료 회차 평가는 다릅니다."
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "YTW 자동 반복 구분은 아직 미지원입니다. 관절 저장과 완료 회차 평가는 다릅니다."
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "YTW 자동 반복 구분은 아직 미지원입니다. 관절 저장과 완료 회차 평가는 다릅니다."
+      }
+    }
+  },
+  "sample_count": 0,
+  "elapsed_seconds": 0
+}

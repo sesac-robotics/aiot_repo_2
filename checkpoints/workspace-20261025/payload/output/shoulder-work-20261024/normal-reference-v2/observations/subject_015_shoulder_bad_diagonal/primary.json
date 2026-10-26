@@ -1,0 +1,32 @@
+{
+  "id": "subject_015_shoulder_bad_diagonal",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "091c84878bddab1a14417a516ef8a11c4d27572ecf55aa43a229092f6e610642",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 63,
+      "fps": 15.0
+    },
+    "required_views": [
+      "diagonal"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "993329d6c117eae2ce8102453ef465ba5dd37070f136fd4f06ac322b3321768a",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/normal-reference-v2/observations/subject_015_shoulder_bad_diagonal/primary.npz",
+  "frames": 43,
+  "observed_joint_fraction": 0.6814658210007047,
+  "extract_seconds": 1.4976640550012235,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

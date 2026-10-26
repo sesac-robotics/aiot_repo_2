@@ -1,0 +1,382 @@
+{
+  "cnn": {
+    "exact_match_accuracy": 0.5666666666666667,
+    "label_accuracy": 0.7583333333333333,
+    "precision_macro": 0.6571428571428571,
+    "recall_macro": 0.8371428571428572,
+    "macro_f1": 0.7263736263736265,
+    "per_error": {
+      "shallow": {
+        "precision": 0.6,
+        "recall": 0.96,
+        "f1-score": 0.7384615384615385,
+        "support": 25.0
+      },
+      "back not straight": {
+        "precision": 0.7142857142857143,
+        "recall": 0.7142857142857143,
+        "f1-score": 0.7142857142857143,
+        "support": 21.0
+      },
+      "micro avg": {
+        "precision": 0.639344262295082,
+        "recall": 0.8478260869565217,
+        "f1-score": 0.7289719626168224,
+        "support": 46.0
+      },
+      "macro avg": {
+        "precision": 0.6571428571428571,
+        "recall": 0.8371428571428572,
+        "f1-score": 0.7263736263736265,
+        "support": 46.0
+      },
+      "weighted avg": {
+        "precision": 0.6521739130434783,
+        "recall": 0.8478260869565217,
+        "f1-score": 0.7274247491638797,
+        "support": 46.0
+      },
+      "samples avg": {
+        "precision": 0.43333333333333335,
+        "recall": 0.5,
+        "f1-score": 0.4444444444444444,
+        "support": 46.0
+      }
+    },
+    "normal_vs_selected_error": {
+      "accuracy": 0.8666666666666667,
+      "precision": 0.8292682926829268,
+      "recall": 0.9714285714285714,
+      "macro_f1": 0.8564593301435407,
+      "confusion_matrix": [
+        [
+          18,
+          7
+        ],
+        [
+          1,
+          34
+        ]
+      ]
+    },
+    "validation_macro_f1": 0.7666666666666666,
+    "best_epoch": 5,
+    "thresholds": [
+      0.25000000000000006,
+      0.5500000000000002
+    ]
+  },
+  "gru": {
+    "exact_match_accuracy": 0.5666666666666667,
+    "label_accuracy": 0.7333333333333333,
+    "precision_macro": 0.6468253968253967,
+    "recall_macro": 0.7895238095238095,
+    "macro_f1": 0.6915422885572139,
+    "per_error": {
+      "shallow": {
+        "precision": 0.5714285714285714,
+        "recall": 0.96,
+        "f1-score": 0.7164179104477612,
+        "support": 25.0
+      },
+      "back not straight": {
+        "precision": 0.7222222222222222,
+        "recall": 0.6190476190476191,
+        "f1-score": 0.6666666666666666,
+        "support": 21.0
+      },
+      "micro avg": {
+        "precision": 0.6166666666666667,
+        "recall": 0.8043478260869565,
+        "f1-score": 0.6981132075471698,
+        "support": 46.0
+      },
+      "macro avg": {
+        "precision": 0.6468253968253967,
+        "recall": 0.7895238095238095,
+        "f1-score": 0.6915422885572139,
+        "support": 46.0
+      },
+      "weighted avg": {
+        "precision": 0.6402691511387163,
+        "recall": 0.8043478260869565,
+        "f1-score": 0.6937053861129137,
+        "support": 46.0
+      },
+      "samples avg": {
+        "precision": 0.4166666666666667,
+        "recall": 0.475,
+        "f1-score": 0.42777777777777776,
+        "support": 46.0
+      }
+    },
+    "normal_vs_selected_error": {
+      "accuracy": 0.85,
+      "precision": 0.8095238095238095,
+      "recall": 0.9714285714285714,
+      "macro_f1": 0.8369072787677438,
+      "confusion_matrix": [
+        [
+          17,
+          8
+        ],
+        [
+          1,
+          34
+        ]
+      ]
+    },
+    "validation_macro_f1": 0.7561693970024399,
+    "best_epoch": 6,
+    "thresholds": [
+      0.30000000000000004,
+      0.6500000000000001
+    ]
+  },
+  "rule_proxy": {
+    "exact_match_accuracy": 0.38333333333333336,
+    "label_accuracy": 0.6333333333333333,
+    "precision_macro": 0.2619047619047619,
+    "recall_macro": 0.44,
+    "macro_f1": 0.3283582089552239,
+    "per_error": {
+      "shallow": {
+        "precision": 0.5238095238095238,
+        "recall": 0.88,
+        "f1-score": 0.6567164179104478,
+        "support": 25.0
+      },
+      "back not straight": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 21.0
+      },
+      "micro avg": {
+        "precision": 0.5238095238095238,
+        "recall": 0.4782608695652174,
+        "f1-score": 0.5,
+        "support": 46.0
+      },
+      "macro avg": {
+        "precision": 0.2619047619047619,
+        "recall": 0.44,
+        "f1-score": 0.3283582089552239,
+        "support": 46.0
+      },
+      "weighted avg": {
+        "precision": 0.28467908902691513,
+        "recall": 0.4782608695652174,
+        "f1-score": 0.3569110966904607,
+        "support": 46.0
+      },
+      "samples avg": {
+        "precision": 0.36666666666666664,
+        "recall": 0.275,
+        "f1-score": 0.3055555555555555,
+        "support": 46.0
+      }
+    },
+    "normal_vs_selected_error": {
+      "accuracy": 0.6833333333333333,
+      "precision": 0.6904761904761905,
+      "recall": 0.8285714285714286,
+      "macro_f1": 0.6556931440652372,
+      "confusion_matrix": [
+        [
+          12,
+          13
+        ],
+        [
+          6,
+          29
+        ]
+      ]
+    },
+    "thresholds": [
+      110.0,
+      15.0
+    ],
+    "limitation": "Knee-depth and torso-lean proxies. Torso lean does not measure spinal curvature and is not equivalent to a validated back-alignment rule."
+  },
+  "majority_train": {
+    "exact_match_accuracy": 0.4166666666666667,
+    "label_accuracy": 0.6166666666666667,
+    "precision_macro": 0.0,
+    "recall_macro": 0.0,
+    "macro_f1": 0.0,
+    "per_error": {
+      "shallow": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 25.0
+      },
+      "back not straight": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 21.0
+      },
+      "micro avg": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "macro avg": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "weighted avg": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "samples avg": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      }
+    },
+    "normal_vs_selected_error": {
+      "accuracy": 0.4166666666666667,
+      "precision": 0.0,
+      "recall": 0.0,
+      "macro_f1": 0.29411764705882354,
+      "confusion_matrix": [
+        [
+          25,
+          0
+        ],
+        [
+          35,
+          0
+        ]
+      ]
+    }
+  },
+  "selected_model": "cnn",
+  "selection_basis": "validation macro F1 only; test is not used for model selection",
+  "elapsed_training_seconds": 6.065870523452759,
+  "environment": {
+    "torch": "2.14.0",
+    "mediapipe": "0.10.21",
+    "numpy": "1.26.4",
+    "opencv-python": "5.0.0.93",
+    "scikit-learn": "1.9.1",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "device": "cpu",
+    "torch_threads": 4
+  },
+  "configuration": {
+    "seed": 42,
+    "max_epochs": 80,
+    "early_stopping_patience": 12,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.001,
+    "batch_size": 48,
+    "loss": "BCEWithLogitsLoss with training pos_weight",
+    "sample_fps": 6,
+    "sequence_length": 32,
+    "features": [
+      "joint_11_x",
+      "joint_11_y",
+      "joint_11_z",
+      "joint_11_visibility",
+      "joint_12_x",
+      "joint_12_y",
+      "joint_12_z",
+      "joint_12_visibility",
+      "joint_13_x",
+      "joint_13_y",
+      "joint_13_z",
+      "joint_13_visibility",
+      "joint_14_x",
+      "joint_14_y",
+      "joint_14_z",
+      "joint_14_visibility",
+      "joint_15_x",
+      "joint_15_y",
+      "joint_15_z",
+      "joint_15_visibility",
+      "joint_16_x",
+      "joint_16_y",
+      "joint_16_z",
+      "joint_16_visibility",
+      "joint_23_x",
+      "joint_23_y",
+      "joint_23_z",
+      "joint_23_visibility",
+      "joint_24_x",
+      "joint_24_y",
+      "joint_24_z",
+      "joint_24_visibility",
+      "joint_25_x",
+      "joint_25_y",
+      "joint_25_z",
+      "joint_25_visibility",
+      "joint_26_x",
+      "joint_26_y",
+      "joint_26_z",
+      "joint_26_visibility",
+      "joint_27_x",
+      "joint_27_y",
+      "joint_27_z",
+      "joint_27_visibility",
+      "joint_28_x",
+      "joint_28_y",
+      "joint_28_z",
+      "joint_28_visibility",
+      "joint_29_x",
+      "joint_29_y",
+      "joint_29_z",
+      "joint_29_visibility",
+      "joint_30_x",
+      "joint_30_y",
+      "joint_30_z",
+      "joint_30_visibility",
+      "joint_31_x",
+      "joint_31_y",
+      "joint_31_z",
+      "joint_31_visibility",
+      "joint_32_x",
+      "joint_32_y",
+      "joint_32_z",
+      "joint_32_visibility",
+      "left_knee_deg",
+      "right_knee_deg",
+      "left_hip_deg",
+      "right_hip_deg",
+      "torso_lean_deg"
+    ]
+  },
+  "code_sha256": {
+    "features.py": "303878673c9dddc21a7d9a646d2e6204c44670a8331f9001c1189f945119372b",
+    "train.py": "5da50b3aa05c5c06782929c4dff13f96310738b8448d1c41cf6004fdb2094f30",
+    "models.py": "a6e5afae15d541e3bf6018e42261b0a8925183a5527e5ff30858b65129328c2b",
+    "inference.py": "b624337b3dfddea523e79af538b8339e68f1a55b3b3971a746cf682e76eb7772",
+    "make_report.py": "8819a20934892233e62b6a1bd9d049f56e1d075c609290e50f12fab1e1b80102",
+    "predict.py": "f6679e0c7986e6bf342657e175169aa3fe427593a60c0e452e3becc99afb5a24",
+    "api_server.py": "a8a7eff3c4d5ab2fc96154e938edcdc4cb0758fa22885b6ebb0a86e499f68f57",
+    "audit_duplicates.py": "230e5ef87d40b9aa6bb4945d201d46a875a7ed90bc421c51d6959c64cebb2460",
+    "prepare.py": "2edb65d36d21f16caf86ea3345db9a6d1a46c02581de3a681d1f5659a9a676fd",
+    "test_pipeline.py": "a34a7a24698e55f34d83a61ac18a9d0280227fab394bf1ddc59277cbf5144034",
+    "run_training.py": "1d9e3eca74d2b486134431269b795296efde3b3b9a4f8ddf9567388e6a856c88",
+    "test_api.py": "0c7f703be7adaa09f2875a200865dd622dae37610a5dc3ee369a4687c4009fee"
+  },
+  "dataset_sha256": "8394d5f44f53afc80d44d35d9dec51386715504562bc24426e6154ce74a5cf08",
+  "limitations": [
+    "Source clip-level labels, not expert reannotation or frame-level truth.",
+    "Unlisted target labels are treated as negative under a closed-world annotation assumption.",
+    "2D image landmarks and monocular z are view-dependent; back curvature is incompletely observed.",
+    "Original source test workers preserved; validation workers held out from source train.",
+    "Each video resampled to 32 steps; live windows may differ from full video duration.",
+    "No accuracy guarantee on ESP32-CAM or on the other four exercises."
+  ]
+}

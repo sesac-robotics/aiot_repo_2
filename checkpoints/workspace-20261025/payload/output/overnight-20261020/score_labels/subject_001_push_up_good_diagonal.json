@@ -1,0 +1,55 @@
+{
+  "assessable": true,
+  "score": 95,
+  "confidence": 0.95,
+  "evidence_en": "The individual maintains a consistent body alignment with the torso in a straight line from head to heels, and the hands are positioned directly under the shoulders throughout the push-up motion.",
+  "observed_errors": [],
+  "limitations_en": "The frames are evenly spaced and capture the full range of motion, but the video resolution and framing do not allow for detailed observation of subtle joint control or muscle engagement.",
+  "quality_version": "20261020-v3-exercise-specific",
+  "label_version": "20261020-v3",
+  "visibility": {
+    "visible": true,
+    "valid_frames": 2,
+    "decoded_frames": 4,
+    "required_body_groups": [
+      [
+        11,
+        12
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        23,
+        24
+      ],
+      [
+        27,
+        28
+      ]
+    ],
+    "group_observed_frames": [
+      4,
+      3,
+      4,
+      2
+    ],
+    "side_view_required": false,
+    "quality_version": "20261020-v3-exercise-specific",
+    "purpose": "visibility_only_not_posture_score",
+    "reason": "관측 가능"
+  },
+  "id": "subject_001_push_up_good_diagonal",
+  "exercise": "pushups",
+  "split": "train",
+  "person": "shoulder_001",
+  "teacher": "qwen3-vl:4b-instruct",
+  "review_status": "unreviewed",
+  "label_source": "local_VLM_visual_draft",
+  "unit": "clip_quality_0_to_100",
+  "montage_sha256": "77e65955b653de3a37a5e5deab28ebdc1908875fb74090a4f1ad7e5e08b15452",
+  "sampled_frames": 6,
+  "model_inference_seconds": 8.49227628,
+  "eligible_for_experimental_training": true
+}

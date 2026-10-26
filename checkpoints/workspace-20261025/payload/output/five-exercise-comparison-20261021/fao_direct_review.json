@@ -1,0 +1,91 @@
+{
+  "schema_version": "qevd-extended-posture-score-v2",
+  "id": "dvids_fao947417_background_5430_5520",
+  "exercise": "plank",
+  "exercise_name_ko": "기본 팔꿈치 플랭크",
+  "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_947417_background_candidate.mkv",
+  "video_sha256": "13628fd8bda020b39fd45f951cb7c52a109745cdd4dd43cb90b765439cfca5cb",
+  "person": "dvids_947417_background_black_beanie",
+  "label_group": "dvids_947417_all_performers_original",
+  "performance_group": "dvids_947417_background_hold_5430_5520",
+  "split": "train",
+  "labels": [],
+  "provider_label_source": "none; instructional_text_not_converted_to_score",
+  "criterion_ids": [
+    "trunk_line",
+    "elbow_sagittal_position",
+    "leg_and_body_support",
+    "support_continuity"
+  ],
+  "criterion_names_ko": [
+    "몸통·골반 정렬",
+    "측면 팔꿈치 전후 위치",
+    "편 다리·몸통 추가 지지 여부",
+    "선택 구간의 지지 지속"
+  ],
+  "criterion_weights": [
+    40,
+    25,
+    20,
+    15
+  ],
+  "criterion_levels": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "rubric_version": "project-plank-side-core-v2",
+  "segment": {
+    "start_frame": 0,
+    "end_frame": 90,
+    "fps": 29.97002997002997
+  },
+  "score": 100.0,
+  "whole_posture_score": null,
+  "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+  "unit": "project_observable_core_0_to_100",
+  "note_ko": "36개 시간순 표본과 원본 크롭 f0를 직접 확인. 전신 측면에서 편 다리·발끝 지지와 팔꿈치 아래 지지를 유지하며 큰 골반 꺾임을 확정하지 못함. 느슨한 옷의 외곽 돌출을 골반 오류로 오인하지 않음. 오류 후보로 선별했으나 직접 검토 후 오류 예시로 추가하지 않음.",
+  "hold_reason": null,
+  "eligible_for_item_training": true,
+  "eligible_for_total_score_training": true,
+  "label_quality_eligible_for_total": true,
+  "fit_split_candidate": true,
+  "source_aware_review": true,
+  "expert_validated": false,
+  "score_is_expert_ground_truth": false,
+  "label_source": "codex_direct_temporal_frame_review",
+  "review_method": "GPU 3Hz 리사이즈 선별판 57장 후 원본 픽셀 무손실 크롭의 36장 시간순 표본 및 f0 원본 크기 직접 검토. 전체 프레임·연속 재생 검토 아님. Heavy·규칙 결과 확인 전 초안 작성.",
+  "review_status": "AI_provisional_experimental",
+  "source_usage_status": "DVIDS_public_domain_identification_and_terms_checked_20261021; noncommercial_local_educational_experiment; no_endorsement",
+  "source_url": "https://www.dvidshub.net/video/947417",
+  "source_terms_url": "https://www.dvidshub.net/about/copyright",
+  "source_notice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+  "evidence_images": [
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_947417_candidate.jpg",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_947417_candidate_raw_f0.png"
+  ],
+  "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json",
+  "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+  "requires_subject_selection": false,
+  "subject_selection": "원본 배경의 검은 모자 수행자 전신만 원본 픽셀로 크롭. 같은 영상의 다른 인물과 동일 source 그룹.",
+  "review_number": 1,
+  "required_input_views": [
+    "side"
+  ],
+  "required_view": "측면 전신",
+  "source_title": "FAO Army Combat Fitness Test B-roll",
+  "independent_final_test": false,
+  "source_original_video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_947417.mp4",
+  "source_original_sha256": "ff6f41a88eabc5264e7dc9719d9a79224e450341b9b9b0b84160758b68b2a782",
+  "spatial_crop_xyxy": [
+    1680,
+    1000,
+    3380,
+    1650
+  ],
+  "lineage_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/fao_candidate_lineage.json",
+  "source_credit": "Sgt. Ashley Fletcher / U.S. Army",
+  "participant_identity_independently_verified": false,
+  "exposure_role": "new_development_train_source_not_independent_final_test"
+}

@@ -1,0 +1,350 @@
+{
+  "results": [
+    {
+      "id": "climber_prospective",
+      "extraction": {
+        "id": "climber_prospective",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "ceab0fdef04e26607c112ab1c5107a785ef065e2cfe64b7e9e3f3ab9ed5f93f1",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 74,
+            "fps": 25.0
+          },
+          "required_views": [
+            "side"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "16333851592b577b8ecbe669d2d3d60f3ae3406f31c76c495924ff21eec78ac8",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/climber_prospective/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 1.0,
+        "extract_seconds": 4.449071556999115,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "common_joint_holds": [],
+      "full_score_approved": true,
+      "view_contract": "side",
+      "direct_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "direct_total": 100,
+      "methods": {
+        "unweighted_leaf2": {
+          "levels": [
+            1.9375,
+            2.0,
+            1.9375,
+            2.0
+          ],
+          "score": 98.125
+        },
+        "balanced_leaf2": {
+          "levels": [
+            1.9375,
+            2.0,
+            1.9375,
+            2.0
+          ],
+          "score": 98.125
+        },
+        "balanced_leaf1": {
+          "levels": [
+            1.9375,
+            2.0,
+            1.9375,
+            2.0
+          ],
+          "score": 98.125
+        },
+        "original_rule": {
+          "levels": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "score": 100.0,
+          "evidence": {
+            "trunk_line": {
+              "channel": "left_line_deg",
+              "percentile": 10,
+              "measured": 176.0786673315193,
+              "good_threshold": 168,
+              "partial_threshold": 155,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "elbow_sagittal_position": {
+              "channel": "left_elbow_offset",
+              "percentile": 90,
+              "measured": 0.049059089869380304,
+              "good_threshold": 0.2,
+              "partial_threshold": 0.4,
+              "higher_is_better": false,
+              "tail_only": false
+            },
+            "leg_and_body_support": {
+              "channel": "left_knee_deg",
+              "percentile": 10,
+              "measured": 176.29500863646277,
+              "good_threshold": 165,
+              "partial_threshold": 145,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "support_continuity": {
+              "knee_angle_spread_deg": 2.693703899143003,
+              "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+            }
+          }
+        },
+        "trial_rule": {
+          "levels": [
+            2,
+            2,
+            1,
+            2
+          ],
+          "score": 90.0,
+          "evidence": {
+            "trunk_line": {
+              "channel": "left_line_deg",
+              "percentile": 10,
+              "measured": 176.0786673315193,
+              "good_threshold": 168,
+              "partial_threshold": 155,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "elbow_sagittal_position": {
+              "channel": "left_elbow_offset",
+              "percentile": 90,
+              "measured": 0.049059089869380304,
+              "good_threshold": 0.2,
+              "partial_threshold": 0.4,
+              "higher_is_better": false,
+              "tail_only": false
+            },
+            "leg_and_body_support": {
+              "channel": "left_knee_deg",
+              "percentile": 10,
+              "measured": 176.29500863646277,
+              "good_threshold": 165,
+              "partial_threshold": 145,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "support_continuity": {
+              "knee_angle_spread_deg": 2.693703899143003,
+              "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+            },
+            "trial": {
+              "selected_side": "left",
+              "trunk_height_p10_p90_body_ratio": [
+                -0.01654319484034506,
+                -0.0007856375907611484
+              ],
+              "hip_floor_clearance_p10_torso_ratio": 0.3577288090032348,
+              "clearance_grade": 1,
+              "note_ko": "팔꿈치–발끝 관절선은 바닥·실제 접촉의 대리값이다. 투영·체형·관절 중심 편향을 포함한다."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gotti_prospective",
+      "extraction": {
+        "id": "gotti_prospective",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "ef477c3d09b3c5fc8704b0d56cd220028fb57fbfea2729b1a788603074db50eb",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 75,
+            "fps": 25.0
+          },
+          "required_views": [
+            "oblique_item_only"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "6da8e7fa1fa28c623d61c6233efe94faa53e2a6b16a2f162d9911eb50c9c1b26",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/gotti_prospective/side.npz",
+        "frames": 31,
+        "observed_joint_fraction": 0.9032258064516129,
+        "extract_seconds": 4.048848476000785,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "common_joint_holds": [],
+      "full_score_approved": false,
+      "view_contract": "oblique_item_only",
+      "direct_levels": [
+        1,
+        null,
+        2,
+        2
+      ],
+      "direct_total": null,
+      "methods": {
+        "unweighted_leaf2": {
+          "levels": [
+            2.0,
+            null,
+            2.0,
+            2.0
+          ],
+          "score": null
+        },
+        "balanced_leaf2": {
+          "levels": [
+            2.0,
+            null,
+            2.0,
+            2.0
+          ],
+          "score": null
+        },
+        "balanced_leaf1": {
+          "levels": [
+            2.0,
+            null,
+            2.0,
+            2.0
+          ],
+          "score": null
+        },
+        "original_rule": {
+          "levels": [
+            0,
+            null,
+            1,
+            1
+          ],
+          "score": null,
+          "evidence": {
+            "trunk_line": {
+              "channel": "right_line_deg",
+              "percentile": 10,
+              "measured": 144.06190703079744,
+              "good_threshold": 168,
+              "partial_threshold": 155,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "elbow_sagittal_position": {
+              "channel": "right_elbow_offset",
+              "percentile": 90,
+              "measured": 0.10350967120685567,
+              "good_threshold": 0.2,
+              "partial_threshold": 0.4,
+              "higher_is_better": false,
+              "tail_only": false
+            },
+            "leg_and_body_support": {
+              "channel": "right_knee_deg",
+              "percentile": 10,
+              "measured": 156.85659563746196,
+              "good_threshold": 165,
+              "partial_threshold": 145,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "support_continuity": {
+              "knee_angle_spread_deg": 18.737636878272212,
+              "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+            }
+          }
+        },
+        "trial_rule": {
+          "levels": [
+            1,
+            null,
+            1,
+            1
+          ],
+          "score": null,
+          "evidence": {
+            "trunk_line": {
+              "channel": "right_line_deg",
+              "percentile": 10,
+              "measured": 144.06190703079744,
+              "good_threshold": 168,
+              "partial_threshold": 155,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "elbow_sagittal_position": {
+              "channel": "right_elbow_offset",
+              "percentile": 90,
+              "measured": 0.10350967120685567,
+              "good_threshold": 0.2,
+              "partial_threshold": 0.4,
+              "higher_is_better": false,
+              "tail_only": false
+            },
+            "leg_and_body_support": {
+              "channel": "right_knee_deg",
+              "percentile": 10,
+              "measured": 156.85659563746196,
+              "good_threshold": 165,
+              "partial_threshold": 145,
+              "higher_is_better": true,
+              "tail_only": false
+            },
+            "support_continuity": {
+              "knee_angle_spread_deg": 18.737636878272212,
+              "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+            },
+            "trial": {
+              "selected_side": "right",
+              "trunk_height_p10_p90_body_ratio": [
+                0.09060008551480188,
+                0.15657226304021846
+              ],
+              "hip_floor_clearance_p10_torso_ratio": 0.7553391911128189,
+              "clearance_grade": 2,
+              "note_ko": "팔꿈치–발끝 관절선은 바닥·실제 접촉의 대리값이다. 투영·체형·관절 중심 편향을 포함한다."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "direct_labels_sha256": "6b1793aba630ded7703001abe702686673a35d9484f5491def945d1c9d8de386",
+  "train_source_overlap": false,
+  "independent_final_test": false,
+  "expert_validated": false,
+  "adopted": false,
+  "new_sources_used_for_fitting": false,
+  "common_rule_modified": false,
+  "rule_trial_sha256": "bb4f04790b9b358f04ae4539231bea9542610265c63edda23bcf40989f8525a6",
+  "input_adjustment": null,
+  "policy_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_prospective_frozen_policy.json"
+}

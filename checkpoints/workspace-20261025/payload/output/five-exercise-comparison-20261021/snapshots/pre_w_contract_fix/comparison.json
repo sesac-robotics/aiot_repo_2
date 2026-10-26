@@ -1,0 +1,3212 @@
+{
+  "schema": "five-exercise-development-comparison-v2",
+  "cache_schema": "heavy-observed-sequence-v2-sequential",
+  "heavy_model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+  "benchmark_code_sha256": "1bb7c56adafae2933df49b15e6755f4c37c2677b5f074aca26cc38821680d6b6",
+  "label_snapshot_sha256": "55f2f83f534414004fabcc6d0c28b2b187f369bc0bee4f1a33ce681cb809ae3c",
+  "geometry_code_sha256": "58c7a6279432d5f0a5777d66eb0353690158df128f12c74e8f51c0c6232c39a6",
+  "rule_code_sha256": "d40fe45b01a0509d4b98003a549f32f8194aa9ed680b01d28e0f2d0cecf96e32",
+  "independent_final_test": false,
+  "test_records_used_for_fitting_or_evaluation": false,
+  "expert_validated": false,
+  "production_ready": false,
+  "rule_version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+  "policy": {
+    "min_train_records": 8,
+    "min_train_people": 3,
+    "required_joint_observation": 0.8,
+    "trees": 128,
+    "leaf_samples": 2,
+    "random_state": 21021
+  },
+  "results": {
+    "pushups": {
+      "train_records": 14,
+      "train_people": 10,
+      "validation_records": 4,
+      "unavailable": [
+        {
+          "id": "subject_001_push_up_good_side",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "subject_002_push_up_bad_side",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "validation"
+        },
+        {
+          "id": "subject_004_push_up_good_side",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "validation"
+        },
+        {
+          "id": "subject_006_push_up_bad_side",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "subject_008_push_up_good_side",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        }
+      ],
+      "comparisons": [
+        {
+          "shared_recorded_extraction_seconds": 1.0488032609991933,
+          "recorded_ai_pipeline_seconds": 1.06159832099911,
+          "recorded_rule_pipeline_seconds": 1.0493186619987682,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_002_push_up_good_side",
+          "label_score": 100.0,
+          "ai_score": 97.1875,
+          "ai_levels": [
+            1.9296875,
+            1.9296875,
+            1.96484375,
+            2.0
+          ],
+          "rule_score": 70.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "trunk_line",
+              "descent_range",
+              "return_extension",
+              "support"
+            ],
+            "levels": [
+              2,
+              0,
+              2,
+              2
+            ],
+            "score": 70.0,
+            "evidence": {
+              "trunk_line": {
+                "channel": "left_line_deg",
+                "percentile": 10,
+                "measured": 171.62711230965243,
+                "good_threshold": 168,
+                "partial_threshold": 155,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "descent_range": {
+                "channel": "left_elbow_deg",
+                "percentile": 10,
+                "measured": 156.4208420602397,
+                "good_threshold": 95,
+                "partial_threshold": 125,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "left_elbow_deg",
+                "percentile": 90,
+                "measured": 161.02346157752118,
+                "good_threshold": 160,
+                "partial_threshold": 140,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "support": {
+                "channel": "left_knee_floor_gap",
+                "percentile": 10,
+                "measured": 0.43246108365230407,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.05,
+                "higher_is_better": true,
+                "tail_only": false
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 27.1875,
+          "ai_ms": 12.795059999916703,
+          "rule_ms": 0.515400999574922,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 17.18242500010092,
+            "rule_p95_ms": 0.548384499779786
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.4722745280499824,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_002_push_up_good_side",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 1.2625028799993743,
+          "recorded_ai_pipeline_seconds": 1.2741378889986663,
+          "recorded_rule_pipeline_seconds": 1.2630640199986374,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_004_push_up_bad_side",
+          "label_score": 80.0,
+          "ai_score": 81.76432291666666,
+          "ai_levels": [
+            1.1458333333333333,
+            1.9466145833333333,
+            1.96484375,
+            2.0
+          ],
+          "rule_score": 55.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "trunk_line",
+              "descent_range",
+              "return_extension",
+              "support"
+            ],
+            "levels": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "score": 55.0,
+            "evidence": {
+              "trunk_line": {
+                "channel": "left_line_deg",
+                "percentile": 10,
+                "measured": 163.69493586545386,
+                "good_threshold": 168,
+                "partial_threshold": 155,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "descent_range": {
+                "channel": "left_elbow_deg",
+                "percentile": 10,
+                "measured": 116.0204844748454,
+                "good_threshold": 95,
+                "partial_threshold": 125,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "left_elbow_deg",
+                "percentile": 90,
+                "measured": 155.54284614334668,
+                "good_threshold": 160,
+                "partial_threshold": 140,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "support": {
+                "channel": "left_knee_floor_gap",
+                "percentile": 10,
+                "measured": 0.2812192623937245,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.05,
+                "higher_is_better": true,
+                "tail_only": false
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 26.764322916666657,
+          "ai_ms": 11.63500899929204,
+          "rule_ms": 0.561139999263105,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 20.299649499975203,
+            "rule_p95_ms": 6.187706499986234
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.3887206387241264,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_004_push_up_bad_side",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 1.3803436110010807,
+          "recorded_ai_pipeline_seconds": 1.3927102200013906,
+          "recorded_rule_pipeline_seconds": 1.3808822950013564,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_012_push_up_good_side",
+          "label_score": 100.0,
+          "ai_score": 96.19791666666667,
+          "ai_levels": [
+            1.8515625,
+            1.9791666666666667,
+            1.9479166666666667,
+            2.0
+          ],
+          "rule_score": 100.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "trunk_line",
+              "descent_range",
+              "return_extension",
+              "support"
+            ],
+            "levels": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "score": 100.0,
+            "evidence": {
+              "trunk_line": {
+                "channel": "left_line_deg",
+                "percentile": 10,
+                "measured": 173.69694514467926,
+                "good_threshold": 168,
+                "partial_threshold": 155,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "descent_range": {
+                "channel": "left_elbow_deg",
+                "percentile": 10,
+                "measured": 55.35398091984775,
+                "good_threshold": 95,
+                "partial_threshold": 125,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "left_elbow_deg",
+                "percentile": 90,
+                "measured": 168.07414235156028,
+                "good_threshold": 160,
+                "partial_threshold": 140,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "support": {
+                "channel": "left_knee_floor_gap",
+                "percentile": 10,
+                "measured": 0.25376764669812946,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.05,
+                "higher_is_better": true,
+                "tail_only": false
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": -3.8020833333333286,
+          "ai_ms": 12.366609000309836,
+          "rule_ms": 0.5386840002756799,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 20.47049600059836,
+            "rule_p95_ms": 6.078131000322173
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 1.1712008762541344,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_012_push_up_good_side",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 1.1882814719992894,
+          "recorded_ai_pipeline_seconds": 1.2001412940007867,
+          "recorded_rule_pipeline_seconds": 1.1888460499994835,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_015_push_up_good_side",
+          "label_score": 100.0,
+          "ai_score": 82.29166666666669,
+          "ai_levels": [
+            1.3177083333333335,
+            1.7708333333333341,
+            1.9375,
+            2.0
+          ],
+          "rule_score": 80.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "trunk_line",
+              "descent_range",
+              "return_extension",
+              "support"
+            ],
+            "levels": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "score": 80.0,
+            "evidence": {
+              "trunk_line": {
+                "channel": "left_line_deg",
+                "percentile": 10,
+                "measured": 167.85513924596862,
+                "good_threshold": 168,
+                "partial_threshold": 155,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "descent_range": {
+                "channel": "left_elbow_deg",
+                "percentile": 10,
+                "measured": 62.44727696270894,
+                "good_threshold": 95,
+                "partial_threshold": 125,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "left_elbow_deg",
+                "percentile": 90,
+                "measured": 165.65457492799428,
+                "good_threshold": 160,
+                "partial_threshold": 140,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "support": {
+                "channel": "left_knee_floor_gap",
+                "percentile": 10,
+                "measured": 0.19723865280255087,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.05,
+                "higher_is_better": true,
+                "tail_only": false
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 2.2916666666666856,
+          "ai_ms": 11.859822001497378,
+          "rule_ms": 0.5645780001941603,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 18.742527000540576,
+            "rule_p95_ms": 6.123815499449847
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.7171877592996365,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_015_push_up_good_side",
+          "expert_validated": false
+        }
+      ],
+      "train_score_distribution": {
+        "60.0": 4,
+        "100.0": 7,
+        "85.0": 1,
+        "30.0": 1,
+        "90.0": 1
+      },
+      "validation_score_distribution": {
+        "100.0": 3,
+        "80.0": 1
+      },
+      "model_status": "unvalidated_development_model",
+      "training_participant_diagnostic": {
+        "method": "leave_one_training_participant_out",
+        "folds": [
+          {
+            "held_person": "shoulder_001",
+            "fit_records": 13,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_001_push_up_bad_side",
+                "target_score": 60.0,
+                "predicted_score": 71.69270833333333,
+                "absolute_error": 11.692708333333329,
+                "training_mean_score": 83.46153846153847,
+                "baseline_absolute_error": 23.461538461538467
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_005",
+            "fit_records": 12,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_005_push_up_good_side",
+                "target_score": 100.0,
+                "predicted_score": 64.07552083333334,
+                "absolute_error": 35.92447916666666,
+                "training_mean_score": 80.0,
+                "baseline_absolute_error": 20.0
+              },
+              {
+                "id": "subject_005_push_up_bad_side",
+                "target_score": 85.0,
+                "predicted_score": 64.66145833333334,
+                "absolute_error": 20.338541666666657,
+                "training_mean_score": 80.0,
+                "baseline_absolute_error": 5.0
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_006",
+            "fit_records": 13,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_006_push_up_good_side",
+                "target_score": 100.0,
+                "predicted_score": 93.15755208333334,
+                "absolute_error": 6.842447916666657,
+                "training_mean_score": 80.38461538461539,
+                "baseline_absolute_error": 19.615384615384613
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_007",
+            "fit_records": 13,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_007_push_up_bad_side",
+                "target_score": 60.0,
+                "predicted_score": 64.97395833333333,
+                "absolute_error": 4.973958333333329,
+                "training_mean_score": 83.46153846153847,
+                "baseline_absolute_error": 23.461538461538467
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_009",
+            "fit_records": 12,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_009_push_up_good_side",
+                "target_score": 100.0,
+                "predicted_score": 95.01953125,
+                "absolute_error": 4.98046875,
+                "training_mean_score": 84.58333333333333,
+                "baseline_absolute_error": 15.416666666666671
+              },
+              {
+                "id": "subject_009_push_up_bad_side",
+                "target_score": 30.0,
+                "predicted_score": 89.47265625,
+                "absolute_error": 59.47265625,
+                "training_mean_score": 84.58333333333333,
+                "baseline_absolute_error": 54.58333333333333
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_010",
+            "fit_records": 12,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_010_push_up_good_side",
+                "target_score": 100.0,
+                "predicted_score": 96.8359375,
+                "absolute_error": 3.1640625,
+                "training_mean_score": 82.08333333333333,
+                "baseline_absolute_error": 17.91666666666667
+              },
+              {
+                "id": "subject_010_push_up_bad_side",
+                "target_score": 60.0,
+                "predicted_score": 92.34375,
+                "absolute_error": 32.34375,
+                "training_mean_score": 82.08333333333333,
+                "baseline_absolute_error": 22.08333333333333
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_011",
+            "fit_records": 12,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_011_push_up_good_side",
+                "target_score": 100.0,
+                "predicted_score": 86.26953125,
+                "absolute_error": 13.73046875,
+                "training_mean_score": 82.08333333333333,
+                "baseline_absolute_error": 17.91666666666667
+              },
+              {
+                "id": "subject_011_push_up_bad_side",
+                "target_score": 60.0,
+                "predicted_score": 93.984375,
+                "absolute_error": 33.984375,
+                "training_mean_score": 82.08333333333333,
+                "baseline_absolute_error": 22.08333333333333
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_014",
+            "fit_records": 13,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_014_push_up_bad_side",
+                "target_score": 90.0,
+                "predicted_score": 73.41796875,
+                "absolute_error": 16.58203125,
+                "training_mean_score": 81.15384615384616,
+                "baseline_absolute_error": 8.84615384615384
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_016",
+            "fit_records": 13,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_016_push_up_good_side",
+                "target_score": 100.0,
+                "predicted_score": 84.57682291666667,
+                "absolute_error": 15.423177083333329,
+                "training_mean_score": 80.38461538461539,
+                "baseline_absolute_error": 19.615384615384613
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_023",
+            "fit_records": 13,
+            "fit_people": 9,
+            "predictions": [
+              {
+                "id": "subject_023_push_up_good_side",
+                "target_score": 100.0,
+                "predicted_score": 72.83203125,
+                "absolute_error": 27.16796875,
+                "training_mean_score": 80.38461538461539,
+                "baseline_absolute_error": 19.615384615384613
+              }
+            ]
+          }
+        ],
+        "independent_final_test": false,
+        "hyperparameters_tuned": false,
+        "samples": 14,
+        "people": 10,
+        "ai_MAE_points": 20.47293526785714,
+        "baseline_MAE_points": 20.68681318681319,
+        "person_macro_MAE_points": 18.465169270833332
+      },
+      "fit_seconds": 0.10988971799997671,
+      "model_sha256": "07528ba59733153431323a432f88fa67111b6a294cca2d3f478baa03e8d8d378",
+      "criterion_grade_counts": [
+        {
+          "0": 5,
+          "2": 9
+        },
+        {
+          "2": 12,
+          "1": 1,
+          "0": 1
+        },
+        {
+          "2": 13,
+          "1": 1
+        },
+        {
+          "2": 14
+        }
+      ],
+      "item_metrics": [
+        {
+          "criterion_id": "trunk_line",
+          "weight": 40,
+          "paired_samples": 4,
+          "ai_MAE_grade": 0.26171874999999994,
+          "rule_MAE_grade": 0.25,
+          "ai_MAE_weighted_points": 5.234374999999999,
+          "rule_MAE_weighted_points": 5.0,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "descent_range",
+          "weight": 30,
+          "paired_samples": 4,
+          "ai_MAE_grade": 0.09342447916666646,
+          "rule_MAE_grade": 0.75,
+          "ai_MAE_weighted_points": 1.401367187499997,
+          "rule_MAE_weighted_points": 11.25,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "return_extension",
+          "weight": 20,
+          "paired_samples": 4,
+          "ai_MAE_grade": 0.046223958333333315,
+          "rule_MAE_grade": 0.25,
+          "ai_MAE_weighted_points": 0.46223958333333315,
+          "rule_MAE_weighted_points": 2.5,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "support",
+          "weight": 10,
+          "paired_samples": 4,
+          "ai_MAE_grade": 0.0,
+          "rule_MAE_grade": 0.0,
+          "ai_MAE_weighted_points": 0.0,
+          "rule_MAE_weighted_points": 0.0,
+          "scope": "observable criterion only; not a renormalized total"
+        }
+      ],
+      "metrics": {
+        "paired_samples": 4,
+        "ai_MAE_points": 6.521809895833325,
+        "rule_MAE_points": 18.75,
+        "train_mean_baseline_MAE_points": 14.107142857142854,
+        "ai_median_ms": 12.113215500903607,
+        "rule_median_ms": 0.5499119997693924,
+        "ai_assessed": 4,
+        "rule_assessed": 4,
+        "eligible_validation_labels": 6
+      },
+      "failure_examples": [
+        {
+          "id": "subject_015_push_up_good_side",
+          "ai_absolute_error": 17.708333333333314,
+          "rule_absolute_error": 20.0
+        },
+        {
+          "id": "subject_012_push_up_good_side",
+          "ai_absolute_error": 3.8020833333333286,
+          "rule_absolute_error": 0.0
+        },
+        {
+          "id": "subject_002_push_up_good_side",
+          "ai_absolute_error": 2.8125,
+          "rule_absolute_error": 30.0
+        }
+      ]
+    },
+    "squats": {
+      "train_records": 12,
+      "train_people": 3,
+      "validation_records": 6,
+      "unavailable": [
+        {
+          "id": "rehab_Vasil_7597_7642",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "rehab_Petra_11563_11654",
+          "reasons": [
+            "front_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "rehab_Terka_10012_10059",
+          "reasons": [
+            "front_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "rehab_Petra_5481_5569",
+          "reasons": [
+            "front_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "rehab_Petra_15050_15148",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "rehab_Mima_5584_5655",
+          "reasons": [
+            "front_required_joint_observation_below_80_percent"
+          ],
+          "split": "validation"
+        }
+      ],
+      "comparisons": [
+        {
+          "shared_recorded_extraction_seconds": 17.238001762998465,
+          "recorded_ai_pipeline_seconds": 17.255503696998858,
+          "recorded_rule_pipeline_seconds": 17.238796483999977,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "rehab_Mima_2010_2078",
+          "label_score": 85.0,
+          "ai_score": 73.37239583333334,
+          "ai_levels": [
+            0.47916666666666663,
+            2.0,
+            1.8046875,
+            1.9114583333333337
+          ],
+          "rule_score": 55.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "descent_range",
+              "return_extension",
+              "knee_foot",
+              "trunk_balance"
+            ],
+            "levels": [
+              1,
+              1,
+              2,
+              0
+            ],
+            "score": 55.0,
+            "evidence": {
+              "descent_range": {
+                "channel": "right_hip_above_knee",
+                "percentile": 10,
+                "measured": 0.43193662705482144,
+                "good_threshold": 0.1,
+                "partial_threshold": 0.5,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "right_knee_deg",
+                "percentile": 90,
+                "measured": 162.82717898748405,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "knee_foot": {
+                "knee_ankle_offsets": [
+                  0.1754349091766563,
+                  0.08561171817246523
+                ],
+                "heel_lift_ratio": 0.09904352024912046,
+                "warning_ko": "투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증."
+              },
+              "trunk_balance": {
+                "tilt_deg": 16.184407349621186,
+                "thresholds_deg": [
+                  8,
+                  15
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 18.372395833333343,
+          "ai_ms": 17.501934000392794,
+          "rule_ms": 0.7947210015117889,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 18.674402999749873,
+            "rule_p95_ms": 2.947411500827002
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.2332874071245968,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/rehab_Mima_2010_2078",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 16.809617975999572,
+          "recorded_ai_pipeline_seconds": 16.827572445999976,
+          "recorded_rule_pipeline_seconds": 16.810427178999817,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "rehab_Mima_5503_5564",
+          "label_score": 85.0,
+          "ai_score": 74.77864583333334,
+          "ai_levels": [
+            0.3776041666666667,
+            2.0,
+            1.953125,
+            1.9817708333333335
+          ],
+          "rule_score": 70.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "descent_range",
+              "return_extension",
+              "knee_foot",
+              "trunk_balance"
+            ],
+            "levels": [
+              0,
+              2,
+              2,
+              2
+            ],
+            "score": 70.0,
+            "evidence": {
+              "descent_range": {
+                "channel": "left_hip_above_knee",
+                "percentile": 10,
+                "measured": 0.5523725995975434,
+                "good_threshold": 0.1,
+                "partial_threshold": 0.5,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "left_knee_deg",
+                "percentile": 90,
+                "measured": 173.12058291254687,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "knee_foot": {
+                "knee_ankle_offsets": [
+                  0.08664667004310483,
+                  0.10142819458565233
+                ],
+                "heel_lift_ratio": 0.12810533807385693,
+                "warning_ko": "투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증."
+              },
+              "trunk_balance": {
+                "tilt_deg": 2.111457503692052,
+                "thresholds_deg": [
+                  8,
+                  15
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 4.778645833333343,
+          "ai_ms": 17.9544700004044,
+          "rule_ms": 0.8092030002444517,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 18.919454500064603,
+            "rule_p95_ms": 5.606323999018059
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.35824673219775655,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/rehab_Mima_5503_5564",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 17.717614990000584,
+          "recorded_ai_pipeline_seconds": 17.736243986000773,
+          "recorded_rule_pipeline_seconds": 17.718409294000594,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "rehab_Mima_265_337",
+          "label_score": 85.0,
+          "ai_score": 75.1171875,
+          "ai_levels": [
+            0.6093750000000001,
+            2.0,
+            1.8359375,
+            1.8437500000000002
+          ],
+          "rule_score": 85.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "descent_range",
+              "return_extension",
+              "knee_foot",
+              "trunk_balance"
+            ],
+            "levels": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "score": 85.0,
+            "evidence": {
+              "descent_range": {
+                "channel": "right_hip_above_knee",
+                "percentile": 10,
+                "measured": 0.2857147590711359,
+                "good_threshold": 0.1,
+                "partial_threshold": 0.5,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "right_knee_deg",
+                "percentile": 90,
+                "measured": 173.93314699660257,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "knee_foot": {
+                "knee_ankle_offsets": [
+                  0.06785358687053746,
+                  0.11727383225534294
+                ],
+                "heel_lift_ratio": 0.03395170615966555,
+                "warning_ko": "투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증."
+              },
+              "trunk_balance": {
+                "tilt_deg": 3.5731600736585287,
+                "thresholds_deg": [
+                  8,
+                  15
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": -9.8828125,
+          "ai_ms": 18.628996000188636,
+          "rule_ms": 0.7943040000100154,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 18.855321000046388,
+            "rule_p95_ms": 0.9337934989162022
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.3694195374878486,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/rehab_Mima_265_337",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 17.33662729400021,
+          "recorded_ai_pipeline_seconds": 17.35492121000061,
+          "recorded_rule_pipeline_seconds": 17.33742092400098,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "rehab_Mima_6174_6241",
+          "label_score": 85.0,
+          "ai_score": 75.65104166666667,
+          "ai_levels": [
+            0.4661458333333333,
+            2.0,
+            1.9296875,
+            1.971354166666667
+          ],
+          "rule_score": 70.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "descent_range",
+              "return_extension",
+              "knee_foot",
+              "trunk_balance"
+            ],
+            "levels": [
+              0,
+              2,
+              2,
+              2
+            ],
+            "score": 70.0,
+            "evidence": {
+              "descent_range": {
+                "channel": "left_hip_above_knee",
+                "percentile": 10,
+                "measured": 0.6025338081335762,
+                "good_threshold": 0.1,
+                "partial_threshold": 0.5,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "left_knee_deg",
+                "percentile": 90,
+                "measured": 174.1622257853994,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "knee_foot": {
+                "knee_ankle_offsets": [
+                  0.17315773325280723,
+                  0.12497746068963327
+                ],
+                "heel_lift_ratio": 0.12187496409928422,
+                "warning_ko": "투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증."
+              },
+              "trunk_balance": {
+                "tilt_deg": 3.1890747402509185,
+                "thresholds_deg": [
+                  8,
+                  15
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 5.651041666666671,
+          "ai_ms": 18.293916000402533,
+          "rule_ms": 0.7936300007713726,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 19.14710050004942,
+            "rule_p95_ms": 3.468435500508349
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.4367775174057151,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/rehab_Mima_6174_6241",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 60.85044655100137,
+          "recorded_ai_pipeline_seconds": 60.86906986100075,
+          "recorded_rule_pipeline_seconds": 60.85123633100193,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "rehab_Mima_3648_3718",
+          "label_score": 55.0,
+          "ai_score": 71.7578125,
+          "ai_levels": [
+            0.7578125000000001,
+            2.0,
+            1.453125,
+            1.8593750000000002
+          ],
+          "rule_score": 85.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "descent_range",
+              "return_extension",
+              "knee_foot",
+              "trunk_balance"
+            ],
+            "levels": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "score": 85.0,
+            "evidence": {
+              "descent_range": {
+                "channel": "right_hip_above_knee",
+                "percentile": 10,
+                "measured": 0.49173107712211817,
+                "good_threshold": 0.1,
+                "partial_threshold": 0.5,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "right_knee_deg",
+                "percentile": 90,
+                "measured": 176.051696120315,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "knee_foot": {
+                "knee_ankle_offsets": [
+                  0.0685967462931774,
+                  0.24901326360486864
+                ],
+                "heel_lift_ratio": 0.11779357439777259,
+                "warning_ko": "투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증."
+              },
+              "trunk_balance": {
+                "tilt_deg": 6.62512695434457,
+                "thresholds_deg": [
+                  8,
+                  15
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": -13.2421875,
+          "ai_ms": 18.62330999938422,
+          "rule_ms": 0.7897800005594036,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 19.15676299995539,
+            "rule_p95_ms": 3.4937854998133844
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.3243468413302361,
+            "rule_std_points": 8.992184106211349,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/rehab_Mima_3648_3718",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 49.802131038999505,
+          "recorded_ai_pipeline_seconds": 49.820783430999654,
+          "recorded_rule_pipeline_seconds": 49.80296356399958,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "rehab_Mima_14792_14851",
+          "label_score": 70.0,
+          "ai_score": 72.60416666666667,
+          "ai_levels": [
+            0.28645833333333337,
+            2.0,
+            1.890625,
+            1.9947916666666667
+          ],
+          "rule_score": 70.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "descent_range",
+              "return_extension",
+              "knee_foot",
+              "trunk_balance"
+            ],
+            "levels": [
+              0,
+              2,
+              2,
+              2
+            ],
+            "score": 70.0,
+            "evidence": {
+              "descent_range": {
+                "channel": "left_hip_above_knee",
+                "percentile": 10,
+                "measured": 0.5474595881925913,
+                "good_threshold": 0.1,
+                "partial_threshold": 0.5,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "return_extension": {
+                "channel": "left_knee_deg",
+                "percentile": 90,
+                "measured": 178.4269170357501,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": true
+              },
+              "knee_foot": {
+                "knee_ankle_offsets": [
+                  0.13628153917588062,
+                  0.10797050523624893
+                ],
+                "heel_lift_ratio": 0.05119289476661987,
+                "warning_ko": "투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증."
+              },
+              "trunk_balance": {
+                "tilt_deg": 2.087008785156718,
+                "thresholds_deg": [
+                  8,
+                  15
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 2.6041666666666714,
+          "ai_ms": 18.65239200014912,
+          "rule_ms": 0.8325250000780215,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 19.363420499757922,
+            "rule_p95_ms": 0.90002849992743
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.18326996372773105,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/rehab_Mima_14792_14851",
+          "expert_validated": false
+        }
+      ],
+      "train_score_distribution": {
+        "85.0": 4,
+        "100.0": 2,
+        "55.0": 3,
+        "70.0": 2,
+        "65.0": 1
+      },
+      "validation_score_distribution": {
+        "85.0": 4,
+        "55.0": 1,
+        "70.0": 1
+      },
+      "model_status": "unvalidated_development_model",
+      "training_participant_diagnostic": {
+        "method": "leave_one_training_participant_out",
+        "folds": [
+          {
+            "held_person": "rehab_Petra",
+            "fit_records": 7,
+            "fit_people": 2,
+            "predictions": [
+              {
+                "id": "rehab_Petra_5596_5685",
+                "target_score": 85.0,
+                "predicted_score": 73.26171875000001,
+                "absolute_error": 11.738281249999986,
+                "training_mean_score": 78.57142857142857,
+                "baseline_absolute_error": 6.428571428571431
+              },
+              {
+                "id": "rehab_Petra_220_303",
+                "target_score": 85.0,
+                "predicted_score": 75.95703125000001,
+                "absolute_error": 9.042968749999986,
+                "training_mean_score": 78.57142857142857,
+                "baseline_absolute_error": 6.428571428571431
+              },
+              {
+                "id": "rehab_Petra_4555_4636",
+                "target_score": 55.0,
+                "predicted_score": 64.37500000000001,
+                "absolute_error": 9.375000000000014,
+                "training_mean_score": 78.57142857142857,
+                "baseline_absolute_error": 23.57142857142857
+              },
+              {
+                "id": "rehab_Petra_2176_2253",
+                "target_score": 70.0,
+                "predicted_score": 74.25781250000001,
+                "absolute_error": 4.257812500000014,
+                "training_mean_score": 78.57142857142857,
+                "baseline_absolute_error": 8.57142857142857
+              },
+              {
+                "id": "rehab_Petra_4656_4736",
+                "target_score": 65.0,
+                "predicted_score": 65.23437500000001,
+                "absolute_error": 0.2343750000000142,
+                "training_mean_score": 78.57142857142857,
+                "baseline_absolute_error": 13.57142857142857
+              }
+            ]
+          },
+          {
+            "held_person": "rehab_Terka",
+            "fit_records": 7,
+            "fit_people": 2,
+            "predictions": [
+              {
+                "id": "rehab_Terka_3280_3342",
+                "target_score": 85.0,
+                "predicted_score": 70.9375,
+                "absolute_error": 14.0625,
+                "training_mean_score": 80.0,
+                "baseline_absolute_error": 5.0
+              },
+              {
+                "id": "rehab_Terka_4672_4722",
+                "target_score": 85.0,
+                "predicted_score": 74.53125000000001,
+                "absolute_error": 10.468749999999986,
+                "training_mean_score": 80.0,
+                "baseline_absolute_error": 5.0
+              },
+              {
+                "id": "rehab_Terka_3510_3577",
+                "target_score": 55.0,
+                "predicted_score": 69.84375000000001,
+                "absolute_error": 14.843750000000014,
+                "training_mean_score": 80.0,
+                "baseline_absolute_error": 25.0
+              },
+              {
+                "id": "rehab_Terka_7394_7454",
+                "target_score": 55.0,
+                "predicted_score": 80.46875000000001,
+                "absolute_error": 25.468750000000014,
+                "training_mean_score": 80.0,
+                "baseline_absolute_error": 25.0
+              },
+              {
+                "id": "rehab_Terka_10334_10376",
+                "target_score": 70.0,
+                "predicted_score": 82.65625000000001,
+                "absolute_error": 12.656250000000014,
+                "training_mean_score": 80.0,
+                "baseline_absolute_error": 10.0
+              }
+            ]
+          },
+          {
+            "held_person": "rehab_Vasil",
+            "fit_records": 10,
+            "fit_people": 2,
+            "predictions": [
+              {
+                "id": "rehab_Vasil_7496_7538",
+                "target_score": 100.0,
+                "predicted_score": 60.8203125,
+                "absolute_error": 39.1796875,
+                "training_mean_score": 71.0,
+                "baseline_absolute_error": 29.0
+              },
+              {
+                "id": "rehab_Vasil_6523_6567",
+                "target_score": 100.0,
+                "predicted_score": 60.9765625,
+                "absolute_error": 39.0234375,
+                "training_mean_score": 71.0,
+                "baseline_absolute_error": 29.0
+              }
+            ]
+          }
+        ],
+        "independent_final_test": false,
+        "hyperparameters_tuned": false,
+        "samples": 12,
+        "people": 3,
+        "ai_MAE_points": 15.862630208333337,
+        "baseline_MAE_points": 15.547619047619046,
+        "person_macro_MAE_points": 20.510416666666668
+      },
+      "fit_seconds": 0.2286997249993874,
+      "model_sha256": "84c258ae2c83ed7a4599975e5f09c98e379c33198ee9b4de9d318813a84aab63",
+      "criterion_grade_counts": [
+        {
+          "1": 8,
+          "2": 2,
+          "0": 2
+        },
+        {
+          "2": 12
+        },
+        {
+          "2": 9,
+          "0": 3
+        },
+        {
+          "2": 11,
+          "0": 1
+        }
+      ],
+      "item_metrics": [
+        {
+          "criterion_id": "descent_range",
+          "weight": 30,
+          "paired_samples": 6,
+          "ai_MAE_grade": 0.4327256944444444,
+          "rule_MAE_grade": 0.3333333333333333,
+          "ai_MAE_weighted_points": 6.490885416666666,
+          "rule_MAE_weighted_points": 5.0,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "return_extension",
+          "weight": 20,
+          "paired_samples": 6,
+          "ai_MAE_grade": 0.0,
+          "rule_MAE_grade": 0.16666666666666666,
+          "ai_MAE_weighted_points": 0.0,
+          "rule_MAE_weighted_points": 1.6666666666666665,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "knee_foot",
+          "weight": 30,
+          "paired_samples": 6,
+          "ai_MAE_grade": 0.33984375,
+          "rule_MAE_grade": 0.3333333333333333,
+          "ai_MAE_weighted_points": 5.09765625,
+          "rule_MAE_weighted_points": 5.0,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "trunk_balance",
+          "weight": 20,
+          "paired_samples": 6,
+          "ai_MAE_grade": 0.07291666666666645,
+          "rule_MAE_grade": 0.3333333333333333,
+          "ai_MAE_weighted_points": 0.7291666666666645,
+          "rule_MAE_weighted_points": 3.333333333333333,
+          "scope": "observable criterion only; not a renormalized total"
+        }
+      ],
+      "metrics": {
+        "paired_samples": 6,
+        "ai_MAE_points": 10.07378472222222,
+        "rule_MAE_points": 15.0,
+        "train_mean_baseline_MAE_points": 10.555555555555557,
+        "ai_median_ms": 18.458612999893376,
+        "rule_median_ms": 0.7945125007609022,
+        "ai_assessed": 6,
+        "rule_assessed": 6,
+        "eligible_validation_labels": 7
+      },
+      "failure_examples": [
+        {
+          "id": "rehab_Mima_3648_3718",
+          "ai_absolute_error": 16.7578125,
+          "rule_absolute_error": 30.0
+        },
+        {
+          "id": "rehab_Mima_2010_2078",
+          "ai_absolute_error": 11.627604166666657,
+          "rule_absolute_error": 30.0
+        },
+        {
+          "id": "rehab_Mima_5503_5564",
+          "ai_absolute_error": 10.221354166666657,
+          "rule_absolute_error": 15.0
+        }
+      ]
+    },
+    "plank": {
+      "train_records": 3,
+      "train_people": 3,
+      "validation_records": 0,
+      "unavailable": [
+        {
+          "id": "dvids_army840093_144_234",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        }
+      ],
+      "comparisons": [],
+      "train_score_distribution": {
+        "100.0": 3
+      },
+      "validation_score_distribution": {},
+      "model_status": "insufficient_training_data",
+      "rule_only_previews": [
+        {
+          "id": "dvids_airforce_300_390",
+          "label_score": 100.0,
+          "ai_score": null,
+          "rule_score": 100.0,
+          "difference": null,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "trunk_line",
+              "elbow_sagittal_position",
+              "leg_and_body_support",
+              "support_continuity"
+            ],
+            "levels": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "score": 100.0,
+            "evidence": {
+              "trunk_line": {
+                "channel": "left_line_deg",
+                "percentile": 10,
+                "measured": 179.5941279842181,
+                "good_threshold": 168,
+                "partial_threshold": 155,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "elbow_sagittal_position": {
+                "channel": "left_elbow_offset",
+                "percentile": 90,
+                "measured": 0.06923695081656109,
+                "good_threshold": 0.2,
+                "partial_threshold": 0.4,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "leg_and_body_support": {
+                "channel": "left_knee_deg",
+                "percentile": 10,
+                "measured": 175.15462315498652,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "support_continuity": {
+                "knee_angle_spread_deg": 0.7877023406322223,
+                "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "noise_sensitivity": null,
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/dvids_airforce_300_390",
+          "evaluation_role": "development_train_rule_preview_not_test",
+          "AI_model_available": false
+        },
+        {
+          "id": "dvids_navy805472_599_689",
+          "label_score": 100.0,
+          "ai_score": null,
+          "rule_score": 70.0,
+          "difference": null,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "trunk_line",
+              "elbow_sagittal_position",
+              "leg_and_body_support",
+              "support_continuity"
+            ],
+            "levels": [
+              1,
+              2,
+              1,
+              2
+            ],
+            "score": 70.0,
+            "evidence": {
+              "trunk_line": {
+                "channel": "left_line_deg",
+                "percentile": 10,
+                "measured": 163.6375524173008,
+                "good_threshold": 168,
+                "partial_threshold": 155,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "elbow_sagittal_position": {
+                "channel": "left_elbow_offset",
+                "percentile": 90,
+                "measured": 0.0954415597585596,
+                "good_threshold": 0.2,
+                "partial_threshold": 0.4,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "leg_and_body_support": {
+                "channel": "left_knee_deg",
+                "percentile": 10,
+                "measured": 157.35971956247334,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "support_continuity": {
+                "knee_angle_spread_deg": 2.640942166264182,
+                "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "noise_sensitivity": null,
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/dvids_navy805472_599_689",
+          "evaluation_role": "development_train_rule_preview_not_test",
+          "AI_model_available": false
+        },
+        {
+          "id": "dvids_gates640237_side_75_165",
+          "label_score": 100.0,
+          "ai_score": null,
+          "rule_score": 80.0,
+          "difference": null,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "trunk_line",
+              "elbow_sagittal_position",
+              "leg_and_body_support",
+              "support_continuity"
+            ],
+            "levels": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "score": 80.0,
+            "evidence": {
+              "trunk_line": {
+                "channel": "right_line_deg",
+                "percentile": 10,
+                "measured": 163.56758374888335,
+                "good_threshold": 168,
+                "partial_threshold": 155,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "elbow_sagittal_position": {
+                "channel": "right_elbow_offset",
+                "percentile": 90,
+                "measured": 0.1265917120019721,
+                "good_threshold": 0.2,
+                "partial_threshold": 0.4,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "leg_and_body_support": {
+                "channel": "right_knee_deg",
+                "percentile": 10,
+                "measured": 175.2041409722045,
+                "good_threshold": 165,
+                "partial_threshold": 145,
+                "higher_is_better": true,
+                "tail_only": false
+              },
+              "support_continuity": {
+                "knee_angle_spread_deg": 0.9729179294779442,
+                "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "noise_sensitivity": null,
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/dvids_gates640237_side_75_165",
+          "evaluation_role": "development_train_rule_preview_not_test",
+          "AI_model_available": false
+        }
+      ]
+    },
+    "ytw": {
+      "train_records": 9,
+      "train_people": 9,
+      "validation_records": 3,
+      "unavailable": [
+        {
+          "id": "qevd_00152261",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "qevd_00101081",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        }
+      ],
+      "comparisons": [
+        {
+          "shared_recorded_extraction_seconds": 2.7197030299994367,
+          "recorded_ai_pipeline_seconds": 2.731687288998728,
+          "recorded_rule_pipeline_seconds": 2.720627976999822,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "qevd_00196196",
+          "label_score": 85.0,
+          "ai_score": 74.658203125,
+          "ai_levels": [
+            1.0,
+            2.0,
+            1.61328125,
+            1.44921875
+          ],
+          "rule_score": null,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "y_reach",
+              "t_reach",
+              "w_shape",
+              "hinge_and_trunk_hold"
+            ],
+            "levels": [
+              null,
+              2,
+              0,
+              null
+            ],
+            "score": null,
+            "evidence": {
+              "phase_detection": {
+                "version": "ytw-width-dwell-attempts-v2",
+                "phases": {
+                  "Y_attempt": {
+                    "start_index": 2,
+                    "end_index": 7,
+                    "anchor_index": 4,
+                    "samples": 6,
+                    "median_lateral_span": 0.9717965132284274
+                  },
+                  "T_attempt": {
+                    "start_index": 8,
+                    "end_index": 11,
+                    "anchor_index": 9,
+                    "samples": 4,
+                    "median_lateral_span": 1.7193388157267673
+                  },
+                  "W_attempt": {
+                    "start_index": 18,
+                    "end_index": 22,
+                    "anchor_index": 20,
+                    "samples": 5,
+                    "median_lateral_span": 0.8432850913472402
+                  }
+                },
+                "complete_attempt_sequence": true,
+                "canonical_Y_depth_confirmed": false,
+                "sample_hz": 10,
+                "hold_reason": null,
+                "lateral_span_p90": 1.724168589499665,
+                "thresholds": {
+                  "active_hand_height_torso_ratio": 0.6,
+                  "wide_relative_span": 0.85,
+                  "min_samples": 3
+                }
+              },
+              "t_reach": {
+                "measured_median_deg": 94.56337083054993,
+                "target_deg": 90,
+                "good_error_deg": 15,
+                "partial_error_deg": 30,
+                "window": {
+                  "start_index": 8,
+                  "end_index": 11,
+                  "anchor_index": 9,
+                  "samples": 4,
+                  "median_lateral_span": 1.7193388157267673
+                }
+              },
+              "w_shape": {
+                "measured_median_deg": 151.50902272711036,
+                "target_deg": 90,
+                "good_error_deg": 20,
+                "partial_error_deg": 40,
+                "window": {
+                  "start_index": 18,
+                  "end_index": 22,
+                  "anchor_index": 20,
+                  "samples": 5,
+                  "median_lateral_span": 0.8432850913472402
+                }
+              },
+              "y_reach": {
+                "hold_reason_ko": "정면 시도 구간은 식별해도 Y 전방 도달·펴짐을 확정할 수 없음."
+              },
+              "hinge_and_trunk_hold": {
+                "hold_reason_ko": "정면 투영만으로 전경 깊이 규칙을 검증하지 못함."
+              }
+            },
+            "hold_items": [
+              "y_reach",
+              "hinge_and_trunk_hold"
+            ],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": null,
+          "ai_ms": 11.984258999291342,
+          "rule_ms": 0.9249470003851457,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 17.449489499995252,
+            "rule_p95_ms": 6.210539499988954
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.22660406323364773,
+            "rule_std_points": null,
+            "ai_assessed": 8,
+            "rule_assessed": 0,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/qevd_00196196",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 3.007651125000848,
+          "recorded_ai_pipeline_seconds": 3.0196849849999126,
+          "recorded_rule_pipeline_seconds": 3.008603682001194,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "qevd_00265931",
+          "label_score": 75.0,
+          "ai_score": 66.953125,
+          "ai_levels": [
+            1.0,
+            2.0,
+            1.25,
+            1.1328125
+          ],
+          "rule_score": null,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "y_reach",
+              "t_reach",
+              "w_shape",
+              "hinge_and_trunk_hold"
+            ],
+            "levels": [
+              null,
+              2,
+              0,
+              null
+            ],
+            "score": null,
+            "evidence": {
+              "phase_detection": {
+                "version": "ytw-width-dwell-attempts-v2",
+                "phases": {
+                  "Y_attempt": {
+                    "start_index": 10,
+                    "end_index": 15,
+                    "anchor_index": 12,
+                    "samples": 6,
+                    "median_lateral_span": 1.1897521474406263
+                  },
+                  "T_attempt": {
+                    "start_index": 16,
+                    "end_index": 30,
+                    "anchor_index": 23,
+                    "samples": 15,
+                    "median_lateral_span": 1.7964115759920487
+                  },
+                  "W_attempt": {
+                    "start_index": 31,
+                    "end_index": 37,
+                    "anchor_index": 34,
+                    "samples": 7,
+                    "median_lateral_span": 1.050200791196874
+                  }
+                },
+                "complete_attempt_sequence": true,
+                "canonical_Y_depth_confirmed": false,
+                "sample_hz": 10,
+                "hold_reason": null,
+                "lateral_span_p90": 1.9784748852582141,
+                "thresholds": {
+                  "active_hand_height_torso_ratio": 0.6,
+                  "wide_relative_span": 0.85,
+                  "min_samples": 3
+                }
+              },
+              "t_reach": {
+                "measured_median_deg": 85.6541202664996,
+                "target_deg": 90,
+                "good_error_deg": 15,
+                "partial_error_deg": 30,
+                "window": {
+                  "start_index": 16,
+                  "end_index": 30,
+                  "anchor_index": 23,
+                  "samples": 15,
+                  "median_lateral_span": 1.7964115759920487
+                }
+              },
+              "w_shape": {
+                "measured_median_deg": 148.11553192604896,
+                "target_deg": 90,
+                "good_error_deg": 20,
+                "partial_error_deg": 40,
+                "window": {
+                  "start_index": 31,
+                  "end_index": 37,
+                  "anchor_index": 34,
+                  "samples": 7,
+                  "median_lateral_span": 1.050200791196874
+                }
+              },
+              "y_reach": {
+                "hold_reason_ko": "정면 시도 구간은 식별해도 Y 전방 도달·펴짐을 확정할 수 없음."
+              },
+              "hinge_and_trunk_hold": {
+                "hold_reason_ko": "정면 투영만으로 전경 깊이 규칙을 검증하지 못함."
+              }
+            },
+            "hold_items": [
+              "y_reach",
+              "hinge_and_trunk_hold"
+            ],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": null,
+          "ai_ms": 12.033859999064589,
+          "rule_ms": 0.9525570003461326,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 17.3581174985884,
+            "rule_p95_ms": 3.638953499830677
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.6945232240708756,
+            "rule_std_points": null,
+            "ai_assessed": 8,
+            "rule_assessed": 0,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/qevd_00265931",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 2.6319931839989295,
+          "recorded_ai_pipeline_seconds": 2.643724112998825,
+          "recorded_rule_pipeline_seconds": 2.6329320629993163,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "qevd_00265212",
+          "label_score": 65.0,
+          "ai_score": 69.736328125,
+          "ai_levels": [
+            1.0,
+            2.0,
+            1.37890625,
+            1.25
+          ],
+          "rule_score": null,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "y_reach",
+              "t_reach",
+              "w_shape",
+              "hinge_and_trunk_hold"
+            ],
+            "levels": [
+              null,
+              2,
+              0,
+              null
+            ],
+            "score": null,
+            "evidence": {
+              "phase_detection": {
+                "version": "ytw-width-dwell-attempts-v2",
+                "phases": {
+                  "Y_attempt": {
+                    "start_index": 7,
+                    "end_index": 16,
+                    "anchor_index": 11,
+                    "samples": 10,
+                    "median_lateral_span": 0.8463135027135984
+                  },
+                  "T_attempt": {
+                    "start_index": 17,
+                    "end_index": 28,
+                    "anchor_index": 22,
+                    "samples": 12,
+                    "median_lateral_span": 1.2738969943281304
+                  },
+                  "W_attempt": {
+                    "start_index": 29,
+                    "end_index": 36,
+                    "anchor_index": 32,
+                    "samples": 8,
+                    "median_lateral_span": 0.6670113601572187
+                  }
+                },
+                "complete_attempt_sequence": true,
+                "canonical_Y_depth_confirmed": false,
+                "sample_hz": 10,
+                "hold_reason": null,
+                "lateral_span_p90": 1.2808055870352988,
+                "thresholds": {
+                  "active_hand_height_torso_ratio": 0.6,
+                  "wide_relative_span": 0.85,
+                  "min_samples": 3
+                }
+              },
+              "t_reach": {
+                "measured_median_deg": 79.14570763374898,
+                "target_deg": 90,
+                "good_error_deg": 15,
+                "partial_error_deg": 30,
+                "window": {
+                  "start_index": 17,
+                  "end_index": 28,
+                  "anchor_index": 22,
+                  "samples": 12,
+                  "median_lateral_span": 1.2738969943281304
+                }
+              },
+              "w_shape": {
+                "measured_median_deg": 44.93382451207891,
+                "target_deg": 90,
+                "good_error_deg": 20,
+                "partial_error_deg": 40,
+                "window": {
+                  "start_index": 29,
+                  "end_index": 36,
+                  "anchor_index": 32,
+                  "samples": 8,
+                  "median_lateral_span": 0.6670113601572187
+                }
+              },
+              "y_reach": {
+                "hold_reason_ko": "정면 시도 구간은 식별해도 Y 전방 도달·펴짐을 확정할 수 없음."
+              },
+              "hinge_and_trunk_hold": {
+                "hold_reason_ko": "정면 투영만으로 전경 깊이 규칙을 검증하지 못함."
+              }
+            },
+            "hold_items": [
+              "y_reach",
+              "hinge_and_trunk_hold"
+            ],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": null,
+          "ai_ms": 11.730928999895696,
+          "rule_ms": 0.9388790003868053,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 17.111714500970265,
+            "rule_p95_ms": 6.249991999538906
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.10802360543372962,
+            "rule_std_points": null,
+            "ai_assessed": 8,
+            "rule_assessed": 0,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/qevd_00265212",
+          "expert_validated": false
+        }
+      ],
+      "train_score_distribution": {
+        "85.0": 3,
+        "62.5": 5,
+        "75.0": 1
+      },
+      "validation_score_distribution": {
+        "85.0": 1,
+        "75.0": 1,
+        "65.0": 1
+      },
+      "model_status": "unvalidated_development_model",
+      "training_participant_diagnostic": {
+        "method": "leave_one_training_participant_out",
+        "folds": [
+          {
+            "held_person": "qevd_1135",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00200390",
+                "target_score": 62.5,
+                "predicted_score": 73.046875,
+                "absolute_error": 10.546875,
+                "training_mean_score": 72.5,
+                "baseline_absolute_error": 10.0
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_1197",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00015724",
+                "target_score": 85.0,
+                "predicted_score": 66.53971354166667,
+                "absolute_error": 18.46028645833333,
+                "training_mean_score": 69.6875,
+                "baseline_absolute_error": 15.3125
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_1207",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00014884",
+                "target_score": 62.5,
+                "predicted_score": 66.044921875,
+                "absolute_error": 3.544921875,
+                "training_mean_score": 72.5,
+                "baseline_absolute_error": 10.0
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_191",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00015905",
+                "target_score": 85.0,
+                "predicted_score": 66.11653645833333,
+                "absolute_error": 18.88346354166667,
+                "training_mean_score": 69.6875,
+                "baseline_absolute_error": 15.3125
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_2005",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00035657",
+                "target_score": 85.0,
+                "predicted_score": 73.19010416666666,
+                "absolute_error": 11.809895833333343,
+                "training_mean_score": 69.6875,
+                "baseline_absolute_error": 15.3125
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_2268",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00194940",
+                "target_score": 62.5,
+                "predicted_score": 72.626953125,
+                "absolute_error": 10.126953125,
+                "training_mean_score": 72.5,
+                "baseline_absolute_error": 10.0
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_235",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00137555",
+                "target_score": 62.5,
+                "predicted_score": 74.8046875,
+                "absolute_error": 12.3046875,
+                "training_mean_score": 72.5,
+                "baseline_absolute_error": 10.0
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_2661",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00013496",
+                "target_score": 75.0,
+                "predicted_score": 71.025390625,
+                "absolute_error": 3.974609375,
+                "training_mean_score": 70.9375,
+                "baseline_absolute_error": 4.0625
+              }
+            ]
+          },
+          {
+            "held_person": "qevd_976",
+            "fit_records": 8,
+            "fit_people": 8,
+            "predictions": [
+              {
+                "id": "qevd_00202123",
+                "target_score": 62.5,
+                "predicted_score": 66.650390625,
+                "absolute_error": 4.150390625,
+                "training_mean_score": 72.5,
+                "baseline_absolute_error": 10.0
+              }
+            ]
+          }
+        ],
+        "independent_final_test": false,
+        "hyperparameters_tuned": false,
+        "samples": 9,
+        "people": 9,
+        "ai_MAE_points": 10.422453703703704,
+        "baseline_MAE_points": 11.11111111111111,
+        "person_macro_MAE_points": 10.422453703703704
+      },
+      "fit_seconds": 0.09937486899980286,
+      "model_sha256": "a8aabf06ddadafc3ec6ae98382f9befc9a58117f5de00a8de607b903edc46a22",
+      "criterion_grade_counts": [
+        {
+          "1": 9
+        },
+        {
+          "2": 9
+        },
+        {
+          "2": 4,
+          "1": 5
+        },
+        {
+          "2": 3,
+          "1": 6
+        }
+      ],
+      "item_metrics": [
+        {
+          "criterion_id": "y_reach",
+          "weight": 30,
+          "paired_samples": 0,
+          "ai_MAE_grade": null,
+          "rule_MAE_grade": null,
+          "ai_MAE_weighted_points": null,
+          "rule_MAE_weighted_points": null,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "t_reach",
+          "weight": 25,
+          "paired_samples": 3,
+          "ai_MAE_grade": 0.0,
+          "rule_MAE_grade": 0.0,
+          "ai_MAE_weighted_points": 0.0,
+          "rule_MAE_weighted_points": 0.0,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "w_shape",
+          "weight": 25,
+          "paired_samples": 3,
+          "ai_MAE_grade": 0.5859375,
+          "rule_MAE_grade": 2.0,
+          "ai_MAE_weighted_points": 7.32421875,
+          "rule_MAE_weighted_points": 25.0,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "hinge_and_trunk_hold",
+          "weight": 20,
+          "paired_samples": 0,
+          "ai_MAE_grade": null,
+          "rule_MAE_grade": null,
+          "ai_MAE_weighted_points": null,
+          "rule_MAE_weighted_points": null,
+          "scope": "observable criterion only; not a renormalized total"
+        }
+      ],
+      "metrics": {
+        "paired_samples": 0,
+        "ai_MAE_points": null,
+        "rule_MAE_points": null,
+        "train_mean_baseline_MAE_points": null,
+        "ai_median_ms": 11.984258999291342,
+        "rule_median_ms": 0.9388790003868053,
+        "ai_assessed": 3,
+        "rule_assessed": 0,
+        "eligible_validation_labels": 3
+      },
+      "failure_examples": [
+        {
+          "id": "qevd_00196196",
+          "ai_absolute_error": 10.341796875,
+          "rule_absolute_error": null
+        },
+        {
+          "id": "qevd_00265931",
+          "ai_absolute_error": 8.046875,
+          "rule_absolute_error": null
+        },
+        {
+          "id": "qevd_00265212",
+          "ai_absolute_error": 4.736328125,
+          "rule_absolute_error": null
+        }
+      ]
+    },
+    "shoulder": {
+      "train_records": 8,
+      "train_people": 6,
+      "validation_records": 4,
+      "unavailable": [
+        {
+          "id": "subject_007_shoulder_bad_front",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "subject_009_shoulder_bad_front",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "subject_009_shoulder_good_front",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "subject_013_shoulder_good_front",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "subject_019_shoulder_good_front",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "train"
+        },
+        {
+          "id": "subject_015_shoulder_bad_front",
+          "reasons": [
+            "primary_required_joint_observation_below_80_percent"
+          ],
+          "split": "validation"
+        }
+      ],
+      "comparisons": [
+        {
+          "shared_recorded_extraction_seconds": 3.853005035000024,
+          "recorded_ai_pipeline_seconds": 3.8649383949996263,
+          "recorded_rule_pipeline_seconds": 3.8535358230001293,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_002_shoulder_bad_front",
+          "label_score": 85.0,
+          "ai_score": 98.90625,
+          "ai_levels": [
+            1.97265625,
+            2.0,
+            1.9453125,
+            2.0
+          ],
+          "rule_score": 70.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "overhead_reach",
+              "lower_return",
+              "bilateral_timing",
+              "frontal_trunk_hold"
+            ],
+            "levels": [
+              0,
+              2,
+              2,
+              2
+            ],
+            "score": 70.0,
+            "evidence": {
+              "bilateral_timing": {
+                "channel": "bilateral_wrist_height_gap",
+                "percentile": 90,
+                "measured": 0.14953449648211034,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.35,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "frontal_trunk_hold": {
+                "channel": "frontal_tilt_deg",
+                "percentile": 90,
+                "measured": 1.7530740750051814,
+                "good_threshold": 8,
+                "partial_threshold": 15,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "overhead_reach": {
+                "left_right_proxy_grades": [
+                  0,
+                  1
+                ],
+                "thresholds_deg": [
+                  150,
+                  125
+                ]
+              },
+              "lower_return": {
+                "left_right_proxy_grades": [
+                  2,
+                  2
+                ],
+                "thresholds_deg": [
+                  110,
+                  140
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 28.90625,
+          "ai_ms": 11.933359999602544,
+          "rule_ms": 0.530788000105531,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 17.038957999830018,
+            "rule_p95_ms": 3.1497559994022595
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.051674830294230284,
+            "rule_std_points": 6.25,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_002_shoulder_bad_front",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 2.341855819000557,
+          "recorded_ai_pipeline_seconds": 2.354055159999916,
+          "recorded_rule_pipeline_seconds": 2.3423957119994157,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_017_shoulder_good_front",
+          "label_score": 100.0,
+          "ai_score": 99.21875,
+          "ai_levels": [
+            1.98046875,
+            2.0,
+            1.9609375,
+            2.0
+          ],
+          "rule_score": 75.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "overhead_reach",
+              "lower_return",
+              "bilateral_timing",
+              "frontal_trunk_hold"
+            ],
+            "levels": [
+              2,
+              0,
+              2,
+              2
+            ],
+            "score": 75.0,
+            "evidence": {
+              "bilateral_timing": {
+                "channel": "bilateral_wrist_height_gap",
+                "percentile": 90,
+                "measured": 0.11751800267774914,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.35,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "frontal_trunk_hold": {
+                "channel": "frontal_tilt_deg",
+                "percentile": 90,
+                "measured": 1.46429305705775,
+                "good_threshold": 8,
+                "partial_threshold": 15,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "overhead_reach": {
+                "left_right_proxy_grades": [
+                  2,
+                  2
+                ],
+                "thresholds_deg": [
+                  150,
+                  125
+                ]
+              },
+              "lower_return": {
+                "left_right_proxy_grades": [
+                  0,
+                  0
+                ],
+                "thresholds_deg": [
+                  110,
+                  140
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 24.21875,
+          "ai_ms": 12.199340999359265,
+          "rule_ms": 0.5398929988587042,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 17.35446800103091,
+            "rule_p95_ms": 0.5813845000375295
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.11048543456039805,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_017_shoulder_good_front",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 4.038931691999096,
+          "recorded_ai_pipeline_seconds": 4.050976499000171,
+          "recorded_rule_pipeline_seconds": 4.039495054998042,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_015_shoulder_good_front",
+          "label_score": 100.0,
+          "ai_score": 97.65625,
+          "ai_levels": [
+            1.94140625,
+            2.0,
+            1.8828125,
+            2.0
+          ],
+          "rule_score": null,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "overhead_reach",
+              "lower_return",
+              "bilateral_timing",
+              "frontal_trunk_hold"
+            ],
+            "levels": [
+              2,
+              2,
+              null,
+              2
+            ],
+            "score": null,
+            "evidence": {
+              "bilateral_timing": {
+                "channel": "bilateral_wrist_height_gap",
+                "percentile": 90,
+                "measured": null,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.35,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "frontal_trunk_hold": {
+                "channel": "frontal_tilt_deg",
+                "percentile": 90,
+                "measured": 1.5374030394825753,
+                "good_threshold": 8,
+                "partial_threshold": 15,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "overhead_reach": {
+                "left_right_proxy_grades": [
+                  2,
+                  2
+                ],
+                "thresholds_deg": [
+                  150,
+                  125
+                ]
+              },
+              "lower_return": {
+                "left_right_proxy_grades": [
+                  2,
+                  2
+                ],
+                "thresholds_deg": [
+                  110,
+                  140
+                ]
+              }
+            },
+            "hold_items": [
+              "bilateral_timing"
+            ],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": null,
+          "ai_ms": 12.044807001075242,
+          "rule_ms": 0.5633629989461042,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 16.801100498923915,
+            "rule_p95_ms": 5.796154000563547
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.07564420598061361,
+            "rule_std_points": null,
+            "ai_assessed": 8,
+            "rule_assessed": 0,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_015_shoulder_good_front",
+          "expert_validated": false
+        },
+        {
+          "shared_recorded_extraction_seconds": 4.410883323000235,
+          "recorded_ai_pipeline_seconds": 4.423177233000388,
+          "recorded_rule_pipeline_seconds": 4.411448439001106,
+          "pipeline_timing_note_ko": "같은 시점별 저장 추출 시간과 반복 점수 계산 중앙값의 합. CPU 제한 변경·초기화·오프라인 구간 읽기를 포함하며 실제 재촬영 또는 서비스 응답 지연 검사가 아님.",
+          "id": "subject_004_shoulder_good_front",
+          "label_score": 72.5,
+          "ai_score": 95.9375,
+          "ai_levels": [
+            1.8984375,
+            2.0,
+            1.796875,
+            2.0
+          ],
+          "rule_score": 85.0,
+          "rule_details": {
+            "version": "geometric-proxy-rules-v2-phase-dwell-unvalidated",
+            "criterion_ids": [
+              "overhead_reach",
+              "lower_return",
+              "bilateral_timing",
+              "frontal_trunk_hold"
+            ],
+            "levels": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "score": 85.0,
+            "evidence": {
+              "bilateral_timing": {
+                "channel": "bilateral_wrist_height_gap",
+                "percentile": 90,
+                "measured": 0.04332695873972301,
+                "good_threshold": 0.15,
+                "partial_threshold": 0.35,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "frontal_trunk_hold": {
+                "channel": "frontal_tilt_deg",
+                "percentile": 90,
+                "measured": 1.6422277968585706,
+                "good_threshold": 8,
+                "partial_threshold": 15,
+                "higher_is_better": false,
+                "tail_only": false
+              },
+              "overhead_reach": {
+                "left_right_proxy_grades": [
+                  1,
+                  2
+                ],
+                "thresholds_deg": [
+                  150,
+                  125
+                ]
+              },
+              "lower_return": {
+                "left_right_proxy_grades": [
+                  2,
+                  2
+                ],
+                "thresholds_deg": [
+                  110,
+                  140
+                ]
+              }
+            },
+            "hold_items": [],
+            "expert_validated": false,
+            "thresholds_validated": false,
+            "limitations_ko": [
+              "모든 수치 경계는 검증 전 공학 초안이다.",
+              "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+              "등급 null은 0점이나 만점으로 채우지 않는다."
+            ]
+          },
+          "difference": 10.9375,
+          "ai_ms": 12.293910000153119,
+          "rule_ms": 0.5651160008710576,
+          "timing_protocol": {
+            "repetitions": 11,
+            "warmup": 1,
+            "ai_includes_feature_calculation": true,
+            "shared_joint_cache_read_excluded": true,
+            "video_and_Heavy_excluded": true,
+            "ai_p95_ms": 17.41271900027641,
+            "rule_p95_ms": 0.5793985001218971
+          },
+          "noise_sensitivity": {
+            "protocol": "8_trials_Gaussian_1_pixel_std_observed_coordinates_only",
+            "ai_std_points": 0.09366858443970155,
+            "rule_std_points": 0.0,
+            "ai_assessed": 8,
+            "rule_assessed": 8,
+            "real_recapture_consistency_measured": false
+          },
+          "cache_folder": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/subject_004_shoulder_good_front",
+          "expert_validated": false
+        }
+      ],
+      "train_score_distribution": {
+        "60.0": 1,
+        "100.0": 7
+      },
+      "validation_score_distribution": {
+        "85.0": 1,
+        "100.0": 2,
+        "72.5": 1
+      },
+      "model_status": "unvalidated_development_model",
+      "training_participant_diagnostic": {
+        "method": "leave_one_training_participant_out",
+        "folds": [
+          {
+            "held_person": "shoulder_005",
+            "fit_records": 7,
+            "fit_people": 5,
+            "predictions": [
+              {
+                "id": "subject_005_shoulder_bad_front",
+                "target_score": 60.0,
+                "predicted_score": 100.0,
+                "absolute_error": 40.0,
+                "training_mean_score": 100.0,
+                "baseline_absolute_error": 40.0
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_007",
+            "fit_records": 7,
+            "fit_people": 5,
+            "predictions": [
+              {
+                "id": "subject_007_shoulder_good_front",
+                "target_score": 100.0,
+                "predicted_score": 97.8125,
+                "absolute_error": 2.1875,
+                "training_mean_score": 94.28571428571429,
+                "baseline_absolute_error": 5.714285714285708
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_008",
+            "fit_records": 6,
+            "fit_people": 5,
+            "predictions": [
+              {
+                "id": "subject_008_shoulder_bad_front",
+                "target_score": 100.0,
+                "predicted_score": 95.9375,
+                "absolute_error": 4.0625,
+                "training_mean_score": 93.33333333333333,
+                "baseline_absolute_error": 6.666666666666671
+              },
+              {
+                "id": "subject_008_shoulder_good_front",
+                "target_score": 100.0,
+                "predicted_score": 98.125,
+                "absolute_error": 1.875,
+                "training_mean_score": 93.33333333333333,
+                "baseline_absolute_error": 6.666666666666671
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_010",
+            "fit_records": 7,
+            "fit_people": 5,
+            "predictions": [
+              {
+                "id": "subject_010_shoulder_bad_front",
+                "target_score": 100.0,
+                "predicted_score": 99.21875,
+                "absolute_error": 0.78125,
+                "training_mean_score": 94.28571428571429,
+                "baseline_absolute_error": 5.714285714285708
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_016",
+            "fit_records": 6,
+            "fit_people": 5,
+            "predictions": [
+              {
+                "id": "subject_016_shoulder_bad_front",
+                "target_score": 100.0,
+                "predicted_score": 99.0625,
+                "absolute_error": 0.9375,
+                "training_mean_score": 93.33333333333333,
+                "baseline_absolute_error": 6.666666666666671
+              },
+              {
+                "id": "subject_016_shoulder_good_front",
+                "target_score": 100.0,
+                "predicted_score": 96.25,
+                "absolute_error": 3.75,
+                "training_mean_score": 93.33333333333333,
+                "baseline_absolute_error": 6.666666666666671
+              }
+            ]
+          },
+          {
+            "held_person": "shoulder_019",
+            "fit_records": 7,
+            "fit_people": 5,
+            "predictions": [
+              {
+                "id": "subject_019_shoulder_bad_front",
+                "target_score": 100.0,
+                "predicted_score": 86.71875,
+                "absolute_error": 13.28125,
+                "training_mean_score": 94.28571428571429,
+                "baseline_absolute_error": 5.714285714285708
+              }
+            ]
+          }
+        ],
+        "independent_final_test": false,
+        "hyperparameters_tuned": false,
+        "samples": 8,
+        "people": 6,
+        "ai_MAE_points": 8.359375,
+        "baseline_MAE_points": 10.476190476190476,
+        "person_macro_MAE_points": 10.260416666666666
+      },
+      "fit_seconds": 0.087773635999838,
+      "model_sha256": "f3ff442dff6b8139e20cb9b3994d9e39e1f54911feeb7fbb5459cb5d02ada673",
+      "criterion_grade_counts": [
+        {
+          "1": 1,
+          "2": 7
+        },
+        {
+          "2": 8
+        },
+        {
+          "0": 1,
+          "2": 7
+        },
+        {
+          "2": 8
+        }
+      ],
+      "item_metrics": [
+        {
+          "criterion_id": "overhead_reach",
+          "weight": 30,
+          "paired_samples": 4,
+          "ai_MAE_grade": 0.4873046875,
+          "rule_MAE_grade": 0.25,
+          "ai_MAE_weighted_points": 7.3095703125,
+          "rule_MAE_weighted_points": 3.75,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "lower_return",
+          "weight": 25,
+          "paired_samples": 4,
+          "ai_MAE_grade": 0.0,
+          "rule_MAE_grade": 0.5,
+          "ai_MAE_weighted_points": 0.0,
+          "rule_MAE_weighted_points": 6.25,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "bilateral_timing",
+          "weight": 25,
+          "paired_samples": 3,
+          "ai_MAE_grade": 0.296875,
+          "rule_MAE_grade": 0.3333333333333333,
+          "ai_MAE_weighted_points": 3.7109375,
+          "rule_MAE_weighted_points": 4.166666666666666,
+          "scope": "observable criterion only; not a renormalized total"
+        },
+        {
+          "criterion_id": "frontal_trunk_hold",
+          "weight": 20,
+          "paired_samples": 4,
+          "ai_MAE_grade": 0.0,
+          "rule_MAE_grade": 0.0,
+          "ai_MAE_weighted_points": 0.0,
+          "rule_MAE_weighted_points": 0.0,
+          "scope": "observable criterion only; not a renormalized total"
+        }
+      ],
+      "metrics": {
+        "paired_samples": 3,
+        "ai_MAE_points": 12.708333333333334,
+        "rule_MAE_points": 17.5,
+        "train_mean_baseline_MAE_points": 12.5,
+        "ai_median_ms": 12.122074000217253,
+        "rule_median_ms": 0.5516279989024042,
+        "ai_assessed": 4,
+        "rule_assessed": 3,
+        "eligible_validation_labels": 5
+      },
+      "failure_examples": [
+        {
+          "id": "subject_004_shoulder_good_front",
+          "ai_absolute_error": 23.4375,
+          "rule_absolute_error": 12.5
+        },
+        {
+          "id": "subject_002_shoulder_bad_front",
+          "ai_absolute_error": 13.90625,
+          "rule_absolute_error": 15.0
+        },
+        {
+          "id": "subject_015_shoulder_good_front",
+          "ai_absolute_error": 2.34375,
+          "rule_absolute_error": null
+        }
+      ]
+    }
+  },
+  "limitations_ko": [
+    "기존에 반복 검토한 개발 검증 자료와 AI 실험 초안 라벨의 일치도다.",
+    "규칙의 수치 경계·접지 대리값은 아직 검증되지 않았다.",
+    "일관성·속도는 작은 로컬 실험이며 전체 운영 성능이 아니다.",
+    "새 참여자·촬영 구도·오류 사례와 독립 최종 시험이 필요하다."
+  ]
+}

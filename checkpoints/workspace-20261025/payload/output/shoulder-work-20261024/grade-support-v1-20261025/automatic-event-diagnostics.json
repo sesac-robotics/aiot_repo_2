@@ -1,0 +1,190 @@
+[
+  {
+    "id": "subject_012_shoulder_bad_front",
+    "split": "validation",
+    "events": [
+      {
+        "event": {
+          "protocol": "shoulder_press",
+          "laterality": "bilateral",
+          "posture": "seated",
+          "closure": "observed_next_ascent",
+          "peak_frames": [
+            0,
+            3
+          ],
+          "turn_frames": [
+            32,
+            34
+          ],
+          "next_ascent_frames": [
+            36,
+            39
+          ]
+        },
+        "features": {
+          "status": "features_ready",
+          "version": "shoulder-anatomical-lower-turn-v1",
+          "criterion": "observed_anatomical_lower_turn",
+          "bank": "shoulder-anatomical-lower-turn-v1/front/seated/bilateral",
+          "feature_names": [
+            "left_elbow_turn_deg",
+            "right_elbow_turn_deg",
+            "left_upper_arm_turn_elevation_deg",
+            "right_upper_arm_turn_elevation_deg",
+            "left_wrist_turn_height_fixed_event_torso",
+            "right_wrist_turn_height_fixed_event_torso"
+          ],
+          "features": [
+            95.28681333960574,
+            86.41822605203676,
+            137.87204970975262,
+            129.57317804287428,
+            0.700607986284698,
+            0.713854287468854
+          ],
+          "observed_event_ticks": {
+            "peak_frames": [
+              0,
+              1,
+              2
+            ],
+            "turn_frames": [
+              21,
+              22,
+              23
+            ],
+            "next_ascent_frames": [
+              24,
+              25,
+              26
+            ]
+          },
+          "fixed_event_torso_scale": 323.46837520268895,
+          "coverage": 1.0,
+          "quality": {
+            "schema": "shoulder-frontal-topology-screen-v1",
+            "flags": [],
+            "passed": true,
+            "semantics": "tracking_or_view_uncertainty_not_posture_error",
+            "anatomical_correctness_guaranteed": false
+          },
+          "ready_reference_used": false,
+          "grade": null,
+          "score": null,
+          "label_inferred": false,
+          "tracking_QA_proven": false,
+          "production_approved": false
+        },
+        "confirmed_at_tick": 26,
+        "turn_ticks": [
+          21,
+          22,
+          23
+        ],
+        "label_created": false,
+        "grade": null,
+        "score": null,
+        "production_approved": false
+      }
+    ],
+    "visual_turn_frames": [
+      27,
+      36
+    ]
+  },
+  {
+    "id": "subject_012_shoulder_good_front",
+    "split": "validation",
+    "events": [
+      {
+        "event": {
+          "protocol": "shoulder_press",
+          "laterality": "bilateral",
+          "posture": "seated",
+          "closure": "observed_next_ascent",
+          "peak_frames": [
+            3,
+            6
+          ],
+          "turn_frames": [
+            26,
+            28
+          ],
+          "next_ascent_frames": [
+            30,
+            33
+          ]
+        },
+        "features": {
+          "status": "features_ready",
+          "version": "shoulder-anatomical-lower-turn-v1",
+          "criterion": "observed_anatomical_lower_turn",
+          "bank": "shoulder-anatomical-lower-turn-v1/front/seated/bilateral",
+          "feature_names": [
+            "left_elbow_turn_deg",
+            "right_elbow_turn_deg",
+            "left_upper_arm_turn_elevation_deg",
+            "right_upper_arm_turn_elevation_deg",
+            "left_wrist_turn_height_fixed_event_torso",
+            "right_wrist_turn_height_fixed_event_torso"
+          ],
+          "features": [
+            68.71898580746597,
+            65.07534991943696,
+            83.9359831162624,
+            85.49412083905662,
+            0.37701500043874797,
+            0.37455610408676976
+          ],
+          "observed_event_ticks": {
+            "peak_frames": [
+              2,
+              3,
+              4
+            ],
+            "turn_frames": [
+              17,
+              18,
+              19
+            ],
+            "next_ascent_frames": [
+              20,
+              21,
+              22
+            ]
+          },
+          "fixed_event_torso_scale": 309.5573479465203,
+          "coverage": 1.0,
+          "quality": {
+            "schema": "shoulder-frontal-topology-screen-v1",
+            "flags": [],
+            "passed": true,
+            "semantics": "tracking_or_view_uncertainty_not_posture_error",
+            "anatomical_correctness_guaranteed": false
+          },
+          "ready_reference_used": false,
+          "grade": null,
+          "score": null,
+          "label_inferred": false,
+          "tracking_QA_proven": false,
+          "production_approved": false
+        },
+        "confirmed_at_tick": 22,
+        "turn_ticks": [
+          17,
+          18,
+          19
+        ],
+        "label_created": false,
+        "grade": null,
+        "score": null,
+        "production_approved": false
+      }
+    ],
+    "visual_turn_frames": [
+      24,
+      30
+    ]
+  }
+]

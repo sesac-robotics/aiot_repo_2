@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "project_id": "a14471ba-b9af-4e7a-9399-301298d30b67",
+  "workspace": "/home/jayden/SeSACPAI-Mid",
+  "authorization": {
+    "source_thread_id": "01a167e8-603b-7862-b7b1-80b8f557f8df",
+    "human_quote": "이 스레드에서도 계속 하지만 SeSACPAI-Mid 프로젝트에 새 스레드를 만들어서 다른 작업도 하려고 한다. 문서 작업 등을 하려고 하는데 이 스레드에서 진행했던, 진행 중인 사항을 새 스레드에서도 할 수 있도록 해야 한다. 이 스레드와 새 스레드가 현황을 주고 받을 수 있도록 해야 한다.",
+    "scope": "Bidirectional project status messages between the original and newly created documentation thread. Verify the actual human turn before first sending. No third-party messaging authorization.",
+    "mode": "event_driven_while_threads_active",
+    "scheduled_background_sync": false,
+    "project_parallel_extension": {
+      "source_thread_id": "01a16de6-a0bd-78b2-a14a-8169128b27d3",
+      "human_quote": "SeSACPAI-Mid 프로젝트에 새로운 스레드 2개를 만들어서 각각 숄더 프레스, YTW 운동을 담당하게 하면 어떠한가? 지금 시간이 별로 없기 때문에 동시에 진행을 하도록 해야한다. 물론 SeSACPAI-Mid 에 있는 모든 스레드는 병렬로 처리를 하도록 하는데 서로 정보가 공유 되어야 한다.",
+      "verification": "직접 인간 사용자 메시지를 현재 대화에서 확인",
+      "scope": "SeSACPAI-Mid 소속 작업 스레드 생성/병렬진행/상호 프로젝트 상태 전달. 제3자·타프로젝트 메시지 제외.",
+      "mode": "event_driven_while_threads_active",
+      "scheduled_background_sync": false
+    }
+  },
+  "threads": {
+    "model_evaluation": {
+      "thread_id": "01a167e8-603b-7862-b7b1-80b8f557f8df",
+      "host_id": "local",
+      "title": "스쿼트 정면 평가 · 인계 및 실시간 테스트",
+      "status_file": "project-coordination/status/model-evaluation.json",
+      "role": "shared_model_data_evaluation_and_squat"
+    },
+    "documentation": {
+      "thread_id": "01a16de6-a0bd-78b2-a14a-8169128b27d3",
+      "host_id": "local",
+      "title": "프로젝트 문서 작업 및 현황 공유",
+      "status_file": "project-coordination/status/documentation.json",
+      "role": "common_live_app_integration_and_documentation"
+    },
+    "shoulder": {
+      "thread_id": "01a16e0f-f4d8-71d0-8299-053f663e47d0",
+      "host_id": "local",
+      "title": "숄더 프레스 구현·평가 개선",
+      "status_file": "project-coordination/status/shoulder.json",
+      "state": "dispatched"
+    },
+    "ytw": {
+      "thread_id": "01a16e10-2508-74c3-a737-31eb1a009558",
+      "host_id": "local",
+      "title": "YTW 반복 검출·평가 구현",
+      "status_file": "project-coordination/status/ytw.json",
+      "state": "dispatched"
+    }
+  },
+  "coordination_file": "project-coordination/PARALLEL_WORK.txt",
+  "updated_at_utc": "2026-10-24T13:18:52.946651+00:00"
+}

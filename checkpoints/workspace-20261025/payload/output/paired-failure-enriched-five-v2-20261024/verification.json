@@ -1,0 +1,88 @@
+{
+  "status": "same_test_paired_and_failure_enriched_experimental",
+  "all_five_reliable": false,
+  "production_replacement": false,
+  "frozen_at": "2026-10-24T06:03:46.533988+00:00",
+  "source_overlap": 0,
+  "person_normal_error_assignments_unchanged": true,
+  "exact_80_20_achieved": false,
+  "test_is_reused_diagnostic": true,
+  "independent_final_test": false,
+  "reserved_final_test_opened": false,
+  "training_candidate_rows": 961,
+  "test_rows": 51,
+  "trained_heads": 54,
+  "refitted_heads": 14,
+  "unchanged_heads": 40,
+  "development_gate_passed_heads": 3,
+  "actual_unique_trained_rows": 800,
+  "actual_trained_families": {
+    "QEVD": 241,
+    "MultiView": 131,
+    "REHAB24": 43,
+    "CFRep_reviewed": 82,
+    "R2D2": 208,
+    "US_Navy": 53,
+    "REHAB26": 12,
+    "other_reviewed": 30
+  },
+  "actual_trained_team": {
+    "r2d2_P01": 51,
+    "r2d2_P03": 51,
+    "r2d2_P04": 53,
+    "r2d2_P02": 53
+  },
+  "second_intake_sources_reviewed": 21,
+  "second_intake_grade_approved_sources": 13,
+  "second_intake_sources_actually_trained": 13,
+  "source_review_non_expert": true,
+  "second_intake_new_failure_sources_by_exercise": {
+    "pushups": 4,
+    "squats": 3,
+    "ytw": 4,
+    "shoulder": 1
+  },
+  "return_head_group_cv": {
+    "balanced_group_MAE": 0.26785714285714285,
+    "n": 58,
+    "groups": 48,
+    "MAE": 0.22413793103448276,
+    "group_MAE": 0.24652777777777776,
+    "error_n": 7,
+    "normal_n": 51,
+    "error_recall": 0.7142857142857143,
+    "normal_false_alarm": 0.21568627450980393
+  },
+  "return_head_gate_passed": false,
+  "paired_items": 153,
+  "existing_compatible_items": 134,
+  "checks": {
+    "passed": true,
+    "paired_geometry_and_cohort": 9,
+    "training_split_and_contracts": 16,
+    "pushup_semantic_invariants": 4,
+    "label_observation_and_protection": 6,
+    "total": 35,
+    "service_changed": false,
+    "new_terminal_phase_regression_passed": true,
+    "test_implementations_sha256": {
+      "tools/paired-evaluation/test_thresholds.py": "419e070d83773a5556e47e7a541c72282c66bcd84a4463b79dfb5616e21fb15b",
+      "tools/error-enrichment/test_contracts.py": "ba3f50232e5e3aab401360932fd28371958a8308b64ffc3ff87c5aa54ad5f308",
+      "tools/pushup-repair/test_semantic.py": "998844ce451d1147b9dac65e7a5cc324c7ccd9cc01d031644129e30fc3bf4e2e",
+      "tools/label-recheck/test_recheck.py": "c9dc640d8e21c656da8c50a27710d80ffd2c65f774761c2f77abe6cbca34e431"
+    }
+  },
+  "files": {
+    "score-inputs.frozen.json": "749e499be058cc983f1371eb7689ad7c5c270b0481f95780afd44b7cd1cfc64a",
+    "test-inputs.frozen.json": "b55fd62cf2d0c4a71b4bc51285a368276b27aebf418b3e0f390e45e8706dc1a0",
+    "score-candidates.joblib": "b3e18b4fed948050e02d8722023069119c26a6fdc3452f8ecc094aa26d6a2a2c",
+    "score-training.json": "e43e9d4a287993e1f8388228973c2791e783b830b0650deae57d540a6d339905",
+    "test-evaluation.json": "1077630f3dc698f9ee92891c5183581fa2d9b8407745320f98d051af387670e5",
+    "rules.frozen.json": "37a08160de1dbd8bac909dc35933c32014752c132d6c7ed07b72024e88b887e8",
+    "comparison.frozen.json": "06a149bc7f18dc3c83d66f6fda37def802c68a121ce0293a135dd4b886ac2bc8",
+    "MODEL_SELECTION_PROTOCOL.frozen.json": "8e387e601d0cbb8f6b3382e77e0307e2424fc823c34cccd0940635e8eda8e9a7",
+    "model-freeze-before-test.json": "7e4483f7e6406852526c9ca31ee774b16a0744354007f9ac47bf9d35a6af1895"
+  },
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "labels_sha256": "64aaae594a03b5e3a37a9bd1eed18f988a878d4daca999e44d6a2d8c57191c27"
+}

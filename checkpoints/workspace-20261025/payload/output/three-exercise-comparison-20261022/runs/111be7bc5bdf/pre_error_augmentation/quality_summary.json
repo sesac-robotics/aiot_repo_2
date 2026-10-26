@@ -1,0 +1,439 @@
+{
+  "model_version": "111be7bc5bdf",
+  "exercises": [
+    {
+      "exercise": "pushups",
+      "fixed_development_validation": {
+        "submitted": 11,
+        "reference_total_available": 9,
+        "reference_total_unknown": 2,
+        "methods": {
+          "ai": {
+            "all_submitted_assessed": 8,
+            "all_submitted_assessed_fraction": 0.7272727272727273,
+            "reference_observable_assessed": 6,
+            "reference_observable_assessed_fraction": 0.6666666666666666,
+            "reference_unknown_but_total_predicted_ids": [
+              "subject_017_push_up_good_side",
+              "subject_017_push_up_bad_side"
+            ],
+            "items": [
+              {
+                "item": "trunk_line",
+                "labeled_pairs": 7,
+                "MAE_grade_units": 0.3478147179296571
+              },
+              {
+                "item": "descent_range",
+                "labeled_pairs": 10,
+                "MAE_grade_units": 0.1101978043522686
+              },
+              {
+                "item": "return_extension",
+                "labeled_pairs": 10,
+                "MAE_grade_units": 0.33150635399286255
+              },
+              {
+                "item": "support",
+                "labeled_pairs": 7,
+                "MAE_grade_units": 0.2857142857142857
+              }
+            ]
+          },
+          "rule": {
+            "all_submitted_assessed": 8,
+            "all_submitted_assessed_fraction": 0.7272727272727273,
+            "reference_observable_assessed": 6,
+            "reference_observable_assessed_fraction": 0.6666666666666666,
+            "reference_unknown_but_total_predicted_ids": [
+              "subject_017_push_up_good_side",
+              "subject_017_push_up_bad_side"
+            ],
+            "items": [
+              {
+                "item": "trunk_line",
+                "labeled_pairs": 7,
+                "MAE_grade_units": 0.2857142857142857
+              },
+              {
+                "item": "descent_range",
+                "labeled_pairs": 10,
+                "MAE_grade_units": 0.3
+              },
+              {
+                "item": "return_extension",
+                "labeled_pairs": 10,
+                "MAE_grade_units": 0.2
+              },
+              {
+                "item": "support",
+                "labeled_pairs": 7,
+                "MAE_grade_units": 0
+              }
+            ]
+          }
+        }
+      },
+      "leave_person_out_development": {
+        "submitted": 27,
+        "reference_total_available": 21,
+        "reference_total_unknown": 6,
+        "methods": {
+          "ai": {
+            "all_submitted_assessed": 19,
+            "all_submitted_assessed_fraction": 0.7037037037037037,
+            "reference_observable_assessed": 18,
+            "reference_observable_assessed_fraction": 0.8571428571428571,
+            "reference_unknown_but_total_predicted_ids": [
+              "subject_008_push_up_bad_side"
+            ],
+            "items": [
+              {
+                "item": "trunk_line",
+                "labeled_pairs": 20,
+                "MAE_grade_units": 0.7716873106893791
+              },
+              {
+                "item": "descent_range",
+                "labeled_pairs": 22,
+                "MAE_grade_units": 0.18866172644672832
+              },
+              {
+                "item": "return_extension",
+                "labeled_pairs": 24,
+                "MAE_grade_units": 0.1375350674175992
+              },
+              {
+                "item": "support",
+                "labeled_pairs": 19,
+                "MAE_grade_units": 0.0
+              }
+            ]
+          },
+          "rule": {
+            "all_submitted_assessed": 19,
+            "all_submitted_assessed_fraction": 0.7037037037037037,
+            "reference_observable_assessed": 18,
+            "reference_observable_assessed_fraction": 0.8571428571428571,
+            "reference_unknown_but_total_predicted_ids": [
+              "subject_008_push_up_bad_side"
+            ],
+            "items": [
+              {
+                "item": "trunk_line",
+                "labeled_pairs": 20,
+                "MAE_grade_units": 0.65
+              },
+              {
+                "item": "descent_range",
+                "labeled_pairs": 22,
+                "MAE_grade_units": 0.36363636363636365
+              },
+              {
+                "item": "return_extension",
+                "labeled_pairs": 24,
+                "MAE_grade_units": 0.4166666666666667
+              },
+              {
+                "item": "support",
+                "labeled_pairs": 19,
+                "MAE_grade_units": 0.05263157894736842
+              }
+            ]
+          }
+        }
+      },
+      "single_grade_training_items": [
+        "support"
+      ],
+      "fewer_than_two_error_people": [
+        "return_extension",
+        "support"
+      ]
+    },
+    {
+      "exercise": "squats",
+      "fixed_development_validation": {
+        "submitted": 0,
+        "reference_total_available": 0,
+        "reference_total_unknown": 0,
+        "methods": {
+          "ai": {
+            "all_submitted_assessed": 0,
+            "all_submitted_assessed_fraction": null,
+            "reference_observable_assessed": 0,
+            "reference_observable_assessed_fraction": null,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              },
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              },
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              },
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              }
+            ]
+          },
+          "rule": {
+            "all_submitted_assessed": 0,
+            "all_submitted_assessed_fraction": null,
+            "reference_observable_assessed": 0,
+            "reference_observable_assessed_fraction": null,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              },
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              },
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              },
+              {
+                "item": null,
+                "labeled_pairs": 0,
+                "MAE_grade_units": null
+              }
+            ]
+          }
+        }
+      },
+      "leave_person_out_development": {
+        "submitted": 31,
+        "reference_total_available": 31,
+        "reference_total_unknown": 0,
+        "methods": {
+          "ai": {
+            "all_submitted_assessed": 31,
+            "all_submitted_assessed_fraction": 1.0,
+            "reference_observable_assessed": 31,
+            "reference_observable_assessed_fraction": 1.0,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": "descent_range",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.229721827537464
+              },
+              {
+                "item": "return_extension",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.0
+              },
+              {
+                "item": "knee_foot",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.6188274432631815
+              },
+              {
+                "item": "trunk_balance",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.0
+              }
+            ]
+          },
+          "rule": {
+            "all_submitted_assessed": 31,
+            "all_submitted_assessed_fraction": 1.0,
+            "reference_observable_assessed": 31,
+            "reference_observable_assessed_fraction": 1.0,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": "descent_range",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.25806451612903225
+              },
+              {
+                "item": "return_extension",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.16129032258064516
+              },
+              {
+                "item": "knee_foot",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.5483870967741935
+              },
+              {
+                "item": "trunk_balance",
+                "labeled_pairs": 31,
+                "MAE_grade_units": 0.1935483870967742
+              }
+            ]
+          }
+        }
+      },
+      "single_grade_training_items": [
+        "return_extension",
+        "trunk_balance"
+      ],
+      "fewer_than_two_error_people": [
+        "return_extension",
+        "trunk_balance"
+      ]
+    },
+    {
+      "exercise": "shoulder",
+      "fixed_development_validation": {
+        "submitted": 11,
+        "reference_total_available": 7,
+        "reference_total_unknown": 4,
+        "methods": {
+          "ai": {
+            "all_submitted_assessed": 5,
+            "all_submitted_assessed_fraction": 0.45454545454545453,
+            "reference_observable_assessed": 5,
+            "reference_observable_assessed_fraction": 0.7142857142857143,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": "overhead_reach",
+                "labeled_pairs": 5,
+                "MAE_grade_units": 0.5064204545454543
+              },
+              {
+                "item": "lower_return",
+                "labeled_pairs": 10,
+                "MAE_grade_units": 0.0
+              },
+              {
+                "item": "bilateral_timing",
+                "labeled_pairs": 5,
+                "MAE_grade_units": 0.3341155504368817
+              },
+              {
+                "item": "frontal_trunk_hold",
+                "labeled_pairs": 11,
+                "MAE_grade_units": 0.0
+              }
+            ]
+          },
+          "rule": {
+            "all_submitted_assessed": 5,
+            "all_submitted_assessed_fraction": 0.45454545454545453,
+            "reference_observable_assessed": 5,
+            "reference_observable_assessed_fraction": 0.7142857142857143,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": "overhead_reach",
+                "labeled_pairs": 5,
+                "MAE_grade_units": 0
+              },
+              {
+                "item": "lower_return",
+                "labeled_pairs": 10,
+                "MAE_grade_units": 0.3
+              },
+              {
+                "item": "bilateral_timing",
+                "labeled_pairs": 5,
+                "MAE_grade_units": 0.6
+              },
+              {
+                "item": "frontal_trunk_hold",
+                "labeled_pairs": 11,
+                "MAE_grade_units": 0
+              }
+            ]
+          }
+        }
+      },
+      "leave_person_out_development": {
+        "submitted": 30,
+        "reference_total_available": 16,
+        "reference_total_unknown": 14,
+        "methods": {
+          "ai": {
+            "all_submitted_assessed": 9,
+            "all_submitted_assessed_fraction": 0.3,
+            "reference_observable_assessed": 9,
+            "reference_observable_assessed_fraction": 0.5625,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": "overhead_reach",
+                "labeled_pairs": 13,
+                "MAE_grade_units": 0.24009980562200953
+              },
+              {
+                "item": "lower_return",
+                "labeled_pairs": 24,
+                "MAE_grade_units": 0.0
+              },
+              {
+                "item": "bilateral_timing",
+                "labeled_pairs": 19,
+                "MAE_grade_units": 0.5515640136264836
+              },
+              {
+                "item": "frontal_trunk_hold",
+                "labeled_pairs": 26,
+                "MAE_grade_units": 0.0
+              }
+            ]
+          },
+          "rule": {
+            "all_submitted_assessed": 9,
+            "all_submitted_assessed_fraction": 0.3,
+            "reference_observable_assessed": 9,
+            "reference_observable_assessed_fraction": 0.5625,
+            "reference_unknown_but_total_predicted_ids": [],
+            "items": [
+              {
+                "item": "overhead_reach",
+                "labeled_pairs": 13,
+                "MAE_grade_units": 0.07692307692307693
+              },
+              {
+                "item": "lower_return",
+                "labeled_pairs": 24,
+                "MAE_grade_units": 0.20833333333333334
+              },
+              {
+                "item": "bilateral_timing",
+                "labeled_pairs": 19,
+                "MAE_grade_units": 0.9473684210526315
+              },
+              {
+                "item": "frontal_trunk_hold",
+                "labeled_pairs": 26,
+                "MAE_grade_units": 0
+              }
+            ]
+          }
+        }
+      },
+      "single_grade_training_items": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ],
+      "fewer_than_two_error_people": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ]
+    }
+  ],
+  "expert_reference": false,
+  "independent_final_exam": false
+}

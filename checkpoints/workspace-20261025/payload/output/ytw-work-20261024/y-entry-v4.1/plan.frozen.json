@@ -1,0 +1,29 @@
+{
+  "schema": "ytw-Y-boundary-refinement-plan-v4.1",
+  "frozen_at_utc": "2026-10-24T13:48:49.987179+00:00",
+  "trigger": "v3 strict stability gate lost one V41 ordered attempt; v3 rejected for count regression",
+  "candidate": "fixed maxstep0.10 and two consecutive stable differences; original5slot Y phase/ready preserved; causal current stable confirmation tick refines only boundary",
+  "selection": "one engineering hypothesis, no sweep and no recheck-based threshold selection",
+  "existing_exposure": "all previous v3/v2 results seen; exposed development regression only, not independent recheck",
+  "reference_sha256": "969768c9842f9da3b379e6c9d77fc71304ec6dae1107d4b5f10a27145bd44de6",
+  "source_ids": [
+    "V37",
+    "V38",
+    "V39",
+    "V40",
+    "V41",
+    "V43",
+    "V44"
+  ],
+  "must_preserve": [
+    "ordered counts and false completion",
+    "required joints/border2/actualslots80",
+    "future-free timestamp",
+    "no severity/manual/projection/total approvals"
+  ],
+  "withhold_on_no_stable_boundary": true,
+  "model_refit": false,
+  "production_replacement": false,
+  "parent_run": "y-entry-v4",
+  "implementation_repair": "refined segment must also meet80percent; track actual received slots separately; no numeric threshold/model/reference change"
+}

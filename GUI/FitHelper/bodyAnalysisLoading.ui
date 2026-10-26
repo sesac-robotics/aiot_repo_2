@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>509</width><height>564</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Fitness Hub - Processing Analysis</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#analyzingTitle { font-size: 24px; font-weight: 800; color: #0284C7; }
+#analyzingStatusLabel { font-size: 15px; font-weight: 600; color: #64748B; }
+QProgressBar#analysisProgressBar { border: none; background-color: #E2E8F0; border-radius: 8px; height: 16px; text-align: center; color: #1E293B; font-size: 12px; font-weight: 700; }
+QProgressBar#analysisProgressBar::chunk { background-color: #0284C7; border-radius: 8px; }
+#analyzingTipLabel { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 14px; padding: 20px; color: #475569; font-size: 13px; font-weight: 500; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="analyzingTitle">
+    <property name="geometry"><rect><x>30</x><y>40</y><width>450</width><height>40</height></rect></property>
+    <property name="text"><string>Processing Body Analysis</string></property>
+    <property name="alignment"><set>Qt::AlignCenter</set></property>
+   </widget>
+   <widget class="QLabel" name="analyzingStatusLabel">
+    <property name="geometry"><rect><x>30</x><y>100</y><width>450</width><height>30</height></rect></property>
+    <property name="text"><string>Analyzing posture and joint alignment...</string></property>
+    <property name="alignment"><set>Qt::AlignCenter</set></property>
+   </widget>
+   <widget class="QProgressBar" name="analysisProgressBar">
+    <property name="geometry"><rect><x>80</x><y>160</y><width>350</width><height>25</height></rect></property>
+    <property name="value"><number>45</number></property>
+   </widget>
+   <widget class="QLabel" name="analyzingTipLabel">
+    <property name="geometry"><rect><x>40</x><y>230</y><width>430</width><height>120</height></rect></property>
+    <property name="text"><string>💡 AI Tip: Maintaining proper shoulder and core alignment reduces spinal load during workouts.</string></property>
+    <property name="alignment"><set>Qt::AlignCenter</set></property>
+   </widget>
+  </widget>
+ </widget>
+</ui>

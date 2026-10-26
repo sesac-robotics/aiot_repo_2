@@ -1,0 +1,21 @@
+{
+  "frozen_at": "2026-10-24T11:05:17.783223+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/return-root-cause-v3-20261024",
+  "data_parent": "/home/jayden/SeSACPAI-Mid/output/mild-return-fit-20261024",
+  "mild_Train_ids": [
+    "return_squat_diag_m2_8_6_r12",
+    "reviewed_return_squat_diag_m4_5_7_r11",
+    "return_squat_diag_m2_8_6_r11",
+    "return_squat_front_w1_9_3_r08",
+    "reviewed_return_squat_diag_m4_5_7_r10"
+  ],
+  "mild_definition": "lower half of observed error amplitudes max(hip,shoulder) from Train upper-reversal geometry; not development or Test cutoffs",
+  "normal_false_alarm_cap": 0.15,
+  "selection": "Train participant-group OOF mild error recall first, normal FP cap and overall error recall; fixed development only assessed after selection",
+  "bank_selection_policy": "Train_mild_priority",
+  "source_roles_unchanged": true,
+  "Test_input_sha256": "4d43cc5008af55e9677329bcfac3401197dec0f76fd8ff21b8cbf13061cbe500",
+  "training_input_sha256": "c275a5e292a2d67f659ac3248438b2c96501b6ff9a4a4ef4360a0c40402e9703",
+  "code_sha256": "0e17a3c01e8d786c729250172a325bd2593416399377e823ed7dccdd402cbc1a",
+  "production_replacement": false
+}

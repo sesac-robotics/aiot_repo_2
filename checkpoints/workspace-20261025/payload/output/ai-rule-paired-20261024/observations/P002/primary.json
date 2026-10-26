@@ -1,0 +1,32 @@
+{
+  "id": "P002",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "8f4b43a175eb894f291d0338abe9015b3ae1c66e17434cf643f69906cabc9585",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 57,
+      "fps": 30.0
+    },
+    "required_views": [
+      "front"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "06f6cdf5ec85652624f705aa03d44e1e1b1b54cb27c321b3e4a6485b4cc9a143",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/ai-rule-paired-20261024/observations/P002/primary.npz",
+  "frames": 20,
+  "observed_joint_fraction": 0.4863636363636364,
+  "extract_seconds": 1.311140088000002,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

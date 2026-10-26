@@ -1,0 +1,102 @@
+--- before/server.py
++++ after/server.py
+@@ -16,7 +16,7 @@
+ from collections import deque
+ from movement import MovementTracker
+ from shoulder_candidate import ShoulderTracker
+-from live_observation import mask_frame_border, movement_observation, VERSION as LIVE_OBSERVATION_VERSION
++from live_observation import mask_frame_border, movement_observation, ObservationReadyGate, require_start_ready, VERSION as LIVE_OBSERVATION_VERSION
+ from recording import Recorder, RUBRIC
+ from front_policy import apply_front_policy, frontal_motion_observations
+ from front_candidate import predict as predict_front_candidate
+@@ -104,6 +104,7 @@
+     stopped = threading.Event()
+     reader = None
+     cadence = deque(maxlen=60)
++    ready_gate = ObservationReadyGate()
+     def read_latest():
+         # 영상 수신이 Heavy 추론 시간을 기다리지 않도록 최신 실제 프레임만 보관한다.
+         while not stopped.is_set():
+@@ -175,9 +176,7 @@
+                     missing_names = [name for name,ok in zip(['왼쪽 어깨','오른쪽 어깨','왼쪽 골반','오른쪽 골반','왼쪽 무릎','오른쪽 무릎'],present) if not ok]
+                     STATE.update(camera_at=time.monotonic(),sample_cadence=dict(actual_hz=round(actual_hz,2),observed_slot_fraction=round(observed_fraction,3),required_hz=10,minimum_observed_fraction=.8),status='실시간 관절 추출 중 · 얼굴 모자이크 적용',tick=tick,visible=int(np.isfinite(xy).all(1).sum()),width=w,height=h,front_squat_observation=dict(visible=int(present.sum()),required=6,missing=missing_names),jpeg=cv2.imencode('.jpg',frame)[1].tobytes())
+                     STATE.update(live_observation_version=LIVE_OBSERVATION_VERSION,
+-                                 observation_options={ex:{v:movement_observation(xy,w,h,ex,v)
+-                                     for v in ('front','side','front_oblique')}
+-                                     for ex in ('squats','shoulder','pushups','plank','ytw')})
++                                 observation_options=ready_gate.update(tick,xy,w,h))
+     except Exception as e:
+         with LOCK:
+             STATE['status']=str(e)
+@@ -484,6 +483,7 @@
+                     if STATE['collecting'] or RECORDER.active or STATE.get('finalizing'): raise ValueError('이미 운동 인식·촬영 중이거나 이전 결과를 저장 중입니다.')
+                     if STATE['jpeg'] is None: raise ValueError('웹캠 연결 후 시작하세요')
+                     if STATE['update_available']: raise ValueError('새 점수 모듈이 있습니다. 최신 버전 적용 후 시작하세요')
++                    require_start_ready(STATE,d['exercise'],d['view'],time.monotonic())
+                     TRACKER = make_tracker(d['exercise'],d['view'])
+                     COACH=LiveCoach(); STATE['coaching']=None
+                     STATE.update(movement=TRACKER.status(),repetitions=[],last_rep=None,samples=[],collecting=True,result=None,live_result=None,live_error=None,exercise=d['exercise'],view=d['view'],generation=STATE['generation']+1,started_at=time.monotonic())
+--- before/index.html
++++ after/index.html
+@@ -1,7 +1,7 @@
+ <!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>실시간 자세 평가 · 100점 체계</title><style>
+ *{box-sizing:border-box}body{margin:0;background:#edf3f5;color:#20394b;font:17px/1.6 system-ui}header,main{max-width:1200px;margin:auto;padding:22px}h1{font-size:28px;margin:0}h2{font-size:21px;margin:0 0 12px}a{color:#126674}nav,small{font-size:14px;color:#58707d}main{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.card{background:white;border-radius:18px;padding:24px;margin-bottom:18px}.full{grid-column:1/-1}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px}.metric{background:#e8f5f3;border-radius:14px;padding:16px}.metric strong{display:block;font-size:27px}.metric:first-child{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center}small{display:block}.tag{background:#fff2d7;color:#815c20;padding:8px 12px;border-radius:9px}.camera{width:100%;border-radius:12px;background:#dce6e9}button,select{font:inherit;border:1px solid #c5d7dc;border-radius:8px;padding:10px;margin:4px}button{background:#185b69;color:white;cursor:pointer;border:0}button:disabled{opacity:.5}#coach{font-size:22px;font-weight:600}table{width:100%;border-collapse:collapse;font-size:15px}td,th{text-align:left;border-bottom:1px solid #dfe8ec;padding:12px 7px;vertical-align:top}#items td:nth-child(1){width:18%}#items td:nth-child(2){width:8%}#items td:nth-child(3),#items td:nth-child(4){width:14%}#items td:nth-child(5){width:46%}summary{color:#126674;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}[hidden]{display:none!important}body.review main{grid-template-columns:1fr}body.review #cameraCard{display:none}.scroll{overflow:auto}@media(max-width:800px){main{display:block}.card{padding:18px}}</style>
+ <header><h1 id="title">실시간 자세 평가</h1><nav><a href="/consistent-report">이번 7회 개선 전후</a> · <a href="/unified-squat">평가 기준 기록</a> · <a href="/?saved=latest">최근 저장 결과</a> · <a href="/?standing=latest">기립 상태 AI 재평가</a> · <a id="devLink" href="/?developer=1">개발자 상세</a> · <a href="/">운동 화면</a></nav></header>
+-<main><section class="card" id="cameraCard"><img class="camera" id="camera" alt="얼굴 모자이크를 적용한 실시간 웹캠"><p id="framing"></p><small id="status">카메라 연결 확인 중</small></section><section><div class="card" id="controls"><label>운동 <select id="exercise"><option value="squats">스쿼트</option><option value="shoulder">숄더 프레스</option><option value="pushups">푸시업</option><option value="plank">플랭크</option><option value="ytw">YTW</option></select></label><label>방향 <select id="view"><option value="front">정면</option><option value="side">측면</option><option value="front_oblique">정면 사선</option></select></label><p><button id="start">운동 시작</button><button id="stop">종료·저장</button></p><p id="exerciseGuide"></p><p id="message"></p></div><div class="card"><small id="scoreContext">최근 완료 회차 점수</small><div class="metrics"><div class="metric"><span>완료한 횟수</span><strong id="count">0회</strong></div><div class="metric"><small>AI Model · 100점 기준</small><strong id="aiTotal">— /100</strong><small id="aiPartial">완료 후 표시</small></div><div class="metric"><small>Rule Base · 100점 기준</small><strong id="ruleTotal">— /100</strong><small id="rulePartial">완료 후 표시</small></div></div><p id="phase">준비 대기</p><small class="tag" id="rubricTag">하강 30 · 복귀 20 · 무릎·발 정렬 30 · 몸통 20점<br>미평가 항목을 0점·만점으로 채우거나 100점으로 재환산하지 않습니다.</small></div><div class="card"><h2 id="coachTitle">교정 안내</h2><p id="coach">편하게 선 자세에서 시작하세요.</p><small id="observationNote">항목에 필요한 관절만 확인합니다. 관측 부족은 자세 오류나 0점이 아닙니다.</small></div></section>
++<main><section class="card" id="cameraCard"><img class="camera" id="camera" alt="얼굴 모자이크를 적용한 실시간 웹캠"><p id="framing"></p><small id="status">카메라 연결 확인 중</small></section><section><div class="card" id="controls"><label>운동 <select id="exercise"><option value="squats">스쿼트</option><option value="shoulder">숄더 프레스</option><option value="pushups">푸시업</option><option value="plank">플랭크</option><option value="ytw">YTW</option></select></label><label>방향 <select id="view"><option value="front">정면</option><option value="side">측면</option><option value="front_oblique">정면 사선</option></select></label><p id="readiness" role="status" class="tag" style="font-size:21px;font-weight:700">측정 준비 대기 · 구도를 확인해 주세요.</p><p><button id="start" disabled>운동 시작</button><button id="stop">종료·저장</button></p><p id="exerciseGuide"></p><p id="message"></p></div><div class="card"><small id="scoreContext">최근 완료 회차 점수</small><div class="metrics"><div class="metric"><span>완료한 횟수</span><strong id="count">0회</strong></div><div class="metric"><small>AI Model · 100점 기준</small><strong id="aiTotal">— /100</strong><small id="aiPartial">완료 후 표시</small></div><div class="metric"><small>Rule Base · 100점 기준</small><strong id="ruleTotal">— /100</strong><small id="rulePartial">완료 후 표시</small></div></div><p id="phase">준비 대기</p><small class="tag" id="rubricTag">하강 30 · 복귀 20 · 무릎·발 정렬 30 · 몸통 20점<br>미평가 항목을 0점·만점으로 채우거나 100점으로 재환산하지 않습니다.</small></div><div class="card"><h2 id="coachTitle">교정 안내</h2><p id="coach">편하게 선 자세에서 시작하세요.</p><small id="observationNote">항목에 필요한 관절만 확인합니다. 관측 부족은 자세 오류나 0점이 아닙니다.</small></div></section>
+ <section class="card full"><h2>최근 회차 · 항목별 점수</h2><p id="scope">완료한 동작부터 표시합니다.</p><div class="scroll"><table><thead><tr><th>항목</th><th>배점</th><th>AI Model</th><th>Rule Base</th><th>평가·차이의 이유</th></tr></thead><tbody id="items"></tbody></table></div></section>
+ <section class="card full"><h2>운동 결과</h2><p id="historyNote"></p><div class="scroll"><table><thead><tr><th>회차</th><th>AI Model /100</th><th>Rule Base /100</th><th>항목별 상세</th><th>교정 안내</th></tr></thead><tbody id="history"></tbody></table></div></section>
+ <section class="card full" id="developer" hidden><h2>개발자 상세 · 내부 등급 및 이전 실험</h2><button id="reload">대기 중 최신 모듈 적용</button><pre id="diagnostics"></pre></section></main>
+@@ -29,8 +29,8 @@
+ function appendItems(tbody,s){tbody.textContent='';for(let i of s&&s.items||[]){let tr=tbody.insertRow();for(let value of [i.title,i.weight+'점',itemPoints(i,'ai'),itemPoints(i,'rule')])tr.insertCell().textContent=value;let cell=tr.insertCell(),detail=document.createElement('details'),sum=document.createElement('summary');sum.textContent=i.comparison&&i.comparison.difference_points!=null?'AI Model '+(i.comparison.difference_points>0?'+':'')+i.comparison.difference_points.toFixed(1)+'점 · 이유':'평가 사유 보기';detail.append(sum);for(let text of [i.comparison&&i.comparison.explanation,...i.reasons].filter(Boolean)){let p=document.createElement('p');p.textContent=text;detail.append(p)}cell.append(detail)}}
+ function exerciseGuide(ex){return ex==='shoulder'?'골반·양어깨·팔꿈치·손목이 화면 안쪽에 보이도록 맞추세요. 팔꿈치를 굽힌 하단에서 잠시 준비하고, 양팔을 머리 위로 올렸다가 하단으로 돌아오세요.':ex==='squats'?'어깨·골반·무릎이 보이도록 서서 잠시 준비한 뒤 진행하세요.':ex==='ytw'?'현재 YTW 자동 반복 구분은 미지원입니다.':'선택한 운동의 준비 자세와 필요한 관절이 화면 안쪽에 보이도록 맞춰 주세요.';}
+ function selectedObservation(){if(!latestState)return null;let ex=latestState.collecting||review?latestState.exercise:el('exercise').value,v=latestState.collecting||review?latestState.view:el('view').value;return latestState.observation_options?.[ex]?.[v]||latestState.movement?.observation;}
+-function updateFraming(){let o=selectedObservation();el('exerciseGuide').textContent=exerciseGuide(latestState?.collecting?latestState.exercise:el('exercise').value);el('framing').textContent=o?.message||'';el('observationNote').textContent='횟수와 점수는 같은 화면 경계 기준을 적용합니다. 점수에는 항목별 관측률과 모델 지원 조건도 필요합니다.';}
++function updateFraming(){let o=selectedObservation();let running=!!latestState?.collecting,ok=!!o?.start_ready;el('start').disabled=running||!!latestState?.finalizing||!!latestState?.update_available||!ok;el('readiness').textContent=running?(latestState?.movement?.observation?.ready?(latestState.exercise==='shoulder'?'측정 중 · 하단 준비 → 양팔 상단 → 하단 복귀':'측정 중 · 운동별 준비 자세에서 진행하세요.'):'측정 중 관측 대기 · '+(o?.message||'구도를 확인하세요.')):ok?'관측 준비 완료 · 운동 시작 버튼을 눌러 주세요.':o?.supported===false?o.message:o?.ready?'관측 준비 확인 중 · 잠시 자세를 유지해 주세요.':'측정 준비 대기 · '+(o?.message||'카메라 연결을 확인하세요.');el('readiness').style.background=ok?'#d9f2df':'#fff2d7';el('exerciseGuide').textContent=exerciseGuide(latestState?.collecting?latestState.exercise:el('exercise').value);el('framing').textContent=o?.message||'';el('observationNote').textContent='횟수와 점수는 같은 화면 경계 기준을 적용합니다. 점수에는 항목별 관측률과 모델 지원 조건도 필요합니다.';}
+ el('exercise').addEventListener('change',updateFraming);el('view').addEventListener('change',updateFraming);
+-async function refresh(){try{let d=await(await fetch(standingReplay?'/standing-state':consistent?'/consistent-state':saved?'/saved-state':unified?'/unified-state':replay?'/replay-state':'/state')).json(),m=d.movement||{},rows=d.repetitions||[],last=rows.length?rows[rows.length-1]:d.last_rep,s=last&&last.score_100;el('scoreContext').textContent=last?'최근 완료 '+last.number+'회차 점수':'첫 회차 완료 후 점수 표시';el('status').textContent=d.status||'저장 자료';el('count').textContent=d.exercise==='plank'?(m.hold_seconds||0)+'초':(m.count==null?'반복 구분 미지원':m.count+'회');el('aiTotal').textContent=total(s&&s.ai);el('ruleTotal').textContent=total(s&&s.rule);el('aiPartial').textContent=partial(s&&s.ai);el('rulePartial').textContent=partial(s&&s.rule);el('phase').textContent=d.collecting?m.phase:'운동 종료 · 저장 자료 또는 준비 대기';el('start').disabled=el('exercise').disabled=el('view').disabled=!!d.collecting;el('stop').disabled=!d.collecting;el('reload').disabled=!!d.collecting;latestState=d;updateFraming();let current=d.collecting&&m.active&&d.live_result&&d.live_result.coaching&&d.live_result.coaching.version==='front-observation100-consistent-v1'?d.live_result:null;el('coach').textContent=current?guidance(current):last?guidance(last):(selectedObservation()?.message||'선택한 운동의 준비 자세에서 시작하세요.');el('coachTitle').textContent=current?'현재 동작 안내 · 잠정':last?'최근 완료 회차 안내':'교정 안내';if(s?s.version==='front-observation100-consistent-v1':d.exercise==='squats'&&d.view==='front'){el('rubricTag').textContent='정면 관측 기준 v1 · 하강 추정 30 / 서기 높이 복귀 20 / 무릎 간격 유지 30 / 몸통 좌우 안정 20점. 기존 관절 신전·발 정렬 종합 기준과 다릅니다. AI 복귀는 처음 선 상태와의 학습 유사도, Rule Base는 골반 높이 차로 확인합니다. 미관측 값을 채우거나 부분합을 100점으로 환산하지 않습니다.';}else{el('rubricTag').textContent='필요한 관절이 화면 안쪽에 관측될 때 반복을 구분합니다. 점수는 항목별 관측률·동작 구간·모델 지원 조건까지 충족해야 산출합니다. 미관측 항목을 0점이나 만점으로 채우지 않습니다.';}el('scope').textContent=s?s.scope:'실제 완료한 동작을 평가합니다. 준비·휴식 시간은 제외합니다.';el('historyNote').textContent='완료 '+rows.length+'회 · 총점과 평가된 항목의 부분 합계를 구분합니다.';
++async function refresh(){try{let d=await(await fetch(standingReplay?'/standing-state':consistent?'/consistent-state':saved?'/saved-state':unified?'/unified-state':replay?'/replay-state':'/state')).json(),m=d.movement||{},rows=d.repetitions||[],last=rows.length?rows[rows.length-1]:d.last_rep,s=last&&last.score_100;el('scoreContext').textContent=last?'최근 완료 '+last.number+'회차 점수':'첫 회차 완료 후 점수 표시';el('status').textContent=d.status||'저장 자료';el('count').textContent=d.exercise==='plank'?(m.hold_seconds||0)+'초':(m.count==null?'반복 구분 미지원':m.count===0&&!review?d.started_at?'완료 검출 없음':'준비 대기':m.count+'회');el('aiTotal').textContent=total(s&&s.ai);el('ruleTotal').textContent=total(s&&s.rule);el('aiPartial').textContent=partial(s&&s.ai);el('rulePartial').textContent=partial(s&&s.rule);el('phase').textContent=d.collecting?m.phase:'운동 종료 · 저장 자료 또는 준비 대기';el('start').disabled=el('exercise').disabled=el('view').disabled=!!d.collecting;el('stop').disabled=!d.collecting;el('reload').disabled=!!d.collecting;latestState=d;updateFraming();let current=d.collecting&&m.active&&d.live_result&&d.live_result.coaching&&d.live_result.coaching.version==='front-observation100-consistent-v1'?d.live_result:null;el('coach').textContent=current?guidance(current):last?guidance(last):(selectedObservation()?.message||'선택한 운동의 준비 자세에서 시작하세요.');el('coachTitle').textContent=current?'현재 동작 안내 · 잠정':last?'최근 완료 회차 안내':'교정 안내';if(s?s.version==='front-observation100-consistent-v1':d.exercise==='squats'&&d.view==='front'){el('rubricTag').textContent='정면 관측 기준 v1 · 하강 추정 30 / 서기 높이 복귀 20 / 무릎 간격 유지 30 / 몸통 좌우 안정 20점. 기존 관절 신전·발 정렬 종합 기준과 다릅니다. AI 복귀는 처음 선 상태와의 학습 유사도, Rule Base는 골반 높이 차로 확인합니다. 미관측 값을 채우거나 부분합을 100점으로 환산하지 않습니다.';}else{el('rubricTag').textContent='필요한 관절이 화면 안쪽에 관측될 때 반복을 구분합니다. 점수는 항목별 관측률·동작 구간·모델 지원 조건까지 충족해야 산출합니다. 미관측 항목을 0점이나 만점으로 채우지 않습니다.';}el('scope').textContent=s?s.scope:'실제 완료한 동작을 평가합니다. 준비·휴식 시간은 제외합니다.';el('historyNote').textContent='완료 '+rows.length+'회 · 총점과 평가된 항목의 부분 합계를 구분합니다.';
+ let nextKey=JSON.stringify(rows.map(r=>[r.number,r.score_100,r.coaching&&r.coaching.messages]));if(nextKey!==key){key=nextKey;appendItems(el('items'),s);let tbody=el('history');tbody.textContent='';for(let r of rows){let tr=tbody.insertRow(),a=r.score_100;tr.insertCell().textContent=r.number+'회';for(let method of ['ai','rule']){let cell=tr.insertCell();cell.textContent=total(a&&a[method]);let small=document.createElement('small');small.textContent=partial(a&&a[method]);cell.append(small)}let cell=tr.insertCell(),det=document.createElement('details'),sum=document.createElement('summary');sum.textContent='점수·사유 보기';det.append(sum);det.open=expanded.has(r.number);det.addEventListener('toggle',()=>{if(det.isConnected){if(det.open)expanded.add(r.number);else expanded.delete(r.number)}});let table=document.createElement('table');appendItems(table.createTBody(),a);det.append(table);cell.append(det);tr.insertCell().textContent=guidance(r)}}if(dev)el('diagnostics').textContent=JSON.stringify({source_commit:d.source_commit,source_digest:d.loaded_code_model_sha256,live:d.live_result,last_rep:last},null,2)}catch(e){el('status').textContent='결과 연결 확인 중'}}refresh();setInterval(refresh,1000);
+ </script></html>
+--- before/live_observation.py
++++ after/live_observation.py
+@@ -53,3 +53,39 @@
+     if not samples:
+         return 0.
+     return len({tick for tick, _ in samples}) / (samples[-1][0] - samples[0][0] + 1)
++
++
++class ObservationReadyGate:
++    """구도 준비 전 운동 수집을 시작하지 않도록 연속 관측을 확인한다."""
++    def __init__(self):
++        self.last_tick = None
++        self.streaks = {}
++
++    def update(self, tick, points, width, height):
++        consecutive = self.last_tick is not None and tick == self.last_tick + 1
++        self.last_tick = tick
++        options = {}
++        for exercise in ('squats','shoulder','pushups','plank','ytw'):
++            options[exercise] = {}
++            for view in ('front','side','front_oblique'):
++                item = movement_observation(points,width,height,exercise,view)
++                key = (exercise,view)
++                supported = exercise != 'ytw' and not (exercise == 'shoulder' and view == 'side')
++                good = item['ready'] and supported
++                self.streaks[key] = (self.streaks.get(key,0) + 1 if consecutive else 1) if good else 0
++                item.update(ready_frames=self.streaks[key],required_ready_frames=6,
++                            start_ready=self.streaks[key] >= 6,supported=supported)
++                if exercise == 'shoulder' and view == 'side':
++                    item['message'] = '숄더 프레스는 정면 또는 정면 사선으로 선택하세요.'
++                options[exercise][view] = item
++        return options
++
++
++def require_start_ready(state, exercise, view, now):
++    """UI 우회 호출도 동일하게 차단한다. 기존 세션 상태를 변경하지 않는다."""
++    if now - state.get('camera_at',0) > 1:
++        raise ValueError('카메라 최신 영상 대기 중입니다. 구도를 확인하세요.')
++    item = state.get('observation_options',{}).get(exercise,{}).get(view,{})
++    if not item.get('start_ready'):
++        message = item.get('message','필요한 관절이 화면 안쪽에 보이도록 구도를 맞춰 주세요.')
++        raise ValueError('측정 준비 대기 · ' + message + ' 관측 준비가 완료되면 시작할 수 있습니다.')

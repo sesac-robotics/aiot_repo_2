@@ -1,0 +1,2604 @@
+{
+  "status": "실시간 관절 추출 중 · 얼굴 모자이크 적용",
+  "collecting": false,
+  "result": null,
+  "tick": 52109,
+  "visible": 13,
+  "exercise": "shoulder",
+  "view": "front",
+  "live_result": null,
+  "live_error": null,
+  "generation": 3,
+  "started_at": 36225.311647469,
+  "movement": {
+    "detection_version": "shoulder-bilateral-overhead-v1-candidate",
+    "phase": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+    "count": 8,
+    "active": false,
+    "observation": {
+      "version": "live-observation-border2-v1",
+      "ready": false,
+      "missing": [
+        "왼쪽 골반",
+        "오른쪽 골반",
+        "왼쪽 팔꿈치",
+        "오른쪽 팔꿈치",
+        "왼쪽 손목",
+        "오른쪽 손목"
+      ],
+      "edge_joints": [],
+      "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+    },
+    "completion_observation_coverage": 1.0,
+    "movement_seconds": 21.7,
+    "hold_seconds": 0.0,
+    "uncertain_attempts": [],
+    "scope": "engineering_candidate_not_accuracy_validation"
+  },
+  "repetitions": [
+    {
+      "number": 1,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.5,
+      "ai": {
+        "earned": 48.6,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 85.0,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.7335927260006496,
+          "rule_grade": 1,
+          "ai_minus_rule": 0.7335927260006496,
+          "observed": true,
+          "bank": "front",
+          "measured": 142.13095895408892,
+          "feature": [
+            40.14131645749373,
+            44.15864285767451,
+            79.20462899770122,
+            132.79784733748573,
+            138.91154011391143,
+            142.13095895408892,
+            142.79132589012156,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 99.38921676566508,
+          "feature": [
+            72.51245971604588,
+            74.6071254513458,
+            80.89112265724553,
+            99.38921676566508,
+            118.89804483195994,
+            127.00136316203523,
+            129.7024692720603,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.8069897105317594,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.19301028946824061,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.07192158748219893,
+          "feature": [
+            0.00076839230711509,
+            0.002390336106445956,
+            0.006877219116068117,
+            0.014570414671214532,
+            0.031755937883974183,
+            0.07192158748219893,
+            0.09744490657685809,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.7534297556043428,
+          "feature": [
+            0.03778207561859366,
+            0.06528771893501334,
+            0.12884296778588492,
+            0.3779042510650097,
+            0.6738905157458785,
+            0.7534297556043428,
+            0.8902242734600434,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 26.0,
+            "rule_points": 15.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": 11.0,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +11.0점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 22.6,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -2.4,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -2.4점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 48.6,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 85.0,
+          "maximum": 100,
+          "earned_subtotal": 85.0,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    },
+    {
+      "number": 2,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.3,
+      "ai": {
+        "earned": 45.8,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 100.0,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.8231958243260313,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.17680417567396867,
+          "observed": true,
+          "bank": "front",
+          "measured": 153.4551969367458,
+          "feature": [
+            37.43738671550796,
+            38.0964524002613,
+            54.79319641381407,
+            132.5869102310025,
+            151.14750354036318,
+            153.4551969367458,
+            153.76481510874228,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 93.14264836941145,
+          "feature": [
+            77.99828683715013,
+            79.15429901419908,
+            82.62233554534596,
+            93.14264836941145,
+            109.69343577000815,
+            124.01632653891122,
+            128.79062346187888,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.4782869854628338,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.5217130145371662,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.03461674312179223,
+          "feature": [
+            0.0005403279563445033,
+            0.0019566942997204053,
+            0.004644926969722185,
+            0.017211551947176162,
+            0.02551057374329855,
+            0.03461674312179223,
+            0.03805182300129007,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 1.0938993055017068,
+          "feature": [
+            0.020549104362297007,
+            0.05800042804621,
+            0.22040247089325105,
+            0.6094621674947978,
+            1.059481852878149,
+            1.0938993055017068,
+            1.0976376138065593,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 27.3,
+            "rule_points": 30.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -2.7,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -2.7점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 18.5,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -6.5,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -6.5점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 45.8,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 100.0,
+          "maximum": 100,
+          "earned_subtotal": 100.0,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    },
+    {
+      "number": 3,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.5,
+      "ai": {
+        "earned": 49.2,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 87.5,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.7289837219334618,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.27101627806653816,
+          "observed": true,
+          "bank": "front",
+          "measured": 145.40798201422393,
+          "feature": [
+            39.92249847603774,
+            40.941226291373084,
+            79.80926969986533,
+            133.3939791563057,
+            143.34388822176976,
+            145.40798201422393,
+            145.7982488235429,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 88.90091289921016,
+          "feature": [
+            67.16034951496715,
+            68.3569473752522,
+            71.94674095610739,
+            88.90091289921016,
+            108.98366865055878,
+            118.20491308625655,
+            121.27866123148912,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.8617116261763431,
+          "rule_grade": 1,
+          "ai_minus_rule": 0.8617116261763431,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.09643875540430032,
+          "feature": [
+            0.002377117600590617,
+            0.0027046048148631012,
+            0.007731121634805107,
+            0.02092700472450513,
+            0.05289043255746574,
+            0.09643875540430032,
+            0.11706813232574775,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 1.5781174225789687,
+          "feature": [
+            0.22527457469454115,
+            0.3322600612684741,
+            0.8498176016772764,
+            1.0478162066601717,
+            1.4778558258545045,
+            1.5781174225789687,
+            1.6201097522377428,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 25.9,
+            "rule_points": 30.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -4.1,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -4.1점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 23.3,
+            "rule_points": 12.5,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": 10.8,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +10.8점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 49.2,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 87.5,
+          "maximum": 100,
+          "earned_subtotal": 87.5,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    },
+    {
+      "number": 4,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.6,
+      "ai": {
+        "earned": 49.2,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 85.0,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.7882351125046938,
+          "rule_grade": 1,
+          "ai_minus_rule": 0.7882351125046938,
+          "observed": true,
+          "bank": "front",
+          "measured": 144.62611147249703,
+          "feature": [
+            38.658700741617764,
+            38.986092862568555,
+            68.41337885204342,
+            140.73670775984502,
+            143.9181929233601,
+            144.62611147249703,
+            144.97795272564505,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 89.64809411738736,
+          "feature": [
+            71.66280317704282,
+            73.00311077478004,
+            77.0240335679917,
+            89.64809411738736,
+            108.28490296125545,
+            123.1287726845175,
+            128.07672925893817,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.7925172055263738,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.20748279447362616,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.06731339801613168,
+          "feature": [
+            0.0011322609693114162,
+            0.0027181836984514138,
+            0.006723972363558925,
+            0.014514297694512734,
+            0.038785846516695394,
+            0.06731339801613168,
+            0.08107141403439602,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.9232048745933172,
+          "feature": [
+            0.10879180589291343,
+            0.14454845832160917,
+            0.5415416951752055,
+            0.7851524111009018,
+            0.8713127168222212,
+            0.9232048745933172,
+            0.9731458805826401,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 26.8,
+            "rule_points": 15.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": 11.8,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +11.8점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 22.4,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -2.6,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -2.6점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 49.2,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 85.0,
+          "maximum": 100,
+          "earned_subtotal": 85.0,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    },
+    {
+      "number": 5,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 4.3,
+      "ai": {
+        "earned": 40.7,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 75.0,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.5976072978406668,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.4023927021593332,
+          "observed": true,
+          "bank": "front",
+          "measured": 153.94060697115006,
+          "feature": [
+            46.47484451669115,
+            56.751047233404556,
+            135.91955116407965,
+            149.7902828247988,
+            153.0212633568727,
+            153.94060697115006,
+            154.42330091813275,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 1,
+          "ai_minus_rule": 1.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 119.98863528776518,
+          "feature": [
+            87.32459519882305,
+            90.20679211234169,
+            98.85338285289762,
+            119.98863528776518,
+            146.78956554044143,
+            153.7769960789591,
+            156.10613959179832,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.339502778228939,
+          "rule_grade": 1,
+          "ai_minus_rule": 0.33950277822893904,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.11233501632019055,
+          "feature": [
+            0.010193493432234463,
+            0.012090896852396737,
+            0.03242426488624531,
+            0.054161804347470144,
+            0.08335654479489837,
+            0.11233501632019055,
+            0.11521707009750087,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.7942504292708471,
+          "feature": [
+            0.03288776581728752,
+            0.0488667220681744,
+            0.10465936024992029,
+            0.2825898109572128,
+            0.5276138505465783,
+            0.7942504292708471,
+            0.9784472608798334,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 24.0,
+            "rule_points": 30.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -6.0,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -6.0점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 12.5,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 16.7,
+            "rule_points": 12.5,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": 4.2,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +4.2점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 40.7,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 75.0,
+          "maximum": 100,
+          "earned_subtotal": 75.0,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    },
+    {
+      "number": 6,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.6,
+      "ai": {
+        "earned": 48.5,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 87.5,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.7345264967278848,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.26547350327211516,
+          "observed": true,
+          "bank": "front",
+          "measured": 148.60417663367681,
+          "feature": [
+            38.965990621518586,
+            47.165450598141256,
+            76.59370294618974,
+            142.8703497388658,
+            148.40093931265682,
+            148.60417663367681,
+            149.07165131314406,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 106.87162202806545,
+          "feature": [
+            78.46630837243826,
+            81.5595299735476,
+            90.83919477687562,
+            106.87162202806545,
+            121.5597652838898,
+            128.41971889556,
+            130.70637009945006,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.796810351584799,
+          "rule_grade": 1,
+          "ai_minus_rule": 0.7968103515847991,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.10583110964596044,
+          "feature": [
+            0.002706142748578955,
+            0.0037176609726061296,
+            0.0069465613736843235,
+            0.014022339774202863,
+            0.05619792351839076,
+            0.10583110964596044,
+            0.12350068299386092,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 1.025420606575049,
+          "feature": [
+            0.1217554779684875,
+            0.14947322072922953,
+            0.2984556064084546,
+            0.671890470390876,
+            0.8454982758395506,
+            1.025420606575049,
+            1.0562990244034385,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 26.0,
+            "rule_points": 30.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -4.0,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -4.0점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 22.5,
+            "rule_points": 12.5,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": 10.0,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +10.0점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 48.5,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 87.5,
+          "maximum": 100,
+          "earned_subtotal": 87.5,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    },
+    {
+      "number": 7,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.5,
+      "ai": {
+        "earned": 47.5,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 87.5,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.632822389992983,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.367177610007017,
+          "observed": true,
+          "bank": "front",
+          "measured": 146.5105340280308,
+          "feature": [
+            43.45359263452047,
+            44.533119472735265,
+            71.0894526527707,
+            141.34803666041847,
+            146.19953511061914,
+            146.5105340280308,
+            146.8156387323078,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 103.13196676840946,
+          "feature": [
+            69.52643284693211,
+            72.33945663546483,
+            80.77852800106294,
+            103.13196676840946,
+            124.7278918588971,
+            131.80343860614926,
+            134.16195418856663,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.8367339377183345,
+          "rule_grade": 1,
+          "ai_minus_rule": 0.8367339377183345,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.15313353809938635,
+          "feature": [
+            0.0010780292994535044,
+            0.0026165446935501957,
+            0.0071426557426435,
+            0.07475930598459685,
+            0.11965433817313018,
+            0.15313353809938635,
+            0.1732463125357553,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.7545936223333544,
+          "feature": [
+            0.04517258571681104,
+            0.08898903460582328,
+            0.2865103733208099,
+            0.5208420599502952,
+            0.5889476738318955,
+            0.7545936223333544,
+            0.7721385600804085,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 24.5,
+            "rule_points": 30.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -5.5,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -5.5점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 23.0,
+            "rule_points": 12.5,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": 10.5,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +10.5점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 47.5,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 87.5,
+          "maximum": 100,
+          "earned_subtotal": 87.5,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    },
+    {
+      "number": 8,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.4,
+      "ai": {
+        "earned": 48.2,
+        "maximum": 55,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 85.0,
+        "maximum": 100,
+        "full_score": true,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": 1.6511297955402162,
+          "rule_grade": 1,
+          "ai_minus_rule": 0.6511297955402162,
+          "observed": true,
+          "bank": "front",
+          "measured": 143.1679243426579,
+          "feature": [
+            40.27959982928532,
+            46.79985834817963,
+            65.04328770073096,
+            134.25532893857596,
+            142.5719490701458,
+            143.1679243426579,
+            143.3446906258477,
+            1.0
+          ],
+          "reasons": [
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 91.7404347589547,
+          "feature": [
+            77.86445165619088,
+            78.77044092241026,
+            81.48840872106838,
+            91.7404347589547,
+            110.77042602986312,
+            129.28873124796098,
+            135.46149965399357,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": 1.8736321802652374,
+          "rule_grade": 2,
+          "ai_minus_rule": -0.12636781973476263,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.07043884278877292,
+          "feature": [
+            0.002737099232042584,
+            0.004868037117837415,
+            0.008862901671729519,
+            0.023172999374258874,
+            0.0434051874858109,
+            0.07043884278877292,
+            0.08193239808122936,
+            1.0
+          ],
+          "reasons": [],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "ai_minus_rule": 0.0,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.7732338855674189,
+          "feature": [
+            0.03739616245477796,
+            0.060643554999048804,
+            0.13065055617135024,
+            0.19218855360338066,
+            0.4226389323024721,
+            0.7732338855674189,
+            0.9010650529176394,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "양팔 상단 도달",
+            "weight": 30,
+            "ai_points": 24.8,
+            "rule_points": 15.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": 9.8,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +9.8점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "하단 복귀",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "양팔 타이밍",
+            "weight": 25,
+            "ai_points": 23.4,
+            "rule_points": 25.0,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": -1.6,
+              "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -1.6점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "몸통 좌우 안정",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": 20.0,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 48.2,
+          "assessed_weight": 55,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": 85.0,
+          "maximum": 100,
+          "earned_subtotal": 85.0,
+          "assessed_weight": 100,
+          "full_score": true,
+          "estimated": false,
+          "status": "전체 항목 평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    }
+  ],
+  "last_rep": {
+    "number": 8,
+    "status": "자동 구간 평가 · 실험",
+    "duration": 2.4,
+    "ai": {
+      "earned": 48.2,
+      "maximum": 55,
+      "full_score": false,
+      "excluded_unvalidated_items": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ]
+    },
+    "rule": {
+      "earned": 85.0,
+      "maximum": 100,
+      "full_score": true,
+      "excluded_unvalidated_items": []
+    },
+    "items": [
+      {
+        "id": "overhead_reach",
+        "weight": 30,
+        "ai_grade": 1.6511297955402162,
+        "rule_grade": 1,
+        "ai_minus_rule": 0.6511297955402162,
+        "observed": true,
+        "bank": "front",
+        "measured": 143.1679243426579,
+        "feature": [
+          40.27959982928532,
+          46.79985834817963,
+          65.04328770073096,
+          134.25532893857596,
+          142.5719490701458,
+          143.1679243426579,
+          143.3446906258477,
+          1.0
+        ],
+        "reasons": [
+          "training_grades_missing_0"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 17,
+          "2": 32
+        },
+        "unseen_training_grades": [
+          0
+        ],
+        "window": null
+      },
+      {
+        "id": "lower_return",
+        "weight": 25,
+        "ai_grade": 2.0,
+        "rule_grade": 2,
+        "ai_minus_rule": 0.0,
+        "observed": true,
+        "bank": "front",
+        "measured": 91.7404347589547,
+        "feature": [
+          77.86445165619088,
+          78.77044092241026,
+          81.48840872106838,
+          91.7404347589547,
+          110.77042602986312,
+          129.28873124796098,
+          135.46149965399357,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 66
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null
+      },
+      {
+        "id": "bilateral_timing",
+        "weight": 25,
+        "ai_grade": 1.8736321802652374,
+        "rule_grade": 2,
+        "ai_minus_rule": -0.12636781973476263,
+        "observed": true,
+        "bank": "front",
+        "measured": 0.07043884278877292,
+        "feature": [
+          0.002737099232042584,
+          0.004868037117837415,
+          0.008862901671729519,
+          0.023172999374258874,
+          0.0434051874858109,
+          0.07043884278877292,
+          0.08193239808122936,
+          1.0
+        ],
+        "reasons": [],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 3,
+          "1": 7,
+          "2": 51
+        },
+        "unseen_training_grades": [],
+        "window": null
+      },
+      {
+        "id": "frontal_trunk_hold",
+        "weight": 20,
+        "ai_grade": 2.0,
+        "rule_grade": 2,
+        "ai_minus_rule": 0.0,
+        "observed": true,
+        "bank": "front",
+        "measured": 0.7732338855674189,
+        "feature": [
+          0.03739616245477796,
+          0.060643554999048804,
+          0.13065055617135024,
+          0.19218855360338066,
+          0.4226389323024721,
+          0.7732338855674189,
+          0.9010650529176394,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 71
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null
+      }
+    ],
+    "front_candidate": null,
+    "coaching": null,
+    "accepted_items": null,
+    "method_comparison": null,
+    "score_100": {
+      "version": "squat-core100-observation-v3",
+      "items": [
+        {
+          "id": "overhead_reach",
+          "title": "양팔 상단 도달",
+          "weight": 30,
+          "ai_points": 24.8,
+          "rule_points": 15.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": 9.8,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 +9.8점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "lower_return",
+          "title": "하단 복귀",
+          "weight": 25,
+          "ai_points": null,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "bilateral_timing",
+          "title": "양팔 타이밍",
+          "weight": 25,
+          "ai_points": 23.4,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -1.6,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -1.6점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": 20.0,
+          "estimated": false,
+          "reasons": [
+            "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+          ],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ],
+      "ai": {
+        "total": null,
+        "maximum": 100,
+        "earned_subtotal": 48.2,
+        "assessed_weight": 55,
+        "full_score": false,
+        "estimated": false,
+        "status": "일부 항목 미평가"
+      },
+      "rule": {
+        "total": 85.0,
+        "maximum": 100,
+        "earned_subtotal": 85.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": false,
+        "status": "전체 항목 평가"
+      },
+      "expert_validated": false,
+      "total_renormalized": false,
+      "scope": "숄더 프레스 정면 관측의 항목별 실험 점수입니다. 미평가 항목을 채우거나 100점으로 환산하지 않습니다. 정상만 학습한 AI 항목의 오류 판별은 미검증입니다."
+    },
+    "legacy_score_100": null,
+    "legacy_coaching": null,
+    "legacy_method_totals": null
+  },
+  "item_observation_version": "front-item-observation-v1",
+  "standing_state_version": "initial-standing-state-v1",
+  "standing_state_model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+  "source_commit": "55fae6974bee80a71c50c8acbf2ce5fa782c58a6",
+  "source_dirty": true,
+  "loaded_code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "update_available": false,
+  "source_check_error": null,
+  "extraction_delegate": "CPU",
+  "interruption_notice": null,
+  "camera_at": 36270.012411722,
+  "sample_cadence": {
+    "actual_hz": 10.0,
+    "observed_slot_fraction": 1.0,
+    "required_hz": 10,
+    "minimum_observed_fraction": 0.8
+  },
+  "width": 640,
+  "height": 480,
+  "front_squat_observation": {
+    "visible": 2,
+    "required": 6,
+    "missing": [
+      "왼쪽 골반",
+      "오른쪽 골반",
+      "왼쪽 무릎",
+      "오른쪽 무릎"
+    ]
+  },
+  "live_observation_version": "live-observation-border2-v1",
+  "observation_options": {
+    "squats": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      }
+    },
+    "shoulder": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "숄더 프레스는 정면 또는 정면 사선으로 선택하세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": false
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      }
+    },
+    "pushups": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      }
+    },
+    "plank": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 무릎",
+          "오른쪽 무릎",
+          "왼쪽 발목",
+          "오른쪽 발목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 무릎·오른쪽 무릎·왼쪽 발목·오른쪽 발목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": true
+      }
+    },
+    "ytw": {
+      "front": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "YTW 자동 반복 구분은 아직 미지원입니다. 관절 저장과 완료 회차 평가는 다릅니다.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": false
+      },
+      "side": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "YTW 자동 반복 구분은 아직 미지원입니다. 관절 저장과 완료 회차 평가는 다릅니다.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": false
+      },
+      "front_oblique": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "YTW 자동 반복 구분은 아직 미지원입니다. 관절 저장과 완료 회차 평가는 다릅니다.",
+        "ready_frames": 0,
+        "required_ready_frames": 6,
+        "start_ready": false,
+        "supported": false
+      }
+    }
+  },
+  "start_reservation": {
+    "state": "cancelled",
+    "request_id": null,
+    "exercise": null,
+    "view": null,
+    "remaining": null,
+    "reason": "종료 요청으로 시작 예약을 해제했습니다."
+  },
+  "coaching": null,
+  "finalizing": false,
+  "saved_session_folder": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792856314599071156"
+}

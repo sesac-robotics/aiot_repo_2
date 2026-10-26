@@ -1,0 +1,26 @@
+{
+  "frozen_at": "2026-10-24T13:14:13.077105+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/squat-fixed-reference-v1-20261024",
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "bank": "standing_fixed_initial_height_v2",
+  "feature_names": [
+    "hip_height_deficit_mean",
+    "hip_height_deficit_max",
+    "shoulder_height_deficit_mean",
+    "shoulder_height_deficit_max"
+  ],
+  "feature_code_sha256": "1b7b7774fdac5bc78f610c3b0bd07108fe71afb09b37eff31f96d8f360359391",
+  "hypothesis": "Re-normalizing by the shortened projected return leg can cancel genuine standing-height loss. Use initial scale for both support-relative heights.",
+  "timing_and_reference_windows_unchanged": true,
+  "source_roles_and_labels_unchanged": true,
+  "new_failure_labels_this_ablation": 2,
+  "selection": "same Train-only nested group CV and C grid/cutoff rules as initial-context model; no Test numerical selection",
+  "diagnostic_development_previously_exposed": true,
+  "independent_final_Test_opened": false,
+  "production_replacement": false,
+  "new_normal_labels": 1,
+  "new_people": 0,
+  "labels_sha256": "99b20645cb3b3d21eaa701c4ad5c624359c24de4b3578580d6cd3c9e1f528247",
+  "Test_unchanged_from_parent": true,
+  "Train_input_sha256": "bba84fb11a4f63dbc9e348d71e2a6f55046c022671a3d158a0cd981c6cf1cc18"
+}

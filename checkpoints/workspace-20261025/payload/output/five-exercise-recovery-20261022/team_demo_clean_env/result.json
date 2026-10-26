@@ -1,0 +1,125 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "shoulder",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "overhead_reach",
+      "weight": 30,
+      "ai_grade": 1.7168603034421392,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.28313969655786075,
+      "observed": true,
+      "bank": "front",
+      "measured": 159.37921899801484,
+      "feature": [
+        47.674761727974655,
+        52.604098421884345,
+        94.22861964877227,
+        141.60257343382298,
+        156.9049920624285,
+        159.37921899801484,
+        159.94062513714658,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "lower_return",
+      "weight": 25,
+      "ai_grade": 2.0,
+      "rule_grade": 0,
+      "ai_minus_rule": 2.0,
+      "observed": true,
+      "bank": "front",
+      "measured": 158.13887579058564,
+      "feature": [
+        150.1924510135697,
+        150.6902914979624,
+        152.18381295114045,
+        158.13887579058564,
+        163.780821981262,
+        166.2554745462975,
+        167.08035873464266,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": true,
+      "window": null
+    },
+    {
+      "id": "bilateral_timing",
+      "weight": 25,
+      "ai_grade": 1.4782869854628338,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.5217130145371662,
+      "observed": true,
+      "bank": "front",
+      "measured": 0.0,
+      "feature": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "frontal_trunk_hold",
+      "weight": 20,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "front",
+      "measured": 0.0,
+      "feature": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": true,
+      "window": null
+    }
+  ],
+  "ai_score": 89.2314918699175,
+  "rule_score": 75.0,
+  "ai_minus_rule": 14.231491869917505,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 1.7074790011974983,
+    "ai": 19.00644298439147,
+    "rule": 0.012698998034466058
+  },
+  "limitations": [
+    "Frontal projection does not assess sagittal lumbar arch."
+  ],
+  "qevd": {
+    "video_path": "./synthetic_demo.mp4",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "test"
+  },
+  "extraction": {},
+  "synthetic_input": true
+}

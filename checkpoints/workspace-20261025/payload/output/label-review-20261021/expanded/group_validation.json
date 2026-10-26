@@ -1,0 +1,79 @@
+{
+  "pushups": {
+    "scope": "training_split_only",
+    "participants": 12,
+    "samples": 21,
+    "folds": [
+      {
+        "held_out_people": [
+          "shoulder_006",
+          "shoulder_010",
+          "shoulder_018",
+          "shoulder_023"
+        ],
+        "samples": 7,
+        "model_MAE": 22.39166666666666,
+        "baseline_MAE": 20.102040816326532
+      },
+      {
+        "held_out_people": [
+          "shoulder_005",
+          "shoulder_009",
+          "shoulder_014",
+          "shoulder_016"
+        ],
+        "samples": 7,
+        "model_MAE": 18.33095238095238,
+        "baseline_MAE": 19.897959183673468
+      },
+      {
+        "held_out_people": [
+          "shoulder_001",
+          "shoulder_007",
+          "shoulder_008",
+          "shoulder_011"
+        ],
+        "samples": 7,
+        "model_MAE": 17.114285714285703,
+        "baseline_MAE": 18.775510204081634
+      }
+    ],
+    "pooled_MAE": 19.278968253968245,
+    "pooled_baseline_MAE": 19.591836734693878,
+    "expert_accuracy": null
+  },
+  "squats": {
+    "scope": "training_split_only",
+    "participants": 3,
+    "samples": 17,
+    "folds": [
+      {
+        "held_out_people": [
+          "rehab_Petra"
+        ],
+        "samples": 8,
+        "model_MAE": 8.6765625,
+        "baseline_MAE": 11.875
+      },
+      {
+        "held_out_people": [
+          "rehab_Terka"
+        ],
+        "samples": 6,
+        "model_MAE": 12.608333333333333,
+        "baseline_MAE": 12.5
+      },
+      {
+        "held_out_people": [
+          "rehab_Vasil"
+        ],
+        "samples": 3,
+        "model_MAE": 25.309722222222216,
+        "baseline_MAE": 25.0
+      }
+    ],
+    "pooled_MAE": 12.999509803921566,
+    "pooled_baseline_MAE": 14.411764705882353,
+    "expert_accuracy": null
+  }
+}

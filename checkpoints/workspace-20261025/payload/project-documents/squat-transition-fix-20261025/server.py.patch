@@ -1,0 +1,11 @@
+--- server.before.py
++++ server.py
+@@ -57,7 +57,7 @@
+ TRACKER = make_tracker("shoulder")
+ START_REQUEST = StartReservation()
+ REP_QUEUE = queue.Queue(maxsize=20)
+-STATE = dict(status='카메라 준비 중', jpeg=None, collecting=False, samples=[], result=None, tick=0, visible=0, exercise='shoulder', view='front', live_result=None, live_error=None, generation=0, started_at=None, movement=TRACKER.status(), repetitions=[], last_rep=None,item_observation_version=ITEM_OBSERVATION_VERSION,standing_state_version='initial-standing-state-v1',standing_state_model_sha256=hashlib.sha256(Path(__file__).with_name('standing-state').joinpath('model.joblib').read_bytes()).hexdigest())
++STATE = dict(server_instance_id=str(time.time_ns()),movement_code_sha256=hashlib.sha256(Path(__file__).with_name('movement.py').read_bytes()).hexdigest(),status='카메라 준비 중', jpeg=None, collecting=False, samples=[], result=None, tick=0, visible=0, exercise='shoulder', view='front', live_result=None, live_error=None, generation=0, started_at=None, movement=TRACKER.status(), repetitions=[], last_rep=None,item_observation_version=ITEM_OBSERVATION_VERSION,standing_state_version='initial-standing-state-v1',standing_state_model_sha256=hashlib.sha256(Path(__file__).with_name('standing-state').joinpath('model.joblib').read_bytes()).hexdigest())
+ SOURCE_COMMIT = subprocess.check_output(['git','-C',str(SOURCE),'rev-parse','HEAD'],text=True).strip()
+ SOURCE_DIRTY = bool(subprocess.check_output(['git','-C',str(SOURCE),'status','--porcelain','--','app/scoring','artifacts/posture_score'],text=True).strip())
+ ENGINE = ScoringEngine()

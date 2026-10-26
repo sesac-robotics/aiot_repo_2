@@ -1,0 +1,12 @@
+{
+  "recipe": "Source interval landmark bounding box 1st/99th percentile +20percent/min30px padding, clamp to original frame, Heavy960,10Hz; map back original pixels.",
+  "targets_and_test_source_assignments_unchanged": true,
+  "model_selection": "Training person-group CV only; fixed validation for assessment, diagnostic Test used only after freeze.",
+  "test_is_diagnostic_previously_exposed": true,
+  "main_hypotheses": [
+    "Pose tracking misses elbow at bottom despite high confidence.",
+    "Body-line model uses knee-angle nuisance correlated with participant.",
+    "Low knee clearance at normal bottom phase confused with sustained extra support."
+  ],
+  "criteria_reference": "https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/"
+}

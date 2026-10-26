@@ -1,0 +1,580 @@
+{
+  "records": [
+    {
+      "id": "auto_emily_change",
+      "source_id": "4UmPQEHqP-g",
+      "person_group": "UCH9eCeOdGCEzdcLT4_PgRMA",
+      "source_group": "youtube_4UmPQEHqP-g_all_segments",
+      "role": "support_variant_validation",
+      "extraction": {
+        "id": "auto_emily_change",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "64cb4c45f27671b8c40967a630e186fefabe9bec4c997e2ce40d628ea6594b66",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 89,
+            "fps": 30.0
+          },
+          "required_views": [
+            "item_only_review"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "8a3be3f99e9302f8a27c3b2f9cd818feb927cc9bfb0cceb34e2da6e7bf72163a",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/auto_emily_change/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.8797979797979798,
+        "extract_seconds": 10.078536107001128,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "common_joint_holds": [],
+      "full_total_approved": false,
+      "direct_total": null,
+      "full_ai_score": null,
+      "full_rule_score": null,
+      "items": [
+        {
+          "criterion_id": "trunk_line",
+          "draft_grade": null,
+          "ai_grade": null,
+          "rule_grade": null,
+          "observation": {
+            "criterion_id": "trunk_line",
+            "required_joint_indices": [
+              11,
+              23,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted"
+            ],
+            "rule_grade": null,
+            "measured": 151.69511264319883
+          }
+        },
+        {
+          "criterion_id": "elbow_sagittal_position",
+          "draft_grade": 2,
+          "ai_grade": 1.9928977272727273,
+          "rule_grade": 2,
+          "observation": {
+            "criterion_id": "elbow_sagittal_position",
+            "required_joint_indices": [
+              11,
+              13,
+              23
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 2,
+            "measured": 0.10747206725203862
+          }
+        },
+        {
+          "criterion_id": "leg_and_body_support",
+          "draft_grade": 1,
+          "ai_grade": 1.6095935314685321,
+          "rule_grade": 0,
+          "observation": {
+            "criterion_id": "leg_and_body_support",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 0,
+            "measured": 116.5645808892782
+          }
+        },
+        {
+          "criterion_id": "support_continuity",
+          "draft_grade": 1,
+          "ai_grade": 0.8905780075187983,
+          "rule_grade": 0,
+          "observation": {
+            "criterion_id": "support_continuity",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 0,
+            "measured": 59.51561268123008
+          }
+        }
+      ],
+      "motion_evidence": {
+        "side": "left",
+        "coverage": 1.0,
+        "relative_displacement": 0.013566425984420857,
+        "threshold": 0.2,
+        "continuity_grade_upper_bound": null,
+        "total_score": null,
+        "absence_does_not_mean_normal": true,
+        "expert_validated": false
+      },
+      "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/youtube_segments/auto_emily_change.mkv"
+    },
+    {
+      "id": "auto_bodyguide_change",
+      "source_id": "dypwCVza-58",
+      "person_group": "UCAEWARjSdCOdPkvLqQDguUQ",
+      "source_group": "youtube_dypwCVza-58_all_segments",
+      "role": "reserved_support_event_challenge",
+      "extraction": {
+        "id": "auto_bodyguide_change",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "b791e5c05c58154baea0ea74ee86dd4f226ff6e3fd29e899d9c32d84da6a422a",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 179,
+            "fps": 59.94005994005994
+          },
+          "required_views": [
+            "item_only_review"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "4a2c8af00b93a901f9a41afbc5e2b799285d74b9da79ad4f0909af2140e07df7",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/auto_bodyguide_change/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.7717171717171717,
+        "extract_seconds": 4.2076364570002625,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "common_joint_holds": [
+        "primary_required_joint_observation_below_80_percent"
+      ],
+      "full_total_approved": false,
+      "direct_total": null,
+      "full_ai_score": null,
+      "full_rule_score": null,
+      "items": [
+        {
+          "criterion_id": "trunk_line",
+          "draft_grade": null,
+          "ai_grade": null,
+          "rule_grade": null,
+          "observation": {
+            "criterion_id": "trunk_line",
+            "required_joint_indices": [
+              11,
+              23,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.0,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted",
+              "item_joint_observation_below_80_percent",
+              "geometric_channel_unavailable"
+            ],
+            "rule_grade": null,
+            "measured": null
+          }
+        },
+        {
+          "criterion_id": "elbow_sagittal_position",
+          "draft_grade": null,
+          "ai_grade": null,
+          "rule_grade": null,
+          "observation": {
+            "criterion_id": "elbow_sagittal_position",
+            "required_joint_indices": [
+              11,
+              13,
+              23
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.9666666666666667,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted"
+            ],
+            "rule_grade": null,
+            "measured": 0.8239647266227357
+          }
+        },
+        {
+          "criterion_id": "leg_and_body_support",
+          "draft_grade": null,
+          "ai_grade": null,
+          "rule_grade": null,
+          "observation": {
+            "criterion_id": "leg_and_body_support",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.0,
+            "eligible": false,
+            "reasons": [
+              "view_or_direct_review_not_permitted",
+              "item_joint_observation_below_80_percent",
+              "geometric_channel_unavailable"
+            ],
+            "rule_grade": null,
+            "measured": null
+          }
+        },
+        {
+          "criterion_id": "support_continuity",
+          "draft_grade": 1,
+          "ai_grade": null,
+          "rule_grade": null,
+          "observation": {
+            "criterion_id": "support_continuity",
+            "required_joint_indices": [
+              23,
+              25,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 0.0,
+            "eligible": false,
+            "reasons": [
+              "item_joint_observation_below_80_percent",
+              "geometric_channel_unavailable"
+            ],
+            "rule_grade": null,
+            "measured": null
+          }
+        }
+      ],
+      "motion_evidence": {
+        "side": "left",
+        "coverage": 0.9666666666666667,
+        "relative_displacement": 0.8321029219058359,
+        "threshold": 0.2,
+        "continuity_grade_upper_bound": 1,
+        "total_score": null,
+        "absence_does_not_mean_normal": true,
+        "expert_validated": false
+      },
+      "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/youtube_segments/auto_bodyguide_change.mkv"
+    },
+    {
+      "id": "auto_italo_initial",
+      "source_id": "49fNNAazn3Q",
+      "person_group": "UC50z0KzzsOPMbWZgHTC5GEQ",
+      "source_group": "youtube_49fNNAazn3Q_all_segments",
+      "role": "reserved_basic_plank_prospective_test",
+      "extraction": {
+        "id": "auto_italo_initial",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "82a1e7d2b1749d04126ae5cb0a5794a8d55fbbf83d5ff853db4d6cc00fe63163",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 89,
+            "fps": 30.0
+          },
+          "required_views": [
+            "side"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "1beca8d268d67864deb235afc2872249bfcbc10841f08881310737c7c7a7b25a",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/auto_italo_initial/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.9565656565656566,
+        "extract_seconds": 4.370317197999611,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "common_joint_holds": [],
+      "full_total_approved": true,
+      "direct_total": 40.0,
+      "full_ai_score": 58.75,
+      "full_rule_score": 70.0,
+      "items": [
+        {
+          "criterion_id": "trunk_line",
+          "draft_grade": 0,
+          "ai_grade": 1.763058035714286,
+          "rule_grade": 1,
+          "observation": {
+            "criterion_id": "trunk_line",
+            "required_joint_indices": [
+              11,
+              23,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 1,
+            "measured": 164.39293581785944
+          }
+        },
+        {
+          "criterion_id": "elbow_sagittal_position",
+          "draft_grade": 2,
+          "ai_grade": 1.9107142857142856,
+          "rule_grade": 2,
+          "observation": {
+            "criterion_id": "elbow_sagittal_position",
+            "required_joint_indices": [
+              12,
+              14,
+              24
+            ],
+            "side": "right",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 2,
+            "measured": 0.19280908195532798
+          }
+        },
+        {
+          "criterion_id": "leg_and_body_support",
+          "draft_grade": 0,
+          "ai_grade": 0.9585773601398601,
+          "rule_grade": 1,
+          "observation": {
+            "criterion_id": "leg_and_body_support",
+            "required_joint_indices": [
+              24,
+              26,
+              28
+            ],
+            "side": "right",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 1,
+            "measured": 161.8436639944858
+          }
+        },
+        {
+          "criterion_id": "support_continuity",
+          "draft_grade": 2,
+          "ai_grade": 1.8888392857142857,
+          "rule_grade": 2,
+          "observation": {
+            "criterion_id": "support_continuity",
+            "required_joint_indices": [
+              24,
+              26,
+              28
+            ],
+            "side": "right",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 2,
+            "measured": 3.693567551460518
+          }
+        }
+      ],
+      "motion_evidence": {
+        "side": "right",
+        "coverage": 1.0,
+        "relative_displacement": 0.06405143559827392,
+        "threshold": 0.2,
+        "continuity_grade_upper_bound": null,
+        "total_score": null,
+        "absence_does_not_mean_normal": true,
+        "expert_validated": false
+      },
+      "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/youtube_segments/auto_italo_initial.mkv"
+    },
+    {
+      "id": "auto_italo_later",
+      "source_id": "49fNNAazn3Q",
+      "person_group": "UC50z0KzzsOPMbWZgHTC5GEQ",
+      "source_group": "youtube_49fNNAazn3Q_all_segments",
+      "role": "reserved_basic_plank_prospective_test",
+      "extraction": {
+        "id": "auto_italo_later",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "cdcb2b724b45df7d6f6227f62304df11aadb6b075443b3b36e56d4806c0cce37",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 89,
+            "fps": 30.0
+          },
+          "required_views": [
+            "side"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "40925b4b5a13bdfe8f904c3ea1afd39fb8f02ce7b2c0bf2b098afac19c7bd904",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/auto_italo_later/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.9555555555555556,
+        "extract_seconds": 4.048726850000094,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "common_joint_holds": [],
+      "full_total_approved": true,
+      "direct_total": 100.0,
+      "full_ai_score": 100.0,
+      "full_rule_score": 80.0,
+      "items": [
+        {
+          "criterion_id": "trunk_line",
+          "draft_grade": 2,
+          "ai_grade": 2.0,
+          "rule_grade": 2,
+          "observation": {
+            "criterion_id": "trunk_line",
+            "required_joint_indices": [
+              11,
+              23,
+              27
+            ],
+            "side": "left",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 2,
+            "measured": 169.94854581616192
+          }
+        },
+        {
+          "criterion_id": "elbow_sagittal_position",
+          "draft_grade": 2,
+          "ai_grade": 1.9107142857142856,
+          "rule_grade": 2,
+          "observation": {
+            "criterion_id": "elbow_sagittal_position",
+            "required_joint_indices": [
+              12,
+              14,
+              24
+            ],
+            "side": "right",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 2,
+            "measured": 0.12539682967212445
+          }
+        },
+        {
+          "criterion_id": "leg_and_body_support",
+          "draft_grade": 2,
+          "ai_grade": 1.8008304195804201,
+          "rule_grade": 2,
+          "observation": {
+            "criterion_id": "leg_and_body_support",
+            "required_joint_indices": [
+              24,
+              26,
+              28
+            ],
+            "side": "right",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 2,
+            "measured": 171.7505736730368
+          }
+        },
+        {
+          "criterion_id": "support_continuity",
+          "draft_grade": 2,
+          "ai_grade": 1.9851973684210527,
+          "rule_grade": 2,
+          "observation": {
+            "criterion_id": "support_continuity",
+            "required_joint_indices": [
+              24,
+              26,
+              28
+            ],
+            "side": "right",
+            "simultaneous_observation": 1.0,
+            "eligible": true,
+            "reasons": [],
+            "rule_grade": 2,
+            "measured": 7.348516205830606
+          }
+        }
+      ],
+      "motion_evidence": {
+        "side": "right",
+        "coverage": 1.0,
+        "relative_displacement": 0.029282480078677533,
+        "threshold": 0.2,
+        "continuity_grade_upper_bound": null,
+        "total_score": null,
+        "absence_does_not_mean_normal": true,
+        "expert_validated": false
+      },
+      "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/youtube_segments/auto_italo_later.mkv"
+    }
+  ],
+  "completed": true,
+  "direct_sha256": "45d8c3c90553f8b4d3433c6de126ca71752f29e5c946e198db15bf21c9f2da71",
+  "freeze_sha256": "d367d9fbabf33cc3a2303d007866e84c53b1a9027efa50758291d21b97c77379",
+  "sources_used_for_fitting": false,
+  "expert_validated": false,
+  "all_five_final_test": false,
+  "new_source_groups": 3,
+  "prospective_full_source_groups": 1,
+  "paired_full_records": 2,
+  "full_ai_MAE_points": 9.375,
+  "full_rule_MAE_points": 25.0
+}

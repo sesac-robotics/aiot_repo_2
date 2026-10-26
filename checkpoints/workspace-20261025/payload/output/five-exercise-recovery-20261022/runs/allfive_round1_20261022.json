@@ -1,0 +1,255 @@
+{
+  "stage": "all_five_held_data_reinforcement_round1",
+  "direct_temporal_source_candidates": 24,
+  "additional_known_plank_source_windows": 2,
+  "continuous_full_video_review": false,
+  "direct_score_drafts": 18,
+  "qevd_basic_original_records": 17,
+  "joint_reviewed_windows": 25,
+  "joint_reviewed_samples": 300,
+  "direct_score_source_intervals_nonoverlapping": true,
+  "source_person_split_leakage": false,
+  "native_qevd_fields_preserved": true,
+  "expert_reference": false,
+  "independent_final_test": false,
+  "promoted": false,
+  "external_discovery": false,
+  "tests_passed": 181,
+  "exercises": [
+    {
+      "exercise": "pushups",
+      "training_segments": 80,
+      "training_full_observed": 28,
+      "new_score_drafts": 4,
+      "new_eligible_item_labels": 8,
+      "fixed": {
+        "submitted": 19,
+        "paired_total_records": 6,
+        "paired_total_MAE_points": {
+          "ai_score": 14.788414640197987,
+          "rule_score": 15.833333333333334
+        },
+        "items": {
+          "trunk_line": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.5415988951971766,
+            "rule_MAE_grade_units": 0.42857142857142855
+          },
+          "descent_range": {
+            "paired_records": 10,
+            "ai_MAE_grade_units": 0.09275366018262746,
+            "rule_MAE_grade_units": 0.3
+          },
+          "return_extension": {
+            "paired_records": 15,
+            "ai_MAE_grade_units": 0.2788592212111746,
+            "rule_MAE_grade_units": 0.13333333333333333
+          },
+          "support": {
+            "paired_records": 7,
+            "ai_MAE_grade_units": 0.08359345906867392,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 8,
+        "rule_total_available": 8
+      }
+    },
+    {
+      "exercise": "squats",
+      "training_segments": 89,
+      "training_full_observed": 47,
+      "new_score_drafts": 4,
+      "new_eligible_item_labels": 9,
+      "fixed": {
+        "submitted": 18,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 16.754298282452847,
+          "rule_score": 12.0
+        },
+        "items": {
+          "descent_range": {
+            "paired_records": 13,
+            "ai_MAE_grade_units": 0.33924441973969005,
+            "rule_MAE_grade_units": 0.23076923076923078
+          },
+          "trunk_balance": {
+            "paired_records": 17,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "return_extension": {
+            "paired_records": 8,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          },
+          "knee_foot": {
+            "paired_records": 6,
+            "ai_MAE_grade_units": 0.9485978674786848,
+            "rule_MAE_grade_units": 0.8333333333333334
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      }
+    },
+    {
+      "exercise": "shoulder",
+      "training_segments": 76,
+      "training_full_observed": 42,
+      "new_score_drafts": 3,
+      "new_eligible_item_labels": 11,
+      "fixed": {
+        "submitted": 11,
+        "paired_total_records": 5,
+        "paired_total_MAE_points": {
+          "ai_score": 9.034630665700812,
+          "rule_score": 10.0
+        },
+        "items": {
+          "overhead_reach": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.2589842897167131,
+            "rule_MAE_grade_units": 0.0
+          },
+          "lower_return": {
+            "paired_records": 10,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.3
+          },
+          "bilateral_timing": {
+            "paired_records": 5,
+            "ai_MAE_grade_units": 0.5580136458390992,
+            "rule_MAE_grade_units": 0.6
+          },
+          "frontal_trunk_hold": {
+            "paired_records": 11,
+            "ai_MAE_grade_units": 0.0,
+            "rule_MAE_grade_units": 0.0
+          }
+        },
+        "ai_total_available": 5,
+        "rule_total_available": 5
+      }
+    },
+    {
+      "exercise": "plank",
+      "training_segments": 17,
+      "training_full_observed": 13,
+      "new_score_drafts": 3,
+      "new_eligible_item_labels": 8,
+      "fixed": {
+        "submitted": 4,
+        "paired_total_records": 2,
+        "paired_total_MAE_points": {
+          "ai_score": 6.635896591975104,
+          "rule_score": 6.25
+        },
+        "items": {
+          "trunk_line": {
+            "paired_records": 3,
+            "ai_MAE_grade_units": 0.20305501789876804,
+            "rule_MAE_grade_units": 0.3333333333333333
+          },
+          "elbow_sagittal_position": {
+            "paired_records": 2,
+            "ai_MAE_grade_units": 0.003810975609756073,
+            "rule_MAE_grade_units": 0.5
+          },
+          "leg_and_body_support": {
+            "paired_records": 4,
+            "ai_MAE_grade_units": 0.5745198161213785,
+            "rule_MAE_grade_units": 0.5
+          },
+          "support_continuity": {
+            "paired_records": 4,
+            "ai_MAE_grade_units": 0.1690590737054552,
+            "rule_MAE_grade_units": 0.5
+          }
+        },
+        "ai_total_available": 2,
+        "rule_total_available": 2
+      }
+    },
+    {
+      "exercise": "ytw",
+      "training_segments": 94,
+      "training_full_observed": 44,
+      "new_score_drafts": 4,
+      "new_eligible_item_labels": 10,
+      "fixed": {
+        "submitted": 4,
+        "paired_total_records": 0,
+        "paired_total_MAE_points": {
+          "ai_score": null,
+          "rule_score": null
+        },
+        "items": {
+          "t_reach": {
+            "paired_records": 4,
+            "ai_MAE_grade_units": 0.2120449000452415,
+            "rule_MAE_grade_units": 0.25
+          },
+          "w_shape": {
+            "paired_records": 4,
+            "ai_MAE_grade_units": 0.6694288405065454,
+            "rule_MAE_grade_units": 0.5
+          }
+        },
+        "ai_total_available": 3,
+        "rule_total_available": 0
+      }
+    }
+  ],
+  "preserved_files_unchanged": {
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/comparison.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/fit_input_manifest.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/comparison.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/squats_candidate.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/pushups.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/shoulder.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/plank.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/squats.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/ytw.joblib": true
+  },
+  "supplemental_models": {
+    "ordinal_trial": {
+      "comparison_sha256": "4793e75cf3a02f3729df95f608be9393ed0f422197dba4362816b125b156cfe1",
+      "model_checks": {
+        "pushups": true,
+        "squats": true,
+        "shoulder": true,
+        "plank": true,
+        "ytw": true
+      }
+    },
+    "ytw_projected_rule_trial": {
+      "comparison_sha256": "c5a502e30e228e0348daf8a5ae32cac00746bb8552a1f4659edbed62bf7093f2",
+      "model_checks": {
+        "ytw": true
+      }
+    },
+    "w_observed_absence_trial": {
+      "comparison_sha256": "f2fb5613a58724d0100e87b705933196f9c6ef50cc86bd19b42f679019d61407",
+      "model_checks": {
+        "ytw": true
+      }
+    }
+  },
+  "local_links_checked": 74,
+  "missing_local_links": [],
+  "videos": 6,
+  "all_frames_decoded": true,
+  "browser_rendering_verified": false,
+  "files_sha256": {
+    "comparison.json": "2892f9214d2d230a5269b38f392d4fd7f3c60d1eb9aee58e57ba280c7ea0ae2e",
+    "candidate_input_manifest.json": "978c142d465c9a669442edfb32ac50da5b4e9cb7ca6b58f58676ed93e6b1a5b3",
+    "score_annotations.json": "87c58802b921836922a25767fddf659f6c9a096e77d8a89ebf94a45754a740a5",
+    "manual_decisions.json": "5e65ddd2e13d4d406f123fc794356af4d2a2d231cbc696730fc3c2c764d86154",
+    "subject_tracking_review.json": "c9ac2d28706213849d2ae45b4b53a113638349fe9b749ccc29bc4770366b1064",
+    "phase_alignment_verification.json": "61c8c43778fecc2f673704ed940ad689267c38cd7bb01f4e99180d77680624b2",
+    "failure_analysis.json": "cd979679836e2b7fba6e0831051124636e7dca92ab55ddce8fbb233197fc8f6f",
+    "index.html": "3dc245d3e881098187c567d3a1744ac27f83a7d22979d95c1bc45d4305db2a4f"
+  }
+}

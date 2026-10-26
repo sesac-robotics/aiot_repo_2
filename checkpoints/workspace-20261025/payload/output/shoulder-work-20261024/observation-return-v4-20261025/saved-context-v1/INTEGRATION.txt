@@ -1,0 +1,7 @@
+통합 인터페이스 — 후보 검증용, 아직 라이브 적용하지 않음
+from return_context_v1 import ReturnContextQueue
+q=ReturnContextQueue(max_context_slots=3)
+각 실제 tick에서 먼저 events=q.push(int(tick),xy) 호출. 이후 기존 ShoulderTracker.push가 완료seg를 반환하면 immediate=q.submit(attempt_id,seg,원본너비,원본높이); None이면 대기, 결과가 있으면 처리한다. q는복귀횟수를증가시키지않는다. 앞의queue.push를새완료submit보다먼저호출해같은tick중복을막는다.
+반환 events의 feature_input_samples는원래seg+도착한실제후속표본이다. return_ticks는복귀사건, evaluated_at_tick은확인시점, original_window는기존회차범위다. score(feature_input_samples,...,trunk_window=original_window,exercise_confirmed=검증된운동창여부)로기존몸통창을늘리지않고후보검사할수있다. 현재 models=None 유지,45점 활성화금지.
+사용자종료/세션단절에는 q.finish()로미확인pending을보류로저장한다. finish때원시카메라촬영을새로시작하거나미래프레임을합성하지않는다. raw source/참조/사건시점영수증과품질보류를보존한다.
+최대0.3초는현재노출7회에서확인한개발설정이다. 빠른다음상승/단절/최종회차종료의실영상일반검증과공통서버응답·저장후업데이트정책검증이남아있다. 반복수를맞추려고대기시간을늘리거나미확인복귀를오류로바꾸지않는다.

@@ -1,0 +1,10 @@
+통합 담당 전달 — 라이브 적용 전 검토용
+실행 코드: tools/shoulder-work/observation_features_v4.py, score_items_v4.py
+호출: score(samples, models=None, width=원본너비, height=원본높이, view='front', pose_context='standing' 또는 'seated', trunk_window=[시작10Hz슬롯,종료10Hz슬롯], exercise_confirmed=True)
+samples는 strictly increasing integer 10Hz 원본 슬롯과 원본 픽셀 33x2 배열. confidence/presence 미달 및 미관측은 NaN으로 넘긴다. 누락 슬롯을 압축/보간하지 않는다. 화면 2% 경계를 적용한다.
+trunk_window를 제공하지 않으면 관측된 준비→복귀가 있어야 몸통 창을 얻는다. 팔 누락으로 복귀 검출 불가여도, 별도 검증된 운동 창이 있다면 몸통만 추출할 수 있다. 임의 타이머나 대기 구간을 exercise_confirmed로 승인하지 않는다.
+하단schema: shoulder-ready-return-relative-quality-v4 / criterion observed_ready_relative_lower_return.
+몸통schema: shoulder-frontal-four-joint-window-quality-v2 / criterion observed_frontal_window_trunk_stability_only.
+현재 호환되는 검증 완료 채점 모델 없음. 두 항목 점수 None 유지. 미평가45점을 만점/0점으로 채우지 않는다. 정상-only reference-v3와 기존 head 재사용 금지.
+반복 경계 변경/품질 보류에 따른 횟수와 지원률 영향을 저장자료에서 별도 비교한 후 공통앱 반영을 판단한다. 어깨/골반 오연결의 모든 형태 검출/복원으로 해석하지 않는다. 기존 수동7행 보류를 자동 통과로 해제하지 않는다.
+본 후보는 미배포이며 카메라·서비스 재시작 작업 없음. 세부 RESULTS.txt와 verification.json 참조.

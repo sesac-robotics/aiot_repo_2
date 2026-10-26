@@ -1,0 +1,14 @@
+숄더 보유150파일 원본중복 감사 — 2026-10-25 KST
+
+실제150파일을다시읽어SHA256이동결inventory와전부일치함을확인했다.150개파일경로는147개고유바이트영상이다. Train90파일=87고유,validation30/Test30은각30고유이며이번정확해시중복은모두Train내부다. Train/validation/Test간동일해시누출은0이다. 재인코딩/시각적으로비슷한영상까지찾은결과는아니다.
+
+정확중복3쌍
+subject023 bad_diagonal = good_front (같은원본인데디렉터리뷰및good/bad태그다름)
+subject016 bad_side = good_side
+subject023 bad_side = good_side
+파일good/bad태그를하단·몸통정답으로복사할수없음을다시확인했다. 서로다른실제오류정답이라고볼수없다. source-groups.frozen.json에원래id/role/기록그룹을남기고동일SHA의canonical source_group을부여했다. 기존원본·라벨·분할은수정하지않았다.
+
+향후학습·검증반영
+동일원본alias는한원본그룹으로묶는다. 같은선택회차를이름만바꿔학습가중치를늘리거나CV양쪽에두지않는다. 다른회차도사람제외검증에서같은사람·같은원본그룹을유지한다. 023bad_diagonal/good_front의뷰메타불일치는원본구도와실제관절QA가확인된은행만사용하고디렉터리이름으로새라벨/뷰등급을추정하지않는다.
+이전150파일검토/사용사유표는파일단위기록으로보존한다. 그것을150독립영상/150독립반복의학습·정확도라고확대하지않는다. 모델담당에게해시그룹표를전달했다. 새fit/라이브모델교체/새촬영/Test내용열람없음. 45점모델학습지원이완료된것은아니다.
+근거:source-aliases.frozen.json,source-groups.frozen.json. 코드 tools/shoulder-work/audit_source_aliases_v1.py.

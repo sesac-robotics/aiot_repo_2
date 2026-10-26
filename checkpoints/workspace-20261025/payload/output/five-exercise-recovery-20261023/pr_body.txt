@@ -1,0 +1,40 @@
+## Behavior
+Add standalone reviewed-clip posture scoring for push-ups, squats, dumbbell shoulder press, forearm plank, and bent-over Y–T–W. MediaPipe Heavy extracts joints; separate trained regressors predict criterion grades, while explicit geometric rules calculate the comparison grades. Both use the same observed-item gates and weights. Missing items remain unassessed and never become zero or rescaled totals.
+
+The CLI preserves QEVD video_path, labels, labels_descriptive, and split fields and reads review metadata through an assessment_input extension. Provider good/bad strings do not determine scores. Results include item grades, totals, AI–Rule differences, reasons, timings, JSON, HTML, and optional joint-overlay MP4. No existing service, camera, DB, or communication entry points change.
+
+## Scope and limits
+This is an experimental team evaluation package, not a completed accuracy release. Labels are AI direct temporal sampled-frame review drafts, not expert reference. Development validation clips have been reused; there is no independent final test.
+
+| Exercise | Training segments with at least one observed criterion | Full-reference training segments | Reused paired total cases | AI / Rule MAE points |
+| --- | ---: | ---: | ---: | --- |
+| Push-ups | 85 | 28 | 6 | 14.788 / 15.833 |
+| Squats | 97 | 47 | 5 | 13.376 / 9.000 |
+| Shoulder press | 82 | 46 | 5 | 8.701 / 10.000 |
+| Plank | 79 | 63 | 2 | 10.256 / 6.250 |
+| Y–T–W | 101 | 48 | 3 | 10.846 / 21.667 |
+
+Segment counts are not participant counts or independent recordings. Some criterion heads have only one training grade or lack severe-error grades; outputs expose per-grade segment counts and unseen grades. These counts are neither participant counts nor confidence. Squat errors can still be overrated. The plank 79-window candidate regressed against the older 17-window model on two reused total cases and contains concentrated source windows. Y/hinge remain projection proxies; YTW totals require reviewed view and phase metadata, and W errors remain. Full squat scoring requires reviewed synchronized front/side views.
+
+Heavy training caches used GPU extraction. A repeated squat clip retained all required joints with GPU but lost lower-body tracking with CPU; CPU equivalence is not claimed.
+
+## Held-data improvement round (2026-10-23)
+Screened 43 held original candidates and directly reviewed 25 additional draft windows; 21 met criterion-label and observation requirements (push-ups 3, squats 7, shoulder press 4, plank 2, YTW 5). These are AI visual-review drafts, not expert targets or rule-generated targets. Raw data and draft labels stay outside Git. The table above describes the unchanged release models, not the expanded candidate fitting pool.
+
+Refitted all five AI candidates using training-only, grade/group-balanced cross-validation and separately attempted YTW rule calibration. Release selection used the same reused development validation clips, never reserved final-test clips. No candidate passed the total-error and error-criterion guard, so release weights and rule boundaries remain unchanged. A compact plank candidate improved MAE on the two normal total cases from 10.256 to 2.815 but worsened error-item grade MAE from 0.448 to 0.741 and was rejected. The two added plank inputs are a floor-support contrast and a roughly 0.5-second partial hold; neither is a new complete three-second scoring reference.
+
+Added a reusable partition audit that rejects transitive participant/source/recording/duplicate leakage and historical final-test exposure, plus grouped candidate refitting that rejects final-test rows and rule-output targets. Reserved 991 source-hashed metadata candidates (263 push-ups, 325 squats, 260 plank, 143 YTW), with pixels and score targets unopened. Real identity verification remains pending; no unexposed shoulder final-test candidate was qualified. Reservation is not a completed independent test or a count of usable labels.
+
+## Packaging and execution
+Only code, pinned dependency/setup tools, small numeric regressors (about 4.9 MiB total), synthetic example JSON, tests, and aggregate provenance/support/validation metadata are included. Raw datasets, source videos, frame images, landmark caches, virtual environments, and the 29 MiB Heavy model are excluded. Model artifacts are for noncommercial educational research; source attribution is in the manifest.
+
+From Server/AIService, use tools/posture_score/install.sh with a new Python 3.14 environment, then python -m app.scoring --help. --demo needs only core dependencies; --download-heavy obtains the hash-pinned official model outside Git. tools/posture_score/run_nvidia.sh selects NVIDIA EGL for its process without changing system drivers. Existing source data and original README modifications are untouched.
+
+## Validation
+- 40 pytest tests and 13 subtests passed, including final-test leakage prevention, validation-target independence during candidate fitting, missing-grade reporting, missing-item handling, necessary-body-part cropping, pair alignment, unsupported views, strict review flags, phase intervals, model hash checks, and provider-label independence.
+- Black passed; mypy passed for 25 source and test files; Pylint errors-only passed. Full Pylint style/complexity warnings remain.
+- 91 existing training-case score outputs matched the prior implementation. This is portability verification, not an accuracy test.
+- Fresh isolated environment installation and core-only synthetic inference passed.
+- Actual source video -> Heavy -> AI/Rule -> H.264 overlay executed for all five exercises with CPU and GPU. Overlays were decoded and representative scenes visually inspected; browser playback was not verified.
+
+No merge is requested until the team reviews the stated limitations.

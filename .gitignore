@@ -150,6 +150,8 @@ activemq-data/
 *.sage.py
 
 # Environments
+# Local project virtual environment
+/R2D2/
 .env
 .envrc
 .venv
@@ -218,3 +220,23 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local AIFit SQLite databases
+Server/AIFitDB/*.db
+Server/AIFitDB/*.db-*
+*.db
+# AIService
+Server/AIService/models/
+Server/AIService/requirements/
+
+# Local credentials and generated runtime outputs
+Device/ImageStreamer/wifi_credentials.h
+Server/AIFitService/body_analysis_uploads/
+Server/AIService/logs/
+GUI/FitHelper/.body_analysis_cache.json
+
+# Local evaluation environments, private recordings, DB and per-machine JWT key
+/.aifit-local/
+/.venv-score/
+/.venv-correction/
+/output/

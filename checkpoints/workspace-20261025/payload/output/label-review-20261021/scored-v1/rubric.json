@@ -1,0 +1,117 @@
+{
+  "version": "project-core-form-v1",
+  "expert_validated": false,
+  "weights_are_project_choices": true,
+  "definitions": {
+    "pushups": {
+      "scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+      "weights": [
+        40,
+        30,
+        20,
+        10
+      ],
+      "items": [
+        {
+          "id": "trunk_line",
+          "name_ko": "몸통·골반 정렬",
+          "anchors": [
+            "뚜렷한 엉덩이 들림·처짐",
+            "경미한 꺾임 또는 일부 구간 이탈",
+            "선택 구간에서 큰 꺾임 없이 정렬 유지"
+          ]
+        },
+        {
+          "id": "descent_range",
+          "name_ko": "팔 굽힘·하강 범위",
+          "anchors": [
+            "움직임이 작고 하단에서도 팔이 크게 굽혀지지 않음",
+            "하강은 있으나 기준 자세에 충분히 이르지 않음",
+            "가슴이 낮아지고 상완이 바닥에 가까운 방향까지 내려감"
+          ]
+        },
+        {
+          "id": "return_extension",
+          "name_ko": "상단 팔 펴기",
+          "anchors": [
+            "팔을 편 상단으로 돌아오지 못함",
+            "상단에서도 팔꿈치 굽힘이 일부 남음",
+            "상단에서 팔을 거의 편 자세로 돌아옴. 강제 잠금은 요구하지 않음"
+          ]
+        },
+        {
+          "id": "support",
+          "name_ko": "손·발 지지",
+          "anchors": [
+            "무릎·몸통을 바닥에 대고 지지함",
+            "중간에 지지 방식이 바뀜",
+            "선택 구간 손·발 지지 유지"
+          ]
+        }
+      ]
+    },
+    "squats": {
+      "scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+      "weights": [
+        30,
+        20,
+        30,
+        20
+      ],
+      "items": [
+        {
+          "id": "descent_range",
+          "name_ko": "하강 범위",
+          "anchors": [
+            "무릎·엉덩이를 조금만 굽힌 얕은 하강",
+            "분명히 내려가지만 허벅지가 수평보다 위에 있음",
+            "허벅지가 수평에 가까워지는 하강"
+          ]
+        },
+        {
+          "id": "return_extension",
+          "name_ko": "다시 일어서기",
+          "anchors": [
+            "서기 자세로 복귀하지 못함",
+            "무릎·엉덩이 굽힘이 남아 부분 복귀",
+            "선택 반복에서 원래의 서기 자세로 복귀"
+          ]
+        },
+        {
+          "id": "knee_foot",
+          "name_ko": "무릎·발 정렬과 접지",
+          "anchors": [
+            "뚜렷한 안쪽 무릎 붕괴·뒤꿈치 들림·발 지지 이탈",
+            "부분적 정렬 이탈",
+            "앞뒤·정면 근거에서 큰 정렬 이탈 없이 접지 유지"
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "name_ko": "몸통 좌우 균형",
+          "anchors": [
+            "뚜렷한 한쪽 기울기·비대칭",
+            "경미한 한쪽 기울기",
+            "정면 근거에서 큰 좌우 기울기 없이 수행"
+          ]
+        }
+      ]
+    }
+  },
+  "formula": "sum(weight * level / 2); 모든 항목이 관측 가능할 때만 산출. null이면 총점 null. 관찰 등급은 Codex가 정하고 스크립트는 합산만 함.",
+  "interpretation": "100은 이 제한된 항목의 만점이며 완벽한 자세·부상 없음·전문가 100점을 뜻하지 않음. 소수점은 배점 합산 결과이며 그 정밀도로 검증된 점수가 아님.",
+  "version_change": "이전 제안의 측면에서 볼 수 없는 좌우 균형을 푸시업 총점에서 제외하고 손·발 지지로 변경. 두 버전 점수는 혼합 금지.",
+  "sources": [
+    {
+      "title": "NASM Push-Up",
+      "url": "https://www.nasm.org/resource-center/exercise-library/push-up"
+    },
+    {
+      "title": "ACE Bodyweight Squat",
+      "url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/"
+    }
+  ],
+  "temporal_limit": "장면 표본의 상단–하단–상단 전환을 확인함. 연속 재생 또는 모든 프레임을 직접 검토한 것은 아님. 순간 반동·통증·정확한 관절각은 평가하지 않음.",
+  "provider_policy": "good/bad와 REHAB26 1/5는 별도 제공자 라벨. 연속 점수로 직접 변환하지 않음. MultiView 다른 시점의 점수를 주 영상에 전이하지 않음.",
+  "test_policy": "제공자 라벨을 본 탐색적 채점이다. 독립 정확도 검증으로 쓰지 않음. 참여자 및 수행 그룹 분리 유지."
+}

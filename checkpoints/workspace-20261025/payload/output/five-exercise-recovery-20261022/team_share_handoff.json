@@ -1,0 +1,56 @@
+{
+  "saved_at": "2026-10-22T20:29:01.205990+09:00",
+  "branch": "feature/exercise-posture-scoring",
+  "commit": "eeb1d3ee546ebe392ab82086beec5964f367cd65",
+  "worktree": "/home/jayden/SeSACPAI-Mid/team-posture-scoring",
+  "component": "Server/AIService",
+  "push_verified": true,
+  "shutdown_authorized": true,
+  "report": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/team_share/index.html",
+  "models_total_bytes": 5043549,
+  "checks": {
+    "pytest_tests": 28,
+    "black": true,
+    "mypy_modules": 21,
+    "pylint": "errors-only passed; style warnings remain",
+    "portability": {
+      "cases": 91,
+      "identical": 91,
+      "failures": [],
+      "training_cases_not_accuracy_test": true,
+      "independent_final_test": false
+    },
+    "raw_video_exercises_cpu": 5,
+    "raw_video_exercises_gpu": 5
+  },
+  "provenance": {
+    "reference": "AI directly reviewed temporal sampled-frame criterion draft; not expert ground truth",
+    "independent_final_test": false,
+    "raw_data_in_git": false,
+    "new_external_data_downloaded": false
+  },
+  "known_limits": [
+    "Some criterion heads have one training grade and do not demonstrate error discrimination.",
+    "Squat error overestimation remains.",
+    "Plank 79-window candidate regressed on two reused total cases relative to 17-window model; concentrated source windows.",
+    "YTW total requires manual view and phase review; projected Y/hinge and W errors remain.",
+    "Heavy CPU/GPU tracking differs; GPU used for training caches."
+  ],
+  "commands": {
+    "setup": "cd Server/AIService && PYTHON_BIN=/path/to/python3.14 bash tools/posture_score/install.sh /new/venv video",
+    "heavy": "/new/venv/bin/python -m app.scoring --download-heavy /outside/repo/heavy.task",
+    "gpu": "tools/posture_score/run_nvidia.sh /new/venv/bin/python --request /outside/repo/reviewed_clip.json --heavy-model /outside/repo/heavy.task --output /outside/repo/new-result --overlay",
+    "demo": "/new/venv/bin/python -m app.scoring --demo --output /outside/repo/new-demo",
+    "tests": "/new/venv/bin/python -m pytest -q tests/scoring"
+  },
+  "original_checkout_readme_existing_change_preserved": true,
+  "remote_commit": "eeb1d3ee546ebe392ab82086beec5964f367cd65",
+  "pull_request": "https://github.com/sesac-robotics/aiot_repo_2/pull/3",
+  "pull_request_status": "draft_open_not_merged",
+  "worktree_clean": true,
+  "own_processing_jobs_running": false,
+  "completed_at": "2026-10-22T20:30:09.542691+09:00",
+  "shutdown_status": "scheduled",
+  "shutdown_at": "2026-10-22T20:31:53.590482+09:00",
+  "shutdown_command_returncode": 0
+}

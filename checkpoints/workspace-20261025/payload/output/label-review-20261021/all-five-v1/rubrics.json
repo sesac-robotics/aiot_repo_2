@@ -1,0 +1,356 @@
+[
+  {
+    "version": "project-core-form-v1",
+    "expert_validated": false,
+    "weights_are_project_choices": true,
+    "definitions": {
+      "pushups": {
+        "scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+        "weights": [
+          40,
+          30,
+          20,
+          10
+        ],
+        "items": [
+          {
+            "id": "trunk_line",
+            "name_ko": "몸통·골반 정렬",
+            "anchors": [
+              "뚜렷한 엉덩이 들림·처짐",
+              "경미한 꺾임 또는 일부 구간 이탈",
+              "선택 구간에서 큰 꺾임 없이 정렬 유지"
+            ]
+          },
+          {
+            "id": "descent_range",
+            "name_ko": "팔 굽힘·하강 범위",
+            "anchors": [
+              "움직임이 작고 하단에서도 팔이 크게 굽혀지지 않음",
+              "하강은 있으나 기준 자세에 충분히 이르지 않음",
+              "가슴이 낮아지고 상완이 바닥에 가까운 방향까지 내려감"
+            ]
+          },
+          {
+            "id": "return_extension",
+            "name_ko": "상단 팔 펴기",
+            "anchors": [
+              "팔을 편 상단으로 돌아오지 못함",
+              "상단에서도 팔꿈치 굽힘이 일부 남음",
+              "상단에서 팔을 거의 편 자세로 돌아옴. 강제 잠금은 요구하지 않음"
+            ]
+          },
+          {
+            "id": "support",
+            "name_ko": "손·발 지지",
+            "anchors": [
+              "무릎·몸통을 바닥에 대고 지지함",
+              "중간에 지지 방식이 바뀜",
+              "선택 구간 손·발 지지 유지"
+            ]
+          }
+        ]
+      },
+      "squats": {
+        "scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+        "weights": [
+          30,
+          20,
+          30,
+          20
+        ],
+        "items": [
+          {
+            "id": "descent_range",
+            "name_ko": "하강 범위",
+            "anchors": [
+              "무릎·엉덩이를 조금만 굽힌 얕은 하강",
+              "분명히 내려가지만 허벅지가 수평보다 위에 있음",
+              "허벅지가 수평에 가까워지는 하강"
+            ]
+          },
+          {
+            "id": "return_extension",
+            "name_ko": "다시 일어서기",
+            "anchors": [
+              "서기 자세로 복귀하지 못함",
+              "무릎·엉덩이 굽힘이 남아 부분 복귀",
+              "선택 반복에서 원래의 서기 자세로 복귀"
+            ]
+          },
+          {
+            "id": "knee_foot",
+            "name_ko": "무릎·발 정렬과 접지",
+            "anchors": [
+              "뚜렷한 안쪽 무릎 붕괴·뒤꿈치 들림·발 지지 이탈",
+              "부분적 정렬 이탈",
+              "앞뒤·정면 근거에서 큰 정렬 이탈 없이 접지 유지"
+            ]
+          },
+          {
+            "id": "trunk_balance",
+            "name_ko": "몸통 좌우 균형",
+            "anchors": [
+              "뚜렷한 한쪽 기울기·비대칭",
+              "경미한 한쪽 기울기",
+              "정면 근거에서 큰 좌우 기울기 없이 수행"
+            ]
+          }
+        ]
+      }
+    },
+    "formula": "sum(weight * level / 2); 모든 항목이 관측 가능할 때만 산출. null이면 총점 null. 관찰 등급은 Codex가 정하고 스크립트는 합산만 함.",
+    "interpretation": "100은 이 제한된 항목의 만점이며 완벽한 자세·부상 없음·전문가 100점을 뜻하지 않음. 소수점은 배점 합산 결과이며 그 정밀도로 검증된 점수가 아님.",
+    "version_change": "이전 제안의 측면에서 볼 수 없는 좌우 균형을 푸시업 총점에서 제외하고 손·발 지지로 변경. 두 버전 점수는 혼합 금지.",
+    "sources": [
+      {
+        "title": "NASM Push-Up",
+        "url": "https://www.nasm.org/resource-center/exercise-library/push-up"
+      },
+      {
+        "title": "ACE Bodyweight Squat",
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/"
+      }
+    ],
+    "temporal_limit": "장면 표본의 상단–하단–상단 전환을 확인함. 연속 재생 또는 모든 프레임을 직접 검토한 것은 아님. 순간 반동·통증·정확한 관절각은 평가하지 않음.",
+    "provider_policy": "good/bad와 REHAB26 1/5는 별도 제공자 라벨. 연속 점수로 직접 변환하지 않음. MultiView 다른 시점의 점수를 주 영상에 전이하지 않음.",
+    "test_policy": "제공자 라벨을 본 탐색적 채점이다. 독립 정확도 검증으로 쓰지 않음. 참여자 및 수행 그룹 분리 유지."
+  },
+  {
+    "version": "project-other-three-core-v1",
+    "expert_validated": false,
+    "weights_are_project_choices": true,
+    "level_meanings": {
+      "0": "명확한 기준 미달이 직접 보임",
+      "1": "부분 미달이 직접 보임",
+      "2": "명시한 관측 항목 기준에 대체로 도달함",
+      "null": "가림·잘림·구도·등급 경계 때문에 판단 불가"
+    },
+    "formula": "관측 항목 모두 판정되고 단일 시도 구간이 확인된 경우에만 sum(weight * level / 2). 나머지는 null. 관측 항목 외의 전체 자세 점수는 항상 미검증.",
+    "definitions": {
+      "plank": {
+        "name_ko": "기본 팔꿈치 플랭크",
+        "unit": "전신과 지지가 보이는 3초 유지 구간",
+        "required_view": "측면 전신·팔꿈치·무릎·발 접점",
+        "weights": [
+          40,
+          25,
+          20,
+          15
+        ],
+        "items": [
+          {
+            "id": "trunk_line",
+            "name_ko": "몸통·골반 정렬",
+            "anchors": [
+              "큰 엉덩이 들림·처짐",
+              "일부 꺾임·구간 이탈",
+              "몸통·골반의 큰 꺾임 없이 유지"
+            ]
+          },
+          {
+            "id": "elbow_support_position",
+            "name_ko": "팔꿈치 지지 위치",
+            "anchors": [
+              "어깨와 팔꿈치의 큰 전후·좌우 이탈이 직접 보임",
+              "부분 위치 이탈",
+              "팔꿈치가 어깨 아래에 대체로 위치함"
+            ]
+          },
+          {
+            "id": "knee_trunk_support",
+            "name_ko": "무릎·몸통 추가 지지",
+            "anchors": [
+              "무릎·몸통을 바닥에 두고 지지함",
+              "일부 구간 추가 지지",
+              "관측 구간 팔꿈치·발끝 지지를 유지함"
+            ]
+          },
+          {
+            "id": "hold_continuity",
+            "name_ko": "관측 구간의 지지 유지",
+            "anchors": [
+              "확인되는 지지 중단",
+              "반복되는 지지 변경·큰 이탈",
+              "선택 3초에서 큰 지지 변경 없이 유지"
+            ]
+          }
+        ],
+        "exclusions": "무릎 플랭크는 별도 변형으로 표시. 정면 팔만 보이는 자료에서 몸통 정렬·전신 유지 여부를 추측하지 않음. 유지 시간은 체력 점수가 아님."
+      },
+      "ytw": {
+        "name_ko": "맨몸 전경 Y–T–W 레이즈",
+        "unit": "한 번의 Y–T–W 시도와 원위치 복귀",
+        "required_view": "양팔 전체와 전경 몸통이 보이는 정면·사선",
+        "weights": [
+          30,
+          25,
+          25,
+          20
+        ],
+        "items": [
+          {
+            "id": "y_reach",
+            "name_ko": "Y 단계 팔 도달",
+            "anchors": [
+              "Y 방향으로 뻗는 수행이 매우 작거나 명확히 미달",
+              "대각선 올림이 있으나 큰 팔 굽힘·부분 도달",
+              "양팔을 대각선 Y 방향으로 대체로 펴 올림"
+            ]
+          },
+          {
+            "id": "t_reach",
+            "name_ko": "T 단계 팔 펼침",
+            "anchors": [
+              "양옆 펼침이 매우 작음",
+              "부분 높이·큰 팔 굽힘·높이 차이",
+              "양팔을 어깨 선의 양옆 T 방향으로 대체로 펼침"
+            ]
+          },
+          {
+            "id": "w_shape",
+            "name_ko": "W 단계 팔 굽힘",
+            "anchors": [
+              "W 방향 굽힘 수행이 명확히 미달",
+              "부분 굽힘·팔 모양 차이",
+              "양 팔꿈치를 굽히고 손을 팔꿈치 위쪽으로 두는 W 모양이 구분됨"
+            ]
+          },
+          {
+            "id": "hinge_and_trunk_hold",
+            "name_ko": "전경 자세와 큰 몸통 흔들림",
+            "anchors": [
+              "대체로 직립이거나 몸통 큰 반동",
+              "얕은 전경 또는 일부 몸통 이탈",
+              "분명한 전경 자세를 큰 흔들림 없이 유지함"
+            ]
+          }
+        ],
+        "exclusions": "정면 투영의 핵심 수행 범위. 척추 곡률·견갑 움직임·엄지 방향·통증·정확한 고관절 각도는 채점하지 않음. 다른 직립 변형을 임상적으로 잘못된 운동이라 부르지 않으며 목표 변형과 구분함."
+      },
+      "shoulder": {
+        "name_ko": "덤벨 숄더 프레스 — 정면 관측 핵심 항목",
+        "unit": "어깨 높이 하단 → 상단 → 하단의 단일 시도",
+        "required_view": "양팔과 머리 위 도달 범위가 보이는 정면",
+        "weights": [
+          30,
+          25,
+          25,
+          20
+        ],
+        "items": [
+          {
+            "id": "overhead_reach",
+            "name_ko": "머리 위 팔 올림",
+            "anchors": [
+              "머리 위로 올림이 매우 작음",
+              "팔꿈치의 큰 굽힘·양팔 도달 차이",
+              "양팔을 머리 위로 거의 펴 올림. 강제 잠금은 요구하지 않음"
+            ]
+          },
+          {
+            "id": "lower_return",
+            "name_ko": "어깨 높이 하단 복귀",
+            "anchors": [
+              "하단으로 돌아오지 못함",
+              "부분 복귀",
+              "양팔이 어깨 높이 하단으로 대체로 복귀함"
+            ]
+          },
+          {
+            "id": "bilateral_timing",
+            "name_ko": "양팔 동시 움직임",
+            "anchors": [
+              "번갈아 올림·명확한 큰 시차",
+              "일부 높이·타이밍 차이",
+              "상승·하강에서 대체로 함께 움직임"
+            ]
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "name_ko": "정면 몸통 좌우 유지",
+            "anchors": [
+              "큰 좌우 기울기·반동",
+              "부분 기울기·구간 이탈",
+              "큰 좌우 기울기 없이 유지함"
+            ]
+          }
+        ],
+        "exclusions": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음."
+      }
+    },
+    "sources": [
+      {
+        "url": "https://www.nasm.org/resource-center/exercise-library/plank",
+        "purpose": "팔꿈치 플랭크 정렬·지지 자세의 참고"
+      },
+      {
+        "url": "https://www.evolutionphysicaltherapy.com/post/avoid-the-rock-climbing-hunchback-pt-3-strengthening/",
+        "purpose": "전경형 Y·T·W 팔 모양과 몸통 유지의 참고. 프로젝트 수치 배점의 검증 근거는 아님"
+      },
+      {
+        "url": "https://www.acefitness.org/resources/everyone/exercise-library/186/seated-shoulder-press/",
+        "purpose": "머리 위 올림과 하강 동작의 참고. 본 실험은 서서 하는 프레스이며 정면 관측 범위만 라벨링"
+      }
+    ],
+    "temporal_limit": "장면 표본과 확대 근거를 직접 검토함. 연속 영상 재생·독립 전문가 검토를 완료했다고 표시하지 않음.",
+    "clinical_limit": "점수는 통증·부상 위험·운동 효과를 평가하지 않음."
+  },
+  {
+    "version": "project-plank-side-core-v2",
+    "expert_validated": false,
+    "weights_are_project_choices": true,
+    "definitions": {
+      "plank": {
+        "name_ko": "기본 팔꿈치 플랭크",
+        "unit": "측면 단일 장면의 약 3초 지지 구간",
+        "weights": [
+          40,
+          25,
+          20,
+          15
+        ],
+        "items": [
+          {
+            "id": "trunk_line",
+            "name_ko": "몸통·골반 정렬",
+            "anchors": [
+              "큰 골반 들림·처짐",
+              "일부 골반 높이 이탈",
+              "큰 꺾임 없이 정렬"
+            ]
+          },
+          {
+            "id": "elbow_sagittal_position",
+            "name_ko": "측면 팔꿈치 전후 위치",
+            "anchors": [
+              "어깨 아래에서 큰 전후 이탈",
+              "일부 전후 이탈",
+              "대체로 어깨 아래"
+            ]
+          },
+          {
+            "id": "leg_and_body_support",
+            "name_ko": "편 다리·몸통 추가 지지 여부",
+            "anchors": [
+              "골반·무릎을 바닥에 둔 추가 지지",
+              "부분 무릎 굽힘 또는 지지 전환",
+              "무릎을 펴고 발끝 지지"
+            ]
+          },
+          {
+            "id": "support_continuity",
+            "name_ko": "선택 구간의 지지 지속",
+            "anchors": [
+              "명확한 지지 중단",
+              "지지 위치 변경",
+              "선택 구간의 지지 유지"
+            ]
+          }
+        ],
+        "scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함."
+      }
+    },
+    "compatibility": "기존 project-other-three-core-v1의 정면 팔꿈치 좌우 판정과 교환할 수 없음. 항목 ID와 기준 버전을 함께 사용."
+  }
+]

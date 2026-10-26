@@ -1,0 +1,32 @@
+{
+  "id": "qevd_00157026_roi",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "a4ebc2361f0e45336c9b39c47bd516cbf5b9fbee5a365179620386ed78444739",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 179,
+      "fps": 30.0
+    },
+    "required_views": [
+      "upper_body_ROI_development_only"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "023df7ce0131465c6d1436b66d695f9d0fb2af601201cd5ff4aceb63942fe49c",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/w_roi_context_cache/qevd_00157026_roi/primary.npz",
+  "frames": 60,
+  "observed_joint_fraction": 0.7686868686868686,
+  "extract_seconds": 4.177384688999155,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

@@ -1,0 +1,202 @@
+{
+  "verdict": "schema_merge_and_label_encoding_passed; not_ready_for_validated_joint_error_training",
+  "training_performed": false,
+  "pose_extraction_performed": false,
+  "datasets": {
+    "qevd-selected": {
+      "clips": 18652,
+      "exercises": {
+        "elbow_plank": 6477,
+        "pushups": 4270,
+        "squats": 4308,
+        "ytw": 3597
+      },
+      "unique_labels": 63,
+      "multilabel_clips": 6059,
+      "splits": {
+        "train": 17685,
+        "test": 967
+      },
+      "train_test_worker_overlap": 0,
+      "label_counts": {
+        "elbow plank - stopping early": 386,
+        "elbow plank - arms facing inward and legs and hips on the floor": 361,
+        "elbow plank - arms too wide": 411,
+        "elbow plank - legs and hips on the floor": 463,
+        "elbow plank - shaking": 328,
+        "elbow plank - arms facing inward and on knees": 359,
+        "elbow plank - head up": 497,
+        "elbow plank - head down": 629,
+        "elbow plank - high hips": 562,
+        "elbow plank - butt sinking": 501,
+        "elbow plank - shoulders shrugged up toward the ears": 520,
+        "pushups - 90 degrees": 548,
+        "pushups - wide": 1003,
+        "elbow plank - average": 525,
+        "pushups - elevated hips": 235,
+        "pushups - head down": 65,
+        "pushups - insufficient": 211,
+        "pushups - very wide": 613,
+        "squats - back not straight": 656,
+        "squats - shallow": 873,
+        "squats - shoulder-width": 2794,
+        "pushups - side to side": 370,
+        "pushups - waiting position": 355,
+        "squats - 90 degrees": 1641,
+        "squats - no obvious issue": 1839,
+        "squats - narrow": 665,
+        "squats - knees over toes": 685,
+        "squats - over 90 degrees": 778,
+        "pushups - fast": 206,
+        "pushups - shallow": 519,
+        "pushups - shoulder-width": 426,
+        "elbow plank - arms facing inward": 472,
+        "squats - insufficient": 542,
+        "standing ytw - arms too low": 274,
+        "elbow plank - on knees": 463,
+        "pushups - deep": 931,
+        "pushups - sloppy": 94,
+        "pushups - narrow": 245,
+        "pushups - head moving in an out of frame": 320,
+        "squats - starting late": 276,
+        "pushups - butt sinking": 141,
+        "pushups - not visible": 102,
+        "standing twy - wrong order": 253,
+        "standing ytw - thumbs pointed down": 266,
+        "squats - hold": 303,
+        "squats - plie": 504,
+        "squats - wide": 404,
+        "standing ywt - wrong order": 258,
+        "standing ytw - too fast": 255,
+        "pushups - legs on the floor": 221,
+        "pushups - early stopping": 304,
+        "standing ytw - torso parallel to the ground, thumbs pointed up": 252,
+        "standing ytw - too slow": 278,
+        "standing wyt - wrong order": 273,
+        "standing wty - wrong order": 255,
+        "standing ytw - thumbs pointed sideway": 275,
+        "standing tyw - wrong order": 253,
+        "standing ytw - not low enough": 207,
+        "pushups - moving head": 67,
+        "standing ytw - hands flat": 251,
+        "pushups - child pose cheat": 338,
+        "standing ytw - bent legs": 247,
+        "squats - not visible": 31
+      }
+    },
+    "shoulder-qevd": {
+      "clips": 100,
+      "exercises": {
+        "shoulder_press": 100
+      },
+      "unique_labels": 7,
+      "multilabel_clips": 0,
+      "splits": {
+        "test": 16,
+        "train": 84
+      },
+      "train_test_worker_overlap": 0,
+      "label_counts": {
+        "shoulder press - no obvious issue": 70,
+        "shoulder press - arms too wide at the top": 6,
+        "shoulder press - incomplete upward range": 3,
+        "shoulder press - hands move behind the head": 4,
+        "shoulder press - forearms tilt inward": 10,
+        "shoulder press - elbow path narrower than reference": 6,
+        "shoulder press - uneven arm height and timing": 1
+      }
+    }
+  },
+  "combined": {
+    "clips": 18752,
+    "exercises": 5,
+    "raw_label_vocabulary_size": 70,
+    "splits": {
+      "train": 17769,
+      "test": 983
+    },
+    "shoulder_share_percent": 0.533,
+    "video_id_collisions": 0,
+    "worker_id_collisions": 0,
+    "encoding_dry_run_passed_rows": 18752
+  },
+  "shoulder": {
+    "annotation_statuses": {
+      "draft": 100
+    },
+    "training_ready": 0,
+    "landmarks_extracted": 0,
+    "test_good": 15,
+    "test_bad": 1,
+    "always_predict_good_test_accuracy_percent": 93.75,
+    "class_support": [
+      {
+        "label": "shoulder press - arms too wide at the top",
+        "clips": 6,
+        "subjects": 3,
+        "train": 6,
+        "test": 0
+      },
+      {
+        "label": "shoulder press - elbow path narrower than reference",
+        "clips": 6,
+        "subjects": 3,
+        "train": 6,
+        "test": 0
+      },
+      {
+        "label": "shoulder press - forearms tilt inward",
+        "clips": 10,
+        "subjects": 6,
+        "train": 10,
+        "test": 0
+      },
+      {
+        "label": "shoulder press - hands move behind the head",
+        "clips": 4,
+        "subjects": 3,
+        "train": 4,
+        "test": 0
+      },
+      {
+        "label": "shoulder press - incomplete upward range",
+        "clips": 3,
+        "subjects": 2,
+        "train": 2,
+        "test": 1
+      },
+      {
+        "label": "shoulder press - no obvious issue",
+        "clips": 70,
+        "subjects": 25,
+        "train": 55,
+        "test": 15
+      },
+      {
+        "label": "shoulder press - uneven arm height and timing",
+        "clips": 1,
+        "subjects": 1,
+        "train": 1,
+        "test": 0
+      }
+    ],
+    "feedback_origin": "assistant-authored templates; not expert ground truth"
+  },
+  "current_training_code": {
+    "path": "../Server/mediapipe_pose/ai_based/train_gru.py",
+    "input": "X_squat_v2.npy, y_squat_v2.npy, groups_squat_v2.npy",
+    "output": "2 classes, CrossEntropyLoss",
+    "compatible_without_changes": false
+  },
+  "issues": [
+    "All 100 shoulder annotations are unverified drafts: 70 source-good weak labels, 10 detailed examples and 20 screening candidates.",
+    "Shoulder test contains 15 source-good and only 1 error-candidate clip; 5 of 6 candidate error labels have no test examples.",
+    "Uneven arm timing has one participant and one clip; independent train/test evaluation of that label is unavailable.",
+    "QEVD contains 6059 multi-label clips; existing binary squat training code cannot directly consume these labels.",
+    "QEVD labels include form attributes, normal states, visibility conditions and errors. Do not treat every label as an error.",
+    "No common extracted pose feature arrays exist in the packaged datasets; raw video decoding/pose extraction and training-compatible sequence construction are still required.",
+    "Only shoulder videos represent shoulder press in this combination, so exercise recognition may exploit background/source artifacts. A cross-camera/live ESP32 evaluation is needed.",
+    "Clip labels must not be copied onto every frame/window as exact error timing. Unlabeled error dimensions are not automatically confirmed absent.",
+    "The 70 raw strings are an encoding vocabulary, not 70 validated error types. Corrective feedback text is not an image-model training target by itself."
+  ]
+}

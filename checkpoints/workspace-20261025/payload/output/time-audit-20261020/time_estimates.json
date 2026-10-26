@@ -1,0 +1,71 @@
+{
+  "completed_at": "2026-10-20T19:18:49.893620+09:00",
+  "hardware": "i7-12700H / RTX 3050 Ti Laptop 4 GiB",
+  "renderer_verified": "NVIDIA GeForce RTX 3050 Ti Laptop GPU/PCIe/SSE2",
+  "inventory_method": "전체 영상의 컨테이너 메타데이터를 OpenCV로 확인. 모든 프레임을 디코딩한 검사는 아님.",
+  "benchmark_method": "12시점 추출은 그룹별 5영상. 10FPS 연속 추출은 운동별 2영상, 어깨는 앞부분 최대 10초. 전체 처리 시간은 실측 속도로 외삽한 값.",
+  "comparison": {
+    "pushups": {
+      "videos": 4270,
+      "video_seconds": 22575.933333333334,
+      "rtx_dense_10fps_hours": 1.1529232446017785,
+      "rtx_12frame_seconds_per_clip": 0.211338851597975,
+      "rtx_12frame_remaining_minutes": 10.862816972135914,
+      "intel_over_rtx_speedup": 2.0476512409165624
+    },
+    "squats": {
+      "videos": 4308,
+      "video_seconds": 21753.233333333334,
+      "rtx_dense_10fps_hours": 1.1036742990672281,
+      "rtx_12frame_seconds_per_clip": 0.1800512690009782,
+      "rtx_12frame_remaining_minutes": 6.715912333736487,
+      "intel_over_rtx_speedup": 2.091162061210047
+    },
+    "elbow plank": {
+      "videos": 6477,
+      "video_seconds": 32166.3,
+      "rtx_dense_10fps_hours": 1.5916976483564935,
+      "rtx_12frame_seconds_per_clip": 0.19689554600190604,
+      "rtx_12frame_remaining_minutes": 7.9611432433437335,
+      "intel_over_rtx_speedup": 2.165159474813016
+    },
+    "standing ytw": {
+      "videos": 2305,
+      "video_seconds": 13846.333333333334,
+      "rtx_dense_10fps_hours": 0.6636636835020343,
+      "rtx_12frame_seconds_per_clip": 0.18741815460089128,
+      "rtx_12frame_remaining_minutes": 7.19998077258424,
+      "intel_over_rtx_speedup": 2.1435887230708017
+    },
+    "shoulder": {
+      "videos": 150,
+      "video_seconds": 4429.733333333334,
+      "rtx_dense_10fps_hours": 0.18375221404309885,
+      "rtx_12frame_seconds_per_clip": 0.25019172440079274,
+      "rtx_12frame_remaining_minutes": 0.6254793110019818,
+      "intel_over_rtx_speedup": 2.4246022424763733
+    },
+    "ytw_order_variants": {
+      "videos": 1292,
+      "video_seconds": 7759.866666666667,
+      "rtx_dense_10fps_hours": 0.3719354121778078,
+      "rtx_12frame_seconds_per_clip": 0.1811326591981924,
+      "rtx_12frame_remaining_minutes": 3.900389928067743,
+      "intel_over_rtx_speedup": 2.1435887230708017
+    }
+  },
+  "rtx_dense_10fps_total_hours": 5.067646501748442,
+  "rtx_12frame_full_minutes": 60.948686922219174,
+  "rtx_12frame_uncached_minutes": 37.2657225608701,
+  "pilot_150_video_minutes": 25.577222222222225,
+  "pilot_150_dense_minutes": 4.137324582163336,
+  "pilot_review_assumption_minutes": 126.15444444444444,
+  "full_review_assumption_hours": 213.64522222222223,
+  "review_assumption": "영상 2회 시청 + 클립당 기록 30초. AI/사람 라벨링 실측 시간이 아니며 기준 협의·추가 검토는 제외.",
+  "limitations": [
+    "점수 정답 부족으로 5종의 검증된 점수 모델 완성 기간은 확정 불가",
+    "12시점 캐시는 10FPS 시퀀스 캐시를 대체하지 않음",
+    "RTX와 Intel 출력 정확도의 동등성 검증은 별도 필요",
+    "REHAB26 기존 관절 좌표 재사용 가능"
+  ]
+}

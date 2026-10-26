@@ -1,0 +1,12 @@
+import json,hashlib,sys
+from pathlib import Path
+O=Path(__file__).resolve().parent;B=O.parents[1];sys.path.insert(0,str(B/'output/live-webcam-20261023'));from runtime_snapshot import read_source,digest
+baseline=json.loads((B/'output/squat-consistent-20261023/preserved-models.json').read_text());preservation={p:hashlib.sha256(Path(p).read_bytes()).hexdigest()==s for p,s in baseline.items()};assert all(preservation.values())
+report=json.loads((O/'comparison.json').read_text());raw=(O/'labels.frozen.json').read_bytes();assert hashlib.sha256(raw).hexdigest()==report['labels_sha256'];labels=json.loads(raw)['records'];rows=json.loads((O/'feature-rows.json').read_text())
+for f in report['folds']:
+ train=[r for r in rows if r['person'] in f['train_people']];held=[r for r in rows if r['person'] in f['held_people']];assert not {r['person'] for r in train}&{r['person'] for r in held};assert not {s for r in train for s in r['source']}&{s for r in held for s in r['source']}
+for path in {r['path'] for r in labels}:assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==next(r['source_sha256'] for r in labels if r['path']==path)
+count={key:{str(g):sum(r['levels'].get(key)==g for r in labels) for g in [0,1,2]} for key in ['knee_inward','trunk_balance']}
+known=[p for p in report['items']['knee_inward']['predictions'] if p['id'] in ['Vasil_02','Vasil_08']];assert len(known)==2
+result=dict(new_repetitions_reviewed=24,new_item_labels=32,new_error_or_partial_item_labels=16,label_counts=count,new_people=0,new_view_angles=[10,20],existing_misses_rechecked=2,existing_misses_resolved=sum(p['context_ai']<1.5 for p in known),return_candidates_reviewed=4,new_return_errors=0,return_AI_retrained=False,person_groups=33,folds=5,person_overlap=0,source_overlap=0,preserved_files=preservation,team_source_preserved=digest(read_source())=='c850c28b43de189e32b2419147567247d08385c717c8ca90a6bc2c6d1f58d891',candidate_runtime_deployed=False,existing_score_policy_changed=False,new_candidate_tests_passed=6,expert_validated=False,independent_final_test=False,final_test_person_opened=False,decision='모델 가중치·규칙 경계·현재 100점 정책 유지. 기본 무릎 AI는 고정 검증에서 오류 미검출 증가, 몸통은 교차검증에서 오경고 증가. 발목 보조 후보는 개선 경향이 있으나 기존 간격 기준과 대상이 다르고 두 핵심 미검출이 남아 오프라인 진단 후보로만 보존.')
+assert result['team_source_preserved'];(O/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));print(json.dumps({k:v for k,v in result.items() if k!='preserved_files'},ensure_ascii=False))

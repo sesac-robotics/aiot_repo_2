@@ -1,0 +1,32 @@
+{
+  "id": "support_pannell_stop",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "be510ca6b059d1490582d8f9385524b73257a4f0fda658268572f6e6cee7daed",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 73,
+      "fps": 24.0
+    },
+    "required_views": [
+      "item_only_review"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "174d17869e110f95d45894de1f9de19857af9fae108778609e40aae2df47e0d9",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_support_cache/support_pannell_stop/primary.npz",
+  "frames": 31,
+  "observed_joint_fraction": 0.7038123167155426,
+  "extract_seconds": 9.647381127999324,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

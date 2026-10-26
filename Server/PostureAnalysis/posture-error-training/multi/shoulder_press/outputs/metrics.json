@@ -1,0 +1,357 @@
+{
+  "validation_split_candidate": 1,
+  "validation_split_policy": "First seed42 candidate retaining every available source-train target in train; validation binary has both classes; test is never inspected.",
+  "exercise": "shoulder_press",
+  "targets": [
+    "arms too wide at the top",
+    "incomplete upward range",
+    "hands move behind the head",
+    "forearms tilt inward",
+    "elbow path narrower than reference",
+    "uneven arm height and timing"
+  ],
+  "selected_model": "gru",
+  "selection_basis": "Validation score only; shoulder uses selected-error auxiliary validation F1 due to sparse class support.",
+  "models": {
+    "cnn": {
+      "precision_macro_supported": 0.0,
+      "recall_macro_supported": 0.0,
+      "macro_f1_supported": 0.0,
+      "evaluated_targets": 1,
+      "total_targets": 6,
+      "macro_f1_all_targets": null,
+      "exact_match_accuracy": 0.2222222222222222,
+      "per_target": {
+        "arms too wide at the top": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 4,
+          "validation_positive_support": 2,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "incomplete upward range": {
+          "positive_support": 1,
+          "negative_support": 8,
+          "train_positive_support": 2,
+          "validation_positive_support": 0,
+          "evaluable": true,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "reason": null
+        },
+        "hands move behind the head": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 1,
+          "validation_positive_support": 0,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "forearms tilt inward": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 8,
+          "validation_positive_support": 2,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "elbow path narrower than reference": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 6,
+          "validation_positive_support": 0,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "uneven arm height and timing": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 1,
+          "validation_positive_support": 0,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        }
+      },
+      "selected_error_vs_other": {
+        "accuracy": 0.4444444444444444,
+        "precision": 0.0,
+        "recall": 0.0,
+        "macro_f1": 0.3076923076923077,
+        "positive_support": 1,
+        "negative_support": 8,
+        "confusion_matrix": [
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "evaluable": true
+      },
+      "validation_selection_score": 0.5804195804195804,
+      "best_epoch": 12,
+      "thresholds": {
+        "arms too wide at the top": 0.6000000000000002,
+        "incomplete upward range": 0.5,
+        "hands move behind the head": 0.5,
+        "forearms tilt inward": 0.40000000000000013,
+        "elbow path narrower than reference": 0.5,
+        "uneven arm height and timing": 0.5,
+        "any_selected_error": 0.5500000000000002
+      }
+    },
+    "gru": {
+      "precision_macro_supported": 0.0,
+      "recall_macro_supported": 0.0,
+      "macro_f1_supported": 0.0,
+      "evaluated_targets": 1,
+      "total_targets": 6,
+      "macro_f1_all_targets": null,
+      "exact_match_accuracy": 0.0,
+      "per_target": {
+        "arms too wide at the top": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 4,
+          "validation_positive_support": 2,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "incomplete upward range": {
+          "positive_support": 1,
+          "negative_support": 8,
+          "train_positive_support": 2,
+          "validation_positive_support": 0,
+          "evaluable": true,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "reason": null
+        },
+        "hands move behind the head": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 1,
+          "validation_positive_support": 0,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "forearms tilt inward": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 8,
+          "validation_positive_support": 2,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "elbow path narrower than reference": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 6,
+          "validation_positive_support": 0,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        },
+        "uneven arm height and timing": {
+          "positive_support": 0,
+          "negative_support": 9,
+          "train_positive_support": 1,
+          "validation_positive_support": 0,
+          "evaluable": false,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "reason": "Missing positive/negative test support or unseen training target"
+        }
+      },
+      "selected_error_vs_other": {
+        "accuracy": 0.3333333333333333,
+        "precision": 0.14285714285714285,
+        "recall": 1.0,
+        "macro_f1": 0.325,
+        "positive_support": 1,
+        "negative_support": 8,
+        "confusion_matrix": [
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "evaluable": true
+      },
+      "validation_selection_score": 0.7482517482517483,
+      "best_epoch": 29,
+      "thresholds": {
+        "arms too wide at the top": 0.7000000000000002,
+        "incomplete upward range": 0.5,
+        "hands move behind the head": 0.5,
+        "forearms tilt inward": 0.1,
+        "elbow path narrower than reference": 0.5,
+        "uneven arm height and timing": 0.5,
+        "any_selected_error": 0.45000000000000007
+      }
+    }
+  },
+  "majority_baseline": {
+    "precision_macro_supported": 0.0,
+    "recall_macro_supported": 0.0,
+    "macro_f1_supported": 0.0,
+    "evaluated_targets": 1,
+    "total_targets": 6,
+    "macro_f1_all_targets": null,
+    "exact_match_accuracy": 0.8888888888888888,
+    "per_target": {
+      "arms too wide at the top": {
+        "positive_support": 0,
+        "negative_support": 9,
+        "train_positive_support": 4,
+        "validation_positive_support": 2,
+        "evaluable": false,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "reason": "Missing positive/negative test support or unseen training target"
+      },
+      "incomplete upward range": {
+        "positive_support": 1,
+        "negative_support": 8,
+        "train_positive_support": 2,
+        "validation_positive_support": 0,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "hands move behind the head": {
+        "positive_support": 0,
+        "negative_support": 9,
+        "train_positive_support": 1,
+        "validation_positive_support": 0,
+        "evaluable": false,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "reason": "Missing positive/negative test support or unseen training target"
+      },
+      "forearms tilt inward": {
+        "positive_support": 0,
+        "negative_support": 9,
+        "train_positive_support": 8,
+        "validation_positive_support": 2,
+        "evaluable": false,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "reason": "Missing positive/negative test support or unseen training target"
+      },
+      "elbow path narrower than reference": {
+        "positive_support": 0,
+        "negative_support": 9,
+        "train_positive_support": 6,
+        "validation_positive_support": 0,
+        "evaluable": false,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "reason": "Missing positive/negative test support or unseen training target"
+      },
+      "uneven arm height and timing": {
+        "positive_support": 0,
+        "negative_support": 9,
+        "train_positive_support": 1,
+        "validation_positive_support": 0,
+        "evaluable": false,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "reason": "Missing positive/negative test support or unseen training target"
+      }
+    },
+    "selected_error_vs_other": {
+      "accuracy": 0.8888888888888888,
+      "precision": 0.0,
+      "recall": 0.0,
+      "macro_f1": 0.47058823529411764,
+      "positive_support": 1,
+      "negative_support": 8,
+      "confusion_matrix": [
+        [
+          8,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "evaluable": true
+    }
+  },
+  "trainable_targets": {
+    "arms too wide at the top": true,
+    "incomplete upward range": true,
+    "hands move behind the head": true,
+    "forearms tilt inward": true,
+    "elbow path narrower than reference": true,
+    "uneven arm height and timing": true,
+    "any_selected_error": true
+  },
+  "split_sizes": {
+    "train": 53,
+    "validation": 12,
+    "test": 9
+  },
+  "worker_overlap": 0,
+  "elapsed_seconds": 23.990893840789795,
+  "limitations": [
+    "Unverified visual/source-binary drafts; small pilot only. Source test has one positive video.",
+    "Source clip labels; not frame-level or expert-verified error truth.",
+    "Unlisted selected labels treated as negative (closed-world assumption).",
+    "All models use same source test and group-disjoint validation; no test tuning.",
+    "Invisible joints are masked, but occlusion, camera view and annotation bias remain.",
+    "Selected-error auxiliary negative is not a comprehensive normal class.",
+    "No validated rule baseline for these four tasks; squat proxy comparison remains separate.",
+    "Only 25 source subjects and 30 draft error videos; multiple views are correlated.",
+    "Source test contains only one positive error clip, so headline accuracy can be misleading.",
+    "Some errors occur in only one or two subjects; independent train/validation/test error evaluation is impossible."
+  ],
+  "dataset_sha256": "3630a53c74ccdd13d12454df0eae61e140b3901b12592f4f0c5841a1f954e40b",
+  "pipeline_version": "multi_v2_109_visibility_masked_6fps"
+}

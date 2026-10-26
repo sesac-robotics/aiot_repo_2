@@ -1,0 +1,33 @@
+{
+  "status": "proposed_not_captured",
+  "purpose": "AI lower_return and frontal_trunk_hold supervised score evidence",
+  "source_role_policy": "existing source roles immutable; new sources assigned before model selection",
+  "requirements": {
+    "train": {
+      "new_people_at_least": 2,
+      "each_item_per_person": {
+        "normal_complete_returns": 3,
+        "visually_confirmed_partial_returns_or_frontal_trunk_deviations": 3
+      }
+    },
+    "development": {
+      "different_new_people_at_least": 2,
+      "each_item_per_person": {
+        "normal_complete_returns": 3,
+        "visually_confirmed_partial_returns_or_frontal_trunk_deviations": 3
+      }
+    },
+    "independent_final_test": "separate new people/source sessions reserved unopened; existing exposed diagnostic test remains separate"
+  },
+  "notes": [
+    "Counts are a proposed minimum intake, not achieved data or accuracy guarantee.",
+    "No grade0 induced or claimed. Observed1/2 only until real reviewed0 evidence exists.",
+    "No person-wide normal/error labels. Individual completed cycles reviewed from video, initial-ready separate from movement severity.",
+    "Record explicit video plus joints with user ready/start permission; current joint-only7 repetitions have no quality labels.",
+    "Same-person/group/synchronized views kept together; never randomly split adjacent cycles.",
+    "Partial return requires observed top, actual lower turnaround and later same-cycle context; clipping/occlusion/user stop remains unknown.",
+    "Frontal trunk target is left/right trunk stability; sagittal arch/forward bend and arm asymmetry are separate.",
+    "No forced severe errors/weights for capture. A demonstrable mild unloaded variation is only a recording condition; label remains unknown until review.",
+    "Camera and app operations owned by integration thread."
+  ]
+}

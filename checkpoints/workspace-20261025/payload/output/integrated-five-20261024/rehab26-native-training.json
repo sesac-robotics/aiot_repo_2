@@ -1,0 +1,145 @@
+{
+  "tasks": [
+    {
+      "task": "normal_error",
+      "train_n": 999,
+      "train_groups": 3,
+      "class_counts": {
+        "NORMAL": 498,
+        "ERROR": 501
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 999,
+        "balanced_accuracy": 0.6798030445133829,
+        "macro_f1": 0.6504023300587451
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "Petra",
+            "Terka"
+          ],
+          "validation_groups": [
+            "Vasil"
+          ],
+          "metrics": {
+            "n": 339,
+            "balanced_accuracy": 0.49415204678362573,
+            "macro_f1": 0.33267716535433073
+          }
+        },
+        {
+          "train_groups": [
+            "Petra",
+            "Vasil"
+          ],
+          "validation_groups": [
+            "Terka"
+          ],
+          "metrics": {
+            "n": 330,
+            "balanced_accuracy": 0.6212121212121212,
+            "macro_f1": 0.5688528873791482
+          }
+        },
+        {
+          "train_groups": [
+            "Terka",
+            "Vasil"
+          ],
+          "validation_groups": [
+            "Petra"
+          ],
+          "metrics": {
+            "n": 330,
+            "balanced_accuracy": 0.9272727272727272,
+            "macro_f1": 0.9272058823529412
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/rehab26-normal_error.joblib",
+      "sha256": "5bf9dd8957946a4ea2496ae91a735ad5eb83ed5139a09f0b859bd0ac7f16d777",
+      "provider_validation": {
+        "n": 333,
+        "balanced_accuracy": 0.7678571428571428,
+        "macro_f1": 0.7660343270099368
+      }
+    },
+    {
+      "task": "error_type",
+      "train_n": 999,
+      "train_groups": 3,
+      "class_counts": {
+        "NORMAL": 498,
+        "ERR_KNEES_INSIDE": 102,
+        "ERR_TORSO_TO_SIDE": 99,
+        "ERR_SHALLOW_SQUAT": 99,
+        "ERR_KNEES_FORWARD": 99,
+        "ERR_LIFTED_HEELS": 102
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 999,
+        "balanced_accuracy": 0.4427179902020441,
+        "macro_f1": 0.38974742167012727
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "Petra",
+            "Terka"
+          ],
+          "validation_groups": [
+            "Vasil"
+          ],
+          "metrics": {
+            "n": 339,
+            "balanced_accuracy": 0.1818181818181818,
+            "macro_f1": 0.06029810298102981
+          }
+        },
+        {
+          "train_groups": [
+            "Petra",
+            "Vasil"
+          ],
+          "validation_groups": [
+            "Terka"
+          ],
+          "metrics": {
+            "n": 330,
+            "balanced_accuracy": 0.5585858585858586,
+            "macro_f1": 0.507486687367734
+          }
+        },
+        {
+          "train_groups": [
+            "Terka",
+            "Vasil"
+          ],
+          "validation_groups": [
+            "Petra"
+          ],
+          "metrics": {
+            "n": 330,
+            "balanced_accuracy": 0.5888888888888889,
+            "macro_f1": 0.5600265548363863
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/rehab26-error_type.joblib",
+      "sha256": "169ba8f97761ea3ee54a37768c47a2d04e97987bd02a776542e645c63678b260",
+      "provider_validation": {
+        "n": 333,
+        "balanced_accuracy": 0.5644781144781145,
+        "macro_f1": 0.5470730643260424
+      }
+    }
+  ],
+  "feature_sha256": "61fed484c8797b197064c01f488093d95b8684d3bf784f45e8e1158e3447a5b6",
+  "note": "Original provider rehabilitation task. No conversion of error type to all-zero project scores.",
+  "historical_test_evaluated": false
+}

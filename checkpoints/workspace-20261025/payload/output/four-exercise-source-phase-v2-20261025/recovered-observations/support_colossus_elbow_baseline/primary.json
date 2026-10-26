@@ -1,0 +1,32 @@
+{
+  "id": "support_colossus_elbow_baseline",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "bd66c89064b12b8709c4be01401b252f910a13b1c7632b606893f015e813b010",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 71,
+      "fps": 23.976
+    },
+    "required_views": [
+      "side"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "b3bb0c3e11db12ddb7b56af094b8cef86bed3da88ec2e9a5d7b92ae72d6391b4",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/four-exercise-source-phase-v2-20261025/recovered-observations/support_colossus_elbow_baseline/primary.npz",
+  "frames": 30,
+  "observed_joint_fraction": 0.7070707070707071,
+  "extract_seconds": 2.3924975910003923,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

@@ -1,0 +1,1478 @@
+{
+  "protocol": {
+    "protocol": "AIHub-B-f17-static-item-development-v1",
+    "exercise": "plank",
+    "input": "Heavy IMAGE GPU on unchanged full 1920x1080 source resized max edge 640; no temporal interpolation or assumed FPS",
+    "comparison_criterion": "trunk_line",
+    "original_weight": 40,
+    "full_score": null,
+    "rule_good_min_angle_deg": 168,
+    "rule_partial_min_angle_deg": 155,
+    "rule_threshold_source": "unchanged common rule_score.py trunk_line engineering draft",
+    "AI_family": "ExtraTreesRegressor",
+    "AI_parameters": {
+      "n_estimators": 128,
+      "max_depth": 4,
+      "min_samples_leaf": 2,
+      "random_state": 42,
+      "n_jobs": 1
+    },
+    "validation": "leave-one-person-token-out development; all views/repetitions grouped; not independent final test",
+    "min_joint_visibility": 0.5,
+    "min_joint_presence": 0.5,
+    "label_sha256": "9b0617ec628b2e88a56b4bc9b35cbbe062e1071491247b13592e814ac73eaf86",
+    "rule_code_sha256": "f5d5b6469cd118811e5b2034b99c97ab3382dca10c8784361b30cf0c654aba5a",
+    "not_for_common_full_score_training": true,
+    "band_support_and_prone_Y_not_converted_to_unassisted_plank_or_bent_YTW": true
+  },
+  "source_images": 56,
+  "directly_drafted_trunk_labels": 54,
+  "observable_images": 38,
+  "common_evaluated_images": 37,
+  "common_evaluation_fraction": 0.6607142857142857,
+  "common_fraction_among_labeled": 0.6851851851851852,
+  "grade_counts": {
+    "2": 6,
+    "1": 22,
+    "0": 9
+  },
+  "metrics": {
+    "ai_oof_grade": {
+      "grade_mae": 0.5587889929232359,
+      "contribution_40_mae": 11.175779858464718,
+      "grade_bias": 0.045931612363737974
+    },
+    "rule_grade": {
+      "grade_mae": 0.5945945945945946,
+      "contribution_40_mae": 11.891891891891893,
+      "grade_bias": 0.0
+    },
+    "train_mean_grade": {
+      "grade_mae": 0.49070128881029884,
+      "contribution_40_mae": 9.814025776205977,
+      "grade_bias": 0.002295297623440039
+    }
+  },
+  "folds": [
+    {
+      "held_person": "Z115",
+      "train_people": [
+        "Z3",
+        "Z59",
+        "Z61",
+        "Z62",
+        "Z84"
+      ],
+      "train_images": 30,
+      "test_images": 7,
+      "fit_seconds": 0.08675441000013961,
+      "grade_mae": 0.2962468666137018
+    },
+    {
+      "held_person": "Z3",
+      "train_people": [
+        "Z115",
+        "Z59",
+        "Z61",
+        "Z62",
+        "Z84"
+      ],
+      "train_images": 29,
+      "test_images": 8,
+      "fit_seconds": 0.06387169299978268,
+      "grade_mae": 0.6207371895684286
+    },
+    {
+      "held_person": "Z59",
+      "train_people": [
+        "Z115",
+        "Z3",
+        "Z61",
+        "Z62",
+        "Z84"
+      ],
+      "train_images": 33,
+      "test_images": 4,
+      "fit_seconds": 0.07717124900000272,
+      "grade_mae": 1.2157174115222746
+    },
+    {
+      "held_person": "Z61",
+      "train_people": [
+        "Z115",
+        "Z3",
+        "Z59",
+        "Z62",
+        "Z84"
+      ],
+      "train_images": 29,
+      "test_images": 8,
+      "fit_seconds": 0.10299410900006478,
+      "grade_mae": 0.45109031522511245
+    },
+    {
+      "held_person": "Z62",
+      "train_people": [
+        "Z115",
+        "Z3",
+        "Z59",
+        "Z61",
+        "Z84"
+      ],
+      "train_images": 33,
+      "test_images": 4,
+      "fit_seconds": 0.07112482999991698,
+      "grade_mae": 0.48222828583272365
+    },
+    {
+      "held_person": "Z84",
+      "train_people": [
+        "Z115",
+        "Z3",
+        "Z59",
+        "Z61",
+        "Z62"
+      ],
+      "train_images": 31,
+      "test_images": 6,
+      "fit_seconds": 0.06637562400010211,
+      "grade_mae": 0.5391769740159168
+    }
+  ],
+  "rows": [
+    {
+      "id": "553-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/553-1-2-26-Z56_B/553-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "a9ade256f861e87c081a0cfac330af6fee82a334cd8975e0dc55c9fe309b11ee",
+      "draft_grade": 1,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.0003153280003971304,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "554-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/554-1-2-26-Z56_B/554-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "41df520558a6292b047056c594bd6507185f0329c3790cbfbaec431d555d1394",
+      "draft_grade": 1,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.0002706830000533955,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "555-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/555-1-2-26-Z56_B/555-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "3de11711b8257ea9d3c033ab895ba0699e763df0a6eb3436b853d7e7bd275962",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00023774400006004726,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "556-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/556-1-2-26-Z56_B/556-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "4263d145928572d9b9c34c3cb6dfe4439a3834e8b06ad0c5cfafdd59429e2c81",
+      "draft_grade": 1,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00022943000021768967,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "557-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/557-1-2-26-Z56_B/557-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "39487ebe52ae5b19f9d806b8b8b2f489835b6c856529a13597bf9b5e5e0e55b7",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.005670555000051536,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "558-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/558-1-2-26-Z56_B/558-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "4ed7b39dcc418a3602248e8eef9870645f751433190e52f6690b2f4cf7310309",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.0002871880001293903,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "559-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/559-1-2-26-Z56_B/559-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "e8520b2c6c386e4d8c48e83df16a7bf5821e544c52453b683ab885561eff6819",
+      "draft_grade": 1,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00024393400008193566,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "560-1-2-26-Z56",
+      "person_token": "Z56",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/1/B/560-1-2-26-Z56_B/560-1-2-26-Z56_B-0000017.jpg",
+      "image_sha256": "ef48f38e3c6f5d3b20997c82fb4aa2aa01e835a5d164eb7609a6cd7175a97eba",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00023036600032355636,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "553-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/553-1-2-26-Z115_B/553-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "f3e8cada6f1d61a2d49bfa6015f41b97d07b735b6e13179c6e7cec30b8568c39",
+      "draft_grade": 2,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.1236051885568747,
+      "train_mean_grade": 0.8333333333333334,
+      "pose": {
+        "side": "left",
+        "quality": 0.7463239431381226,
+        "features": [
+          -1.1417348384857178,
+          0.47864916920661926
+        ],
+        "angle_deg": 157.25511169433594
+      },
+      "feature_seconds": 0.0003085479997935181,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "554-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/554-1-2-26-Z115_B/554-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "cbbb6d0abd7e75af0f781f36cb1a63a4af3866766b688dd94d60b67936cfbc5a",
+      "draft_grade": 2,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.2485359977650279,
+      "train_mean_grade": 0.8333333333333334,
+      "pose": {
+        "side": "left",
+        "quality": 0.6042237877845764,
+        "features": [
+          -1.115185022354126,
+          0.42041298747062683
+        ],
+        "angle_deg": 159.34408569335938
+      },
+      "feature_seconds": 0.00029892900010963785,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "555-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/555-1-2-26-Z115_B/555-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "95b481af2bc7ed1b55065226179e46ae6d3dd54693e8fd570ff410437c5f0ced",
+      "draft_grade": 1,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00023713700011285255,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "556-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/556-1-2-26-Z115_B/556-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "47d6c4b572dedf6dbd06d846f120b16894be32c569c1d01f2fc8593e82d6abae",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.0568813091376827,
+      "train_mean_grade": 0.8333333333333334,
+      "pose": {
+        "side": "left",
+        "quality": 0.8024007678031921,
+        "features": [
+          -1.1284208297729492,
+          0.5145964622497559
+        ],
+        "angle_deg": 155.48545837402344
+      },
+      "feature_seconds": 0.00026176199980909587,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "557-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/557-1-2-26-Z115_B/557-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "c91f607b7568546b30500df0f96ddc86918545a2aa001f8d3ce738c07d56b1d6",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.143926479678947,
+      "train_mean_grade": 0.8333333333333334,
+      "pose": {
+        "side": "left",
+        "quality": 0.7696001529693604,
+        "features": [
+          -1.1954939365386963,
+          0.44748952984809875
+        ],
+        "angle_deg": 159.47845458984375
+      },
+      "feature_seconds": 0.00027149500010636984,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "558-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/558-1-2-26-Z115_B/558-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "74f9ac76db70b68fe9543b3a4ff54a1975e1e14ea47d57a76ffb228ff6b83f1a",
+      "draft_grade": 1,
+      "rule_grade": 0,
+      "ai_oof_grade": 0.9713071177041159,
+      "train_mean_grade": 0.8333333333333334,
+      "pose": {
+        "side": "left",
+        "quality": 0.6681228280067444,
+        "features": [
+          -1.1365126371383667,
+          0.577721118927002
+        ],
+        "angle_deg": 153.05450439453125
+      },
+      "feature_seconds": 0.00025402299979759846,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "559-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/559-1-2-26-Z115_B/559-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "d81730f8becfe222f835f177b70f31bbe0a85ffcdc8b7874a17fcbbf39d89fc8",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.1710811175757727,
+      "train_mean_grade": 0.8333333333333334,
+      "pose": {
+        "side": "left",
+        "quality": 0.9535353183746338,
+        "features": [
+          -1.1940162181854248,
+          0.4297456443309784
+        ],
+        "angle_deg": 160.2053680419922
+      },
+      "feature_seconds": 0.000248611000188248,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "560-1-2-26-Z115",
+      "person_token": "Z115",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/2/B/560-1-2-26-Z115_B/560-1-2-26-Z115_B-0000017.jpg",
+      "image_sha256": "686e9c2625cb31c7b1427dec5585d481758944f3288848039de7066caa2c2c0a",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.9547125360704716,
+      "train_mean_grade": 0.8333333333333334,
+      "pose": {
+        "side": "left",
+        "quality": 0.9824230670928955,
+        "features": [
+          -1.3450031280517578,
+          0.40524232387542725
+        ],
+        "angle_deg": 163.23268127441406
+      },
+      "feature_seconds": 0.0002471399998285051,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "553-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/553-1-2-26-Z3_B/553-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "055dd0fd1c760107de170bbd6b06c50867597a7fb77b767750ce0b3f0ef7c03a",
+      "draft_grade": 1,
+      "rule_grade": 0,
+      "ai_oof_grade": 1.109306247580967,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.9731897711753845,
+        "features": [
+          -1.0261528491973877,
+          0.7873843312263489
+        ],
+        "angle_deg": 142.5003662109375
+      },
+      "feature_seconds": 0.00026330799983043107,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "554-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/554-1-2-26-Z3_B/554-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "e12c2961874dd307c95b8bce8d22bf8c429315504a689db93c5df8e47ce24bf2",
+      "draft_grade": 1,
+      "rule_grade": 0,
+      "ai_oof_grade": 1.1232334661956858,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.8934953808784485,
+        "features": [
+          -1.1138994693756104,
+          0.6748629808425903
+        ],
+        "angle_deg": 148.7901611328125
+      },
+      "feature_seconds": 0.0002511249999770371,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "555-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/555-1-2-26-Z3_B/555-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "43bf8d0a002ef4eb4e9c3be15f88243f3ead5e2cbdd39a17f3de0967dbdff33a",
+      "draft_grade": 0,
+      "rule_grade": 0,
+      "ai_oof_grade": 1.1147617809456285,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.6416469812393188,
+        "features": [
+          -0.2940983176231384,
+          0.9475962519645691
+        ],
+        "angle_deg": 107.24237823486328
+      },
+      "feature_seconds": 0.00026636099983079475,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "556-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/556-1-2-26-Z3_B/556-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "9fdea59c642fb39b73a6c25ffa9296e7fad745b41bd77c90320c857c879c6f37",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.7961831995199593,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.9391365647315979,
+        "features": [
+          -1.345740556716919,
+          0.5984037518501282
+        ],
+        "angle_deg": 156.0269317626953
+      },
+      "feature_seconds": 0.00025271600043197395,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "557-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/557-1-2-26-Z3_B/557-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "19b2a97983aaaa14ef13f2b20a520e2335f347d3302fea3c835b17a458221320",
+      "draft_grade": 0,
+      "rule_grade": 0,
+      "ai_oof_grade": 1.1147617809456285,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.5096499919891357,
+        "features": [
+          -0.4278084933757782,
+          0.9067503213882446
+        ],
+        "angle_deg": 115.25812530517578
+      },
+      "feature_seconds": 0.004814390999854368,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "558-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/558-1-2-26-Z3_B/558-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "61effb4e2936f9cad15e9958f1575a560815fdb37b050ce75c9a56eda457f1d2",
+      "draft_grade": 0,
+      "rule_grade": 0,
+      "ai_oof_grade": 1.1147617809456285,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.5961980819702148,
+        "features": [
+          -0.4980706572532654,
+          0.9803788065910339
+        ],
+        "angle_deg": 116.93234252929688
+      },
+      "feature_seconds": 0.0003077829996982473,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "559-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/559-1-2-26-Z3_B/559-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "e3ac64ef938fc44ce1f51673dd42adb2e07ef7c2807f32f8c4da1710503d4297",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.9295061214917785,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.9840936064720154,
+        "features": [
+          -1.2673344612121582,
+          0.5728830099105835
+        ],
+        "angle_deg": 155.67523193359375
+      },
+      "feature_seconds": 0.0002653200003805978,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "560-1-2-26-Z3",
+      "person_token": "Z3",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/7/B/560-1-2-26-Z3_B/560-1-2-26-Z3_B-0000017.jpg",
+      "image_sha256": "b29341a7d3430977b9b21ca6e80b943ca8bd2057ebf29837dd088e3dc17be59f",
+      "draft_grade": 0,
+      "rule_grade": 0,
+      "ai_oof_grade": 1.1147617809456285,
+      "train_mean_grade": 1.0344827586206897,
+      "pose": {
+        "side": "left",
+        "quality": 0.6296607851982117,
+        "features": [
+          -0.5723181962966919,
+          0.9380671381950378
+        ],
+        "angle_deg": 121.38751220703125
+      },
+      "feature_seconds": 0.0002576400001998991,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "553-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/553-1-2-26-Z59_B/553-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "ee98961ca18f8d7f71ca70c3a31174b28381bddc1482dcfc89756c0374171665",
+      "draft_grade": 2,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00024913600009313086,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "554-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/554-1-2-26-Z59_B/554-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "6a60b8b76e98fba7df2770e3f6b85950d903db63fc06192ec25ba89183bb8acc",
+      "draft_grade": 2,
+      "rule_grade": 0,
+      "ai_oof_grade": 0.5989695256006571,
+      "train_mean_grade": 0.9696969696969697,
+      "pose": {
+        "side": "left",
+        "quality": 0.6531268954277039,
+        "features": [
+          -0.3546109199523926,
+          0.4761498272418976
+        ],
+        "angle_deg": 126.67676544189453
+      },
+      "feature_seconds": 0.00027380200026527746,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "555-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/555-1-2-26-Z59_B/555-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "9ad3d5cc7f65190199c037e94c47b433a9b23c7f2bbde5f86f843180bc34a766",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.0002471509997121757,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "556-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/556-1-2-26-Z59_B/556-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "c5a5f799e4731986fd0b12a97580e562533b288a6b3476a276a4d0590f6729f1",
+      "draft_grade": 0,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.0686378097870695,
+      "train_mean_grade": 0.9696969696969697,
+      "pose": {
+        "side": "left",
+        "quality": 0.6713628172874451,
+        "features": [
+          -1.411632776260376,
+          0.5807451009750366
+        ],
+        "angle_deg": 157.63772583007812
+      },
+      "feature_seconds": 0.0002572189996499219,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "557-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/557-1-2-26-Z59_B/557-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "a19b43f19f4107d581ffeeeffb67c4cc5af4e953060b46af12d93115e0acfb07",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00022927600002731197,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "558-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/558-1-2-26-Z59_B/558-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "39caf7976a32dcf7c4c649711caf192530947a9ee00cbdf9dc8aa6655bc772a4",
+      "draft_grade": 0,
+      "rule_grade": 2,
+      "ai_oof_grade": 1.2979646315130307,
+      "train_mean_grade": 0.9696969696969697,
+      "pose": {
+        "side": "left",
+        "quality": 0.6198740601539612,
+        "features": [
+          -1.2698739767074585,
+          0.11118371039628983
+        ],
+        "angle_deg": 174.9961700439453
+      },
+      "feature_seconds": 0.00025740699993548333,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "559-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/559-1-2-26-Z59_B/559-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "c13c57ad16c884a95a5a87fb983a4564d9c8ba68f9b75f4b5e454356c3c80f9a",
+      "draft_grade": 0,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.0952367303896549,
+      "train_mean_grade": 0.9696969696969697,
+      "pose": {
+        "side": "left",
+        "quality": 0.8010035157203674,
+        "features": [
+          -1.3239068984985352,
+          0.4844217002391815
+        ],
+        "angle_deg": 159.9022674560547
+      },
+      "feature_seconds": 0.00025207099997714977,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "560-1-2-26-Z59",
+      "person_token": "Z59",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/3/B/560-1-2-26-Z59_B/560-1-2-26-Z59_B-0000017.jpg",
+      "image_sha256": "bebd44d28afb1cf5bc78a7903af0f660c05f2addcfb688ae7c91b3a5019a5cc1",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00021618299979309086,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "553-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/553-1-2-26-Z61_B/553-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "02bfe0546ce7947e1dfb392f60755fa61a7c467b96c13e6e255dfe8d3acbcaf0",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.9810622777138475,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.936168372631073,
+        "features": [
+          -1.3028340339660645,
+          0.338693767786026
+        ],
+        "angle_deg": 165.42755126953125
+      },
+      "feature_seconds": 0.00025551999988238094,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "554-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/554-1-2-26-Z61_B/554-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "1b0f0635b4b5f4cc0d235800fbde7b823bd5161bbe9c276bf434f2ab6f865ab9",
+      "draft_grade": 2,
+      "rule_grade": 2,
+      "ai_oof_grade": 0.5386238219246033,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.9459012746810913,
+        "features": [
+          -1.4224287271499634,
+          0.12014061957597733
+        ],
+        "angle_deg": 175.1721954345703
+      },
+      "feature_seconds": 0.005891054999665357,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "555-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/555-1-2-26-Z61_B/555-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "666e35800bd400f1b430b9cae403bc4c4212f60eb42fce09fc858d50e8450894",
+      "draft_grade": 1,
+      "rule_grade": 2,
+      "ai_oof_grade": 0.4774614663573766,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.8344069123268127,
+        "features": [
+          -1.5328038930892944,
+          0.2545212507247925
+        ],
+        "angle_deg": 170.5720977783203
+      },
+      "feature_seconds": 0.0002891889998863917,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "556-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/556-1-2-26-Z61_B/556-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "14993a0a91045f1b16103efd7d1717ec83774ead09847e30f63783992f354d45",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.9636293774339804,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.9352282881736755,
+        "features": [
+          -1.2794243097305298,
+          0.47127169370651245
+        ],
+        "angle_deg": 159.7788848876953
+      },
+      "feature_seconds": 0.0002589630003058119,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "557-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/557-1-2-26-Z61_B/557-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "e209290e517ea9a8a2f4142dae17fef551fa8e554ac1949467fb26ac64e31d9d",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.4972214967238431,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.9877586960792542,
+        "features": [
+          -1.648138165473938,
+          0.3507360816001892
+        ],
+        "angle_deg": 167.98622131347656
+      },
+      "feature_seconds": 0.00025585499997760053,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "558-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/558-1-2-26-Z61_B/558-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "43037a8af644f28d4614df34f2223b6fbb766e647719d39ed67cb6bab68f7999",
+      "draft_grade": 1,
+      "rule_grade": 2,
+      "ai_oof_grade": 0.5350957961309526,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.9769347906112671,
+        "features": [
+          -1.4648133516311646,
+          0.19879798591136932
+        ],
+        "angle_deg": 172.27127075195312
+      },
+      "feature_seconds": 0.00029002000019318075,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "559-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/559-1-2-26-Z61_B/559-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "93fba6166924c84ea0a1b2b2e98002b1c8225363323aafb3567455aa1392a699",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.7625766385438286,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.9272316098213196,
+        "features": [
+          -1.4968044757843018,
+          0.3427255153656006
+        ],
+        "angle_deg": 167.1032257080078
+      },
+      "feature_seconds": 0.0002505500001461769,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "560-1-2-26-Z61",
+      "person_token": "Z61",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/5/B/560-1-2-26-Z61_B/560-1-2-26-Z61_B-0000017.jpg",
+      "image_sha256": "23b5ed6e2b295333e6494650bfb1889a6a12b02a11febd6032c568fef2b0c5b6",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.6356066033706682,
+      "train_mean_grade": 0.8620689655172413,
+      "pose": {
+        "side": "left",
+        "quality": 0.8333246111869812,
+        "features": [
+          -1.5796397924423218,
+          0.36961284279823303
+        ],
+        "angle_deg": 166.8305206298828
+      },
+      "feature_seconds": 0.00027205600008528563,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "553-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/553-1-2-26-Z62_B/553-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "b3e7a93801d773ec9a1923917d24874d5f756927b9081264b466836e1d9070b2",
+      "draft_grade": 2,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.0797619213852525,
+      "train_mean_grade": 0.8484848484848485,
+      "pose": {
+        "side": "left",
+        "quality": 0.9273632764816284,
+        "features": [
+          -1.1714482307434082,
+          0.31983935832977295
+        ],
+        "angle_deg": 164.72879028320312
+      },
+      "feature_seconds": 0.0002728679996835126,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "554-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/554-1-2-26-Z62_B/554-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "980d7ecef6749b4c563948eff39507203c32618e47cfc7e8486321961713c032",
+      "draft_grade": 2,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.1795515280969644,
+      "train_mean_grade": 0.8484848484848485,
+      "pose": {
+        "side": "left",
+        "quality": 0.859663724899292,
+        "features": [
+          -1.0865734815597534,
+          0.3626590371131897
+        ],
+        "angle_deg": 161.54283142089844
+      },
+      "feature_seconds": 0.00026102800029548234,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "555-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/555-1-2-26-Z62_B/555-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "1cd852d29f7aaa79e96b6b43d7c46e538a8e5f80f34b86bc3120830c43228faa",
+      "draft_grade": 1,
+      "rule_grade": 2,
+      "ai_oof_grade": 0.8417922215589347,
+      "train_mean_grade": 0.8484848484848485,
+      "pose": {
+        "side": "left",
+        "quality": 0.9245515465736389,
+        "features": [
+          -1.5264478921890259,
+          0.11161112040281296
+        ],
+        "angle_deg": 175.81800842285156
+      },
+      "feature_seconds": 0.0002565610002420726,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "556-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/556-1-2-26-Z62_B/556-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "99263750352939c4bf54b43cb54d1f3519aa7109dcb0e39f440373e67651e5fa",
+      "draft_grade": 1,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.0002226919996246579,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "557-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/557-1-2-26-Z62_B/557-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "fb7e7c7634fe4777847f73ec218d46c939ee5752f6b4920a06469ec979feaf3b",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00021109899989824044,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "558-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/558-1-2-26-Z62_B/558-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "cd93782a74fe90dd65fd597acf2c77bce0ababa202cb27c1ab946577e5f77faa",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00023235399976329063,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "559-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/559-1-2-26-Z62_B/559-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "0473a8ac967929bc1c942c005a475ee05773da22a47a0adab9d2122a8599e74d",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.9699811856279539,
+      "train_mean_grade": 0.8484848484848485,
+      "pose": {
+        "side": "left",
+        "quality": 0.7333563566207886,
+        "features": [
+          -1.2264295816421509,
+          0.2768019139766693
+        ],
+        "angle_deg": 167.28158569335938
+      },
+      "feature_seconds": 0.0002492569997230021,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "560-1-2-26-Z62",
+      "person_token": "Z62",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/4/B/560-1-2-26-Z62_B/560-1-2-26-Z62_B-0000017.jpg",
+      "image_sha256": "b6bad02c743a8a3ee79274e87b574751e3c5f3742aa3e78cd426242305f37bff",
+      "draft_grade": 0,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.00021660799984601908,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "553-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/553-1-2-26-Z84_B/553-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "6119b49833b72644234bdc9771d08ddeba2189fd9ad529271dfa58f58f9029f7",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 0.9918236130148989,
+      "train_mean_grade": 0.967741935483871,
+      "pose": {
+        "side": "left",
+        "quality": 0.9020932912826538,
+        "features": [
+          -1.2359360456466675,
+          0.5144220590591431
+        ],
+        "angle_deg": 157.4019012451172
+      },
+      "feature_seconds": 0.00024277600005007116,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "554-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/554-1-2-26-Z84_B/554-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "8b99da88e649a16077ab22530012fa1b8b55edf6b684632036d25da55b095f2d",
+      "draft_grade": 1,
+      "rule_grade": 1,
+      "ai_oof_grade": 1.201538637573673,
+      "train_mean_grade": 0.967741935483871,
+      "pose": {
+        "side": "left",
+        "quality": 0.8415654301643372,
+        "features": [
+          -1.2085046768188477,
+          0.453514039516449
+        ],
+        "angle_deg": 159.4304656982422
+      },
+      "feature_seconds": 0.004991760999928374,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "555-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/555-1-2-26-Z84_B/555-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "630880f676fc674f5f38b2d897c62bdddb5cd3be74be2e30f13dd4144768aa75",
+      "draft_grade": null,
+      "rule_grade": 0,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": {
+        "side": "left",
+        "quality": 0.885433554649353,
+        "features": [
+          -1.1214784383773804,
+          0.7351338267326355
+        ],
+        "angle_deg": 146.75497436523438
+      },
+      "feature_seconds": 0.0002775709999696119,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "556-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/556-1-2-26-Z84_B/556-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "6e4b6cccd769557e281849211059ca3d701a5b791ad09cc48d9de55ced15ee24",
+      "draft_grade": 0,
+      "rule_grade": 2,
+      "ai_oof_grade": 1.0601737997245813,
+      "train_mean_grade": 0.967741935483871,
+      "pose": {
+        "side": "left",
+        "quality": 0.8626990914344788,
+        "features": [
+          -1.6232609748840332,
+          0.2338949739933014
+        ],
+        "angle_deg": 171.80067443847656
+      },
+      "feature_seconds": 0.0002653960000316147,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "557-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/557-1-2-26-Z84_B/557-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "9be660ee4aec8b897bd54307d2eb9ace0c3eb6d5bfb0c7a6da78e0752bc5114a",
+      "draft_grade": 1,
+      "rule_grade": 0,
+      "ai_oof_grade": 0.4351308250572958,
+      "train_mean_grade": 0.967741935483871,
+      "pose": {
+        "side": "left",
+        "quality": 0.9209320545196533,
+        "features": [
+          -0.9911553263664246,
+          0.9475561380386353
+        ],
+        "angle_deg": 136.2882843017578
+      },
+      "feature_seconds": 0.0002738530001806794,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "558-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/558-1-2-26-Z84_B/558-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "10a0158058004a3387dd70cd01ea834d67352897fa432764810f8597f0fae742",
+      "draft_grade": null,
+      "rule_grade": null,
+      "ai_oof_grade": null,
+      "train_mean_grade": null,
+      "pose": null,
+      "feature_seconds": 0.0002474739999343001,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "559-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/559-1-2-26-Z84_B/559-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "5ee5e73c576ce2f940f91538ce68b9e09ca8f859d1c0f3d14969bbd8435c22c2",
+      "draft_grade": 0,
+      "rule_grade": 2,
+      "ai_oof_grade": 1.052965838415057,
+      "train_mean_grade": 0.967741935483871,
+      "pose": {
+        "side": "left",
+        "quality": 0.9452984929084778,
+        "features": [
+          -1.6565525531768799,
+          0.2655825912952423
+        ],
+        "angle_deg": 170.89170837402344
+      },
+      "feature_seconds": 0.0002496769998288073,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    },
+    {
+      "id": "560-1-2-26-Z84",
+      "person_token": "Z84",
+      "image_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/aihub_raw_review/Day32_201104_F/6/B/560-1-2-26-Z84_B/560-1-2-26-Z84_B-0000017.jpg",
+      "image_sha256": "e1a4434c075b4057275df6830893f718287e2f864782a41a78689e114d819e91",
+      "draft_grade": 1,
+      "rule_grade": 0,
+      "ai_oof_grade": 1.3473380064543838,
+      "train_mean_grade": 0.967741935483871,
+      "pose": {
+        "side": "left",
+        "quality": 0.9032942056655884,
+        "features": [
+          -0.9740500450134277,
+          0.4819369316101074
+        ],
+        "angle_deg": 153.67486572265625
+      },
+      "feature_seconds": 0.00027060599995820667,
+      "total_score": null,
+      "full_score_hold_reasons": [
+        "사선 정지 구도의 팔꿈치 전후 위치를 확정하지 않음",
+        "골반 부근 밴드·기구 접촉으로 추가 지지 배제 불가",
+        "단일 이미지이며 실제 FPS·3초 연속 지지 미확인"
+      ]
+    }
+  ],
+  "model_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_static_review/experimental_trunk_item_model.joblib",
+  "model_sha256": "ba28b9206eb22a43bfc6fa5e01120374317b491f7694633884c0034c7e12feb3",
+  "independent_final_test_count": 0,
+  "expert_labels": 0,
+  "full_plank_training_records_added": 0,
+  "temporal_consistency_tested": false,
+  "extraction_mode": "IMAGE",
+  "same_source_same_common_subset": true,
+  "timing_seconds": {
+    "heavy_initialization": 0.9597540239997215,
+    "heavy_decode_resize_inference_median": 0.038535169999931895,
+    "feature_median": 0.0002573129997927026,
+    "rule_compute_median": 5.030001375416759e-07,
+    "ai_single_prediction_median": 0.010143117999632523
+  },
+  "limitations_ko": [
+    "비전문가 실험 초안에 대한 참여자 토큰 분리 개발 검증이며 독립 최종 시험이 아님",
+    "사선 2D 정렬만 비교하며 실제 하중·기구 지지·시간 지속은 알 수 없음",
+    "참여자 토큰과 실제 인물의 일치 여부는 외부 확인 전",
+    "한 촬영 환경의 단일 구도만 사용하여 구도·장치 일반화 미검증",
+    "관측 실패를 점수로 채우지 않으며 40점 항목 기여분을 100점 총점으로 환산하지 않음"
+  ]
+}

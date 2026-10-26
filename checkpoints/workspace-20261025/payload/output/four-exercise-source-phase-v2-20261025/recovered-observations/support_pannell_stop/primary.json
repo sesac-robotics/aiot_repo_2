@@ -1,0 +1,32 @@
+{
+  "id": "support_pannell_stop",
+  "view": "primary",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "be510ca6b059d1490582d8f9385524b73257a4f0fda658268572f6e6cee7daed",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 73,
+      "fps": 24.0
+    },
+    "required_views": [
+      "side"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "e90e0c3288ae013e6715613331c05bdd461bc217c7252d6a4f0b87bcba1f9bf0",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/four-exercise-source-phase-v2-20261025/recovered-observations/support_pannell_stop/primary.npz",
+  "frames": 31,
+  "observed_joint_fraction": 0.7038123167155426,
+  "extract_seconds": 2.5907157029996597,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

@@ -1,0 +1,30 @@
+{
+  "updated_at_utc": "2026-10-24T13:46:50.785252+00:00",
+  "tests_passed": 75,
+  "status": "persistent_explicit_start_reservation_deployed",
+  "flow": "explicit_arm → 6 observed slots + exercise ready pose → 3 second countdown → single automatic begin",
+  "cancellation": [
+    "manual_cancel",
+    "exercise_or_view_change",
+    "end",
+    "camera_disconnect",
+    "browser_heartbeat_missing_4_seconds",
+    "server_reload_or_restart",
+    "180_second_expiry"
+  ],
+  "readiness_loss": "reset_countdown_and_wait_again",
+  "collecting": true,
+  "reservation": {
+    "state": "started",
+    "request_id": null,
+    "exercise": null,
+    "view": null,
+    "remaining": null,
+    "reason": null
+  },
+  "system_count_at_check": 5,
+  "source_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "model_hashes_preserved": true,
+  "server_pid": 118001,
+  "actual_user_new_measurement_completed": false
+}

@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-10-22T09:41:53.429122+09:00",
+  "scope": [
+    "pushups",
+    "squats",
+    "shoulder"
+  ],
+  "json_reference_files": [
+    "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/coach/fine_grained_labels.json",
+    "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/annotations/fine_grained_labels_with_worker_ids.json"
+  ],
+  "base_fields": [
+    "video_path",
+    "labels",
+    "labels_descriptive",
+    "split"
+  ],
+  "assessment_is_separate_extension": true,
+  "directory_reorganization_requested": false,
+  "preserved_sha256": {
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/labels.json": "72efa9a365a3683a05e6c0761edfa6c54dbc334e99e1931b1c6a484db85fbe20",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json": "81fd9f0f47e8585932fe1e56d8f653b43072ce878d101d16a7571ba062dbe102",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_experimental.joblib": "c0bf7e753187d31874fe631d9145e6a553349cbeb52b26cdecf25e8cf2ef734a",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/ytw_experimental.joblib": "a8aabf06ddadafc3ec6ae98382f9befc9a58117f5de00a8de607b903edc46a22",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_W_model/model.joblib": "51ea6ce05b9332025e6ef8e8780d186a8cef27a1da1ccd4418402c0fe4da4fd9",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_plank_model/model.joblib": "4fa3bc3f1718bee3ba7098c051c48c0751546e20f6d2bfaa6a76fde12af18f1d",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_results.html": "4e25caf6e7212024ebeb6344806d3fac627c3adf3cfc31b88dceee816ebf7e0c",
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_iteration_verification.json": "5e151cde9bf2a89b56aeec48fe67bb02986e946ac3cf6a676afd89e2f6e7e00e",
+    "/home/jayden/SeSACPAI-Mid/five-exercise-comparison/rule_score.py": "f5d5b6469cd118811e5b2034b99c97ab3382dca10c8784361b30cf0c654aba5a"
+  },
+  "engineering_acceptance": {
+    "min_training_people_per_exercise": 8,
+    "min_training_segments_per_exercise": 20,
+    "min_development_validation_people": 4,
+    "min_development_validation_segments": 10,
+    "min_prospective_final_people": 4,
+    "min_prospective_final_segments": 10,
+    "min_final_error_people": 3,
+    "paired_MAE_points_max": 10,
+    "paired_P90_absolute_error_points_max": 20,
+    "each_assessable_fraction_min": 0.8,
+    "normal_and_error_subgroup_MAE_points_max": 15,
+    "AI_MAE_better_than_train_mean_baseline": true,
+    "repeated_same_input_max_delta_points": 1e-06,
+    "guarded_end_to_end_seconds_per_input_second_max": 2
+  },
+  "acceptance_status": "predeclared_project_engineering_targets_not_team_or_expert_approved_accuracy_standard",
+  "grade_weights_and_rubric_preserved": true,
+  "no_rule_or_provider_string_targets": true,
+  "no_unknown_imputation_or_total_renormalization": true,
+  "calibration_only_training_or_development_groups": true,
+  "final_exam_freeze_required": true,
+  "exposed_old_test_labels_not_new_independent_exam": true,
+  "production_or_expert_certification": false
+}

@@ -1,0 +1,419 @@
+{
+  "training": {
+    "n": 14,
+    "people": [
+      "rehab_Petra",
+      "rehab_Terka",
+      "rehab_Vasil"
+    ],
+    "ai_grade_MAE": 0.045436507936507824,
+    "rule_grade_MAE": 0.0,
+    "grade_counts": {
+      "0": 2,
+      "1": 8,
+      "2": 4
+    },
+    "predictions": [
+      {
+        "id": "rehab_Petra_5596_5685",
+        "target": 1,
+        "ai": 1.0402777777777776,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Terka_3280_3342",
+        "target": 1,
+        "ai": 1.0055555555555555,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Vasil_7597_7642",
+        "target": 2,
+        "ai": 2.0,
+        "rule": 2
+      },
+      {
+        "id": "rehab_Petra_220_303",
+        "target": 1,
+        "ai": 1.108333333333333,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Terka_4672_4722",
+        "target": 1,
+        "ai": 1.0,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Vasil_7496_7538",
+        "target": 2,
+        "ai": 2.0,
+        "rule": 2
+      },
+      {
+        "id": "rehab_Vasil_6523_6567",
+        "target": 2,
+        "ai": 1.9972222222222222,
+        "rule": 2
+      },
+      {
+        "id": "rehab_Petra_4555_4636",
+        "target": 1,
+        "ai": 1.0125,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Petra_15050_15148",
+        "target": 2,
+        "ai": 1.6986111111111117,
+        "rule": 2
+      },
+      {
+        "id": "rehab_Petra_2176_2253",
+        "target": 0,
+        "ai": 0.013888888888888888,
+        "rule": 0
+      },
+      {
+        "id": "rehab_Petra_4656_4736",
+        "target": 1,
+        "ai": 0.9888888888888888,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Terka_3510_3577",
+        "target": 1,
+        "ai": 0.9972222222222222,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Terka_7394_7454",
+        "target": 1,
+        "ai": 1.1236111111111107,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Terka_10334_10376",
+        "target": 0,
+        "ai": 0.013888888888888888,
+        "rule": 0
+      }
+    ]
+  },
+  "reused_development_validation": {
+    "n": 7,
+    "people": [
+      "rehab_Mima"
+    ],
+    "ai_grade_MAE": 0.2613095238095237,
+    "rule_grade_MAE": 0.2857142857142857,
+    "grade_counts": {
+      "0": 1,
+      "1": 6,
+      "2": 0
+    },
+    "predictions": [
+      {
+        "id": "rehab_Mima_2010_2078",
+        "target": 1,
+        "ai": 1.111111111111111,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Mima_5503_5564",
+        "target": 1,
+        "ai": 1.0888888888888886,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Mima_265_337",
+        "target": 1,
+        "ai": 1.3597222222222223,
+        "rule": 2
+      },
+      {
+        "id": "rehab_Mima_6174_6241",
+        "target": 1,
+        "ai": 1.0125,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Mima_3648_3718",
+        "target": 1,
+        "ai": 1.4055555555555557,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Mima_14792_14851",
+        "target": 0,
+        "ai": 0.8458333333333332,
+        "rule": 1
+      },
+      {
+        "id": "rehab_Mima_451_525",
+        "target": 1,
+        "ai": 0.9944444444444444,
+        "rule": 1
+      }
+    ]
+  },
+  "rule_boundaries": [
+    0.2265927787359278,
+    0.5830303279233218
+  ],
+  "rejected": [
+    {
+      "id": "rehab_Petra_11563_11654",
+      "reason": "어깨·골반·한쪽 이상 무릎 관측 부족"
+    },
+    {
+      "id": "rehab_Terka_10012_10059",
+      "reason": "어깨·골반·한쪽 이상 무릎 관측 부족"
+    },
+    {
+      "id": "rehab_Petra_5481_5569",
+      "reason": "어깨·골반·한쪽 이상 무릎 관측 부족"
+    },
+    {
+      "id": "rehab_Mima_5584_5655",
+      "reason": "어깨·골반·한쪽 이상 무릎 관측 부족"
+    }
+  ],
+  "local_not_used_in_training": true,
+  "local_depth_ground_truth": null,
+  "source_preserved": true,
+  "model_sha256": "07929a6bb83df1aba104de972815af0f8ab6ad15582e977ef0fe8ae49511b6e7",
+  "candidate_only": true,
+  "independent_final_test": false,
+  "local": [
+    {
+      "number": 1,
+      "version": "front-squat-observable70-experimental-v1",
+      "experimental": true,
+      "ai_depth_grade": 1.297,
+      "rule_depth_grade": 1,
+      "return_height_grade": 2,
+      "trunk_grade": 2,
+      "ai_depth_points": 19.5,
+      "rule_points": 55.0,
+      "ai_assisted_points": 59.5,
+      "maximum": 70,
+      "pure_ai_total": null,
+      "features": [
+        0.33642674720363464,
+        0.27988673744633474,
+        0.48353427392942977,
+        0.5542027844488775,
+        0.9979506584110884,
+        0.9993023104185255,
+        2.588960638599948,
+        0.04864243139666915
+      ],
+      "methods": {
+        "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+        "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+        "return": "화면 복귀 높이 차/몸통 길이 ≤0.08/0.20의 실험 정책",
+        "trunk": "기존 좌우 기울기 8/15도 경계"
+      },
+      "limitations": [
+        "정면 관측 점수이며 기존 100점 총점과 다름",
+        "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+        "복귀 규칙 오류 등급 검증 부족",
+        "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+      ]
+    },
+    {
+      "number": 2,
+      "version": "front-squat-observable70-experimental-v1",
+      "experimental": true,
+      "ai_depth_grade": 1.356,
+      "rule_depth_grade": 1,
+      "return_height_grade": 2,
+      "trunk_grade": 2,
+      "ai_depth_points": 20.3,
+      "rule_points": 55.0,
+      "ai_assisted_points": 60.3,
+      "maximum": 70,
+      "pure_ai_total": null,
+      "features": [
+        0.33405610460860374,
+        0.3080029099023781,
+        0.5154404549223532,
+        0.6244409005227486,
+        0.9979180067082674,
+        0.9989777409511322,
+        1.387283188467022,
+        0.028037601115726438
+      ],
+      "methods": {
+        "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+        "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+        "return": "화면 복귀 높이 차/몸통 길이 ≤0.08/0.20의 실험 정책",
+        "trunk": "기존 좌우 기울기 8/15도 경계"
+      },
+      "limitations": [
+        "정면 관측 점수이며 기존 100점 총점과 다름",
+        "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+        "복귀 규칙 오류 등급 검증 부족",
+        "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+      ]
+    },
+    {
+      "number": 3,
+      "version": "front-squat-observable70-experimental-v1",
+      "experimental": true,
+      "ai_depth_grade": 0.971,
+      "rule_depth_grade": 0,
+      "return_height_grade": 2,
+      "trunk_grade": 2,
+      "ai_depth_points": 14.6,
+      "rule_points": 40.0,
+      "ai_assisted_points": 54.6,
+      "maximum": 70,
+      "pure_ai_total": null,
+      "features": [
+        0.22515410510897213,
+        0.24255608357078418,
+        0.5782571165042962,
+        0.5985338506348874,
+        0.998250911661497,
+        0.9989982424782223,
+        3.0180634227318652,
+        0.04849074247677562
+      ],
+      "methods": {
+        "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+        "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+        "return": "화면 복귀 높이 차/몸통 길이 ≤0.08/0.20의 실험 정책",
+        "trunk": "기존 좌우 기울기 8/15도 경계"
+      },
+      "limitations": [
+        "정면 관측 점수이며 기존 100점 총점과 다름",
+        "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+        "복귀 규칙 오류 등급 검증 부족",
+        "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+      ]
+    },
+    {
+      "number": 4,
+      "version": "front-squat-observable70-experimental-v1",
+      "experimental": true,
+      "ai_depth_grade": 0.886,
+      "rule_depth_grade": 0,
+      "return_height_grade": 2,
+      "trunk_grade": 2,
+      "ai_depth_points": 13.3,
+      "rule_points": 40.0,
+      "ai_assisted_points": 53.3,
+      "maximum": 70,
+      "pure_ai_total": null,
+      "features": [
+        0.1929277532465327,
+        0.1883361431358375,
+        0.4928990581884146,
+        0.5317641500725199,
+        0.9978866215308981,
+        0.9994206428386461,
+        2.5849964055670323,
+        0.018237444377592883
+      ],
+      "methods": {
+        "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+        "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+        "return": "화면 복귀 높이 차/몸통 길이 ≤0.08/0.20의 실험 정책",
+        "trunk": "기존 좌우 기울기 8/15도 경계"
+      },
+      "limitations": [
+        "정면 관측 점수이며 기존 100점 총점과 다름",
+        "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+        "복귀 규칙 오류 등급 검증 부족",
+        "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+      ]
+    },
+    {
+      "number": 5,
+      "version": "front-squat-observable70-experimental-v1",
+      "experimental": true,
+      "ai_depth_grade": 1.311,
+      "rule_depth_grade": 1,
+      "return_height_grade": 2,
+      "trunk_grade": 2,
+      "ai_depth_points": 19.7,
+      "rule_points": 55.0,
+      "ai_assisted_points": 59.7,
+      "maximum": 70,
+      "pure_ai_total": null,
+      "features": [
+        0.38217383736768934,
+        0.34828128065320474,
+        0.5595526161455794,
+        0.618431501740629,
+        0.9983462175463751,
+        0.9991730292391593,
+        1.1806964963995563,
+        0.0016890293859278815
+      ],
+      "methods": {
+        "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+        "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+        "return": "화면 복귀 높이 차/몸통 길이 ≤0.08/0.20의 실험 정책",
+        "trunk": "기존 좌우 기울기 8/15도 경계"
+      },
+      "limitations": [
+        "정면 관측 점수이며 기존 100점 총점과 다름",
+        "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+        "복귀 규칙 오류 등급 검증 부족",
+        "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+      ]
+    }
+  ],
+  "baseline_same_validation": {
+    "rows": [
+      {
+        "id": "rehab_Mima_2010_2078",
+        "target": 1,
+        "old_ai": 0.0,
+        "old_rule": null
+      },
+      {
+        "id": "rehab_Mima_5503_5564",
+        "target": 1,
+        "old_ai": 0.008522727272727274,
+        "old_rule": null
+      },
+      {
+        "id": "rehab_Mima_265_337",
+        "target": 1,
+        "old_ai": 0.008522727272727274,
+        "old_rule": null
+      },
+      {
+        "id": "rehab_Mima_6174_6241",
+        "target": 1,
+        "old_ai": 0.0,
+        "old_rule": null
+      },
+      {
+        "id": "rehab_Mima_3648_3718",
+        "target": 1,
+        "old_ai": 0.06410646645021645,
+        "old_rule": null
+      },
+      {
+        "id": "rehab_Mima_14792_14851",
+        "target": 0,
+        "old_ai": 0.008522727272727274,
+        "old_rule": null
+      },
+      {
+        "id": "rehab_Mima_451_525",
+        "target": 1,
+        "old_ai": 0.0,
+        "old_rule": null
+      }
+    ],
+    "n": 7,
+    "ai_grade_MAE": 0.8467672580395795,
+    "rule_observed": 0
+  }
+}

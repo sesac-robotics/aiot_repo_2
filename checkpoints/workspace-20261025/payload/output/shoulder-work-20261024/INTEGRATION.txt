@@ -1,0 +1,18 @@
+통합 담당 검토용, 자동배포 없음
+
+from shoulder_candidate import ShoulderTracker
+TRACKER = ShoulderTracker('shoulder', view)
+기타 운동은 기존 MovementTracker 유지. 서비스 초기화와 운동 변경 시 tracker 생성부 양쪽에 적용 필요.
+push(tick,xy,width,height) -> None 또는 [(실제10Hz tick, 경계마스크된33x2관절), ...].
+완료 segment를 기존 score_samples(... exercise='shoulder', complete=True)에 그대로 전달.
+status(), count, active, buffer, standing_reference(None), movement_seconds 인터페이스 제공.
+tracker.buffer는 진행중 한회차만 포함. 라이브 미완결 미리보기에도 현재한회차 buffer 사용을 권장하지만 공통 루프 변경은 통합 담당 소유다.
+
+UI/가이드 제안:
+- 준비: 양어깨·팔꿈치·손목·골반이 화면 안쪽에 보이게 하고 팔꿈치를 굽힌 하단에서 잠시 유지.
+- 상단: 양팔을 머리 위로 올리고 손목이 화면 밖으로 나가지 않게 유지.
+- 복귀: 양팔을 하단으로 되돌리고 잠시 유지.
+- 하단복귀/몸통 AI: 정상만 학습한 실험 점수, 오류 판별은 미검증이라는 이유 유지.
+- 관측부족/미완결/모델미지원/단일등급학습은 다른 사유이며 빈 항목은0/만점 채움 금지.
+
+실제사용자 재테스트: 완결/부분상승/한팔/화면경계/팔아래폄 구별을 통합 담당이 조율. 후보가 정상 완결을 지나치게 보류하는지 우선 확인. 고개/발목 요구 없음.

@@ -1,0 +1,2855 @@
+{
+  "key": [
+    "squats",
+    "standing_height_return",
+    "standing_support_extension_mean_v1"
+  ],
+  "train_count": 108,
+  "validation_count": 17,
+  "grade_counts": {
+    "2": 98,
+    "1": 10
+  },
+  "normal_groups": 9,
+  "error_groups": 4,
+  "source_families": {
+    "R2D2": 35,
+    "CFRep_reviewed": 73
+  },
+  "status": "trained_experimental",
+  "selected": "positive_deficit_C0.1_nested_Train_calibrated",
+  "normal_probability_cutoff": 0.5989123490630626,
+  "group_cv": {
+    "balanced_group_MAE": 0.0195906432748538,
+    "n": 108,
+    "groups": 9,
+    "MAE": 0.037037037037037035,
+    "group_MAE": 0.03333333333333333,
+    "error_n": 10,
+    "normal_n": 98,
+    "error_recall": 1.0,
+    "normal_false_alarm": 0.04081632653061224
+  },
+  "constant_group_cv": {
+    "balanced_group_MAE": 0.49999999999999994,
+    "n": 108,
+    "groups": 9,
+    "MAE": 0.5,
+    "group_MAE": 0.5,
+    "error_n": 10,
+    "normal_n": 98,
+    "error_recall": 0.1,
+    "normal_false_alarm": 0.2857142857142857
+  },
+  "mild_group_cv": {
+    "balanced_group_MAE": 0.0,
+    "n": 5,
+    "groups": 3,
+    "MAE": 0.0,
+    "group_MAE": 0.0,
+    "error_n": 5,
+    "normal_n": 0,
+    "error_recall": 1.0,
+    "normal_false_alarm": null
+  },
+  "mild_Train_ids": [
+    "return_squat_diag_m2_8_6_r11",
+    "return_squat_diag_m2_8_6_r12",
+    "return_squat_front_w1_9_3_r08",
+    "reviewed_return_squat_diag_m4_5_7_r10",
+    "reviewed_return_squat_diag_m4_5_7_r11"
+  ],
+  "candidate_gate_passed": false,
+  "runtime_replacement": false,
+  "acceptance": {
+    "passed": false,
+    "reasons": [
+      "development_requires_at_least_two_normal_and_error_person_source_groups",
+      "fixed_development_false_alarm_above_15_percent_or_unknown"
+    ],
+    "validation_support": {
+      "n": 17,
+      "normal_n": 11,
+      "error_n": 6,
+      "normal_groups": 1,
+      "error_groups": 1
+    },
+    "independent_final_test_required": true,
+    "production_replacement": false
+  },
+  "selected_oof_predictions": [
+    {
+      "id": "return_squat_diag_m1_6_7_r03",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8814611864019875,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r04",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7164733474409412,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r05",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8619671900733324,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r06",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.9111057056929316,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r07",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8943906128017736,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r08",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8710400997362145,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r09",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8811002490485952,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r10",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.008504422264734532,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r11",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.009644196972954053,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r12",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.009489042312801064,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r13",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.00541783884853224,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r03",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.835506714779685,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r04",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6792962932389331,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r05",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6687015593399501,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r06",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7930806124737283,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r07",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8316000580464159,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r08",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7890227481555271,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r09",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.834897059198687,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r10",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8500673322283828,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r11",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.005046035909658528,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r12",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8360496151270482,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r13",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.832495203688558,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V03_001000_004500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8744212867604854,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V03_004500_008000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8357305422501008,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V03_008000_011500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8013967455575035,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V03_011500_015250",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7650207897957957,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V03_015250_019750",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8371941934141932,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V16_005000_007000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.845609491113189,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V16_010250_012500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8186222050773725,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V16_013750_016500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7937228054348763,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V16_016750_019500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7774961587491954,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r03",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7404117430472243,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r04",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7968413194922255,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r05",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.5347055653738768,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r06",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7693272242604312,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r07",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6122752124537241,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r08",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6939767797423425,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r09",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7626763773380855,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r10",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7774798567436292,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r11",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8231136280021522,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r12",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8009554112408964,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r03",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8021250569593098,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r04",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7749642494407163,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r05",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8092363024396896,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r06",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.818313958238155,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r07",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7965544353006637,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r08",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.5149727203422699,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r09",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.839451906473416,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r10",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8190685349844645,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r11",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7983554519553221,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r12",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6885867437499144,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V08_002750_005500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7794959443108241,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V08_005500_008500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.820560833856611,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V08_008500_011500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7263882255594782,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V08_011500_014500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7788094986846169,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V09_004000_006750",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8462039301465959,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V09_007250_010250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8463360765992985,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V09_010750_013750",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8403569042928578,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V09_014000_016250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8789358767503097,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_002750_008250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7754696595244983,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_008250_012500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.866414367191432,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_012500_016250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8952293689982301,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_016250_020500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8951447951095797,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_020500_024250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.878870730452719,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_027000_030500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8546465629440233,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_030500_034250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8159609317091902,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_034250_037500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8673595243538967,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V19_037500_040650",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8507452643745519,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r03",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8534070699729444,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r04",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8694758014099508,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r05",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.3887725135221411,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r06",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6763781795841888,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r07",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8426436725894147,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r08",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8493522247552125,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r09",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.4897596525979984,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r10",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8455120931851313,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r11",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.07937917851956343,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r12",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.37989466354590096,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r13",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8293984698383488,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r14",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.0976118962304701,
+      "prediction": 1.0
+    },
+    {
+      "id": "r2d2_V11_002250_004750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7925226097153174,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V11_004750_007250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8242335172684148,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V11_007250_010000",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8509238992917465,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V11_010000_012750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8764978260675939,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V14_000250_002250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.597457427124773,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V14_002250_004250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7453680549817612,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V14_004250_006250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7982114398461687,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V14_006250_007750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.6942266812963213,
+      "prediction": 2.0
+    },
+    {
+      "id": "r2d2_V14_007750_009500",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8302091047069226,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_m4_5_7_r12",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7389097336412992,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r03",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8086185996524722,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r04",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8315704985961382,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r05",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7910796484614923,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r06",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8431444277687902,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r07",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7570450576351287,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r08",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7178807634771913,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r09",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.821956818862459,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r10",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7541340173744792,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r11",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8113685500827739,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r12",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7534003271537989,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r03",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8065433199173049,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r04",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8214832523227774,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r05",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8368434967689411,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r06",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8461430183625853,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r11",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8118646604929992,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r12",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7756130897345684,
+      "prediction": 2.0
+    },
+    {
+      "id": "reviewed_return_squat_diag_m4_5_7_r10",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.02970624466600958,
+      "prediction": 1.0
+    },
+    {
+      "id": "reviewed_return_squat_diag_m4_5_7_r11",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.35357124283929875,
+      "prediction": 1.0
+    }
+  ],
+  "validation_predictions": [
+    {
+      "id": "return_squat_diag_w2_5_7_r03",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r04",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r05",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r06",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r07",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r08",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r09",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r10",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r11",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_diag_w2_5_7_r12",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 1.0
+    },
+    {
+      "id": "return_squat_front_w2_9_3_r03",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w2_9_3_r06",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w2_9_3_r08",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w2_9_3_r09",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w2_9_3_r10",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w2_9_3_r11",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "return_squat_front_w2_9_3_r12",
+      "person": "cfrep_w2",
+      "group": "848",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    }
+  ],
+  "fixed_development_validation": {
+    "balanced_group_MAE": 0.25757575757575757,
+    "n": 17,
+    "groups": 1,
+    "MAE": 0.23529411764705882,
+    "group_MAE": 0.23529411764705882,
+    "error_n": 6,
+    "normal_n": 11,
+    "error_recall": 0.6666666666666666,
+    "normal_false_alarm": 0.18181818181818182
+  },
+  "nested_CV_folds": [
+    {
+      "fit_ids": [
+        "r2d2_V03_001000_004500",
+        "r2d2_V03_004500_008000",
+        "r2d2_V03_008000_011500",
+        "r2d2_V03_011500_015250",
+        "r2d2_V03_015250_019750",
+        "r2d2_V08_002750_005500",
+        "r2d2_V08_005500_008500",
+        "r2d2_V08_008500_011500",
+        "r2d2_V08_011500_014500",
+        "r2d2_V09_004000_006750",
+        "r2d2_V09_007250_010250",
+        "r2d2_V09_010750_013750",
+        "r2d2_V09_014000_016250",
+        "r2d2_V11_002250_004750",
+        "r2d2_V11_004750_007250",
+        "r2d2_V11_007250_010000",
+        "r2d2_V11_010000_012750",
+        "r2d2_V14_000250_002250",
+        "r2d2_V14_002250_004250",
+        "r2d2_V14_004250_006250",
+        "r2d2_V14_006250_007750",
+        "r2d2_V14_007750_009500",
+        "r2d2_V16_005000_007000",
+        "r2d2_V16_010250_012500",
+        "r2d2_V16_013750_016500",
+        "r2d2_V16_016750_019500",
+        "r2d2_V19_002750_008250",
+        "r2d2_V19_008250_012500",
+        "r2d2_V19_012500_016250",
+        "r2d2_V19_016250_020500",
+        "r2d2_V19_020500_024250",
+        "r2d2_V19_027000_030500",
+        "r2d2_V19_030500_034250",
+        "r2d2_V19_034250_037500",
+        "r2d2_V19_037500_040650",
+        "return_squat_diag_m4_5_7_r12",
+        "return_squat_diag_w1_9_3_r03",
+        "return_squat_diag_w1_9_3_r04",
+        "return_squat_diag_w1_9_3_r05",
+        "return_squat_diag_w1_9_3_r06",
+        "return_squat_diag_w1_9_3_r07",
+        "return_squat_diag_w1_9_3_r08",
+        "return_squat_diag_w1_9_3_r09",
+        "return_squat_diag_w1_9_3_r10",
+        "return_squat_diag_w1_9_3_r11",
+        "return_squat_diag_w1_9_3_r12",
+        "return_squat_front_m3_9_3_r03",
+        "return_squat_front_m3_9_3_r04",
+        "return_squat_front_m3_9_3_r05",
+        "return_squat_front_m3_9_3_r06",
+        "return_squat_front_m3_9_3_r07",
+        "return_squat_front_m3_9_3_r08",
+        "return_squat_front_m3_9_3_r09",
+        "return_squat_front_m3_9_3_r10",
+        "return_squat_front_m3_9_3_r11",
+        "return_squat_front_m3_9_3_r12",
+        "return_squat_front_m4_6_6_r03",
+        "return_squat_front_m4_6_6_r04",
+        "return_squat_front_m4_6_6_r05",
+        "return_squat_front_m4_6_6_r06",
+        "return_squat_front_m4_6_6_r11",
+        "return_squat_front_m4_6_6_r12",
+        "return_squat_front_w1_9_3_r03",
+        "return_squat_front_w1_9_3_r04",
+        "return_squat_front_w1_9_3_r05",
+        "return_squat_front_w1_9_3_r06",
+        "return_squat_front_w1_9_3_r07",
+        "return_squat_front_w1_9_3_r08",
+        "return_squat_front_w1_9_3_r09",
+        "return_squat_front_w1_9_3_r10",
+        "return_squat_front_w1_9_3_r11",
+        "return_squat_front_w1_9_3_r12",
+        "return_squat_diag_m2_8_6_r03",
+        "return_squat_diag_m2_8_6_r04",
+        "return_squat_diag_m2_8_6_r05",
+        "return_squat_diag_m2_8_6_r06",
+        "return_squat_diag_m2_8_6_r07",
+        "return_squat_diag_m2_8_6_r08",
+        "return_squat_diag_m2_8_6_r09",
+        "return_squat_diag_m2_8_6_r10",
+        "return_squat_diag_m2_8_6_r11",
+        "return_squat_diag_m2_8_6_r12",
+        "return_squat_diag_m2_8_6_r13",
+        "return_squat_diag_m2_8_6_r14",
+        "reviewed_return_squat_diag_m4_5_7_r10",
+        "reviewed_return_squat_diag_m4_5_7_r11"
+      ],
+      "outer_ids": [
+        "return_squat_diag_m1_6_7_r03",
+        "return_squat_diag_m1_6_7_r04",
+        "return_squat_diag_m1_6_7_r05",
+        "return_squat_diag_m1_6_7_r06",
+        "return_squat_diag_m1_6_7_r07",
+        "return_squat_diag_m1_6_7_r08",
+        "return_squat_diag_m1_6_7_r09",
+        "return_squat_diag_m1_6_7_r10",
+        "return_squat_diag_m1_6_7_r11",
+        "return_squat_diag_m1_6_7_r12",
+        "return_squat_diag_m1_6_7_r13",
+        "return_squat_front_m1_9_4_r03",
+        "return_squat_front_m1_9_4_r04",
+        "return_squat_front_m1_9_4_r05",
+        "return_squat_front_m1_9_4_r06",
+        "return_squat_front_m1_9_4_r07",
+        "return_squat_front_m1_9_4_r08",
+        "return_squat_front_m1_9_4_r09",
+        "return_squat_front_m1_9_4_r10",
+        "return_squat_front_m1_9_4_r11",
+        "return_squat_front_m1_9_4_r12",
+        "return_squat_front_m1_9_4_r13"
+      ],
+      "cutoff": 0.12785871589952433,
+      "fit_groups": [
+        "555",
+        "571",
+        "589",
+        "615",
+        "832",
+        "837",
+        "871",
+        "908"
+      ],
+      "held_groups": [
+        "820"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V08_002750_005500",
+        "r2d2_V08_005500_008500",
+        "r2d2_V08_008500_011500",
+        "r2d2_V08_011500_014500",
+        "r2d2_V09_004000_006750",
+        "r2d2_V09_007250_010250",
+        "r2d2_V09_010750_013750",
+        "r2d2_V09_014000_016250",
+        "r2d2_V11_002250_004750",
+        "r2d2_V11_004750_007250",
+        "r2d2_V11_007250_010000",
+        "r2d2_V11_010000_012750",
+        "r2d2_V14_000250_002250",
+        "r2d2_V14_002250_004250",
+        "r2d2_V14_004250_006250",
+        "r2d2_V14_006250_007750",
+        "r2d2_V14_007750_009500",
+        "r2d2_V19_002750_008250",
+        "r2d2_V19_008250_012500",
+        "r2d2_V19_012500_016250",
+        "r2d2_V19_016250_020500",
+        "r2d2_V19_020500_024250",
+        "r2d2_V19_027000_030500",
+        "r2d2_V19_030500_034250",
+        "r2d2_V19_034250_037500",
+        "r2d2_V19_037500_040650",
+        "return_squat_diag_m1_6_7_r03",
+        "return_squat_diag_m1_6_7_r04",
+        "return_squat_diag_m1_6_7_r05",
+        "return_squat_diag_m1_6_7_r06",
+        "return_squat_diag_m1_6_7_r07",
+        "return_squat_diag_m1_6_7_r08",
+        "return_squat_diag_m1_6_7_r09",
+        "return_squat_diag_m1_6_7_r10",
+        "return_squat_diag_m1_6_7_r11",
+        "return_squat_diag_m1_6_7_r12",
+        "return_squat_diag_m1_6_7_r13",
+        "return_squat_diag_m4_5_7_r12",
+        "return_squat_front_m1_9_4_r03",
+        "return_squat_front_m1_9_4_r04",
+        "return_squat_front_m1_9_4_r05",
+        "return_squat_front_m1_9_4_r06",
+        "return_squat_front_m1_9_4_r07",
+        "return_squat_front_m1_9_4_r08",
+        "return_squat_front_m1_9_4_r09",
+        "return_squat_front_m1_9_4_r10",
+        "return_squat_front_m1_9_4_r11",
+        "return_squat_front_m1_9_4_r12",
+        "return_squat_front_m1_9_4_r13",
+        "return_squat_front_m3_9_3_r03",
+        "return_squat_front_m3_9_3_r04",
+        "return_squat_front_m3_9_3_r05",
+        "return_squat_front_m3_9_3_r06",
+        "return_squat_front_m3_9_3_r07",
+        "return_squat_front_m3_9_3_r08",
+        "return_squat_front_m3_9_3_r09",
+        "return_squat_front_m3_9_3_r10",
+        "return_squat_front_m3_9_3_r11",
+        "return_squat_front_m3_9_3_r12",
+        "return_squat_front_m4_6_6_r03",
+        "return_squat_front_m4_6_6_r04",
+        "return_squat_front_m4_6_6_r05",
+        "return_squat_front_m4_6_6_r06",
+        "return_squat_front_m4_6_6_r11",
+        "return_squat_front_m4_6_6_r12",
+        "return_squat_diag_m2_8_6_r03",
+        "return_squat_diag_m2_8_6_r04",
+        "return_squat_diag_m2_8_6_r05",
+        "return_squat_diag_m2_8_6_r06",
+        "return_squat_diag_m2_8_6_r07",
+        "return_squat_diag_m2_8_6_r08",
+        "return_squat_diag_m2_8_6_r09",
+        "return_squat_diag_m2_8_6_r10",
+        "return_squat_diag_m2_8_6_r11",
+        "return_squat_diag_m2_8_6_r12",
+        "return_squat_diag_m2_8_6_r13",
+        "return_squat_diag_m2_8_6_r14",
+        "reviewed_return_squat_diag_m4_5_7_r10",
+        "reviewed_return_squat_diag_m4_5_7_r11"
+      ],
+      "outer_ids": [
+        "r2d2_V03_001000_004500",
+        "r2d2_V03_004500_008000",
+        "r2d2_V03_008000_011500",
+        "r2d2_V03_011500_015250",
+        "r2d2_V03_015250_019750",
+        "r2d2_V16_005000_007000",
+        "r2d2_V16_010250_012500",
+        "r2d2_V16_013750_016500",
+        "r2d2_V16_016750_019500",
+        "return_squat_diag_w1_9_3_r03",
+        "return_squat_diag_w1_9_3_r04",
+        "return_squat_diag_w1_9_3_r05",
+        "return_squat_diag_w1_9_3_r06",
+        "return_squat_diag_w1_9_3_r07",
+        "return_squat_diag_w1_9_3_r08",
+        "return_squat_diag_w1_9_3_r09",
+        "return_squat_diag_w1_9_3_r10",
+        "return_squat_diag_w1_9_3_r11",
+        "return_squat_diag_w1_9_3_r12",
+        "return_squat_front_w1_9_3_r03",
+        "return_squat_front_w1_9_3_r04",
+        "return_squat_front_w1_9_3_r05",
+        "return_squat_front_w1_9_3_r06",
+        "return_squat_front_w1_9_3_r07",
+        "return_squat_front_w1_9_3_r08",
+        "return_squat_front_w1_9_3_r09",
+        "return_squat_front_w1_9_3_r10",
+        "return_squat_front_w1_9_3_r11",
+        "return_squat_front_w1_9_3_r12"
+      ],
+      "cutoff": 0.5966472334693165,
+      "fit_groups": [
+        "571",
+        "589",
+        "615",
+        "820",
+        "832",
+        "871",
+        "908"
+      ],
+      "held_groups": [
+        "555",
+        "837"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V03_001000_004500",
+        "r2d2_V03_004500_008000",
+        "r2d2_V03_008000_011500",
+        "r2d2_V03_011500_015250",
+        "r2d2_V03_015250_019750",
+        "r2d2_V11_002250_004750",
+        "r2d2_V11_004750_007250",
+        "r2d2_V11_007250_010000",
+        "r2d2_V11_010000_012750",
+        "r2d2_V14_000250_002250",
+        "r2d2_V14_002250_004250",
+        "r2d2_V14_004250_006250",
+        "r2d2_V14_006250_007750",
+        "r2d2_V14_007750_009500",
+        "r2d2_V16_005000_007000",
+        "r2d2_V16_010250_012500",
+        "r2d2_V16_013750_016500",
+        "r2d2_V16_016750_019500",
+        "return_squat_diag_m1_6_7_r03",
+        "return_squat_diag_m1_6_7_r04",
+        "return_squat_diag_m1_6_7_r05",
+        "return_squat_diag_m1_6_7_r06",
+        "return_squat_diag_m1_6_7_r07",
+        "return_squat_diag_m1_6_7_r08",
+        "return_squat_diag_m1_6_7_r09",
+        "return_squat_diag_m1_6_7_r10",
+        "return_squat_diag_m1_6_7_r11",
+        "return_squat_diag_m1_6_7_r12",
+        "return_squat_diag_m1_6_7_r13",
+        "return_squat_diag_m4_5_7_r12",
+        "return_squat_diag_w1_9_3_r03",
+        "return_squat_diag_w1_9_3_r04",
+        "return_squat_diag_w1_9_3_r05",
+        "return_squat_diag_w1_9_3_r06",
+        "return_squat_diag_w1_9_3_r07",
+        "return_squat_diag_w1_9_3_r08",
+        "return_squat_diag_w1_9_3_r09",
+        "return_squat_diag_w1_9_3_r10",
+        "return_squat_diag_w1_9_3_r11",
+        "return_squat_diag_w1_9_3_r12",
+        "return_squat_front_m1_9_4_r03",
+        "return_squat_front_m1_9_4_r04",
+        "return_squat_front_m1_9_4_r05",
+        "return_squat_front_m1_9_4_r06",
+        "return_squat_front_m1_9_4_r07",
+        "return_squat_front_m1_9_4_r08",
+        "return_squat_front_m1_9_4_r09",
+        "return_squat_front_m1_9_4_r10",
+        "return_squat_front_m1_9_4_r11",
+        "return_squat_front_m1_9_4_r12",
+        "return_squat_front_m1_9_4_r13",
+        "return_squat_front_m3_9_3_r03",
+        "return_squat_front_m3_9_3_r04",
+        "return_squat_front_m3_9_3_r05",
+        "return_squat_front_m3_9_3_r06",
+        "return_squat_front_m3_9_3_r07",
+        "return_squat_front_m3_9_3_r08",
+        "return_squat_front_m3_9_3_r09",
+        "return_squat_front_m3_9_3_r10",
+        "return_squat_front_m3_9_3_r11",
+        "return_squat_front_m3_9_3_r12",
+        "return_squat_front_m4_6_6_r03",
+        "return_squat_front_m4_6_6_r04",
+        "return_squat_front_m4_6_6_r05",
+        "return_squat_front_m4_6_6_r06",
+        "return_squat_front_m4_6_6_r11",
+        "return_squat_front_m4_6_6_r12",
+        "return_squat_front_w1_9_3_r03",
+        "return_squat_front_w1_9_3_r04",
+        "return_squat_front_w1_9_3_r05",
+        "return_squat_front_w1_9_3_r06",
+        "return_squat_front_w1_9_3_r07",
+        "return_squat_front_w1_9_3_r08",
+        "return_squat_front_w1_9_3_r09",
+        "return_squat_front_w1_9_3_r10",
+        "return_squat_front_w1_9_3_r11",
+        "return_squat_front_w1_9_3_r12",
+        "reviewed_return_squat_diag_m4_5_7_r10",
+        "reviewed_return_squat_diag_m4_5_7_r11"
+      ],
+      "outer_ids": [
+        "r2d2_V08_002750_005500",
+        "r2d2_V08_005500_008500",
+        "r2d2_V08_008500_011500",
+        "r2d2_V08_011500_014500",
+        "r2d2_V09_004000_006750",
+        "r2d2_V09_007250_010250",
+        "r2d2_V09_010750_013750",
+        "r2d2_V09_014000_016250",
+        "r2d2_V19_002750_008250",
+        "r2d2_V19_008250_012500",
+        "r2d2_V19_012500_016250",
+        "r2d2_V19_016250_020500",
+        "r2d2_V19_020500_024250",
+        "r2d2_V19_027000_030500",
+        "r2d2_V19_030500_034250",
+        "r2d2_V19_034250_037500",
+        "r2d2_V19_037500_040650",
+        "return_squat_diag_m2_8_6_r03",
+        "return_squat_diag_m2_8_6_r04",
+        "return_squat_diag_m2_8_6_r05",
+        "return_squat_diag_m2_8_6_r06",
+        "return_squat_diag_m2_8_6_r07",
+        "return_squat_diag_m2_8_6_r08",
+        "return_squat_diag_m2_8_6_r09",
+        "return_squat_diag_m2_8_6_r10",
+        "return_squat_diag_m2_8_6_r11",
+        "return_squat_diag_m2_8_6_r12",
+        "return_squat_diag_m2_8_6_r13",
+        "return_squat_diag_m2_8_6_r14"
+      ],
+      "cutoff": 0.5887845627195873,
+      "fit_groups": [
+        "555",
+        "589",
+        "820",
+        "832",
+        "837",
+        "871"
+      ],
+      "held_groups": [
+        "571",
+        "615",
+        "908"
+      ]
+    },
+    {
+      "fit_ids": [
+        "r2d2_V03_001000_004500",
+        "r2d2_V03_004500_008000",
+        "r2d2_V03_008000_011500",
+        "r2d2_V03_011500_015250",
+        "r2d2_V03_015250_019750",
+        "r2d2_V08_002750_005500",
+        "r2d2_V08_005500_008500",
+        "r2d2_V08_008500_011500",
+        "r2d2_V08_011500_014500",
+        "r2d2_V09_004000_006750",
+        "r2d2_V09_007250_010250",
+        "r2d2_V09_010750_013750",
+        "r2d2_V09_014000_016250",
+        "r2d2_V16_005000_007000",
+        "r2d2_V16_010250_012500",
+        "r2d2_V16_013750_016500",
+        "r2d2_V16_016750_019500",
+        "r2d2_V19_002750_008250",
+        "r2d2_V19_008250_012500",
+        "r2d2_V19_012500_016250",
+        "r2d2_V19_016250_020500",
+        "r2d2_V19_020500_024250",
+        "r2d2_V19_027000_030500",
+        "r2d2_V19_030500_034250",
+        "r2d2_V19_034250_037500",
+        "r2d2_V19_037500_040650",
+        "return_squat_diag_m1_6_7_r03",
+        "return_squat_diag_m1_6_7_r04",
+        "return_squat_diag_m1_6_7_r05",
+        "return_squat_diag_m1_6_7_r06",
+        "return_squat_diag_m1_6_7_r07",
+        "return_squat_diag_m1_6_7_r08",
+        "return_squat_diag_m1_6_7_r09",
+        "return_squat_diag_m1_6_7_r10",
+        "return_squat_diag_m1_6_7_r11",
+        "return_squat_diag_m1_6_7_r12",
+        "return_squat_diag_m1_6_7_r13",
+        "return_squat_diag_w1_9_3_r03",
+        "return_squat_diag_w1_9_3_r04",
+        "return_squat_diag_w1_9_3_r05",
+        "return_squat_diag_w1_9_3_r06",
+        "return_squat_diag_w1_9_3_r07",
+        "return_squat_diag_w1_9_3_r08",
+        "return_squat_diag_w1_9_3_r09",
+        "return_squat_diag_w1_9_3_r10",
+        "return_squat_diag_w1_9_3_r11",
+        "return_squat_diag_w1_9_3_r12",
+        "return_squat_front_m1_9_4_r03",
+        "return_squat_front_m1_9_4_r04",
+        "return_squat_front_m1_9_4_r05",
+        "return_squat_front_m1_9_4_r06",
+        "return_squat_front_m1_9_4_r07",
+        "return_squat_front_m1_9_4_r08",
+        "return_squat_front_m1_9_4_r09",
+        "return_squat_front_m1_9_4_r10",
+        "return_squat_front_m1_9_4_r11",
+        "return_squat_front_m1_9_4_r12",
+        "return_squat_front_m1_9_4_r13",
+        "return_squat_front_w1_9_3_r03",
+        "return_squat_front_w1_9_3_r04",
+        "return_squat_front_w1_9_3_r05",
+        "return_squat_front_w1_9_3_r06",
+        "return_squat_front_w1_9_3_r07",
+        "return_squat_front_w1_9_3_r08",
+        "return_squat_front_w1_9_3_r09",
+        "return_squat_front_w1_9_3_r10",
+        "return_squat_front_w1_9_3_r11",
+        "return_squat_front_w1_9_3_r12",
+        "return_squat_diag_m2_8_6_r03",
+        "return_squat_diag_m2_8_6_r04",
+        "return_squat_diag_m2_8_6_r05",
+        "return_squat_diag_m2_8_6_r06",
+        "return_squat_diag_m2_8_6_r07",
+        "return_squat_diag_m2_8_6_r08",
+        "return_squat_diag_m2_8_6_r09",
+        "return_squat_diag_m2_8_6_r10",
+        "return_squat_diag_m2_8_6_r11",
+        "return_squat_diag_m2_8_6_r12",
+        "return_squat_diag_m2_8_6_r13",
+        "return_squat_diag_m2_8_6_r14"
+      ],
+      "outer_ids": [
+        "r2d2_V11_002250_004750",
+        "r2d2_V11_004750_007250",
+        "r2d2_V11_007250_010000",
+        "r2d2_V11_010000_012750",
+        "r2d2_V14_000250_002250",
+        "r2d2_V14_002250_004250",
+        "r2d2_V14_004250_006250",
+        "r2d2_V14_006250_007750",
+        "r2d2_V14_007750_009500",
+        "return_squat_diag_m4_5_7_r12",
+        "return_squat_front_m3_9_3_r03",
+        "return_squat_front_m3_9_3_r04",
+        "return_squat_front_m3_9_3_r05",
+        "return_squat_front_m3_9_3_r06",
+        "return_squat_front_m3_9_3_r07",
+        "return_squat_front_m3_9_3_r08",
+        "return_squat_front_m3_9_3_r09",
+        "return_squat_front_m3_9_3_r10",
+        "return_squat_front_m3_9_3_r11",
+        "return_squat_front_m3_9_3_r12",
+        "return_squat_front_m4_6_6_r03",
+        "return_squat_front_m4_6_6_r04",
+        "return_squat_front_m4_6_6_r05",
+        "return_squat_front_m4_6_6_r06",
+        "return_squat_front_m4_6_6_r11",
+        "return_squat_front_m4_6_6_r12",
+        "reviewed_return_squat_diag_m4_5_7_r10",
+        "reviewed_return_squat_diag_m4_5_7_r11"
+      ],
+      "cutoff": 0.4115855361435392,
+      "fit_groups": [
+        "555",
+        "571",
+        "615",
+        "820",
+        "837",
+        "908"
+      ],
+      "held_groups": [
+        "589",
+        "832",
+        "871"
+      ]
+    }
+  ],
+  "candidate_cv": [
+    {
+      "name": "positive_deficit",
+      "C": 0.1,
+      "rank": [
+        false,
+        false,
+        0.0,
+        0.0,
+        0.04081632653061224,
+        0.0195906432748538
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.0195906432748538,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.037037037037037035,
+        "group_MAE": 0.03333333333333333,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 1.0,
+        "normal_false_alarm": 0.04081632653061224
+      },
+      "mild_group_cv": {
+        "balanced_group_MAE": 0.0,
+        "n": 5,
+        "groups": 3,
+        "MAE": 0.0,
+        "group_MAE": 0.0,
+        "error_n": 5,
+        "normal_n": 0,
+        "error_recall": 1.0,
+        "normal_false_alarm": null
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.49999999999999994,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 0.1,
+        "normal_false_alarm": 0.2857142857142857
+      }
+    },
+    {
+      "name": "positive_deficit",
+      "C": 1.0,
+      "rank": [
+        true,
+        false,
+        0.0,
+        0.0,
+        0.07142857142857142,
+        0.028362573099415207
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.028362573099415207,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.06481481481481481,
+        "group_MAE": 0.05,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 1.0,
+        "normal_false_alarm": 0.07142857142857142
+      },
+      "mild_group_cv": {
+        "balanced_group_MAE": 0.0,
+        "n": 5,
+        "groups": 3,
+        "MAE": 0.0,
+        "group_MAE": 0.0,
+        "error_n": 5,
+        "normal_n": 0,
+        "error_recall": 1.0,
+        "normal_false_alarm": null
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.49999999999999994,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 0.1,
+        "normal_false_alarm": 0.2857142857142857
+      }
+    },
+    {
+      "name": "positive_deficit",
+      "C": 10.0,
+      "rank": [
+        true,
+        false,
+        0.0,
+        0.0,
+        0.07142857142857142,
+        0.031611435997400905
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.031611435997400905,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.06481481481481481,
+        "group_MAE": 0.05679012345679012,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 1.0,
+        "normal_false_alarm": 0.07142857142857142
+      },
+      "mild_group_cv": {
+        "balanced_group_MAE": 0.0,
+        "n": 5,
+        "groups": 3,
+        "MAE": 0.0,
+        "group_MAE": 0.0,
+        "error_n": 5,
+        "normal_n": 0,
+        "error_recall": 1.0,
+        "normal_false_alarm": null
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.49999999999999994,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 0.1,
+        "normal_false_alarm": 0.2857142857142857
+      }
+    },
+    {
+      "name": "logistic",
+      "C": 0.1,
+      "rank": [
+        false,
+        false,
+        0.0,
+        0.0,
+        0.04081632653061224,
+        0.0195906432748538
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.0195906432748538,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.037037037037037035,
+        "group_MAE": 0.03333333333333333,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 1.0,
+        "normal_false_alarm": 0.04081632653061224
+      },
+      "mild_group_cv": {
+        "balanced_group_MAE": 0.0,
+        "n": 5,
+        "groups": 3,
+        "MAE": 0.0,
+        "group_MAE": 0.0,
+        "error_n": 5,
+        "normal_n": 0,
+        "error_recall": 1.0,
+        "normal_false_alarm": null
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.49999999999999994,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 0.1,
+        "normal_false_alarm": 0.2857142857142857
+      }
+    },
+    {
+      "name": "logistic",
+      "C": 1.0,
+      "rank": [
+        true,
+        false,
+        0.0,
+        0.0,
+        0.07142857142857142,
+        0.028362573099415207
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.028362573099415207,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.06481481481481481,
+        "group_MAE": 0.05,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 1.0,
+        "normal_false_alarm": 0.07142857142857142
+      },
+      "mild_group_cv": {
+        "balanced_group_MAE": 0.0,
+        "n": 5,
+        "groups": 3,
+        "MAE": 0.0,
+        "group_MAE": 0.0,
+        "error_n": 5,
+        "normal_n": 0,
+        "error_recall": 1.0,
+        "normal_false_alarm": null
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.49999999999999994,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 0.1,
+        "normal_false_alarm": 0.2857142857142857
+      }
+    },
+    {
+      "name": "logistic",
+      "C": 10.0,
+      "rank": [
+        true,
+        false,
+        0.0,
+        0.0,
+        0.07142857142857142,
+        0.028362573099415207
+      ],
+      "group_cv": {
+        "balanced_group_MAE": 0.028362573099415207,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.06481481481481481,
+        "group_MAE": 0.05,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 1.0,
+        "normal_false_alarm": 0.07142857142857142
+      },
+      "mild_group_cv": {
+        "balanced_group_MAE": 0.0,
+        "n": 5,
+        "groups": 3,
+        "MAE": 0.0,
+        "group_MAE": 0.0,
+        "error_n": 5,
+        "normal_n": 0,
+        "error_recall": 1.0,
+        "normal_false_alarm": null
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.49999999999999994,
+        "n": 108,
+        "groups": 9,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 10,
+        "normal_n": 98,
+        "error_recall": 0.1,
+        "normal_false_alarm": 0.2857142857142857
+      }
+    }
+  ],
+  "cutoff_Train_oof": [
+    {
+      "id": "r2d2_V08_002750_005500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7701533780593898
+    },
+    {
+      "id": "r2d2_V08_005500_008500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.82201006834996
+    },
+    {
+      "id": "r2d2_V08_008500_011500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7090430491891216
+    },
+    {
+      "id": "r2d2_V08_011500_014500",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.772668161602696
+    },
+    {
+      "id": "r2d2_V09_004000_006750",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.846307144833272
+    },
+    {
+      "id": "r2d2_V09_007250_010250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8539486342944612
+    },
+    {
+      "id": "r2d2_V09_010750_013750",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8437080386263975
+    },
+    {
+      "id": "r2d2_V09_014000_016250",
+      "person": "r2d2_P02",
+      "group": "571",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8808331624477161
+    },
+    {
+      "id": "r2d2_V19_002750_008250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7601605045738784
+    },
+    {
+      "id": "r2d2_V19_008250_012500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8667699237734513
+    },
+    {
+      "id": "r2d2_V19_012500_016250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.9007065273372367
+    },
+    {
+      "id": "r2d2_V19_016250_020500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.901285897144536
+    },
+    {
+      "id": "r2d2_V19_020500_024250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8845830585506705
+    },
+    {
+      "id": "r2d2_V19_027000_030500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8570065805355992
+    },
+    {
+      "id": "r2d2_V19_030500_034250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8170541216036629
+    },
+    {
+      "id": "r2d2_V19_034250_037500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8713622611371508
+    },
+    {
+      "id": "r2d2_V19_037500_040650",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8525847650868709
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r03",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8683724656671536
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r04",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7084106738406127
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r05",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8491489480861909
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r06",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8977452527307742
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r07",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8807150571262983
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r08",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.857580612158733
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r09",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8678791065348049
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r10",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.012558872097653032
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r11",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.017042561244075143
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r12",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.01643925466584608
+    },
+    {
+      "id": "return_squat_diag_m1_6_7_r13",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.010182832662302282
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r03",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8231274526640168
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r04",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.674558556020839
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r05",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6643019099104956
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r06",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7817964283121753
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r07",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8191855672398396
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r08",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7780760019001441
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r09",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8216183143676868
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r10",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8366304308458521
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r11",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.007221934252818231
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r12",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.822647940556004
+    },
+    {
+      "id": "return_squat_front_m1_9_4_r13",
+      "person": "cfrep_m1",
+      "group": "820",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8183699379716733
+    },
+    {
+      "id": "r2d2_V03_001000_004500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8879065817823505
+    },
+    {
+      "id": "r2d2_V03_004500_008000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8526196863187641
+    },
+    {
+      "id": "r2d2_V03_008000_011500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8205981731190516
+    },
+    {
+      "id": "r2d2_V03_011500_015250",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7894562935594531
+    },
+    {
+      "id": "r2d2_V03_015250_019750",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8677094778765825
+    },
+    {
+      "id": "r2d2_V16_005000_007000",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.857908481128415
+    },
+    {
+      "id": "r2d2_V16_010250_012500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8341161839919755
+    },
+    {
+      "id": "r2d2_V16_013750_016500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.807537621755733
+    },
+    {
+      "id": "r2d2_V16_016750_019500",
+      "person": "r2d2_P01",
+      "group": "555",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7956748069573802
+    },
+    {
+      "id": "return_squat_diag_m4_5_7_r12",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8556894874977085
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r03",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7707700488953728
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r04",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8220355644855964
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r05",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.576760279536614
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r06",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7988892846773055
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r07",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6382775177209137
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r08",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7232238411961883
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r09",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7891217795252556
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r10",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8066182623478722
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r11",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8458935290413556
+    },
+    {
+      "id": "return_squat_diag_w1_9_3_r12",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8233057883256855
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r03",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8510566558618562
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r04",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8564736077087938
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r05",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8694949891728172
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r06",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8705894515899655
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r11",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8526407257392858
+    },
+    {
+      "id": "return_squat_front_m4_6_6_r12",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8341579143900432
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r03",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8330118246769433
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r04",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8173337106974566
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r05",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8385905710592996
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r06",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8452896548636099
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r07",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8322301044856322
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r08",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.5946852067144772
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r09",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8635973668403422
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r10",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8523487830355284
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r11",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8323757327677009
+    },
+    {
+      "id": "return_squat_front_w1_9_3_r12",
+      "person": "cfrep_w1",
+      "group": "837",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.741937493741649
+    },
+    {
+      "id": "reviewed_return_squat_diag_m4_5_7_r10",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.09920676454225218
+    },
+    {
+      "id": "reviewed_return_squat_diag_m4_5_7_r11",
+      "person": "cfrep_m4",
+      "group": "832",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.6219861070864483
+    },
+    {
+      "id": "r2d2_V11_002250_004750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7806540137192882
+    },
+    {
+      "id": "r2d2_V11_004750_007250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8118661298515449
+    },
+    {
+      "id": "r2d2_V11_007250_010000",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8397313444471971
+    },
+    {
+      "id": "r2d2_V11_010000_012750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8637046119691464
+    },
+    {
+      "id": "r2d2_V14_000250_002250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.6031394914116478
+    },
+    {
+      "id": "r2d2_V14_002250_004250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7300041553805418
+    },
+    {
+      "id": "r2d2_V14_004250_006250",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.7851326659077537
+    },
+    {
+      "id": "r2d2_V14_006250_007750",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.6965590167320354
+    },
+    {
+      "id": "r2d2_V14_007750_009500",
+      "person": "r2d2_P03",
+      "group": "589",
+      "family": "R2D2",
+      "target": 2,
+      "normal_probability": 0.8185995002722233
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r03",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.793253293700256
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r04",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8188433272431792
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r05",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7757663595159346
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r06",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8307865156314479
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r07",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7376528256561258
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r08",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6951360649745341
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r09",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8075637236164571
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r10",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7343454678804276
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r11",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.796901189133102
+    },
+    {
+      "id": "return_squat_front_m3_9_3_r12",
+      "person": "cfrep_m3",
+      "group": "871",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.7339924767935432
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r03",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8421266986134736
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r04",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8587230899911577
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r05",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.3810095718922287
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r06",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.6624408781417148
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r07",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8312869387916426
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r08",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8376685406862066
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r09",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.47810975521922355
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r10",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8341483404616787
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r11",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.08008048180676071
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r12",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 1,
+      "normal_probability": 0.36901421730639583
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r13",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.8175864484104238
+    },
+    {
+      "id": "return_squat_diag_m2_8_6_r14",
+      "person": "cfrep_m2",
+      "group": "908",
+      "family": "CFRep_reviewed",
+      "target": 2,
+      "normal_probability": 0.09797850755295308
+    }
+  ]
+}

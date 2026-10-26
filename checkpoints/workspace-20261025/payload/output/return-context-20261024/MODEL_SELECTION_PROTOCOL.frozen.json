@@ -1,0 +1,38 @@
+{
+  "frozen_at": "2026-10-24T11:51:35.715269+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/return-discrimination-ensemble-20261024",
+  "new_bank": "standing_support_context_v1",
+  "context_seconds": 0.4,
+  "context_policy": "same-source bounded post-interval context; first completed lower/upper reversal only; bottom must belong to original interval; next descent stops search",
+  "original_grades_unchanged": true,
+  "feature_names": [
+    "hip_height_deficit_mean",
+    "hip_height_deficit_max",
+    "shoulder_height_deficit_mean",
+    "shoulder_height_deficit_max",
+    "knee_extension_deficit_mean",
+    "knee_extension_deficit_max",
+    "hip_extension_deficit_mean",
+    "hip_extension_deficit_max",
+    "torso_vertical_deficit_mean",
+    "torso_vertical_deficit_max"
+  ],
+  "feature_code_sha256": "7ba11d6371998030b7a437ecbe4aae039f8558443aa36adf8c8888b733bef70f",
+  "model_code_sha256": "92c61b1d2fa94e2b34481e0f1350bd776c009b24b85e09e3f242b9e566c35890",
+  "new_labels_this_experiment": 0,
+  "selection": "nested participant-group CV; train mild subset same5 IDs; first require recall>=.65 and FP<=.15, maximize mild recall then total recall then minimize FP, balanced group MAE",
+  "candidate_models": [
+    "positive_deficit",
+    "logistic"
+  ],
+  "C": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "outer_folds": 4,
+  "inner_folds": 3,
+  "threshold_fit_Train_only": true,
+  "Test_feature_only_augmentation": "same51rows, original labels/features and source roles retained",
+  "production_replacement": false
+}

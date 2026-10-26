@@ -1,0 +1,169 @@
+{
+  "knee_inward": {
+    "selection": {
+      "name": "all_leaf2",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "leaf": 2,
+      "kind": "forest",
+      "balanced_person_holdout_MAE": 0.9375235531872239,
+      "heldout_cases": 30
+    },
+    "candidates": [
+      {
+        "name": "all_leaf2",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "leaf": 2,
+        "kind": "forest",
+        "balanced_person_holdout_MAE": 0.9375235531872239,
+        "heldout_cases": 30
+      },
+      {
+        "name": "relative_leaf1",
+        "indices": [
+          0,
+          1,
+          2
+        ],
+        "leaf": 1,
+        "kind": "forest",
+        "balanced_person_holdout_MAE": 1.2426282051282052,
+        "heldout_cases": 30
+      },
+      {
+        "name": "scalar_tree",
+        "indices": [
+          0
+        ],
+        "leaf": 1,
+        "kind": "tree",
+        "balanced_person_holdout_MAE": 1.4016069546891465,
+        "heldout_cases": 30
+      }
+    ],
+    "validation_used_for_selection": false
+  },
+  "trunk_balance": {
+    "selection": {
+      "name": "scalar_tree",
+      "indices": [
+        2
+      ],
+      "leaf": 1,
+      "kind": "tree",
+      "balanced_person_holdout_MAE": 0.5626159554730983,
+      "heldout_cases": 31
+    },
+    "candidates": [
+      {
+        "name": "all_leaf2",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "leaf": 2,
+        "kind": "forest",
+        "balanced_person_holdout_MAE": 0.589720842910905,
+        "heldout_cases": 31
+      },
+      {
+        "name": "relative_leaf1",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "leaf": 1,
+        "kind": "forest",
+        "balanced_person_holdout_MAE": 0.6381944444444444,
+        "heldout_cases": 31
+      },
+      {
+        "name": "scalar_tree",
+        "indices": [
+          2
+        ],
+        "leaf": 1,
+        "kind": "tree",
+        "balanced_person_holdout_MAE": 0.5626159554730983,
+        "heldout_cases": 31
+      }
+    ],
+    "validation_used_for_selection": false
+  },
+  "heel_support": {
+    "selection": {
+      "name": "scalar_tree",
+      "indices": [
+        2
+      ],
+      "leaf": 1,
+      "kind": "tree",
+      "balanced_person_holdout_MAE": 0.5833333333333333,
+      "heldout_cases": 11
+    },
+    "candidates": [
+      {
+        "name": "all_leaf2",
+        "indices": [
+          0,
+          1,
+          2
+        ],
+        "leaf": 2,
+        "kind": "forest",
+        "balanced_person_holdout_MAE": 1.059327402921153,
+        "heldout_cases": 11
+      },
+      {
+        "name": "relative_leaf1",
+        "indices": [
+          0,
+          1,
+          2
+        ],
+        "leaf": 1,
+        "kind": "forest",
+        "balanced_person_holdout_MAE": 0.6118055555555555,
+        "heldout_cases": 11
+      },
+      {
+        "name": "scalar_tree",
+        "indices": [
+          2
+        ],
+        "leaf": 1,
+        "kind": "tree",
+        "balanced_person_holdout_MAE": 0.5833333333333333,
+        "heldout_cases": 11
+      }
+    ],
+    "validation_used_for_selection": false
+  }
+}

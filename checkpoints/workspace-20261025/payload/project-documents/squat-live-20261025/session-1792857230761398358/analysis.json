@@ -1,0 +1,251 @@
+{
+  "created_at_utc": "2026-10-24T15:55:53.006745+00:00",
+  "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792857230761398358",
+  "samples": 972,
+  "seconds": 97.1,
+  "exercise": "squats",
+  "view": "front",
+  "stored_count": 2,
+  "saved_rows": 2,
+  "replay_count": 2,
+  "segments": [
+    {
+      "start_tick": 60321,
+      "end_tick": 60357,
+      "start_seconds": 2.1,
+      "end_seconds": 5.7,
+      "samples": 37,
+      "duration": 3.6,
+      "required_observation_fraction": 1.0
+    },
+    {
+      "start_tick": 60417,
+      "end_tick": 60427,
+      "start_seconds": 11.7,
+      "end_seconds": 12.7,
+      "samples": 11,
+      "duration": 1.0,
+      "required_observation_fraction": 1.0
+    }
+  ],
+  "uncertain_attempts": [
+    {
+      "start_tick": 60624,
+      "end_tick": 60642,
+      "reason": "관측 중단 · 관측 대기 · 왼쪽 무릎·오른쪽 무릎이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+      "counted": false
+    },
+    {
+      "start_tick": 61126,
+      "end_tick": 61139,
+      "reason": "관측 중단 · 관측 대기 · 왼쪽 무릎·오른쪽 무릎이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+      "counted": false
+    }
+  ],
+  "observation": {
+    "tracker_required_ready_frames": 405,
+    "denominator": 972,
+    "joints": {
+      "11": {
+        "raw_finite_frames": 972,
+        "inside_border_frames": 972
+      },
+      "12": {
+        "raw_finite_frames": 972,
+        "inside_border_frames": 972
+      },
+      "23": {
+        "raw_finite_frames": 972,
+        "inside_border_frames": 894
+      },
+      "24": {
+        "raw_finite_frames": 972,
+        "inside_border_frames": 880
+      },
+      "25": {
+        "raw_finite_frames": 274,
+        "inside_border_frames": 274
+      },
+      "26": {
+        "raw_finite_frames": 348,
+        "inside_border_frames": 345
+      }
+    }
+  },
+  "scores": [
+    {
+      "number": 1,
+      "duration": 3.6,
+      "ai": {
+        "total": null,
+        "maximum": 100,
+        "earned_subtotal": 53.8,
+        "assessed_weight": 70,
+        "full_score": false,
+        "estimated": true,
+        "status": "일부 항목 미평가"
+      },
+      "rule": {
+        "total": null,
+        "maximum": 100,
+        "earned_subtotal": 45.0,
+        "assessed_weight": 70,
+        "full_score": false,
+        "estimated": true,
+        "status": "일부 항목 미평가"
+      },
+      "items": [
+        {
+          "id": "descent_range",
+          "ai_points": 20.4,
+          "rule_points": 15.0,
+          "weight": 30,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "ai_points": 20.0,
+          "rule_points": 20.0,
+          "weight": 20,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "ai_points": null,
+          "rule_points": null,
+          "weight": 30,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다.",
+            "관측·특징 또는 같은 기준의 평가 결과가 부족합니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "ai_points": 13.4,
+          "rule_points": 10.0,
+          "weight": 20,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "depth_features": [
+        0.391795811318642,
+        0.3843346982927722,
+        0.5220273107118995,
+        0.5523826299027523,
+        0.9933385830106933,
+        0.9983758803381644,
+        3.8744431785224873,
+        0.021571064645901607
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+        "Rule Base에서 부분 충족으로 평가했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요.",
+        "미평가: 무릎 간격 유지."
+      ]
+    },
+    {
+      "number": 2,
+      "duration": 1.0,
+      "ai": {
+        "total": null,
+        "maximum": 100,
+        "earned_subtotal": 46.6,
+        "assessed_weight": 70,
+        "full_score": false,
+        "estimated": true,
+        "status": "일부 항목 미평가"
+      },
+      "rule": {
+        "total": null,
+        "maximum": 100,
+        "earned_subtotal": 40.0,
+        "assessed_weight": 70,
+        "full_score": false,
+        "estimated": true,
+        "status": "일부 항목 미평가"
+      },
+      "items": [
+        {
+          "id": "descent_range",
+          "ai_points": 7.8,
+          "rule_points": 0.0,
+          "weight": 30,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "ai_points": 19.9,
+          "rule_points": 20.0,
+          "weight": 20,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "ai_points": null,
+          "rule_points": null,
+          "weight": 30,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다.",
+            "관측·특징 또는 같은 기준의 평가 결과가 부족합니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "ai_points": 18.9,
+          "rule_points": 20.0,
+          "weight": 20,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "depth_features": [
+        0.07298733772551433,
+        0.056897749330497585,
+        0.5649091855370809,
+        0.5767825376078022,
+        0.9995922194114413,
+        0.9997844847857406,
+        1.1026480478516287,
+        0.008398435247685037
+      ],
+      "coaching": [
+        "AI Model·Rule Base에서 낮게 추정했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+        "미평가: 무릎 간격 유지."
+      ]
+    }
+  ],
+  "runtime_integrity": {
+    "loaded": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+    "current_source": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+    "fixed_snapshot": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+    "initial_squat_loaded": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+    "standing_state": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+    "first_test_standing_state": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57"
+  },
+  "original_hashes": {
+    "final-state.json": "3b7afca8ba5f8a9e4c2092bf68213161c2c9593b439a8ea39db40952a6b47776",
+    "pose.npz": "49a17b2cfa5a6a3e7acc3ebed343cd2294a2e0a4609b69b22921e86e321b1644",
+    "state.json": "1f2f910af17a25ef71885e0cab726ba53373c1e359c57ac6af10b268c6f76022"
+  },
+  "limitations": [
+    "영상 없음: 실제 수행 횟수/깊이/복귀 정답 확인 불가",
+    "관측 중단을 실제 복귀 실패로 라벨링하지 않음",
+    "원시 재생 일치는 정확도 검증이 아님",
+    "학습 데이터 혼입 여부는 모델 담당 원본 감사와 구분"
+  ]
+}

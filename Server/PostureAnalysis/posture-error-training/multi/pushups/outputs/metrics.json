@@ -1,0 +1,354 @@
+{
+  "validation_split_candidate": 0,
+  "validation_split_policy": "First seed42 candidate retaining every available source-train target in train; validation binary has both classes; test is never inspected.",
+  "exercise": "pushups",
+  "targets": [
+    "shallow",
+    "butt sinking",
+    "elevated hips",
+    "head down",
+    "moving head",
+    "side to side"
+  ],
+  "selected_model": "cnn",
+  "selection_basis": "Validation score only; shoulder uses selected-error auxiliary validation F1 due to sparse class support.",
+  "models": {
+    "cnn": {
+      "precision_macro_supported": 0.35586434499477976,
+      "recall_macro_supported": 0.5392259771292028,
+      "macro_f1_supported": 0.4176466790179972,
+      "evaluated_targets": 6,
+      "total_targets": 6,
+      "macro_f1_all_targets": 0.4176466790179972,
+      "exact_match_accuracy": 0.5925925925925926,
+      "per_target": {
+        "shallow": {
+          "positive_support": 31,
+          "negative_support": 212,
+          "train_positive_support": 356,
+          "validation_positive_support": 92,
+          "evaluable": true,
+          "precision": 0.2692307692307692,
+          "recall": 0.6774193548387096,
+          "f1": 0.3853211009174312,
+          "reason": null
+        },
+        "butt sinking": {
+          "positive_support": 15,
+          "negative_support": 228,
+          "train_positive_support": 59,
+          "validation_positive_support": 27,
+          "evaluable": true,
+          "precision": 0.08695652173913043,
+          "recall": 0.13333333333333333,
+          "f1": 0.10526315789473684,
+          "reason": null
+        },
+        "elevated hips": {
+          "positive_support": 8,
+          "negative_support": 235,
+          "train_positive_support": 142,
+          "validation_positive_support": 18,
+          "evaluable": true,
+          "precision": 0.42857142857142855,
+          "recall": 0.75,
+          "f1": 0.5454545454545454,
+          "reason": null
+        },
+        "head down": {
+          "positive_support": 8,
+          "negative_support": 235,
+          "train_positive_support": 41,
+          "validation_positive_support": 10,
+          "evaluable": true,
+          "precision": 0.3076923076923077,
+          "recall": 0.5,
+          "f1": 0.38095238095238093,
+          "reason": null
+        },
+        "moving head": {
+          "positive_support": 7,
+          "negative_support": 236,
+          "train_positive_support": 32,
+          "validation_positive_support": 5,
+          "evaluable": true,
+          "precision": 0.15384615384615385,
+          "recall": 0.2857142857142857,
+          "f1": 0.2,
+          "reason": null
+        },
+        "side to side": {
+          "positive_support": 18,
+          "negative_support": 225,
+          "train_positive_support": 273,
+          "validation_positive_support": 71,
+          "evaluable": true,
+          "precision": 0.8888888888888888,
+          "recall": 0.8888888888888888,
+          "f1": 0.8888888888888888,
+          "reason": null
+        }
+      },
+      "selected_error_vs_other": {
+        "accuracy": 0.7366255144032922,
+        "precision": 0.5617977528089888,
+        "recall": 0.6666666666666666,
+        "macro_f1": 0.7054991667929101,
+        "positive_support": 75,
+        "negative_support": 168,
+        "confusion_matrix": [
+          [
+            129,
+            39
+          ],
+          [
+            25,
+            50
+          ]
+        ],
+        "evaluable": true
+      },
+      "validation_selection_score": 0.43157285258714023,
+      "best_epoch": 36,
+      "thresholds": {
+        "shallow": 0.25000000000000006,
+        "butt sinking": 0.40000000000000013,
+        "elevated hips": 0.9000000000000002,
+        "head down": 0.6000000000000002,
+        "moving head": 0.30000000000000004,
+        "side to side": 0.9000000000000002,
+        "any_selected_error": 0.40000000000000013
+      }
+    },
+    "gru": {
+      "precision_macro_supported": 0.3998379243735281,
+      "recall_macro_supported": 0.49253072196620584,
+      "macro_f1_supported": 0.4008497170742409,
+      "evaluated_targets": 6,
+      "total_targets": 6,
+      "macro_f1_all_targets": 0.4008497170742409,
+      "exact_match_accuracy": 0.6790123456790124,
+      "per_target": {
+        "shallow": {
+          "positive_support": 31,
+          "negative_support": 212,
+          "train_positive_support": 356,
+          "validation_positive_support": 92,
+          "evaluable": true,
+          "precision": 0.3333333333333333,
+          "recall": 0.45161290322580644,
+          "f1": 0.3835616438356164,
+          "reason": null
+        },
+        "butt sinking": {
+          "positive_support": 15,
+          "negative_support": 228,
+          "train_positive_support": 59,
+          "validation_positive_support": 27,
+          "evaluable": true,
+          "precision": 0.11538461538461539,
+          "recall": 0.2,
+          "f1": 0.14634146341463414,
+          "reason": null
+        },
+        "elevated hips": {
+          "positive_support": 8,
+          "negative_support": 235,
+          "train_positive_support": 142,
+          "validation_positive_support": 18,
+          "evaluable": true,
+          "precision": 0.35294117647058826,
+          "recall": 0.75,
+          "f1": 0.48,
+          "reason": null
+        },
+        "head down": {
+          "positive_support": 8,
+          "negative_support": 235,
+          "train_positive_support": 41,
+          "validation_positive_support": 10,
+          "evaluable": true,
+          "precision": 0.5,
+          "recall": 0.125,
+          "f1": 0.2,
+          "reason": null
+        },
+        "moving head": {
+          "positive_support": 7,
+          "negative_support": 236,
+          "train_positive_support": 32,
+          "validation_positive_support": 5,
+          "evaluable": true,
+          "precision": 0.15,
+          "recall": 0.42857142857142855,
+          "f1": 0.2222222222222222,
+          "reason": null
+        },
+        "side to side": {
+          "positive_support": 18,
+          "negative_support": 225,
+          "train_positive_support": 273,
+          "validation_positive_support": 71,
+          "evaluable": true,
+          "precision": 0.9473684210526315,
+          "recall": 1.0,
+          "f1": 0.972972972972973,
+          "reason": null
+        }
+      },
+      "selected_error_vs_other": {
+        "accuracy": 0.7613168724279835,
+        "precision": 0.6133333333333333,
+        "recall": 0.6133333333333333,
+        "macro_f1": 0.7203571428571428,
+        "positive_support": 75,
+        "negative_support": 168,
+        "confusion_matrix": [
+          [
+            139,
+            29
+          ],
+          [
+            29,
+            46
+          ]
+        ],
+        "evaluable": true
+      },
+      "validation_selection_score": 0.38783636496731294,
+      "best_epoch": 34,
+      "thresholds": {
+        "shallow": 0.5500000000000002,
+        "butt sinking": 0.30000000000000004,
+        "elevated hips": 0.8500000000000002,
+        "head down": 0.9000000000000002,
+        "moving head": 0.15000000000000002,
+        "side to side": 0.8500000000000002,
+        "any_selected_error": 0.5000000000000001
+      }
+    }
+  },
+  "majority_baseline": {
+    "precision_macro_supported": 0.0,
+    "recall_macro_supported": 0.0,
+    "macro_f1_supported": 0.0,
+    "evaluated_targets": 6,
+    "total_targets": 6,
+    "macro_f1_all_targets": 0.0,
+    "exact_match_accuracy": 0.691358024691358,
+    "per_target": {
+      "shallow": {
+        "positive_support": 31,
+        "negative_support": 212,
+        "train_positive_support": 356,
+        "validation_positive_support": 92,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "butt sinking": {
+        "positive_support": 15,
+        "negative_support": 228,
+        "train_positive_support": 59,
+        "validation_positive_support": 27,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "elevated hips": {
+        "positive_support": 8,
+        "negative_support": 235,
+        "train_positive_support": 142,
+        "validation_positive_support": 18,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "head down": {
+        "positive_support": 8,
+        "negative_support": 235,
+        "train_positive_support": 41,
+        "validation_positive_support": 10,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "moving head": {
+        "positive_support": 7,
+        "negative_support": 236,
+        "train_positive_support": 32,
+        "validation_positive_support": 5,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "side to side": {
+        "positive_support": 18,
+        "negative_support": 225,
+        "train_positive_support": 273,
+        "validation_positive_support": 71,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      }
+    },
+    "selected_error_vs_other": {
+      "accuracy": 0.691358024691358,
+      "precision": 0.0,
+      "recall": 0.0,
+      "macro_f1": 0.40875912408759124,
+      "positive_support": 75,
+      "negative_support": 168,
+      "confusion_matrix": [
+        [
+          168,
+          0
+        ],
+        [
+          75,
+          0
+        ]
+      ],
+      "evaluable": true
+    }
+  },
+  "trainable_targets": {
+    "shallow": true,
+    "butt sinking": true,
+    "elevated hips": true,
+    "head down": true,
+    "moving head": true,
+    "side to side": true,
+    "any_selected_error": true
+  },
+  "split_sizes": {
+    "train": 2577,
+    "validation": 639,
+    "test": 243
+  },
+  "worker_overlap": 0,
+  "elapsed_seconds": 29.241090536117554,
+  "limitations": [
+    "Six selected QEVD error annotations; absent labels do not certify normal form.",
+    "Source clip labels; not frame-level or expert-verified error truth.",
+    "Unlisted selected labels treated as negative (closed-world assumption).",
+    "All models use same source test and group-disjoint validation; no test tuning.",
+    "Invisible joints are masked, but occlusion, camera view and annotation bias remain.",
+    "Selected-error auxiliary negative is not a comprehensive normal class.",
+    "No validated rule baseline for these four tasks; squat proxy comparison remains separate."
+  ],
+  "dataset_sha256": "827e4579b9b4e880236a55dc9fcc7d05d11104145f11fd9ccc2c0765e418fe9e",
+  "pipeline_version": "multi_v2_109_visibility_masked_6fps"
+}

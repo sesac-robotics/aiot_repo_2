@@ -1,0 +1,82 @@
+{
+  "scope": "이번 대표 표본의 남은 작업. 보유 전체 데이터 부족을 확정한 보고가 아니다.",
+  "external_discovery_paused": true,
+  "reviewed_videos": 32,
+  "labeled_segments": 25,
+  "active_three_landmark_segments": 19,
+  "eligible_labeled_item_features": 18,
+  "feature_grade_distribution": {
+    "pushups/return_extension": {
+      "2": 7
+    },
+    "squats/trunk_balance": {
+      "2": 7
+    },
+    "shoulder/overhead_reach": {
+      "2": 1
+    },
+    "shoulder/lower_return": {
+      "2": 1
+    },
+    "shoulder/bilateral_timing": {
+      "2": 2
+    }
+  },
+  "labeled_item_feature_holds": [
+    {
+      "exercise": "pushups",
+      "reason": "front_view_feature_not_implemented",
+      "count": 1
+    },
+    {
+      "exercise": "squats",
+      "reason": "front_view_feature_not_implemented",
+      "count": 6
+    },
+    {
+      "exercise": "squats",
+      "reason": "['required_joints_not_simultaneously_observed_in_80_percent']",
+      "count": 1
+    },
+    {
+      "exercise": "shoulder",
+      "reason": "['required_joints_not_simultaneously_observed_in_80_percent']",
+      "count": 6
+    },
+    {
+      "exercise": "shoulder",
+      "reason": "['required_joints_not_simultaneously_observed_in_80_percent', 'required_measurement_unavailable']",
+      "count": 2
+    }
+  ],
+  "needs": [
+    {
+      "exercise": "pushups",
+      "next": "보유 오류 후보에서 상단 미복귀·지지 오류·골반 꺾임이 실제로 보이는 시도 우선 선정. 정면 하강 0 초안의 구도에 맞는 특징 개발.",
+      "not_resolved": "현재 추가 팔 펴기 특징 7건은 모두 등급 2라 오류 정도를 학습시키는 보강은 아직 아니다."
+    },
+    {
+      "exercise": "squats",
+      "next": "기존 정면의 좌우 균형 오류 후보를 집중 검토하고, 서기 복귀의 구도별 특징을 개발한다.",
+      "not_resolved": "의도된 하단 홀드나 영상 끝 잘림을 복귀 실패 라벨로 만들지 않았다. 이번 추가 좌우 균형 특징도 모두 등급 2이다."
+    },
+    {
+      "exercise": "shoulder",
+      "next": "보유 사선의 직접 등급과 Heavy 관절 관측 실패를 대조하고, 도달·양팔 차이가 관측되는 기존 오류 시도를 우선 선정한다.",
+      "not_resolved": "개발 정면 40개는 이미 라벨 목록에 있다. 사선 4개를 새로 확인했지만 관절 관측을 통과한 추가 항목 특징은 정상 등급뿐이다."
+    },
+    {
+      "exercise": "plank",
+      "next": "보유 QEVD·AI-Hub 등에서 골반·다리 접점이 보이는 구도를 우선 선별한다.",
+      "not_resolved": "이번 정면 7개는 측면 네 항목 총점으로 바꿀 수 없었다. 전체 후보가 불가능하다는 결론은 아니다."
+    },
+    {
+      "exercise": "ytw",
+      "next": "새 전경·팔 동작 초안 6개와 단계 구간을 별도 보관하고 이후 기존 후보의 오류 분포를 더 보강한다.",
+      "not_resolved": "네 항목을 모두 기록한 초안 3개 확보. W 규칙·기존 모델의 개선 검증은 이번에 하지 않았다."
+    }
+  ],
+  "existing_dataset_exhausted": false,
+  "active_models_updated": false,
+  "plank_ytw_previous_results_preserved": true
+}

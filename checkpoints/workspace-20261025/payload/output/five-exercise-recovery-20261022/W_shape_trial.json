@@ -1,0 +1,55 @@
+{
+  "comparison_sha256": "0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a",
+  "phase_trial_sha256": "772ca464993bf942ffaddaba2c34b908555bf31558cbc6009773b83a3cbd9f09",
+  "code_sha256": "e5a6c365635f33012eaa7eca41ff0eb9647071aeb6983d83cd1a7d10fd6ef0e4",
+  "candidate_policies": 64,
+  "training_records": 75,
+  "training_connected_groups": 64,
+  "selected_policy": {
+    "bend_good_deg": 20.0,
+    "bend_partial_deg": 8.0,
+    "hand_good_torso_ratio": 0.05,
+    "hand_partial_torso_ratio": -0.05,
+    "elbow_up_good_arm_ratio": 0.25,
+    "elbow_up_partial_arm_ratio": 0.5,
+    "symmetry_good_deg": 35.0,
+    "elbow_up_good_lower_ratio": -0.95,
+    "elbow_up_partial_lower_ratio": -1.0
+  },
+  "group_cv_before_MAE_grade": 0.44,
+  "group_cv_after_MAE_grade": 0.38666666666666666,
+  "fixed_development_records": 4,
+  "fixed_before_MAE_grade": 0.75,
+  "fixed_after_MAE_grade": 0.5,
+  "fixed_predictions": [
+    {
+      "id": "qevd_00105254",
+      "reference": 1,
+      "before": 2,
+      "after": 1
+    },
+    {
+      "id": "qevd_00196196",
+      "reference": 2,
+      "before": 1,
+      "after": 1
+    },
+    {
+      "id": "qevd_00265931",
+      "reference": 2,
+      "before": 1,
+      "after": 1
+    },
+    {
+      "id": "qevd_00265212",
+      "reference": 2,
+      "before": 2,
+      "after": 2
+    }
+  ],
+  "development_cases_informed_rule_structure": true,
+  "validation_targets_used_for_parameter_fitting": false,
+  "expert_ground_truth": false,
+  "independent_final_test": false,
+  "common_rule_promoted": false
+}

@@ -1,0 +1,232 @@
+{
+  "checked_at_utc": "2026-10-24T16:20:48.095910+00:00",
+  "cases": [
+    {
+      "rep": 2,
+      "points": {
+        "descent_range": {
+          "ai": 20.7,
+          "rule": 15.0
+        },
+        "standing_return": {
+          "ai": 15.6,
+          "rule": 20.0
+        },
+        "knee_inward": {
+          "ai": 21.8,
+          "rule": 30.0
+        },
+        "trunk_balance": {
+          "ai": 14.2,
+          "rule": 10.0
+        }
+      },
+      "knee_rule_evidence": {
+        "value": 1.0035852076234204,
+        "boundaries": [
+          0.8929185525450496,
+          0.8748053564315995
+        ],
+        "higher": true,
+        "near_boundary": false,
+        "explanation": "시작 대비 무릎 간격 하위값 1.004, 정상·부분 경계 0.893·0.875에 따라 2등급입니다."
+      },
+      "standing_state": {
+        "status": "close",
+        "ai_grade": 1.5567360905238175,
+        "ai_points": 15.6,
+        "standing_confirmed": true,
+        "standing_probability": 0.7783680452619087,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 0.8002728881840031,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.1199456562480039,
+              0.07066001890156436,
+              0.049207820878794495,
+              0.043071531554191876
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.7521144463787836,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.07438168068008959,
+              0.02476611175005804,
+              0.09898930228101888,
+              0.038598972303897305
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.7827168012229393,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.05801374228823641,
+              0.054867858932107605,
+              0.11265200427664857,
+              0.03230060104544889
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          33,
+          35
+        ],
+        "bottom_index": 23,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      },
+      "standing_summary": "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+      "raw_RGB_available": false
+    },
+    {
+      "rep": 6,
+      "points": {
+        "descent_range": {
+          "ai": 19.0,
+          "rule": 15.0
+        },
+        "standing_return": {
+          "ai": 20.0,
+          "rule": 20.0
+        },
+        "knee_inward": {
+          "ai": 3.3,
+          "rule": 0.0
+        },
+        "trunk_balance": {
+          "ai": 13.4,
+          "rule": 10.0
+        }
+      },
+      "knee_rule_evidence": {
+        "value": 0.756642871792345,
+        "boundaries": [
+          0.8929185525450496,
+          0.8748053564315995
+        ],
+        "higher": true,
+        "near_boundary": false,
+        "explanation": "시작 대비 무릎 간격 하위값 0.757, 정상·부분 경계 0.893·0.875에 따라 0등급입니다."
+      },
+      "standing_state": {
+        "status": "close",
+        "ai_grade": 1.9960473511197356,
+        "ai_points": 20.0,
+        "standing_confirmed": true,
+        "standing_probability": 0.9980236755598678,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 0.9967813383951167,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.0167805746658048,
+              0.017632462549103875,
+              0.03455144923449849,
+              0.00584975499405428
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9976750165560363,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.024269440018976997,
+              0.009468701293014862,
+              0.03373333931236311,
+              0.0001748397526434616
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9996146717284502,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.026889867651670743,
+              0.0057837095321461125,
+              0.0330393534904756,
+              0.013038787093538902
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          26,
+          28
+        ],
+        "bottom_index": 18,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      },
+      "standing_summary": "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+      "raw_RGB_available": false
+    }
+  ],
+  "rep6_low_total_is_not_low_return": true,
+  "model_or_threshold_changed": false,
+  "source_pose_modified": false
+}

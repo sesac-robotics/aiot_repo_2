@@ -1,0 +1,1150 @@
+{
+  "records": [
+    {
+      "id": "subject_011_push_up_good_side_recovery_window_8_direct_rep0",
+      "exercise": "pushups",
+      "split": "train",
+      "not_independent_evaluation": true,
+      "reference": {
+        "criterion_ids": [
+          "trunk_line",
+          "descent_range",
+          "return_extension",
+          "support"
+        ],
+        "criterion_weights": [
+          40,
+          30,
+          20,
+          10
+        ],
+        "criterion_levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "score": 100.0,
+        "rubric_version": "project-core-form-v1",
+        "expert_validated": false,
+        "label_source": "assistant_direct_temporal_sheet_review",
+        "review_method": "24장 시간순 표본 직접 검토. 스쿼트는 동기화 정면·측면. 연속 재생·전문가 검토 아님. 푸시업 13장 경계판 추가 확인.",
+        "note_ko": "상단–하강–상단 한 반복. 큰 몸통 꺾임 없이 손·발 지지가 보인다.",
+        "unit": "observable_project_core_points_0_100"
+      },
+      "prediction": {
+        "ai_levels": [
+          0.7605633802816901,
+          2.0,
+          2.0,
+          null
+        ],
+        "rule_levels": [
+          1,
+          2,
+          2,
+          null
+        ],
+        "ai_score": null,
+        "rule_score": null
+      },
+      "notes": [
+        {
+          "item": "trunk_line",
+          "eligible": true,
+          "measurement": 163.5979498038181,
+          "feature": [
+            163.08717738569385,
+            163.5979498038181,
+            165.10855072470255,
+            170.43286985568312,
+            175.37776169351233,
+            179.48124472688795,
+            179.56287803716148,
+            1.0
+          ],
+          "higher_is_better": true,
+          "side": "left",
+          "required_joints": [
+            11,
+            23,
+            27
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "side"
+        },
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "measurement": 56.397765817752976,
+          "feature": [
+            50.908632662743344,
+            56.397765817752976,
+            100.76670330620664,
+            139.8423850285244,
+            167.02732035752473,
+            172.48094421850934,
+            172.87122175574586,
+            1.0
+          ],
+          "higher_is_better": false,
+          "side": "left",
+          "required_joints": [
+            11,
+            13,
+            15
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "side"
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "measurement": 172.79316624829855,
+          "feature": [
+            169.9622947041954,
+            170.24214465023027,
+            171.0816944883349,
+            172.48094421850934,
+            172.6760829871276,
+            172.79316624829855,
+            172.83219400202222,
+            1.0
+          ],
+          "higher_is_better": true,
+          "side": "left",
+          "required_joints": [
+            11,
+            13,
+            15
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "side"
+        },
+        {
+          "item": "support",
+          "eligible": false,
+          "measurement": 0.14915511369042306,
+          "feature": [
+            0.10896398682487632,
+            0.14915511369042306,
+            0.2309862520238072,
+            0.235499718759107,
+            0.23647388933410532,
+            0.2461366615041077,
+            0.25083348798134714,
+            0.2857142857142857
+          ],
+          "higher_is_better": true,
+          "side": "left",
+          "required_joints": [
+            11,
+            15,
+            23,
+            25,
+            31
+          ],
+          "simultaneous_observation": 0.2857142857142857,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ],
+          "bank": "side"
+        }
+      ],
+      "videos": [
+        {
+          "view": "primary",
+          "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/previews/subject_011_push_up_good_side_recovery_window_8_direct_rep0/primary/overlay.mp4",
+          "decoded_frames": 21
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_126_rep4_direct_rep0",
+      "exercise": "squats",
+      "split": "train",
+      "not_independent_evaluation": true,
+      "reference": {
+        "criterion_ids": [
+          "descent_range",
+          "return_extension",
+          "knee_foot",
+          "trunk_balance"
+        ],
+        "criterion_weights": [
+          30,
+          20,
+          30,
+          20
+        ],
+        "criterion_levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 85.0,
+        "rubric_version": "project-core-form-v1",
+        "expert_validated": false,
+        "label_source": "assistant_direct_temporal_sheet_review",
+        "review_method": "24장 시간순 표본 직접 검토. 스쿼트는 동기화 정면·측면. 연속 재생·전문가 검토 아님.",
+        "note_ko": "분명히 하강하나 허벅지가 수평보다 위에 남는다. 서기 복귀·접지·정면 균형은 유지된다.",
+        "unit": "observable_project_core_points_0_100"
+      },
+      "prediction": {
+        "ai_levels": [
+          1.0440917286732148,
+          2.0,
+          1.9973060344827587,
+          2.0
+        ],
+        "rule_levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "ai_score": 85.62096644733961,
+        "rule_score": 85.0
+      },
+      "notes": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "measurement": 0.6347801089286804,
+          "feature": [
+            0.6323366165161133,
+            0.6347801089286804,
+            0.682637095451355,
+            0.8575139045715332,
+            0.9834039807319641,
+            0.99576336145401,
+            0.9977922439575195,
+            1.0
+          ],
+          "higher_is_better": false,
+          "side": "left",
+          "required_joints": [
+            11,
+            23,
+            25
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "side"
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "measurement": 162.37712852712352,
+          "feature": [
+            160.37274878584256,
+            160.74025380206325,
+            161.84276885072535,
+            162.0046754473269,
+            162.17303283699485,
+            162.37712852712352,
+            162.44516042383307,
+            1.0
+          ],
+          "higher_is_better": true,
+          "side": "left",
+          "required_joints": [
+            23,
+            25,
+            27
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "side"
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "measurement": 0.0005116835236549377,
+          "feature": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0005116835236549377,
+            0.005608506500720978,
+            1.0,
+            0.003085690326887873
+          ],
+          "higher_is_better": false,
+          "side": "left",
+          "required_joints": [
+            11,
+            12,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "measurement_kind": "maximum_medial_drift_torso_ratio_or_inward_frontal_bend_fraction_of_180_degrees_plus_relative_heel_lift",
+          "bank": "side"
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "measurement": 1.7890819989323417,
+          "feature": [
+            0.18173566175236672,
+            0.269861439857993,
+            0.5932450701055618,
+            1.099988347696281,
+            1.455282958198001,
+            1.7890819989323417,
+            2.0159760013404324,
+            1.0
+          ],
+          "higher_is_better": false,
+          "side": "front",
+          "required_joints": [
+            11,
+            12,
+            23,
+            24
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "front"
+        }
+      ],
+      "videos": [
+        {
+          "view": "primary",
+          "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/previews/rehab24_PM_126_rep4_direct_rep0/primary/overlay.mp4",
+          "decoded_frames": 41
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/previews/rehab24_PM_126_rep4_direct_rep0/front/overlay.mp4",
+          "decoded_frames": 41
+        }
+      ]
+    },
+    {
+      "id": "subject_006_shoulder_bad_front_recovery_window_16_direct_rep0",
+      "exercise": "shoulder",
+      "split": "train",
+      "not_independent_evaluation": true,
+      "reference": {
+        "criterion_ids": [
+          "overhead_reach",
+          "lower_return",
+          "bilateral_timing",
+          "frontal_trunk_hold"
+        ],
+        "criterion_weights": [
+          30,
+          25,
+          25,
+          20
+        ],
+        "criterion_levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "score": 100.0,
+        "rubric_version": "project-core-form-v1",
+        "expert_validated": false,
+        "label_source": "assistant_direct_temporal_sheet_review",
+        "review_method": "24장 시간순 표본 직접 검토. 스쿼트는 동기화 정면·측면. 연속 재생·전문가 검토 아님.",
+        "note_ko": "이 선택 반복에서는 양팔 머리 위 도달과 하단 복귀·동시 움직임·몸통 좌우 유지가 보인다. 제공자 오류 문자열을 점수로 사용하지 않았다.",
+        "unit": "observable_project_core_points_0_100"
+      },
+      "prediction": {
+        "ai_levels": [
+          1.9095716642278469,
+          2.0,
+          1.9620103911254239,
+          2.0
+        ],
+        "rule_levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "ai_score": 98.1687048524855,
+        "rule_score": 100.0
+      },
+      "notes": [
+        {
+          "item": "overhead_reach",
+          "eligible": true,
+          "measurement": 160.3350961474263,
+          "feature": [
+            59.76515559991139,
+            60.42552634974444,
+            62.14407196594989,
+            91.04866365446557,
+            144.31191480399212,
+            160.3350961474263,
+            164.19093507534726,
+            1.0
+          ],
+          "higher_is_better": true,
+          "side": "front",
+          "required_joints": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            23,
+            24
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "measurement_kind": "minimum_bilateral_elevation_and_elbow_extension_degrees",
+          "bank": "front"
+        },
+        {
+          "item": "lower_return",
+          "eligible": true,
+          "measurement": 80.2579637178628,
+          "feature": [
+            78.92465990523645,
+            78.96621785934218,
+            79.09089172165936,
+            80.2579637178628,
+            81.92243928727387,
+            82.94243958136481,
+            83.28243967939511,
+            1.0
+          ],
+          "higher_is_better": false,
+          "side": "front",
+          "required_joints": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            23,
+            24
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "front"
+        },
+        {
+          "item": "bilateral_timing",
+          "eligible": true,
+          "measurement": 0.07225117087364197,
+          "feature": [
+            0.0021266997791826725,
+            0.003203141735866666,
+            0.010113120079040527,
+            0.03126484155654907,
+            0.052084535360336304,
+            0.07225117087364197,
+            0.07952955365180969,
+            1.0
+          ],
+          "higher_is_better": false,
+          "side": "front",
+          "required_joints": [
+            11,
+            12,
+            15,
+            16,
+            23,
+            24
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "measurement_kind": "normalized_left_right_lift_phase_difference",
+          "bank": "front"
+        },
+        {
+          "item": "frontal_trunk_hold",
+          "eligible": true,
+          "measurement": 0.8745722583236053,
+          "feature": [
+            0.02152305354687105,
+            0.03055516979352077,
+            0.06265094171464079,
+            0.34395589293537704,
+            0.6135911285359402,
+            0.8745722583236053,
+            1.1188461822874378,
+            1.0
+          ],
+          "higher_is_better": false,
+          "side": "front",
+          "required_joints": [
+            11,
+            12,
+            23,
+            24
+          ],
+          "simultaneous_observation": 1.0,
+          "holds": [],
+          "bank": "front"
+        }
+      ],
+      "videos": [
+        {
+          "view": "primary",
+          "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/previews/subject_006_shoulder_bad_front_recovery_window_16_direct_rep0/primary/overlay.mp4",
+          "decoded_frames": 25
+        }
+      ]
+    }
+  ],
+  "browser_playback_verified": false,
+  "all_frames_decoded": true,
+  "comparison_sha256": "0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a",
+  "fixed_development_validation_grading_profile": [
+    {
+      "id": "subject_002_push_up_good_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 210.55292399978498,
+      "rule_grading_median_ms": 0.021592997654806823,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_002_push_up_bad_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension"
+      ],
+      "ai_grading_median_ms": 121.35843499709154,
+      "rule_grading_median_ms": 0.01709500065771863,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_004_push_up_good_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension"
+      ],
+      "ai_grading_median_ms": 140.44751199980965,
+      "rule_grading_median_ms": 0.013166001735953614,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_004_push_up_bad_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 199.19263100018725,
+      "rule_grading_median_ms": 0.01978799991775304,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_012_push_up_good_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 231.31068099974073,
+      "rule_grading_median_ms": 0.021239000489003956,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_push_up_good_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 179.53284200120834,
+      "rule_grading_median_ms": 0.021084000763949007,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_017_push_up_good_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 181.18057399988174,
+      "rule_grading_median_ms": 0.022176001948537305,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_012_push_up_bad_side",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_push_up_bad_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 221.0587210029189,
+      "rule_grading_median_ms": 0.03146800008835271,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_017_push_up_bad_side",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 210.5793429982441,
+      "rule_grading_median_ms": 0.030277999030658975,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "youtube_0xbZWGGEK3Q_failed_attempt",
+      "exercise": "pushups",
+      "common_item_ids": [
+        "trunk_line",
+        "descent_range",
+        "return_extension",
+        "support"
+      ],
+      "ai_grading_median_ms": 199.17506799902185,
+      "rule_grading_median_ms": 0.021944000764051452,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00109429",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00127403",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00157328",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00005826",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00023195",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00053514",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00253673_existing_review",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00177677_existing_review",
+      "exercise": "pushups",
+      "common_item_ids": [],
+      "ai_grading_median_ms": null,
+      "rule_grading_median_ms": null,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00003948",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 159.06744400126627,
+      "rule_grading_median_ms": 0.015249999705702066,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00014005",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 131.00051199944573,
+      "rule_grading_median_ms": 0.01562500256113708,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00023973",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 139.51239499874646,
+      "rule_grading_median_ms": 0.01577700095367618,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00032130",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 149.64959499775432,
+      "rule_grading_median_ms": 0.016106001567095518,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00010352",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 100.44248499980313,
+      "rule_grading_median_ms": 0.015960999007802457,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00241717_existing_review",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 139.951478002331,
+      "rule_grading_median_ms": 0.021927000489085913,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00039770_existing_review",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 160.41287899861345,
+      "rule_grading_median_ms": 0.015036999684525654,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_002_shoulder_bad_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "overhead_reach",
+        "lower_return",
+        "bilateral_timing",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 230.77257100158022,
+      "rule_grading_median_ms": 0.020627998310374096,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_shoulder_bad_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 140.74164900011965,
+      "rule_grading_median_ms": 0.015050998626975343,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_017_shoulder_good_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "overhead_reach",
+        "lower_return",
+        "bilateral_timing",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 289.74896900035674,
+      "rule_grading_median_ms": 0.02180099909310229,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_015_shoulder_good_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 60.43257499914034,
+      "rule_grading_median_ms": 0.008662002073833719,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_002_shoulder_good_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 99.77967899976647,
+      "rule_grading_median_ms": 0.01467899710405618,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_004_shoulder_good_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "overhead_reach",
+        "lower_return",
+        "bilateral_timing",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 139.7043209981348,
+      "rule_grading_median_ms": 0.011913998605450615,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_017_shoulder_bad_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 49.58425199947669,
+      "rule_grading_median_ms": 0.007367001671809703,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_004_shoulder_bad_front",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 30.431237999437144,
+      "rule_grading_median_ms": 0.0077170006989035755,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "youtube_U9ZRi5VwSo8_rep1",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "overhead_reach",
+        "lower_return",
+        "bilateral_timing",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 251.27067300127237,
+      "rule_grading_median_ms": 0.017875001503853127,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "youtube_U9ZRi5VwSo8_rep2",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "overhead_reach",
+        "lower_return",
+        "bilateral_timing",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 89.34364399829064,
+      "rule_grading_median_ms": 0.012847998732468113,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "youtube_OOe_HrNnQWw_peak_cropped",
+      "exercise": "shoulder",
+      "common_item_ids": [
+        "lower_return",
+        "frontal_trunk_hold"
+      ],
+      "ai_grading_median_ms": 127.60230200001388,
+      "rule_grading_median_ms": 0.013406999642029405,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "amanda_challenge",
+      "exercise": "plank",
+      "common_item_ids": [
+        "trunk_line",
+        "elbow_sagittal_position",
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "ai_grading_median_ms": 160.91061299812282,
+      "rule_grading_median_ms": 0.006750997272320092,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "ottobre_challenge",
+      "exercise": "plank",
+      "common_item_ids": [
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "ai_grading_median_ms": 111.29844300012337,
+      "rule_grading_median_ms": 0.007343998731812462,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "climber_prospective",
+      "exercise": "plank",
+      "common_item_ids": [
+        "trunk_line",
+        "elbow_sagittal_position",
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "ai_grading_median_ms": 110.97045499991509,
+      "rule_grading_median_ms": 0.005548001354327425,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "gotti_prospective",
+      "exercise": "plank",
+      "common_item_ids": [
+        "trunk_line",
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "ai_grading_median_ms": 59.99787600012496,
+      "rule_grading_median_ms": 0.0045960005081724375,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00105254",
+      "exercise": "ytw",
+      "common_item_ids": [
+        "t_reach",
+        "w_shape"
+      ],
+      "ai_grading_median_ms": 90.59253599843942,
+      "rule_grading_median_ms": 0.007732000085525215,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00196196",
+      "exercise": "ytw",
+      "common_item_ids": [
+        "t_reach",
+        "w_shape"
+      ],
+      "ai_grading_median_ms": 148.41898599843262,
+      "rule_grading_median_ms": 0.007727998308837414,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00265931",
+      "exercise": "ytw",
+      "common_item_ids": [
+        "t_reach",
+        "w_shape"
+      ],
+      "ai_grading_median_ms": 100.43955599758192,
+      "rule_grading_median_ms": 0.008360999345313758,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "qevd_00265212",
+      "exercise": "ytw",
+      "common_item_ids": [
+        "t_reach",
+        "w_shape"
+      ],
+      "ai_grading_median_ms": 100.52429099960136,
+      "rule_grading_median_ms": 0.0061209975683595985,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    }
+  ]
+}

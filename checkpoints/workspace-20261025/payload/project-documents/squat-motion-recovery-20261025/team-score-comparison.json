@@ -1,0 +1,518 @@
+{
+  "scope": "Same actual Train pixels, no new fit/labels; full pipeline with item-specific actual observation gates",
+  "rows": [
+    {
+      "source": "V10",
+      "before": [
+        {
+          "window": [
+            2,
+            27
+          ],
+          "score": {
+            "ai": {
+              "total": 76.8,
+              "maximum": 100,
+              "earned_subtotal": 76.8,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "rule": {
+              "total": 90.0,
+              "maximum": 100,
+              "earned_subtotal": 90.0,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 27.4,
+                "rule_points": 30.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 19.9,
+                "rule_points": 20.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": 18.0,
+                "rule_points": 30.0,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 11.5,
+                "rule_points": 10.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "window": [
+            31,
+            55
+          ],
+          "score": {
+            "ai": {
+              "total": 79.8,
+              "maximum": 100,
+              "earned_subtotal": 79.8,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "rule": {
+              "total": 100.0,
+              "maximum": 100,
+              "earned_subtotal": 100.0,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 28.6,
+                "rule_points": 30.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 20.0,
+                "rule_points": 20.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": 14.2,
+                "rule_points": 30.0,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 17.0,
+                "rule_points": 20.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "candidate": [
+        {
+          "window": [
+            2,
+            27
+          ],
+          "score": {
+            "ai": {
+              "total": 76.8,
+              "maximum": 100,
+              "earned_subtotal": 76.8,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "rule": {
+              "total": 90.0,
+              "maximum": 100,
+              "earned_subtotal": 90.0,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 27.4,
+                "rule_points": 30.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 19.9,
+                "rule_points": 20.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": 18.0,
+                "rule_points": 30.0,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 11.5,
+                "rule_points": 10.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "window": [
+            31,
+            55
+          ],
+          "score": {
+            "ai": {
+              "total": 81.0,
+              "maximum": 100,
+              "earned_subtotal": 81.0,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "rule": {
+              "total": 100.0,
+              "maximum": 100,
+              "earned_subtotal": 100.0,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 28.6,
+                "rule_points": 30.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 20.0,
+                "rule_points": 20.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": 14.2,
+                "rule_points": 30.0,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 18.2,
+                "rule_points": 20.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "window": [
+            56,
+            81
+          ],
+          "score": {
+            "ai": {
+              "total": null,
+              "maximum": 100,
+              "earned_subtotal": 67.6,
+              "assessed_weight": 70,
+              "full_score": false,
+              "estimated": true,
+              "status": "일부 항목 미평가"
+            },
+            "rule": {
+              "total": null,
+              "maximum": 100,
+              "earned_subtotal": 70.0,
+              "assessed_weight": 70,
+              "full_score": false,
+              "estimated": true,
+              "status": "일부 항목 미평가"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 28.8,
+                "rule_points": 30.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 20.0,
+                "rule_points": 20.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": null,
+                "rule_points": null,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다.",
+                  "관측·특징 또는 같은 기준의 평가 결과가 부족합니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 18.8,
+                "rule_points": 20.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "window": [
+            108,
+            134
+          ],
+          "score": {
+            "ai": {
+              "total": null,
+              "maximum": 100,
+              "earned_subtotal": 50.7,
+              "assessed_weight": 70,
+              "full_score": false,
+              "estimated": true,
+              "status": "일부 항목 미평가"
+            },
+            "rule": {
+              "total": null,
+              "maximum": 100,
+              "earned_subtotal": 70.0,
+              "assessed_weight": 70,
+              "full_score": false,
+              "estimated": true,
+              "status": "일부 항목 미평가"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 27.9,
+                "rule_points": 30.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 4.0,
+                "rule_points": 20.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": null,
+                "rule_points": null,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다.",
+                  "관측·특징 또는 같은 기준의 평가 결과가 부족합니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 18.8,
+                "rule_points": 20.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "V18",
+      "before": [
+        {
+          "window": [
+            35,
+            63
+          ],
+          "score": {
+            "ai": {
+              "total": 72.6,
+              "maximum": 100,
+              "earned_subtotal": 72.6,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "rule": {
+              "total": 75.0,
+              "maximum": 100,
+              "earned_subtotal": 75.0,
+              "assessed_weight": 100,
+              "full_score": true,
+              "estimated": true,
+              "status": "정면 관측 추정 · 검증 중"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 20.2,
+                "rule_points": 15.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 18.6,
+                "rule_points": 10.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": 16.4,
+                "rule_points": 30.0,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 17.4,
+                "rule_points": 20.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "candidate": [
+        {
+          "window": [
+            16,
+            67
+          ],
+          "score": {
+            "ai": {
+              "total": null,
+              "maximum": 100,
+              "earned_subtotal": 57.9,
+              "assessed_weight": 70,
+              "full_score": false,
+              "estimated": true,
+              "status": "일부 항목 미평가"
+            },
+            "rule": {
+              "total": null,
+              "maximum": 100,
+              "earned_subtotal": 55.0,
+              "assessed_weight": 70,
+              "full_score": false,
+              "estimated": true,
+              "status": "일부 항목 미평가"
+            },
+            "items": [
+              {
+                "id": "descent_range",
+                "ai_points": 23.5,
+                "rule_points": 15.0,
+                "reasons": [
+                  "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+                ]
+              },
+              {
+                "id": "standing_return",
+                "ai_points": 20.0,
+                "rule_points": 20.0,
+                "reasons": [
+                  "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+                  "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+                  "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+                ]
+              },
+              {
+                "id": "knee_inward",
+                "ai_points": null,
+                "rule_points": null,
+                "reasons": [
+                  "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다.",
+                  "관측·특징 또는 같은 기준의 평가 결과가 부족합니다."
+                ]
+              },
+              {
+                "id": "trunk_balance",
+                "ai_points": 14.4,
+                "rule_points": 20.0,
+                "reasons": [
+                  "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

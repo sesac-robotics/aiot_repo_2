@@ -1,0 +1,1755 @@
+{
+  "tasks": [
+    {
+      "exercise": "Y_only",
+      "condition": "경추 중립 또는 후인(retraction) 유지",
+      "train_n": 1020,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 520,
+        "0": 500
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 1020,
+        "balanced_accuracy": 0.8919615384615385,
+        "macro_f1": 0.8920755355823689
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z130",
+            "aihub_Z136",
+            "aihub_Z39",
+            "aihub_Z57",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.9291666666666667,
+            "macro_f1": 0.9291555972287336
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z111",
+            "aihub_Z135",
+            "aihub_Z23",
+            "aihub_Z54",
+            "aihub_Z87"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.8666666666666667,
+            "macro_f1": 0.8648268093494791
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z23",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z131",
+            "aihub_Z133",
+            "aihub_Z18",
+            "aihub_Z37",
+            "aihub_Z5",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 270,
+            "balanced_accuracy": 0.8516483516483517,
+            "macro_f1": 0.8527910975660902
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z133",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z137",
+            "aihub_Z4",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 270,
+            "balanced_accuracy": 0.9175824175824177,
+            "macro_f1": 0.9182313749242883
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-Y_only-joints24-0ff688d0.joblib",
+      "sha256": "bc008fb3028e66c9890c1855e4a36f314656339e50e1b80d393393fefa39a4d1",
+      "provider_validation": {
+        "n": 280,
+        "balanced_accuracy": 0.8214285714285714,
+        "macro_f1": 0.8206875352220913
+      }
+    },
+    {
+      "exercise": "Y_only",
+      "condition": "양 팔 높이 동일",
+      "train_n": 1020,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 515,
+        "0": 505
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 1020,
+        "balanced_accuracy": 0.6990291262135921,
+        "macro_f1": 0.6965985442329228
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z130",
+            "aihub_Z136",
+            "aihub_Z39",
+            "aihub_Z57",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.6625,
+            "macro_f1": 0.6620247222656861
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z111",
+            "aihub_Z135",
+            "aihub_Z23",
+            "aihub_Z54",
+            "aihub_Z87"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.7041666666666666,
+            "macro_f1": 0.6943552582016466
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z23",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z131",
+            "aihub_Z133",
+            "aihub_Z18",
+            "aihub_Z37",
+            "aihub_Z5",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 270,
+            "balanced_accuracy": 0.6777777777777778,
+            "macro_f1": 0.6754224758535878
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z133",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z137",
+            "aihub_Z4",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 270,
+            "balanced_accuracy": 0.7483516483516484,
+            "macro_f1": 0.7480887329239253
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-Y_only-joints24-e7fde283.joblib",
+      "sha256": "4c7f37de6c9522a2e9bcd3f6b111e0aa71590503b0f2babbe7db33c51f0545b6",
+      "provider_validation": {
+        "n": 280,
+        "balanced_accuracy": 0.7428571428571429,
+        "macro_f1": 0.7369382535622945
+      }
+    },
+    {
+      "exercise": "plank",
+      "condition": "몸통과 엉덩이의 정렬 유지",
+      "train_n": 1033,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 513,
+        "0": 520
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 1033,
+        "balanced_accuracy": 0.7988585245164193,
+        "macro_f1": 0.7985070707828501
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z39",
+            "aihub_Z57",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 275,
+            "balanced_accuracy": 0.7838624338624338,
+            "macro_f1": 0.7796945097201453
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z133",
+            "aihub_Z37",
+            "aihub_Z54",
+            "aihub_Z87"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.8208333333333333,
+            "macro_f1": 0.8203061064581846
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z132",
+            "aihub_Z137",
+            "aihub_Z5",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.7124999999999999,
+            "macro_f1": 0.7124550711048601
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z131",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z4",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 278,
+            "balanced_accuracy": 0.8702898550724638,
+            "macro_f1": 0.8703358208955223
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-plank-joints24-25a5dffb.joblib",
+      "sha256": "2a0850c754344ff1a31e52462b7838f0967f516917da261723085b51438dd846",
+      "provider_validation": {
+        "n": 280,
+        "balanced_accuracy": 0.7357142857142858,
+        "macro_f1": 0.7307552367586674
+      }
+    },
+    {
+      "exercise": "plank",
+      "condition": "상체의 지면으로부터 충분한 거리 유지",
+      "train_n": 1033,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 520,
+        "0": 513
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 1033,
+        "balanced_accuracy": 0.7123369320737742,
+        "macro_f1": 0.7122765062529013
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z39",
+            "aihub_Z57",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 275,
+            "balanced_accuracy": 0.7730158730158729,
+            "macro_f1": 0.7723509933774835
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z133",
+            "aihub_Z37",
+            "aihub_Z54",
+            "aihub_Z87"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.6875,
+            "macro_f1": 0.6814779423475075
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z132",
+            "aihub_Z137",
+            "aihub_Z5",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.7083333333333333,
+            "macro_f1": 0.70486965076242
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z131",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z4",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 278,
+            "balanced_accuracy": 0.6764492753623188,
+            "macro_f1": 0.6761081193040597
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-plank-joints24-77d9283a.joblib",
+      "sha256": "7fbd4156decb1b9165c0ed960f88975a3aa41c51e3c61b419f388b5e3a2e9bdf",
+      "provider_validation": {
+        "n": 280,
+        "balanced_accuracy": 0.6392857142857142,
+        "macro_f1": 0.6288275518105813
+      }
+    },
+    {
+      "exercise": "plank",
+      "condition": "팔꿈치가 어깨보다 안쪽에 위치하지 않음",
+      "train_n": 1033,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 515,
+        "0": 518
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 1033,
+        "balanced_accuracy": 0.6681935749896915,
+        "macro_f1": 0.665851852899709
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z39",
+            "aihub_Z57",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 275,
+            "balanced_accuracy": 0.68505291005291,
+            "macro_f1": 0.6822751357883694
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z133",
+            "aihub_Z37",
+            "aihub_Z54",
+            "aihub_Z87"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.6875,
+            "macro_f1": 0.685088962368131
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z132",
+            "aihub_Z137",
+            "aihub_Z5",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 240,
+            "balanced_accuracy": 0.6458333333333333,
+            "macro_f1": 0.6450877711859984
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z131",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z4",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 278,
+            "balanced_accuracy": 0.6538819875776397,
+            "macro_f1": 0.6500393391030684
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-plank-joints24-33dd81c6.joblib",
+      "sha256": "3f361ae46c42dc870c11dae0887f0ca11fe3dcf973f805c984b26889cadb28e6",
+      "provider_validation": {
+        "n": 280,
+        "balanced_accuracy": 0.6821428571428572,
+        "macro_f1": 0.6758542644935548
+      }
+    },
+    {
+      "exercise": "pushups",
+      "condition": "가슴의 충분한 이동",
+      "train_n": 4150,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 2075,
+        "0": 2075
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 4150,
+        "balanced_accuracy": 0.755421686746988,
+        "macro_f1": 0.7554205364530964
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z135",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.7289144050104384,
+            "macro_f1": 0.7286691796742376
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z18",
+            "aihub_Z54"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.7612321677105081,
+            "macro_f1": 0.7611056902078908
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z133",
+            "aihub_Z137",
+            "aihub_Z4",
+            "aihub_Z57",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.7670250896057347,
+            "macro_f1": 0.7670243413636174
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z136",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.7617154254037891,
+            "macro_f1": 0.7613421489304228
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-pushups-joints24-99476459.joblib",
+      "sha256": "107ed16e0e1dd843612356115eac4348e077708969a5d681059f14f032e1268b",
+      "provider_validation": {
+        "n": 1120,
+        "balanced_accuracy": 0.6276785714285714,
+        "macro_f1": 0.6125946552595103
+      }
+    },
+    {
+      "exercise": "pushups",
+      "condition": "고개 젖힘/숙임 여부",
+      "train_n": 4150,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 2076,
+        "0": 2074
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 4150,
+        "balanced_accuracy": 0.8079611689269662,
+        "macro_f1": 0.8078821885753462
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z135",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.8165601078636048,
+            "macro_f1": 0.8152846724275296
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z18",
+            "aihub_Z54"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.7496020354906054,
+            "macro_f1": 0.74527199320017
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z133",
+            "aihub_Z137",
+            "aihub_Z4",
+            "aihub_Z57",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.7829671476700828,
+            "macro_f1": 0.7807024096815998
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z136",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.8754685046071626,
+            "macro_f1": 0.8754359268791129
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-pushups-joints24-3a8aec03.joblib",
+      "sha256": "f8fadcdf1b6f16a0389928d5456a260a7150282b4bc63eec09b8782e5b25bb5b",
+      "provider_validation": {
+        "n": 1120,
+        "balanced_accuracy": 0.7714285714285714,
+        "macro_f1": 0.770725981083614
+      }
+    },
+    {
+      "exercise": "pushups",
+      "condition": "손의 위치 가슴 중앙 여부",
+      "train_n": 4150,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 2074,
+        "0": 2076
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 4150,
+        "balanced_accuracy": 0.8508494935925663,
+        "macro_f1": 0.8508208439550081
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z135",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.8290405358385525,
+            "macro_f1": 0.8285767849046075
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z18",
+            "aihub_Z54"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.832169885177453,
+            "macro_f1": 0.8316951482324061
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z133",
+            "aihub_Z137",
+            "aihub_Z4",
+            "aihub_Z57",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.8548387096774194,
+            "macro_f1": 0.8545228653826347
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z136",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.8817200502307596,
+            "macro_f1": 0.8817200502307596
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-pushups-joints24-9bfe5912.joblib",
+      "sha256": "f21bb0565e56cc248df3d4e814f33cbd1cb7427daa06ffd018b2867e2508880f",
+      "provider_validation": {
+        "n": 1120,
+        "balanced_accuracy": 0.7928571428571429,
+        "macro_f1": 0.792846573804786
+      }
+    },
+    {
+      "exercise": "pushups",
+      "condition": "이완시 팔꿈치 90도",
+      "train_n": 4150,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 2077,
+        "0": 2073
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 4150,
+        "balanced_accuracy": 0.7597539356111465,
+        "macro_f1": 0.7597503175467247
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z135",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.8102296450939457,
+            "macro_f1": 0.8102022618529796
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z18",
+            "aihub_Z54"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.7236408315935978,
+            "macro_f1": 0.7234347266342147
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z133",
+            "aihub_Z137",
+            "aihub_Z4",
+            "aihub_Z57",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.7300809352517985,
+            "macro_f1": 0.7293110936874228
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z136",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.7768817204301075,
+            "macro_f1": 0.7768772416938393
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-pushups-joints24-ec9b4c2d.joblib",
+      "sha256": "45710d7e04d401493b9d39c1e2c4d436a1c279bdffdae5c8638453c29ccacd36",
+      "provider_validation": {
+        "n": 1120,
+        "balanced_accuracy": 0.675,
+        "macro_f1": 0.6552610572174642
+      }
+    },
+    {
+      "exercise": "pushups",
+      "condition": "척추의 중립",
+      "train_n": 4150,
+      "train_groups": 26,
+      "class_counts": {
+        "1": 2075,
+        "0": 2075
+      },
+      "expert_ground_truth": false,
+      "status": "trained_experimental",
+      "cross_validation": {
+        "n": 4150,
+        "balanced_accuracy": 0.7520481927710843,
+        "macro_f1": 0.7520305552289247
+      },
+      "folds": [
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z106",
+            "aihub_Z111",
+            "aihub_Z135",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z75"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.7978079331941544,
+            "macro_f1": 0.795785438930795
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z109",
+            "aihub_Z111",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z133",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z137",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z4",
+            "aihub_Z5",
+            "aihub_Z57",
+            "aihub_Z58",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z1",
+            "aihub_Z110",
+            "aihub_Z130",
+            "aihub_Z134",
+            "aihub_Z18",
+            "aihub_Z54"
+          ],
+          "metrics": {
+            "n": 959,
+            "balanced_accuracy": 0.7079157967988865,
+            "macro_f1": 0.7044866264020707
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z107",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z136",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z54",
+            "aihub_Z58",
+            "aihub_Z75"
+          ],
+          "validation_groups": [
+            "aihub_Z109",
+            "aihub_Z133",
+            "aihub_Z137",
+            "aihub_Z4",
+            "aihub_Z57",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.7599907503460591,
+            "macro_f1": 0.7585531010743244
+          }
+        },
+        {
+          "train_groups": [
+            "aihub_Z1",
+            "aihub_Z106",
+            "aihub_Z109",
+            "aihub_Z110",
+            "aihub_Z111",
+            "aihub_Z130",
+            "aihub_Z133",
+            "aihub_Z134",
+            "aihub_Z135",
+            "aihub_Z137",
+            "aihub_Z18",
+            "aihub_Z23",
+            "aihub_Z37",
+            "aihub_Z4",
+            "aihub_Z54",
+            "aihub_Z57",
+            "aihub_Z75",
+            "aihub_Z87",
+            "aihub_Z98"
+          ],
+          "validation_groups": [
+            "aihub_Z107",
+            "aihub_Z131",
+            "aihub_Z132",
+            "aihub_Z136",
+            "aihub_Z39",
+            "aihub_Z5",
+            "aihub_Z58"
+          ],
+          "metrics": {
+            "n": 1116,
+            "balanced_accuracy": 0.7431783144912641,
+            "macro_f1": 0.7405347078937583
+          }
+        }
+      ],
+      "model": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/native-models/aihub-pushups-joints24-6a879c85.joblib",
+      "sha256": "482cd96c24efe2094e1a0b60805c916140f8e6cb5dbbf44352f9aa575ef9b6b9",
+      "provider_validation": {
+        "n": 1120,
+        "balanced_accuracy": 0.6982142857142857,
+        "macro_f1": 0.6953818027320364
+      }
+    }
+  ],
+  "source_sha256": "2e821de1a8167cf584faa97a406463f04e27ac3148f9776ba716ea1c78e69379",
+  "semantics": "Provider 2D joints and native boolean conditions, not raw-image network or project 100-point score. Y-only does not supervise T/W or sequence.",
+  "raw_training_images_matched": false,
+  "validation_kept_separate": true,
+  "unsupported_conditions": [
+    {
+      "condition": "엄지손가락 하늘방향",
+      "reason": "Thumb direction is not observable from supplied 2D keypoints; needs original images or hand landmarks."
+    }
+  ],
+  "feature_schema": "24 provider keypoints, torso-normalized spatial statistics and ordered time samples"
+}

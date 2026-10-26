@@ -1,0 +1,20 @@
+{
+  "frozen_at": "2026-10-24T12:56:39.299141+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/return-shared-extension-v1-20261024",
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "Train_sha256": "4d1f8e6405994c6aa1edc0ab40190206c1ab282a3197e795588acc979d2dff56",
+  "Test_sha256": "4578bef6de2b98b9649f58691c0abdbe2fe9856699f0de150d5b4ee111de50a2",
+  "hypothesis": "Generic unconstrained classifiers can treat a nearly straight arm as an error due to quantile spread or visibility. Require nonnegative coefficients for angular deficits and forbid visibility as a severity cue.",
+  "bank": "observed_arm_extension_shared_v1",
+  "candidate_C": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "selection": "Train-only nested group CV and <=5% normal-FP priority, followed by error recall and balanced group MAE; threshold from Train group-held probabilities only",
+  "diagnostic_Test_previously_exposed_and_used_for_root_cause_analysis": true,
+  "independent_Test_claim": false,
+  "Test_not_used_in_fit_or_numeric_parameter_selection": true,
+  "new_failure_labels": 0,
+  "production_replacement": false
+}

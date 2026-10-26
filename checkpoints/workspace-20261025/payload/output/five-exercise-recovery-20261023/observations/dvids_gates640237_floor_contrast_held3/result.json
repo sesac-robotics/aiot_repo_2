@@ -1,0 +1,132 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "plank",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "side_video",
+      "measured": 163.45429586736032,
+      "feature": null,
+      "reasons": [
+        "item_not_reviewed_as_observable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "elbow_sagittal_position",
+      "weight": 25,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "side_video",
+      "measured": 0.4405939996886632,
+      "feature": null,
+      "reasons": [
+        "item_not_reviewed_as_observable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "leg_and_body_support",
+      "weight": 20,
+      "ai_grade": 1.928342277063627,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.9283422770636269,
+      "observed": true,
+      "bank": "side_support_clearance_v1",
+      "measured": [
+        160.58537369587532,
+        0.13627159183877013,
+        0.0679405208679842
+      ],
+      "feature": [
+        160.33071992748077,
+        160.58537369587532,
+        161.5802674572923,
+        163.73513306739582,
+        165.13888191594805,
+        165.35005337123286,
+        165.48373148175247,
+        0.13617448228680273,
+        0.13627159183877013,
+        0.14196778709249006,
+        0.1451585105944065,
+        0.14861767597715841,
+        0.16054003207627707,
+        0.16869940022056198,
+        0.06734223998965495,
+        0.0679405208679842,
+        0.07097151523328532,
+        0.07446943014854954,
+        0.09636579589158875,
+        0.11945158939881757,
+        0.14082374132831868,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support_continuity",
+      "weight": 15,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "side_video",
+      "measured": 5.1530115542717,
+      "feature": null,
+      "reasons": [
+        "continuity_shorter_than_three_seconds",
+        "item_not_reviewed_as_observable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": null,
+  "rule_score": null,
+  "ai_minus_rule": null,
+  "complete_attempt_reviewed": false,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 10.106258999712736,
+    "ai": 38.175220000084664,
+    "rule": 0.00319600030707079
+  },
+  "limitations": [
+    "79-segment candidate remains experimental; 17-segment baseline scored better on two reused total-score cases.",
+    "Repeated hold windows are concentrated in few source recordings.",
+    "Joint geometry does not certify body contact or load.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_640237_side.mkv",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 6.07540823699992,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

@@ -1,0 +1,108 @@
+{
+  "source": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2",
+  "source_json_sha256": {
+    "labels": "98f1e8352d0f8537bdbb8084a715d1ef4a5f37fc2a8803696b2b4cfb0f9586df",
+    "summary": "26edd8c8b01facdb4061354b63120c9f77e947cafbdd8c07a7d485a133832a17",
+    "rubrics": "0d4f94e879da954ad971425b4e13e1d7cf4abc7734c4fdff649ba4d6768616cb",
+    "verification": "9398b4919c2e15faf50712f87d5493f2a92a5dfe125269b16af57af133a579c3",
+    "qevd_inventory": "efe97c685ff8ccfaee550e9db4f70618c705e867aa4f308543137b21ff424da4",
+    "usage_and_input_contract": "a46c066a6328f2ce76978ae7d752ab53889c26dd39a225518968d8c9e0dbd8b5"
+  },
+  "records": 259,
+  "source_video_paths_checked": 223,
+  "supplemental_records": 30,
+  "supplemental_sha256": "81fd9f0f47e8585932fe1e56d8f653b43072ce878d101d16a7571ba062dbe102",
+  "structural_errors": [],
+  "split_conflicts": {},
+  "exercises": {
+    "pushups": {
+      "review_records": 78,
+      "total_label_candidates": 28,
+      "extraction_ready": 28,
+      "eligible_by_original_split": {
+        "train": 17,
+        "validation": 6,
+        "test": 5
+      },
+      "holds": {
+        "label_total_ineligible": 50,
+        "view_contract_inferred_requires_visual_confirmation": 40
+      },
+      "independent_final_test_count": 0
+    },
+    "squats": {
+      "review_records": 55,
+      "total_label_candidates": 31,
+      "extraction_ready": 31,
+      "eligible_by_original_split": {
+        "train": 17,
+        "validation": 7,
+        "test": 7
+      },
+      "holds": {
+        "label_total_ineligible": 24,
+        "synchronized_front_missing": 22,
+        "view_contract_inferred_requires_visual_confirmation": 22
+      },
+      "independent_final_test_count": 0
+    },
+    "plank": {
+      "review_records": 50,
+      "total_label_candidates": 12,
+      "extraction_ready": 11,
+      "eligible_by_original_split": {
+        "train": 12
+      },
+      "holds": {
+        "label_total_ineligible": 38,
+        "view_contract_inferred_requires_visual_confirmation": 39,
+        "reference_only": 12,
+        "subject_roi_not_yet_verified_for_extractor": 8
+      },
+      "independent_final_test_count": 0
+    },
+    "ytw": {
+      "review_records": 36,
+      "total_label_candidates": 21,
+      "extraction_ready": 14,
+      "eligible_by_original_split": {
+        "train": 18,
+        "validation": 3
+      },
+      "holds": {
+        "label_total_ineligible": 15,
+        "view_contract_inferred_requires_visual_confirmation": 12,
+        "direct_visual_view_contract_mismatch": 2
+      },
+      "independent_final_test_count": 0
+    },
+    "shoulder": {
+      "review_records": 40,
+      "total_label_candidates": 19,
+      "extraction_ready": 18,
+      "eligible_by_original_split": {
+        "train": 14,
+        "validation": 5
+      },
+      "holds": {
+        "direct_visual_view_contract_mismatch": 1,
+        "label_total_ineligible": 21,
+        "view_contract_inferred_requires_visual_confirmation": 8
+      },
+      "independent_final_test_count": 0
+    }
+  },
+  "passed": true,
+  "all_five_ready_for_training": false,
+  "expert_validated": false,
+  "source_licenses_reaudited": false,
+  "direct_visual_reviews_by_audit_script": 0,
+  "separately_recorded_view_rechecks": 14,
+  "notes_ko": [
+    "구조·해시 자동 감사이며 영상 직접 재검토가 아니다.",
+    "검증 JSON의 기존 통과 표시는 현재 모델 정확도가 아니다.",
+    "훈련·검증·시험 기존 배정은 변경하지 않았다.",
+    "같은 해시·식별자의 충돌을 검사하나 미식별 중복은 남는다.",
+    "출처 이용 조건 재확인과 동기화·수행자 확인이 별도로 필요하다."
+  ]
+}

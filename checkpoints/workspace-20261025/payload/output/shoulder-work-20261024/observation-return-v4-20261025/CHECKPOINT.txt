@@ -1,0 +1,2 @@
+최종 검증/통합 근거는 final-v1/을 사용한다. 이 상위 폴더의 첫 실행은 개발 중간 체크포인트다.
+중간 replay.json의 eligible_for_future_feature_fit은 품질 통과만을 뜻하는 잘못된 필드명으로 validation도 포함했다. 실제 학습은 하지 않았다. final-v1에서는 feature_quality_accepted와 Train_role_feature_quality_accepted로 분리했다. 16행 품질통과=Train14+validation2이며 validation2 학습불가, 모든행 실제fit0. 코드와 중간기록은 보존했다.

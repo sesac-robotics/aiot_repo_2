@@ -1,0 +1,238 @@
+{
+  "created": "2024-08-28T13:18:09.544152+00:00",
+  "modified": "2026-10-07T21:41:43.370486+00:00",
+  "id": 13305826,
+  "conceptrecid": "13305825",
+  "doi": "10.5281/zenodo.13305826",
+  "conceptdoi": "10.5281/zenodo.13305825",
+  "doi_url": "https://doi.org/10.5281/zenodo.13305826",
+  "metadata": {
+    "title": "REHAB24-6: A multi-modal dataset of physical rehabilitation exercises",
+    "doi": "10.5281/zenodo.13305826",
+    "publication_date": "2024-08-28",
+    "description": "<p>To enable the evaluation of HPE models and the development of exercise feedback systems, we produced a new rehabilitation dataset (REHAB24-6). The main focus is on a diverse range of exercises, views, body heights, lighting conditions, and exercise mistakes. With the publicly available RGB videos, skeleton sequences, repetition segmentation, and exercise correctness labels, this dataset offers the most comprehensive testbed for exercise-correctness-related tasks.</p>\n<h2>Contents</h2>\n<ul>\n<li>65 recordings (184,825 frames, 30 FPS):\n<ul>\n<li>RGB videos from two cameras (<code>videos.zip</code>, horizontal = Camera17, vertical = Camera18);</li>\n<li>3D and 2D projected positions of 41 motion capture marker (<code>&lt;2/3&gt;d_markers.zip</code>, marker labels in <code>marker_names.txt</code>);</li>\n<li>3D and 2D projected positions of 26 skeleton joints (<code>&lt;2/3&gt;d_joints.zip</code>, joint labels in <code>joint_names.txt</code>);</li>\n</ul>\n</li>\n<li>Annotation of 1,072 exercise repetitions (<code>Segmentation.csv</code>, indexed based <strong>only on</strong> 30 FPS data, described in <code>Segmentation.txt</code>):\n<ul>\n<li>Temporal segmentation (start/end frame, most between 2&ndash;5 seconds);</li>\n<li>Binary correctness label (around 90 from each category in each exercise, except Ex3 with around 50);</li>\n<li>Exercise direction (around 90 from each direction in each exercise);</li>\n<li>Lighting conditions label.</li>\n</ul>\n</li>\n</ul>\n<h2>Recording Conditions</h2>\n<p>Our laboratory setup included 18 synchronized sensors (2 RGB video cameras, 16 ultra-wide motion capture cameras) spread around an 8.2 &times; 7 m room. The RGB cameras were located in the corners of the room, one in a horizontal position (hor.), providing a larger field of view (FoV), and one in a vertical (ver.), resulting in a narrower FoV. Both types of cameras were synchronized with a sampling frequency of 30 frames per second (FPS).</p>\n<p>The subjects wore motion capture body suits with 41 markers attached to them, which were detected by optical cameras. The OptiTrack Motive 2.3.0 software inferred the 3D positions of the markers in virtual centimeters and converted them into a skeleton with 26 joints, forming our human pose 3D ground truth (GT).</p>\n<p>To acquire a 2D version of the ground truth in pixel coordinates, we applied a projection of the virtual coordinates into the camera using the simplified pinhole model. We estimated the parameters for this projection as follows. First, the virtual position of the cameras was estimated using measuring tape and knowledge of the virtual origin. Then, the orientation of the cameras was optimized by matching the virtual marker positions with their position in the videos.</p>\n<p>We also simulated changes in lighting conditions: a few videos were shot in the natural evening light, which resulted in worse visibility, while the rest were under artificial lighting.</p>\n<h2>Exercises</h2>\n<p>10 subjects participated in our recording and consented to release the data publicly: 6 males and 4 females of different ages (from 25 to 50) and fitness levels. A physiotherapist instructed the subjects on how to perform the exercises so that at least five repetitions were done in what he deemed the correct way and five more incorrectly. The participants had a certain degree of freedom, e.g., in which leg they used in Ex4 and Ex5. Similarly, the physiotherapist suggested different exercise mistakes for each subject.</p>\n<ul>\n<li><strong>Ex1 = Arm abduction</strong>: sideway raising of the straightened right arm;</li>\n<li><strong>Ex2 = Arm VW</strong>: fluent transition of arms between V (arms straight up) and W (elbows down, hands up) shape;</li>\n<li><strong>Ex3 = Push-ups</strong>: push-ups with hands on a table;</li>\n<li><strong>Ex4 = Leg abduction</strong>: sideway raising of the straightened leg;</li>\n<li><strong>Ex5 = Leg lunge</strong>: pushing a knee of the back leg down while keeping a right angle on the front knee;</li>\n<li><strong>Ex6 = Squats</strong>.</li>\n</ul>\n<p>Every exercise was also executed in two directions, resulting in different views of the subject depending on the camera. Facing the horizontal camera resulted in a front view for that camera and a profile from the other. Facing the wall between the cameras shows the subject from half-profile in both cameras.&nbsp; A rare direction, only used for push-ups due to the use of the table, was facing the vertical camera, with the views being reversed compared to the first orientation.</p>\n<h2>Citation</h2>\n<p>Cite the related conference paper:</p>\n<p>Černek, A., Sedmidubsky, J., Budikova P.: REHAB24-6: Physical Therapy Dataset for Analyzing Pose Estimation Methods. 17th International Conference on Similarity Search and Applications (SISAP). Springer, 14 pages, 2024.</p>\n<h2>License</h2>\n<p>This dataset is for academic or non-profit organization noncomercial research use only. By using you agree to appropriately reference the paper above in any publication making of its use. For comercial purposes contact us at info@visioncraft.ai</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Černek, Andrej",
+        "affiliation": "Masaryk University",
+        "orcid": "0009-0002-4769-5690"
+      },
+      {
+        "name": "Sedmidubsky, Jan",
+        "affiliation": "Masaryk University",
+        "orcid": "0000-0002-7668-8521"
+      },
+      {
+        "name": "Budikova, Petra",
+        "affiliation": "VisionCraft s.r.o.",
+        "orcid": "0000-0003-1523-1744"
+      },
+      {
+        "name": "Jánošová, Miriama",
+        "affiliation": "Masaryk University",
+        "orcid": "0009-0008-4807-1023"
+      },
+      {
+        "name": "Katzer, Lukáš",
+        "affiliation": "4D Fyzioterapie"
+      },
+      {
+        "name": "Procházka, Michal",
+        "affiliation": "VisionCraft s.r.o.",
+        "orcid": "0000-0001-8376-9533"
+      }
+    ],
+    "keywords": [
+      "pose estimation",
+      "motion capture",
+      "rehabilitation exercise"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.23018127",
+        "relation": "isContinuedBy",
+        "resource_type": "dataset",
+        "scheme": "doi"
+      }
+    ],
+    "dates": [
+      {
+        "type": "collected",
+        "description": "Recorded videos"
+      },
+      {
+        "type": "created",
+        "description": "Finished annotations"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-nc-4.0"
+    },
+    "grants": [
+      {
+        "code": "FW09020055",
+        "internal_id": "04v0fk911::FW09020055",
+        "funder": {
+          "name": "Technology Agency of the Czech Republic"
+        },
+        "title": "VisioTherapy: Supporting physiotherapy treatments using computer-based movement analysis",
+        "url": "https://starfos.tacr.cz/en/projekty/FW09020055"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "13305825"
+          }
+        }
+      ]
+    }
+  },
+  "title": "REHAB24-6: A multi-modal dataset of physical rehabilitation exercises",
+  "links": {
+    "self": "https://zenodo.org/api/records/13305826",
+    "self_html": "https://zenodo.org/records/13305826",
+    "preview_html": "https://zenodo.org/records/13305826?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.13305826",
+    "self_doi": "https://doi.org/10.5281/zenodo.13305826",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.13305826",
+    "reserve_doi": "https://zenodo.org/api/records/13305826/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/13305825",
+    "parent_html": "https://zenodo.org/records/13305825",
+    "parent_doi": "https://doi.org/10.5281/zenodo.13305825",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.13305825",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:13305826/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:13305826/sequence/default",
+    "files": "https://zenodo.org/api/records/13305826/files",
+    "media_files": "https://zenodo.org/api/records/13305826/media-files",
+    "latest": "https://zenodo.org/api/records/13305826/versions/latest",
+    "latest_html": "https://zenodo.org/records/13305826/latest",
+    "versions": "https://zenodo.org/api/records/13305826/versions",
+    "draft": "https://zenodo.org/api/records/13305826/draft",
+    "access_links": "https://zenodo.org/api/records/13305826/access/links",
+    "access_grants": "https://zenodo.org/api/records/13305826/access/grants",
+    "access_users": "https://zenodo.org/api/records/13305826/access/users",
+    "access_request": "https://zenodo.org/api/records/13305826/access/request",
+    "access": "https://zenodo.org/api/records/13305826/access",
+    "communities": "https://zenodo.org/api/records/13305826/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/13305826/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/13305826/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/13305826/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/13305826/quota-increase",
+    "requests": "https://zenodo.org/api/records/13305826/requests"
+  },
+  "updated": "2026-10-07T21:41:43.370486+00:00",
+  "recid": "13305826",
+  "revision": 6,
+  "files": [
+    {
+      "id": "caf39c05-f7ed-4712-bc11-78a7ef7bfb22",
+      "key": "3d_markers.zip",
+      "size": 668016975,
+      "checksum": "md5:1c84d3729af71351f5ab44965c989713",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/3d_markers.zip/content"
+      }
+    },
+    {
+      "id": "819f20df-b24d-44c8-84ea-17398f04a8dd",
+      "key": "2d_markers.zip",
+      "size": 1106241715,
+      "checksum": "md5:bbac9590be26025cd4a3d8e8bd0adc45",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/2d_markers.zip/content"
+      }
+    },
+    {
+      "id": "12972a26-16a2-489c-b165-9c3ff2bf1457",
+      "key": "3d_joints.zip",
+      "size": 551298977,
+      "checksum": "md5:c75ae3fc13fcf16d7f4ca36b93849c74",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/3d_joints.zip/content"
+      }
+    },
+    {
+      "id": "068aa6f7-97c9-4219-b878-a53f88162a05",
+      "key": "videos.zip",
+      "size": 2651613914,
+      "checksum": "md5:ed183a245a1b171638e422f7a288e5a8",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/videos.zip/content"
+      }
+    },
+    {
+      "id": "12550f3a-b60a-4f5e-826e-e03bfdc12948",
+      "key": "joints_names.txt",
+      "size": 395,
+      "checksum": "md5:3f04a37cce43086b1ea1fa49f1e4514f",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/joints_names.txt/content"
+      }
+    },
+    {
+      "id": "3ca5ca93-cefe-413c-b162-0c77382ef6d8",
+      "key": "marker_names.txt",
+      "size": 581,
+      "checksum": "md5:40d7171ee72d44f40dfe54f941f0e083",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/marker_names.txt/content"
+      }
+    },
+    {
+      "id": "d6f8b7cd-9218-4a52-bbe3-36cad796ace1",
+      "key": "Segmentation.csv",
+      "size": 53290,
+      "checksum": "md5:90b8fbd7445dd050bf27b17126c78fbe",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/Segmentation.csv/content"
+      }
+    },
+    {
+      "id": "0c2acacc-3ed7-4746-af84-b40c58908882",
+      "key": "Segmentation.txt",
+      "size": 1729,
+      "checksum": "md5:5f2a5b886c6f794f03e1a8f642738c86",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/Segmentation.txt/content"
+      }
+    },
+    {
+      "id": "f91960b3-5c31-4c23-a26b-d8a55a718364",
+      "key": "2d_joints.zip",
+      "size": 693401748,
+      "checksum": "md5:dbfbc09d3f087482abc3f6c23bcf48bd",
+      "links": {
+        "self": "https://zenodo.org/api/records/13305826/files/2d_joints.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1172823"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 14538,
+    "unique_downloads": 9013,
+    "views": 10903,
+    "unique_views": 9517,
+    "version_downloads": 14538,
+    "version_unique_downloads": 9013,
+    "version_unique_views": 9517,
+    "version_views": 10903
+  },
+  "state": "done",
+  "submitted": true
+}

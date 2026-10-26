@@ -1,0 +1,895 @@
+{
+  "old_training_records": 10,
+  "new_training_records": 2,
+  "total_training_records": 12,
+  "training_person_groups": 9,
+  "train_total_score_counts": {
+    "100.0": 9,
+    "40.0": 2,
+    "60.0": 1
+  },
+  "excluded": [],
+  "LOPO_predictions": [
+    {
+      "id": "dvids_navy773312_2997_3087",
+      "held_person": "dvids_773312_single_performer",
+      "target_score": 40.0,
+      "before_ai": 55.703125,
+      "after_ai": 100.0,
+      "rule_score": 37.5,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          0,
+          1,
+          1,
+          2
+        ],
+        "score": 37.5,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 153.60620806822078,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.2848859595170087,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 155.52485692507437,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 4.334419894324412,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "dvids_navy773312_3656_3746",
+      "held_person": "dvids_773312_single_performer",
+      "target_score": 100.0,
+      "before_ai": 54.8828125,
+      "after_ai": 100.0,
+      "rule_score": 100.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "score": 100.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 175.1620891855881,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.12809179267614512,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 172.25725093228834,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 5.439127543389219,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "dvids_fao947417_background_5430_5520",
+      "held_person": "dvids_947417_background_black_beanie",
+      "target_score": 100.0,
+      "before_ai": 90.625,
+      "after_ai": 91.5625,
+      "rule_score": 90.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          2,
+          2,
+          1,
+          2
+        ],
+        "score": 90.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 178.219629376004,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.040529742234820726,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 163.05923247679885,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 2.808876464776091,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "dvids_airforce_300_390",
+      "held_person": "dvids_airforce_target_performer",
+      "target_score": 100.0,
+      "before_ai": 100.0,
+      "after_ai": 87.27272727272724,
+      "rule_score": 100.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "score": 100.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "left_line_deg",
+            "percentile": 10,
+            "measured": 179.5941279842181,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "left_elbow_offset",
+            "percentile": 90,
+            "measured": 0.06923695081656109,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "left_knee_deg",
+            "percentile": 10,
+            "measured": 175.15462315498652,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 0.7877023406322223,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "dvids_gates640237_side_75_165",
+      "held_person": "dvids_gysgt_gates",
+      "target_score": 100.0,
+      "before_ai": 97.1875,
+      "after_ai": 89.2471590909091,
+      "rule_score": 80.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 80.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 163.56758374888335,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.1265917120019721,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 175.2041409722045,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 0.9729179294779442,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "dvids_navy805472_599_689",
+      "held_person": "dvids_navy805472_performer",
+      "target_score": 100.0,
+      "before_ai": 100.0,
+      "after_ai": 89.84848484848482,
+      "rule_score": 70.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "score": 70.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "left_line_deg",
+            "percentile": 10,
+            "measured": 163.6375524173008,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "left_elbow_offset",
+            "percentile": 90,
+            "measured": 0.0954415597585596,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "left_knee_deg",
+            "percentile": 10,
+            "measured": 157.35971956247334,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 2.640942166264182,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "youtube_avid_normal",
+      "held_person": "youtube_channel_UC7_LFnyBTIbN9e6p98YgIgw",
+      "target_score": 100.0,
+      "before_ai": 100.0,
+      "after_ai": 95.90909090909089,
+      "rule_score": 80.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 80.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 165.45492168928496,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.09582197916519929,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 165.20981533571708,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 5.42583464605039,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "youtube_jonple_error",
+      "held_person": "youtube_channel_UCIjeq5EDjLxytQBHkv_erMw",
+      "target_score": 40.0,
+      "before_ai": 79.08203125,
+      "after_ai": 78.65972222222223,
+      "rule_score": 80.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 80.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 161.24742099662657,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.10202341742063531,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 173.18897967223918,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 2.7047234779158202,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "youtube_jonple_normal",
+      "held_person": "youtube_channel_UCIjeq5EDjLxytQBHkv_erMw",
+      "target_score": 100.0,
+      "before_ai": 82.36328125,
+      "after_ai": 69.86458333333334,
+      "rule_score": 60.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "score": 60.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 152.8166718665375,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.04540814200953977,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 174.66161877543294,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 7.367744760851707,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "followup_fitness_basic",
+      "held_person": "youtube_channel_UCi989eEZfJMqxlJslH6NL6Q",
+      "target_score": 100.0,
+      "before_ai": 100.0,
+      "after_ai": 100.0,
+      "rule_score": 80.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 80.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "left_line_deg",
+            "percentile": 10,
+            "measured": 159.27129225347323,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "left_elbow_offset",
+            "percentile": 90,
+            "measured": 0.1044888305752686,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "left_knee_deg",
+            "percentile": 10,
+            "measured": 176.370577978015,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 3.54857158490546,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "followup_fitness_highhip",
+      "held_person": "youtube_channel_UCi989eEZfJMqxlJslH6NL6Q",
+      "target_score": 60.0,
+      "before_ai": 100.0,
+      "after_ai": 100.0,
+      "rule_score": 60.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "score": 60.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "left_line_deg",
+            "percentile": 10,
+            "measured": 126.99341392453937,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "left_elbow_offset",
+            "percentile": 90,
+            "measured": 0.08393631254536038,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "left_knee_deg",
+            "percentile": 10,
+            "measured": 175.8402333967956,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 3.8870232342184465,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "youtube_chris_basic",
+      "held_person": "youtube_chris_ellerby_hemmings",
+      "target_score": 100.0,
+      "before_ai": 99.53125,
+      "after_ai": 98.4090909090909,
+      "rule_score": 100.0,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "score": 100.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 171.06279492845462,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.11898532671108529,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 171.6769208572652,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 3.2496620334102317,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    }
+  ],
+  "LOPO_metrics": {
+    "before_ai": {
+      "records": 12,
+      "MAE_points": 14.182942708333334
+    },
+    "after_ai": {
+      "records": 12,
+      "MAE_points": 18.045507154882163
+    },
+    "rule_score": {
+      "records": 12,
+      "MAE_points": 15.208333333333334
+    }
+  },
+  "new_validation": [
+    {
+      "id": "followup_amanda_normal",
+      "target_score": 100.0,
+      "before_ai": 100.0,
+      "after_ai": 96.015625,
+      "rule_score": 87.5,
+      "rule_details": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          2,
+          1,
+          2,
+          2
+        ],
+        "score": 87.5,
+        "evidence": {
+          "trunk_line": {
+            "channel": "left_line_deg",
+            "percentile": 10,
+            "measured": 172.95542744967852,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "left_elbow_offset",
+            "percentile": 90,
+            "measured": 0.20475675737587806,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "left_knee_deg",
+            "percentile": 10,
+            "measured": 173.0182751169072,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 1.0504629697640837,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      }
+    }
+  ],
+  "new_validation_metrics": {
+    "before_ai": {
+      "records": 1,
+      "MAE_points": 0.0
+    },
+    "after_ai": {
+      "records": 1,
+      "MAE_points": 3.984375
+    },
+    "rule_score": {
+      "records": 1,
+      "MAE_points": 12.5
+    }
+  },
+  "new_validation_has_error_examples": false,
+  "model_sha256": "4fa3bc3f1718bee3ba7098c051c48c0751546e20f6d2bfaa6a76fde12af18f1d",
+  "common_model_replaced": false,
+  "all_five_final_test": false,
+  "expert_validated": false,
+  "source_null_fallback_fixed": true,
+  "autonomous_prospective_sources_used_for_fitting": false
+}

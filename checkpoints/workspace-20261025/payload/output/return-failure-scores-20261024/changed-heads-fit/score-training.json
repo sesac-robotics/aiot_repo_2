@@ -1,0 +1,1022 @@
+{
+  "heads": [
+    {
+      "key": [
+        "pushups",
+        "return_extension",
+        "front"
+      ],
+      "train_count": 67,
+      "validation_count": 5,
+      "grade_counts": {
+        "2": 58,
+        "1": 9
+      },
+      "normal_groups": 44,
+      "error_groups": 8,
+      "source_families": {
+        "QEVD": 67
+      },
+      "feature_dimensions": 8,
+      "fit_and_cv_seconds": 4.105269724999744,
+      "status": "trained_experimental",
+      "selected": "tree8",
+      "group_cv": {
+        "balanced_group_MAE": 0.3905109574569593,
+        "n": 67,
+        "groups": 49,
+        "MAE": 0.327748428075654,
+        "group_MAE": 0.3426749242436391,
+        "error_n": 9,
+        "normal_n": 58,
+        "error_recall": 0.7777777777777778,
+        "normal_false_alarm": 0.1724137931034483
+      },
+      "constant_group_cv": {
+        "balanced_group_MAE": 0.5,
+        "n": 67,
+        "groups": 49,
+        "MAE": 0.5,
+        "group_MAE": 0.5,
+        "error_n": 9,
+        "normal_n": 58,
+        "error_recall": 0.2222222222222222,
+        "normal_false_alarm": 0.25862068965517243
+      },
+      "fixed_development_validation": {
+        "balanced_group_MAE": 0.2685444047943648,
+        "n": 5,
+        "groups": 4,
+        "MAE": 0.2692043385059259,
+        "group_MAE": 0.2685444047943648,
+        "error_n": 0,
+        "normal_n": 5,
+        "error_recall": null,
+        "normal_false_alarm": 0.0
+      },
+      "current_saved_model_same_input": {
+        "balanced_group_MAE": 0.27381276193776094,
+        "n": 5,
+        "groups": 4,
+        "MAE": 0.26621328316640713,
+        "group_MAE": 0.273812761937761,
+        "error_n": 0,
+        "normal_n": 5,
+        "error_recall": null,
+        "normal_false_alarm": 0.2
+      },
+      "candidate_gate_passed": false,
+      "runtime_replacement": false,
+      "acceptance": {
+        "passed": false,
+        "reasons": [
+          "development_requires_at_least_three_normal_and_error_segments",
+          "development_requires_at_least_two_normal_and_error_person_source_groups",
+          "training_group_cv_false_alarm_above_15_percent_or_unknown",
+          "fixed_development_error_recall_below_65_percent_or_unknown",
+          "development_MAE_worse_than_saved_model"
+        ],
+        "validation_support": {
+          "n": 5,
+          "normal_n": 5,
+          "error_n": 0,
+          "normal_groups": 4,
+          "error_groups": 0
+        },
+        "independent_final_test_required": true,
+        "production_replacement": false
+      },
+      "validation_predictions": [
+        {
+          "id": "qevd_00109429",
+          "person": "qevd_650",
+          "group": "165",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.6336894178865702
+        },
+        {
+          "id": "qevd_00127403",
+          "person": "qevd_76",
+          "group": "166",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.6750057148909465
+        },
+        {
+          "id": "qevd_00053514",
+          "person": "qevd_199",
+          "group": "170",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7278291582358478
+        },
+        {
+          "id": "qevd_00253673_existing_review",
+          "person": "qevd_76",
+          "group": "166",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7813061384047129
+        },
+        {
+          "id": "qevd_00177677_existing_review",
+          "person": "qevd_2720",
+          "group": "181",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.836147878052293
+        }
+      ],
+      "current_model_predictions": [
+        {
+          "id": "qevd_00109429",
+          "person": "qevd_650",
+          "group": "165",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.258513621794874
+        },
+        {
+          "id": "qevd_00127403",
+          "person": "qevd_76",
+          "group": "166",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.5900655334249105
+        },
+        {
+          "id": "qevd_00053514",
+          "person": "qevd_199",
+          "group": "170",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.958950765669516
+        },
+        {
+          "id": "qevd_00253673_existing_review",
+          "person": "qevd_76",
+          "group": "166",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9383037304131057
+        },
+        {
+          "id": "qevd_00177677_existing_review",
+          "person": "qevd_2720",
+          "group": "181",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.923099932865558
+        }
+      ],
+      "candidate_cv": [
+        {
+          "name": "tree2",
+          "metrics": {
+            "balanced_group_MAE": 0.3393242529575086,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.19900736472650016,
+            "group_MAE": 0.21712815378329692,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.4444444444444444,
+            "normal_false_alarm": 0.08620689655172414
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "tree4",
+          "metrics": {
+            "balanced_group_MAE": 0.369901465822406,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.2831684361663119,
+            "group_MAE": 0.3033465580994643,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.6666666666666666,
+            "normal_false_alarm": 0.22413793103448276
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "tree8",
+          "metrics": {
+            "balanced_group_MAE": 0.3905109574569593,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.327748428075654,
+            "group_MAE": 0.3426749242436391,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.1724137931034483
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "boost80",
+          "metrics": {
+            "balanced_group_MAE": 0.3429861694739404,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.1867842304654415,
+            "group_MAE": 0.2088951444843128,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.4444444444444444,
+            "normal_false_alarm": 0.1206896551724138
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "ridge1",
+          "metrics": {
+            "balanced_group_MAE": 0.39342913943569513,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.3560360149102384,
+            "group_MAE": 0.3666133280938449,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.20689655172413793
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "ridge10",
+          "metrics": {
+            "balanced_group_MAE": 0.40669926769431186,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.37111226600738423,
+            "group_MAE": 0.37846660954585276,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.22413793103448276
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "ordinal0.1",
+          "metrics": {
+            "balanced_group_MAE": 0.4061897255300243,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.38194579666663847,
+            "group_MAE": 0.3855938768194617,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.20689655172413793
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "ordinal1",
+          "metrics": {
+            "balanced_group_MAE": 0.3992481240554546,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.3640666758043876,
+            "group_MAE": 0.37483712410611875,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.22413793103448276
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "ordinal10",
+          "metrics": {
+            "balanced_group_MAE": 0.3817909034081524,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.34028438413810164,
+            "group_MAE": 0.35808528016376895,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.1896551724137931
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "grade0.1",
+          "metrics": {
+            "balanced_group_MAE": 0.2272727272727273,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.208955223880597,
+            "group_MAE": 0.20918367346938777,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.20689655172413793
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "grade1",
+          "metrics": {
+            "balanced_group_MAE": 0.24431818181818182,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.22388059701492538,
+            "group_MAE": 0.23979591836734693,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.22413793103448276
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        },
+        {
+          "name": "grade10",
+          "metrics": {
+            "balanced_group_MAE": 0.23295454545454547,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.19402985074626866,
+            "group_MAE": 0.2193877551020408,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.7777777777777778,
+            "normal_false_alarm": 0.1896551724137931
+          },
+          "constant_baseline": {
+            "balanced_group_MAE": 0.5,
+            "n": 67,
+            "groups": 49,
+            "MAE": 0.5,
+            "group_MAE": 0.5,
+            "error_n": 9,
+            "normal_n": 58,
+            "error_recall": 0.2222222222222222,
+            "normal_false_alarm": 0.25862068965517243
+          }
+        }
+      ],
+      "selected_oof_predictions": [
+        {
+          "id": "qevd_00032900",
+          "person": "qevd_1165",
+          "group": "141",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.1748073213041348
+        },
+        {
+          "id": "qevd_00008445",
+          "person": "qevd_1769",
+          "group": "145",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7531451153530297
+        },
+        {
+          "id": "qevd_00020204",
+          "person": "qevd_1775",
+          "group": "152",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.5458494487721528
+        },
+        {
+          "id": "qevd_00079935",
+          "person": "qevd_1030",
+          "group": "157",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.4236050541791523
+        },
+        {
+          "id": "qevd_00265061",
+          "person": "qevd_1126",
+          "group": "178",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.5761733211465974
+        },
+        {
+          "id": "qevd_00145723_existing_review",
+          "person": "qevd_787",
+          "group": "161",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.1748073213041348
+        },
+        {
+          "id": "qevd_00215302_existing_review",
+          "person": "qevd_1813",
+          "group": "185",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.177775335432863
+        },
+        {
+          "id": "qevd_00129204_round1_score",
+          "person": "qevd_1531",
+          "group": "315",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.189650847511869
+        },
+        {
+          "id": "qevd_00252077_round1_score",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.9989738805970148
+        },
+        {
+          "id": "enrich_E047_017",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9200611372648193
+        },
+        {
+          "id": "paired-return-qevd_00269873",
+          "person": "qevd_2837",
+          "group": "qevd_2837",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9906749722685013
+        },
+        {
+          "id": "paired-return-qevd_00142075",
+          "person": "qevd_1097",
+          "group": "qevd_1097",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9269435418292393
+        },
+        {
+          "id": "paired-return-qevd_00229396",
+          "person": "qevd_2618",
+          "group": "335",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9167345243615934
+        },
+        {
+          "id": "failure-expansion-F002-00132378",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.8999019585520251
+        },
+        {
+          "id": "return_more_N001_000500_003000",
+          "person": "qevd_1030",
+          "group": "157",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7073335815434738
+        },
+        {
+          "id": "return_more_N004_000500_003000",
+          "person": "qevd_2726",
+          "group": "317",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9853717868770828
+        },
+        {
+          "id": "return_more_N014_001300_003800",
+          "person": "qevd_1813",
+          "group": "185",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.912317015175164
+        },
+        {
+          "id": "qevd_00012474",
+          "person": "qevd_246",
+          "group": "140",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.935607293218715
+        },
+        {
+          "id": "qevd_00006143",
+          "person": "qevd_862",
+          "group": "144",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.846800096576231
+        },
+        {
+          "id": "qevd_00015016",
+          "person": "qevd_1038",
+          "group": "151",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7320291524072489
+        },
+        {
+          "id": "qevd_00003772",
+          "person": "qevd_2574",
+          "group": "153",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.2197703954656938
+        },
+        {
+          "id": "qevd_00032001",
+          "person": "qevd_2362",
+          "group": "160",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7297723109743661
+        },
+        {
+          "id": "qevd_00057989_existing_review",
+          "person": "qevd_2435",
+          "group": "179",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.8504637577052665
+        },
+        {
+          "id": "qevd_00209182_existing_review",
+          "person": "qevd_129",
+          "group": "184",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7913784908572996
+        },
+        {
+          "id": "qevd_00090646_batch1",
+          "person": "qevd_2011",
+          "group": "232",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.872927993777478
+        },
+        {
+          "id": "qevd_00191345_round1_score",
+          "person": "qevd_764",
+          "group": "314",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.9736124210385408
+        },
+        {
+          "id": "qevd_00165652_held2_score",
+          "person": "qevd_263",
+          "group": "333",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.6375622963865304
+        },
+        {
+          "id": "enrich_E052_022",
+          "person": "qevd_2587",
+          "group": "943",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.721535025059221
+        },
+        {
+          "id": "paired-return-qevd_00132246",
+          "person": "qevd_1129",
+          "group": "174",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7054400831712564
+        },
+        {
+          "id": "paired-return-qevd_00092063",
+          "person": "qevd_2435",
+          "group": "179",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9141789488459253
+        },
+        {
+          "id": "paired-return-qevd_00059859",
+          "person": "qevd_2011",
+          "group": "232",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.802789639690619
+        },
+        {
+          "id": "return_more_N002_001000_003270",
+          "person": "qevd_2574",
+          "group": "153",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.854280217997601
+        },
+        {
+          "id": "return_more_N010_000500_002370",
+          "person": "qevd_129",
+          "group": "184",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.2398521334571426
+        },
+        {
+          "id": "return_more_N010_002370_004140",
+          "person": "qevd_129",
+          "group": "184",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.2197703954656938
+        },
+        {
+          "id": "qevd_00009822",
+          "person": "qevd_2833",
+          "group": "139",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.8182815663270582
+        },
+        {
+          "id": "qevd_00001357",
+          "person": "qevd_1522",
+          "group": "143",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.2032429017346291
+        },
+        {
+          "id": "qevd_00022677",
+          "person": "qevd_422",
+          "group": "150",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9367436307210597
+        },
+        {
+          "id": "qevd_00085023",
+          "person": "qevd_2100",
+          "group": "158",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.75016830715179
+        },
+        {
+          "id": "qevd_00159459",
+          "person": "qevd_1354",
+          "group": "173",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.8339501682871826
+        },
+        {
+          "id": "qevd_00126616",
+          "person": "qevd_2762",
+          "group": "176",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7986919814195557
+        },
+        {
+          "id": "qevd_00056756",
+          "person": "qevd_240",
+          "group": "177",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.677300520320418
+        },
+        {
+          "id": "qevd_00281495_batch1",
+          "person": "qevd_115",
+          "group": "198",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.1649327415433892
+        },
+        {
+          "id": "qevd_00211664_round1_score",
+          "person": "qevd_2762",
+          "group": "176",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.777268246275583
+        },
+        {
+          "id": "qevd_00272558_held2_score",
+          "person": "qevd_1944",
+          "group": "332",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.187725254020084
+        },
+        {
+          "id": "qevd_00223586_held2_score",
+          "person": "qevd_2762",
+          "group": "176",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7611097748331717
+        },
+        {
+          "id": "qevd_00187954_held2_score",
+          "person": "qevd_1103",
+          "group": "200",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.1849673524359408
+        },
+        {
+          "id": "qevd_00051575_held2_score",
+          "person": "qevd_240",
+          "group": "177",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.8493626708799464
+        },
+        {
+          "id": "paired-return-qevd_00126658",
+          "person": "qevd_238",
+          "group": "qevd_238",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7685074182793854
+        },
+        {
+          "id": "paired-return-qevd_00225156",
+          "person": "qevd_1103",
+          "group": "200",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7872483116650837
+        },
+        {
+          "id": "paired-return-qevd_00175875",
+          "person": "qevd_872",
+          "group": "qevd_872",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.8003660237900707
+        },
+        {
+          "id": "return_more_N012_000750_002870",
+          "person": "qevd_1286",
+          "group": "524",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9043210335605583
+        },
+        {
+          "id": "qevd_00047479",
+          "person": "qevd_209",
+          "group": "142",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.5612534080808638
+        },
+        {
+          "id": "qevd_00003041",
+          "person": "qevd_1140",
+          "group": "147",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.702698781590673
+        },
+        {
+          "id": "qevd_00064729",
+          "person": "qevd_2072",
+          "group": "155",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.6363859337759568
+        },
+        {
+          "id": "qevd_00067100",
+          "person": "qevd_103",
+          "group": "156",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.5460778867920726
+        },
+        {
+          "id": "qevd_00100481",
+          "person": "qevd_670",
+          "group": "172",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.2724015415487635
+        },
+        {
+          "id": "qevd_00194717_existing_review",
+          "person": "qevd_2148",
+          "group": "182",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.636895703677445
+        },
+        {
+          "id": "qevd_00253483_batch1",
+          "person": "qevd_1863",
+          "group": "196",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.5616299284453652
+        },
+        {
+          "id": "enrich_E046_016",
+          "person": "qevd_324",
+          "group": "449",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7558811979987918
+        },
+        {
+          "id": "paired-return-qevd_00209100",
+          "person": "qevd_324",
+          "group": "449",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.7480867669385014
+        },
+        {
+          "id": "paired-return-qevd_00247344",
+          "person": "qevd_2148",
+          "group": "182",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.768250507347258
+        },
+        {
+          "id": "failure-expansion-F001-00220182",
+          "person": "qevd_1802",
+          "group": "328",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.4597352957955285
+        },
+        {
+          "id": "failure-expansion-F003-00276861",
+          "person": "qevd_2355",
+          "group": "qevd_2355",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.2692834337142291
+        },
+        {
+          "id": "failure-expansion-F006-00231574",
+          "person": "qevd_1396",
+          "group": "461",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.2692834337142291
+        },
+        {
+          "id": "failure-expansion-F008-00279851",
+          "person": "qevd_1232",
+          "group": "qevd_1232",
+          "family": "QEVD",
+          "target": 1,
+          "prediction": 1.2714375896168424
+        },
+        {
+          "id": "return_more_N003_001250_004140",
+          "person": "qevd_103",
+          "group": "156",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9027072122009148
+        },
+        {
+          "id": "return_more_N005_000400_001800",
+          "person": "qevd_2355",
+          "group": "qevd_2355",
+          "family": "QEVD",
+          "target": 2,
+          "prediction": 1.9062737882878715
+        }
+      ]
+    }
+  ],
+  "completed": true,
+  "trained_heads": 1,
+  "gate_passed": 0,
+  "final_test_used": false,
+  "validation_is_development": true,
+  "models_promoted_to_live_service": false,
+  "missing_heads_not_filled_by_constant_normal": true
+}

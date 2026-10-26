@@ -1,0 +1,1742 @@
+<!doctype html><meta charset="utf-8"><title>보유 자료 라벨 보강</title>
+<style>body{font:16px sans-serif;max-width:1250px;margin:32px auto;padding:16px;color:#213047;background:#f5f7fa}table{border-collapse:collapse;background:white;width:100%;margin:16px 0}td,th{padding:10px;border:1px solid #d5dce5;text-align:left}details{padding:12px;background:white;margin:12px 0}a{color:#165bb3}p{line-height:1.6}</style>
+<h1>보유 자료 라벨 보강·재학습 후보</h1><p>전문가 정답이 아닌 직접 시간순 표본 검토 초안으로 진행한 개발 실험입니다. 기존 공통 모델을 교체하지 않았고, 독립 최종 시험은 완료하지 않았습니다. 70개는 최소 개발 목표이며 정확도 보장이 아닙니다.</p>
+<p>MediaPipe Heavy는 관절 추출기입니다. AI 점수 회귀와 Rule Base는 같은 관절·관측 정책에서 별도로 계산합니다. 제공자 정상·오류 문자열과 규칙 점수는 AI의 정답·입력으로 변환하지 않습니다.</p>
+<p><a href="multiview_squat/index.html">보유 MultiView 스쿼트: 시점 대조·라벨 5개·별도 재학습 비교</a> — 아래 5종 기준 결과와 구분한 추가 개발 실험입니다.</p>
+<p><a href="multiview_squat/batch2/index.html">최신 보유 스쿼트 12묶음: 20구간 라벨·재학습·두 점수 비교</a> — 추적 검토 후 공통 총점 개발 검증 5구간입니다. 별도 후보이며 기존 5종 모델에 반영하지 않았습니다.</p>
+<p><a href="allfive_round1/index.html">최신 5종 보유 자료 보강: 직접 초안·추적 검토·AI/규칙 재학습·추가 실험</a> — 아래 보존 기준 모델과 구분한 별도 후보입니다. 악화된 결과와 미완료 조건도 함께 표시합니다.</p>
+<table><tr><th>운동</th><th>실제 학습 입력 / 70</th><th>person·worker 메타 그룹 / 연결 그룹</th><th>네 항목 라벨·관측 모두 충족</th><th>부분 입력</th><th>동일 개발 검증 AI / 규칙 MAE</th></tr>
+<tr><td>푸시업</td><td>76 / 70</td><td>46 / 46</td><td>28</td><td>48</td><td>14.788414640197987 / 15.833333333333334 (공통 6개)</td></tr>
+<tr><td>스쿼트</td><td>71 / 70</td><td>36 / 36</td><td>43</td><td>28</td><td>None / None (공통 0개)</td></tr>
+<tr><td>숄더 프레스</td><td>73 / 70</td><td>15 / 15</td><td>40</td><td>33</td><td>9.37156438372249 / 10.0 (공통 5개)</td></tr>
+<tr><td>플랭크</td><td>15 / 70</td><td>10 / 10</td><td>11</td><td>4</td><td>7.82006385258763 / 6.25 (공통 2개)</td></tr>
+<tr><td>YTW</td><td>90 / 70</td><td>77 / 74</td><td>44</td><td>46</td><td>None / None (공통 0개)</td></tr>
+</table><p>부분 입력은 일부 항목만 학습한 구간입니다. 같은 사람의 다른 반복과 여러 촬영 구도는 새 참여자로 세지 않습니다. QEVD의 worker 기반 그룹은 같은 데이터셋 안에서도 확인된 실제 참여자 수가 아닙니다. 실제 인원 수로 해석하지 않습니다. 촬영 배경 연결은 보수적인 분할 보조 정보이며 동일인 전체를 확인한 결과가 아닙니다. YTW의 전경 대리 특징과 총점은 검증된 완성 모델로 해석할 수 없습니다.</p>
+<p>네 항목 라벨·관측이 모두 있는 구간 70개까지의 최소 부족 수: 푸시업 42 · 스쿼트 27 · 숄더 프레스 30 · 플랭크 59 · YTW 26개. 이 수를 채워도 오류 등급·참여자 다양성과 별도 시험 검증이 필요합니다. YTW는 이 조건을 만족해도 Y·전경 규칙 총점 검증이 별도로 남습니다.</p>
+<p>플랭크의 별도 정지 몸통 항목 실험은 원본 이미지 56장·직접 등급 초안 54장·공통 평가 37장을 보존합니다. 영상의 네 항목 학습 수에 합산하지 않습니다. 정지 이미지에 지지 지속성 점수나 가정한 FPS를 붙이지 않았습니다.</p>
+<p>단일 시도 경계와 일부 촬영 관측 제한은 직접 검토한 메타데이터를 사용합니다. 이 결과는 원본 영상 전체에서 완전히 자동으로 운동·시도·관측 가능성을 찾아내는 성능 검증이 아닙니다.</p>
+<p>반복 감사에서 앉은 숄더 프레스 후속 구간이 기존 서기 제외 조건을 우회한 오류를 수정했습니다. 3개 초안은 보존하고 이번 학습에서 제외했습니다. 표의 수량과 성능은 수정 후 결과입니다.</p>
+<p><a href="visual_recording_links.json">촬영 자료 연결</a> · <a href="contact_scene_audit.json">자동 배경 대응 감사</a> · <a href="recording_split_quarantine.json">검증 분할 충돌 제외 기록</a> · <a href="fit_input_manifest.json">실제 학습·검증 입력 기록</a></p>
+<p><a href="W_failure_followup.json">W 복귀 오선택·상완 모양 오판 직접 재점검</a></p>
+<p><a href="held_multiview_squat_inventory.json">보유 MultiView 스쿼트 미통합 목록·기존 역할</a></p>
+<p><a href="variant_policy_exclusions.json">서기 기준과 다른 변형의 학습 제외 기록</a></p>
+<p><a href="targeted_variant_direct_exclusions.json">이번 직접 검토에서 제외한 앉은 변형</a></p>
+<p><a href="plank_single_screen_direct_review.json">플랭크 추가 600개 선별·12개 직접 검토 기록</a></p>
+<p><a href="ytw_extension_direct_review.json">YTW 팔 도달 후보 선별·직접 검토 기록</a></p>
+<p><a href="ytw_extension_direct_decisions.json">YTW 추가 항목별 초안 근거</a></p>
+<h2>푸시업 몸통 방향 특징 별도 실험</h2><p>학습 내부 그룹 검증으로만 특징·회귀기를 선택했습니다. 공통 모델·규칙을 교체하지 않았으며, 선택 검증 오차를 독립 성능으로 해석하지 않습니다.</p><pre>{
+  &quot;code_sha256&quot;: &quot;1d4a1639ad1c94b3442b396bbcc3c63f3ddd623fb9dd0a2e188c6ea5cb5aa873&quot;,
+  &quot;fit_input_manifest_sha256&quot;: &quot;550128ec7c50f3ff2406aaa9947959cf5fc4a707cd99ac8e69717f4b4cf7ee12&quot;,
+  &quot;comparison_sha256&quot;: &quot;0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a&quot;,
+  &quot;train_records&quot;: 36,
+  &quot;training_connected_groups&quot;: 13,
+  &quot;selection&quot;: {
+    &quot;policy&quot;: &quot;isotonic&quot;,
+    &quot;class_support_floor&quot;: 6,
+    &quot;inner_group_folds&quot;: 3,
+    &quot;validation_targets_used&quot;: false
+  },
+  &quot;inner_selection_MAE_grade&quot;: {
+    &quot;angle_floor1&quot;: 0.8158865180974313,
+    &quot;angle_floor3&quot;: 0.8142370953855441,
+    &quot;angle_floor6&quot;: 0.8126129865272909,
+    &quot;direction_floor1&quot;: 0.877180998488959,
+    &quot;direction_floor3&quot;: 0.858787663750707,
+    &quot;direction_floor6&quot;: 0.8753211356644685,
+    &quot;isotonic_floor1&quot;: 0.7912705669834855,
+    &quot;isotonic_floor3&quot;: 0.7744470148156386,
+    &quot;isotonic_floor6&quot;: 0.7564100851308637
+  },
+  &quot;inner_selection_loss_is_not_unbiased_final_performance&quot;: true,
+  &quot;fixed_development_trunk_records&quot;: 7,
+  &quot;fixed_development_trunk_MAE_grade&quot;: 0.5415988951971766,
+  &quot;fixed_development_common_total_records&quot;: 6,
+  &quot;fixed_development_baseline_total_MAE_points&quot;: 14.788414640197987,
+  &quot;fixed_development_trial_total_MAE_points&quot;: 14.788414640197987,
+  &quot;excluded&quot;: [],
+  &quot;common_model_promoted&quot;: false,
+  &quot;rule_unchanged&quot;: true,
+  &quot;expert_reference&quot;: false,
+  &quot;independent_final_test&quot;: false,
+  &quot;geometry_code_sha256&quot;: &quot;d3edf295763b2446d93eb28a71eb536c3806a025b880e040afd6696777788a12&quot;
+}</pre><p><a href="trunk_direction_trial/comparison.json">실험 원자료</a></p>
+<h2>W 명시 규칙 경계 보정 실험</h2><p>직접 초안만 보정 목표로 쓰고 학습 그룹 3폴드에서 경계를 다시 선택했습니다. 고정 개발 4개는 보정에 쓰지 않았습니다. 공통 규칙은 보존합니다.</p><pre>{
+  &quot;code_sha256&quot;: &quot;3d1a41ace5c535839f54b170e6a5dc977546fac2c199a93655f13c1738db64da&quot;,
+  &quot;fit_input_manifest_sha256&quot;: &quot;550128ec7c50f3ff2406aaa9947959cf5fc4a707cd99ac8e69717f4b4cf7ee12&quot;,
+  &quot;comparison_sha256&quot;: &quot;0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a&quot;,
+  &quot;training_records&quot;: 75,
+  &quot;training_connected_groups&quot;: 64,
+  &quot;candidate_policies&quot;: 1536,
+  &quot;selected_policy&quot;: {
+    &quot;bend_good_deg&quot;: 12.0,
+    &quot;bend_partial_deg&quot;: 8.0,
+    &quot;hand_good_torso_ratio&quot;: 0.1,
+    &quot;hand_partial_torso_ratio&quot;: -0.1,
+    &quot;elbow_up_good_arm_ratio&quot;: 0.4,
+    &quot;elbow_up_partial_arm_ratio&quot;: 0.8,
+    &quot;symmetry_good_deg&quot;: 50.0
+  },
+  &quot;original_policy&quot;: {
+    &quot;bend_good_deg&quot;: 20,
+    &quot;bend_partial_deg&quot;: 8,
+    &quot;hand_good_torso_ratio&quot;: 0.05,
+    &quot;hand_partial_torso_ratio&quot;: -0.05,
+    &quot;elbow_up_good_arm_ratio&quot;: 0.25,
+    &quot;elbow_up_partial_arm_ratio&quot;: 0.5,
+    &quot;symmetry_good_deg&quot;: 35
+  },
+  &quot;fold_selected_policies&quot;: [
+    {
+      &quot;bend_good_deg&quot;: 12.0,
+      &quot;bend_partial_deg&quot;: 8.0,
+      &quot;hand_good_torso_ratio&quot;: 0.1,
+      &quot;hand_partial_torso_ratio&quot;: -0.1,
+      &quot;elbow_up_good_arm_ratio&quot;: 0.4,
+      &quot;elbow_up_partial_arm_ratio&quot;: 0.8,
+      &quot;symmetry_good_deg&quot;: 50.0
+    },
+    {
+      &quot;bend_good_deg&quot;: 12.0,
+      &quot;bend_partial_deg&quot;: 8.0,
+      &quot;hand_good_torso_ratio&quot;: 0.1,
+      &quot;hand_partial_torso_ratio&quot;: -0.1,
+      &quot;elbow_up_good_arm_ratio&quot;: 0.4,
+      &quot;elbow_up_partial_arm_ratio&quot;: 0.8,
+      &quot;symmetry_good_deg&quot;: 35.0
+    },
+    {
+      &quot;bend_good_deg&quot;: 20.0,
+      &quot;bend_partial_deg&quot;: 8.0,
+      &quot;hand_good_torso_ratio&quot;: 0.1,
+      &quot;hand_partial_torso_ratio&quot;: -0.1,
+      &quot;elbow_up_good_arm_ratio&quot;: 0.25,
+      &quot;elbow_up_partial_arm_ratio&quot;: 0.8,
+      &quot;symmetry_good_deg&quot;: 50.0
+    }
+  ],
+  &quot;group_cv_records&quot;: 75,
+  &quot;group_cv_default_MAE_grade&quot;: 0.4533333333333333,
+  &quot;group_cv_calibrated_MAE_grade&quot;: 0.3333333333333333,
+  &quot;fixed_development_records&quot;: 4,
+  &quot;fixed_development_default_MAE_grade&quot;: 0.75,
+  &quot;fixed_development_calibrated_MAE_grade&quot;: 0.75,
+  &quot;fixed_predictions&quot;: [
+    {
+      &quot;id&quot;: &quot;qevd_00105254&quot;,
+      &quot;reference&quot;: 1,
+      &quot;default&quot;: 0,
+      &quot;calibrated&quot;: 0,
+      &quot;feature&quot;: [
+        6.02781889373864,
+        -0.36765309440054766,
+        -0.7728664510449761,
+        6.99038738373568,
+        -0.40293869242785574,
+        -0.8208763695100507,
+        0.9625684899970395
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00196196&quot;,
+      &quot;reference&quot;: 2,
+      &quot;default&quot;: 1,
+      &quot;calibrated&quot;: 1,
+      &quot;feature&quot;: [
+        26.153439387784942,
+        0.0005812985048218383,
+        -0.3298273732336488,
+        34.203945586653845,
+        0.0758042082205132,
+        -0.24746525391828858,
+        8.050506198868902
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00265931&quot;,
+      &quot;reference&quot;: 2,
+      &quot;default&quot;: 1,
+      &quot;calibrated&quot;: 1,
+      &quot;feature&quot;: [
+        33.06089840797591,
+        0.027042360590423947,
+        -0.4832340181036593,
+        29.18259931379029,
+        0.11187262919619576,
+        -0.1606856775944554,
+        3.8782990941856212
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00265212&quot;,
+      &quot;reference&quot;: 2,
+      &quot;default&quot;: 2,
+      &quot;calibrated&quot;: 2,
+      &quot;feature&quot;: [
+        133.97186123101372,
+        0.37085657033813657,
+        -0.7585068786344151,
+        134.5612848089015,
+        0.28456020022017336,
+        -0.8281696453620668,
+        0.5894235778877714
+      ]
+    }
+  ],
+  &quot;calibration_targets&quot;: &quot;assistant_direct_temporal_review_nonexpert_drafts&quot;,
+  &quot;validation_targets_used_for_calibration&quot;: false,
+  &quot;rule_outputs_used_as_targets&quot;: false,
+  &quot;expert_ground_truth&quot;: false,
+  &quot;independent_final_test&quot;: false,
+  &quot;common_rule_promoted&quot;: false,
+  &quot;total_ytw_score_validated&quot;: false
+}</pre><p><a href="W_calibration_trial.json">W 보정·실패 사례 원자료</a></p>
+<details><summary>W 단계 선택 보완·AI 항목 재학습</summary><p>개발 오판 사례를 보고 설계한 별도 실험입니다. 독립 시험이 아니며 공통 모델·규칙을 교체하지 않았습니다. 오차 단위는 W 0~2등급입니다.</p><pre>{
+  &quot;comparison_sha256&quot;: &quot;0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a&quot;,
+  &quot;code_sha256&quot;: &quot;13d38fb43c89af978d3f1d34448bc60275085777a2b07399ccdb0d1ba155acf8&quot;,
+  &quot;phase_code_sha256&quot;: &quot;223d509ace94f60c7db8918960bb11ac3de80c7df09485d7f438e654634ad310&quot;,
+  &quot;fit_input_manifest_sha256&quot;: &quot;550128ec7c50f3ff2406aaa9947959cf5fc4a707cd99ac8e69717f4b4cf7ee12&quot;,
+  &quot;training_records&quot;: 75,
+  &quot;fixed_development_records&quot;: 4,
+  &quot;refined_training_records&quot;: 16,
+  &quot;refined_development_records&quot;: 1,
+  &quot;training_rule_before_MAE_grade&quot;: 0.4533333333333333,
+  &quot;training_rule_after_MAE_grade&quot;: 0.44,
+  &quot;fixed_rule_before_MAE_grade&quot;: 0.75,
+  &quot;fixed_rule_after_MAE_grade&quot;: 0.75,
+  &quot;fixed_ai_before_MAE_grade&quot;: 0.7559903500462644,
+  &quot;fixed_ai_after_MAE_grade&quot;: 0.614449630340022,
+  &quot;development_failure_cases_informed_phase_design&quot;: true,
+  &quot;independent_final_test&quot;: false,
+  &quot;expert_ground_truth&quot;: false,
+  &quot;common_model_promoted&quot;: false,
+  &quot;excluded&quot;: []
+}</pre><a href="W_phase_trial.json">전체 근거·실패 사례</a></details>
+<details><summary>팔꿈치가 몸통 아래에 붙는 모양의 규칙 보완</summary><p>개발 오판 사례를 보고 설계한 별도 실험입니다. 독립 시험이 아니며 공통 모델·규칙을 교체하지 않았습니다. 오차 단위는 W 0~2등급입니다.</p><pre>{
+  &quot;comparison_sha256&quot;: &quot;0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a&quot;,
+  &quot;phase_trial_sha256&quot;: &quot;772ca464993bf942ffaddaba2c34b908555bf31558cbc6009773b83a3cbd9f09&quot;,
+  &quot;code_sha256&quot;: &quot;e5a6c365635f33012eaa7eca41ff0eb9647071aeb6983d83cd1a7d10fd6ef0e4&quot;,
+  &quot;candidate_policies&quot;: 64,
+  &quot;training_records&quot;: 75,
+  &quot;training_connected_groups&quot;: 64,
+  &quot;selected_policy&quot;: {
+    &quot;bend_good_deg&quot;: 20.0,
+    &quot;bend_partial_deg&quot;: 8.0,
+    &quot;hand_good_torso_ratio&quot;: 0.05,
+    &quot;hand_partial_torso_ratio&quot;: -0.05,
+    &quot;elbow_up_good_arm_ratio&quot;: 0.25,
+    &quot;elbow_up_partial_arm_ratio&quot;: 0.5,
+    &quot;symmetry_good_deg&quot;: 35.0,
+    &quot;elbow_up_good_lower_ratio&quot;: -0.95,
+    &quot;elbow_up_partial_lower_ratio&quot;: -1.0
+  },
+  &quot;group_cv_before_MAE_grade&quot;: 0.44,
+  &quot;group_cv_after_MAE_grade&quot;: 0.38666666666666666,
+  &quot;fixed_development_records&quot;: 4,
+  &quot;fixed_before_MAE_grade&quot;: 0.75,
+  &quot;fixed_after_MAE_grade&quot;: 0.5,
+  &quot;fixed_predictions&quot;: [
+    {
+      &quot;id&quot;: &quot;qevd_00105254&quot;,
+      &quot;reference&quot;: 1,
+      &quot;before&quot;: 2,
+      &quot;after&quot;: 1
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00196196&quot;,
+      &quot;reference&quot;: 2,
+      &quot;before&quot;: 1,
+      &quot;after&quot;: 1
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00265931&quot;,
+      &quot;reference&quot;: 2,
+      &quot;before&quot;: 1,
+      &quot;after&quot;: 1
+    },
+    {
+      &quot;id&quot;: &quot;qevd_00265212&quot;,
+      &quot;reference&quot;: 2,
+      &quot;before&quot;: 2,
+      &quot;after&quot;: 2
+    }
+  ],
+  &quot;development_cases_informed_rule_structure&quot;: true,
+  &quot;validation_targets_used_for_parameter_fitting&quot;: false,
+  &quot;expert_ground_truth&quot;: false,
+  &quot;independent_final_test&quot;: false,
+  &quot;common_rule_promoted&quot;: false
+}</pre><a href="W_shape_trial.json">전체 근거·실패 사례</a></details>
+<h2>W 오판 사례 전후 관절 영상 — 항목 0~2등급</h2><p>영상의 숫자는 W 항목 등급입니다. YTW 전체 100점 총점이 아닙니다. 개발에 참고한 같은 사례로 이전·실험 후보를 비교합니다.</p>
+<p>{&#x27;stage&#x27;: &#x27;before&#x27;, &#x27;frames&#x27;: 33, &#x27;ai_grade_0_2&#x27;: 0.5494041978295622, &#x27;rule_grade_0_2&#x27;: 0, &#x27;W_frames&#x27;: [54, 60]}</p><video controls preload="metadata" style="max-width:700px" src="W_previews/before/overlay.mp4"></video>
+<p>{&#x27;stage&#x27;: &#x27;candidate&#x27;, &#x27;frames&#x27;: 33, &#x27;ai_grade_0_2&#x27;: 1.504154885388669, &#x27;rule_grade_0_2&#x27;: 1, &#x27;W_frames&#x27;: [66, 72]}</p><video controls preload="metadata" style="max-width:700px" src="W_previews/candidate/overlay.mp4"></video>
+<details><summary>푸시업 — 항목별 분포·개발 검증</summary><table><tr><th>항목</th><th>구도</th><th>학습 수 / 그룹</th><th>등급 0·1·2 분포</th><th>등급별 메타 그룹 수 — 실제 인원 미확인</th><th>단일 등급</th></tr>
+<tr><td>trunk_line</td><td>side</td><td>36 / 13</td><td>{&#x27;2&#x27;: 21, &#x27;0&#x27;: 13, &#x27;1&#x27;: 2}</td><td>{&#x27;0&#x27;: 9, &#x27;1&#x27;: 2, &#x27;2&#x27;: 11}</td><td>False</td></tr>
+<tr><td>descent_range</td><td>side</td><td>41 / 15</td><td>{&#x27;2&#x27;: 36, &#x27;1&#x27;: 3, &#x27;0&#x27;: 2}</td><td>{&#x27;0&#x27;: 2, &#x27;1&#x27;: 2, &#x27;2&#x27;: 15}</td><td>False</td></tr>
+<tr><td>return_extension</td><td>side</td><td>44 / 15</td><td>{&#x27;2&#x27;: 43, &#x27;1&#x27;: 1}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 1, &#x27;2&#x27;: 15}</td><td>False</td></tr>
+<tr><td>support</td><td>side</td><td>29 / 13</td><td>{&#x27;2&#x27;: 26, &#x27;0&#x27;: 1, &#x27;1&#x27;: 2}</td><td>{&#x27;0&#x27;: 1, &#x27;1&#x27;: 2, &#x27;2&#x27;: 12}</td><td>False</td></tr>
+<tr><td>descent_range</td><td>front</td><td>24 / 24</td><td>{&#x27;2&#x27;: 21, &#x27;1&#x27;: 2, &#x27;0&#x27;: 1}</td><td>{&#x27;0&#x27;: 1, &#x27;1&#x27;: 2, &#x27;2&#x27;: 21}</td><td>False</td></tr>
+<tr><td>return_extension</td><td>front</td><td>30 / 30</td><td>{&#x27;2&#x27;: 29, &#x27;1&#x27;: 1}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 1, &#x27;2&#x27;: 29}</td><td>False</td></tr>
+</table><p>기존 입력만 학습한 후보와 보강 입력을 포함한 후보의 동일 유효 검증 교집합 비교:</p><pre>{
+  &quot;exercise&quot;: &quot;pushups&quot;,
+  &quot;common_records&quot;: 6,
+  &quot;before&quot;: {
+    &quot;ai_score&quot;: 10.889409704598265,
+    &quot;rule_score&quot;: 15.833333333333334
+  },
+  &quot;after&quot;: {
+    &quot;ai_score&quot;: 14.788414640197987,
+    &quot;rule_score&quot;: 15.833333333333334
+  }
+}</pre><p>참여자·원본 연결 그룹 교차검증. 반복 구간은 같은 그룹으로 묶음:</p><pre>{
+  &quot;submitted&quot;: 91,
+  &quot;paired_total_records&quot;: 28,
+  &quot;paired_total_MAE_points&quot;: {
+    &quot;ai_score&quot;: 16.62350204112474,
+    &quot;rule_score&quot;: 17.142857142857142
+  },
+  &quot;items&quot;: {
+    &quot;trunk_line&quot;: {
+      &quot;paired_records&quot;: 36,
+      &quot;ai_MAE_grade_units&quot;: 0.7585233210901707,
+      &quot;rule_MAE_grade_units&quot;: 0.5833333333333334
+    },
+    &quot;descent_range&quot;: {
+      &quot;paired_records&quot;: 41,
+      &quot;ai_MAE_grade_units&quot;: 0.13668791559164817,
+      &quot;rule_MAE_grade_units&quot;: 0.43902439024390244
+    },
+    &quot;return_extension&quot;: {
+      &quot;paired_records&quot;: 44,
+      &quot;ai_MAE_grade_units&quot;: 0.09978984717733765,
+      &quot;rule_MAE_grade_units&quot;: 0.3181818181818182
+    },
+    &quot;support&quot;: {
+      &quot;paired_records&quot;: 29,
+      &quot;ai_MAE_grade_units&quot;: 0.33125578849567977,
+      &quot;rule_MAE_grade_units&quot;: 0.13793103448275862
+    }
+  },
+  &quot;ai_total_available&quot;: 29,
+  &quot;rule_total_available&quot;: 29
+}</pre></details>
+<details><summary>스쿼트 — 항목별 분포·개발 검증</summary><table><tr><th>항목</th><th>구도</th><th>학습 수 / 그룹</th><th>등급 0·1·2 분포</th><th>등급별 메타 그룹 수 — 실제 인원 미확인</th><th>단일 등급</th></tr>
+<tr><td>descent_range</td><td>side</td><td>43 / 9</td><td>{&#x27;1&#x27;: 14, &#x27;2&#x27;: 29}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 5, &#x27;2&#x27;: 9}</td><td>False</td></tr>
+<tr><td>return_extension</td><td>side</td><td>43 / 9</td><td>{&#x27;2&#x27;: 43}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 9}</td><td>True</td></tr>
+<tr><td>knee_foot</td><td>side</td><td>43 / 9</td><td>{&#x27;2&#x27;: 29, &#x27;0&#x27;: 14}</td><td>{&#x27;0&#x27;: 6, &#x27;1&#x27;: 0, &#x27;2&#x27;: 9}</td><td>False</td></tr>
+<tr><td>trunk_balance</td><td>front</td><td>67 / 33</td><td>{&#x27;2&#x27;: 67}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 33}</td><td>True</td></tr>
+<tr><td>descent_range</td><td>front</td><td>7 / 7</td><td>{&#x27;0&#x27;: 5, &#x27;2&#x27;: 2}</td><td>{&#x27;0&#x27;: 5, &#x27;1&#x27;: 0, &#x27;2&#x27;: 2}</td><td>False</td></tr>
+<tr><td>return_extension</td><td>front</td><td>21 / 21</td><td>{&#x27;2&#x27;: 21}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 21}</td><td>True</td></tr>
+</table><p>기존 입력만 학습한 후보와 보강 입력을 포함한 후보의 동일 유효 검증 교집합 비교:</p><pre>{
+  &quot;exercise&quot;: &quot;squats&quot;,
+  &quot;common_records&quot;: 0,
+  &quot;before&quot;: {
+    &quot;ai_score&quot;: null,
+    &quot;rule_score&quot;: null
+  },
+  &quot;after&quot;: {
+    &quot;ai_score&quot;: null,
+    &quot;rule_score&quot;: null
+  }
+}</pre><p>참여자·원본 연결 그룹 교차검증. 반복 구간은 같은 그룹으로 묶음:</p><pre>{
+  &quot;submitted&quot;: 71,
+  &quot;paired_total_records&quot;: 43,
+  &quot;paired_total_MAE_points&quot;: {
+    &quot;ai_score&quot;: 8.616589845630491,
+    &quot;rule_score&quot;: 16.976744186046513
+  },
+  &quot;items&quot;: {
+    &quot;descent_range&quot;: {
+      &quot;paired_records&quot;: 46,
+      &quot;ai_MAE_grade_units&quot;: 0.2619569069248005,
+      &quot;rule_MAE_grade_units&quot;: 0.2608695652173913
+    },
+    &quot;return_extension&quot;: {
+      &quot;paired_records&quot;: 43,
+      &quot;ai_MAE_grade_units&quot;: 0.0,
+      &quot;rule_MAE_grade_units&quot;: 0.046511627906976744
+    },
+    &quot;knee_foot&quot;: {
+      &quot;paired_records&quot;: 43,
+      &quot;ai_MAE_grade_units&quot;: 0.4935008403853414,
+      &quot;rule_MAE_grade_units&quot;: 0.8372093023255814
+    },
+    &quot;trunk_balance&quot;: {
+      &quot;paired_records&quot;: 67,
+      &quot;ai_MAE_grade_units&quot;: 0.0,
+      &quot;rule_MAE_grade_units&quot;: 0.14925373134328357
+    }
+  },
+  &quot;ai_total_available&quot;: 43,
+  &quot;rule_total_available&quot;: 43
+}</pre></details>
+<details><summary>숄더 프레스 — 항목별 분포·개발 검증</summary><table><tr><th>항목</th><th>구도</th><th>학습 수 / 그룹</th><th>등급 0·1·2 분포</th><th>등급별 메타 그룹 수 — 실제 인원 미확인</th><th>단일 등급</th></tr>
+<tr><td>lower_return</td><td>front</td><td>59 / 13</td><td>{&#x27;2&#x27;: 59}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 13}</td><td>True</td></tr>
+<tr><td>frontal_trunk_hold</td><td>front</td><td>63 / 13</td><td>{&#x27;2&#x27;: 63}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 13}</td><td>True</td></tr>
+<tr><td>overhead_reach</td><td>front</td><td>42 / 11</td><td>{&#x27;1&#x27;: 17, &#x27;2&#x27;: 25}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 8, &#x27;2&#x27;: 9}</td><td>False</td></tr>
+<tr><td>bilateral_timing</td><td>front</td><td>53 / 12</td><td>{&#x27;0&#x27;: 2, &#x27;2&#x27;: 44, &#x27;1&#x27;: 7}</td><td>{&#x27;0&#x27;: 2, &#x27;1&#x27;: 5, &#x27;2&#x27;: 11}</td><td>False</td></tr>
+<tr><td>overhead_reach</td><td>front_oblique</td><td>5 / 3</td><td>{&#x27;2&#x27;: 5}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 3}</td><td>True</td></tr>
+<tr><td>lower_return</td><td>front_oblique</td><td>5 / 3</td><td>{&#x27;2&#x27;: 5}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 3}</td><td>True</td></tr>
+<tr><td>bilateral_timing</td><td>front_oblique</td><td>6 / 4</td><td>{&#x27;2&#x27;: 6}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 0, &#x27;2&#x27;: 4}</td><td>True</td></tr>
+</table><p>기존 입력만 학습한 후보와 보강 입력을 포함한 후보의 동일 유효 검증 교집합 비교:</p><pre>{
+  &quot;exercise&quot;: &quot;shoulder&quot;,
+  &quot;common_records&quot;: 5,
+  &quot;before&quot;: {
+    &quot;ai_score&quot;: 12.121806770129385,
+    &quot;rule_score&quot;: 10.0
+  },
+  &quot;after&quot;: {
+    &quot;ai_score&quot;: 9.37156438372249,
+    &quot;rule_score&quot;: 10.0
+  }
+}</pre><p>참여자·원본 연결 그룹 교차검증. 반복 구간은 같은 그룹으로 묶음:</p><pre>{
+  &quot;submitted&quot;: 77,
+  &quot;paired_total_records&quot;: 40,
+  &quot;paired_total_MAE_points&quot;: {
+    &quot;ai_score&quot;: 10.396094758672893,
+    &quot;rule_score&quot;: 12.25
+  },
+  &quot;items&quot;: {
+    &quot;overhead_reach&quot;: {
+      &quot;paired_records&quot;: 47,
+      &quot;ai_MAE_grade_units&quot;: 0.4063172000010397,
+      &quot;rule_MAE_grade_units&quot;: 0.2978723404255319
+    },
+    &quot;lower_return&quot;: {
+      &quot;paired_records&quot;: 64,
+      &quot;ai_MAE_grade_units&quot;: 0.0,
+      &quot;rule_MAE_grade_units&quot;: 0.140625
+    },
+    &quot;bilateral_timing&quot;: {
+      &quot;paired_records&quot;: 59,
+      &quot;ai_MAE_grade_units&quot;: 0.3836823982040039,
+      &quot;rule_MAE_grade_units&quot;: 0.7288135593220338
+    },
+    &quot;frontal_trunk_hold&quot;: {
+      &quot;paired_records&quot;: 63,
+      &quot;ai_MAE_grade_units&quot;: 0.0,
+      &quot;rule_MAE_grade_units&quot;: 0.031746031746031744
+    }
+  },
+  &quot;ai_total_available&quot;: 40,
+  &quot;rule_total_available&quot;: 40
+}</pre></details>
+<details><summary>플랭크 — 항목별 분포·개발 검증</summary><table><tr><th>항목</th><th>구도</th><th>학습 수 / 그룹</th><th>등급 0·1·2 분포</th><th>등급별 메타 그룹 수 — 실제 인원 미확인</th><th>단일 등급</th></tr>
+<tr><td>trunk_line</td><td>side_video</td><td>12 / 9</td><td>{&#x27;2&#x27;: 9, &#x27;0&#x27;: 3}</td><td>{&#x27;0&#x27;: 3, &#x27;1&#x27;: 0, &#x27;2&#x27;: 9}</td><td>False</td></tr>
+<tr><td>elbow_sagittal_position</td><td>side_video</td><td>13 / 10</td><td>{&#x27;2&#x27;: 12, &#x27;1&#x27;: 1}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 1, &#x27;2&#x27;: 10}</td><td>False</td></tr>
+<tr><td>leg_and_body_support</td><td>side_video</td><td>11 / 9</td><td>{&#x27;2&#x27;: 9, &#x27;0&#x27;: 2}</td><td>{&#x27;0&#x27;: 2, &#x27;1&#x27;: 0, &#x27;2&#x27;: 9}</td><td>False</td></tr>
+<tr><td>support_continuity</td><td>side_video</td><td>12 / 9</td><td>{&#x27;2&#x27;: 11, &#x27;0&#x27;: 1}</td><td>{&#x27;0&#x27;: 1, &#x27;1&#x27;: 0, &#x27;2&#x27;: 9}</td><td>False</td></tr>
+</table><p>기존 입력만 학습한 후보와 보강 입력을 포함한 후보의 동일 유효 검증 교집합 비교:</p><pre>{
+  &quot;exercise&quot;: &quot;plank&quot;,
+  &quot;common_records&quot;: 2,
+  &quot;before&quot;: {
+    &quot;ai_score&quot;: 7.82006385258763,
+    &quot;rule_score&quot;: 6.25
+  },
+  &quot;after&quot;: {
+    &quot;ai_score&quot;: 7.82006385258763,
+    &quot;rule_score&quot;: 6.25
+  }
+}</pre><p>참여자·원본 연결 그룹 교차검증. 반복 구간은 같은 그룹으로 묶음:</p><pre>{
+  &quot;submitted&quot;: 18,
+  &quot;paired_total_records&quot;: 11,
+  &quot;paired_total_MAE_points&quot;: {
+    &quot;ai_score&quot;: 25.039900431346428,
+    &quot;rule_score&quot;: 18.40909090909091
+  },
+  &quot;items&quot;: {
+    &quot;elbow_sagittal_position&quot;: {
+      &quot;paired_records&quot;: 13,
+      &quot;ai_MAE_grade_units&quot;: 0.11805555555555543,
+      &quot;rule_MAE_grade_units&quot;: 0.3076923076923077
+    },
+    &quot;trunk_line&quot;: {
+      &quot;paired_records&quot;: 12,
+      &quot;ai_MAE_grade_units&quot;: 0.7344997884060384,
+      &quot;rule_MAE_grade_units&quot;: 0.6666666666666666
+    },
+    &quot;leg_and_body_support&quot;: {
+      &quot;paired_records&quot;: 11,
+      &quot;ai_MAE_grade_units&quot;: 0.9310944264069266,
+      &quot;rule_MAE_grade_units&quot;: 0.45454545454545453
+    },
+    &quot;support_continuity&quot;: {
+      &quot;paired_records&quot;: 12,
+      &quot;ai_MAE_grade_units&quot;: 0.43348558640711055,
+      &quot;rule_MAE_grade_units&quot;: 0.0
+    }
+  },
+  &quot;ai_total_available&quot;: 11,
+  &quot;rule_total_available&quot;: 11
+}</pre></details>
+<details><summary>YTW — 항목별 분포·개발 검증</summary><table><tr><th>항목</th><th>구도</th><th>학습 수 / 그룹</th><th>등급 0·1·2 분포</th><th>등급별 메타 그룹 수 — 실제 인원 미확인</th><th>단일 등급</th></tr>
+<tr><td>y_reach</td><td>front</td><td>54 / 45</td><td>{&#x27;1&#x27;: 51, &#x27;0&#x27;: 1, &#x27;2&#x27;: 2}</td><td>{&#x27;0&#x27;: 1, &#x27;1&#x27;: 43, &#x27;2&#x27;: 2}</td><td>False</td></tr>
+<tr><td>t_reach</td><td>front</td><td>77 / 66</td><td>{&#x27;2&#x27;: 66, &#x27;1&#x27;: 11}</td><td>{&#x27;0&#x27;: 0, &#x27;1&#x27;: 11, &#x27;2&#x27;: 57}</td><td>False</td></tr>
+<tr><td>w_shape</td><td>front</td><td>75 / 66</td><td>{&#x27;2&#x27;: 25, &#x27;1&#x27;: 43, &#x27;0&#x27;: 7}</td><td>{&#x27;0&#x27;: 7, &#x27;1&#x27;: 38, &#x27;2&#x27;: 24}</td><td>False</td></tr>
+<tr><td>hinge_and_trunk_hold</td><td>front</td><td>88 / 75</td><td>{&#x27;2&#x27;: 42, &#x27;1&#x27;: 33, &#x27;0&#x27;: 13}</td><td>{&#x27;0&#x27;: 13, &#x27;1&#x27;: 31, &#x27;2&#x27;: 38}</td><td>False</td></tr>
+</table><p>기존 입력만 학습한 후보와 보강 입력을 포함한 후보의 동일 유효 검증 교집합 비교:</p><pre>{
+  &quot;exercise&quot;: &quot;ytw&quot;,
+  &quot;common_records&quot;: 0,
+  &quot;before&quot;: {
+    &quot;ai_score&quot;: null,
+    &quot;rule_score&quot;: null
+  },
+  &quot;after&quot;: {
+    &quot;ai_score&quot;: null,
+    &quot;rule_score&quot;: null
+  }
+}</pre><p>참여자·원본 연결 그룹 교차검증. 반복 구간은 같은 그룹으로 묶음:</p><pre>{
+  &quot;submitted&quot;: 90,
+  &quot;paired_total_records&quot;: 0,
+  &quot;paired_total_MAE_points&quot;: {
+    &quot;ai_score&quot;: null,
+    &quot;rule_score&quot;: null
+  },
+  &quot;items&quot;: {
+    &quot;t_reach&quot;: {
+      &quot;paired_records&quot;: 77,
+      &quot;ai_MAE_grade_units&quot;: 0.15913775705994293,
+      &quot;rule_MAE_grade_units&quot;: 0.23376623376623376
+    },
+    &quot;w_shape&quot;: {
+      &quot;paired_records&quot;: 75,
+      &quot;ai_MAE_grade_units&quot;: 0.47397112024268895,
+      &quot;rule_MAE_grade_units&quot;: 0.4533333333333333
+    }
+  },
+  &quot;ai_total_available&quot;: 51,
+  &quot;rule_total_available&quot;: 0
+}</pre></details>
+<p><a href="comparison.json">모델 비교 원자료</a> · <a href="sample_count_review.json">70개 목표·항목별 집계</a></p><h2>추가 직접 라벨의 근거</h2>
+<h2>점수 계산 시간·반복 재현성</h2><p>고정 개발 검증의 같은 입력 특징에서 반복한 결과입니다. 관절 추출·특징 생성 시간은 제외되어 전체 영상 처리 속도가 아니며, 재촬영 일관성도 아닙니다.</p><pre>[
+  {
+    &quot;id&quot;: &quot;subject_002_push_up_good_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 210.55292399978498,
+    &quot;rule_grading_median_ms&quot;: 0.021592997654806823,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_002_push_up_bad_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 121.35843499709154,
+    &quot;rule_grading_median_ms&quot;: 0.01709500065771863,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_004_push_up_good_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 140.44751199980965,
+    &quot;rule_grading_median_ms&quot;: 0.013166001735953614,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_004_push_up_bad_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 199.19263100018725,
+    &quot;rule_grading_median_ms&quot;: 0.01978799991775304,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_012_push_up_good_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 231.31068099974073,
+    &quot;rule_grading_median_ms&quot;: 0.021239000489003956,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_push_up_good_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 179.53284200120834,
+    &quot;rule_grading_median_ms&quot;: 0.021084000763949007,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_017_push_up_good_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 181.18057399988174,
+    &quot;rule_grading_median_ms&quot;: 0.022176001948537305,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_012_push_up_bad_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_push_up_bad_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 221.0587210029189,
+    &quot;rule_grading_median_ms&quot;: 0.03146800008835271,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_017_push_up_bad_side&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 210.5793429982441,
+    &quot;rule_grading_median_ms&quot;: 0.030277999030658975,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;youtube_0xbZWGGEK3Q_failed_attempt&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 199.17506799902185,
+    &quot;rule_grading_median_ms&quot;: 0.021944000764051452,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00109429&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00127403&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00157328&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00005826&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00023195&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00053514&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00253673_existing_review&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00177677_existing_review&quot;,
+    &quot;exercise&quot;: &quot;pushups&quot;,
+    &quot;common_item_ids&quot;: [],
+    &quot;ai_grading_median_ms&quot;: null,
+    &quot;rule_grading_median_ms&quot;: null,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00003948&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 159.06744400126627,
+    &quot;rule_grading_median_ms&quot;: 0.015249999705702066,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00014005&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 131.00051199944573,
+    &quot;rule_grading_median_ms&quot;: 0.01562500256113708,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00023973&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 139.51239499874646,
+    &quot;rule_grading_median_ms&quot;: 0.01577700095367618,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00032130&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 149.64959499775432,
+    &quot;rule_grading_median_ms&quot;: 0.016106001567095518,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00010352&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 100.44248499980313,
+    &quot;rule_grading_median_ms&quot;: 0.015960999007802457,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00241717_existing_review&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 139.951478002331,
+    &quot;rule_grading_median_ms&quot;: 0.021927000489085913,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00039770_existing_review&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 160.41287899861345,
+    &quot;rule_grading_median_ms&quot;: 0.015036999684525654,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_002_shoulder_bad_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 230.77257100158022,
+    &quot;rule_grading_median_ms&quot;: 0.020627998310374096,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_shoulder_bad_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;lower_return&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 140.74164900011965,
+    &quot;rule_grading_median_ms&quot;: 0.015050998626975343,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_017_shoulder_good_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 289.74896900035674,
+    &quot;rule_grading_median_ms&quot;: 0.02180099909310229,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_shoulder_good_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;lower_return&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 60.43257499914034,
+    &quot;rule_grading_median_ms&quot;: 0.008662002073833719,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_002_shoulder_good_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;lower_return&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 99.77967899976647,
+    &quot;rule_grading_median_ms&quot;: 0.01467899710405618,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_004_shoulder_good_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 139.7043209981348,
+    &quot;rule_grading_median_ms&quot;: 0.011913998605450615,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_017_shoulder_bad_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;lower_return&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 49.58425199947669,
+    &quot;rule_grading_median_ms&quot;: 0.007367001671809703,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_004_shoulder_bad_front&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 30.431237999437144,
+    &quot;rule_grading_median_ms&quot;: 0.0077170006989035755,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;youtube_U9ZRi5VwSo8_rep1&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 251.27067300127237,
+    &quot;rule_grading_median_ms&quot;: 0.017875001503853127,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;youtube_U9ZRi5VwSo8_rep2&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 89.34364399829064,
+    &quot;rule_grading_median_ms&quot;: 0.012847998732468113,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;youtube_OOe_HrNnQWw_peak_cropped&quot;,
+    &quot;exercise&quot;: &quot;shoulder&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;lower_return&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 127.60230200001388,
+    &quot;rule_grading_median_ms&quot;: 0.013406999642029405,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;amanda_challenge&quot;,
+    &quot;exercise&quot;: &quot;plank&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;elbow_sagittal_position&quot;,
+      &quot;leg_and_body_support&quot;,
+      &quot;support_continuity&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 160.91061299812282,
+    &quot;rule_grading_median_ms&quot;: 0.006750997272320092,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;ottobre_challenge&quot;,
+    &quot;exercise&quot;: &quot;plank&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;leg_and_body_support&quot;,
+      &quot;support_continuity&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 111.29844300012337,
+    &quot;rule_grading_median_ms&quot;: 0.007343998731812462,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;climber_prospective&quot;,
+    &quot;exercise&quot;: &quot;plank&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;elbow_sagittal_position&quot;,
+      &quot;leg_and_body_support&quot;,
+      &quot;support_continuity&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 110.97045499991509,
+    &quot;rule_grading_median_ms&quot;: 0.005548001354327425,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;gotti_prospective&quot;,
+    &quot;exercise&quot;: &quot;plank&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;leg_and_body_support&quot;,
+      &quot;support_continuity&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 59.99787600012496,
+    &quot;rule_grading_median_ms&quot;: 0.0045960005081724375,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00105254&quot;,
+    &quot;exercise&quot;: &quot;ytw&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;t_reach&quot;,
+      &quot;w_shape&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 90.59253599843942,
+    &quot;rule_grading_median_ms&quot;: 0.007732000085525215,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00196196&quot;,
+    &quot;exercise&quot;: &quot;ytw&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;t_reach&quot;,
+      &quot;w_shape&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 148.41898599843262,
+    &quot;rule_grading_median_ms&quot;: 0.007727998308837414,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00265931&quot;,
+    &quot;exercise&quot;: &quot;ytw&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;t_reach&quot;,
+      &quot;w_shape&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 100.43955599758192,
+    &quot;rule_grading_median_ms&quot;: 0.008360999345313758,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;qevd_00265212&quot;,
+    &quot;exercise&quot;: &quot;ytw&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;t_reach&quot;,
+      &quot;w_shape&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 100.52429099960136,
+    &quot;rule_grading_median_ms&quot;: 0.0061209975683595985,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  }
+]</pre>
+<h2>관절 표시 학습 예제 — 독립 성능 시험 아님</h2>
+<h3>subject_011_push_up_good_side_recovery_window_8_direct_rep0</h3><pre>{
+  &quot;reference&quot;: {
+    &quot;criterion_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;criterion_weights&quot;: [
+      40,
+      30,
+      20,
+      10
+    ],
+    &quot;criterion_levels&quot;: [
+      2,
+      2,
+      2,
+      2
+    ],
+    &quot;score&quot;: 100.0,
+    &quot;rubric_version&quot;: &quot;project-core-form-v1&quot;,
+    &quot;expert_validated&quot;: false,
+    &quot;label_source&quot;: &quot;assistant_direct_temporal_sheet_review&quot;,
+    &quot;review_method&quot;: &quot;24장 시간순 표본 직접 검토. 스쿼트는 동기화 정면·측면. 연속 재생·전문가 검토 아님. 푸시업 13장 경계판 추가 확인.&quot;,
+    &quot;note_ko&quot;: &quot;상단–하강–상단 한 반복. 큰 몸통 꺾임 없이 손·발 지지가 보인다.&quot;,
+    &quot;unit&quot;: &quot;observable_project_core_points_0_100&quot;
+  },
+  &quot;prediction&quot;: {
+    &quot;ai_levels&quot;: [
+      0.7605633802816901,
+      2.0,
+      2.0,
+      null
+    ],
+    &quot;rule_levels&quot;: [
+      1,
+      2,
+      2,
+      null
+    ],
+    &quot;ai_score&quot;: null,
+    &quot;rule_score&quot;: null
+  },
+  &quot;observation&quot;: [
+    {
+      &quot;item&quot;: &quot;trunk_line&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 163.5979498038181,
+      &quot;feature&quot;: [
+        163.08717738569385,
+        163.5979498038181,
+        165.10855072470255,
+        170.43286985568312,
+        175.37776169351233,
+        179.48124472688795,
+        179.56287803716148,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: true,
+      &quot;side&quot;: &quot;left&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        23,
+        27
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;side&quot;
+    },
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 56.397765817752976,
+      &quot;feature&quot;: [
+        50.908632662743344,
+        56.397765817752976,
+        100.76670330620664,
+        139.8423850285244,
+        167.02732035752473,
+        172.48094421850934,
+        172.87122175574586,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: false,
+      &quot;side&quot;: &quot;left&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        13,
+        15
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;side&quot;
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 172.79316624829855,
+      &quot;feature&quot;: [
+        169.9622947041954,
+        170.24214465023027,
+        171.0816944883349,
+        172.48094421850934,
+        172.6760829871276,
+        172.79316624829855,
+        172.83219400202222,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: true,
+      &quot;side&quot;: &quot;left&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        13,
+        15
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;side&quot;
+    },
+    {
+      &quot;item&quot;: &quot;support&quot;,
+      &quot;eligible&quot;: false,
+      &quot;measurement&quot;: 0.14915511369042306,
+      &quot;feature&quot;: [
+        0.10896398682487632,
+        0.14915511369042306,
+        0.2309862520238072,
+        0.235499718759107,
+        0.23647388933410532,
+        0.2461366615041077,
+        0.25083348798134714,
+        0.2857142857142857
+      ],
+      &quot;higher_is_better&quot;: true,
+      &quot;side&quot;: &quot;left&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        15,
+        23,
+        25,
+        31
+      ],
+      &quot;simultaneous_observation&quot;: 0.2857142857142857,
+      &quot;holds&quot;: [
+        &quot;required_joints_not_simultaneously_observed_in_80_percent&quot;
+      ],
+      &quot;bank&quot;: &quot;side&quot;
+    }
+  ]
+}</pre>
+<p>primary</p><video controls preload="metadata" style="max-width:600px;max-height:500px" src="previews/subject_011_push_up_good_side_recovery_window_8_direct_rep0/primary/overlay.mp4"></video>
+<h3>rehab24_PM_126_rep4_direct_rep0</h3><pre>{
+  &quot;reference&quot;: {
+    &quot;criterion_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;criterion_weights&quot;: [
+      30,
+      20,
+      30,
+      20
+    ],
+    &quot;criterion_levels&quot;: [
+      1,
+      2,
+      2,
+      2
+    ],
+    &quot;score&quot;: 85.0,
+    &quot;rubric_version&quot;: &quot;project-core-form-v1&quot;,
+    &quot;expert_validated&quot;: false,
+    &quot;label_source&quot;: &quot;assistant_direct_temporal_sheet_review&quot;,
+    &quot;review_method&quot;: &quot;24장 시간순 표본 직접 검토. 스쿼트는 동기화 정면·측면. 연속 재생·전문가 검토 아님.&quot;,
+    &quot;note_ko&quot;: &quot;분명히 하강하나 허벅지가 수평보다 위에 남는다. 서기 복귀·접지·정면 균형은 유지된다.&quot;,
+    &quot;unit&quot;: &quot;observable_project_core_points_0_100&quot;
+  },
+  &quot;prediction&quot;: {
+    &quot;ai_levels&quot;: [
+      1.0440917286732148,
+      2.0,
+      1.9973060344827587,
+      2.0
+    ],
+    &quot;rule_levels&quot;: [
+      1,
+      2,
+      2,
+      2
+    ],
+    &quot;ai_score&quot;: 85.62096644733961,
+    &quot;rule_score&quot;: 85.0
+  },
+  &quot;observation&quot;: [
+    {
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 0.6347801089286804,
+      &quot;feature&quot;: [
+        0.6323366165161133,
+        0.6347801089286804,
+        0.682637095451355,
+        0.8575139045715332,
+        0.9834039807319641,
+        0.99576336145401,
+        0.9977922439575195,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: false,
+      &quot;side&quot;: &quot;left&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        23,
+        25
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;side&quot;
+    },
+    {
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 162.37712852712352,
+      &quot;feature&quot;: [
+        160.37274878584256,
+        160.74025380206325,
+        161.84276885072535,
+        162.0046754473269,
+        162.17303283699485,
+        162.37712852712352,
+        162.44516042383307,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: true,
+      &quot;side&quot;: &quot;left&quot;,
+      &quot;required_joints&quot;: [
+        23,
+        25,
+        27
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;side&quot;
+    },
+    {
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 0.0005116835236549377,
+      &quot;feature&quot;: [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0005116835236549377,
+        0.005608506500720978,
+        1.0,
+        0.003085690326887873
+      ],
+      &quot;higher_is_better&quot;: false,
+      &quot;side&quot;: &quot;left&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        12,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;measurement_kind&quot;: &quot;maximum_medial_drift_torso_ratio_or_inward_frontal_bend_fraction_of_180_degrees_plus_relative_heel_lift&quot;,
+      &quot;bank&quot;: &quot;side&quot;
+    },
+    {
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 1.7890819989323417,
+      &quot;feature&quot;: [
+        0.18173566175236672,
+        0.269861439857993,
+        0.5932450701055618,
+        1.099988347696281,
+        1.455282958198001,
+        1.7890819989323417,
+        2.0159760013404324,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: false,
+      &quot;side&quot;: &quot;front&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        12,
+        23,
+        24
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;front&quot;
+    }
+  ]
+}</pre>
+<p>primary</p><video controls preload="metadata" style="max-width:600px;max-height:500px" src="previews/rehab24_PM_126_rep4_direct_rep0/primary/overlay.mp4"></video>
+<p>front</p><video controls preload="metadata" style="max-width:600px;max-height:500px" src="previews/rehab24_PM_126_rep4_direct_rep0/front/overlay.mp4"></video>
+<h3>subject_006_shoulder_bad_front_recovery_window_16_direct_rep0</h3><pre>{
+  &quot;reference&quot;: {
+    &quot;criterion_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;criterion_weights&quot;: [
+      30,
+      25,
+      25,
+      20
+    ],
+    &quot;criterion_levels&quot;: [
+      2,
+      2,
+      2,
+      2
+    ],
+    &quot;score&quot;: 100.0,
+    &quot;rubric_version&quot;: &quot;project-core-form-v1&quot;,
+    &quot;expert_validated&quot;: false,
+    &quot;label_source&quot;: &quot;assistant_direct_temporal_sheet_review&quot;,
+    &quot;review_method&quot;: &quot;24장 시간순 표본 직접 검토. 스쿼트는 동기화 정면·측면. 연속 재생·전문가 검토 아님.&quot;,
+    &quot;note_ko&quot;: &quot;이 선택 반복에서는 양팔 머리 위 도달과 하단 복귀·동시 움직임·몸통 좌우 유지가 보인다. 제공자 오류 문자열을 점수로 사용하지 않았다.&quot;,
+    &quot;unit&quot;: &quot;observable_project_core_points_0_100&quot;
+  },
+  &quot;prediction&quot;: {
+    &quot;ai_levels&quot;: [
+      1.9095716642278469,
+      2.0,
+      1.9620103911254239,
+      2.0
+    ],
+    &quot;rule_levels&quot;: [
+      2,
+      2,
+      2,
+      2
+    ],
+    &quot;ai_score&quot;: 98.1687048524855,
+    &quot;rule_score&quot;: 100.0
+  },
+  &quot;observation&quot;: [
+    {
+      &quot;item&quot;: &quot;overhead_reach&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 160.3350961474263,
+      &quot;feature&quot;: [
+        59.76515559991139,
+        60.42552634974444,
+        62.14407196594989,
+        91.04866365446557,
+        144.31191480399212,
+        160.3350961474263,
+        164.19093507534726,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: true,
+      &quot;side&quot;: &quot;front&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        23,
+        24
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;measurement_kind&quot;: &quot;minimum_bilateral_elevation_and_elbow_extension_degrees&quot;,
+      &quot;bank&quot;: &quot;front&quot;
+    },
+    {
+      &quot;item&quot;: &quot;lower_return&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 80.2579637178628,
+      &quot;feature&quot;: [
+        78.92465990523645,
+        78.96621785934218,
+        79.09089172165936,
+        80.2579637178628,
+        81.92243928727387,
+        82.94243958136481,
+        83.28243967939511,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: false,
+      &quot;side&quot;: &quot;front&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        23,
+        24
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;front&quot;
+    },
+    {
+      &quot;item&quot;: &quot;bilateral_timing&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 0.07225117087364197,
+      &quot;feature&quot;: [
+        0.0021266997791826725,
+        0.003203141735866666,
+        0.010113120079040527,
+        0.03126484155654907,
+        0.052084535360336304,
+        0.07225117087364197,
+        0.07952955365180969,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: false,
+      &quot;side&quot;: &quot;front&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        12,
+        15,
+        16,
+        23,
+        24
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;measurement_kind&quot;: &quot;normalized_left_right_lift_phase_difference&quot;,
+      &quot;bank&quot;: &quot;front&quot;
+    },
+    {
+      &quot;item&quot;: &quot;frontal_trunk_hold&quot;,
+      &quot;eligible&quot;: true,
+      &quot;measurement&quot;: 0.8745722583236053,
+      &quot;feature&quot;: [
+        0.02152305354687105,
+        0.03055516979352077,
+        0.06265094171464079,
+        0.34395589293537704,
+        0.6135911285359402,
+        0.8745722583236053,
+        1.1188461822874378,
+        1.0
+      ],
+      &quot;higher_is_better&quot;: false,
+      &quot;side&quot;: &quot;front&quot;,
+      &quot;required_joints&quot;: [
+        11,
+        12,
+        23,
+        24
+      ],
+      &quot;simultaneous_observation&quot;: 1.0,
+      &quot;holds&quot;: [],
+      &quot;bank&quot;: &quot;front&quot;
+    }
+  ]
+}</pre>
+<p>primary</p><video controls preload="metadata" style="max-width:600px;max-height:500px" src="previews/subject_006_shoulder_bad_front_recovery_window_16_direct_rep0/primary/overlay.mp4"></video>
+<details><summary>subject_011_push_up_good_side_recovery_window_8_direct_rep0</summary><p>[2, 2, 2, 2] — 상단–하강–상단 한 반복. 큰 몸통 꺾임 없이 손·발 지지가 보인다.</p><a href="review/subject_011_push_up_good_side_recovery_window_8_primary.jpg">시간순 검토판</a> · <a href="review/subject_011_push_up_good_side_recovery_window_8_boundaries.jpg">시간순 검토판</a></details>
+<details><summary>subject_009_push_up_bad_side_recovery_window_8_direct_rep0</summary><p>[0, 2, 2, 2] — 골반을 높게 든 몸통 꺾임이 반복된다. 하강·복귀·손발 지지는 관측된다.</p><a href="review/subject_009_push_up_bad_side_recovery_window_8_primary.jpg">시간순 검토판</a> · <a href="review/subject_009_push_up_bad_side_recovery_window_8_boundaries.jpg">시간순 검토판</a></details>
+<details><summary>subject_008_push_up_bad_side_recovery_window_8_direct_rep0</summary><p>[2, 2, 2, 2] — 제공자 오류 문자열과 별개로 이 반복의 네 핵심 항목에서 뚜렷한 오류를 확인하지 못했다. 목 자세는 이 총점에 포함하지 않는다.</p><a href="review/subject_008_push_up_bad_side_recovery_window_8_primary.jpg">시간순 검토판</a> · <a href="review/subject_008_push_up_bad_side_recovery_window_8_boundaries.jpg">시간순 검토판</a></details>
+<details><summary>subject_013_push_up_bad_side_recovery_window_24_direct_rep0</summary><p>[0, 2, 2, None] — 몸통·골반의 큰 꺾임이 보인다. 하단에서 복부·다리의 바닥 접촉 여부는 확실하지 않아 지지 항목은 보류한다.</p><a href="review/subject_013_push_up_bad_side_recovery_window_24_primary.jpg">시간순 검토판</a> · <a href="review/subject_013_push_up_bad_side_recovery_window_24_boundaries.jpg">시간순 검토판</a></details>
+<details><summary>subject_006_push_up_good_side_recovery_window_8_direct_rep0</summary><p>[2, 2, 2, 2] — 상단–하강–상단과 몸통 정렬·손발 지지가 보인다.</p><a href="review/subject_006_push_up_good_side_recovery_window_8_primary.jpg">시간순 검토판</a> · <a href="review/subject_006_push_up_good_side_recovery_window_8_boundaries.jpg">시간순 검토판</a></details>
+<details><summary>subject_016_push_up_bad_side_recovery_window_16_direct_rep0</summary><p>[1, 2, 2, 2] — 하강·복귀와 손발 지지는 보이나 몸통·골반 정렬에 중간 수준 편차가 보인다.</p><a href="review/subject_016_push_up_bad_side_recovery_window_16_primary.jpg">시간순 검토판</a> · <a href="review/subject_016_push_up_bad_side_recovery_window_16_boundaries.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_126_rep4_direct_rep0</summary><p>[1, 2, 2, 2] — 분명히 하강하나 허벅지가 수평보다 위에 남는다. 서기 복귀·접지·정면 균형은 유지된다.</p><a href="review/rehab24_PM_126_rep4_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_126_rep4_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_029_rep1_direct_rep0</summary><p>[2, 2, 2, 2] — 허벅지가 수평에 가까워지고 서기로 복귀한다. 정면에서 큰 무릎 붕괴·좌우 기울기가 보이지 않는다.</p><a href="review/rehab24_PM_029_rep1_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_029_rep1_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_008_rep7_direct_rep0</summary><p>[1, 2, 2, 2] — 하강은 있으나 허벅지가 수평보다 위다. 서기 복귀·접지·정면 균형은 유지된다.</p><a href="review/rehab24_PM_008_rep7_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_008_rep7_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_118_rep11_direct_rep0</summary><p>[2, 2, 0, 2] — 수평에 가까운 하강과 서기 복귀가 보이나, 하단에서 양쪽 무릎이 발보다 뚜렷하게 안쪽으로 모인다. 몸통 좌우 기울기는 크지 않다.</p><a href="review/rehab24_PM_118_rep11_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_118_rep11_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_029_rep7_direct_rep0</summary><p>[2, 2, 0, 2] — 첫 반복과 달리 하단에서 무릎이 발보다 안쪽으로 모이는 정렬 이탈이 뚜렷하다. 하강·복귀·몸통 좌우 균형은 확인된다.</p><a href="review/rehab24_PM_029_rep7_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_029_rep7_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_008_rep4_direct_rep0</summary><p>[1, 2, 2, 2] — 허벅지가 수평보다 위에 남는 부분 하강이다. 서기 복귀와 큰 정렬 이탈 없는 접지가 보인다.</p><a href="review/rehab24_PM_008_rep4_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_008_rep4_front.jpg">시간순 검토판</a></details>
+<details><summary>subject_023_shoulder_bad_front_recovery_window_24_direct_rep0</summary><p>[1, 2, 0, 2] — 한 팔만 머리 위로 올리고 반대팔은 하단에 남는다. 양팔 도달 차이와 큰 시차가 보이며 하단 복귀·정면 몸통 유지는 확인된다.</p><a href="review/subject_023_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_006_shoulder_bad_front_recovery_window_16_direct_rep0</summary><p>[2, 2, 2, 2] — 이 선택 반복에서는 양팔 머리 위 도달과 하단 복귀·동시 움직임·몸통 좌우 유지가 보인다. 제공자 오류 문자열을 점수로 사용하지 않았다.</p><a href="review/subject_006_shoulder_bad_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_005_shoulder_good_front_recovery_window_24_direct_rep0</summary><p>[2, 2, 2, 2] — 하단–양팔 상단–하단과 대체로 동시 움직임·몸통 좌우 유지가 보인다.</p><a href="review/subject_005_shoulder_good_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_008_shoulder_bad_front_recovery_window_16_direct_rep0</summary><p>[1, 2, 2, 2] — 상단에서도 양팔 팔꿈치 굽힘이 크게 남는다. 하단 복귀·동시 움직임·정면 몸통 유지는 보인다.</p><a href="review/subject_008_shoulder_bad_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_011_shoulder_bad_front_recovery_window_16_direct_rep0</summary><p>[2, None, 2, 2] — 검토 창의 하단에서 양팔을 올리는 과정은 보이나 그 뒤 하단 복귀가 창 밖이므로 복귀 점수는 보류한다. 실패로 간주하지 않는다.</p><a href="review/subject_011_shoulder_bad_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_018_shoulder_good_front_recovery_window_8_direct_rep0</summary><p>[2, 2, 2, 2] — 양팔이 머리 위에 거의 펴지고 어깨 높이로 복귀한다. 동시 움직임과 몸통 좌우 유지가 보인다.</p><a href="review/subject_018_shoulder_good_front_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_018_shoulder_bad_front_recovery_window_8_direct_rep12</summary><p>[1, 2, 1, 2] — 상단에서 팔꿈치 굽힘·양팔 도달 차이가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다. 양팔 높이·움직임에도 부분 차이가 보인다.</p><a href="review/subject_018_shoulder_bad_front_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_011_shoulder_good_front_recovery_window_24_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_011_shoulder_good_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_026_shoulder_good_front_recovery_window_8_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_026_shoulder_good_front_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_019_shoulder_good_front_recovery_window_16_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_019_shoulder_good_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_007_shoulder_bad_front_recovery_window_8_direct_rep12</summary><p>[1, 2, 1, 2] — 상단에서 팔꿈치 굽힘·양팔 도달 차이가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다. 양팔 높이·움직임에도 부분 차이가 보인다.</p><a href="review/subject_007_shoulder_bad_front_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_006_shoulder_good_front_recovery_window_24_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_006_shoulder_good_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_016_shoulder_good_front_recovery_window_8_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_016_shoulder_good_front_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_008_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[1, 2, 2, 2] — 상단에서 팔꿈치 굽힘·양팔 도달 차이가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다.</p><a href="review/subject_008_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_016_shoulder_good_front_recovery_window_24_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_016_shoulder_good_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_013_shoulder_good_front_recovery_window_16_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_013_shoulder_good_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_010_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_010_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_018_shoulder_good_front_recovery_window_16_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단 반복에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다. 제공자 문자열을 점수로 바꾸지 않았다.</p><a href="review/subject_018_shoulder_good_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_013_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[None, 2, 2, 2] — 최대 도달에서 손·팔 끝이 위 경계 밖이어서 도달 점수는 비운다. 복귀·동시 움직임·몸통 좌우 항목만 채점했다.</p><a href="review/subject_013_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_010_shoulder_good_front_recovery_window_8_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다.</p><a href="review/subject_010_shoulder_good_front_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_008_shoulder_bad_front_recovery_window_8_direct_rep12</summary><p>[1, 2, 2, 2] — 머리 위 최대 도달에 큰 팔 굽힘·부분 범위가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다.</p><a href="review/subject_008_shoulder_bad_front_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_009_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[1, 2, 1, 2] — 머리 위 최대 도달에 큰 팔 굽힘·부분 범위가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다. 양팔 높이·움직임에 부분 차이도 보인다.</p><a href="review/subject_009_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_026_shoulder_bad_front_recovery_window_16_direct_rep12</summary><p>[1, 2, 2, 2] — 머리 위 최대 도달에 큰 팔 굽힘·부분 범위가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다.</p><a href="review/subject_026_shoulder_bad_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_005_shoulder_good_front_recovery_window_16_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다.</p><a href="review/subject_005_shoulder_good_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_001_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[None, 2, 2, 2] — 최대 도달에서 손·팔 끝이 위 경계 밖이어서 도달 점수는 비운다. 복귀·동시 움직임·몸통 좌우 항목만 채점했다.</p><a href="review/subject_001_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_010_shoulder_good_front_recovery_window_16_direct_rep12</summary><p>[2, 2, 2, 2] — 선택한 하단–상단–하단에서 양팔 도달·복귀·동시 움직임과 몸통 좌우 유지를 확인했다.</p><a href="review/subject_010_shoulder_good_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_018_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[1, 2, 1, 2] — 머리 위 최대 도달에 큰 팔 굽힘·부분 범위가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다. 양팔 높이·움직임에 부분 차이도 보인다.</p><a href="review/subject_018_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_009_shoulder_good_front_recovery_window_24_direct_rep12</summary><p>[None, 2, 2, 2] — 최대 도달에서 손·팔 끝이 위 경계 밖이어서 도달 점수는 비운다. 복귀·동시 움직임·몸통 좌우 항목만 채점했다.</p><a href="review/subject_009_shoulder_good_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_005_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[1, 2, 2, 2] — 머리 위 최대 도달에 큰 팔 굽힘·부분 범위가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다.</p><a href="review/subject_005_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_007_shoulder_bad_front_recovery_window_24_direct_rep12</summary><p>[1, 2, 1, 2] — 머리 위 최대 도달에 큰 팔 굽힘·부분 범위가 남는다. 하단 복귀와 몸통 좌우 유지는 확인된다. 양팔 높이·움직임에 부분 차이도 보인다.</p><a href="review/subject_007_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_001_push_up_bad_side_recovery_window_16_direct_rep24</summary><p>[1, 2, 2, 2] — 첫 상단–하강–상단 복귀에서 몸통의 경미한 꺾임이 남는다. 가슴 하강과 팔 펴기, 손·발 지지는 확인된다.</p><a href="review/subject_001_push_up_bad_side_recovery_window_16_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_016_push_up_bad_side_recovery_window_8_direct_rep24</summary><p>[2, 1, 2, 2] — 선택 반복에서 몸통은 큰 꺾임 없이 유지한다. 하강은 있으나 얕고 상단 팔 펴기로 복귀한다. 손·발 지지를 유지한다.</p><a href="review/subject_016_push_up_bad_side_recovery_window_8_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_010_push_up_bad_side_recovery_window_16_direct_rep24</summary><p>[0, 2, 2, 1] — 상단에서 골반이 처지고 하단에서 하체가 바닥에 가까이 놓이며 지지가 바뀐다. 가슴은 낮아지고 상단 팔 펴기로 복귀한다.</p><a href="review/subject_010_push_up_bad_side_recovery_window_16_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_005_push_up_bad_side_recovery_window_8_direct_rep24</summary><p>[1, 1, 2, 2] — 골반이 다소 들린 꺾임이 남고 하강 범위는 부분적이다. 상단 팔 펴기 복귀와 손·발 지지는 확인된다.</p><a href="review/subject_005_push_up_bad_side_recovery_window_8_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_013_push_up_bad_side_recovery_window_16_direct_rep24</summary><p>[0, 2, 2, 1] — 골반 처짐이 뚜렷하고 하단에서 하체 바닥 지지로 바뀐다. 가슴 하강과 상단 팔 펴기 복귀는 보인다.</p><a href="review/subject_013_push_up_bad_side_recovery_window_16_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_006_push_up_bad_side_recovery_window_8_direct_rep24</summary><p>[0, 2, 2, 2] — 반복 내내 골반 들림이 뚜렷하다. 가슴 하강과 상단 팔 펴기 복귀를 수행하고 손·발 지지를 유지한다.</p><a href="review/subject_006_push_up_bad_side_recovery_window_8_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_019_shoulder_bad_front_recovery_window_16_direct_rep24</summary><p>[1, 2, 1, 2] — 어깨 높이 하단에서 양팔을 올리고 하단으로 돌아온다. 상단 팔 굽힘과 양팔 도달 차이가 남으며 큰 몸통 좌우 이탈은 없다.</p><a href="review/subject_019_shoulder_bad_front_recovery_window_16_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_016_shoulder_bad_front_recovery_window_16_direct_rep24</summary><p>[2, 2, 2, 2] — 양팔이 하단에서 머리 위로 거의 펴지고 함께 하단으로 돌아온다. 큰 몸통 좌우 이탈이 없어 제공자 bad 문자열만으로 감점하지 않는다.</p><a href="review/subject_016_shoulder_bad_front_recovery_window_16_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_007_shoulder_bad_front_recovery_window_16_direct_rep24</summary><p>[1, 2, 2, 2] — 양팔을 함께 올리고 어깨 높이 하단으로 돌아온다. 상단 팔꿈치 굽힘이 남으며 큰 몸통 좌우 이탈은 없다.</p><a href="review/subject_007_shoulder_bad_front_recovery_window_16_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_014_shoulder_bad_front_recovery_window_24_direct_rep24</summary><p>[1, 2, 1, 2] — 상단에서 팔꿈치 굽힘과 양팔 도달 차이가 남는다. 하단으로 복귀하고 큰 몸통 좌우 이탈은 없다.</p><a href="review/subject_014_shoulder_bad_front_recovery_window_24_targeted.jpg">시간순 검토판</a></details>
+<details><summary>subject_008_push_up_good_side_recovery_window_8_direct_rep6</summary><p>[2, 2, 2, 2] — 상단–하단–상단에서 몸통 정렬과 손발 지지가 보인다.</p><a href="review/subject_008_push_up_good_side_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_010_push_up_good_side_recovery_window_8_direct_rep6</summary><p>[2, 2, 2, 2] — 큰 몸통 꺾임 없이 하강하고 상단으로 복귀한다. 손발 지지가 보인다.</p><a href="review/subject_010_push_up_good_side_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_010_push_up_good_side_recovery_window_24_direct_rep6</summary><p>[2, 2, 2, 2] — 앞서 검토한 반복과 겹치지 않는 후속 상단–하단–상단이다. 네 핵심 항목에서 큰 오류가 보이지 않는다.</p><a href="review/subject_010_push_up_good_side_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_018_push_up_bad_side_recovery_window_8_direct_rep6</summary><p>[None, 2, 2, None] — 가슴 하강과 팔 펴기 복귀는 보이나 발끝이 화면 밖이어서 전신 선과 손발 지지 항목은 보류한다.</p><a href="review/subject_018_push_up_bad_side_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_010_push_up_bad_side_recovery_window_8_direct_rep6</summary><p>[0, 2, 2, None] — 몸통과 다리가 함께 정렬을 유지하지 못하고 골반 처짐·물결 모양 복귀가 보인다. 하단의 바닥 접촉을 명확히 구별하기 어려워 지지는 보류한다.</p><a href="review/subject_010_push_up_bad_side_recovery_window_8_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_016_push_up_good_side_recovery_window_16_direct_rep6</summary><p>[2, 2, 2, 2] — 별도 후속 반복에서 충분한 하강·상단 복귀와 큰 몸통 꺾임 없는 손발 지지가 보인다.</p><a href="review/subject_016_push_up_good_side_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_029_rep2_direct_rep6</summary><p>[2, 2, 2, 2] — 수평에 가까운 하강과 서기 복귀가 보인다. 정면·측면에서 큰 무릎 정렬 이탈이나 접지 상실이 보이지 않는다.</p><a href="review/rehab24_PM_029_rep2_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_029_rep2_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_043_rep2_direct_rep6</summary><p>[1, 2, 2, 2] — 분명한 하강이나 허벅지는 수평보다 위에 남는다. 서기 복귀·접지·몸통 좌우 유지가 보인다.</p><a href="review/rehab24_PM_043_rep2_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_043_rep2_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_038_rep9_direct_rep6</summary><p>[2, 2, 2, 2] — 수평에 가까운 하강 후 시작 서기로 복귀한다. 큰 무릎 붕괴나 좌우 몸통 이탈 없이 수행한다.</p><a href="review/rehab24_PM_038_rep9_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_038_rep9_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_008_rep16_direct_rep6</summary><p>[1, 2, 2, 2] — 앞선 이 참여자의 반복처럼 허벅지가 수평보다 위에 남는 하강이다. 서기 복귀·접지·정면 균형이 보인다.</p><a href="review/rehab24_PM_008_rep16_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_008_rep16_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_105_rep18_direct_rep6</summary><p>[2, 2, 0, 2] — 깊이와 복귀는 확인되나 정면 하단에서 무릎이 발보다 뚜렷하게 안쪽으로 모인다. 앞뒤 몸통 전경을 좌우 균형 오류로 바꾸지 않았다.</p><a href="review/rehab24_PM_105_rep18_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_105_rep18_front.jpg">시간순 검토판</a></details>
+<details><summary>rehab24_PM_105_rep20_direct_rep6</summary><p>[2, 2, 0, 2] — 서로 겹치지 않는 후속 반복에서도 무릎 안쪽 붕괴가 보인다. 수평에 가까운 하강과 서기 복귀·몸통 좌우 유지는 확인된다.</p><a href="review/rehab24_PM_105_rep20_primary.jpg">시간순 검토판</a> · <a href="review/rehab24_PM_105_rep20_front.jpg">시간순 검토판</a></details>
+<details><summary>subject_007_shoulder_good_front_recovery_window_24_direct_rep6</summary><p>[2, 2, 2, 2] — 양팔이 머리 위로 거의 펴지고 어깨 높이 하단으로 함께 복귀한다. 큰 좌우 몸통 이탈이 보이지 않는다.</p><a href="review/subject_007_shoulder_good_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_026_shoulder_bad_front_recovery_window_24_direct_rep6</summary><p>[1, 2, 2, 2] — 상단에서 팔꿈치 굽힘이 남아 도달이 부분적이다. 하단 복귀와 양팔 동시 움직임·몸통 좌우 유지는 보인다.</p><a href="review/subject_026_shoulder_bad_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_013_shoulder_bad_front_recovery_window_16_direct_rep6</summary><p>[None, 2, 2, 2] — 최대 도달 때 손·덤벨이 위 경계 밖으로 나가 도달 항목은 보류한다. 하단 복귀·동시 움직임·몸통 좌우 유지 항목만 채점한다.</p><a href="review/subject_013_shoulder_bad_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_019_shoulder_good_front_recovery_window_24_direct_rep6</summary><p>[2, 2, 2, 2] — 양팔을 머리 위로 거의 펴고 하단으로 돌아온다. 큰 시차·좌우 몸통 기울기는 보이지 않는다.</p><a href="review/subject_019_shoulder_good_front_recovery_window_24_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_026_shoulder_good_front_recovery_window_16_direct_rep6</summary><p>[2, 2, 2, 2] — 이 선택 반복에서는 양팔이 거의 펴지는 머리 위 도달과 하단 복귀가 확인된다.</p><a href="review/subject_026_shoulder_good_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<details><summary>subject_005_shoulder_bad_front_recovery_window_16_direct_rep6</summary><p>[1, 2, 2, 2] — 머리 위 최대 도달에서도 팔꿈치 굽힘이 크게 남는다. 하단 복귀·양팔 동시 움직임·몸통 좌우 유지는 확인된다.</p><a href="review/subject_005_shoulder_bad_front_recovery_window_16_primary.jpg">시간순 검토판</a></details>
+<h2>보유 QEVD YTW 직접 검토 초안</h2>
+<details><summary>qevd_00271981_batch1</summary><p>[1, 2, 1, 2] · 총점 72.5</p><p>첫 시도의 Y는 완전한 대각선 펴짐에 일부 미달하고 T는 양옆으로 펼친다. W는 부분 모양이며 분명한 전경을 유지한다.</p><a href="review/qevd_00271981.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00122912_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>Y에서 큰 팔 굽힘이 남고 T는 펼친다. W는 부분 굽힘·손 위치이며 전경은 얕다. 엄지 방향은 배점하지 않는다.</p><a href="review/qevd_00122912.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00221452_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>Y의 팔 굽힘과 W의 부분 모양이 보이고 T는 펼친다. 전경은 얕으며 척추 곡률 자체를 채점한 것이 아니다.</p><a href="review/qevd_00221452.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00105682_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>빠른 첫 시도의 Y는 큰 팔 굽힘이 남고 T 펼침·손을 팔꿈치 위에 둔 W 모양은 구분된다. 전경을 유지한다. 빠른 속도 자체에는 감점하지 않는다.</p><a href="review/qevd_00105682.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00207813_batch1</summary><p>[None, 2, 2, 2] · 총점 None</p><p>Y 상단 손 잘림으로 Y는 보류한다. 양옆 T와 위쪽 손의 W, 분명한 전경 유지는 보인다.</p><a href="review/qevd_00207813.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00163381_batch1</summary><p>[None, 2, 1, 2] · 총점 None</p><p>정면의 Y 전방 도달·펴짐은 불명확해 보류한다. T는 펼치고 끝의 W는 부분 모양이다. 전경은 유지한다. 영상 끝에 복귀가 없으므로 전체 시도 완료를 주장하지 않는다.</p><a href="review/qevd_00163381.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00223712_batch1</summary><p>[None, 2, 0, 2] · 총점 None</p><p>Y 최대 도달은 위 경계 밖이어서 보류한다. T 펼침은 보이나 W 시도에서 손이 팔꿈치 위에 놓이는 모양이 만들어지지 않는다. 분명한 전경은 유지한다.</p><a href="review/qevd_00223712.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00177543_batch1</summary><p>[None, 1, 2, 0] · 총점 None</p><p>영상 시작 전 Y 최대 도달을 확인할 수 없어 Y는 보류한다. T는 팔 굽힘·낮은 펼침이 남고 W 굽힘은 구별된다. 목표 전경 변형과 달리 대체로 직립이다.</p><a href="review/qevd_00177543.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00142810_batch1</summary><p>[1, 2, 2, 1] · 총점 75.0</p><p>Y 방향 올림에 큰 팔 굽힘이 남는다. T와 손이 팔꿈치 위에 놓인 W는 구별되지만 전경은 얕다.</p><a href="review/qevd_00142810.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00107192_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>Y 단계는 큰 팔 굽힘이 남는 부분 도달이다. T 펼침과 W 굽힘이 구별되고 분명한 전경을 유지한다.</p><a href="review/qevd_00107192.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00213492_batch1</summary><p>[None, 2, 0, 1] · 총점 None</p><p>Y 손끝이 화면 위 밖이어서 보류한다. T 뒤의 다음 올림에서도 팔꿈치 굽힘 W 모양이 나타나지 않는다. 전경은 얕게 보인다.</p><a href="review/qevd_00213492.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00098673_batch1</summary><p>[1, 2, None, 1] · 총점 None</p><p>Y는 팔 굽힘이 남고 T 펼침은 보인다. 끝까지 T에 머물러 W 시도의 완결을 확인할 수 없으므로 W 실패 점수를 만들지 않는다. 전경은 얕다.</p><a href="review/qevd_00098673.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00186041_batch1</summary><p>[0, 2, 1, 2] · 총점 57.5</p><p>첫 Y 시도는 대각선으로 팔을 뻗는 수행이 매우 작다. T 펼침은 보이고 W는 팔 모양이 좁아 부분 형태다. 분명한 전경을 유지한다.</p><a href="review/qevd_00186041.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00151882_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>Y 방향 올림에는 팔 굽힘이 남지만 T 펼침과 양손이 팔꿈치 위에 놓인 W는 구별된다. 전경 자세는 유지한다.</p><a href="review/qevd_00151882.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00075021_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>첫 Y는 팔 굽힘이 남는다. T와 W가 구별되고 분명한 전경을 유지한 뒤 팔을 내린다.</p><a href="review/qevd_00075021.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00131767_batch1</summary><p>[1, 2, 2, 1] · 총점 75.0</p><p>Y 팔 굽힘이 크고 전경은 얕다. T 펼침과 W 굽힘은 시간순 장면에서 구별된다.</p><a href="review/qevd_00131767.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00217128_batch1</summary><p>[None, 2, 0, 1] · 총점 None</p><p>Y 최대 도달이 위 경계 밖이어서 보류한다. T 뒤 W 시도에서는 팔꿈치를 뒤로 당기고 손이 아래에 남아 목표 W 형태가 구별되지 않는다. 전경은 얕다.</p><a href="review/qevd_00217128.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00229192_batch1</summary><p>[1, 2, 0, 1] · 총점 None</p><p>Y는 큰 팔 굽힘이 남고 T 펼침은 보인다. 마지막 당김에서 손이 팔꿈치 아래에 남아 W 형태가 명확히 미달한다. 전경은 얕다.</p><a href="review/qevd_00229192.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00200145_batch1</summary><p>[1, 1, 1, 0] · 총점 40.0</p><p>Y·T 모두 큰 팔 굽힘과 부분 도달이 남는다. W는 좁은 부분 모양이며 몸통은 대체로 직립이다.</p><a href="review/qevd_00200145.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00238218_batch1</summary><p>[None, 1, 2, 0] · 총점 None</p><p>클립 시작 전 Y 도달을 확인할 수 없어 보류한다. T는 팔 굽힘이 남고 W는 양손이 팔꿈치 위에 놓인 형태가 구별된다. 몸통은 직립이다.</p><a href="review/qevd_00238218.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00122226_batch1</summary><p>[1, 1, 1, 2] · 총점 60.0</p><p>Y는 큰 팔 굽힘이 남고 T에 양팔 높이 차이가 보인다. W는 좁은 부분 모양이다. 분명한 전경을 유지한다.</p><a href="review/qevd_00122226.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00103453_batch1</summary><p>[1, 2, 1, 2] · 총점 72.5</p><p>영상 앞의 이미 시작된 반복 대신 휴식 뒤 반복을 선택했다. Y는 부분 도달, T 펼침은 구별되고 W는 좁은 부분 굽힘이다. 전경은 유지한다.</p><a href="review/qevd_00103453.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00092834_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>Y 팔 굽힘이 남지만 T와 W가 구별되고 전경을 유지한 뒤 팔을 내린다.</p><a href="review/qevd_00092834.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00049546_batch1</summary><p>[1, 2, 1, 2] · 총점 None</p><p>Y는 큰 팔 굽힘이 남고 T는 펼쳐진다. W는 부분 굽힘이다. 전경을 유지하지만 클립 끝까지 W에 머물러 원위치 복귀는 확인할 수 없으므로 총점은 보류한다.</p><a href="review/qevd_00049546.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00145185_batch1</summary><p>[1, 2, 1, 2] · 총점 72.5</p><p>Y 팔 굽힘이 남고 T는 펼쳐진다. W는 손과 팔꿈치 높이 차이가 작아 부분 모양이다. 전경을 유지하고 원위치로 돌아온다.</p><a href="review/qevd_00145185.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00211247_batch1</summary><p>[1, 2, 2, 1] · 총점 75.0</p><p>휴식 뒤 두 번째 반복을 선택했다. Y는 부분 굽힘이 남지만 T·W가 구별된다. 초기 직립에서 얕은 전경으로 변하는 몸통 이탈이 남는다.</p><a href="review/qevd_00211247.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00123817_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>저조도 장면이나 팔의 큰 윤곽과 구간은 보인다. Y는 큰 굽힘, W는 양팔 형태 차이가 남고 T 펼침은 구별된다. 전경은 얕다.</p><a href="review/qevd_00123817.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00207227_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>첫 반복과 겹치지 않는 두 번째 Y–T–W와 팔 내림을 선택했다. Y에 큰 팔 굽힘이 남고 T·W는 구별되며 전경은 유지된다.</p><a href="review/qevd_00207227.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00183299_batch1</summary><p>[0, 1, 0, 2] · 총점 32.5</p><p>첫 시도는 대각선 Y 방향 올림이 매우 작고 T도 어깨 선보다 낮다. 뒤로 당김에서 손이 아래에 남아 W가 미달한다. 전경은 분명하다.</p><a href="review/qevd_00183299.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00233070_batch1</summary><p>[1, 1, 2, 0] · 총점 52.5</p><p>Y·T에서 큰 팔 굽힘·낮은 도달이 남고 W 굽힘은 구별된다. 몸통은 직립이다. 비슷한 촬영 환경의 다른 worker 영상과 분할 연결 검토가 필요하다.</p><a href="review/qevd_00233070.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00277054_batch1</summary><p>[1, 2, 2, 1] · 총점 None</p><p>휴식 뒤 Y는 팔 굽힘이 남고 T·W는 구별된다. 전경은 얕다. 마지막 W 뒤 원위치 복귀가 클립에 없어서 총점은 보류한다.</p><a href="review/qevd_00277054.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00249915_batch1</summary><p>[None, 2, 1, 1] · 총점 None</p><p>Y 최대 도달의 손끝이 위 경계 밖이므로 보류한다. T 펼침은 보이나 W는 좁은 부분 형태다. 전경은 얕다.</p><a href="review/qevd_00249915.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00234208_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>Y에는 큰 팔 굽힘이 남고 T·W는 구별된다. 전경 자세를 유지한 뒤 원위치로 돌아온다.</p><a href="review/qevd_00234208.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00229903_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>첫 반복에서 Y는 팔 굽힘, W는 손·팔꿈치 높이 차이가 작은 부분 형태다. T는 펼쳐지고 전경은 얕다.</p><a href="review/qevd_00229903.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00164005_batch1</summary><p>[1, 1, 2, 0] · 총점 52.5</p><p>Y·T는 큰 팔 굽힘과 낮은 도달이 남고 W는 구별된다. 몸통은 목표 변형과 달리 직립이다.</p><a href="review/qevd_00164005.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00222910_batch1</summary><p>[0, 2, 0, 2] · 총점 None</p><p>Y 대각선 도달이 매우 작다. T 뒤 당김에서는 손이 팔꿈치 아래에 남아 W가 미달한다. 전경은 유지하나 W 뒤 원위치 복귀가 없어 총점은 보류한다.</p><a href="review/qevd_00222910.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00114122_batch1</summary><p>[None, 2, None, 2] · 총점 None</p><p>보유 클립에서 어깨 선의 양옆 펼침과 팔 내림만 보인다. Y·W 시도를 확인할 수 없어 실패 점수 대신 보류한다. 전경 자세는 분명하다.</p><a href="review/qevd_00114122.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00239742_batch1</summary><p>[1, 2, 2, 0] · 총점 None</p><p>두 번째 시도의 Y에 팔 굽힘·양팔 차이가 남고 T·W는 구별된다. 단계마다 몸통을 크게 일으켰다 숙이는 반동이 보인다. 마지막 복귀가 클립 밖이어서 총점은 보류한다.</p><a href="review/qevd_00239742.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00215611_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>Y는 부분 도달이고 T는 펼쳐진다. W는 양팔 형태 차이가 남고 전경이 얕다.</p><a href="review/qevd_00215611.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00217441_batch1</summary><p>[1, 2, 2, 2] · 총점 85.0</p><p>첫 Y–T–W와 팔 내림을 선택했다. Y 팔 굽힘이 남지만 T·W는 구별되고 분명한 전경을 유지한다.</p><a href="review/qevd_00217441.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00038239_batch1</summary><p>[1, 2, None, 1] · 총점 None</p><p>Y는 양팔이 좁게 머리 위로 향해 대각선 도달이 제한된다. T는 펼쳐지며 W 굽힘 단계는 확정하지 않는다. 전경은 얕다.</p><a href="review/qevd_00038239_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00153828_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>Y에서 팔 굽힘과 좁은 도달이 남고 T는 양옆으로 펼쳐진다. W 굽힘은 부분적이며 전경은 얕다.</p><a href="review/qevd_00153828_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00058755_batch1</summary><p>[1, 2, 1, 2] · 총점 72.5</p><p>전경을 유지하며 T는 양옆으로 펼친다. Y와 W는 정면 단축 투영과 부분 굽힘으로 도달·모양이 제한된다.</p><a href="review/qevd_00058755_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00197943_batch1</summary><p>[2, 2, None, 2] · 총점 None</p><p>첫 Y에서 양팔을 대각선으로 대체로 펴고 T를 펼친다. 분명한 전경이 보인다. 별도 W 단계는 확정하지 않고 채우지 않는다.</p><a href="review/qevd_00197943_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00247622_batch1</summary><p>[1, 2, 1, 2] · 총점 72.5</p><p>전경 유지와 양옆 T가 보인다. Y에서 팔이 앞쪽으로 모이고 W 모양은 부분 굽힘으로 제한된다.</p><a href="review/qevd_00247622_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00170373_batch1</summary><p>[2, 2, 2, 2] · 총점 100.0</p><p>첫 시도에서 양팔을 대각선 Y와 양옆 T로 대체로 편다. 이어 팔꿈치를 굽혀 손이 위쪽인 W를 만들고 팔을 내린다. 전경을 큰 흔들림 없이 유지한다.</p><a href="review/qevd_00170373_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00101799_batch1</summary><p>[1, 2, 1, 2] · 총점 72.5</p><p>전경과 양옆 T는 보인다. Y는 큰 팔 굽힘으로 제한되며 W도 부분적인 모양이다.</p><a href="review/qevd_00101799_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00233698_batch1</summary><p>[1, 2, 1, 0] · 총점 52.5</p><p>몸통은 대체로 직립이다. Y는 팔꿈치 굽힘이 크고 T는 펼쳐지며 W 굽힘 모양은 부분적이다.</p><a href="review/qevd_00233698_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00268366_batch1</summary><p>[1, 2, 1, 2] · 총점 72.5</p><p>몸통 전경과 양옆 펼침을 확인했다. Y는 팔꿈치 굽힘이 남고 W는 부분 굽힘이다.</p><a href="review/qevd_00268366_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00227365_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>전경은 얕고 Y의 팔꿈치 굽힘이 크다. 양옆 T는 펼치며 W는 손이 머리 옆으로 모이는 부분 모양이다.</p><a href="review/qevd_00227365_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00193851_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>첫 Y에서 큰 팔 굽힘이 남고 T는 대체로 펼친다. W 모양은 부분적이며 전경은 얕다.</p><a href="review/qevd_00193851_extension_candidate.jpg">직접 검토 근거</a></details>
+<details><summary>qevd_00174465_batch1</summary><p>[1, 2, 1, 1] · 총점 62.5</p><p>Y는 큰 팔 굽힘이 남고 T는 양옆으로 펼친다. W는 부분적인 굽힘이며 전경은 얕다.</p><a href="review/qevd_00174465_extension_candidate.jpg">직접 검토 근거</a></details><p><a href="held_round2/index.html">보유 자료 2차 보강: 5종 학습 수·AI/Rule 비교·관절 영상</a></p><p><a href="squat_partial_top_trial/index.html">후속 스쿼트: 부분 복귀와 발 관측 분리·재학습 결과</a></p><p><a href="team_share/index.html">2026-10-22 팀 공유용 코드·모델 검증과 남은 제약</a></p><p><a href="../five-exercise-recovery-20261023/index.html">2026-10-23 보유 자료 라벨 보강·재학습 비교 결과</a></p>

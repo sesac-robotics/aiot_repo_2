@@ -1,0 +1,117 @@
+{
+  "reference_sha256": "969768c9842f9da3b379e6c9d77fc71304ec6dae1107d4b5f10a27145bd44de6",
+  "plan_sha256": "2788b20e6ef8b9bffee6d64c787fd8838b1c75c29136559b4edd0f42b37fd0a2",
+  "evaluation_sha256": "1bedc66607727b16111c41d60bd62d599baace76ad266227f581f8e06ee1f4df",
+  "audited_evaluation_sha256": "c1a2c028ced3b80378084e2b0d03d947087161302fc7be85074613f5baf67a95",
+  "source_roles_preserved": true,
+  "Test_or_finalTest_used": false,
+  "models_refit": false,
+  "tracker_changed": false,
+  "labels_used_for_fit": false,
+  "source_audits": [
+    {
+      "source_id": "V37",
+      "source_role": "train_unchanged",
+      "source_sha256": "5d4aca8f5fb4aa2188d10aee3090c433814a491dd43581c6eaaa7ad64c7023cb",
+      "cache_sha256": "90ce553a9ce08e0943954698e980b732b28e1058f28f7f485d2eed4f4b683aca",
+      "sample_count": 216,
+      "border_safe_required_valid": 216,
+      "actual_slots": 216,
+      "coverage": 1.0,
+      "synchronized_views_and_overlap_stay_same_source": true
+    },
+    {
+      "source_id": "V38",
+      "source_role": "train_unchanged",
+      "source_sha256": "61dc86f6b29761b55909cb403fdf2bcf310355346c7b651ed79b9bbd3c367985",
+      "cache_sha256": "f3e96a10b7fe4fb9e7d4a465b525af8b02da2292a74e768289e201d570efc059",
+      "sample_count": 271,
+      "border_safe_required_valid": 271,
+      "actual_slots": 271,
+      "coverage": 1.0,
+      "synchronized_views_and_overlap_stay_same_source": true
+    },
+    {
+      "source_id": "V39",
+      "source_role": "train_unchanged",
+      "source_sha256": "d42fbf3b5f5c36ccdf03cf1f039166d87657b93bf109bd031d252b18a1967a06",
+      "cache_sha256": "195057aeba4e73f054f6754f634efdf77ccbe8416da486cf08489b56a308938c",
+      "sample_count": 251,
+      "border_safe_required_valid": 251,
+      "actual_slots": 251,
+      "coverage": 1.0,
+      "synchronized_views_and_overlap_stay_same_source": true
+    },
+    {
+      "source_id": "V40",
+      "source_role": "train_unchanged",
+      "source_sha256": "402070cc46acd216930b2009a7c2792f6ef7ff1b256dea54b6ea46cdb5d0e309",
+      "cache_sha256": "25aa49398161de4e550082762fc8d917524b74b86b2d39f15a935832b4dffe37",
+      "sample_count": 310,
+      "border_safe_required_valid": 288,
+      "actual_slots": 310,
+      "coverage": 0.9290322580645162,
+      "synchronized_views_and_overlap_stay_same_source": true
+    },
+    {
+      "source_id": "V41",
+      "source_role": "train_unchanged",
+      "source_sha256": "82b7f1869fe44817820404735562b384222c1b40b14cd8ee46f7e63f76ccef68",
+      "cache_sha256": "eca73e36bfbad4dc51be64326af8be4fad4a289ce9f6f2c99e2bb944dfaddf54",
+      "sample_count": 186,
+      "border_safe_required_valid": 186,
+      "actual_slots": 186,
+      "coverage": 1.0,
+      "synchronized_views_and_overlap_stay_same_source": true
+    },
+    {
+      "source_id": "V43",
+      "source_role": "train_unchanged",
+      "source_sha256": "c073dd9b453ee631fe72792149af62f4ec5eea721d7dbc8c9c9db8085aa4a605",
+      "cache_sha256": "cab6a535488e1e453b26225cdc97e2e57129a54d405dfccf9041d34c9674ab90",
+      "sample_count": 289,
+      "border_safe_required_valid": 289,
+      "actual_slots": 289,
+      "coverage": 1.0,
+      "synchronized_views_and_overlap_stay_same_source": true
+    },
+    {
+      "source_id": "V44",
+      "source_role": "train_unchanged",
+      "source_sha256": "87a1f2dc740bac44ed13fe7cba573e3908efcfae3dc6d873950b2e6d2b46fa9a",
+      "cache_sha256": "b98be25f72a64f8064cf0f10f19aed0877612de148b8a61589e145fea3e6d2bf",
+      "sample_count": 252,
+      "border_safe_required_valid": 252,
+      "actual_slots": 252,
+      "coverage": 1.0,
+      "synchronized_views_and_overlap_stay_same_source": true
+    }
+  ],
+  "summary": {
+    "ordered_attempt_drafts": 10,
+    "matched_draft_attempts": 10,
+    "phase_boundary_comparisons": 30,
+    "phase_boundaries_definitely_within_0_2s": 16,
+    "phase_boundaries_possibly_within_0_2s": 27,
+    "terminal_comparisons": 10,
+    "terminals_definitely_within_0_2s": 7,
+    "terminals_possibly_within_0_2s": 10,
+    "natural_negative_episodes": 13,
+    "negative_episodes_with_false_completion": 0,
+    "negative_kind_counts": {
+      "T_hold_omitted": 7,
+      "W_hold_omitted": 5,
+      "arms_down_wait": 1
+    },
+    "adequately_observed_negative_episodes": 13,
+    "false_completion_in_adequately_observed_negative_episodes": 0
+  },
+  "activation_gate_passed": false,
+  "code_sha256": {
+    "tools/ytw-work/boundary_review.py": "f23577dbcc2e7f6fa7b09aeb7b4e72892bbf27c675ef4ddbabbdbe37c6234524",
+    "tools/ytw-work/negative_detail.py": "3c68a83372151a5b44d97bdff062307d350c27004584c93ed135a865dbb6269f",
+    "tools/ytw-work/freeze_boundary_v2.py": "588b024f5accc277c9275cde4acaf2e93444dc06286d57bcd3fbfaf4df746b66",
+    "tools/ytw-work/evaluate_boundary_v2.py": "bd85494f4b310c4d8d15cac1610af9877b431c0e61a4dfc24b5802dc39c7d333",
+    "tools/ytw-work/audit_boundary_v2.py": "c95e4f60d06a5b74acf9e0315bbe369b4bb357cf41f052d823f9ab93f8d9bffa"
+  }
+}

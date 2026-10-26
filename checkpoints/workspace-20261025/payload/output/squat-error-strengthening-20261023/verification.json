@@ -1,0 +1,55 @@
+{
+  "new_repetitions_reviewed": 24,
+  "new_item_labels": 32,
+  "new_error_or_partial_item_labels": 16,
+  "label_counts": {
+    "knee_inward": {
+      "0": 8,
+      "1": 0,
+      "2": 8
+    },
+    "trunk_balance": {
+      "0": 4,
+      "1": 4,
+      "2": 8
+    }
+  },
+  "new_people": 0,
+  "new_view_angles": [
+    10,
+    20
+  ],
+  "existing_misses_rechecked": 2,
+  "existing_misses_resolved": 0,
+  "return_candidates_reviewed": 4,
+  "new_return_errors": 0,
+  "return_AI_retrained": false,
+  "person_groups": 33,
+  "folds": 5,
+  "person_overlap": 0,
+  "source_overlap": 0,
+  "preserved_files": {
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/pushups.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/shoulder.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/manifest.json": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/development_round3.json": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/plank.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/squats.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/ytw.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/validation.json": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/training_support.json": true,
+    "output/live-webcam-20261023/front-candidate/model-v1.joblib": true,
+    "output/live-webcam-20261023/front-candidate/torso-model.joblib": true,
+    "output/live-webcam-20261023/front-candidate/model.joblib": true,
+    "output/squat-relabel-20261023/candidate.joblib": true,
+    "output/squat-relabel-expanded-20261023/candidate.joblib": true
+  },
+  "team_source_preserved": true,
+  "candidate_runtime_deployed": false,
+  "existing_score_policy_changed": false,
+  "new_candidate_tests_passed": 6,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "final_test_person_opened": false,
+  "decision": "모델 가중치·규칙 경계·현재 100점 정책 유지. 기본 무릎 AI는 고정 검증에서 오류 미검출 증가, 몸통은 교차검증에서 오경고 증가. 발목 보조 후보는 개선 경향이 있으나 기존 간격 기준과 대상이 다르고 두 핵심 미검출이 남아 오프라인 진단 후보로만 보존."
+}

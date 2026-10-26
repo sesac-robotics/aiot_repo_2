@@ -1,0 +1,121 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "pushups",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": 1.6857142857142855,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.3142857142857145,
+      "observed": true,
+      "bank": "side",
+      "measured": 173.05609857389894,
+      "feature": [
+        172.5714108949943,
+        173.05609857389894,
+        173.9160285256687,
+        175.55708956413946,
+        177.36376293158645,
+        177.94482650565678,
+        177.9958527181263,
+        0.9523809523809523
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "descent_range",
+      "weight": 30,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "side",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "finite_required_geometry_unavailable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "return_extension",
+      "weight": 20,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "side",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "finite_required_geometry_unavailable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support",
+      "weight": 10,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "side",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "finite_required_geometry_unavailable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": null,
+  "rule_score": null,
+  "ai_minus_rule": null,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 10.227055005088914,
+    "ai": 10.223427998425905,
+    "rule": 0.004792003892362118
+  },
+  "limitations": [
+    "Development-only labels; trunk and support require side view.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_001_push_up_good_side.mp4",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "선택 구간에서 팔을 편 상단, 가슴 하강, 상단 복귀가 보인다. 손·발 지지와 큰 꺾임 없는 몸통을 유지한다."
+    ],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 10.918658652997692,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

@@ -1,0 +1,149 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "plank",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": 0.9382112129710595,
+      "rule_grade": 1,
+      "ai_minus_rule": -0.06178878702894053,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 155.2535382445418,
+      "feature": [
+        154.55820416558646,
+        155.2535382445418,
+        157.76853380683292,
+        162.96037769991446,
+        163.91828375304985,
+        167.62821225076533,
+        173.30926060103795
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "elbow_sagittal_position",
+      "weight": 25,
+      "ai_grade": 1.3619211183560738,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.36192111835607377,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 0.2728389151807647,
+      "feature": [
+        0.016773068370372728,
+        0.0243175605852019,
+        0.10501902844070228,
+        0.2332995750051534,
+        0.25287449442166904,
+        0.2728389151807647,
+        0.3772300145367542
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "leg_and_body_support",
+      "weight": 20,
+      "ai_grade": 1.0529895892891896,
+      "rule_grade": 0,
+      "ai_minus_rule": 1.0529895892891896,
+      "observed": true,
+      "bank": "side_support_clearance_v1",
+      "measured": [
+        81.87568079442164,
+        0.41630240825685394,
+        -0.16800924211865872
+      ],
+      "feature": [
+        63.71623471345901,
+        81.87568079442164,
+        157.3291751602037,
+        164.52111056355608,
+        166.57674070982614,
+        167.2740594930856,
+        167.4951752260862,
+        0.39601776449723347,
+        0.41630240825685394,
+        0.4541781572812196,
+        0.4930846531109006,
+        0.5049670536525795,
+        0.5356345892965475,
+        0.7273695474410266,
+        -0.3035699953883793,
+        -0.16800924211865872,
+        0.18971048677183644,
+        0.2515617897384405,
+        0.3138228993593571,
+        0.3217334020196971,
+        0.3250275807852001,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support_continuity",
+      "weight": 15,
+      "ai_grade": 0.01093184703359871,
+      "rule_grade": 0,
+      "ai_minus_rule": 0.01093184703359871,
+      "observed": true,
+      "bank": "side_video",
+      "measured": 103.77894051262717,
+      "feature": [
+        63.71623471345901,
+        81.87568079442164,
+        157.3291751602037,
+        164.52111056355608,
+        166.57674070982614,
+        167.2740594930856,
+        167.4951752260862
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": 46.400122984515995,
+  "rule_score": 32.5,
+  "ai_minus_rule": 13.900122984515995,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 30.45718299836153,
+    "ai": 322.3268619913142,
+    "rule": 7.532745999924373
+  },
+  "limitations": [
+    "79-segment candidate remains experimental; 17-segment baseline scored better on two reused total-score cases.",
+    "Repeated hold windows are concentrated in few source recordings.",
+    "Joint geometry does not certify body contact or load.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_773312.mp4",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 12.410721619002288,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

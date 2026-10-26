@@ -1,0 +1,59 @@
+{
+  "models": [
+    {
+      "report": "tracking-model-metrics.json",
+      "baseline": {
+        "tracking_errors": 16,
+        "tracking_errors_flagged": 8,
+        "visually_accepted_frames": 112,
+        "visually_accepted_frames_flagged": 4
+      },
+      "candidate": {
+        "tracking_errors": 16,
+        "tracking_errors_flagged": 7,
+        "visually_accepted_frames": 112,
+        "visually_accepted_frames_flagged": 10
+      },
+      "accepted": false,
+      "reason": "No consistent reduction of both missed tracking errors and false flags in leave-person-out exposed development"
+    },
+    {
+      "report": "tracking-temporal-v2-metrics.json",
+      "baseline": {
+        "errors": 16,
+        "detected": 8,
+        "accepted": 95,
+        "false_flags": 4
+      },
+      "candidate": {
+        "errors": 16,
+        "detected": 2,
+        "accepted": 95,
+        "false_flags": 6
+      },
+      "accepted": false,
+      "reason": "No consistent reduction of both missed tracking errors and false flags in leave-person-out exposed development"
+    },
+    {
+      "report": "tracking-linear-v3-metrics.json",
+      "baseline": {
+        "errors": 16,
+        "detected": 8,
+        "accepted": 112,
+        "false_flags": 4
+      },
+      "candidate": {
+        "errors": 16,
+        "detected": 10,
+        "accepted": 112,
+        "false_flags": 15
+      },
+      "accepted": false,
+      "reason": "No consistent reduction of both missed tracking errors and false flags in leave-person-out exposed development"
+    }
+  ],
+  "deployed": false,
+  "movement_grade_models_trained": 0,
+  "tracking_quality_models_trained": 3,
+  "independent_final_test_opened": false
+}

@@ -1,0 +1,1765 @@
+[
+  {
+    "schema_version": "qevd-extended-posture-score-v2",
+    "id": "dvids_navy805472_599_689",
+    "exercise": "plank",
+    "exercise_name_ko": "기본 팔꿈치 플랭크",
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/navy_805472.mp4",
+    "video_sha256": "e7b52f7bc59927a499bf616d879a8a0dc343b6384f398fe9bca4a200a922331f",
+    "person": "dvids_navy805472_performer",
+    "label_group": "dvids_navy805472_original_video",
+    "performance_group": "dvids_navy805472_hold",
+    "split": "train",
+    "labels": [],
+    "provider_label_source": "none; instructional_text_not_converted_to_score",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "criterion_weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "rubric_version": "project-plank-side-core-v2",
+    "segment": {
+      "start_frame": 599,
+      "end_frame": 689,
+      "fps": 29.97
+    },
+    "score": 100.0,
+    "whole_posture_score": null,
+    "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "unit": "project_observable_core_0_to_100",
+    "note_ko": "단일 수행자의 측면에 가까운 사선 전신. 큰 몸통·골반 꺾임 없이 팔꿈치가 대체로 어깨 아래에 있고 무릎을 펴 발끝 지지를 유지한다. 표본 사이 짧은 이탈은 검증하지 못했다.",
+    "hold_reason": null,
+    "eligible_for_item_training": true,
+    "eligible_for_total_score_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "source_aware_review": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "label_source": "codex_direct_temporal_frame_review",
+    "review_method": "20~23초 구간 24장 시간순 표본 직접 검토. 전체 영상은 40장 개요 표본으로 구도만 확인. 연속 재생·전 프레임 검토 아님.",
+    "review_status": "AI_provisional_experimental",
+    "source_usage_status": "DVIDS_public_domain_identification_and_terms_checked_20261021; noncommercial_local_educational_experiment; no_endorsement",
+    "source_url": "https://www.dvidshub.net/video/805472/question-day-proper-form-plank",
+    "source_terms_url": "https://www.dvidshub.net/about/copyright",
+    "source_notice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/navy_805472_hold.jpg"
+    ],
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json",
+    "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+    "requires_subject_selection": false,
+    "subject_selection": "유일한 운동 수행자",
+    "review_number": 1,
+    "required_input_views": [
+      "side"
+    ],
+    "required_view": "측면 전신",
+    "source_title": "Question of the Day: Proper form for the plank",
+    "independent_final_test": false
+  },
+  {
+    "schema_version": "local-comparison-supplement-v1",
+    "id": "qevd_00105254",
+    "exercise": "ytw",
+    "exercise_name_ko": "맨몸 전경 Y–T–W 레이즈",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00105254.mp4",
+    "video_sha256": "a9d94d2b3c50d6eaadc298da9508365d0c142e10bc92a9c48472a425a7fc75dd",
+    "person": "qevd_956",
+    "label_group": "qevd_956",
+    "split": "validation",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 96,
+      "fps": 30.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "y_reach",
+      "t_reach",
+      "w_shape",
+      "hinge_and_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      1,
+      1
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front_or_oblique_full_arms_and_hinged_trunk"
+    ],
+    "score_scope": "정면 투영의 핵심 수행 범위. 척추 곡률·견갑 움직임·엄지 방향·통증·정확한 고관절 각도는 채점하지 않음. 다른 직립 변형을 임상적으로 잘못된 운동이라 부르지 않으며 목표 변형과 구분함.",
+    "note_ko": "첫 시도의 T와 뒤의 팔 굽힘은 보이나 Y 도달 구간을 표본에서 확정하지 못해 Y·총점을 보류한다. 전경은 얕게 보인다.",
+    "hold_reason": "Y 구간 확정 불가",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": false,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본 직접 검토. 연속 재생·전체 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/ytw_validation_01.jpg"
+    ],
+    "source_usage_status": "preserve_QEVD_dataset_terms; noncommercial_local_educational_experiment; terms_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/ytw_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v1",
+    "id": "qevd_00196196",
+    "exercise": "ytw",
+    "exercise_name_ko": "맨몸 전경 Y–T–W 레이즈",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00196196.mp4",
+    "video_sha256": "94dbd8b29752166fabb6f14b57924cfd0dc4387f43637faa978c233d13331925",
+    "person": "qevd_547",
+    "label_group": "qevd_547",
+    "split": "validation",
+    "segment": {
+      "start_frame": 75,
+      "end_frame": 176,
+      "fps": 30.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "y_reach",
+      "t_reach",
+      "w_shape",
+      "hinge_and_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "score": 85.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front_or_oblique_full_arms_and_hinged_trunk"
+    ],
+    "score_scope": "정면 투영의 핵심 수행 범위. 척추 곡률·견갑 움직임·엄지 방향·통증·정확한 고관절 각도는 채점하지 않음. 다른 직립 변형을 임상적으로 잘못된 운동이라 부르지 않으며 목표 변형과 구분함.",
+    "note_ko": "두 번째 시도를 선택한다. 굽힌 팔의 Y 도달, 양옆 T, 팔꿈치를 굽힌 W와 복귀가 구분되며 분명한 전경을 유지한다. 처음 잘린 시도는 채점 구간에서 제외한다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": false,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본 직접 검토. 연속 재생·전체 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/ytw_validation_02.jpg"
+    ],
+    "source_usage_status": "preserve_QEVD_dataset_terms; noncommercial_local_educational_experiment; terms_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/ytw_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v1",
+    "id": "qevd_00265931",
+    "exercise": "ytw",
+    "exercise_name_ko": "맨몸 전경 Y–T–W 레이즈",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00265931.mp4",
+    "video_sha256": "266058c5c3ab789f0e368f8cfd237ea337d3df2f94a77e189997e38916d64d13",
+    "person": "qevd_149",
+    "label_group": "qevd_149",
+    "split": "validation",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 121,
+      "fps": 30.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "y_reach",
+      "t_reach",
+      "w_shape",
+      "hinge_and_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      2,
+      1
+    ],
+    "score": 75.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front_or_oblique_full_arms_and_hinged_trunk"
+    ],
+    "score_scope": "정면 투영의 핵심 수행 범위. 척추 곡률·견갑 움직임·엄지 방향·통증·정확한 고관절 각도는 채점하지 않음. 다른 직립 변형을 임상적으로 잘못된 운동이라 부르지 않으며 목표 변형과 구분함.",
+    "note_ko": "첫 시도에서 Y는 팔 굽힘이 남고 T는 양옆으로 펴며 W 팔 굽힘과 복귀가 보인다. 몸통은 전경이나 깊이가 얕아 부분 등급으로 둔다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": false,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본 직접 검토. 연속 재생·전체 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/ytw_validation_03.jpg"
+    ],
+    "source_usage_status": "preserve_QEVD_dataset_terms; noncommercial_local_educational_experiment; terms_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/ytw_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v1",
+    "id": "qevd_00265212",
+    "exercise": "ytw",
+    "exercise_name_ko": "맨몸 전경 Y–T–W 레이즈",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00265212.mp4",
+    "video_sha256": "8cda0a2e206fc1ea2eb4948b579220e71d5c89f2fbb6545612563711f5f39591",
+    "person": "qevd_1810",
+    "label_group": "qevd_1810",
+    "split": "validation",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 111,
+      "fps": 30.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "y_reach",
+      "t_reach",
+      "w_shape",
+      "hinge_and_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      2,
+      0
+    ],
+    "score": 65.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front_or_oblique_full_arms_and_hinged_trunk"
+    ],
+    "score_scope": "정면 투영의 핵심 수행 범위. 척추 곡률·견갑 움직임·엄지 방향·통증·정확한 고관절 각도는 채점하지 않음. 다른 직립 변형을 임상적으로 잘못된 운동이라 부르지 않으며 목표 변형과 구분함.",
+    "note_ko": "Y 방향은 팔 굽힘이 크고 T 펼침·W 굽힘과 복귀가 보인다. 수행 중 몸통은 대체로 직립에 가까워 목표 전경 항목은 0이다. 직립 변형 자체의 임상적 옳고 그름을 뜻하지 않는다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": false,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본 직접 검토. 연속 재생·전체 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/ytw_validation_04.jpg"
+    ],
+    "source_usage_status": "preserve_QEVD_dataset_terms; noncommercial_local_educational_experiment; terms_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/ytw_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_002_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_002_shoulder_bad_front.mp4",
+    "video_sha256": "23afa53611db981d4847601523054ed102dd4534a94efdfa33c1fd9d3e04b377",
+    "person": "shoulder_002",
+    "label_group": "shoulder_002",
+    "split": "validation",
+    "segment": {
+      "start_frame": 123,
+      "end_frame": 149,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "score": 85.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "준비 자세를 제외하고 첫 프레스 구간을 선택했다. 상단에서 팔 굽힘이 남아 부분 도달, 하단 복귀·함께 움직임·몸통 좌우 유지가 보인다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_01.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_015_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_015_shoulder_bad_front.mp4",
+    "video_sha256": "8f0c6c9d707f2eb877aeb820a9dd28e4042a03ec1601d09183d12fa81e206dfc",
+    "person": "shoulder_015",
+    "label_group": "shoulder_015",
+    "split": "validation",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 66,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "어깨 높이 하단에서 양팔을 머리 위로 대체로 펴고 하단으로 함께 복귀한다. 큰 몸통 좌우 기울기는 보이지 않는다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_02.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_017_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_017_shoulder_good_front.mp4",
+    "video_sha256": "fed45af25bd502ddb04d367d1371341d6a0ff5c27be26b4447506a7c6592b288",
+    "person": "shoulder_017",
+    "label_group": "shoulder_017",
+    "split": "validation",
+    "segment": {
+      "start_frame": 5,
+      "end_frame": 26,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "첫 하단–상단–하단에서 양팔 도달과 복귀, 대체로 함께 움직임을 확인한다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_03.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_015_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_015_shoulder_good_front.mp4",
+    "video_sha256": "9b8c63215fdd3954a09e2eebd43810231abdf27d816b9cec67c2792fe0d84a68",
+    "person": "shoulder_015",
+    "label_group": "shoulder_015",
+    "split": "validation",
+    "segment": {
+      "start_frame": 31,
+      "end_frame": 82,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "첫 준비 구간 이후 하단–상단–하단을 선택했다. 정면 네 핵심 항목에서 큰 미달이 보이지 않는다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_04.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_012_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_012_shoulder_bad_front.mp4",
+    "video_sha256": "7e0e409c90051d744e55d4cf724779c32f190b3482ab02c86a5a1fc0674268ae",
+    "person": "shoulder_012",
+    "label_group": "shoulder_012",
+    "split": "validation",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 62,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "앉은 덤벨 프레스다. 기존 standing rubric과 변형을 구분하여 총점을 보류한다.",
+    "hold_reason": "앉은 변형이며 기존 서서 하는 정면 기준과 동일 총점으로 합치지 않음.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": false,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_05.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_002_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_002_shoulder_good_front.mp4",
+    "video_sha256": "7f7e52fe790429345648c6f282f15699589bb8bf392684fdea78f063a41d168a",
+    "person": "shoulder_002",
+    "label_group": "shoulder_002",
+    "split": "validation",
+    "segment": {
+      "start_frame": 36,
+      "end_frame": 87,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "양팔의 상승·하강과 복귀는 보이나 상단 손 범위를 다 볼 수 없어 최대 도달·총점을 보류한다.",
+    "hold_reason": "상단 손·팔 끝이 화면 위 경계에 잘림.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_06.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_012_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_012_shoulder_good_front.mp4",
+    "video_sha256": "f39f511bff8af8222867356458b5f5fb9e33b088e9e54004784b36cdd9b535a9",
+    "person": "shoulder_012",
+    "label_group": "shoulder_012",
+    "split": "validation",
+    "segment": {
+      "start_frame": 21,
+      "end_frame": 67,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "의자에 앉은 프레스이므로 이번 기준의 총점 라벨을 생성하지 않는다.",
+    "hold_reason": "앉은 변형이며 기존 standing 기준과 동일 총점으로 합치지 않음.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": false,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_07.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_004_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_004_shoulder_good_front.mp4",
+    "video_sha256": "34001df22a5848d7da94bc63b85967b466cdd2bbcb07f4ebdab2be4484b53698",
+    "person": "shoulder_004",
+    "label_group": "shoulder_004",
+    "split": "validation",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 57,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "score": 72.5,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "상승에서 한쪽 팔의 굽힘·도달 높이 차이가 남고 양팔 타이밍 차이가 보인다. 하단 복귀와 정면 몸통 유지는 확인된다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_08.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_017_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_017_shoulder_bad_front.mp4",
+    "video_sha256": "c33e64ed30b682a4f0b6426c50d3bf75d98d697335e49a6f015af4c75005a890",
+    "person": "shoulder_017",
+    "label_group": "shoulder_017",
+    "split": "validation",
+    "segment": {
+      "start_frame": 10,
+      "end_frame": 57,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "상단 장면에서 손이 화면 위로 나가 최대 도달을 채우지 않는다. 하단 복귀·대체로 함께 움직임·정면 몸통은 관측된다.",
+    "hold_reason": "상단 손·팔 끝 잘림으로 최대 도달 판정 불가.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_09.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_004_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_004_shoulder_bad_front.mp4",
+    "video_sha256": "838d216d8c3a84b6007978b852690b60026ec940d86bdc03497ff114ddc7ec66",
+    "person": "shoulder_004",
+    "label_group": "shoulder_004",
+    "split": "validation",
+    "segment": {
+      "start_frame": 10,
+      "end_frame": 51,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      1,
+      1,
+      2
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "상단 범위가 잘리고 하단에서도 팔이 머리 가까이에 남는 부분 복귀와 양팔 차이가 보인다.",
+    "hold_reason": "상단 손·팔 끝 잘림으로 최대 도달 판정 불가.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_validation_10.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_016_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_016_shoulder_bad_front.mp4",
+    "video_sha256": "41cc13e695b67ae210940424da23c253af9a2e054c0d133caa0aec8f9e9fcfe3",
+    "person": "shoulder_016",
+    "label_group": "shoulder_016",
+    "split": "train",
+    "segment": {
+      "start_frame": 31,
+      "end_frame": 57,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "첫 어깨 높이 하단–상단–하단에서 양팔을 대체로 펴 올리고 함께 복귀한다. 정면 몸통을 유지한다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_train_01.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_train_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_018_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_018_shoulder_bad_front.mp4",
+    "video_sha256": "de52da931d823b12fd1f824c2d4505b32705df507671b95b79f5635afc02dab0",
+    "person": "shoulder_018",
+    "label_group": "shoulder_018",
+    "split": "train",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 31,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "하단 복귀와 함께 움직임은 보이나 상단 관측 부족으로 총점 보류.",
+    "hold_reason": "상단 손·팔 끝이 화면 위에 잘림.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_train_02.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_train_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_023_shoulder_bad_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/bad/front/subject_023_shoulder_bad_front.mp4",
+    "video_sha256": "166e30677617b7481bc142333be71144aa5ab520dba4feaee5921db458bf2b45",
+    "person": "shoulder_023",
+    "label_group": "shoulder_023",
+    "split": "train",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 31,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "의자에 앉은 프레스로 기존 서기 기준 총점을 만들지 않는다.",
+    "hold_reason": "앉은 변형으로 standing 기준 범위 밖.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": false,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_train_03.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_train_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_016_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_016_shoulder_good_front.mp4",
+    "video_sha256": "045b4f2bf1a0393a91ac6795acf907579459a48f2d7f2100285ed59b0b670cdc",
+    "person": "shoulder_016",
+    "label_group": "shoulder_016",
+    "split": "train",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 41,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "score": 100.0,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "첫 하단–상단–하단에서 양팔 도달·복귀와 대체로 함께 움직임, 정면 몸통 유지를 확인한다.",
+    "hold_reason": null,
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_train_04.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_train_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_023_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_023_shoulder_good_front.mp4",
+    "video_sha256": "9cae757d61890003631eae900307909e76e6ab3378b20ac862f5b78a52042de9",
+    "person": "shoulder_023",
+    "label_group": "shoulder_023",
+    "split": "train",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 31,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "앉은 프레스이며 원래 변형과 동일 총점으로 섞지 않는다.",
+    "hold_reason": "앉은 변형으로 standing 기준 범위 밖.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": false,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_train_05.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_train_direct_decisions.json"
+  },
+  {
+    "schema_version": "local-comparison-supplement-v2",
+    "id": "subject_018_shoulder_good_front",
+    "exercise": "shoulder",
+    "exercise_name_ko": "덤벨 숄더 프레스",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/shoulder/good/front/subject_018_shoulder_good_front.mp4",
+    "video_sha256": "137824b720ed9eb0ea56c6f77a9d524126586bcfeeb81626298e34a8a37a2840",
+    "person": "shoulder_018",
+    "label_group": "shoulder_018",
+    "split": "train",
+    "segment": {
+      "start_frame": 5,
+      "end_frame": 41,
+      "fps": 15.0
+    },
+    "rubric_version": "project-other-three-core-v1",
+    "criterion_ids": [
+      "overhead_reach",
+      "lower_return",
+      "bilateral_timing",
+      "frontal_trunk_hold"
+    ],
+    "criterion_weights": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "criterion_levels": [
+      null,
+      2,
+      2,
+      2
+    ],
+    "score": null,
+    "whole_posture_score": null,
+    "required_input_views": [
+      "front"
+    ],
+    "score_scope": "정면 핵심 항목의 제한 점수이며 전체 자세 점수가 아님. 허리 과신전·앞뒤 반동·견갑 기능·손목 세부는 이 시점에서 평가하지 않음. 손·팔 끝이 잘리면 최대 도달은 null. 정면 점수를 별도 측면 촬영에 전이하지 않음.",
+    "note_ko": "상승·복귀는 보이나 손의 최대 도달이 잘려 총점을 보류한다.",
+    "hold_reason": "상단 손·팔 끝 잘림.",
+    "eligible_for_total_score_training": false,
+    "eligible_for_item_training": true,
+    "label_quality_eligible_for_total": false,
+    "fit_split_candidate": false,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "source_aware_review": true,
+    "independent_final_test": false,
+    "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+    "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/shoulder_train_06.jpg"
+    ],
+    "source_usage_status": "preserve_MultiView_source_dataset_terms; license_not_reaudited_in_this_supplement",
+    "score_target_origin": "Direct visual criterion review; no rule output or provider score conversion",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/shoulder_train_direct_decisions.json"
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v2",
+    "id": "dvids_army840093_144_234",
+    "exercise": "plank",
+    "exercise_name_ko": "기본 팔꿈치 플랭크",
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_840093.mp4",
+    "video_sha256": "9f2f8d29aa3426952985c74e5f657453a27b65cc320eacc49bfb671bbea9122e",
+    "person": "dvids_army840093_ian_valley",
+    "label_group": "dvids_army840093_original_video",
+    "performance_group": "dvids_army840093_hold",
+    "split": "train",
+    "labels": [],
+    "provider_label_source": "none; instructional_text_not_converted_to_score",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "criterion_weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "rubric_version": "project-plank-side-core-v2",
+    "segment": {
+      "start_frame": 144,
+      "end_frame": 234,
+      "fps": 29.97002997002997
+    },
+    "score": 100.0,
+    "whole_posture_score": null,
+    "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "unit": "project_observable_core_0_to_100",
+    "note_ko": "측면 전신 24장과 마지막 원본 해상도 장면을 직접 확인. 큰 골반 꺾임 없이 지지하고 팔꿈치는 대체로 어깨 아래에 있다. 무릎·골반의 추가 바닥 지지 없이 편 다리·발끝 지지를 유지한다. 머리 방향 변화는 이 핵심 채점 범위에 포함하지 않는다.",
+    "hold_reason": null,
+    "eligible_for_item_training": true,
+    "eligible_for_total_score_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "source_aware_review": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "label_source": "codex_direct_temporal_frame_review",
+    "review_method": "4.8~7.8초 24장 시간순 표본과 f234 원본 해상도 직접 검토. 전체 영상 42장 개요로 구도 선별. 연속 재생·전 프레임 검토 아님.",
+    "review_status": "AI_provisional_experimental",
+    "source_usage_status": "DVIDS_public_domain_identification_and_terms_checked_20261021; noncommercial_local_educational_experiment; no_endorsement",
+    "source_url": "https://www.dvidshub.net/video/840093/acft-prep-plank",
+    "source_terms_url": "https://www.dvidshub.net/about/copyright",
+    "source_notice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_840093_hold.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_840093_f234.jpg"
+    ],
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json",
+    "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+    "requires_subject_selection": false,
+    "subject_selection": "유일한 운동 수행자",
+    "review_number": 2,
+    "required_input_views": [
+      "side"
+    ],
+    "required_view": "측면 전신",
+    "source_title": "ACFT Prep: Plank",
+    "independent_final_test": false,
+    "source_credit": "Spc. William China and Sgt. Bertha Smith / U.S. Army Central"
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v2",
+    "id": "dvids_gates640237_side_75_165",
+    "exercise": "plank",
+    "exercise_name_ko": "기본 팔꿈치 플랭크",
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_640237_side.mkv",
+    "video_sha256": "7e695b32a9e7c17674077e3d92c2fc4e54d80f111aec04cffd7c1edf30b46efd",
+    "person": "dvids_gysgt_gates",
+    "label_group": "dvids_gysgt_gates_all_sources",
+    "performance_group": "dvids_640237_same_hold_both_views",
+    "split": "train",
+    "labels": [],
+    "provider_label_source": "none; instructional_text_not_converted_to_score",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "criterion_weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "rubric_version": "project-plank-side-core-v2",
+    "segment": {
+      "start_frame": 75,
+      "end_frame": 165,
+      "fps": 29.97002997002997
+    },
+    "score": 100.0,
+    "whole_posture_score": null,
+    "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "unit": "project_observable_core_0_to_100",
+    "note_ko": "측면 패널만 24장 시간순 직접 검토. 큰 골반 들림·처짐 없이 팔꿈치가 대체로 어깨 아래에 있고 무릎·골반 추가 지지 없이 편 다리·발끝 지지를 유지한다. 같은 사람의 다른 패널은 별도 표본으로 세지 않음.",
+    "hold_reason": null,
+    "eligible_for_item_training": true,
+    "eligible_for_total_score_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "source_aware_review": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "label_source": "codex_direct_temporal_frame_review",
+    "review_method": "원본 합성 영상 36장 개요·f100 원본 장면을 확인한 뒤, 측면 패널 f75~165의 24장 표본 직접 검토. 연속 재생·전체 프레임 검토 아님.",
+    "review_status": "AI_provisional_experimental",
+    "source_usage_status": "DVIDS_public_domain_identification_and_terms_checked_20261021; noncommercial_local_educational_experiment; no_endorsement",
+    "source_url": "https://www.dvidshub.net/video/640237/plank",
+    "source_terms_url": "https://www.dvidshub.net/about/copyright",
+    "source_notice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_640237_side_hold.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_640237_f100.jpg"
+    ],
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json",
+    "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+    "requires_subject_selection": false,
+    "subject_selection": "원본 하단 측면 패널만 분리. 같은 수행자 GySgt Gates의 상단 패널은 입력에서 제외.",
+    "review_number": 3,
+    "required_input_views": [
+      "side"
+    ],
+    "required_view": "측면 전신",
+    "source_title": "Plank",
+    "independent_final_test": false,
+    "source_original_video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_640237.mp4",
+    "source_original_sha256": "ccfc4e0e7bf94a98de7cbba53539fea2f5f6211b1d127e919920c70b674fd4c8",
+    "spatial_crop_xyxy": [
+      266,
+      294,
+      790,
+      576
+    ],
+    "lineage_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_640237_side_lineage.json",
+    "source_credit": "Capt. Matthew Holfinger / U.S. Marine Corps Training and Education Command"
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v2",
+    "id": "dvids_fao947417_background_5430_5520",
+    "exercise": "plank",
+    "exercise_name_ko": "기본 팔꿈치 플랭크",
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_947417_background_candidate.mkv",
+    "video_sha256": "13628fd8bda020b39fd45f951cb7c52a109745cdd4dd43cb90b765439cfca5cb",
+    "person": "dvids_947417_background_black_beanie",
+    "label_group": "dvids_947417_all_performers_original",
+    "performance_group": "dvids_947417_background_hold_5430_5520",
+    "split": "train",
+    "labels": [],
+    "provider_label_source": "none; instructional_text_not_converted_to_score",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "criterion_weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "rubric_version": "project-plank-side-core-v2",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 90,
+      "fps": 29.97002997002997
+    },
+    "score": 100.0,
+    "whole_posture_score": null,
+    "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "unit": "project_observable_core_0_to_100",
+    "note_ko": "36개 시간순 표본과 원본 크롭 f0를 직접 확인. 전신 측면에서 편 다리·발끝 지지와 팔꿈치 아래 지지를 유지하며 큰 골반 꺾임을 확정하지 못함. 느슨한 옷의 외곽 돌출을 골반 오류로 오인하지 않음. 오류 후보로 선별했으나 직접 검토 후 오류 예시로 추가하지 않음.",
+    "hold_reason": null,
+    "eligible_for_item_training": true,
+    "eligible_for_total_score_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "source_aware_review": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "label_source": "codex_direct_temporal_frame_review",
+    "review_method": "GPU 3Hz 리사이즈 선별판 57장 후 원본 픽셀 무손실 크롭의 36장 시간순 표본 및 f0 원본 크기 직접 검토. 전체 프레임·연속 재생 검토 아님. Heavy·규칙 결과 확인 전 초안 작성.",
+    "review_status": "AI_provisional_experimental",
+    "source_usage_status": "DVIDS_public_domain_identification_and_terms_checked_20261021; noncommercial_local_educational_experiment; no_endorsement",
+    "source_url": "https://www.dvidshub.net/video/947417",
+    "source_terms_url": "https://www.dvidshub.net/about/copyright",
+    "source_notice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_947417_candidate.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/dvids_947417_candidate_raw_f0.png"
+    ],
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json",
+    "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+    "requires_subject_selection": false,
+    "subject_selection": "원본 배경의 검은 모자 수행자 전신만 원본 픽셀로 크롭. 같은 영상의 다른 인물과 동일 source 그룹.",
+    "review_number": 1,
+    "required_input_views": [
+      "side"
+    ],
+    "required_view": "측면 전신",
+    "source_title": "FAO Army Combat Fitness Test B-roll",
+    "independent_final_test": false,
+    "source_original_video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_947417.mp4",
+    "source_original_sha256": "ff6f41a88eabc5264e7dc9719d9a79224e450341b9b9b0b84160758b68b2a782",
+    "spatial_crop_xyxy": [
+      1680,
+      1000,
+      3380,
+      1650
+    ],
+    "lineage_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/fao_candidate_lineage.json",
+    "source_credit": "Sgt. Ashley Fletcher / U.S. Army",
+    "participant_identity_independently_verified": false,
+    "exposure_role": "new_development_train_source_not_independent_final_test"
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v2",
+    "id": "dvids_navy773312_2997_3087",
+    "exercise": "plank",
+    "exercise_name_ko": "기본 팔꿈치 플랭크",
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_773312.mp4",
+    "video_sha256": "1f7e9adb5216f0ef0e1cf203ae03fa8242737df2868020d994ee425ad448dd17",
+    "person": "dvids_773312_single_performer",
+    "label_group": "dvids_773312_original_all_segments",
+    "performance_group": "dvids_773312_all_demonstrations",
+    "split": "train",
+    "labels": [],
+    "provider_label_source": "none; instructional_text_not_converted_to_score",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "criterion_weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "criterion_levels": [
+      0,
+      2,
+      0,
+      2
+    ],
+    "rubric_version": "project-plank-side-core-v2",
+    "segment": {
+      "start_frame": 2997,
+      "end_frame": 3087,
+      "fps": 29.97002997002997
+    },
+    "score": 40.0,
+    "whole_posture_score": null,
+    "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "unit": "project_observable_core_0_to_100",
+    "note_ko": "100~103초 원본 시간순 36장과 원본 크기 장면 직접 확인. 골반이 낮고 무릎·하체를 매트에 둔 추가 지지가 보인다. 팔꿈치는 어깨 아래에 대체로 있고 같은 지지를 유지한다. 정상 기본 플랭크의 실패 상태 시범이며 무릎 플랭크 정상 변형으로 학습하지 않는다.",
+    "hold_reason": null,
+    "eligible_for_item_training": true,
+    "eligible_for_total_score_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "label_source": "codex_direct_temporal_frame_review",
+    "source_usage_status": "DVIDS_public_domain_identification_and_terms_checked_20261021; noncommercial_local_educational_experiment; no_endorsement",
+    "source_terms_url": "https://www.dvidshub.net/about/copyright",
+    "source_notice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/navy773312_direct_drafts.json",
+    "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+    "requires_subject_selection": false,
+    "subject_selection": "유일한 운동 수행자",
+    "required_input_views": [
+      "side"
+    ],
+    "required_view": "측면 전신",
+    "source_title": "US NAVY Plank CFL/ACFL Training - OFFICIAL",
+    "independent_final_test": false,
+    "review_method": "Codex direct 36 chronological samples plus original-size raw frame before Heavy/rule results; not expert truth",
+    "direct_review": true,
+    "source_url": "https://www.dvidshub.net/video/773312/us-navy-plank-cfl-acfl-training-official",
+    "source_credit": "Douglas Bedford / Navy Personnel Command",
+    "usage_status": "public_domain_no_asset_specific_restriction_observed",
+    "evidence_image": "review/navy773312_core_100.jpg"
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v2",
+    "id": "dvids_navy773312_3656_3746",
+    "exercise": "plank",
+    "exercise_name_ko": "기본 팔꿈치 플랭크",
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/dvids_773312.mp4",
+    "video_sha256": "1f7e9adb5216f0ef0e1cf203ae03fa8242737df2868020d994ee425ad448dd17",
+    "person": "dvids_773312_single_performer",
+    "label_group": "dvids_773312_original_all_segments",
+    "performance_group": "dvids_773312_all_demonstrations",
+    "split": "train",
+    "labels": [],
+    "provider_label_source": "none; instructional_text_not_converted_to_score",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "criterion_weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "rubric_version": "project-plank-side-core-v2",
+    "segment": {
+      "start_frame": 3656,
+      "end_frame": 3746,
+      "fps": 29.97002997002997
+    },
+    "score": 100.0,
+    "whole_posture_score": null,
+    "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "unit": "project_observable_core_0_to_100",
+    "note_ko": "122~125초 원본 시간순 36장과 124초 원본 장면 직접 확인. 몸통·골반 큰 꺾임 없이 무릎을 펴 발끝과 팔꿈치 지지를 유지한다. 측면에 가까운 사선 전신이며 좌우 폭·목 세부는 채점하지 않는다.",
+    "hold_reason": null,
+    "eligible_for_item_training": true,
+    "eligible_for_total_score_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "label_source": "codex_direct_temporal_frame_review",
+    "source_usage_status": "DVIDS_public_domain_identification_and_terms_checked_20261021; noncommercial_local_educational_experiment; no_endorsement",
+    "source_terms_url": "https://www.dvidshub.net/about/copyright",
+    "source_notice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/navy773312_direct_drafts.json",
+    "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+    "requires_subject_selection": false,
+    "subject_selection": "유일한 운동 수행자",
+    "required_input_views": [
+      "side"
+    ],
+    "required_view": "측면 전신",
+    "source_title": "US NAVY Plank CFL/ACFL Training - OFFICIAL",
+    "independent_final_test": false,
+    "review_method": "Codex direct 36 chronological samples plus original-size raw frame before Heavy/rule results; not expert truth",
+    "direct_review": true,
+    "source_url": "https://www.dvidshub.net/video/773312/us-navy-plank-cfl-acfl-training-official",
+    "source_credit": "Douglas Bedford / Navy Personnel Command",
+    "usage_status": "public_domain_no_asset_specific_restriction_observed",
+    "evidence_image": "review/navy773312_core_122.jpg"
+  },
+  {
+    "schema_version": "qevd-extended-posture-score-v2",
+    "id": "youtube_chris_basic",
+    "exercise": "plank",
+    "exercise_name_ko": "기본 팔꿈치 플랭크",
+    "video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/youtube_segments/youtube_chris_basic.mkv",
+    "video_sha256": "754347a8861b5f00cbe5a52b86e77ad0acaa641183b967388b9604967c8773b9",
+    "person": "youtube_chris_ellerby_hemmings",
+    "label_group": "youtube_chris_ellerby_hemmings_all_sources",
+    "performance_group": "youtube_3UNXPzP0QaY_all_segments",
+    "split": "train",
+    "labels": [],
+    "provider_label_source": "none; instructional_text_not_converted_to_score",
+    "criterion_ids": [
+      "trunk_line",
+      "elbow_sagittal_position",
+      "leg_and_body_support",
+      "support_continuity"
+    ],
+    "criterion_names_ko": [
+      "몸통·골반 정렬",
+      "측면 팔꿈치 전후 위치",
+      "편 다리·몸통 추가 지지 여부",
+      "선택 구간의 지지 지속"
+    ],
+    "criterion_weights": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "criterion_levels": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "rubric_version": "project-plank-side-core-v2",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 71,
+      "fps": 24.001862831145104
+    },
+    "score": 100.0,
+    "whole_posture_score": null,
+    "score_scope": "측면에서 보이는 핵심 네 항목만 평가. 팔꿈치 좌우 폭·목 세부·호흡·견갑·통증·안전은 포함하지 않음. 나쁜 정렬을 유지한 경우에도 지지 지속 자체와 정렬 등급은 구분함.",
+    "unit": "project_observable_core_0_to_100",
+    "note_ko": "36개 시간순 표본과 원본 크기 장면에서 큰 몸통 이탈 없이 팔꿈치·편 다리·발 지지가 유지됨. 정상 표제·체크 표시를 점수로 변환하지 않음.",
+    "hold_reason": null,
+    "eligible_for_item_training": true,
+    "eligible_for_total_score_training": true,
+    "label_quality_eligible_for_total": true,
+    "fit_split_candidate": true,
+    "source_aware_review": true,
+    "expert_validated": false,
+    "score_is_expert_ground_truth": false,
+    "label_source": "codex_direct_temporal_frame_review",
+    "review_method": "원본 전체 48개 개요 표본과 29~32초의 36개 시간순 표본 및 f720 원본 크기 장면 직접 검토. 전체 프레임 전문가 검토 아님.",
+    "review_status": "AI_provisional_experimental",
+    "source_usage_status": "YouTube Creative Commons Attribution license (reuse allowed) metadata and original creator checked; local noncommercial educational development",
+    "source_url": "https://www.youtube.com/watch?v=3UNXPzP0QaY",
+    "source_terms_url": "https://www.youtube.com/t/creative_commons",
+    "source_notice": null,
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/youtube_chris_basic.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/youtube_chris_basic_f720.png"
+    ],
+    "origin_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json",
+    "score_target_origin": "Codex visual criterion grades, summed with project weights; not provider 0–100 scores",
+    "requires_subject_selection": false,
+    "subject_selection": "단일 수행자의 전신 측면 사선 유지 구간. 다른 영상·시점을 합치지 않음.",
+    "review_number": 1,
+    "required_input_views": [
+      "side"
+    ],
+    "required_view": "측면 전신",
+    "source_title": "Forearm Plank",
+    "independent_final_test": false,
+    "source_original_video_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/youtube_3UNXPzP0QaY.mp4",
+    "source_original_sha256": "9e513384027dac10c015fbca14ac8982acf658da5c0fcd2af651e3165ea1f822",
+    "spatial_crop_xyxy": [
+      0,
+      0,
+      1280,
+      676
+    ],
+    "lineage_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/youtube_segments/youtube_chris_basic_lineage.json",
+    "source_credit": "Empowered Chris - Ellerby-Hemmings",
+    "source_original_start_frame": 696,
+    "source_original_end_frame_exclusive": 768,
+    "direct_label_file": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/youtube_direct_labels.json",
+    "direct_label_sha256": "9819fe186b3a058560c093c4bf001809eea07b3dbca564933c745f5e241f1c8e"
+  }
+]

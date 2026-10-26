@@ -1,0 +1,412 @@
+[
+  {
+    "id": "subject_001_squat_good_paired_direct_rep0",
+    "exercise": "squats",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/good/side/subject_001_squat_good_side.mp4",
+    "video_sha256": "71408510449717414d614e1e1a0a7ca498b7d8463f81d3375ea9da87fc18e7af",
+    "front_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/good/front/subject_001_squat_good_front.mp4",
+    "front_sha256": "a268198533b49672e45dcae4f87c68daeb1334191b82f5dbfabb35204f68c52e",
+    "person": "shoulder_001",
+    "worker_id": 1000005,
+    "split": "train",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [],
+    "schema_version": "qevd-compatible-assessment-v1",
+    "qevd_video_path": "./external/MultiView/71408510449717414d614e1e1a0a7ca498b7d8463f81d3375ea9da87fc18e7af.mp4",
+    "segment": {
+      "start_frame": 0,
+      "end_frame": 30,
+      "fps": 15.0
+    },
+    "front_segment": {
+      "start_frame": 3,
+      "end_frame": 33,
+      "fps": 15.0
+    },
+    "alignment": {
+      "lag_frames": 3,
+      "paired_interval_approved_by_direct_samples": true,
+      "camera_hardware_synchronization_verified": false,
+      "full_video_synchronization_verified": false,
+      "manual_event_tolerance_native_frames": 2,
+      "extraction_rounding_tolerance_frames": 1,
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_good_aligned.jpg",
+      "note_ko": "표본에서 시작·최저점·복귀와 후속 반복의 대응을 직접 대조한 선택 구간의 관측 정렬. 실제 신원·하드웨어 동기화 인증이 아니다."
+    },
+    "required_input_views": [
+      "side",
+      "synchronized_front"
+    ],
+    "recording_group": "multiview_metadata_shoulder_001",
+    "provenance": {
+      "dataset": "MultiView",
+      "provider_labels_are_not_score_targets": true,
+      "identity_is_metadata_not_verified": true
+    },
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_good_aligned.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_good_side.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_good_front.jpg"
+    ],
+    "assessment": {
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "criterion_weights": [
+        30,
+        20,
+        30,
+        20
+      ],
+      "criterion_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 100.0,
+      "rubric_version": "project-core-form-v1",
+      "expert_validated": false,
+      "label_source": "assistant_direct_temporal_sheet_review",
+      "review_method": "기존24장/시점 시간순 표본과 시차 적용 10장/시점 표본 직접 대조. 연속 재생·전문가 검토 아님.",
+      "note_ko": "첫 서기–하강–서기에서 허벅지가 수평 부근보다 낮게 내려가며 복귀한다. 정면 무릎·몸통의 큰 좌우 이탈과 측면의 뚜렷한 뒤꿈치 들림은 표본에서 보이지 않는다."
+    },
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "attempt_complete": true,
+    "score_is_expert_ground_truth": false
+  },
+  {
+    "id": "subject_001_squat_bad_paired_direct_rep0",
+    "exercise": "squats",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/bad/side/subject_001_squat_bad_side.mp4",
+    "video_sha256": "68e23ba81449591d793cb71c93bff36083d2c3c552ac984309b8ddb834f12c04",
+    "front_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/bad/front/subject_001_squat_bad_front.mp4",
+    "front_sha256": "55c7b72a314c0f1b8194a279f2b9b1d921cfd0a239658d872afc777adbf283d4",
+    "person": "shoulder_001",
+    "worker_id": 1000005,
+    "split": "train",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [],
+    "schema_version": "qevd-compatible-assessment-v1",
+    "qevd_video_path": "./external/MultiView/68e23ba81449591d793cb71c93bff36083d2c3c552ac984309b8ddb834f12c04.mp4",
+    "segment": {
+      "start_frame": 12,
+      "end_frame": 43,
+      "fps": 15.0
+    },
+    "front_segment": {
+      "start_frame": 25,
+      "end_frame": 56,
+      "fps": 15.0
+    },
+    "alignment": {
+      "lag_frames": 13,
+      "paired_interval_approved_by_direct_samples": true,
+      "camera_hardware_synchronization_verified": false,
+      "full_video_synchronization_verified": false,
+      "manual_event_tolerance_native_frames": 2,
+      "extraction_rounding_tolerance_frames": 1,
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_bad_aligned.jpg",
+      "note_ko": "표본에서 시작·최저점·복귀와 후속 반복의 대응을 직접 대조한 선택 구간의 관측 정렬. 실제 신원·하드웨어 동기화 인증이 아니다."
+    },
+    "required_input_views": [
+      "side",
+      "synchronized_front"
+    ],
+    "recording_group": "multiview_metadata_shoulder_001",
+    "provenance": {
+      "dataset": "MultiView",
+      "provider_labels_are_not_score_targets": true,
+      "identity_is_metadata_not_verified": true
+    },
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_bad_aligned.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_bad_side.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_001_squat_bad_front.jpg"
+    ],
+    "assessment": {
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "criterion_weights": [
+        30,
+        20,
+        30,
+        20
+      ],
+      "criterion_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 100.0,
+      "rubric_version": "project-core-form-v1",
+      "expert_validated": false,
+      "label_source": "assistant_direct_temporal_sheet_review",
+      "review_method": "기존24장/시점 시간순 표본과 시차 적용 10장/시점 표본 직접 대조. 연속 재생·전문가 검토 아님.",
+      "note_ko": "제공자 bad와 무관하게 선택 반복의 깊이·서기 복귀·발 지지·좌우 몸통은 현재 네 항목에서 뚜렷한 오류가 보이지 않는다. 팔 위치·전방 숙임을 별도 감점으로 발명하지 않는다."
+    },
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "attempt_complete": true,
+    "score_is_expert_ground_truth": false
+  },
+  {
+    "id": "subject_002_squat_bad_paired_direct_rep0",
+    "exercise": "squats",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/bad/side/subject_002_squat_bad_side.mp4",
+    "video_sha256": "f774c1c8a0cd607f92f1b60fa3a00b97ccc1e72b58120ee830ce5054d1ce713b",
+    "front_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/bad/front/subject_002_squat_bad_front.mp4",
+    "front_sha256": "b91029a805817364b41c628bf0136a9e902cfbb1776eaf6633905a4236d598e1",
+    "person": "shoulder_002",
+    "worker_id": 1000006,
+    "split": "validation",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [],
+    "schema_version": "qevd-compatible-assessment-v1",
+    "qevd_video_path": "./external/MultiView/f774c1c8a0cd607f92f1b60fa3a00b97ccc1e72b58120ee830ce5054d1ce713b.mp4",
+    "segment": {
+      "start_frame": 24,
+      "end_frame": 70,
+      "fps": 15.0
+    },
+    "front_segment": {
+      "start_frame": 10,
+      "end_frame": 56,
+      "fps": 15.0
+    },
+    "alignment": {
+      "lag_frames": -14,
+      "paired_interval_approved_by_direct_samples": true,
+      "camera_hardware_synchronization_verified": false,
+      "full_video_synchronization_verified": false,
+      "manual_event_tolerance_native_frames": 2,
+      "extraction_rounding_tolerance_frames": 1,
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_002_squat_bad_aligned.jpg",
+      "note_ko": "표본에서 시작·최저점·복귀와 후속 반복의 대응을 직접 대조한 선택 구간의 관측 정렬. 실제 신원·하드웨어 동기화 인증이 아니다."
+    },
+    "required_input_views": [
+      "side",
+      "synchronized_front"
+    ],
+    "recording_group": "multiview_metadata_shoulder_002",
+    "provenance": {
+      "dataset": "MultiView",
+      "provider_labels_are_not_score_targets": true,
+      "identity_is_metadata_not_verified": true
+    },
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_002_squat_bad_aligned.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_002_squat_bad_side.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_002_squat_bad_front.jpg"
+    ],
+    "assessment": {
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "criterion_weights": [
+        30,
+        20,
+        30,
+        20
+      ],
+      "criterion_levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "score": 70.0,
+      "rubric_version": "project-core-form-v1",
+      "expert_validated": false,
+      "label_source": "assistant_direct_temporal_sheet_review",
+      "review_method": "기존24장/시점 시간순 표본과 시차 적용 10장/시점 표본 직접 대조. 연속 재생·전문가 검토 아님.",
+      "note_ko": "측면 39·47과 대응 정면 25·33 부근에서 뒤꿈치가 명확히 들리며 앞꿈치에 의존한다. 깊은 하강과 마지막 서기 복귀는 보인다. 몸통 전방 숙임은 좌우 균형 항목과 구분한다."
+    },
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "attempt_complete": true,
+    "score_is_expert_ground_truth": false
+  },
+  {
+    "id": "subject_004_squat_good_paired_direct_rep0",
+    "exercise": "squats",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/good/side/subject_004_squat_good_side.mp4",
+    "video_sha256": "72a97ef0ca23e6811e10a0180aaf9c35f4c979c705ca0e3d6c1b16a85d27b829",
+    "front_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/good/front/subject_004_squat_good_front.mp4",
+    "front_sha256": "6499d77e27101d7ed645a62da0de2e9126456b01e31d7be0112763f304cef268",
+    "person": "shoulder_004",
+    "worker_id": 1000008,
+    "split": "validation",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [],
+    "schema_version": "qevd-compatible-assessment-v1",
+    "qevd_video_path": "./external/MultiView/72a97ef0ca23e6811e10a0180aaf9c35f4c979c705ca0e3d6c1b16a85d27b829.mp4",
+    "segment": {
+      "start_frame": 25,
+      "end_frame": 73,
+      "fps": 15.0
+    },
+    "front_segment": {
+      "start_frame": 38,
+      "end_frame": 86,
+      "fps": 15.0
+    },
+    "alignment": {
+      "lag_frames": 13,
+      "paired_interval_approved_by_direct_samples": true,
+      "camera_hardware_synchronization_verified": false,
+      "full_video_synchronization_verified": false,
+      "manual_event_tolerance_native_frames": 2,
+      "extraction_rounding_tolerance_frames": 1,
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_good_aligned.jpg",
+      "note_ko": "표본에서 시작·최저점·복귀와 후속 반복의 대응을 직접 대조한 선택 구간의 관측 정렬. 실제 신원·하드웨어 동기화 인증이 아니다."
+    },
+    "required_input_views": [
+      "side",
+      "synchronized_front"
+    ],
+    "recording_group": "multiview_metadata_shoulder_004",
+    "provenance": {
+      "dataset": "MultiView",
+      "provider_labels_are_not_score_targets": true,
+      "identity_is_metadata_not_verified": true
+    },
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_good_aligned.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_good_side.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_good_front.jpg"
+    ],
+    "assessment": {
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "criterion_weights": [
+        30,
+        20,
+        30,
+        20
+      ],
+      "criterion_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 100.0,
+      "rubric_version": "project-core-form-v1",
+      "expert_validated": false,
+      "label_source": "assistant_direct_temporal_sheet_review",
+      "review_method": "기존24장/시점 시간순 표본과 시차 적용 10장/시점 표본 직접 대조. 연속 재생·전문가 검토 아님.",
+      "note_ko": "두 번째 완결 반복을 선택했다. 최저점에서 허벅지가 수평 부근에 이르며 원래 서기로 돌아온다. 발 접지와 정면 무릎·몸통의 큰 좌우 이탈은 표본에서 보이지 않는다."
+    },
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "attempt_complete": true,
+    "score_is_expert_ground_truth": false
+  },
+  {
+    "id": "subject_004_squat_bad_paired_direct_rep0",
+    "exercise": "squats",
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/bad/side/subject_004_squat_bad_side.mp4",
+    "video_sha256": "71a843153d4389aaf8cf138fa3c8e1c1883a17eb0ced6488ac624f0fd4a17179",
+    "front_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/squat/bad/front/subject_004_squat_bad_front.mp4",
+    "front_sha256": "e3a37d058c58f9f9305f7a190d1113352e87a2e85e13bf36580a214ca78e5cdb",
+    "person": "shoulder_004",
+    "worker_id": 1000008,
+    "split": "validation",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [],
+    "schema_version": "qevd-compatible-assessment-v1",
+    "qevd_video_path": "./external/MultiView/71a843153d4389aaf8cf138fa3c8e1c1883a17eb0ced6488ac624f0fd4a17179.mp4",
+    "segment": {
+      "start_frame": 20,
+      "end_frame": 61,
+      "fps": 15.0
+    },
+    "front_segment": {
+      "start_frame": 24,
+      "end_frame": 65,
+      "fps": 15.0
+    },
+    "alignment": {
+      "lag_frames": 4,
+      "paired_interval_approved_by_direct_samples": true,
+      "camera_hardware_synchronization_verified": false,
+      "full_video_synchronization_verified": false,
+      "manual_event_tolerance_native_frames": 2,
+      "extraction_rounding_tolerance_frames": 1,
+      "evidence_image": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_bad_aligned.jpg",
+      "note_ko": "표본에서 시작·최저점·복귀와 후속 반복의 대응을 직접 대조한 선택 구간의 관측 정렬. 실제 신원·하드웨어 동기화 인증이 아니다."
+    },
+    "required_input_views": [
+      "side",
+      "synchronized_front"
+    ],
+    "recording_group": "multiview_metadata_shoulder_004",
+    "provenance": {
+      "dataset": "MultiView",
+      "provider_labels_are_not_score_targets": true,
+      "identity_is_metadata_not_verified": true
+    },
+    "evidence_images": [
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_bad_aligned.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_bad_side.jpg",
+      "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/review/subject_004_squat_bad_front.jpg"
+    ],
+    "assessment": {
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "criterion_weights": [
+        30,
+        20,
+        30,
+        20
+      ],
+      "criterion_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "score": 100.0,
+      "rubric_version": "project-core-form-v1",
+      "expert_validated": false,
+      "label_source": "assistant_direct_temporal_sheet_review",
+      "review_method": "기존24장/시점 시간순 표본과 시차 적용 10장/시점 표본 직접 대조. 연속 재생·전문가 검토 아님.",
+      "note_ko": "완결 반복의 최저점에서 허벅지가 수평 부근에 이르며 서기로 돌아온다. 머리·상체 전방 숙임만으로 현재 좌우 균형 항목을 감점하지 않는다. 뚜렷한 발 지지 상실·무릎 안쪽 붕괴는 표본에서 보이지 않는다."
+    },
+    "eligible_for_total_score_training": true,
+    "eligible_for_item_training": true,
+    "attempt_complete": true,
+    "score_is_expert_ground_truth": false
+  }
+]
