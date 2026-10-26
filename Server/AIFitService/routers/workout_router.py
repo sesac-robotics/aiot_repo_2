@@ -13,8 +13,8 @@ from pydantic import BaseModel, Field
 
 from config.settings import AI_SERVER_API_KEY, AI_SERVER_BASE_URL
 from database.connection import get_connection
-from Server.AIFitService.services.exercise_names import canonical_exercise_name
-from Server.AIFitService.services.token_service import get_current_user
+from services.exercise_names import canonical_exercise_name
+from services.token_service import get_current_user
 
 
 router = APIRouter(prefix="/api/workout-sessions", tags=["Workout Sessions"])
@@ -27,7 +27,7 @@ class ExerciseRecordInput(BaseModel):
     set_no: int = Field(ge=1)
     rep_no: int = Field(ge=1)
     pose_state: str = Field(min_length=1, max_length=100)
-    score: float | None = None
+    score: float | None = 0.0
     error_codes: list[str] | None = None
     feedback_code: str | None = Field(default=None, max_length=100)
     feedback_text: str | None = Field(default=None, max_length=2000)
@@ -205,6 +205,93 @@ def _current_workout(session_id: int):
             WHERE runtime.session_id = ?
         """, (session_id,)).fetchone()
     return dict(row) if row else None
+
+
+def _save_report_if_complete(conn, session_id: int) -> bool:
+    """Create or refresh a report only after the session and all targets finish."""
+    session = conn.execute(
+        """SELECT session_id, user_id, day_no, started_at, ended_at, session_status
+           FROM ExerciseSession WHERE session_id=?""",
+        (session_id,),
+    ).fetchone()
+    if session is None or session["session_status"] != "COMPLETED":
+        return False
+
+    exercises = conn.execute(
+        """SELECT exercise_id, exercise_name, sets, reps, target_duration_sec, order_no
+           FROM Exercise WHERE session_id=? ORDER BY order_no, exercise_id""",
+        (session_id,),
+    ).fetchall()
+    if not exercises:
+        return False
+
+    report_exercises = []
+    all_scores = []
+    total_completed_reps = 0
+    total_target_reps = 0
+    for exercise in exercises:
+        rows = conn.execute(
+            """SELECT set_no, rep_no, pose_state, score, error_codes,
+                      feedback_code, feedback_text
+               FROM ExerciseRecord WHERE exercise_id=? ORDER BY set_no, rep_no""",
+            (exercise["exercise_id"],),
+        ).fetchall()
+        records = [dict(row) for row in rows]
+        expected_reps_per_set = 1 if exercise["target_duration_sec"] is not None else exercise["reps"]
+        expected = {
+            (set_no, rep_no)
+            for set_no in range(1, exercise["sets"] + 1)
+            for rep_no in range(1, expected_reps_per_set + 1)
+        }
+        present = {(row["set_no"], row["rep_no"]) for row in records}
+        if not expected.issubset(present):
+            return False
+
+        for record in records:
+            if record["error_codes"]:
+                try:
+                    record["error_codes"] = json.loads(record["error_codes"])
+                except (TypeError, json.JSONDecodeError):
+                    record["error_codes"] = []
+            record["score"] = float(record["score"] or 0.0)
+            all_scores.append(record["score"])
+        total_completed_reps += len(expected)
+        total_target_reps += len(expected)
+        report_exercises.append({
+            "exercise_id": exercise["exercise_id"],
+            "exercise_name": exercise["exercise_name"],
+            "order_no": exercise["order_no"],
+            "sets": exercise["sets"],
+            "target_reps": None if exercise["target_duration_sec"] is not None else exercise["reps"],
+            "target_duration_sec": exercise["target_duration_sec"],
+            "records": records,
+        })
+
+    avg_score = sum(all_scores) / len(all_scores) if all_scores else 0.0
+    report = {
+        "session_id": session["session_id"],
+        "date": str(session["started_at"])[:10],
+        "day_no": session["day_no"],
+        "started_at": session["started_at"],
+        "ended_at": session["ended_at"],
+        "totals": {
+            "completed_reps": total_completed_reps,
+            "target_reps": total_target_reps,
+            "avg_score": avg_score,
+        },
+        "exercises": report_exercises,
+    }
+    report_json = json.dumps(report, ensure_ascii=False)
+    conn.execute(
+        """INSERT INTO ExerciseReport (session_id, avg_score, report_json)
+           VALUES (?, ?, ?)
+           ON CONFLICT(session_id) DO UPDATE SET
+               avg_score=excluded.avg_score,
+               report_json=excluded.report_json,
+               created_at=datetime('now', 'localtime')""",
+        (session_id, avg_score, report_json),
+    )
+    return True
 
 
 def _ai_exercise_payload(exercise: dict) -> dict:
@@ -438,6 +525,17 @@ async def get_live_workout(session_id: int, current_user: dict = Depends(get_cur
     )
 
     live_exercise = snapshot.get("exercise") if isinstance(snapshot, dict) else None
+    live_score = live_exercise.get("score") if isinstance(live_exercise, dict) else None
+    posture_analysis = snapshot.get("posture_analysis") if isinstance(snapshot, dict) else None
+    display_feedback = (
+        posture_analysis.get("display_feedback")
+        if isinstance(posture_analysis, dict) else None
+    )
+    live_feedback = (
+        display_feedback.get("text")
+        if isinstance(display_feedback, dict)
+        else display_feedback if isinstance(display_feedback, str) else None
+    )
     if isinstance(live_exercise, dict) and not runtime["awaiting_start"]:
         rep_count = live_exercise.get("rep_count")
         hold_seconds = live_exercise.get("current_hold_sec")
@@ -472,6 +570,7 @@ async def get_live_workout(session_id: int, current_user: dict = Depends(get_cur
                         UPDATE ExerciseSession SET session_status='COMPLETED', ended_at=?
                         WHERE session_id=? AND session_status='IN_PROGRESS'
                     """, (now, session_id))
+                    _save_report_if_complete(conn, session_id)
                 session["session_status"] = "COMPLETED"
             else:
                 await _ai_request("POST", f"/internal/sessions/{session_id}/pause")
@@ -491,7 +590,8 @@ async def get_live_workout(session_id: int, current_user: dict = Depends(get_cur
 
     with get_connection() as conn:
         latest_record = conn.execute("""
-            SELECT set_no, rep_no, pose_state, score, error_codes, feedback_code, feedback_text
+            SELECT set_no, rep_no, pose_state, score, error_codes,
+                   feedback_code, feedback_text
             FROM ExerciseRecord
             WHERE exercise_id=? AND set_no=?
             ORDER BY rep_no DESC LIMIT 1
@@ -513,6 +613,8 @@ async def get_live_workout(session_id: int, current_user: dict = Depends(get_cur
         "target_duration_sec": runtime["target_duration_sec"],
         "awaiting_start": bool(runtime["awaiting_start"]),
         "session_complete": session["session_status"] == "COMPLETED",
+        "live_score": live_score,
+        "live_feedback": live_feedback,
         "latest_record": record_payload,
         "ai_server": snapshot,
         "pose": latest_pose,
@@ -533,6 +635,7 @@ def receive_exercise_record(
         raise HTTPException(status_code=401, detail="내부 인증 키가 올바르지 않습니다.")
 
     error_codes = json.dumps(payload.error_codes, ensure_ascii=False) if payload.error_codes is not None else None
+    score = payload.score if payload.score is not None else 0.0
     with get_connection() as conn:
         exercise = conn.execute(
             "SELECT sets, reps, target_duration_sec FROM Exercise WHERE exercise_id=? AND session_id=?",
@@ -544,21 +647,34 @@ def receive_exercise_record(
             raise HTTPException(status_code=422, detail="목표 세트 수를 초과한 결과입니다.")
         if exercise["target_duration_sec"] is None and payload.rep_no > exercise["reps"]:
             raise HTTPException(status_code=422, detail="목표 반복 횟수를 초과한 결과입니다.")
-        conn.execute("""
-            INSERT INTO ExerciseRecord (
-                exercise_id, set_no, rep_no, pose_state, score,
-                error_codes, feedback_code, feedback_text
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(exercise_id, set_no, rep_no) DO UPDATE SET
-                pose_state=excluded.pose_state,
-                score=excluded.score,
-                error_codes=excluded.error_codes,
-                feedback_code=excluded.feedback_code,
-                feedback_text=excluded.feedback_text
+        updated = conn.execute("""
+            UPDATE ExerciseRecord
+            SET pose_state=?, score=?, error_codes=?, feedback_code=?, feedback_text=?
+            WHERE record_id = (
+                SELECT MAX(record_id) FROM ExerciseRecord
+                WHERE exercise_id=? AND set_no=? AND rep_no=?
+            )
         """, (
-            payload.exercise_id, payload.set_no, payload.rep_no, payload.pose_state,
-            payload.score, error_codes, payload.feedback_code, payload.feedback_text,
+            payload.pose_state, score, error_codes,
+            payload.feedback_code, payload.feedback_text,
+            payload.exercise_id, payload.set_no, payload.rep_no,
         ))
+        if updated.rowcount == 0:
+            conn.execute("""
+                INSERT INTO ExerciseRecord (
+                    exercise_id, set_no, rep_no, pose_state, score,
+                    error_codes, feedback_code, feedback_text
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                payload.exercise_id, payload.set_no, payload.rep_no, payload.pose_state,
+                score, error_codes, payload.feedback_code, payload.feedback_text,
+            ))
+        report_saved = _save_report_if_complete(conn, session_id)
+
+    logger.info(
+        "[RECORD][SAVED] session_id=%s exercise_id=%s set_no=%s rep_no=%s score=%s report_saved=%s",
+        session_id, payload.exercise_id, payload.set_no, payload.rep_no, score, report_saved,
+    )
 
     return {
         "accepted": True,
@@ -566,6 +682,10 @@ def receive_exercise_record(
         "exercise_id": payload.exercise_id,
         "set_no": payload.set_no,
         "rep_no": payload.rep_no,
+        "score": score,
+        "feedback_code": payload.feedback_code,
+        "feedback_text": payload.feedback_text,
+        "report_saved": report_saved,
     }
 
 
@@ -603,9 +723,11 @@ async def finish_workout(session_id: int, current_user: dict = Depends(get_curre
                 paused_at=NULL
             WHERE session_id=? AND user_id=?
         """, (now, now, session_id, current_user["user_id"]))
+        report_saved = _save_report_if_complete(conn, session_id)
     return {
         "session_id": session_id,
         "session_status": "COMPLETED",
+        "report_saved": report_saved,
         "ai_server": {
             "exercise": ai_exercise_result,
             "session": ai_session_result,
