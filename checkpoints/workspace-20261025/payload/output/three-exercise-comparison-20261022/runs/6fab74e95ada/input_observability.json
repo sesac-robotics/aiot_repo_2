@@ -1,0 +1,52 @@
+{
+  "schema_version": "manual-framing-input-v1",
+  "review_method": "직접 시간순 검토판에서 확인한 촬영 잘림. 점수 등급·Rule Base 출력으로 만든 정책 아님.",
+  "automatic_crop_detection": false,
+  "reviewed_after_development_predictions": true,
+  "records": [
+    {
+      "id": "subject_017_push_up_good_side",
+      "video_sha256": "1db600b6835742574b4ef6ceb07915bd6fac634b3ae9e2aac888e1e12883f661",
+      "segment": {
+        "start_frame": 9,
+        "end_frame": 31,
+        "fps": 15.0,
+        "evidence_times_seconds": [
+          0.6,
+          2.067
+        ]
+      },
+      "view": "side",
+      "unobservable_joints": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "evidence": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_033.jpg",
+      "reason_ko": "발목·발끝이 원본 오른쪽 경계에서 잘려 직접 위치를 확인할 수 없음. 추출기의 추정 좌표를 실제 관측으로 취급하지 않음."
+    },
+    {
+      "id": "subject_017_push_up_bad_side",
+      "video_sha256": "819ec05528cbc871c229192dc1ccabba1101266f57fc56d816573ab8c7542d6b",
+      "segment": {
+        "start_frame": 19,
+        "end_frame": 32,
+        "fps": 15.0
+      },
+      "view": "side",
+      "unobservable_joints": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "evidence": "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/subject_017_push_up_bad_side.jpg",
+      "reason_ko": "발목·발끝이 원본 오른쪽 경계에서 잘려 직접 위치를 확인할 수 없음. 추출기의 추정 좌표를 실제 관측으로 취급하지 않음."
+    }
+  ]
+}

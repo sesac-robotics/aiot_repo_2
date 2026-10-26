@@ -1,0 +1,4329 @@
+{
+  "version": "squat-unified-core100-v3",
+  "heads": [
+    {
+      "item": "descent_range",
+      "bank": "front",
+      "n": 28,
+      "groups": 27,
+      "support": {
+        "0": 16,
+        "2": 8,
+        "1": 4
+      },
+      "error_groups": 19,
+      "weight": 30,
+      "trained": true,
+      "promoted_ai": false,
+      "promoted_rule": false,
+      "metrics": {
+        "prior_recipe_ai": {
+          "n": 28,
+          "MAE_grade": 0.3181919642857142,
+          "error_MAE": 0.2561979166666667,
+          "error_n": 20,
+          "false_warning_normal": 0.25,
+          "missed_error": 0.05
+        },
+        "after_ai": {
+          "n": 28,
+          "MAE_grade": 0.3301301535750928,
+          "error_MAE": 0.272358193277311,
+          "error_n": 20,
+          "false_warning_normal": 0.25,
+          "missed_error": 0.05
+        },
+        "prior_rule": {
+          "n": 0,
+          "MAE_grade": null,
+          "error_MAE": null,
+          "error_n": 0,
+          "false_warning_normal": null,
+          "missed_error": null
+        },
+        "after_rule": {
+          "n": 28,
+          "MAE_grade": 0.25,
+          "error_MAE": 0.25,
+          "error_n": 20,
+          "false_warning_normal": 0.25,
+          "missed_error": 0.1
+        },
+        "frozen_old_ai_replay": {
+          "n": 28,
+          "MAE_grade": 0.19668392952242636,
+          "error_MAE": 0.174250595918263,
+          "error_n": 20,
+          "false_warning_normal": 0.0,
+          "missed_error": 0.0
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "train_groups": [
+            "g103",
+            "g104",
+            "g106",
+            "g108",
+            "g109",
+            "g110",
+            "g112",
+            "g113",
+            "g114",
+            "g116",
+            "g119",
+            "g31",
+            "g32",
+            "g33",
+            "g39",
+            "g40",
+            "g41",
+            "g42",
+            "g43",
+            "g53",
+            "g61",
+            "g65"
+          ],
+          "held_groups": [
+            "g105",
+            "g111",
+            "g118",
+            "g35",
+            "g62"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.38066558441558446,
+            "group_balanced": 0.4517581455791685,
+            "class_balanced": 0.39957108350642856
+          },
+          "rule_bounds": [
+            0.5760756254750561,
+            0.7064763605594635
+          ]
+        },
+        {
+          "fold": 1,
+          "train_groups": [
+            "g103",
+            "g105",
+            "g106",
+            "g108",
+            "g109",
+            "g111",
+            "g112",
+            "g113",
+            "g114",
+            "g118",
+            "g119",
+            "g31",
+            "g32",
+            "g35",
+            "g39",
+            "g40",
+            "g41",
+            "g43",
+            "g53",
+            "g61",
+            "g62"
+          ],
+          "held_groups": [
+            "g104",
+            "g110",
+            "g116",
+            "g33",
+            "g42",
+            "g65"
+          ],
+          "selected_recipe": "class_balanced",
+          "inner_MAE": {
+            "prior_recipe": 0.35963068181818186,
+            "group_balanced": 0.35505546536796523,
+            "class_balanced": 0.35446821544331625
+          },
+          "rule_bounds": [
+            0.3436828378904133,
+            0.7101020216941833
+          ]
+        },
+        {
+          "fold": 2,
+          "train_groups": [
+            "g104",
+            "g105",
+            "g106",
+            "g108",
+            "g110",
+            "g111",
+            "g112",
+            "g113",
+            "g116",
+            "g118",
+            "g119",
+            "g31",
+            "g33",
+            "g35",
+            "g39",
+            "g40",
+            "g42",
+            "g43",
+            "g53",
+            "g62",
+            "g65"
+          ],
+          "held_groups": [
+            "g103",
+            "g109",
+            "g114",
+            "g32",
+            "g41",
+            "g61"
+          ],
+          "selected_recipe": "class_balanced",
+          "inner_MAE": {
+            "prior_recipe": 0.37475378787878794,
+            "group_balanced": 0.47007169913419916,
+            "class_balanced": 0.3395053829742827
+          },
+          "rule_bounds": [
+            0.5760756254750561,
+            0.6928863347131085
+          ]
+        },
+        {
+          "fold": 3,
+          "train_groups": [
+            "g103",
+            "g104",
+            "g105",
+            "g106",
+            "g109",
+            "g110",
+            "g111",
+            "g112",
+            "g114",
+            "g116",
+            "g118",
+            "g119",
+            "g32",
+            "g33",
+            "g35",
+            "g39",
+            "g41",
+            "g42",
+            "g43",
+            "g61",
+            "g62",
+            "g65"
+          ],
+          "held_groups": [
+            "g108",
+            "g113",
+            "g31",
+            "g40",
+            "g53"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.34361413043478256,
+            "group_balanced": 0.3641739993098688,
+            "class_balanced": 0.3511605873855159
+          },
+          "rule_bounds": [
+            0.5760756254750561,
+            0.7064763605594635
+          ]
+        },
+        {
+          "fold": 4,
+          "train_groups": [
+            "g103",
+            "g104",
+            "g105",
+            "g108",
+            "g109",
+            "g110",
+            "g111",
+            "g113",
+            "g114",
+            "g116",
+            "g118",
+            "g31",
+            "g32",
+            "g33",
+            "g35",
+            "g40",
+            "g41",
+            "g42",
+            "g53",
+            "g61",
+            "g62",
+            "g65"
+          ],
+          "held_groups": [
+            "g106",
+            "g112",
+            "g119",
+            "g39",
+            "g43"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.2987952898550724,
+            "group_balanced": 0.34464654307045606,
+            "class_balanced": 0.321827395802368
+          },
+          "rule_bounds": [
+            0.7064763605594635,
+            0.8614068332453331
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "qevd_00006550",
+          "group": "g35",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 0.0,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.008522727272727274
+        },
+        {
+          "id": "qevd_00153472_batch1",
+          "group": "g62",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 0.18125000000000002,
+          "after_ai": 0.18125000000000002,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.06895044610561851
+        },
+        {
+          "id": "qevd_00040723_round1_score",
+          "group": "g105",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 0.0,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.0
+        },
+        {
+          "id": "qevd_00095193_held2_score",
+          "group": "g111",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.64375,
+          "after_ai": 1.64375,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9624944021495747
+        },
+        {
+          "id": "qevd_00146521_held3_score",
+          "group": "g118",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.5395833333333337,
+          "after_ai": 1.5395833333333335,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.8138422730286956
+        },
+        {
+          "id": "qevd_00133899_held3_score",
+          "group": "g62",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 0.44333333333333325,
+          "after_ai": 0.44333333333333325,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.8054172126259473
+        },
+        {
+          "id": "qevd_00015990",
+          "group": "g33",
+          "target": 0,
+          "fold": 1,
+          "prior_recipe_ai": 0.00625,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.0
+        },
+        {
+          "id": "qevd_00032130",
+          "group": "g42",
+          "target": 0,
+          "fold": 1,
+          "prior_recipe_ai": 0.062499999999999986,
+          "after_ai": 0.043125000000000004,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.047279543373293376
+        },
+        {
+          "id": "qevd_00090550_batch1",
+          "group": "g65",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.5500000000000003,
+          "after_ai": 1.5150297619047621,
+          "prior_rule": null,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.7278461480404148
+        },
+        {
+          "id": "qevd_00174839_held2_score",
+          "group": "g104",
+          "target": 0,
+          "fold": 1,
+          "prior_recipe_ai": 0.8745833333333334,
+          "after_ai": 1.1340476190476196,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.8374358721474437
+        },
+        {
+          "id": "qevd_00179430_held2_score",
+          "group": "g110",
+          "target": 0,
+          "fold": 1,
+          "prior_recipe_ai": 0.08958333333333332,
+          "after_ai": 0.18139880952380952,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.03058155080213904
+        },
+        {
+          "id": "qevd_00265669_held3_score",
+          "group": "g116",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.735416666666667,
+          "after_ai": 1.6950595238095236,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.5596208008723698
+        },
+        {
+          "id": "qevd_00015903",
+          "group": "g32",
+          "target": 0,
+          "fold": 2,
+          "prior_recipe_ai": 0.0,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.0
+        },
+        {
+          "id": "qevd_00023973",
+          "group": "g41",
+          "target": 0,
+          "fold": 2,
+          "prior_recipe_ai": 0.15520833333333334,
+          "after_ai": 0.1527591036414566,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.04880787316132144
+        },
+        {
+          "id": "qevd_00157671_batch1",
+          "group": "g61",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.4458333333333337,
+          "after_ai": 1.449782812245242,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.779199908588521
+        },
+        {
+          "id": "qevd_00191433_round1_score",
+          "group": "g103",
+          "target": 0,
+          "fold": 2,
+          "prior_recipe_ai": 0.0,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.0
+        },
+        {
+          "id": "qevd_00235103_held2_score",
+          "group": "g109",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.9958333333333331,
+          "after_ai": 1.9903846153846154,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9695966748768474
+        },
+        {
+          "id": "qevd_00255756_held2_score",
+          "group": "g114",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 0.4999999999999999,
+          "after_ai": 0.5657628520994774,
+          "prior_rule": null,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.5715781402495241
+        },
+        {
+          "id": "qevd_00008753",
+          "group": "g31",
+          "target": 0,
+          "fold": 3,
+          "prior_recipe_ai": 0.0,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.0
+        },
+        {
+          "id": "qevd_00014005",
+          "group": "g40",
+          "target": 0,
+          "fold": 3,
+          "prior_recipe_ai": 0.0,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.019552139037433157
+        },
+        {
+          "id": "qevd_00068330_held2_score",
+          "group": "g108",
+          "target": 0,
+          "fold": 3,
+          "prior_recipe_ai": 0.6875000000000001,
+          "after_ai": 0.6875000000000002,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.6213006060876237
+        },
+        {
+          "id": "qevd_00246294_held2_score",
+          "group": "g113",
+          "target": 0,
+          "fold": 3,
+          "prior_recipe_ai": 0.11666666666666667,
+          "after_ai": 0.11666666666666667,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.05614973262032086
+        },
+        {
+          "id": "qevd_00151214_held3_score",
+          "group": "g53",
+          "target": 1,
+          "fold": 3,
+          "prior_recipe_ai": 0.4520833333333334,
+          "after_ai": 0.4520833333333334,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.4242600975868241
+        },
+        {
+          "id": "qevd_00003948",
+          "group": "g39",
+          "target": 0,
+          "fold": 4,
+          "prior_recipe_ai": 0.91875,
+          "after_ai": 0.9187499999999998,
+          "prior_rule": null,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 0.8391323617854423
+        },
+        {
+          "id": "qevd_00010352",
+          "group": "g43",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.8041666666666667,
+          "after_ai": 1.8041666666666667,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.593683543931373
+        },
+        {
+          "id": "qevd_00205235_round1_score",
+          "group": "g106",
+          "target": 0,
+          "fold": 4,
+          "prior_recipe_ai": 0.0,
+          "after_ai": 0.0,
+          "prior_rule": null,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.0
+        },
+        {
+          "id": "qevd_00241029_held2_score",
+          "group": "g112",
+          "target": 1,
+          "fold": 4,
+          "prior_recipe_ai": 1.8145833333333337,
+          "after_ai": 1.8145833333333332,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.0626118672993679
+        },
+        {
+          "id": "qevd_00165807_held3_score",
+          "group": "g119",
+          "target": 1,
+          "fold": 4,
+          "prior_recipe_ai": 1.1125,
+          "after_ai": 1.1125,
+          "prior_rule": null,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.9256354911147003
+        }
+      ],
+      "final_recipe": "prior_recipe",
+      "final_fit_rows": 23
+    },
+    {
+      "item": "descent_range",
+      "bank": "side",
+      "n": 61,
+      "groups": 8,
+      "support": {
+        "1": 22,
+        "2": 39
+      },
+      "error_groups": 5,
+      "weight": 30,
+      "trained": true,
+      "promoted_ai": false,
+      "promoted_rule": false,
+      "metrics": {
+        "prior_recipe_ai": {
+          "n": 61,
+          "MAE_grade": 0.45727800546448083,
+          "error_MAE": 0.35396780303030295,
+          "error_n": 22,
+          "false_warning_normal": 0.5897435897435898,
+          "missed_error": 0.2727272727272727
+        },
+        "after_ai": {
+          "n": 61,
+          "MAE_grade": 0.4464108307396727,
+          "error_MAE": 0.31491488960944447,
+          "error_n": 22,
+          "false_warning_normal": 0.6153846153846154,
+          "missed_error": 0.22727272727272727
+        },
+        "prior_rule": {
+          "n": 61,
+          "MAE_grade": 0.2459016393442623,
+          "error_MAE": 0.0,
+          "error_n": 22,
+          "false_warning_normal": 0.38461538461538464,
+          "missed_error": 0.0
+        },
+        "after_rule": {
+          "n": 61,
+          "MAE_grade": 0.32786885245901637,
+          "error_MAE": 0.22727272727272727,
+          "error_n": 22,
+          "false_warning_normal": 0.38461538461538464,
+          "missed_error": 0.22727272727272727
+        },
+        "frozen_old_ai_replay": {
+          "n": 61,
+          "MAE_grade": 0.14695638237090963,
+          "error_MAE": 0.2006899860947037,
+          "error_n": 22,
+          "false_warning_normal": 0.07692307692307693,
+          "missed_error": 0.13636363636363635
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "train_groups": [
+            "g163",
+            "g81",
+            "g83",
+            "g87",
+            "g91",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g0"
+          ],
+          "selected_recipe": "class_balanced",
+          "inner_MAE": {
+            "prior_recipe": 0.35416666666666674,
+            "group_balanced": 0.3353443515969009,
+            "class_balanced": 0.31484067357841844
+          },
+          "rule_bounds": [
+            0.3,
+            0.8
+          ]
+        },
+        {
+          "fold": 1,
+          "train_groups": [
+            "g0",
+            "g163",
+            "g81",
+            "g87",
+            "g91",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g83"
+          ],
+          "selected_recipe": "class_balanced",
+          "inner_MAE": {
+            "prior_recipe": 0.4401827485380117,
+            "group_balanced": 0.4653832748659632,
+            "class_balanced": 0.4230376100892027
+          },
+          "rule_bounds": [
+            0.3,
+            0.8
+          ]
+        },
+        {
+          "fold": 2,
+          "train_groups": [
+            "g0",
+            "g163",
+            "g83",
+            "g87",
+            "g91",
+            "g95"
+          ],
+          "held_groups": [
+            "g81",
+            "g99"
+          ],
+          "selected_recipe": "group_balanced",
+          "inner_MAE": {
+            "prior_recipe": 0.5167931547619048,
+            "group_balanced": 0.4847438012115806,
+            "class_balanced": 0.496983431089014
+          },
+          "rule_bounds": [
+            0.3,
+            0.8
+          ]
+        },
+        {
+          "fold": 3,
+          "train_groups": [
+            "g0",
+            "g81",
+            "g83",
+            "g87",
+            "g91",
+            "g99"
+          ],
+          "held_groups": [
+            "g163",
+            "g95"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.36724330357142854,
+            "group_balanced": 0.38585092572053703,
+            "class_balanced": 0.37913603681091895
+          },
+          "rule_bounds": [
+            0.3249582151571909,
+            0.714596221446991
+          ]
+        },
+        {
+          "fold": 4,
+          "train_groups": [
+            "g0",
+            "g163",
+            "g81",
+            "g83",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g87",
+            "g91"
+          ],
+          "selected_recipe": "group_balanced",
+          "inner_MAE": {
+            "prior_recipe": 0.4095321637426901,
+            "group_balanced": 0.40888581423337994,
+            "class_balanced": 0.4271595193084108
+          },
+          "rule_bounds": [
+            0.39910090342164034,
+            0.714596221446991
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "rehab24_PM_008_rep9",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.105,
+          "after_ai": 1.0880321972713278,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.0834255932486627
+        },
+        {
+          "id": "rehab24_PM_008_rep17",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2791666666666668,
+          "after_ai": 1.2576159951159949,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.995959051724138
+        },
+        {
+          "id": "rehab24_PM_008_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.1883333333333332,
+          "after_ai": 1.1679467271858577,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.6369647991491336
+        },
+        {
+          "id": "rehab24_PM_022_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.6354166666666667,
+          "after_ai": 1.6268009768009768,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_022_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3208333333333333,
+          "after_ai": 1.303296703296703,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_022_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3604166666666668,
+          "after_ai": 1.342933455433455,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.995959051724138
+        },
+        {
+          "id": "rehab24_PM_029_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2083333333333335,
+          "after_ai": 1.1949023199023194,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.8290728980288737
+        },
+        {
+          "id": "rehab24_PM_029_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3958333333333335,
+          "after_ai": 1.3803724053724051,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.8857328498103738
+        },
+        {
+          "id": "rehab24_PM_029_rep10",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1875000000000002,
+          "after_ai": 1.1746184371184367,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.080536585387263
+        },
+        {
+          "id": "rehab24_PM_038_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.1820833333333334,
+          "after_ai": 1.1623911716303021,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.8673280851805718
+        },
+        {
+          "id": "rehab24_PM_038_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.1258333333333332,
+          "after_ai": 1.1136274353665658,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.4486354105134804
+        },
+        {
+          "id": "rehab24_PM_038_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.1466666666666667,
+          "after_ai": 1.1381848224239526,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.4343809196364312
+        },
+        {
+          "id": "rehab24_PM_043_rep3",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.125,
+          "after_ai": 1.1188492063492061,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.1451240559319469
+        },
+        {
+          "id": "rehab24_PM_043_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2916666666666667,
+          "after_ai": 1.2741758241758239,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.9603458793741464
+        },
+        {
+          "id": "rehab24_PM_043_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.5104166666666665,
+          "after_ai": 1.4955586080586079,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.7125,
+          "after_ai": 1.7023962148962148,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep17",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.73125,
+          "after_ai": 1.7204517704517706,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep21",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.9791666666666665,
+          "after_ai": 1.97718253968254,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9931469298245614
+        },
+        {
+          "id": "rehab24_PM_126_rep3",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1445833333333333,
+          "after_ai": 1.1302941020332324,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.012229495351153
+        },
+        {
+          "id": "rehab24_PM_126_rep6",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1508333333333334,
+          "after_ai": 1.1373911716303022,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.0095770880467572
+        },
+        {
+          "id": "rehab24_PM_126_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3987500000000002,
+          "after_ai": 1.3671530763922066,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.9284199227796013
+        },
+        {
+          "id": "rehab24_PM_113_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2750000000000001,
+          "after_ai": 1.253449328449328,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.813968906098575
+        },
+        {
+          "id": "rehab24_PM_113_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.5854166666666667,
+          "after_ai": 1.5705586080586078,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.994212962962963
+        },
+        {
+          "id": "rehab24_PM_113_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.4479166666666665,
+          "after_ai": 1.431669719169719,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_118_rep6",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1695833333333332,
+          "after_ai": 1.1498911716303022,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.1007976168135851
+        },
+        {
+          "id": "rehab24_PM_118_rep1",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.13,
+          "after_ai": 1.1171988639379946,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.2719329963059507
+        },
+        {
+          "id": "rehab24_PM_118_rep2",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1404166666666666,
+          "after_ai": 1.126722673461804,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.0519998449709091
+        },
+        {
+          "id": "rehab24_PM_029_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3312500000000003,
+          "after_ai": 1.3096459096459092,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.9906323471786833
+        },
+        {
+          "id": "rehab24_PM_043_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3375000000000001,
+          "after_ai": 1.317933455433455,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_126_rep8",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1549999999999998,
+          "after_ai": 1.1413594255985562,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.0209300871244147
+        },
+        {
+          "id": "rehab24_PM_113_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.6166666666666665,
+          "after_ai": 1.6059676434676433,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9950657894736843
+        },
+        {
+          "id": "rehab24_PM_126_rep4_direct_rep0",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1529166666666666,
+          "after_ai": 1.13798640972554,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.035932750676435
+        },
+        {
+          "id": "rehab24_PM_029_rep1_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.1666666666666667,
+          "after_ai": 1.155906593406593,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.6192234482406074
+        },
+        {
+          "id": "rehab24_PM_008_rep7_direct_rep0",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1529166666666666,
+          "after_ai": 1.13798640972554,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.01094508194692
+        },
+        {
+          "id": "rehab24_PM_118_rep11_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.1758333333333335,
+          "after_ai": 1.1677025269416572,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.942545915317382
+        },
+        {
+          "id": "rehab24_PM_029_rep7_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3104166666666666,
+          "after_ai": 1.2915445665445662,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.9435797903605014
+        },
+        {
+          "id": "rehab24_PM_008_rep4_direct_rep0",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1070833333333332,
+          "after_ai": 1.0894668737060043,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.093163279809019
+        },
+        {
+          "id": "rehab24_PM_029_rep2_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.1541666666666668,
+          "after_ai": 1.1495573870573867,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.6614420451777352
+        },
+        {
+          "id": "rehab24_PM_043_rep2_direct_rep6",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.1404166666666666,
+          "after_ai": 1.1326750544141846,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.1384583001677555
+        },
+        {
+          "id": "rehab24_PM_038_rep9_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3729166666666668,
+          "after_ai": 1.3485805860805857,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9881645758661888
+        },
+        {
+          "id": "rehab24_PM_008_rep16_direct_rep6",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 1.42375,
+          "after_ai": 1.3856359823751125,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.460272354597373
+        },
+        {
+          "id": "rehab24_PM_105_rep18_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.4,
+          "after_ai": 1.380433455433455,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep20_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.84375,
+          "after_ai": 1.8369658119658119,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_010_squat_good_batch2_rep0",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.5708333333333333,
+          "after_ai": 1.6937547673531654,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.909587505214852
+        },
+        {
+          "id": "subject_010_squat_good_batch2_rep1",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.577083333333333,
+          "after_ai": 1.7062547673531654,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9816176470588234
+        },
+        {
+          "id": "subject_010_squat_bad_batch2_rep0",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9583333333333335,
+          "after_ai": 1.9703136918382913,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_010_squat_bad_batch2_rep1",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.8145833333333332,
+          "after_ai": 1.8526587951027818,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.7855543499994126
+        },
+        {
+          "id": "subject_004_squat_good_paired_direct_rep0",
+          "group": "g81",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.3091666666666666,
+          "after_ai": 1.1695684291038593,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.5361409669884953
+        },
+        {
+          "id": "subject_004_squat_bad_paired_direct_rep0",
+          "group": "g81",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.792708333333333,
+          "after_ai": 1.978636363636364,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.8281039578996279
+        },
+        {
+          "id": "subject_015_squat_good_batch2_rep1",
+          "group": "g99",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.3906249999999996,
+          "after_ai": 1.2809744440597048,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.4908414009120494
+        },
+        {
+          "id": "subject_015_squat_bad_batch2_rep0",
+          "group": "g99",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.9958333333333331,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_015_squat_bad_batch2_rep1",
+          "group": "g99",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_012_squat_good_batch2_rep0",
+          "group": "g95",
+          "target": 1,
+          "fold": 3,
+          "prior_recipe_ai": 1.8604166666666668,
+          "after_ai": 1.8604166666666668,
+          "prior_rule": 1,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.765051740985294
+        },
+        {
+          "id": "subject_012_squat_good_batch2_rep1",
+          "group": "g95",
+          "target": 1,
+          "fold": 3,
+          "prior_recipe_ai": 1.7147916666666672,
+          "after_ai": 1.7147916666666672,
+          "prior_rule": 1,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.4896743730806812
+        },
+        {
+          "id": "subject_012_squat_bad_batch2_rep1",
+          "group": "g95",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.994212962962963
+        },
+        {
+          "id": "subject_014_squat_new_rubric_rep1",
+          "group": "g163",
+          "target": 1,
+          "fold": 3,
+          "prior_recipe_ai": 1.8479166666666664,
+          "after_ai": 1.8479166666666664,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.7748555209158947
+        },
+        {
+          "id": "subject_014_squat_new_rubric_rep2",
+          "group": "g163",
+          "target": 1,
+          "fold": 3,
+          "prior_recipe_ai": 1.71875,
+          "after_ai": 1.71875,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.6281490451231684
+        },
+        {
+          "id": "subject_011_squat_good_batch2_rep1",
+          "group": "g87",
+          "target": 1,
+          "fold": 4,
+          "prior_recipe_ai": 1.4874999999999996,
+          "after_ai": 1.2614615037031656,
+          "prior_rule": 1,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.036988559171547
+        },
+        {
+          "id": "subject_011_squat_bad_batch2_rep0",
+          "group": "g87",
+          "target": 1,
+          "fold": 4,
+          "prior_recipe_ai": 1.4697916666666664,
+          "after_ai": 1.2039013332889696,
+          "prior_rule": 1,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.0905645173233707
+        },
+        {
+          "id": "subject_013_squat_bad_batch2_rep0",
+          "group": "g91",
+          "target": 1,
+          "fold": 4,
+          "prior_recipe_ai": 1.8729166666666663,
+          "after_ai": 1.7616214767192013,
+          "prior_rule": 1,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.0553570489371296
+        },
+        {
+          "id": "subject_013_squat_bad_batch2_rep1",
+          "group": "g91",
+          "target": 1,
+          "fold": 4,
+          "prior_recipe_ai": 1.530208333333333,
+          "after_ai": 1.4911602787188971,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.0592137581682513
+        }
+      ],
+      "final_recipe": "class_balanced",
+      "final_fit_rows": 10
+    },
+    {
+      "item": "return_extension",
+      "bank": "side",
+      "n": 59,
+      "groups": 7,
+      "support": {
+        "2": 59
+      },
+      "error_groups": 0,
+      "weight": 20,
+      "trained": false,
+      "reason": "단일 정상 라벨 또는 사람 그룹/동일 구도 기존 모델 부족",
+      "promoted_ai": false,
+      "promoted_rule": false
+    },
+    {
+      "item": "knee_foot",
+      "bank": "side",
+      "n": 12,
+      "groups": 1,
+      "support": {
+        "2": 8,
+        "0": 4
+      },
+      "error_groups": 1,
+      "weight": 30,
+      "trained": false,
+      "reason": "단일 정상 라벨 또는 사람 그룹/동일 구도 기존 모델 부족",
+      "promoted_ai": false,
+      "promoted_rule": false
+    },
+    {
+      "item": "knee_foot",
+      "bank": "side_foot_partial_top_v2",
+      "n": 44,
+      "groups": 6,
+      "support": {
+        "2": 30,
+        "0": 14
+      },
+      "error_groups": 3,
+      "weight": 30,
+      "trained": true,
+      "promoted_ai": false,
+      "promoted_rule": false,
+      "metrics": {
+        "prior_recipe_ai": {
+          "n": 44,
+          "MAE_grade": 0.7587121212121211,
+          "error_MAE": 1.369047619047619,
+          "error_n": 14,
+          "false_warning_normal": 0.5,
+          "missed_error": 0.21428571428571427
+        },
+        "after_ai": {
+          "n": 44,
+          "MAE_grade": 0.8469165947182294,
+          "error_MAE": 1.4748946494636261,
+          "error_n": 14,
+          "false_warning_normal": 0.6,
+          "missed_error": 0.42857142857142855
+        },
+        "prior_rule": {
+          "n": 44,
+          "MAE_grade": 0.5454545454545454,
+          "error_MAE": 1.3571428571428572,
+          "error_n": 14,
+          "false_warning_normal": 0.13333333333333333,
+          "missed_error": 0.5
+        },
+        "after_rule": {
+          "n": 44,
+          "MAE_grade": 0.45454545454545453,
+          "error_MAE": 1.0,
+          "error_n": 14,
+          "false_warning_normal": 0.16666666666666666,
+          "missed_error": 0.2857142857142857
+        },
+        "frozen_old_ai_replay": {
+          "n": 44,
+          "MAE_grade": 0.6086326462122513,
+          "error_MAE": 0.6968610195447734,
+          "error_n": 14,
+          "false_warning_normal": 0.5333333333333333,
+          "missed_error": 0.07142857142857142
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "train_groups": [
+            "g83",
+            "g87",
+            "g91",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g0"
+          ],
+          "selected_recipe": "group_balanced",
+          "inner_MAE": {
+            "prior_recipe": 1.2875,
+            "group_balanced": 1.1631647227702842,
+            "class_balanced": 1.202038868932902
+          },
+          "rule_bounds": [
+            0.060897937417030326,
+            0.07711718291044234
+          ]
+        },
+        {
+          "fold": 1,
+          "train_groups": [
+            "g0",
+            "g87",
+            "g91",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g83"
+          ],
+          "selected_recipe": "class_balanced",
+          "inner_MAE": {
+            "prior_recipe": 1.0517708333333333,
+            "group_balanced": 1.0589330974686835,
+            "class_balanced": 1.0089916082837898
+          },
+          "rule_bounds": [
+            0.06364825461059809,
+            0.09333236146506746
+          ]
+        },
+        {
+          "fold": 2,
+          "train_groups": [
+            "g0",
+            "g83",
+            "g87",
+            "g91",
+            "g95"
+          ],
+          "held_groups": [
+            "g99"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.7452743902439025,
+            "group_balanced": 0.9632334105186461,
+            "class_balanced": 0.8109235127787789
+          },
+          "rule_bounds": [
+            0.06091573114196457,
+            0.08838243710825511
+          ]
+        },
+        {
+          "fold": 3,
+          "train_groups": [
+            "g0",
+            "g83",
+            "g87",
+            "g91",
+            "g99"
+          ],
+          "held_groups": [
+            "g95"
+          ],
+          "selected_recipe": "class_balanced",
+          "inner_MAE": {
+            "prior_recipe": 0.8966971544715445,
+            "group_balanced": 1.0749945664019576,
+            "class_balanced": 0.8445230823273007
+          },
+          "rule_bounds": [
+            0.06141254231333732,
+            0.09099233172271037
+          ]
+        },
+        {
+          "fold": 4,
+          "train_groups": [
+            "g0",
+            "g83",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g87",
+            "g91"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.6741361788617887,
+            "group_balanced": 0.724775204457628,
+            "class_balanced": 0.7142790505040283
+          },
+          "rule_bounds": [
+            0.09099233172271037,
+            0.2712852407269387
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "rehab24_PM_008_rep9",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.7166666666666668,
+          "after_ai": 1.361521927068404,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.5399777819981948
+        },
+        {
+          "id": "rehab24_PM_008_rep17",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.2791666666666668,
+          "after_ai": 1.4941414627039629,
+          "prior_rule": 2,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 0.380122522257999
+        },
+        {
+          "id": "rehab24_PM_008_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2208333333333337,
+          "after_ai": 1.2343045051534016,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.222854124504093
+        },
+        {
+          "id": "rehab24_PM_022_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2000000000000004,
+          "after_ai": 1.2696711291554748,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.242281588446493
+        },
+        {
+          "id": "rehab24_PM_022_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.5958333333333337,
+          "after_ai": 1.6037477330606573,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.1715109465056384
+        },
+        {
+          "id": "rehab24_PM_022_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2916666666666667,
+          "after_ai": 1.4257993820695436,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.4591633765816125
+        },
+        {
+          "id": "rehab24_PM_029_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.7208333333333337,
+          "after_ai": 1.4973516291645539,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.6511957261221526
+        },
+        {
+          "id": "rehab24_PM_029_rep6",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.1875000000000004,
+          "after_ai": 1.3928613149371851,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 0.5366899721310138
+        },
+        {
+          "id": "rehab24_PM_029_rep10",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.3375,
+          "after_ai": 1.4612275016650018,
+          "prior_rule": 1,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.36903745076424016
+        },
+        {
+          "id": "rehab24_PM_038_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.0458333333333336,
+          "after_ai": 1.237909765519111,
+          "prior_rule": 0,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 1.0602935824525381
+        },
+        {
+          "id": "rehab24_PM_038_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3166666666666669,
+          "after_ai": 1.4137123998902439,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.3918836539287813
+        },
+        {
+          "id": "rehab24_PM_038_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.2791666666666668,
+          "after_ai": 1.4829990573942187,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.3213393202854975
+        },
+        {
+          "id": "rehab24_PM_043_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.9333333333333331,
+          "after_ai": 1.5199109929638368,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.8659250872492692
+        },
+        {
+          "id": "rehab24_PM_043_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.541666666666667,
+          "after_ai": 1.4675450815455062,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.5357006287126398
+        },
+        {
+          "id": "rehab24_PM_043_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.4541666666666668,
+          "after_ai": 1.5073172392124006,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.6314138229206183
+        },
+        {
+          "id": "rehab24_PM_105_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.8458333333333332,
+          "after_ai": 1.4140136677838293,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.8669232590906717
+        },
+        {
+          "id": "rehab24_PM_105_rep17",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3500000000000003,
+          "after_ai": 1.3052653352589683,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.026709531215317
+        },
+        {
+          "id": "rehab24_PM_105_rep21",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.3208333333333335,
+          "after_ai": 1.6050024632625437,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.6672113057773246
+        },
+        {
+          "id": "rehab24_PM_126_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.8791666666666669,
+          "after_ai": 1.4081355315831126,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9079209284471013
+        },
+        {
+          "id": "rehab24_PM_126_rep6",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.1208333333333338,
+          "after_ai": 1.5001930500055503,
+          "prior_rule": 2,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.4789190423869834
+        },
+        {
+          "id": "rehab24_PM_126_rep10",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.2250000000000003,
+          "after_ai": 1.3645512983284067,
+          "prior_rule": 0,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.6623512625026545
+        },
+        {
+          "id": "rehab24_PM_113_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.8833333333333333,
+          "after_ai": 1.6908530509058948,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.7072356281156846
+        },
+        {
+          "id": "rehab24_PM_113_rep6",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.3250000000000002,
+          "after_ai": 1.3544272016184153,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 0.7565968164816594
+        },
+        {
+          "id": "rehab24_PM_113_rep10",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.4833333333333334,
+          "after_ai": 1.6848136389289827,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.651880783397099
+        },
+        {
+          "id": "rehab24_PM_118_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.7083333333333335,
+          "after_ai": 1.5632184577943278,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.376655097511196
+        },
+        {
+          "id": "rehab24_PM_118_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.7916666666666665,
+          "after_ai": 1.7216532175255082,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.4140183025872948
+        },
+        {
+          "id": "rehab24_PM_118_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.7291666666666665,
+          "after_ai": 1.5489138680591852,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.5046596526823204
+        },
+        {
+          "id": "rehab24_PM_029_rep8",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.1500000000000001,
+          "after_ai": 1.3107096445221447,
+          "prior_rule": 0,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 0.37599320741624975
+        },
+        {
+          "id": "rehab24_PM_043_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 1.4708333333333337,
+          "after_ai": 1.5335672330515784,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.5138505429590636
+        },
+        {
+          "id": "rehab24_PM_126_rep8",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.4125000000000003,
+          "after_ai": 1.3860716123152457,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.721664780653929
+        },
+        {
+          "id": "rehab24_PM_113_rep8",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 1.475,
+          "after_ai": 1.528695034132534,
+          "prior_rule": 2,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 0.4880968748833274
+        },
+        {
+          "id": "subject_010_squat_good_batch2_rep0",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.4395833333333337,
+          "after_ai": 1.3335966549553508,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.4614941917609232
+        },
+        {
+          "id": "subject_010_squat_good_batch2_rep1",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9333333333333331,
+          "after_ai": 1.6955675191632644,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.9029375962317858
+        },
+        {
+          "id": "subject_010_squat_bad_batch2_rep0",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 0.9687500000000002,
+          "after_ai": 0.7296488435075392,
+          "prior_rule": 2,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.3192326372920393
+        },
+        {
+          "id": "subject_010_squat_bad_batch2_rep1",
+          "group": "g83",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9875,
+          "after_ai": 1.9046794720252165,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.8614626578797353
+        },
+        {
+          "id": "subject_015_squat_good_batch2_rep0",
+          "group": "g99",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.975,
+          "after_ai": 1.975,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.699991345919878
+        },
+        {
+          "id": "subject_015_squat_bad_batch2_rep0",
+          "group": "g99",
+          "target": 0,
+          "fold": 2,
+          "prior_recipe_ai": 1.5791666666666666,
+          "after_ai": 1.5791666666666666,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.402658092192068
+        },
+        {
+          "id": "subject_015_squat_bad_batch2_rep1",
+          "group": "g99",
+          "target": 0,
+          "fold": 2,
+          "prior_recipe_ai": 1.9166666666666667,
+          "after_ai": 1.9166666666666667,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.556270321952496
+        },
+        {
+          "id": "subject_012_squat_good_batch2_rep0",
+          "group": "g95",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 1.4583333333333335,
+          "after_ai": 1.4126296777266771,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 1.502979509353292
+        },
+        {
+          "id": "subject_012_squat_good_batch2_rep1",
+          "group": "g95",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 1.5750000000000002,
+          "after_ai": 1.3797541963402844,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 1.3273247844948717
+        },
+        {
+          "id": "subject_012_squat_bad_batch2_rep1",
+          "group": "g95",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 1.3624999999999998,
+          "after_ai": 1.3534048937480283,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.9569157788255682
+        },
+        {
+          "id": "subject_011_squat_good_batch2_rep1",
+          "group": "g87",
+          "target": 0,
+          "fold": 4,
+          "prior_recipe_ai": 1.6583333333333337,
+          "after_ai": 1.6583333333333337,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.7242507247278105
+        },
+        {
+          "id": "subject_011_squat_bad_batch2_rep0",
+          "group": "g87",
+          "target": 0,
+          "fold": 4,
+          "prior_recipe_ai": 1.016666666666667,
+          "after_ai": 1.016666666666667,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.6515224218792994
+        },
+        {
+          "id": "subject_013_squat_bad_batch2_rep0",
+          "group": "g91",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 0.7874999999999999,
+          "after_ai": 0.7874999999999999,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 0.8651554504361738
+        }
+      ],
+      "final_recipe": "class_balanced",
+      "final_fit_rows": 7
+    },
+    {
+      "item": "trunk_balance",
+      "bank": "front",
+      "n": 159,
+      "groups": 55,
+      "support": {
+        "2": 155,
+        "0": 2,
+        "1": 2
+      },
+      "error_groups": 1,
+      "weight": 20,
+      "trained": true,
+      "promoted_ai": false,
+      "promoted_rule": false,
+      "metrics": {
+        "prior_recipe_ai": {
+          "n": 159,
+          "MAE_grade": 0.044270178197065,
+          "error_MAE": 1.5,
+          "error_n": 4,
+          "false_warning_normal": 0.0,
+          "missed_error": 1.0
+        },
+        "after_ai": {
+          "n": 159,
+          "MAE_grade": 0.044270178197065,
+          "error_MAE": 1.5,
+          "error_n": 4,
+          "false_warning_normal": 0.0,
+          "missed_error": 1.0
+        },
+        "prior_rule": {
+          "n": 159,
+          "MAE_grade": 0.08176100628930817,
+          "error_MAE": 0.75,
+          "error_n": 4,
+          "false_warning_normal": 0.06451612903225806,
+          "missed_error": 0.25
+        },
+        "after_rule": {
+          "n": 159,
+          "MAE_grade": 0.06918238993710692,
+          "error_MAE": 0.75,
+          "error_n": 4,
+          "false_warning_normal": 0.05161290322580645,
+          "missed_error": 0.25
+        },
+        "frozen_old_ai_replay": {
+          "n": 159,
+          "MAE_grade": 0.03773584905660377,
+          "error_MAE": 1.5,
+          "error_n": 4,
+          "false_warning_normal": 0.0,
+          "missed_error": 1.0
+        }
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "train_groups": [
+            "g103",
+            "g104",
+            "g105",
+            "g106",
+            "g108",
+            "g109",
+            "g110",
+            "g111",
+            "g112",
+            "g113",
+            "g114",
+            "g115",
+            "g116",
+            "g118",
+            "g119",
+            "g31",
+            "g32",
+            "g33",
+            "g34",
+            "g35",
+            "g38",
+            "g39",
+            "g40",
+            "g41",
+            "g42",
+            "g43",
+            "g44",
+            "g45",
+            "g46",
+            "g47",
+            "g48",
+            "g49",
+            "g50",
+            "g51",
+            "g53",
+            "g54",
+            "g55",
+            "g56",
+            "g58",
+            "g59",
+            "g60",
+            "g61",
+            "g62",
+            "g63",
+            "g64",
+            "g65",
+            "g78",
+            "g80",
+            "g81",
+            "g83",
+            "g87",
+            "g91",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g0"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.0,
+            "group_balanced": 0.0,
+            "class_balanced": 0.0
+          },
+          "rule_bounds": [
+            8,
+            15
+          ]
+        },
+        {
+          "fold": 1,
+          "train_groups": [
+            "g0",
+            "g103",
+            "g105",
+            "g108",
+            "g109",
+            "g110",
+            "g112",
+            "g113",
+            "g114",
+            "g116",
+            "g118",
+            "g119",
+            "g31",
+            "g33",
+            "g34",
+            "g35",
+            "g39",
+            "g40",
+            "g41",
+            "g43",
+            "g44",
+            "g45",
+            "g47",
+            "g48",
+            "g49",
+            "g50",
+            "g53",
+            "g54",
+            "g55",
+            "g56",
+            "g59",
+            "g60",
+            "g61",
+            "g62",
+            "g64",
+            "g65",
+            "g78",
+            "g80",
+            "g81",
+            "g83",
+            "g87",
+            "g91"
+          ],
+          "held_groups": [
+            "g104",
+            "g106",
+            "g111",
+            "g115",
+            "g32",
+            "g38",
+            "g42",
+            "g46",
+            "g51",
+            "g58",
+            "g63",
+            "g95",
+            "g99"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.048279124149659874,
+            "group_balanced": 0.06373648582757079,
+            "class_balanced": 0.057529671467167025
+          },
+          "rule_bounds": [
+            10.561007714223054,
+            36.54801831987413
+          ]
+        },
+        {
+          "fold": 2,
+          "train_groups": [
+            "g0",
+            "g103",
+            "g104",
+            "g106",
+            "g108",
+            "g109",
+            "g111",
+            "g112",
+            "g113",
+            "g115",
+            "g116",
+            "g118",
+            "g31",
+            "g32",
+            "g33",
+            "g34",
+            "g38",
+            "g39",
+            "g40",
+            "g42",
+            "g43",
+            "g44",
+            "g46",
+            "g47",
+            "g48",
+            "g49",
+            "g51",
+            "g54",
+            "g55",
+            "g58",
+            "g59",
+            "g60",
+            "g62",
+            "g63",
+            "g64",
+            "g65",
+            "g78",
+            "g83",
+            "g87",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g105",
+            "g110",
+            "g114",
+            "g119",
+            "g35",
+            "g41",
+            "g45",
+            "g50",
+            "g53",
+            "g56",
+            "g61",
+            "g80",
+            "g81",
+            "g91"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.048630952380952386,
+            "group_balanced": 0.06306989533784498,
+            "class_balanced": 0.057390891165749684
+          },
+          "rule_bounds": [
+            10.561007714223054,
+            36.54801831987413
+          ]
+        },
+        {
+          "fold": 3,
+          "train_groups": [
+            "g0",
+            "g104",
+            "g105",
+            "g106",
+            "g108",
+            "g110",
+            "g111",
+            "g112",
+            "g114",
+            "g115",
+            "g116",
+            "g119",
+            "g31",
+            "g32",
+            "g33",
+            "g35",
+            "g38",
+            "g39",
+            "g41",
+            "g42",
+            "g43",
+            "g45",
+            "g46",
+            "g48",
+            "g50",
+            "g51",
+            "g53",
+            "g54",
+            "g56",
+            "g58",
+            "g59",
+            "g61",
+            "g62",
+            "g63",
+            "g64",
+            "g80",
+            "g81",
+            "g83",
+            "g91",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g103",
+            "g109",
+            "g113",
+            "g118",
+            "g34",
+            "g40",
+            "g44",
+            "g47",
+            "g49",
+            "g55",
+            "g60",
+            "g65",
+            "g78",
+            "g87"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.04915125425170068,
+            "group_balanced": 0.06326843108371151,
+            "class_balanced": 0.05996388266326407
+          },
+          "rule_bounds": [
+            10.561007714223054,
+            36.54801831987413
+          ]
+        },
+        {
+          "fold": 4,
+          "train_groups": [
+            "g0",
+            "g103",
+            "g104",
+            "g105",
+            "g106",
+            "g109",
+            "g110",
+            "g111",
+            "g113",
+            "g114",
+            "g115",
+            "g118",
+            "g119",
+            "g32",
+            "g34",
+            "g35",
+            "g38",
+            "g40",
+            "g41",
+            "g42",
+            "g44",
+            "g45",
+            "g46",
+            "g47",
+            "g49",
+            "g50",
+            "g51",
+            "g53",
+            "g55",
+            "g56",
+            "g58",
+            "g60",
+            "g61",
+            "g63",
+            "g65",
+            "g78",
+            "g80",
+            "g81",
+            "g87",
+            "g91",
+            "g95",
+            "g99"
+          ],
+          "held_groups": [
+            "g108",
+            "g112",
+            "g116",
+            "g31",
+            "g33",
+            "g39",
+            "g43",
+            "g48",
+            "g54",
+            "g59",
+            "g62",
+            "g64",
+            "g83"
+          ],
+          "selected_recipe": "prior_recipe",
+          "inner_MAE": {
+            "prior_recipe": 0.04711583924349883,
+            "group_balanced": 0.05957493180214076,
+            "class_balanced": 0.053980123228408436
+          },
+          "rule_bounds": [
+            10.5511599224585,
+            36.54801831987413
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "rehab24_PM_008_rep9",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_008_rep17",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_008_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_022_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_022_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_022_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_029_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_029_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_029_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_038_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_038_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_038_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_043_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_043_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_043_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep17",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep21",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_126_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_126_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_126_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_113_rep3",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_113_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_113_rep10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_118_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_118_rep1",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_118_rep2",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_029_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_043_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_126_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_113_rep8",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_126_rep4_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_029_rep1_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_008_rep7_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_118_rep11_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_029_rep7_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_008_rep4_direct_rep0",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_029_rep2_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_043_rep2_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_038_rep9_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_008_rep16_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep18_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "rehab24_PM_105_rep20_direct_rep6",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_01",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_02",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_03",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 0,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_04",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_05",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_01",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_02",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_03",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_04",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_05",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_01",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_02",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_03",
+          "group": "g0",
+          "target": 0,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 1,
+          "after_rule": 1,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_04",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_05",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_01",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_02",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_03",
+          "group": "g0",
+          "target": 1,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 0,
+          "after_rule": 0,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_04",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_05",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_06",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_07",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_08",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_09",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Petra_10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_06",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_07",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_08",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_09",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Terka_10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_06",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_07",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_08",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_09",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Vasil_11",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_06",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_07",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_08",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_09",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "aligned_rehab26_Mima_10",
+          "group": "g0",
+          "target": 2,
+          "fold": 0,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00015903",
+          "group": "g32",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00002765",
+          "group": "g38",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00032130",
+          "group": "g42",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00058440",
+          "group": "g46",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.98125,
+          "after_ai": 1.98125,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00112237",
+          "group": "g51",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9125,
+          "after_ai": 1.9125,
+          "prior_rule": 1,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00246145_existing_review",
+          "group": "g58",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00022741_batch1",
+          "group": "g63",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_012_squat_good_batch2_rep0",
+          "group": "g95",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_012_squat_good_batch2_rep1",
+          "group": "g95",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9479166666666667,
+          "after_ai": 1.9479166666666667,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_012_squat_bad_batch2_rep0",
+          "group": "g95",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.98125,
+          "after_ai": 1.98125,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_012_squat_bad_batch2_rep1",
+          "group": "g95",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9666666666666668,
+          "after_ai": 1.9666666666666668,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_015_squat_good_batch2_rep0",
+          "group": "g99",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_015_squat_bad_batch2_rep0",
+          "group": "g99",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_015_squat_bad_batch2_rep1",
+          "group": "g99",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00208748_round1_score",
+          "group": "g104",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.975,
+          "after_ai": 1.975,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00205235_round1_score",
+          "group": "g106",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.96875,
+          "after_ai": 1.96875,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00174839_held2_score",
+          "group": "g104",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00095193_held2_score",
+          "group": "g111",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9579166666666665,
+          "after_ai": 1.9579166666666665,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00144112_held3_score",
+          "group": "g115",
+          "target": 2,
+          "fold": 1,
+          "prior_recipe_ai": 1.9833333333333332,
+          "after_ai": 1.9833333333333332,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00006550",
+          "group": "g35",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00023973",
+          "group": "g41",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00187133",
+          "group": "g45",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.9854166666666664,
+          "after_ai": 1.9854166666666664,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00089834",
+          "group": "g50",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.9427083333333333,
+          "after_ai": 1.9427083333333333,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00117573_existing_review",
+          "group": "g53",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00104409_existing_review",
+          "group": "g56",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00157671_batch1",
+          "group": "g61",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_002_squat_bad_paired_direct_rep0",
+          "group": "g80",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.9604166666666667,
+          "after_ai": 1.9604166666666667,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_004_squat_good_paired_direct_rep0",
+          "group": "g81",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_004_squat_bad_paired_direct_rep0",
+          "group": "g81",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_013_squat_good_batch2_rep0",
+          "group": "g91",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_013_squat_good_batch2_rep1",
+          "group": "g91",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_013_squat_bad_batch2_rep0",
+          "group": "g91",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.9354166666666663,
+          "after_ai": 1.9354166666666663,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_013_squat_bad_batch2_rep1",
+          "group": "g91",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00040723_round1_score",
+          "group": "g105",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00179430_held2_score",
+          "group": "g110",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00255756_held2_score",
+          "group": "g114",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00165807_held3_score",
+          "group": "g119",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 1.9958333333333336,
+          "after_ai": 1.9958333333333336,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00151214_held3_score",
+          "group": "g53",
+          "target": 2,
+          "fold": 2,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00005505",
+          "group": "g34",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00014005",
+          "group": "g40",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00254232",
+          "group": "g44",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 1.996875,
+          "after_ai": 1.996875,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00265037",
+          "group": "g47",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00224365",
+          "group": "g49",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 1.9260416666666669,
+          "after_ai": 1.9260416666666669,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00039770_existing_review",
+          "group": "g55",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00251843_batch1",
+          "group": "g60",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00090550_batch1",
+          "group": "g65",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_001_squat_good_paired_direct_rep0",
+          "group": "g78",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 1.99375,
+          "after_ai": 1.99375,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_001_squat_bad_paired_direct_rep0",
+          "group": "g78",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_011_squat_good_batch2_rep0",
+          "group": "g87",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_011_squat_good_batch2_rep1",
+          "group": "g87",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_011_squat_bad_batch2_rep0",
+          "group": "g87",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_011_squat_bad_batch2_rep1",
+          "group": "g87",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00191433_round1_score",
+          "group": "g103",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00235103_held2_score",
+          "group": "g109",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00246294_held2_score",
+          "group": "g113",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00264509_held3_score",
+          "group": "g47",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00146521_held3_score",
+          "group": "g118",
+          "target": 2,
+          "fold": 3,
+          "prior_recipe_ai": 1.990625,
+          "after_ai": 1.990625,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00008753",
+          "group": "g31",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00015990",
+          "group": "g33",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00003948",
+          "group": "g39",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9625,
+          "after_ai": 1.9625,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00010352",
+          "group": "g43",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9708333333333337,
+          "after_ai": 1.9708333333333337,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00241717_existing_review",
+          "group": "g54",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00211585_existing_review",
+          "group": "g48",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.93125,
+          "after_ai": 1.93125,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00031801_existing_review",
+          "group": "g59",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00153472_batch1",
+          "group": "g62",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.99375,
+          "after_ai": 1.99375,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00096880_batch1",
+          "group": "g64",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.8083333333333331,
+          "after_ai": 1.8083333333333331,
+          "prior_rule": 1,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_010_squat_good_batch2_rep0",
+          "group": "g83",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_010_squat_good_batch2_rep1",
+          "group": "g83",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_010_squat_bad_batch2_rep0",
+          "group": "g83",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9791666666666667,
+          "after_ai": 1.9791666666666667,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "subject_010_squat_bad_batch2_rep1",
+          "group": "g83",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9729166666666664,
+          "after_ai": 1.9729166666666664,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00068330_held2_score",
+          "group": "g108",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9927083333333333,
+          "after_ai": 1.9927083333333333,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00241029_held2_score",
+          "group": "g112",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9916666666666665,
+          "after_ai": 1.9916666666666665,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00265669_held3_score",
+          "group": "g116",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9916666666666665,
+          "after_ai": 1.9916666666666665,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00133899_held3_score",
+          "group": "g62",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 2.0,
+          "after_ai": 2.0,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        },
+        {
+          "id": "qevd_00042076_rubric3_review",
+          "group": "g31",
+          "target": 2,
+          "fold": 4,
+          "prior_recipe_ai": 1.9645833333333331,
+          "after_ai": 1.9645833333333331,
+          "prior_rule": 2,
+          "after_rule": 2,
+          "frozen_old_ai_replay": 2.0
+        }
+      ],
+      "final_recipe": "prior_recipe",
+      "final_fit_rows": 58
+    }
+  ],
+  "source_preserved": true,
+  "source_digest": "c850c28b43de189e32b2419147567247d08385c717c8ca90a6bc2c6d1f58d891",
+  "independent_final_test": false,
+  "validation": "nested connected-person development CV; frozen deployed predictions may overlap original training and are replay-only",
+  "rubric_sha256": "81b51eb241cf15b699194c245d8ed5995bb79ff7866ccbd78fe584fa1af2df81",
+  "labels_sha256": "5a7506135145adcab5991f3af774ab8b6d514cabc7d8b3f16e5e73ee74c8d1e8",
+  "candidate_sha256": "14989f4dbc74adcda0d67b4c68acd109128d7f8415e7ea8390eb1afd95a30450"
+}

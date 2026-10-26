@@ -1,0 +1,20 @@
+통합 담당에게 전달하는 독립 후보 계약. 현재 신규 실학습 모델 없음/서비스 연결 금지.
+
+입력후보: tools/shoulder-work/phase_features_v2.py extract(samples,width,height)
+- samples 실제10Hz절대tick/33x2픽셀관절. 프레임 경계2% 적용. 빈슬롯NaN유지.
+- version shoulder-ready-return-relative-v2. 기준준비6실제슬롯, 실제상승/하강, 첫복귀3표본 또는첫부분복귀반전.
+- features_ready와 grade/score는 다른것이다. 특징이있어도 등급은None.
+- return_features6: 양팔꿈치 복귀-준비, 양팔올림각 복귀-준비, 양손목높이 복귀-준비.
+- trunk_features6: 몸통좌우절대및준비기준차이 각50/90/95백분위.
+- 현후보는두항목결합입력에서8관절/전구간관측조건을요구한다. 몸통만4관절로추론하는독립지원은미구현이며다른항목으로무리하게전신조건확대하지말것.
+
+점수연결후보: tools/shoulder-work/score_items_v2.py score(samples,models,width,height)
+- models는실제검증된신뢰모델객체맵이어야한다. 현재는models=None이정상호출이며두항목미평가.
+- keys lower_return/frontal_trunk_hold.
+- metadata: feature_schema, criterion, view='front', training_grade_counts, development_gate.passed, training_ids, training_source_hashes, model.predict.
+- criterion은각각 observed_ready_relative_lower_return / observed_frontal_trunk_stability_only.
+- 정상2와실제오류등급이함께학습되어야하며,미학습등급범위를벗어난예측은보류.
+- 모듈은모델파일을로드/학습/배포하지않는다. 추후실모델경로/sha와학습·개발근거를받은후통합담당이로드검증을구현해야한다.
+- 테스트의예시predict객체는계약검사용이며실제지원증거로사용금지.
+
+보존: 실제7회기존점수/원본,현모델,관측정책,자동시작예약,중단자료보호. 새입력은기존특징버전과달라이전정상전용head에그대로전달금지.

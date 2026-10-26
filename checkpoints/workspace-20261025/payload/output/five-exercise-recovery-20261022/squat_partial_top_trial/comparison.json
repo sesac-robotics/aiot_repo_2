@@ -1,0 +1,6504 @@
+{
+  "completed": true,
+  "paired": {
+    "submitted": 18,
+    "common_total_records": 5,
+    "total": {
+      "baseline": {
+        "ai_score": 15.526103399725377,
+        "rule_score": 9.0
+      },
+      "candidate": {
+        "ai_score": 15.384959404110825,
+        "rule_score": 9.0
+      }
+    },
+    "common_items": {
+      "trunk_balance": {
+        "records": 17,
+        "baseline_ai": 0.0,
+        "baseline_rule": 0.0,
+        "candidate_ai": 0.0,
+        "candidate_rule": 0.0
+      },
+      "descent_range": {
+        "records": 8,
+        "baseline_ai": 0.30067835316285496,
+        "baseline_rule": 0.25,
+        "candidate_ai": 0.30067835316285496,
+        "candidate_rule": 0.25
+      },
+      "return_extension": {
+        "records": 8,
+        "baseline_ai": 0.0,
+        "baseline_rule": 0.0,
+        "candidate_ai": 0.0,
+        "candidate_rule": 0.0
+      },
+      "knee_foot": {
+        "records": 6,
+        "baseline_ai": 0.9029253936244176,
+        "baseline_rule": 0.5,
+        "candidate_ai": 0.8668602885451088,
+        "candidate_rule": 0.5
+      }
+    }
+  },
+  "fixed": {
+    "submitted": 18,
+    "paired_total_records": 5,
+    "paired_total_MAE_points": {
+      "ai_score": 15.384959404110825,
+      "rule_score": 9.0
+    },
+    "items": {
+      "trunk_balance": {
+        "paired_records": 17,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.0
+      },
+      "descent_range": {
+        "paired_records": 8,
+        "ai_MAE_grade_units": 0.30067835316285496,
+        "rule_MAE_grade_units": 0.25
+      },
+      "return_extension": {
+        "paired_records": 8,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.0
+      },
+      "knee_foot": {
+        "paired_records": 6,
+        "ai_MAE_grade_units": 0.8668602885451088,
+        "rule_MAE_grade_units": 0.5
+      }
+    },
+    "ai_total_available": 5,
+    "rule_total_available": 5
+  },
+  "fixed_predictions": [
+    {
+      "id": "qevd_00003948",
+      "person": "qevd_410",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.8391323617854423,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00014005",
+      "person": "qevd_39",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.019552139037433157,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00023973",
+      "person": "qevd_2470",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.04880787316132144,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00032130",
+      "person": "qevd_695",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.047279543373293376,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00010352",
+      "person": "qevd_1563",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.593683543931373,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00241717_existing_review",
+      "person": "qevd_244",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.6503104658600192,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00039770_existing_review",
+      "person": "qevd_2496",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.025568181818181823,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_002_squat_bad_paired_direct_rep0",
+      "person": "shoulder_002",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_004_squat_good_paired_direct_rep0",
+      "person": "shoulder_004",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.5361409669884953,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_004_squat_bad_paired_direct_rep0",
+      "person": "shoulder_004",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.8281039578996279,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.765051740985294,
+        2.0,
+        1.8380902859017711,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 94.04713040330597,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep1",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.4896743730806812,
+        2.0,
+        1.4692320544267554,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 84.38359641261155,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep0",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "person": "shoulder_012",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.994212962962963,
+        2.0,
+        1.0798315775500278,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 86.11066810769486,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_015_squat_good_batch2_rep0",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        2,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        2.0,
+        1.9698130933544304,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        2,
+        2,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "direct_video_review_item_not_observable"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_015_squat_good_batch2_rep1",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.4908414009120494,
+        2.0,
+        null,
+        null
+      ],
+      "rule_levels": [
+        1,
+        2,
+        null,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep0",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        1.6714629705777788,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 95.07194455866669,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep1",
+      "person": "shoulder_015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        1.886665771925859,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 98.29998657888788,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    }
+  ],
+  "group_cv": {
+    "submitted": 97,
+    "paired_total_records": 47,
+    "paired_total_MAE_points": {
+      "ai_score": 10.789469808411301,
+      "rule_score": 12.340425531914894
+    },
+    "items": {
+      "descent_range": {
+        "paired_records": 56,
+        "ai_MAE_grade_units": 0.30943791151286737,
+        "rule_MAE_grade_units": 0.23214285714285715
+      },
+      "return_extension": {
+        "paired_records": 49,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.04081632653061224
+      },
+      "knee_foot": {
+        "paired_records": 50,
+        "ai_MAE_grade_units": 0.638249181396679,
+        "rule_MAE_grade_units": 0.66
+      },
+      "trunk_balance": {
+        "paired_records": 93,
+        "ai_MAE_grade_units": 0.0,
+        "rule_MAE_grade_units": 0.10752688172043011
+      }
+    },
+    "ai_total_available": 47,
+    "rule_total_available": 47
+  },
+  "group_cv_predictions": [
+    {
+      "id": "rehab24_PM_029_rep3",
+      "person": "rehab24_3",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.443314056912593,
+        2.0,
+        1.8945613464635205,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 90.06813105064171,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_029_rep6",
+      "person": "rehab24_3",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.89145930264149,
+        2.0,
+        0.6368781544536187,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 77.92506185642662,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_029_rep10",
+      "person": "rehab24_3",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "target_score": 55.0,
+      "ai_levels": [
+        1.5091312828685308,
+        2.0,
+        0.4101811542187022,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "ai_score": 68.7896865563085,
+      "rule_score": 65.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_038_rep6",
+      "person": "rehab24_4",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.482625243243224,
+        2.0,
+        1.1476375952945825,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "ai_score": 79.4539425780671,
+      "rule_score": 55.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_038_rep1",
+      "person": "rehab24_4",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.0,
+        2.0,
+        1.6842881755925236,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 80.26432263388786,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_038_rep2",
+      "person": "rehab24_4",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.1062862507645828,
+        2.0,
+        1.3157894429141404,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 76.33113540518085,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_113_rep3",
+      "person": "rehab24_8",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.5939167861461259,
+        2.0,
+        1.9775828460038987,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 93.57249448225038,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_113_rep6",
+      "person": "rehab24_8",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        1.6081387193829988,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 94.12208079074497,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_113_rep10",
+      "person": "rehab24_8",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.9886312724014337,
+        2.0,
+        1.793240740740741,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 96.72808019713261,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_029_rep8",
+      "person": "rehab24_3",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.8637617662156372,
+        2.0,
+        0.4258061542187022,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        0,
+        1
+      ],
+      "ai_score": 74.34351880651509,
+      "rule_score": 60.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_113_rep8",
+      "person": "rehab24_8",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.956304011149021,
+        2.0,
+        1.3768429112231535,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 89.99720383558261,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00008753",
+      "person": "qevd_2741",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.0,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00005505",
+      "person": "qevd_324",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.0,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00002456",
+      "person": "qevd_1015",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        2.0,
+        null,
+        null
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qevd_00187133",
+      "person": "qevd_213",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.0,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00096188",
+      "person": "qevd_1802",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        null
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        2.0,
+        null,
+        null
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qevd_00224365",
+      "person": "qevd_2434",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.5885177153010033,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00030521_existing_review",
+      "person": "qevd_2214",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        2.0,
+        null,
+        null
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qevd_00211585_existing_review",
+      "person": "qevd_1802",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00246145_existing_review",
+      "person": "qevd_1641",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.9042529832629229,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00157671_batch1",
+      "person": "qevd_367",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.6883622491638797,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00096880_batch1",
+      "person": "qevd_1161",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_029_rep1_direct_rep0",
+      "person": "rehab24_3",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.4480053797233856,
+        2.0,
+        1.8940831043956043,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 90.13132726178485,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_029_rep7_direct_rep0",
+      "person": "rehab24_3",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.8624591230715377,
+        2.0,
+        0.012620192307692308,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 68.12618973068845,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_029_rep2_direct_rep6",
+      "person": "rehab24_3",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.4836128888325386,
+        2.0,
+        1.9652987637362636,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 91.73367478853203,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_038_rep9_direct_rep6",
+      "person": "rehab24_4",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.871887173512063,
+        2.0,
+        1.8160105519480518,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "ai_score": 95.31846588190172,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_011_squat_good_batch2_rep0",
+      "person": "shoulder_011",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        null,
+        0,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "direct_sample_review_unreliable_target_geometry",
+            "direct_video_review_item_not_observable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_011_squat_good_batch2_rep1",
+      "person": "shoulder_011",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        null,
+        0,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.3739493395009315,
+        null,
+        1.2424912061971225,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        null,
+        2,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "direct_video_review_item_not_observable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_011_squat_bad_batch2_rep0",
+      "person": "shoulder_011",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "target_score": 55.0,
+      "ai_levels": [
+        1.6211684634210588,
+        null,
+        1.5801971070849883,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        null,
+        2,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_011_squat_bad_batch2_rep1",
+      "person": "shoulder_011",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "target_score": 55.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00040723_round1_score",
+      "person": "qevd_1463",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.0,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_item_not_observable_or_grade_boundary_unresolved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00235103_held2_score",
+      "person": "qevd_1286",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.6192015921125975,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "direct_observation_or_tracking_not_approved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00241029_held2_score",
+      "person": "qevd_129",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.8624908549331105,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_observation_or_tracking_not_approved",
+            "nonfinite_input_feature"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_008_rep9",
+      "person": "rehab24_1",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.028639580448791,
+        2.0,
+        1.4146973498363575,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 76.65005395427723,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_008_rep17",
+      "person": "rehab24_1",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.9512591943341246,
+        2.0,
+        0.7047301862707023,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 79.8398407090724,
+      "rule_score": 90.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_008_rep1",
+      "person": "rehab24_1",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.203644915075836,
+        2.0,
+        1.0152615976470474,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 73.28359769084325,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_022_rep6",
+      "person": "rehab24_2",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.8630041310637533,
+        2.0,
+        1.2701081838837451,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 86.99668472421247,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_022_rep1",
+      "person": "rehab24_2",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.964144243073826,
+        2.0,
+        0.8467654207269893,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 82.16364495701222,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_022_rep2",
+      "person": "rehab24_2",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.9920829849498327,
+        2.0,
+        1.5734647836558688,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 93.48321652908552,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_043_rep3",
+      "person": "rehab24_5",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.7790822501562231,
+        2.0,
+        1.9766382433783107,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 96.33580740301801,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_043_rep6",
+      "person": "rehab24_5",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.8968365323384553,
+        2.0,
+        1.438408708280581,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 90.02867860928555,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_043_rep10",
+      "person": "rehab24_5",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        1.5503836950982701,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 93.25575542647405,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_043_rep8",
+      "person": "rehab24_5",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.9920829849498327,
+        2.0,
+        1.5079365117859922,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 92.50029245103738,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00015990",
+      "person": "qevd_2666",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.02740407818532819,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00008144",
+      "person": "qevd_862",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        2.0,
+        null,
+        null
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qevd_00254232",
+      "person": "qevd_1858",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.6034040178571431,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00265037",
+      "person": "qevd_1531",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.24524092883467882,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00112237",
+      "person": "qevd_2552",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.018475506756756757,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00104409_existing_review",
+      "person": "qevd_762",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.3357497970779222,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00251843_batch1",
+      "person": "qevd_671",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.2143364448051948,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00022741_batch1",
+      "person": "qevd_1679",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.02740407818532819,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_008_rep7_direct_rep0",
+      "person": "rehab24_1",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.0453726646160857,
+        2.0,
+        1.9541294642857148,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 84.992531933527,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_008_rep4_direct_rep0",
+      "person": "rehab24_1",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.027144365137786,
+        2.0,
+        1.943712797619048,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 84.5628574413525,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_043_rep2_direct_rep6",
+      "person": "rehab24_5",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.6784584789701238,
+        2.0,
+        1.4760044642857144,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 87.31694414883756,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_008_rep16_direct_rep6",
+      "person": "rehab24_1",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.8966815904905336,
+        2.0,
+        1.674962797619048,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "ai_score": 93.57466582164372,
+      "rule_score": 55.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_010_squat_good_batch2_rep0",
+      "person": "shoulder_010",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.7435210501221088,
+        2.0,
+        1.7228695811646002,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_010_squat_good_batch2_rep1",
+      "person": "shoulder_010",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.771624030591228,
+        2.0,
+        1.9214052376943562,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 95.39543902428377,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_010_squat_bad_batch2_rep0",
+      "person": "shoulder_010",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.8210334833184845,
+        2.0,
+        1.490165593502302,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 89.6679861523118,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_010_squat_bad_batch2_rep1",
+      "person": "shoulder_010",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.5625,
+        2.0,
+        1.8739713453960523,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 91.54707018094078,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00191433_round1_score",
+      "person": "qevd_1826",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.018475506756756757,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "direct_item_not_observable_or_grade_boundary_unresolved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00208748_round1_score",
+      "person": "qevd_240",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "direct_item_not_observable_or_grade_boundary_unresolved"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_item_not_observable_or_grade_boundary_unresolved"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_item_not_observable_or_grade_boundary_unresolved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00174839_held2_score",
+      "person": "qevd_240",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.9117537129255879,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "direct_observation_or_tracking_not_approved",
+            "nonfinite_input_feature"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_observation_or_tracking_not_approved",
+            "nonfinite_input_feature"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00068330_held2_score",
+      "person": "qevd_738",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        null,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.8740817775974026,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "direct_observation_or_tracking_not_approved"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "direct_observation_or_tracking_not_approved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00095193_held2_score",
+      "person": "qevd_1530",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.5565290178571434,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "direct_observation_or_tracking_not_approved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00255756_held2_score",
+      "person": "qevd_166",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.9953322437697438,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "direct_observation_or_tracking_not_approved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_105_rep3",
+      "person": "rehab24_6",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        1.9931640625,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 99.8974609375,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_105_rep17",
+      "person": "rehab24_6",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.9983086340206184,
+        2.0,
+        0.7753135116742943,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "ai_score": 81.60433218542369,
+      "rule_score": 75.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_105_rep21",
+      "person": "rehab24_6",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.9921875,
+        2.0,
+        0.1422948969380273,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 72.0172359540704,
+      "rule_score": 90.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_126_rep3",
+      "person": "rehab24_7",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.1354415896823127,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "ai_score": 87.03162384523469,
+      "rule_score": 75.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_126_rep6",
+      "person": "rehab24_7",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "target_score": 55.0,
+      "ai_levels": [
+        1.2780593544286225,
+        2.0,
+        0.098162890503658,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 60.64333367398421,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_126_rep10",
+      "person": "rehab24_7",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.7972639896338334,
+        2.0,
+        1.0890105569840247,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 83.29411819926787,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_118_rep6",
+      "person": "rehab24_9",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.6016294959634905,
+        2.0,
+        0.8619646091782313,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 76.95391157712582,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_118_rep1",
+      "person": "rehab24_9",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.7859555340257691,
+        2.0,
+        0.8370447373833596,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "ai_score": 79.34500407113693,
+      "rule_score": 75.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_118_rep2",
+      "person": "rehab24_9",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.227442886222492,
+        2.0,
+        1.4808864546547544,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 80.62494011315869,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_126_rep8",
+      "person": "rehab24_7",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "target_score": 55.0,
+      "ai_levels": [
+        1.5189178622789983,
+        2.0,
+        0.9281413657527956,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 76.70588842047691,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00015903",
+      "person": "qevd_2102",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.06796875000000001,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00006550",
+      "person": "qevd_1213",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.06796875000000001,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00002765",
+      "person": "qevd_925",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.07838541666666668,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00058440",
+      "person": "qevd_1396",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.935280987394958,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00089834",
+      "person": "qevd_16",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.06796875000000001,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00117573_existing_review",
+      "person": "qevd_2471",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.24646577380952384,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00031801_existing_review",
+      "person": "qevd_905",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.08665747549019609,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00153472_batch1",
+      "person": "qevd_2198",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.37745535714285716,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00090550_batch1",
+      "person": "qevd_1517",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        1.3322271095938376,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_126_rep4_direct_rep0",
+      "person": "rehab24_7",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.308705280078746,
+        2.0,
+        1.6453125000000006,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 84.3102667011812,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_118_rep11_direct_rep0",
+      "person": "rehab24_9",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.572878292138152,
+        2.0,
+        0.6711931840591335,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "ai_score": 73.66107214295928,
+      "rule_score": 70.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_105_rep18_direct_rep6",
+      "person": "rehab24_6",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        1.9823499623139251,
+        2.0,
+        0.8834582850130558,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        0,
+        1
+      ],
+      "ai_score": 82.98712370990472,
+      "rule_score": 60.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "rehab24_PM_105_rep20_direct_rep6",
+      "person": "rehab24_6",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "target_score": 70.0,
+      "ai_levels": [
+        2.0,
+        2.0,
+        0.8168476219306182,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        2,
+        0,
+        1
+      ],
+      "ai_score": 82.25271432895927,
+      "rule_score": 60.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_001_squat_good_paired_direct_rep0",
+      "person": "shoulder_001",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_001_squat_bad_paired_direct_rep0",
+      "person": "shoulder_001",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_013_squat_good_batch2_rep0",
+      "person": "shoulder_013",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        null,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        2,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_013_squat_good_batch2_rep1",
+      "person": "shoulder_013",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        null,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_sample_review_unreliable_target_geometry"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_013_squat_bad_batch2_rep0",
+      "person": "shoulder_013",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.6608396156003244,
+        2.0,
+        0.28336298597052173,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 69.1630390235627,
+      "rule_score": 85.0,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "subject_013_squat_bad_batch2_rep1",
+      "person": "shoulder_013",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "target_score": 85.0,
+      "ai_levels": [
+        1.3939615797107643,
+        null,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        1,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": false,
+          "holds": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable"
+          ]
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00205235_round1_score",
+      "person": "qevd_2537",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.06796875000000001,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_item_not_observable_or_grade_boundary_unresolved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00179430_held2_score",
+      "person": "qevd_2072",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.26184348739495794,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "side_heel_and_toe_missing",
+            "direct_observation_or_tracking_not_approved"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "qevd_00246294_held2_score",
+      "person": "qevd_1769",
+      "criterion_ids": [
+        "descent_range",
+        "return_extension",
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "levels": [
+        0,
+        2,
+        null,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.4000503326330533,
+        2.0,
+        null,
+        2.0
+      ],
+      "rule_levels": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "descent_range",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "return_extension",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "knee_foot",
+          "eligible": false,
+          "holds": [
+            "required_measurement_unavailable",
+            "side_heel_and_toe_missing",
+            "direct_observation_or_tracking_not_approved",
+            "nonfinite_input_feature"
+          ]
+        },
+        {
+          "item": "trunk_balance",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    }
+  ],
+  "observation_changes": [
+    {
+      "id": "subject_011_squat_good_batch2_rep1",
+      "split": "train",
+      "levels": [
+        1,
+        null,
+        0,
+        2
+      ],
+      "old_eligible": false,
+      "new_eligible": true,
+      "holds": []
+    },
+    {
+      "id": "subject_011_squat_bad_batch2_rep0",
+      "split": "train",
+      "levels": [
+        1,
+        2,
+        0,
+        2
+      ],
+      "old_eligible": false,
+      "new_eligible": true,
+      "holds": []
+    }
+  ],
+  "independent_final_test": false,
+  "labels_changed": false,
+  "rejected_heel_hypotheses_used": false,
+  "promoted": false,
+  "expert_reference": false,
+  "model_sha256": "20c5f24ecea0b0c79c9a063b4069d2aca0c56e0e8634c32705d042c7da2933e6"
+}

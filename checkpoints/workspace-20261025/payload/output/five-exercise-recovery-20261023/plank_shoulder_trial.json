@@ -1,0 +1,258 @@
+{
+  "baseline": {
+    "total_cases": 2,
+    "AI_MAE": 10.255710323798453,
+    "Rule_MAE": 6.25,
+    "item_MAE": 0.282357451826858,
+    "error_item_MAE": 0.4479459921508462
+  },
+  "candidate": {
+    "total_cases": 2,
+    "AI_MAE": 10.483241984662293,
+    "Rule_MAE": 6.25,
+    "item_MAE": 0.2951162920537764,
+    "error_item_MAE": 0.4954569761684858
+  },
+  "adopted": false,
+  "selection": {
+    "heads": [
+      {
+        "head": "('plank', 'leg_and_body_support', 'side_support_clearance_v2')",
+        "records": 68,
+        "connected_groups": 9,
+        "selected_estimator": "forest8",
+        "selection_MAE": {
+          "forest2": 0.7268858056095852,
+          "forest4": 0.5733130850407179,
+          "forest8": 0.484555990287278,
+          "median_forest": 0.7076690931611436,
+          "monotone_hist": 0.7321622521232907
+        },
+        "retained": false
+      }
+    ],
+    "validation_used_for_fitting": false,
+    "final_test_used": false,
+    "rule_boundaries_unchanged": true,
+    "selection_cv_is_not_final_performance": true
+  },
+  "fixed_predictions": [
+    {
+      "id": "amanda_challenge",
+      "person": "youtube_channel_UCV5wtbvmeyOhy7-JXyZhl-g",
+      "criterion_ids": [
+        "trunk_line",
+        "elbow_sagittal_position",
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        1.8764890340488003,
+        1.976810998864005,
+        1.4169934439039118,
+        2.0
+      ],
+      "rule_levels": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "ai_score": 91.40985260581519,
+      "rule_score": 87.5,
+      "observation": [
+        {
+          "item": "trunk_line",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "elbow_sagittal_position",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "leg_and_body_support",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "support_continuity",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "ottobre_challenge",
+      "person": "youtube_channel_UCoNWDfTzleHVmP61d6R9SOw",
+      "criterion_ids": [
+        "trunk_line",
+        "elbow_sagittal_position",
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "levels": [
+        null,
+        null,
+        1,
+        1
+      ],
+      "target_score": null,
+      "ai_levels": [
+        null,
+        null,
+        1.263651118217418,
+        1.5981906114718611
+      ],
+      "rule_levels": [
+        null,
+        null,
+        0,
+        0
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "trunk_line",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "elbow_sagittal_position",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "leg_and_body_support",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "support_continuity",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "climber_prospective",
+      "person": "youtube_channel_UCfIS-wKaQBzc1eUFdrMKg-g",
+      "criterion_ids": [
+        "trunk_line",
+        "elbow_sagittal_position",
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "target_score": 100.0,
+      "ai_levels": [
+        2.0,
+        1.987273321186827,
+        0.8700893128417158,
+        1.877580504214364
+      ],
+      "rule_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "ai_score": 87.62366342486023,
+      "rule_score": 100.0,
+      "observation": [
+        {
+          "item": "trunk_line",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "elbow_sagittal_position",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "leg_and_body_support",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "support_continuity",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    },
+    {
+      "id": "gotti_prospective",
+      "person": "youtube_channel_UCZVLDRx4ZeMVTe03Uc_StfA",
+      "criterion_ids": [
+        "trunk_line",
+        "elbow_sagittal_position",
+        "leg_and_body_support",
+        "support_continuity"
+      ],
+      "levels": [
+        1,
+        null,
+        2,
+        2
+      ],
+      "target_score": null,
+      "ai_levels": [
+        0.3754708011838216,
+        null,
+        1.9921167954862746,
+        1.6525057212604661
+      ],
+      "rule_levels": [
+        0,
+        null,
+        1,
+        1
+      ],
+      "ai_score": null,
+      "rule_score": null,
+      "observation": [
+        {
+          "item": "trunk_line",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "elbow_sagittal_position",
+          "eligible": false,
+          "holds": []
+        },
+        {
+          "item": "leg_and_body_support",
+          "eligible": true,
+          "holds": []
+        },
+        {
+          "item": "support_continuity",
+          "eligible": true,
+          "holds": []
+        }
+      ]
+    }
+  ],
+  "missing_sequences": [],
+  "final_test_opened": false,
+  "validation_is_reused_development": true,
+  "new_features_are_joint_geometry_not_score_labels": true,
+  "rule_unchanged": true
+}

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>440</width>
+    <height>540</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AI Fitness Hub - Login</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#loginTitle { font-size: 24px; font-weight: 900; color: #0284C7; }
+#loginCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 20px; }
+QLabel { font-size: 13px; font-weight: 700; color: #334155; background: transparent; }
+QLineEdit { background-color: #F8FAFC; border: 2px solid #E2E8F0; border-radius: 10px; padding: 6px 12px; color: #0F172A; font-size: 14px; min-height: 32px; }
+QLineEdit:focus { border: 2px solid #0284C7; background-color: #FFFFFF; }
+#errorMsgLabel { color: #EF4444; font-size: 12px; font-weight: 700; background: transparent; }
+#loginButton { background-color: #0284C7; color: #FFFFFF; font-size: 15px; font-weight: 800; border-radius: 14px; min-height: 48px; }
+#loginButton:hover { background-color: #0369A1; }
+#registerLinkButton { background-color: transparent; color: #0284C7; font-size: 13px; font-weight: 700; border: none; }
+#registerLinkButton:hover { color: #0369A1; text-decoration: underline; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="loginTitle">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>25</y>
+      <width>380</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>💪 Welcome Back to AI Fit</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="loginCard">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>75</y>
+      <width>380</width>
+      <height>420</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="labelUser">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>340</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Username (Login ID)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="usernameEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>45</y>
+       <width>340</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Enter your username</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelPass">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>105</y>
+       <width>340</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="passwordEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>340</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Enter your password</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="errorMsgLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>185</y>
+       <width>340</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loginButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>340</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🚀 Sign In</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="registerLinkButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>285</y>
+       <width>340</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Don't have an account? Sign up</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

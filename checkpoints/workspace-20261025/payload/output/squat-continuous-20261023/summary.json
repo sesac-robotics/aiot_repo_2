@@ -1,0 +1,361 @@
+{
+  "review": {
+    "records": null,
+    "reviewed_sources": 176,
+    "decoded_frames": 26458,
+    "all_frame_pages": 336,
+    "continuous_playback": false,
+    "expert_validated": false,
+    "new_confirmed_error_labels": 0,
+    "new_training_labels": 0,
+    "method": "Every decoded source frame inspected in time-ordered contact sheets, not real-time playback. Thumbnail review cannot establish all fine joint/foot criteria.",
+    "decisions": {
+      "needs_fine_adjudication_not_training": 166,
+      "exclude_fine_knee_labels_crop_or_occlusion": 9,
+      "exclude_front_labels_side_view": 1
+    }
+  },
+  "AI": {
+    "phase": {
+      "before": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 8,
+        "MAE": 0.34991846246790786,
+        "error_MAE": 1.2229467256012103,
+        "balanced_MAE": 0.7436370909397894
+      },
+      "after": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 7,
+        "MAE": 0.28634114984251685,
+        "error_MAE": 1.12078442229605,
+        "balanced_MAE": 0.662658704086267
+      },
+      "improved": false
+    },
+    "toe": {
+      "before": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 8,
+        "MAE": 0.34991846246790786,
+        "error_MAE": 1.2229467256012103,
+        "balanced_MAE": 0.7436370909397894
+      },
+      "after": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 5,
+        "MAE": 0.2623176827507235,
+        "error_MAE": 1.1729991238919808,
+        "balanced_MAE": 0.6730171562065846
+      },
+      "improved": false
+    },
+    "linear": {
+      "before": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 8,
+        "MAE": 0.34991846246790786,
+        "error_MAE": 1.2229467256012103,
+        "balanced_MAE": 0.7436370909397894
+      },
+      "after": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 34,
+        "MAE": 0.7100111288807683,
+        "error_MAE": 1.2282170692726877,
+        "balanced_MAE": 0.9437118470967321
+      },
+      "improved": false
+    },
+    "axis": {
+      "before": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 8,
+        "MAE": 0.34991846246790786,
+        "error_MAE": 1.2229467256012105,
+        "balanced_MAE": 0.7436370909397895
+      },
+      "after": {
+        "n": 56,
+        "error_n": 5,
+        "normal_n": 51,
+        "missed_errors": 2,
+        "normal_flagged": 8,
+        "MAE": 0.3694172734974915,
+        "error_MAE": 1.2556459053435796,
+        "balanced_MAE": 0.7690890094280802
+      },
+      "improved": false
+    }
+  },
+  "rule": {
+    "before": {
+      "n": 56,
+      "error_n": 5,
+      "normal_n": 51,
+      "missed_errors": 3,
+      "normal_flagged": 5,
+      "MAE": 0.2857142857142857,
+      "error_MAE": 1.2,
+      "balanced_MAE": 0.6980392156862745
+    },
+    "after": {
+      "n": 56,
+      "error_n": 5,
+      "normal_n": 51,
+      "missed_errors": 3,
+      "normal_flagged": 18,
+      "MAE": 0.6428571428571429,
+      "error_MAE": 1.6,
+      "balanced_MAE": 1.0745098039215688
+    },
+    "approved": false
+  },
+  "extraction": [
+    {
+      "id": "Vasil_01",
+      "n": 22,
+      "knee_delta_median_px": 3.7545848516580986,
+      "knee_delta_p90_px": 6.049790955867883,
+      "note": "검출 방식 간 차이이며 정답 대비 위치 오차는 아님"
+    },
+    {
+      "id": "Vasil_02",
+      "n": 23,
+      "knee_delta_median_px": 3.954977864551922,
+      "knee_delta_p90_px": 7.492327540458017,
+      "note": "검출 방식 간 차이이며 정답 대비 위치 오차는 아님"
+    },
+    {
+      "id": "Vasil_08",
+      "n": 26,
+      "knee_delta_median_px": 3.6020329230525086,
+      "knee_delta_p90_px": 7.263932954937389,
+      "note": "검출 방식 간 차이이며 정답 대비 위치 오차는 아님"
+    }
+  ],
+  "counterfactual": {
+    "cases": [
+      {
+        "id": "Vasil_01",
+        "before": 1.9375,
+        "reextracted": 1.9854166666666666,
+        "max_feature_delta": 0.24348499986352268,
+        "features_before": {
+          "x": [
+            0.8322149483027209,
+            1.3215952051902364,
+            1.5368874968312531,
+            1.7109812524072994,
+            2.717116081564717,
+            3.1597434046341313,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.03625525772988866,
+            0.07049128579798304,
+            0.9545454545454546
+          ],
+          "scalar": 0.03625525772988866,
+          "higher": false,
+          "coverage": 0.9545454545454546,
+          "meaning": "몸통 길이 대비 무릎의 골반–발목선 안쪽 편위·동적 안쪽 이동. 발끝 방향이나 뒤꿈치 지지의 합성 점수는 아님"
+        },
+        "features_reextracted": {
+          "x": [
+            0.8872624248149458,
+            1.4940413832616035,
+            1.7803724966947758,
+            1.619487653299264,
+            2.72701909383232,
+            3.2496488029143524,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.052199958515877415,
+            0.07058885036337112,
+            1.0
+          ],
+          "scalar": 0.052199958515877415,
+          "higher": false,
+          "coverage": 1.0,
+          "meaning": "몸통 길이 대비 무릎의 골반–발목선 안쪽 편위·동적 안쪽 이동. 발끝 방향이나 뒤꿈치 지지의 합성 점수는 아님"
+        }
+      },
+      {
+        "id": "Vasil_02",
+        "before": 2.0,
+        "reextracted": 2.0,
+        "max_feature_delta": 0.06566503947368663,
+        "features_before": {
+          "x": [
+            1.0023785488813248,
+            1.1868148593993222,
+            1.3761822842511489,
+            1.4950486378918573,
+            1.7701355849593743,
+            2.05257729413379,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.003642555360938452,
+            0.027081635781869062,
+            1.0
+          ],
+          "scalar": 0.003642555360938452,
+          "higher": false,
+          "coverage": 1.0,
+          "meaning": "몸통 길이 대비 무릎의 골반–발목선 안쪽 편위·동적 안쪽 이동. 발끝 방향이나 뒤꿈치 지지의 합성 점수는 아님"
+        },
+        "features_reextracted": {
+          "x": [
+            0.9847639177137917,
+            1.2304501269920756,
+            1.363674818547642,
+            1.469242983035402,
+            1.835800624433061,
+            2.0345685115521346,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.003044687214143832,
+            0.024840959411905946,
+            0.03099354196152293,
+            1.0
+          ],
+          "scalar": 0.024840959411905946,
+          "higher": false,
+          "coverage": 1.0,
+          "meaning": "몸통 길이 대비 무릎의 골반–발목선 안쪽 편위·동적 안쪽 이동. 발끝 방향이나 뒤꿈치 지지의 합성 점수는 아님"
+        }
+      },
+      {
+        "id": "Vasil_08",
+        "before": 2.0,
+        "reextracted": 1.9854166666666666,
+        "max_feature_delta": 0.093965953910353,
+        "features_before": {
+          "x": [
+            0.9590831810999841,
+            1.0661708842943152,
+            1.2333226605075183,
+            1.6125574095664477,
+            1.7926096434732257,
+            2.0736507883566677,
+            0.0,
+            0.0,
+            0.0,
+            0.00018996682601255324,
+            0.02695454910692692,
+            0.037222271998418835,
+            0.046552578064880064,
+            1.0
+          ],
+          "scalar": 0.037222271998418835,
+          "higher": false,
+          "coverage": 1.0,
+          "meaning": "몸통 길이 대비 무릎의 골반–발목선 안쪽 편위·동적 안쪽 이동. 발끝 방향이나 뒤꿈치 지지의 합성 점수는 아님"
+        },
+        "features_reextracted": {
+          "x": [
+            0.898784333802157,
+            1.090049913822738,
+            1.2197989579117579,
+            1.5185914556560947,
+            1.8417549384369338,
+            2.060979709411306,
+            0.0,
+            0.0,
+            0.0,
+            0.007695068456905315,
+            0.038805695751366207,
+            0.06044964443431809,
+            0.07084636613385707,
+            1.0
+          ],
+          "scalar": 0.06044964443431809,
+          "higher": false,
+          "coverage": 1.0,
+          "meaning": "몸통 길이 대비 무릎의 골반–발목선 안쪽 편위·동적 안쪽 이동. 발끝 방향이나 뒤꿈치 지지의 합성 점수는 아님"
+        }
+      }
+    ],
+    "train_people": [
+      "qevd_1213",
+      "qevd_129",
+      "qevd_1396",
+      "qevd_1517",
+      "qevd_1641",
+      "qevd_166",
+      "qevd_1679",
+      "qevd_1769",
+      "qevd_2362",
+      "qevd_2741",
+      "qevd_905",
+      "rehab26_Mima",
+      "rehab26_Petra",
+      "rehab26_Terka"
+    ],
+    "held_person": "rehab26_Vasil",
+    "purpose": "추출 방식만 바꾼 원인 분리 실험; 정답 관절 오차 확정 아님"
+  },
+  "preservation": {
+    "original_models_preserved": true,
+    "original_model_sha256": {
+      "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/front-candidate/model-v1.joblib": "07929a6bb83df1aba104de972815af0f8ab6ad15582e977ef0fe8ae49511b6e7",
+      "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/front-candidate/torso-model.joblib": "61180b4bfb80eb9ac9ca58b09579c2888e776b161e2bf410d2e74fda1091bcdf",
+      "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/front-candidate/model.joblib": "07929a6bb83df1aba104de972815af0f8ab6ad15582e977ef0fe8ae49511b6e7",
+      "/home/jayden/SeSACPAI-Mid/output/squat-relabel-20261023/candidate.joblib": "223f54eb638ecda4094b2cd351598619d42e7fde4c426ffdcafc8a1609145e6d",
+      "/home/jayden/SeSACPAI-Mid/output/squat-relabel-expanded-20261023/selected-candidate.joblib": "7004cc0da7656d0a5f11af5c686b2b19f0be63da74c3f6b2161b2c90a405b5fb",
+      "/home/jayden/SeSACPAI-Mid/output/squat-relabel-expanded-20261023/candidate.joblib": "a9a6eddc58305acec521944e8a55cf7cd1232f439d76c055eb2b9909274e732c",
+      "/home/jayden/SeSACPAI-Mid/team-posture-scoring/Server/AIService/artifacts/posture_score/pushups.joblib": "e5889469628d9e2ce397279276a0495a4564c2a37690804c4b41db23bc163ecb",
+      "/home/jayden/SeSACPAI-Mid/team-posture-scoring/Server/AIService/artifacts/posture_score/shoulder.joblib": "8facb894061d9d22406f604665bb232b152f4baef822ec9185fbee7022f48d9c",
+      "/home/jayden/SeSACPAI-Mid/team-posture-scoring/Server/AIService/artifacts/posture_score/plank.joblib": "33431a21ff87a15ac01918c3f7dcd726b801f95574afd67927208770457c32b3",
+      "/home/jayden/SeSACPAI-Mid/team-posture-scoring/Server/AIService/artifacts/posture_score/squats.joblib": "114c48708182f773f156f3dea5cc18b607d0dab581cd122e4b55230a756a3716",
+      "/home/jayden/SeSACPAI-Mid/team-posture-scoring/Server/AIService/artifacts/posture_score/ytw.joblib": "59a5d6f89b708ef3636108b68ea01590b0704f781b0f00cdf7240f81c3d4e26a"
+    },
+    "source_preserved": true,
+    "team_source_digest": "c850c28b43de189e32b2419147567247d08385c717c8ca90a6bc2c6d1f58d891",
+    "runtime_models_changed": false,
+    "runtime_rules_changed": false,
+    "criteria_unchanged": true,
+    "weights": {
+      "depth": 30,
+      "return_extension": 20,
+      "knee_foot": 30,
+      "trunk_balance": 20
+    },
+    "independent_final_test": false
+  },
+  "resolved_target_misses": 0,
+  "approved_for_runtime": false,
+  "conclusion": "관절 재추출만으로 해결되지 않음. 평가 특징과 오류 사례의 사람 간 일반화 한계가 의심됨. 개선 후보의 정상 오경보 감소는 관측했으나 목표 오류 2건 누락은 미해결."
+}

@@ -1,0 +1,452 @@
+{
+  "created_at_utc": "2026-10-24T12:57:07.880065+00:00",
+  "scope": "현재 배포 구현의 저장 결과 및 관절 재생 기능 분석; 실제 동작 정답 검증 아님",
+  "sessions": [
+    {
+      "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792846159556060119",
+      "exercise": "squats",
+      "view": "front",
+      "samples": 471,
+      "seconds": 47.0,
+      "saved_count": 5,
+      "replayed_count": 5,
+      "same_count": true,
+      "phase": "관측 중단 · 준비 자세 재확인",
+      "uncertain_attempts": [
+        {
+          "start_tick": 769,
+          "end_tick": 785,
+          "reason": "위치 이동 감지 · 준비 자세 재확인",
+          "counted": false
+        }
+      ],
+      "required_simultaneous_coverage": 0.9808917197452229,
+      "joint_coverage": {
+        "11": 1.0,
+        "12": 1.0,
+        "13": 0.879,
+        "14": 0.966,
+        "15": 0.845,
+        "16": 0.8535,
+        "23": 0.9958,
+        "24": 0.9809,
+        "25": 0.7601,
+        "26": 0.7622,
+        "27": 0.7197,
+        "28": 0.7155
+      },
+      "repetitions": [
+        {
+          "number": 1,
+          "duration": 3.9,
+          "ai_total": 69.3,
+          "rule_total": 75.0,
+          "items": [
+            {
+              "id": "descent_range",
+              "title": "하강 범위 추정",
+              "weight": 30,
+              "ai_points": 20.6,
+              "rule_points": 15.0
+            },
+            {
+              "id": "standing_return",
+              "title": "서기 높이 복귀",
+              "weight": 20,
+              "ai_points": 15.3,
+              "rule_points": 20.0
+            },
+            {
+              "id": "knee_inward",
+              "title": "무릎 간격 유지",
+              "weight": 30,
+              "ai_points": 24.4,
+              "rule_points": 30.0
+            },
+            {
+              "id": "trunk_balance",
+              "title": "몸통 좌우 안정",
+              "weight": 20,
+              "ai_points": 9.0,
+              "rule_points": 10.0
+            }
+          ],
+          "messages": [
+            "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+            "AI Model에서 낮게 추정했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요. 두 방식의 판단이 달라 실제 오류 여부는 확인이 필요합니다."
+          ],
+          "required_raw_coverage": 1.0,
+          "required_border_safe_coverage": 1.0,
+          "border_safe_joint_coverage": {
+            "11": 1.0,
+            "12": 1.0,
+            "23": 1.0,
+            "24": 1.0
+          }
+        },
+        {
+          "number": 2,
+          "duration": 3.7,
+          "ai_total": 74.7,
+          "rule_total": 85.0,
+          "items": [
+            {
+              "id": "descent_range",
+              "title": "하강 범위 추정",
+              "weight": 30,
+              "ai_points": 19.4,
+              "rule_points": 15.0
+            },
+            {
+              "id": "standing_return",
+              "title": "서기 높이 복귀",
+              "weight": 20,
+              "ai_points": 15.8,
+              "rule_points": 20.0
+            },
+            {
+              "id": "knee_inward",
+              "title": "무릎 간격 유지",
+              "weight": 30,
+              "ai_points": 20.7,
+              "rule_points": 30.0
+            },
+            {
+              "id": "trunk_balance",
+              "title": "몸통 좌우 안정",
+              "weight": 20,
+              "ai_points": 18.8,
+              "rule_points": 20.0
+            }
+          ],
+          "messages": [
+            "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요."
+          ],
+          "required_raw_coverage": 1.0,
+          "required_border_safe_coverage": 1.0,
+          "border_safe_joint_coverage": {
+            "11": 1.0,
+            "12": 1.0,
+            "23": 1.0,
+            "24": 1.0
+          }
+        },
+        {
+          "number": 3,
+          "duration": 3.2,
+          "ai_total": 74.9,
+          "rule_total": 85.0,
+          "items": [
+            {
+              "id": "descent_range",
+              "title": "하강 범위 추정",
+              "weight": 30,
+              "ai_points": 20.5,
+              "rule_points": 15.0
+            },
+            {
+              "id": "standing_return",
+              "title": "서기 높이 복귀",
+              "weight": 20,
+              "ai_points": 15.5,
+              "rule_points": 20.0
+            },
+            {
+              "id": "knee_inward",
+              "title": "무릎 간격 유지",
+              "weight": 30,
+              "ai_points": 22.1,
+              "rule_points": 30.0
+            },
+            {
+              "id": "trunk_balance",
+              "title": "몸통 좌우 안정",
+              "weight": 20,
+              "ai_points": 16.8,
+              "rule_points": 20.0
+            }
+          ],
+          "messages": [
+            "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요."
+          ],
+          "required_raw_coverage": 1.0,
+          "required_border_safe_coverage": 1.0,
+          "border_safe_joint_coverage": {
+            "11": 1.0,
+            "12": 1.0,
+            "23": 1.0,
+            "24": 1.0
+          }
+        },
+        {
+          "number": 4,
+          "duration": 3.4,
+          "ai_total": 75.0,
+          "rule_total": 75.0,
+          "items": [
+            {
+              "id": "descent_range",
+              "title": "하강 범위 추정",
+              "weight": 30,
+              "ai_points": 19.5,
+              "rule_points": 15.0
+            },
+            {
+              "id": "standing_return",
+              "title": "서기 높이 복귀",
+              "weight": 20,
+              "ai_points": 16.8,
+              "rule_points": 20.0
+            },
+            {
+              "id": "knee_inward",
+              "title": "무릎 간격 유지",
+              "weight": 30,
+              "ai_points": 23.6,
+              "rule_points": 30.0
+            },
+            {
+              "id": "trunk_balance",
+              "title": "몸통 좌우 안정",
+              "weight": 20,
+              "ai_points": 15.1,
+              "rule_points": 10.0
+            }
+          ],
+          "messages": [
+            "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+            "Rule Base에서 부분 충족으로 평가했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요."
+          ],
+          "required_raw_coverage": 1.0,
+          "required_border_safe_coverage": 1.0,
+          "border_safe_joint_coverage": {
+            "11": 1.0,
+            "12": 1.0,
+            "23": 1.0,
+            "24": 1.0
+          }
+        },
+        {
+          "number": 5,
+          "duration": 4.1,
+          "ai_total": 75.6,
+          "rule_total": 75.0,
+          "items": [
+            {
+              "id": "descent_range",
+              "title": "하강 범위 추정",
+              "weight": 30,
+              "ai_points": 22.9,
+              "rule_points": 15.0
+            },
+            {
+              "id": "standing_return",
+              "title": "서기 높이 복귀",
+              "weight": 20,
+              "ai_points": 15.1,
+              "rule_points": 20.0
+            },
+            {
+              "id": "knee_inward",
+              "title": "무릎 간격 유지",
+              "weight": 30,
+              "ai_points": 21.6,
+              "rule_points": 30.0
+            },
+            {
+              "id": "trunk_balance",
+              "title": "몸통 좌우 안정",
+              "weight": 20,
+              "ai_points": 16.0,
+              "rule_points": 10.0
+            }
+          ],
+          "messages": [
+            "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+            "Rule Base에서 부분 충족으로 평가했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요."
+          ],
+          "required_raw_coverage": 1.0,
+          "required_border_safe_coverage": 1.0,
+          "border_safe_joint_coverage": {
+            "11": 1.0,
+            "12": 1.0,
+            "23": 1.0,
+            "24": 1.0
+          }
+        }
+      ],
+      "video_saved": false,
+      "sha256": {
+        "pose.npz": "feca286bae8b97244722ac28b345519480e3e9d9b7574da50a09ee351c2bb910",
+        "state.json": "461425110a5d8d0e6872707a1ba4fa691eeed795d419eb58ffa5c8700225e68b",
+        "final-state.json": "a2a6a709a88fc2b209e4565aec8ba20373dd7c123be05948c7725c022cb0f516"
+      },
+      "runtime_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7"
+    },
+    {
+      "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792846279497155109",
+      "exercise": "shoulder",
+      "view": "front",
+      "samples": 696,
+      "seconds": 69.5,
+      "saved_count": 1,
+      "replayed_count": 1,
+      "same_count": true,
+      "phase": "관측 중단 · 준비 자세 재확인",
+      "uncertain_attempts": [],
+      "required_simultaneous_coverage": 0.39655172413793105,
+      "joint_coverage": {
+        "11": 1.0,
+        "12": 1.0,
+        "13": 0.9296,
+        "14": 0.9382,
+        "15": 0.9152,
+        "16": 0.9138,
+        "23": 0.4152,
+        "24": 0.4885,
+        "25": 0.0,
+        "26": 0.0,
+        "27": 0.0,
+        "28": 0.0
+      },
+      "repetitions": [
+        {
+          "number": 1,
+          "duration": 3.8,
+          "ai_total": null,
+          "rule_total": null,
+          "items": [
+            {
+              "id": "overhead_reach",
+              "title": "overhead_reach",
+              "weight": 30,
+              "ai_points": null,
+              "rule_points": null
+            },
+            {
+              "id": "lower_return",
+              "title": "lower_return",
+              "weight": 25,
+              "ai_points": null,
+              "rule_points": null
+            },
+            {
+              "id": "bilateral_timing",
+              "title": "bilateral_timing",
+              "weight": 25,
+              "ai_points": null,
+              "rule_points": null
+            },
+            {
+              "id": "frontal_trunk_hold",
+              "title": "frontal_trunk_hold",
+              "weight": 20,
+              "ai_points": null,
+              "rule_points": null
+            }
+          ],
+          "messages": [],
+          "required_raw_coverage": 1.0,
+          "required_border_safe_coverage": 0.0,
+          "border_safe_joint_coverage": {
+            "11": 1.0,
+            "12": 1.0,
+            "23": 0.0,
+            "24": 0.0,
+            "13": 1.0,
+            "14": 1.0,
+            "15": 1.0,
+            "16": 1.0
+          }
+        }
+      ],
+      "video_saved": false,
+      "sha256": {
+        "pose.npz": "af5600d97dc1ce7e1beb63fbb5f63bb1ec9d68b80bec72a80cd46b960c821706",
+        "state.json": "8b70c30c547360c732f5b9a580179027a731d8892ae6a3df315b35321ae81ac4",
+        "final-state.json": "457394a77ae2b85037739c32e9e4e2b1a568a3fb9dc90d0990f9b4787b8af371"
+      },
+      "runtime_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7"
+    },
+    {
+      "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792846306613620500",
+      "exercise": "pushups",
+      "view": "side",
+      "samples": 160,
+      "seconds": 15.9,
+      "saved_count": 0,
+      "replayed_count": 0,
+      "same_count": true,
+      "phase": "관측 중단 · 준비 자세 재확인",
+      "uncertain_attempts": [],
+      "required_simultaneous_coverage": 0.0125,
+      "joint_coverage": {
+        "11": 1.0,
+        "12": 1.0,
+        "13": 0.5563,
+        "14": 0.1688,
+        "15": 0.1437,
+        "16": 0.6125,
+        "23": 0.4625,
+        "24": 0.55,
+        "25": 0.0,
+        "26": 0.0,
+        "27": 0.0,
+        "28": 0.0
+      },
+      "repetitions": [],
+      "video_saved": false,
+      "sha256": {
+        "pose.npz": "3d588ecc5fc7ea4ce4b1f019dd814c08df5a2a5d894eb6f5ca84fbc8f6d8cc55",
+        "state.json": "0bceb02b2edd2dd5ba6ed55224d40a02602ed9b8fd4f471efa9eceaf714b321f",
+        "final-state.json": "1c55cc43b3a50c18a08bb39227c145b403e66680303dcfed4afdb87c57e6fc9c"
+      },
+      "runtime_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7"
+    },
+    {
+      "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792846426614521826",
+      "exercise": "ytw",
+      "view": "front",
+      "samples": 497,
+      "seconds": 49.6,
+      "saved_count": null,
+      "replayed_count": null,
+      "same_count": true,
+      "phase": "YTW 자동 반복 구분은 아직 미지원",
+      "uncertain_attempts": [],
+      "required_simultaneous_coverage": 0.9959758551307847,
+      "joint_coverage": {
+        "11": 1.0,
+        "12": 1.0,
+        "13": 0.9276,
+        "14": 0.8531,
+        "15": 0.7123,
+        "16": 0.7183,
+        "23": 0.998,
+        "24": 0.998,
+        "25": 0.3903,
+        "26": 0.0,
+        "27": 0.0,
+        "28": 0.0
+      },
+      "repetitions": [],
+      "video_saved": false,
+      "sha256": {
+        "pose.npz": "5525f4fcebd04cfc40c4e9d61635b1ab6d945e79ec5f012498e8e0a00e226bcd",
+        "state.json": "0cb8f1ca324bc5e27aaff44bc7819d87b3482413bf8deed6cde3af2a08fd0da7",
+        "final-state.json": "aee604889fd4d6a778e863e2e2c9a73cee3bced5afaa3d3e069cad91312b93f1"
+      },
+      "runtime_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7"
+    }
+  ],
+  "squat_mean": {
+    "ai": 73.9,
+    "rule": 79.0
+  },
+  "limitations": [
+    "영상 저장 없음: 독립 육안 실제 횟수·정답 확인 불가",
+    "기립 상태 신뢰도×20은 복귀 실패 심각도 점수로 검증된 값이 아님",
+    "플랭크 저장 세션 없음",
+    "원본 모델·라벨·분할·실서비스 코드 변경 없음"
+  ]
+}

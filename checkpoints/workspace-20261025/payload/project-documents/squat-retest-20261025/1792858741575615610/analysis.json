@@ -1,0 +1,1626 @@
+{
+  "created_at_utc": "2026-10-24T16:19:50.232575+00:00",
+  "session": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792858741575615610",
+  "samples": 690,
+  "seconds": 68.9,
+  "saved_count": 7,
+  "saved_rows": 7,
+  "replay_count": 7,
+  "raw_tick_unique": true,
+  "raw_tick_consecutive": true,
+  "segments": [
+    {
+      "number": 1,
+      "start_tick": 1325,
+      "end_tick": 1378,
+      "start_seconds": 1.4,
+      "end_seconds": 6.7,
+      "duration": 5.3,
+      "actual_samples": 54,
+      "one_knee_fraction": 1.0,
+      "both_knees_fraction": 1.0,
+      "receipt": {
+        "number": 1,
+        "bottom_confirmed_tick": 1334,
+        "return_first_tick": 1376,
+        "completed_tick": 1378,
+        "observation": {
+          "policy_version": "front-squat-stage-observation-v1-candidate",
+          "detector_core_coverage": 1.0,
+          "actual_time_slot_coverage": 1.0,
+          "knee_phase_evidence_coverage": 1.0,
+          "phase_evidence_requires_actual_one_knee": true,
+          "score_observation_policy_unchanged": true
+        }
+      },
+      "phase_actual_observation": {
+        "bottom": {
+          "ticks": [
+            1332,
+            1333,
+            1334
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        },
+        "return": {
+          "ticks": [
+            1376,
+            1377,
+            1378
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        }
+      },
+      "replayed_ai": {
+        "total": 73.6,
+        "maximum": 100,
+        "earned_subtotal": 73.6,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "replayed_rule": {
+        "total": 75.0,
+        "maximum": 100,
+        "earned_subtotal": 75.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "stored_vs_replayed_methods_equal": {
+        "ai": true,
+        "rule": true
+      },
+      "stored_vs_replayed_items_equal": true,
+      "items": [
+        {
+          "id": "descent_range",
+          "title": "하강 범위 추정",
+          "weight": 30,
+          "ai_points": 20.4,
+          "rule_points": 15.0,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "title": "서기 높이 복귀",
+          "weight": 20,
+          "ai_points": 19.7,
+          "rule_points": 20.0,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "title": "무릎 간격 유지",
+          "weight": 30,
+          "ai_points": 24.6,
+          "rule_points": 30.0,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": 8.9,
+          "rule_points": 10.0,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+        "AI Model에서 낮게 추정했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요. 두 방식의 판단이 달라 실제 오류 여부는 확인이 필요합니다."
+      ],
+      "depth_features": [
+        0.38672081678260267,
+        0.37209976303829845,
+        0.5316455355539814,
+        0.5706396729328024,
+        0.9970706039242125,
+        0.9979191516308752,
+        4.249345086584124,
+        0.030539499741000353
+      ],
+      "standing_evidence": {
+        "status": "close",
+        "ai_grade": 1.9675446466498805,
+        "ai_points": 19.7,
+        "standing_confirmed": true,
+        "standing_probability": 0.9837723233249402,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 0.9873120503739539,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.007670441085761517,
+              0.04970054085266563,
+              0.057235614410205304,
+              0.006415511592628819
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9951173486422806,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.004174467493861292,
+              0.047475252375283654,
+              0.0432776104534387,
+              0.0005513317439587751
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9688875709585864,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.01540801196191029,
+              0.045777588278294916,
+              0.03035818596040163,
+              0.00015683332820282694
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          53,
+          55
+        ],
+        "bottom_index": 41,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      }
+    },
+    {
+      "number": 2,
+      "start_tick": 1419,
+      "end_tick": 1456,
+      "start_seconds": 10.8,
+      "end_seconds": 14.5,
+      "duration": 3.7,
+      "actual_samples": 38,
+      "one_knee_fraction": 1.0,
+      "both_knees_fraction": 1.0,
+      "receipt": {
+        "number": 2,
+        "bottom_confirmed_tick": 1428,
+        "return_first_tick": 1454,
+        "completed_tick": 1456,
+        "observation": {
+          "policy_version": "front-squat-stage-observation-v1-candidate",
+          "detector_core_coverage": 1.0,
+          "actual_time_slot_coverage": 1.0,
+          "knee_phase_evidence_coverage": 1.0,
+          "phase_evidence_requires_actual_one_knee": true,
+          "score_observation_policy_unchanged": true
+        }
+      },
+      "phase_actual_observation": {
+        "bottom": {
+          "ticks": [
+            1426,
+            1427,
+            1428
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        },
+        "return": {
+          "ticks": [
+            1454,
+            1455,
+            1456
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        }
+      },
+      "replayed_ai": {
+        "total": 72.3,
+        "maximum": 100,
+        "earned_subtotal": 72.3,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "replayed_rule": {
+        "total": 75.0,
+        "maximum": 100,
+        "earned_subtotal": 75.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "stored_vs_replayed_methods_equal": {
+        "ai": true,
+        "rule": true
+      },
+      "stored_vs_replayed_items_equal": true,
+      "items": [
+        {
+          "id": "descent_range",
+          "title": "하강 범위 추정",
+          "weight": 30,
+          "ai_points": 20.7,
+          "rule_points": 15.0,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "title": "서기 높이 복귀",
+          "weight": 20,
+          "ai_points": 15.6,
+          "rule_points": 20.0,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "title": "무릎 간격 유지",
+          "weight": 30,
+          "ai_points": 21.8,
+          "rule_points": 30.0,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": 14.2,
+          "rule_points": 10.0,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+        "Rule Base에서 부분 충족으로 평가했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요."
+      ],
+      "depth_features": [
+        0.3536498682367401,
+        0.3554058715450866,
+        0.4581059624685962,
+        0.5523752132276323,
+        0.9974267166394128,
+        0.9989791904710208,
+        4.065638842878707,
+        0.0640845827729663
+      ],
+      "standing_evidence": {
+        "status": "close",
+        "ai_grade": 1.5567360905238175,
+        "ai_points": 15.6,
+        "standing_confirmed": true,
+        "standing_probability": 0.7783680452619087,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 0.8002728881840031,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.1199456562480039,
+              0.07066001890156436,
+              0.049207820878794495,
+              0.043071531554191876
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.7521144463787836,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.07438168068008959,
+              0.02476611175005804,
+              0.09898930228101888,
+              0.038598972303897305
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.7827168012229393,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.05801374228823641,
+              0.054867858932107605,
+              0.11265200427664857,
+              0.03230060104544889
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          33,
+          35
+        ],
+        "bottom_index": 23,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      }
+    },
+    {
+      "number": 3,
+      "start_tick": 1480,
+      "end_tick": 1511,
+      "start_seconds": 16.9,
+      "end_seconds": 20.0,
+      "duration": 3.1,
+      "actual_samples": 32,
+      "one_knee_fraction": 1.0,
+      "both_knees_fraction": 1.0,
+      "receipt": {
+        "number": 3,
+        "bottom_confirmed_tick": 1489,
+        "return_first_tick": 1509,
+        "completed_tick": 1511,
+        "observation": {
+          "policy_version": "front-squat-stage-observation-v1-candidate",
+          "detector_core_coverage": 1.0,
+          "actual_time_slot_coverage": 1.0,
+          "knee_phase_evidence_coverage": 1.0,
+          "phase_evidence_requires_actual_one_knee": true,
+          "score_observation_policy_unchanged": true
+        }
+      },
+      "phase_actual_observation": {
+        "bottom": {
+          "ticks": [
+            1487,
+            1488,
+            1489
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        },
+        "return": {
+          "ticks": [
+            1509,
+            1510,
+            1511
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        }
+      },
+      "replayed_ai": {
+        "total": 75.7,
+        "maximum": 100,
+        "earned_subtotal": 75.7,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "replayed_rule": {
+        "total": 75.0,
+        "maximum": 100,
+        "earned_subtotal": 75.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "stored_vs_replayed_methods_equal": {
+        "ai": true,
+        "rule": true
+      },
+      "stored_vs_replayed_items_equal": true,
+      "items": [
+        {
+          "id": "descent_range",
+          "title": "하강 범위 추정",
+          "weight": 30,
+          "ai_points": 18.1,
+          "rule_points": 15.0,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "title": "서기 높이 복귀",
+          "weight": 20,
+          "ai_points": 19.6,
+          "rule_points": 20.0,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "title": "무릎 간격 유지",
+          "weight": 30,
+          "ai_points": 23.7,
+          "rule_points": 30.0,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": 14.3,
+          "rule_points": 10.0,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+        "Rule Base에서 부분 충족으로 평가했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요."
+      ],
+      "depth_features": [
+        0.2751243337621041,
+        0.2731716091917866,
+        0.48758796189819786,
+        0.5567020324842101,
+        0.9972537193506822,
+        0.9994385921459662,
+        1.4172624516249863,
+        0.054523758500552875
+      ],
+      "standing_evidence": {
+        "status": "close",
+        "ai_grade": 1.9597598715883127,
+        "ai_points": 19.6,
+        "standing_confirmed": true,
+        "standing_probability": 0.9798799357941563,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 0.9626361294832716,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.013050386122421282,
+              0.05508472462792547,
+              0.06810846373681478,
+              0.0004471704930886805
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9829191262231929,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.008494235003920552,
+              0.05163419425683072,
+              0.043307064704611875,
+              0.006982976830018893
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9940845516760042,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.012248673075109157,
+              0.04742315532062923,
+              0.03511920843520433,
+              0.0021691498347600298
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          32,
+          34
+        ],
+        "bottom_index": 22,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      }
+    },
+    {
+      "number": 4,
+      "start_tick": 1525,
+      "end_tick": 1559,
+      "start_seconds": 21.4,
+      "end_seconds": 24.8,
+      "duration": 3.4,
+      "actual_samples": 35,
+      "one_knee_fraction": 1.0,
+      "both_knees_fraction": 1.0,
+      "receipt": {
+        "number": 4,
+        "bottom_confirmed_tick": 1534,
+        "return_first_tick": 1557,
+        "completed_tick": 1559,
+        "observation": {
+          "policy_version": "front-squat-stage-observation-v1-candidate",
+          "detector_core_coverage": 1.0,
+          "actual_time_slot_coverage": 1.0,
+          "knee_phase_evidence_coverage": 1.0,
+          "phase_evidence_requires_actual_one_knee": true,
+          "score_observation_policy_unchanged": true
+        }
+      },
+      "phase_actual_observation": {
+        "bottom": {
+          "ticks": [
+            1532,
+            1533,
+            1534
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        },
+        "return": {
+          "ticks": [
+            1557,
+            1558,
+            1559
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        }
+      },
+      "replayed_ai": {
+        "total": 75.6,
+        "maximum": 100,
+        "earned_subtotal": 75.6,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "replayed_rule": {
+        "total": 85.0,
+        "maximum": 100,
+        "earned_subtotal": 85.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "stored_vs_replayed_methods_equal": {
+        "ai": true,
+        "rule": true
+      },
+      "stored_vs_replayed_items_equal": true,
+      "items": [
+        {
+          "id": "descent_range",
+          "title": "하강 범위 추정",
+          "weight": 30,
+          "ai_points": 16.2,
+          "rule_points": 15.0,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "title": "서기 높이 복귀",
+          "weight": 20,
+          "ai_points": 18.4,
+          "rule_points": 20.0,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "title": "무릎 간격 유지",
+          "weight": 30,
+          "ai_points": 22.1,
+          "rule_points": 30.0,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": 18.9,
+          "rule_points": 20.0,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요."
+      ],
+      "depth_features": [
+        0.23530907253038036,
+        0.24101323839020558,
+        0.5144616797658735,
+        0.566434692549972,
+        0.9980312452152328,
+        0.9992991238910814,
+        1.4814283719660208,
+        0.056807682393396265
+      ],
+      "standing_evidence": {
+        "status": "close",
+        "ai_grade": 1.8354894629020346,
+        "ai_points": 18.4,
+        "standing_confirmed": true,
+        "standing_probability": 0.9177447314510173,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 0.9977678102374579,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.000596972115396807,
+              0.04819268352717566,
+              0.048664449867790616,
+              0.0058550123442559256
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9477484280684573,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.009374611153624793,
+              0.042934084704857614,
+              0.03335911356357202,
+              0.011352294865728658
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.8077179560471366,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.006752409165237993,
+              0.03360117091001962,
+              0.026635896252583446,
+              0.012541047463198148
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          35,
+          37
+        ],
+        "bottom_index": 25,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      }
+    },
+    {
+      "number": 5,
+      "start_tick": 1578,
+      "end_tick": 1607,
+      "start_seconds": 26.7,
+      "end_seconds": 29.6,
+      "duration": 2.9,
+      "actual_samples": 30,
+      "one_knee_fraction": 1.0,
+      "both_knees_fraction": 1.0,
+      "receipt": {
+        "number": 5,
+        "bottom_confirmed_tick": 1587,
+        "return_first_tick": 1605,
+        "completed_tick": 1607,
+        "observation": {
+          "policy_version": "front-squat-stage-observation-v1-candidate",
+          "detector_core_coverage": 1.0,
+          "actual_time_slot_coverage": 1.0,
+          "knee_phase_evidence_coverage": 1.0,
+          "phase_evidence_requires_actual_one_knee": true,
+          "score_observation_policy_unchanged": true
+        }
+      },
+      "phase_actual_observation": {
+        "bottom": {
+          "ticks": [
+            1585,
+            1586,
+            1587
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        },
+        "return": {
+          "ticks": [
+            1605,
+            1606,
+            1607
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        }
+      },
+      "replayed_ai": {
+        "total": 76.0,
+        "maximum": 100,
+        "earned_subtotal": 76.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "replayed_rule": {
+        "total": 75.0,
+        "maximum": 100,
+        "earned_subtotal": 75.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "stored_vs_replayed_methods_equal": {
+        "ai": true,
+        "rule": true
+      },
+      "stored_vs_replayed_items_equal": true,
+      "items": [
+        {
+          "id": "descent_range",
+          "title": "하강 범위 추정",
+          "weight": 30,
+          "ai_points": 16.6,
+          "rule_points": 15.0,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "title": "서기 높이 복귀",
+          "weight": 20,
+          "ai_points": 20.0,
+          "rule_points": 20.0,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "title": "무릎 간격 유지",
+          "weight": 30,
+          "ai_points": 23.4,
+          "rule_points": 30.0,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": 16.0,
+          "rule_points": 10.0,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+        "Rule Base에서 부분 충족으로 평가했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요."
+      ],
+      "depth_features": [
+        0.24191649738650634,
+        0.2419729691344402,
+        0.49330176314121754,
+        0.5704320317995891,
+        0.9906376605842949,
+        0.9994735800941053,
+        1.6639650501732683,
+        0.04549850049055017
+      ],
+      "standing_evidence": {
+        "status": "close",
+        "ai_grade": 2.0,
+        "ai_points": 20.0,
+        "standing_confirmed": true,
+        "standing_probability": 1.0,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 1.0,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.05063587274119644,
+              0.01623017938735069,
+              0.03422233776897632,
+              0.009938593396506277
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 1.0,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.05013037851930826,
+              0.005825751904539894,
+              0.04406048353277625,
+              0.016152518467340764
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 1.0,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.04999759756827796,
+              3.1987690133134726e-05,
+              0.04984294973581527,
+              0.010101111234614633
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          28,
+          30
+        ],
+        "bottom_index": 22,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      }
+    },
+    {
+      "number": 6,
+      "start_tick": 1622,
+      "end_tick": 1647,
+      "start_seconds": 31.1,
+      "end_seconds": 33.6,
+      "duration": 2.5,
+      "actual_samples": 26,
+      "one_knee_fraction": 1.0,
+      "both_knees_fraction": 1.0,
+      "receipt": {
+        "number": 6,
+        "bottom_confirmed_tick": 1631,
+        "return_first_tick": 1645,
+        "completed_tick": 1647,
+        "observation": {
+          "policy_version": "front-squat-stage-observation-v1-candidate",
+          "detector_core_coverage": 1.0,
+          "actual_time_slot_coverage": 1.0,
+          "knee_phase_evidence_coverage": 1.0,
+          "phase_evidence_requires_actual_one_knee": true,
+          "score_observation_policy_unchanged": true
+        }
+      },
+      "phase_actual_observation": {
+        "bottom": {
+          "ticks": [
+            1629,
+            1630,
+            1631
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        },
+        "return": {
+          "ticks": [
+            1645,
+            1646,
+            1647
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        }
+      },
+      "replayed_ai": {
+        "total": 55.7,
+        "maximum": 100,
+        "earned_subtotal": 55.7,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "replayed_rule": {
+        "total": 45.0,
+        "maximum": 100,
+        "earned_subtotal": 45.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "stored_vs_replayed_methods_equal": {
+        "ai": true,
+        "rule": true
+      },
+      "stored_vs_replayed_items_equal": true,
+      "items": [
+        {
+          "id": "descent_range",
+          "title": "하강 범위 추정",
+          "weight": 30,
+          "ai_points": 19.0,
+          "rule_points": 15.0,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "title": "서기 높이 복귀",
+          "weight": 20,
+          "ai_points": 20.0,
+          "rule_points": 20.0,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "title": "무릎 간격 유지",
+          "weight": 30,
+          "ai_points": 3.3,
+          "rule_points": 0.0,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": 13.4,
+          "rule_points": 10.0,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요.",
+        "AI Model·Rule Base에서 낮게 추정했습니다. 무릎 간격 변화와 무릎·발이 향하는 방향을 함께 확인하세요.",
+        "Rule Base에서 부분 충족으로 평가했습니다. 몸통의 좌우 기울기와 중심 이동을 확인하세요."
+      ],
+      "depth_features": [
+        0.36480166376591977,
+        0.35385509663895687,
+        0.5871813605178848,
+        0.6199477506020448,
+        0.9947761221510993,
+        0.9983215542252374,
+        2.3570610190544126,
+        0.012528182439825229
+      ],
+      "standing_evidence": {
+        "status": "close",
+        "ai_grade": 1.9960473511197356,
+        "ai_points": 20.0,
+        "standing_confirmed": true,
+        "standing_probability": 0.9980236755598678,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 0.9967813383951167,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.0167805746658048,
+              0.017632462549103875,
+              0.03455144923449849,
+              0.00584975499405428
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9976750165560363,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.024269440018976997,
+              0.009468701293014862,
+              0.03373333931236311,
+              0.0001748397526434616
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 0.9996146717284502,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.026889867651670743,
+              0.0057837095321461125,
+              0.0330393534904756,
+              0.013038787093538902
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          26,
+          28
+        ],
+        "bottom_index": 18,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      }
+    },
+    {
+      "number": 7,
+      "start_tick": 1670,
+      "end_tick": 1693,
+      "start_seconds": 35.9,
+      "end_seconds": 38.2,
+      "duration": 2.3,
+      "actual_samples": 24,
+      "one_knee_fraction": 1.0,
+      "both_knees_fraction": 1.0,
+      "receipt": {
+        "number": 7,
+        "bottom_confirmed_tick": 1679,
+        "return_first_tick": 1691,
+        "completed_tick": 1693,
+        "observation": {
+          "policy_version": "front-squat-stage-observation-v1-candidate",
+          "detector_core_coverage": 1.0,
+          "actual_time_slot_coverage": 1.0,
+          "knee_phase_evidence_coverage": 1.0,
+          "phase_evidence_requires_actual_one_knee": true,
+          "score_observation_policy_unchanged": true
+        }
+      },
+      "phase_actual_observation": {
+        "bottom": {
+          "ticks": [
+            1677,
+            1678,
+            1679
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        },
+        "return": {
+          "ticks": [
+            1691,
+            1692,
+            1693
+          ],
+          "core_valid": true,
+          "one_knee_every_slot": true
+        }
+      },
+      "replayed_ai": {
+        "total": 84.8,
+        "maximum": 100,
+        "earned_subtotal": 84.8,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "replayed_rule": {
+        "total": 85.0,
+        "maximum": 100,
+        "earned_subtotal": 85.0,
+        "assessed_weight": 100,
+        "full_score": true,
+        "estimated": true,
+        "status": "정면 관측 추정 · 검증 중"
+      },
+      "stored_vs_replayed_methods_equal": {
+        "ai": true,
+        "rule": true
+      },
+      "stored_vs_replayed_items_equal": true,
+      "items": [
+        {
+          "id": "descent_range",
+          "title": "하강 범위 추정",
+          "weight": 30,
+          "ai_points": 18.4,
+          "rule_points": 15.0,
+          "reasons": [
+            "정면 관절 특징으로 하강 범위를 추정합니다. 실제 깊이 측정이 아닙니다."
+          ]
+        },
+        {
+          "id": "standing_return",
+          "title": "서기 높이 복귀",
+          "weight": 20,
+          "ai_points": 20.0,
+          "rule_points": 20.0,
+          "reasons": [
+            "하강 후 서기 복귀: AI는 초기 기립 상태 유사도, Rule Base는 골반 높이 차를 봅니다. 무릎 완전 신전 평가는 아닙니다.",
+            "AI Model은 처음 서 있는 상태와 현재 자세의 학습된 유사도를 평가합니다. Rule Base는 시작·종료 골반 높이 차를 평가합니다. 두 방식은 같은 복귀 목표에 서로 다른 관측 방법을 사용합니다.",
+            "AI는 초기 기립 상태에 대한 학습 신뢰도×20으로 평가합니다. Rule Base의 높이 경계 점수를 복사하지 않습니다."
+          ]
+        },
+        {
+          "id": "knee_inward",
+          "title": "무릎 간격 유지",
+          "weight": 30,
+          "ai_points": 26.9,
+          "rule_points": 30.0,
+          "reasons": [
+            "시작 대비 양 무릎 간격 변화입니다. 발끝 방향·발 지지의 종합 평가가 아닙니다."
+          ]
+        },
+        {
+          "id": "trunk_balance",
+          "title": "몸통 좌우 안정",
+          "weight": 20,
+          "ai_points": 19.5,
+          "rule_points": 20.0,
+          "reasons": [
+            "시작 대비 몸통·어깨의 좌우 기울기입니다. 전후 허리 정렬 평가는 아닙니다."
+          ]
+        }
+      ],
+      "coaching": [
+        "Rule Base에서 부분 충족으로 평가했습니다. 하강 범위 추정과 구도를 함께 확인하세요."
+      ],
+      "depth_features": [
+        0.2940851954037906,
+        0.2940384008006207,
+        0.5468685028777038,
+        0.6002397928760274,
+        0.999170166130112,
+        0.9997885852706045,
+        1.281420957410974,
+        0.018892012564327026
+      ],
+      "standing_evidence": {
+        "status": "close",
+        "ai_grade": 2.0,
+        "ai_points": 20.0,
+        "standing_confirmed": true,
+        "standing_probability": 1.0,
+        "reference_joints": {
+          "11": [
+            341.77154541015625,
+            148.80856275558472
+          ],
+          "12": [
+            238.95790100097656,
+            144.48155164718628
+          ],
+          "23": [
+            320.71332931518555,
+            292.31048583984375
+          ],
+          "24": [
+            266.72797203063965,
+            291.13926887512207
+          ]
+        },
+        "reference_scale": 145.11862894091738,
+        "frame_evidence": [
+          {
+            "standing_probability": 1.0,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.039289262385373315,
+              0.0006001758131759346,
+              0.03847479887670047,
+              0.012619841999345304
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 1.0,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.0356568605557404,
+              0.006380533784568499,
+              0.041932538099199945,
+              0.004720213303230819
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          },
+          {
+            "standing_probability": 1.0,
+            "standing": true,
+            "feature_bank": "core",
+            "features": [
+              0.03636956009245092,
+              0.008336268059580496,
+              0.044706101215399086,
+              0.0005234020710125352
+            ],
+            "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+            "feature_version": "initial-standing-state-v1"
+          }
+        ],
+        "return_window": [
+          23,
+          25
+        ],
+        "bottom_index": 14,
+        "feature_bank": "core",
+        "model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+        "version": "initial-standing-state-v1",
+        "method": "학습한 초기 기립 상태 유사도 · 하강 후 연속3표본 확인",
+        "score_meaning": "학습한 기립 상태 신뢰도×20의 실험 점수",
+        "gpt_used": false,
+        "rule_used_in_ai_score": false
+      }
+    }
+  ],
+  "arithmetic": [
+    {
+      "number": 1,
+      "method": "ai",
+      "sum": 73.6,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 1,
+      "method": "rule",
+      "sum": 75.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 2,
+      "method": "ai",
+      "sum": 72.3,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 2,
+      "method": "rule",
+      "sum": 75.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 3,
+      "method": "ai",
+      "sum": 75.7,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 3,
+      "method": "rule",
+      "sum": 75.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 4,
+      "method": "ai",
+      "sum": 75.6,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 4,
+      "method": "rule",
+      "sum": 85.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 5,
+      "method": "ai",
+      "sum": 76.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 5,
+      "method": "rule",
+      "sum": 75.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 6,
+      "method": "ai",
+      "sum": 55.7,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 6,
+      "method": "rule",
+      "sum": 45.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 7,
+      "method": "ai",
+      "sum": 84.8,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    },
+    {
+      "number": 7,
+      "method": "rule",
+      "sum": 85.0,
+      "weight": 100,
+      "subtotal_matches": true,
+      "weight_matches": true,
+      "total_matches": true,
+      "bounds_valid": true
+    }
+  ],
+  "uncertain_attempts": [
+    {
+      "start_tick": 1717,
+      "end_tick": 1732,
+      "reason": "위치 또는 투영 변화 · 준비 자세를 다시 확인하세요",
+      "counted": false
+    }
+  ],
+  "recovery_receipts": [],
+  "observation_receipts_match_saved": true,
+  "all_item_and_method_scores_reproduced": true,
+  "all_arithmetic_checks_passed": true,
+  "mean_ai": 73.4,
+  "mean_rule": 73.6,
+  "code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "movement_code_sha256": "c34da23889a228816a3c70cc1b65c3a6ffb7ab27ff736fca00c998f53e95f731",
+  "standing_model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+  "original_file_hashes": {
+    "final-state.json": "117edcc6c522ade4fcb4015b79321141001765e4e4cf60296c82cb0aa2ce9f7e",
+    "pose.npz": "2ab60b6d0efd63a06a78a67a652327bdbb481126cb74fcaefac3e62e9602312e",
+    "state.json": "8105102bb602238f2fae274786311e92eb297113927ffcdfda22aee742fa7883"
+  },
+  "video_present": false,
+  "human_actual_count": null,
+  "limits": [
+    "영상 없음: 원시 관절에 근거한 7회 판단이며 실제 영상 육안 정답 검증은 불가",
+    "동일 원시 재생/산술 일치는 실제 자세 평가 정확도의 증거가 아님",
+    "이번 완료 구간은 무릎 추적이 유지되어 짧은 누락 복구의 실사용 검증 사례는 없음"
+  ],
+  "user_response_to_actual_count_question": "너가 판단",
+  "human_count_confirmed": false,
+  "judgment": "원시 관절 기록상 7개의 구분되는 하강-복귀 주기로 판단. 영상 육안 정답과 동치 아님.",
+  "independent_review": "output/squat-retest-review-20261025/1792858741575615610/independent-review.frozen.json",
+  "knee_geometry_independent_evidence": "output/squat-retest-review-20261025/1792858741575615610/knee-geometry-review.frozen.json",
+  "rep6_knee_below_partial_slots": 18,
+  "rep6_samples": 26,
+  "original_files_still_identical": true
+}

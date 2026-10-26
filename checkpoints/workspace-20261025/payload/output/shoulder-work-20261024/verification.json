@@ -1,0 +1,451 @@
+{
+  "scope": "functional replay and synthetic pipeline; no accuracy claim",
+  "saved_count": 1,
+  "saved_repetitions": [
+    {
+      "number": 1,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 3.8,
+      "ai": {
+        "earned": 0,
+        "maximum": 0,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "lower_return",
+          "frontal_trunk_hold"
+        ]
+      },
+      "rule": {
+        "earned": 0,
+        "maximum": 0,
+        "full_score": false,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "overhead_reach",
+          "weight": 30,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": false,
+          "bank": "front",
+          "measured": null,
+          "feature": null,
+          "reasons": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "wrists_not_visible_at_overhead_peak",
+            "finite_required_geometry_unavailable",
+            "training_grades_missing_0"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 17,
+            "2": 32
+          },
+          "unseen_training_grades": [
+            0
+          ],
+          "window": null
+        },
+        {
+          "id": "lower_return",
+          "weight": 25,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": false,
+          "bank": "front",
+          "measured": null,
+          "feature": null,
+          "reasons": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "finite_required_geometry_unavailable",
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 66
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        },
+        {
+          "id": "bilateral_timing",
+          "weight": 25,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": false,
+          "bank": "front",
+          "measured": null,
+          "feature": null,
+          "reasons": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "no_observed_lift_motion",
+            "bilateral_peak_not_fully_visible",
+            "finite_required_geometry_unavailable"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 3,
+            "1": 7,
+            "2": 51
+          },
+          "unseen_training_grades": [],
+          "window": null
+        },
+        {
+          "id": "frontal_trunk_hold",
+          "weight": 20,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": false,
+          "bank": "front",
+          "measured": null,
+          "feature": null,
+          "reasons": [
+            "required_joints_not_simultaneously_observed_in_80_percent",
+            "required_measurement_unavailable",
+            "finite_required_geometry_unavailable",
+            "single_grade_training_error_discrimination_unverified"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 71
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null
+        }
+      ],
+      "front_candidate": null,
+      "coaching": null,
+      "accepted_items": null,
+      "method_comparison": null,
+      "score_100": {
+        "version": "squat-core100-observation-v3",
+        "items": [
+          {
+            "id": "overhead_reach",
+            "title": "overhead_reach",
+            "weight": 30,
+            "ai_points": null,
+            "rule_points": null,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "lower_return",
+            "title": "lower_return",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": null,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "bilateral_timing",
+            "title": "bilateral_timing",
+            "weight": 25,
+            "ai_points": null,
+            "rule_points": null,
+            "estimated": false,
+            "reasons": [],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          },
+          {
+            "id": "frontal_trunk_hold",
+            "title": "frontal_trunk_hold",
+            "weight": 20,
+            "ai_points": null,
+            "rule_points": null,
+            "estimated": false,
+            "reasons": [
+              "AI는 정상 한 등급만 학습해 오류 판별이 미검증입니다."
+            ],
+            "comparison": {
+              "difference_points": null,
+              "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+              "automatic": true,
+              "gpt_used": false
+            }
+          }
+        ],
+        "ai": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 0,
+          "assessed_weight": 0,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "rule": {
+          "total": null,
+          "maximum": 100,
+          "earned_subtotal": 0,
+          "assessed_weight": 0,
+          "full_score": false,
+          "estimated": false,
+          "status": "일부 항목 미평가"
+        },
+        "expert_validated": false,
+        "total_renormalized": false,
+        "scope": "프로젝트 맨몸 스쿼트 목표 범위·정렬·복귀·좌우 안정; 100점은 의학적으로 검증된 안전 점수가 아님"
+      },
+      "legacy_score_100": null,
+      "legacy_coaching": null,
+      "legacy_method_totals": null
+    }
+  ],
+  "replay": {
+    "patched_shared": {
+      "detection_version": "front-hysteresis-v3-border-contract",
+      "observation_version": "live-observation-border2-v1",
+      "observation": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "standing_state_version": "initial-standing-state-v1",
+      "uncertain_attempts": [],
+      "phase": "관측 중단 · 관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+      "count": 0,
+      "completion_observation_coverage": null,
+      "angle": null,
+      "hip_drop": null,
+      "active": false,
+      "movement_seconds": 0.0,
+      "hold_seconds": 0.0,
+      "scope": "experimental_2d_motion_boundaries"
+    },
+    "candidate": {
+      "detection_version": "shoulder-bilateral-overhead-v1-candidate",
+      "phase": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+      "count": 0,
+      "active": false,
+      "observation": {
+        "version": "live-observation-border2-v1",
+        "ready": false,
+        "missing": [
+          "왼쪽 골반",
+          "오른쪽 골반",
+          "왼쪽 팔꿈치",
+          "오른쪽 팔꿈치",
+          "왼쪽 손목",
+          "오른쪽 손목"
+        ],
+        "edge_joints": [],
+        "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요."
+      },
+      "completion_observation_coverage": null,
+      "movement_seconds": 0.0,
+      "hold_seconds": 0.0,
+      "uncertain_attempts": [],
+      "scope": "engineering_candidate_not_accuracy_validation"
+    }
+  },
+  "synthetic_scoring": {
+    "schema": "posture-score-local-v1",
+    "exercise": "shoulder",
+    "model_version": "2026.10.22-reviewed-clip.1",
+    "feature_version": "observed-pixel-10hz-held-v2",
+    "assessment_scope": "reviewed_clip",
+    "items": [
+      {
+        "id": "overhead_reach",
+        "weight": 30,
+        "ai_grade": 1.8642302961086403,
+        "rule_grade": 2,
+        "ai_minus_rule": -0.13576970389135967,
+        "observed": true,
+        "bank": "front",
+        "measured": 164.05460409907712,
+        "feature": [
+          51.34019174590991,
+          51.34019174590991,
+          51.34019174590991,
+          51.34019174590991,
+          164.05460409907712,
+          164.05460409907712,
+          164.05460409907712,
+          1.0
+        ],
+        "reasons": [
+          "training_grades_missing_0"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 17,
+          "2": 32
+        },
+        "unseen_training_grades": [
+          0
+        ],
+        "window": null
+      },
+      {
+        "id": "lower_return",
+        "weight": 25,
+        "ai_grade": 2.0,
+        "rule_grade": 2,
+        "ai_minus_rule": 0.0,
+        "observed": true,
+        "bank": "front",
+        "measured": 51.34019174590991,
+        "feature": [
+          51.34019174590991,
+          51.34019174590991,
+          51.34019174590991,
+          51.34019174590991,
+          51.34019174590991,
+          51.34019174590991,
+          51.34019174590991,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 66
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null
+      },
+      {
+        "id": "bilateral_timing",
+        "weight": 25,
+        "ai_grade": 1.4782869854628338,
+        "rule_grade": 2,
+        "ai_minus_rule": -0.5217130145371662,
+        "observed": true,
+        "bank": "front",
+        "measured": 0.0,
+        "feature": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "reasons": [],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 3,
+          "1": 7,
+          "2": 51
+        },
+        "unseen_training_grades": [],
+        "window": null
+      },
+      {
+        "id": "frontal_trunk_hold",
+        "weight": 20,
+        "ai_grade": 2.0,
+        "rule_grade": 2,
+        "ai_minus_rule": 0.0,
+        "observed": true,
+        "bank": "front",
+        "measured": 0.0,
+        "feature": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 71
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null
+      }
+    ],
+    "ai_score": 91.44204175991503,
+    "rule_score": 100.0,
+    "ai_minus_rule": -8.557958240084972,
+    "complete_attempt_reviewed": true,
+    "requires_manual_view_review": true,
+    "ytw_projection_proxy": false,
+    "expert_validated": false,
+    "independent_final_test": false,
+    "timing_ms": {
+      "features": 1.629103997402126,
+      "ai": 19.966447001934284,
+      "rule": 0.010525000107008964
+    },
+    "limitations": [
+      "Frontal projection does not assess sagittal lumbar arch.",
+      "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+    ]
+  },
+  "runtime_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "source_pose_sha256": "af5600d97dc1ce7e1beb63fbb5f63bb1ec9d68b80bec72a80cd46b960c821706",
+  "training_performed": false,
+  "independent_final_test_opened": false
+}

@@ -1,0 +1,123 @@
+{
+  "exercise": "squats",
+  "label_source": "Codex_project_rubric_drafts",
+  "expert_accuracy": null,
+  "counts": {
+    "train": 17,
+    "validation": 8,
+    "test": 8
+  },
+  "feature_dimensions": 1836,
+  "learning_curve": [
+    {
+      "train_samples": 8,
+      "validation_MAE_mean": 9.154062499999993,
+      "validation_MAE_std": 1.8587932504962064,
+      "validation_MAE_runs": [
+        8.04635416666666,
+        7.203124999999998,
+        8.742187500000002,
+        12.628645833333312,
+        9.15
+      ],
+      "mean_baseline_MAE": 8.75
+    },
+    {
+      "train_samples": 14,
+      "validation_MAE_mean": 8.460625,
+      "validation_MAE_std": 1.6742944137319942,
+      "validation_MAE_runs": [
+        7.529166666666669,
+        11.3265625,
+        6.985416666666662,
+        9.382812499999996,
+        7.079166666666675
+      ],
+      "mean_baseline_MAE": 8.285714285714286
+    },
+    {
+      "train_samples": 17,
+      "validation_MAE_mean": 9.054895833333337,
+      "validation_MAE_std": 0.3492681460528898,
+      "validation_MAE_runs": [
+        8.827083333333336,
+        9.00104166666667,
+        8.741666666666667,
+        8.978125000000002,
+        9.726562500000004
+      ],
+      "mean_baseline_MAE": 8.272058823529413
+    }
+  ],
+  "selected_training_samples": 8,
+  "selection_policy": "검증 평균 MAE 최저값에서 2점 이내인 가장 작은 표본 수. 시험 자료는 선택에 사용하지 않음.",
+  "plateau": {
+    "improvements": [
+      0.6934374999999928,
+      -0.5942708333333364
+    ],
+    "status": "inconclusive_small_validation_set",
+    "reason": "검증 참여자·점수 범위가 작으므로 성능 정체를 확정하거나 전체 데이터가 불필요하다고 단정할 수 없음."
+  },
+  "test_MAE_points": 8.558854166666682,
+  "test_RMSE_points": 10.320992189431502,
+  "test_mean_baseline_MAE_points": 12.96875,
+  "test_predictions": [
+    {
+      "id": "rehab_Honza_5876_5983",
+      "person": "rehab_Honza",
+      "draft_label": 85.0,
+      "model_prediction": 81.50833333333335
+    },
+    {
+      "id": "rehab_Honza_11895_12000",
+      "person": "rehab_Honza",
+      "draft_label": 85.0,
+      "model_prediction": 81.69583333333334
+    },
+    {
+      "id": "rehab_Honza_1402_1518",
+      "person": "rehab_Honza",
+      "draft_label": 100.0,
+      "model_prediction": 83.1666666666667
+    },
+    {
+      "id": "rehab_Honza_15967_16066",
+      "person": "rehab_Honza",
+      "draft_label": 85.0,
+      "model_prediction": 80.3125
+    },
+    {
+      "id": "rehab_Honza_15420_15517",
+      "person": "rehab_Honza",
+      "draft_label": 85.0,
+      "model_prediction": 81.5
+    },
+    {
+      "id": "rehab_Honza_11185_11292",
+      "person": "rehab_Honza",
+      "draft_label": 55.0,
+      "model_prediction": 73.6875000000001
+    },
+    {
+      "id": "rehab_Honza_14862_14947",
+      "person": "rehab_Honza",
+      "draft_label": 70.0,
+      "model_prediction": 78.325
+    },
+    {
+      "id": "rehab_Honza_3709_3819",
+      "person": "rehab_Honza",
+      "draft_label": 65.0,
+      "model_prediction": 74.64166666666675
+    }
+  ],
+  "model_path": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/expanded/models/squats_direct_draft.joblib",
+  "fit_seconds": 0.07214866000003894,
+  "limitations": [
+    "독립 전문가 점수 검증 없음",
+    "정지 장면의 시각적 판단과 제안 배점에 의존",
+    "사람별·촬영 환경별 표본 부족",
+    "실험 모델이며 기존 웹에 자동 배포하지 않음"
+  ]
+}

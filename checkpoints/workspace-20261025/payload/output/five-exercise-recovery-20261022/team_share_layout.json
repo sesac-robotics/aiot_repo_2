@@ -1,0 +1,60 @@
+{
+  "repository": "/home/jayden/SeSACPAI-Mid/aiot_repo_2",
+  "current_branch": "feature/wired-camera-link",
+  "new_feature_branch_required": true,
+  "existing_changes_to_preserve": [
+    "README.md"
+  ],
+  "files_copied": false,
+  "existing_service_entrypoint_changed": false,
+  "proposed_paths": [
+    {
+      "path": "Server/AIService/app/scoring/",
+      "role_ko": "입력 검증·운동별 특징·AI 추론·Rule 점수 계산. 실험 코드 중 실행 의존성을 선별·정리하여 배치.",
+      "destination_exists": false
+    },
+    {
+      "path": "Server/AIService/artifacts/posture_score/",
+      "role_ko": "선택한 소형 점수 모델·버전·해시·관측 조건. 악화된 최신 후보를 자동 선택하지 않음.",
+      "destination_exists": false
+    },
+    {
+      "path": "Server/AIService/tests/scoring/",
+      "role_ko": "필요 관절 누락·미판정·단위·점수·모델 입력 회귀 테스트.",
+      "destination_exists": false
+    },
+    {
+      "path": "Server/AIService/tools/posture_score/",
+      "role_ko": "독립 실행·설치·Heavy 다운로드 도구. 기존 스트리밍·공통 API는 변경하지 않음.",
+      "destination_exists": false
+    },
+    {
+      "path": "Server/AIService/requirements-posture-score.txt",
+      "role_ko": "점수 모듈 추가 의존성. 현재 공통 requirements는 덮어쓰지 않음.",
+      "destination_exists": false
+    }
+  ],
+  "excluded": [
+    "data/",
+    "output/",
+    "R2D2/",
+    "raw videos",
+    "training caches",
+    "experimental model variants",
+    "generated reports",
+    "team documentation"
+  ],
+  "portability_work_required": [
+    "remove absolute local paths",
+    "isolate inference dependency closure",
+    "separate manually reviewed observation gates from automatic detection",
+    "select and version model and feature definitions together",
+    "verify standalone execution without parent experiment folders"
+  ],
+  "gitignore_notes": {
+    "Server/AIService/models/": "ignored",
+    "Server/AIService/requirements/": "ignored",
+    "Server/AIService/app/test_*.py": "ignored"
+  },
+  "measured_current_candidate_model_MiB": 4.877
+}

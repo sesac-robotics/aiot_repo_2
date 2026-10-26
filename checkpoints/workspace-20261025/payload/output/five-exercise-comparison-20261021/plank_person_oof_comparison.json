@@ -1,0 +1,120 @@
+{
+  "records": [
+    {
+      "id": "dvids_airforce_300_390",
+      "label_score": 100.0,
+      "ai_oof_score": 100.0,
+      "rule_score": 100.0,
+      "ai_absolute_error": 0.0,
+      "rule_absolute_error": 0.0,
+      "held_person": "dvids_airforce_target_performer"
+    },
+    {
+      "id": "dvids_navy805472_599_689",
+      "label_score": 100.0,
+      "ai_oof_score": 100.0,
+      "rule_score": 70.0,
+      "ai_absolute_error": 0.0,
+      "rule_absolute_error": 30.0,
+      "held_person": "dvids_navy805472_performer"
+    },
+    {
+      "id": "dvids_gates640237_side_75_165",
+      "label_score": 100.0,
+      "ai_oof_score": 97.1875,
+      "rule_score": 80.0,
+      "ai_absolute_error": 2.8125,
+      "rule_absolute_error": 20.0,
+      "held_person": "dvids_gysgt_gates"
+    },
+    {
+      "id": "dvids_fao947417_background_5430_5520",
+      "label_score": 100.0,
+      "ai_oof_score": 90.625,
+      "rule_score": 90.0,
+      "ai_absolute_error": 9.375,
+      "rule_absolute_error": 10.0,
+      "held_person": "dvids_947417_background_black_beanie"
+    },
+    {
+      "id": "dvids_navy773312_2997_3087",
+      "label_score": 40.0,
+      "ai_oof_score": 78.4375,
+      "rule_score": 37.5,
+      "ai_absolute_error": 38.4375,
+      "rule_absolute_error": 2.5,
+      "held_person": "dvids_773312_single_performer"
+    },
+    {
+      "id": "dvids_navy773312_3656_3746",
+      "label_score": 100.0,
+      "ai_oof_score": 78.90625,
+      "rule_score": 100.0,
+      "ai_absolute_error": 21.09375,
+      "rule_absolute_error": 0.0,
+      "held_person": "dvids_773312_single_performer"
+    },
+    {
+      "id": "youtube_chris_basic",
+      "label_score": 100.0,
+      "ai_oof_score": 99.53125,
+      "rule_score": 100.0,
+      "ai_absolute_error": 0.46875,
+      "rule_absolute_error": 0.0,
+      "held_person": "youtube_chris_ellerby_hemmings"
+    },
+    {
+      "id": "youtube_jonple_error",
+      "label_score": 40.0,
+      "ai_oof_score": 92.96875,
+      "rule_score": 80.0,
+      "ai_absolute_error": 52.96875,
+      "rule_absolute_error": 40.0,
+      "held_person": "youtube_channel_UCIjeq5EDjLxytQBHkv_erMw"
+    },
+    {
+      "id": "youtube_jonple_normal",
+      "label_score": 100.0,
+      "ai_oof_score": 92.03125,
+      "rule_score": 60.0,
+      "ai_absolute_error": 7.96875,
+      "rule_absolute_error": 40.0,
+      "held_person": "youtube_channel_UCIjeq5EDjLxytQBHkv_erMw"
+    },
+    {
+      "id": "youtube_avid_normal",
+      "label_score": 100.0,
+      "ai_oof_score": 100.0,
+      "rule_score": 80.0,
+      "ai_absolute_error": 0.0,
+      "rule_absolute_error": 20.0,
+      "held_person": "youtube_channel_UC7_LFnyBTIbN9e6p98YgIgw"
+    }
+  ],
+  "summary": {
+    "all": {
+      "samples": 10,
+      "ai_MAE": 13.3125,
+      "rule_MAE": 16.25
+    },
+    "normal_draft": {
+      "samples": 8,
+      "ai_MAE": 5.21484375,
+      "rule_MAE": 15.0
+    },
+    "error_draft": {
+      "samples": 2,
+      "ai_MAE": 45.703125,
+      "rule_MAE": 21.25
+    },
+    "normal_error_equal_weight": {
+      "ai_MAE": 25.458984375,
+      "rule_MAE": 18.125
+    }
+  },
+  "method": "leave_one_training_participant_out",
+  "independent_final_test": false,
+  "expert_validated": false,
+  "source": "comparison.json",
+  "all_five_validated": false
+}

@@ -1,0 +1,188 @@
+{
+  "version": "audited-total-score-regression-v6",
+  "target_source": "Codex 직접 재검토 프로젝트 점수 초안",
+  "prediction_method": "회귀 모델이 총점 0~100을 직접 예측. 추론 시 규칙 합산·규칙 대체 없음.",
+  "test_features_or_predictions_used": false,
+  "validation_is_independent_final_test": false,
+  "production_ready": false,
+  "full_score_web_enabled": false,
+  "results": {
+    "pushups": {
+      "train_samples": 17,
+      "train_people": 11,
+      "validation_samples": 6,
+      "validation_people": 4,
+      "train_score_counts": {
+        "100.0": 9,
+        "60.0": 5,
+        "85.0": 1,
+        "30.0": 1,
+        "90.0": 1
+      },
+      "participant_CV_MAE_points": 15.103137254901974,
+      "participant_CV_baseline_MAE_points": 18.529411764705884,
+      "validation_MAE_points": 12.363333333333335,
+      "validation_baseline_MAE_points": 13.333333333333334,
+      "validation_max_absolute_error_points": 18.923333333333346,
+      "validation_predictions": [
+        {
+          "id": "subject_002_push_up_good_side",
+          "label": 100.0,
+          "prediction": 94.02666666666667,
+          "absolute_error": 5.973333333333329
+        },
+        {
+          "id": "subject_002_push_up_bad_side",
+          "label": 60.0,
+          "prediction": 76.68333333333332,
+          "absolute_error": 16.683333333333323
+        },
+        {
+          "id": "subject_004_push_up_good_side",
+          "label": 80.0,
+          "prediction": 89.66,
+          "absolute_error": 9.659999999999997
+        },
+        {
+          "id": "subject_004_push_up_bad_side",
+          "label": 80.0,
+          "prediction": 91.50666666666666,
+          "absolute_error": 11.50666666666666
+        },
+        {
+          "id": "subject_012_push_up_good_side",
+          "label": 100.0,
+          "prediction": 88.56666666666665,
+          "absolute_error": 11.433333333333351
+        },
+        {
+          "id": "subject_015_push_up_good_side",
+          "label": 100.0,
+          "prediction": 81.07666666666665,
+          "absolute_error": 18.923333333333346
+        }
+      ],
+      "learning_curve": [
+        {
+          "max_train_samples_per_fold": 6,
+          "MAE_points": [
+            20.37823529411765,
+            17.566470588235294,
+            22.320784313725493
+          ]
+        },
+        {
+          "max_train_samples_per_fold": 10,
+          "MAE_points": [
+            14.657647058823525,
+            15.794901960784316,
+            16.957058823529415
+          ]
+        },
+        {
+          "max_train_samples_per_fold": 17,
+          "MAE_points": [
+            15.060196078431371,
+            14.276862745098034,
+            15.103137254901974
+          ]
+        }
+      ]
+    },
+    "squats": {
+      "train_samples": 17,
+      "train_people": 3,
+      "validation_samples": 7,
+      "validation_people": 1,
+      "train_score_counts": {
+        "85.0": 6,
+        "100.0": 4,
+        "55.0": 3,
+        "70.0": 3,
+        "65.0": 1
+      },
+      "participant_CV_MAE_points": 13.899803921568624,
+      "participant_CV_baseline_MAE_points": 13.970588235294118,
+      "validation_MAE_points": 5.605238095238101,
+      "validation_baseline_MAE_points": 6.428571428571429,
+      "validation_max_absolute_error_points": 18.060000000000002,
+      "validation_predictions": [
+        {
+          "id": "rehab_Mima_2010_2078",
+          "label": 85.0,
+          "prediction": 78.79333333333331,
+          "absolute_error": 6.206666666666692
+        },
+        {
+          "id": "rehab_Mima_5584_5655",
+          "label": 85.0,
+          "prediction": 85.73333333333333,
+          "absolute_error": 0.7333333333333343
+        },
+        {
+          "id": "rehab_Mima_5503_5564",
+          "label": 85.0,
+          "prediction": 84.50999999999999,
+          "absolute_error": 0.4900000000000091
+        },
+        {
+          "id": "rehab_Mima_265_337",
+          "label": 85.0,
+          "prediction": 82.33333333333333,
+          "absolute_error": 2.6666666666666714
+        },
+        {
+          "id": "rehab_Mima_6174_6241",
+          "label": 85.0,
+          "prediction": 82.69666666666666,
+          "absolute_error": 2.3033333333333417
+        },
+        {
+          "id": "rehab_Mima_3648_3718",
+          "label": 55.0,
+          "prediction": 73.06,
+          "absolute_error": 18.060000000000002
+        },
+        {
+          "id": "rehab_Mima_14792_14851",
+          "label": 70.0,
+          "prediction": 78.77666666666666,
+          "absolute_error": 8.776666666666657
+        }
+      ],
+      "learning_curve": [
+        {
+          "max_train_samples_per_fold": 6,
+          "MAE_points": [
+            18.048823529411766,
+            15.636862745098005,
+            17.060392156862726
+          ]
+        },
+        {
+          "max_train_samples_per_fold": 10,
+          "MAE_points": [
+            14.018039215686274,
+            15.428039215686272,
+            15.027254901960772
+          ]
+        },
+        {
+          "max_train_samples_per_fold": 17,
+          "MAE_points": [
+            14.049999999999999,
+            13.993921568627446,
+            13.899803921568624
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "기존 검증 사람을 반복 사용한 개발 실험이다.",
+    "푸시업 손잡이 도메인·구간 불명확·시각 근거 부족 사례는 총점 학습에서 제외했다.",
+    "스쿼트는 정면·측면 두 시점이 필요하며 측면 단독 웹에 이 총점 모델을 적용하지 않는다.",
+    "라벨은 직접 프레임 검토한 실험 기준이며 전문가 정답 정확도로 해석하지 않는다.",
+    "자료 수를 늘려도 개선이 없는 지점은 이 소규모 실험만으로 확정하지 않는다."
+  ]
+}

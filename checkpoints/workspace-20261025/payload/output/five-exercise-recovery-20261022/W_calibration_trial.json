@@ -1,0 +1,130 @@
+{
+  "code_sha256": "3d1a41ace5c535839f54b170e6a5dc977546fac2c199a93655f13c1738db64da",
+  "fit_input_manifest_sha256": "550128ec7c50f3ff2406aaa9947959cf5fc4a707cd99ac8e69717f4b4cf7ee12",
+  "comparison_sha256": "0c7c27ff71fa85b4371488c35208aae5295b42e7eda77970d1c6695972527f8a",
+  "training_records": 75,
+  "training_connected_groups": 64,
+  "candidate_policies": 1536,
+  "selected_policy": {
+    "bend_good_deg": 12.0,
+    "bend_partial_deg": 8.0,
+    "hand_good_torso_ratio": 0.1,
+    "hand_partial_torso_ratio": -0.1,
+    "elbow_up_good_arm_ratio": 0.4,
+    "elbow_up_partial_arm_ratio": 0.8,
+    "symmetry_good_deg": 50.0
+  },
+  "original_policy": {
+    "bend_good_deg": 20,
+    "bend_partial_deg": 8,
+    "hand_good_torso_ratio": 0.05,
+    "hand_partial_torso_ratio": -0.05,
+    "elbow_up_good_arm_ratio": 0.25,
+    "elbow_up_partial_arm_ratio": 0.5,
+    "symmetry_good_deg": 35
+  },
+  "fold_selected_policies": [
+    {
+      "bend_good_deg": 12.0,
+      "bend_partial_deg": 8.0,
+      "hand_good_torso_ratio": 0.1,
+      "hand_partial_torso_ratio": -0.1,
+      "elbow_up_good_arm_ratio": 0.4,
+      "elbow_up_partial_arm_ratio": 0.8,
+      "symmetry_good_deg": 50.0
+    },
+    {
+      "bend_good_deg": 12.0,
+      "bend_partial_deg": 8.0,
+      "hand_good_torso_ratio": 0.1,
+      "hand_partial_torso_ratio": -0.1,
+      "elbow_up_good_arm_ratio": 0.4,
+      "elbow_up_partial_arm_ratio": 0.8,
+      "symmetry_good_deg": 35.0
+    },
+    {
+      "bend_good_deg": 20.0,
+      "bend_partial_deg": 8.0,
+      "hand_good_torso_ratio": 0.1,
+      "hand_partial_torso_ratio": -0.1,
+      "elbow_up_good_arm_ratio": 0.25,
+      "elbow_up_partial_arm_ratio": 0.8,
+      "symmetry_good_deg": 50.0
+    }
+  ],
+  "group_cv_records": 75,
+  "group_cv_default_MAE_grade": 0.4533333333333333,
+  "group_cv_calibrated_MAE_grade": 0.3333333333333333,
+  "fixed_development_records": 4,
+  "fixed_development_default_MAE_grade": 0.75,
+  "fixed_development_calibrated_MAE_grade": 0.75,
+  "fixed_predictions": [
+    {
+      "id": "qevd_00105254",
+      "reference": 1,
+      "default": 0,
+      "calibrated": 0,
+      "feature": [
+        6.02781889373864,
+        -0.36765309440054766,
+        -0.7728664510449761,
+        6.99038738373568,
+        -0.40293869242785574,
+        -0.8208763695100507,
+        0.9625684899970395
+      ]
+    },
+    {
+      "id": "qevd_00196196",
+      "reference": 2,
+      "default": 1,
+      "calibrated": 1,
+      "feature": [
+        26.153439387784942,
+        0.0005812985048218383,
+        -0.3298273732336488,
+        34.203945586653845,
+        0.0758042082205132,
+        -0.24746525391828858,
+        8.050506198868902
+      ]
+    },
+    {
+      "id": "qevd_00265931",
+      "reference": 2,
+      "default": 1,
+      "calibrated": 1,
+      "feature": [
+        33.06089840797591,
+        0.027042360590423947,
+        -0.4832340181036593,
+        29.18259931379029,
+        0.11187262919619576,
+        -0.1606856775944554,
+        3.8782990941856212
+      ]
+    },
+    {
+      "id": "qevd_00265212",
+      "reference": 2,
+      "default": 2,
+      "calibrated": 2,
+      "feature": [
+        133.97186123101372,
+        0.37085657033813657,
+        -0.7585068786344151,
+        134.5612848089015,
+        0.28456020022017336,
+        -0.8281696453620668,
+        0.5894235778877714
+      ]
+    }
+  ],
+  "calibration_targets": "assistant_direct_temporal_review_nonexpert_drafts",
+  "validation_targets_used_for_calibration": false,
+  "rule_outputs_used_as_targets": false,
+  "expert_ground_truth": false,
+  "independent_final_test": false,
+  "common_rule_promoted": false,
+  "total_ytw_score_validated": false
+}

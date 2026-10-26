@@ -1,0 +1,75 @@
+{
+  "created_at_utc": "2026-10-25T07:10:37.236205+00:00",
+  "base_commit": "a02265cf8819aa93c1bff3af2747e425a822af7c",
+  "branch": "feature/exercise-posture-scoring",
+  "all_remote_heads_already_merged": {
+    "origin": "2c4636cf811430f5aa0167ffee07ff36bd0466a1",
+    "origin/feature/AIFitServer": "2d3274e4b03b4b0222879a11016f8869dfae997d",
+    "origin/feature/ai-service": "3bfa6a64bc59bdcf69f27d2188ab72fa3d6288fa",
+    "origin/feature/aifit-server": "4a4166542aaf2ad5a04c64eebbd11fa53339c4fc",
+    "origin/feature/aiot-ui-integration": "bbe98d37c6ebaa1b6dedaafeb6afa34e21e90d84",
+    "origin/feature/db": "2856af67cb7791b332a204da0db65622f4e2bf75",
+    "origin/feature/exercise-posture-scoring": "a02265cf8819aa93c1bff3af2747e425a822af7c",
+    "origin/feature/posture-error-classification": "ed042542b783b8969c17472e032e550463f08f2a",
+    "origin/feature/team-integration-standards": "2173ecb3be8a4f69a7dbba89a568486ee805c8fb",
+    "origin/feature/wired-camera-link": "68cee2e35e42e941ac7807938b22d3640099ff50",
+    "origin/main": "2c4636cf811430f5aa0167ffee07ff36bd0466a1"
+  },
+  "preservation": {
+    "original_and_checkpoint_files_hashed": 25441,
+    "existing_file_changes": [],
+    "squat_tag": "e15c368886cae778256706985a5fd6de6751f92a",
+    "squat_commit": "dae3bc73dc008edfa5a11044040a8fc7ccad2047",
+    "copied_score_function_ast_equal": true
+  },
+  "validation": {
+    "existing_pytest": {
+      "passed": 83,
+      "subtests_passed": 13
+    },
+    "new_control_unittest": {
+      "passed": 9
+    },
+    "original_correction_unittest": {
+      "passed": 22,
+      "skipped": 1,
+      "skip_reason": "Full extracted squat array is local-only"
+    },
+    "source_contracts": {
+      "python_files": 195,
+      "failures": 0
+    },
+    "black_isort": "passed",
+    "mypy_backend_and_session": "passed",
+    "javascript_syntax_and_idle_browser": "passed",
+    "actual_camera_opened": false,
+    "actual_workers_synthetic_empty_frame": "both passed; source epoch reset and graceful shutdown passed",
+    "stored_squat_replay": {
+      "session": "1792858741575615610",
+      "samples": 690,
+      "repetitions": 7,
+      "all_ai_rule_item_points_and_totals_equal": true,
+      "ai_totals": [
+        73.6,
+        72.3,
+        75.7,
+        75.6,
+        76.0,
+        55.7,
+        84.8
+      ],
+      "missing_current_pose_hides_provisional_hold_score": true
+    },
+    "initial_implementation_remote_ci": {
+      "commit": "8e1698f19d7c5b74f2d7d1ea7af3bba3594455d9",
+      "source_contracts": "https://github.com/sesac-robotics/aiot_repo_2/actions/runs/40171832417",
+      "evaluation_boundaries": "https://github.com/sesac-robotics/aiot_repo_2/actions/runs/40171832444",
+      "conclusion": "success"
+    }
+  },
+  "limitations": [
+    "Actual ESP32/webcam capture, network behavior and combined live latency remain untested.",
+    "Stored pose parity and model plumbing checks do not establish exercise accuracy.",
+    "No training, split, label, model, original source, frozen artifact or Confluence document changes."
+  ]
+}

@@ -1,0 +1,29 @@
+YTW v5 관측/준비 시각 계약 — 독립후보/미배포
+
+모듈 tools/ytw-work/ytw_readiness_v5.py는 기존v4.1/v2를같은독립경로에서import한다.
+tracker push입력과event의기존검출필드는동일하다. 공통factory/UI/서비스는수정하지않는다.
+별도개발상태source가필요하며본모듈을만들었다는사실이현재배포지원추가가아니다.
+
+상태소비
+- current_observation: 실제현재틱의필요관절가시성·누락·경계·모델출력. 미관측은준비보류.
+- current_state/message: 지금표시할준비/대기/진행상태. 기존phase는과거시도상태로보존된다.
+- current_Y_ready: 현재Y/ready연속5관측과시도Y준비증거가모두있을때True.
+- current_Y_boundary_confirmed: 위조건과현재안정관측까지충족할때True.
+- attempt_Y_ready_observed/attempt_receipts: 이미관측한시도Y준비이력. 현재구도준비를대신하지않음.
+- production_enabled=False: 위필드만으로현재서비스의운동시작권한을부여하지않는다.
+
+이벤트소비
+readiness_receipts는Y/T/W phase_candidate_at_tick와phase_confirmed_at_tick,
+Y_stable_confirmed_at_tick, ordered_sequence_confirmed_at_tick를제공한다.
+후보시각/확인시각은증거시각이며물리적진입정답·운동품질·심각도등급이아니다.
+coarse_start_tick/coarse_phase_windows와정제event시각의좌표기준을구분한다.
+기존auto_phase_windows는수동phase_windows로변환하지않는다.
+
+scoring_input_hold(event)는입력계약진단만한다. True여도정상품질/모델지원/전체점수허가는없다.
+existing_engine_options는 complete_attempt=False / phase_windows=None / projection_reviewed=False.
+Y_boundary미확인·슬롯누락형상·관측부족·화면경계·창범위/순서·수동승인변조는보류한다.
+점수기를호출하는별도후보에서도AI/Rule는동일dense입력을써야한다.
+
+회귀결과:7Train원본21이벤트와dense입력v4.1동일/21prefix영수증검사/새15기능검사통과.
+영상없는세션1이벤트동일/관측부족293프레임현재준비0. 독립성능/물리경계정답검증아님.
+새모델활성화나현재서비스연결은본작업에서하지않았고, 기존미지원/점수한계는유지한다.

@@ -1,0 +1,12 @@
+import json,sys,copy,datetime
+from pathlib import Path
+import joblib
+B=Path(__file__).resolve().parents[2];P=B/'output/return-cycle-aligned-v1-20261024';O=B/'output/squat-fixed-reference-combined-v3-20261024';sys.path[:0]=[str(B/'tools/error-enrichment'),str(B/'tools/paired-evaluation')]
+from common import sha
+from split_guard import assert_training_allowed
+from artifact_integrity import equal_state
+read=lambda p:json.loads(p.read_text());old=joblib.load(P/'score-candidates.joblib');new=joblib.load(O/'new-head.joblib');key=('squats','standing_height_return','standing_fixed_initial_context_v3');assert set(new['heads'])=={key} and key not in old['heads'];m=copy.deepcopy(old);m['heads'][key]=new['heads'][key];m.update(labels_sha256=sha(O/'score-inputs.frozen.json'),parent_run=str(P),production_replacement=False)
+assert all(equal_state(h,m['heads'][k]) for k,h in old['heads'].items());rows={r['id']:r for r in read(O/'score-inputs.frozen.json')};assert_training_allowed([rows[i] for h in m['heads'].values() for i in h['trained_ids']]);p=O/'score-candidates.joblib';assert not p.exists();joblib.dump(m,p)
+tr=read(P/'score-training.json');tr['heads'].append(read(O/'new-head-training.json'));tr.update(completed=True,trained_heads=60,unchanged_heads_copied=59,refitted_heads=0,new_heads=1,gate_passed=sum(h.get('candidate_gate_passed',False) for h in tr['heads']),models_promoted_to_live_service=False);(O/'score-training.json').write_text(json.dumps(tr,indent=2));(O/'model-freeze-before-test.json').write_text(json.dumps(dict(frozen_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),model_sha256=sha(p),Train_input_sha256=sha(O/'score-inputs.frozen.json'),Test_input_sha256=sha(O/'test-inputs.frozen.json'),selection='fixed height plus pose-context preferred by Train CV over height-only; same C grid; independent development remains insufficient',selection_before_Test=True,production_replacement=False),indent=2))
+source=(B/'tools/return-recheck/evaluate.py').read_text().replace("rank=(-1 if key==('squats','standing_height_return','standing_initial_context_v1') else int(not qualified),cv['balanced_group_MAE'],key[2])","rank=(-2 if key==('squats','standing_height_return','standing_fixed_initial_context_v3') else -1 if key==('squats','standing_height_return','standing_initial_context_v1') else int(not qualified),cv['balanced_group_MAE'],key[2])")
+assert 'rank=(-2' in source;(B/'tools/squat-fixed-reference/evaluate.py').write_text(source);print('MERGED60; all59 prior heads preserved')

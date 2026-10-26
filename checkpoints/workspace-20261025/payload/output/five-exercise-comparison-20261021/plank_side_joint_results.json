@@ -1,0 +1,416 @@
+{
+  "results": [
+    {
+      "id": "youtube_jonple_error",
+      "extraction": {
+        "id": "youtube_jonple_error",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "d80dec74851eb177ca97b7225aa116d8f3bbf32d7b34ca9f2f3075b4c418ab6d",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 74,
+            "fps": 25.0
+          },
+          "required_views": [
+            "side"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "73e777bd94ce55ed0db2285b05340934f6ce178f3326950ae2d93f43651d5403",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/youtube_jonple_error/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.8929292929292929,
+        "extract_seconds": 9.42927798600067,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "segment": {
+        "start_frame": 0,
+        "end_frame": 74,
+        "fps": 25.0
+      },
+      "holds": [],
+      "common_input_passed": true,
+      "rule_diagnostic": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 80.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 161.24742099662657,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.10202341742063531,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 173.18897967223918,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 2.7047234779158202,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      },
+      "AI_total_score": null,
+      "independent_final_test": false,
+      "observed_joint_fraction": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.43333333333333335,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.23333333333333334,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "youtube_jonple_normal",
+      "extraction": {
+        "id": "youtube_jonple_normal",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "ca379e8794f21c6c02c9707fbf4d9fa954a46d3f1be944699a268bfb52a780fc",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 74,
+            "fps": 25.0
+          },
+          "required_views": [
+            "side"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "3178ae0ec9f0bbee038cadccd02131ba0d79bb6fc5d9e3fa5f3e71ea31afc0cb",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/youtube_jonple_normal/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.9545454545454546,
+        "extract_seconds": 9.221538162000797,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "segment": {
+        "start_frame": 0,
+        "end_frame": 74,
+        "fps": 25.0
+      },
+      "holds": [],
+      "common_input_passed": true,
+      "rule_diagnostic": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "score": 60.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 152.8166718665375,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.04540814200953977,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 174.66161877543294,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 7.367744760851707,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      },
+      "AI_total_score": null,
+      "independent_final_test": false,
+      "observed_joint_fraction": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.13333333333333333,
+        1.0,
+        0.36666666666666664,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "youtube_avid_normal",
+      "extraction": {
+        "id": "youtube_avid_normal",
+        "view": "side",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "579088f29441cc42fa229c4618ae233980ce0557cdd1f42a85a9ff1ab8edd53a",
+          "segment": {
+            "start_frame": 0,
+            "end_frame": 89,
+            "fps": 29.97002997002997
+          },
+          "required_views": [
+            "side"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "GPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "0483bb28c1b26621e2b2a6f456f135b8e5008e24896fc0bbd16479cd6ac5edf2",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/heavy/youtube_avid_normal/side.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.9696969696969697,
+        "extract_seconds": 4.814694647000579,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "segment": {
+        "start_frame": 0,
+        "end_frame": 89,
+        "fps": 29.97002997002997
+      },
+      "holds": [],
+      "common_input_passed": true,
+      "rule_diagnostic": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 80.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 165.45492168928496,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.09582197916519929,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 165.20981533571708,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 5.42583464605039,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      },
+      "AI_total_score": null,
+      "independent_final_test": false,
+      "observed_joint_fraction": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "direct_labels_sha256": "10b11dce116424c5784afbaaabc08cd649c9c8c5fdf4a68642bc58c44132466f",
+  "expert_validated": false,
+  "independent_final_test": false,
+  "rule_used_as_label": false
+}

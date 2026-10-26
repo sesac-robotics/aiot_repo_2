@@ -1,0 +1,83 @@
+{
+  "frozen_at": "2026-10-24T10:53:58.690931+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/squat-side-return-enriched-v2-20261024",
+  "target": "initial standing hip AND shoulder height after a completed descent; angle alone not target; unchanged existing development/Test grades",
+  "grade0": "no meaningful recovery in a completed attempt, not stop/cut/hold; none confirmed",
+  "grade1": "observed partial height return followed by another descent",
+  "grade2": "observed return to initial standing heights",
+  "timing_fix": "post-bottom observed upper reversal rather than last-quarter-only window",
+  "training_and_selection": "unchanged Train group CV only; fixed development reports, no Test tuning",
+  "feature_version": "height-observed-upper-reversal-v1",
+  "feature_implementation_sha256": "4844b225729ed9c47f3f91f4eb70f066b954bfdbc3b6fda08144cfcf8a07759f",
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "new_Train_labels": [
+    {
+      "id": "reviewed_return_squat_diag_m4_5_7_r10",
+      "exercise": "squats",
+      "person": "cfrep_m4",
+      "group": "832",
+      "sources": [
+        "4cd6d0e7bdd3a17034bc8c8cdc61d88ecc8113ef125e50a1aa251db92ab57ba8"
+      ],
+      "recording_groups": [
+        "cfrep_m4"
+      ],
+      "split": "train",
+      "levels": [],
+      "items": [],
+      "family": "CFRep_reviewed",
+      "origin": "re_reviewed_return_failure",
+      "view": "diagonal",
+      "whole_attempt_observed": true,
+      "reference_total_allowed": false,
+      "label_origin": "dense_chronological_review_nonexpert",
+      "reviewed_label": {
+        "criterion": "standing_height_return",
+        "grade": 1,
+        "frames": [
+          407,
+          447
+        ],
+        "previous_status": "withdrawn_after_pelvis_only_target_audit",
+        "reason": "Dense review against the prior full standing frame376 confirms shoulder height remains below initial at the upper turnaround and another descent follows. Pelvis height alone must not stand for the two-channel initial standing-height target. Trunk angle alone is not a label.",
+        "expert_verified": false
+      }
+    },
+    {
+      "id": "reviewed_return_squat_diag_m4_5_7_r11",
+      "exercise": "squats",
+      "person": "cfrep_m4",
+      "group": "832",
+      "sources": [
+        "4cd6d0e7bdd3a17034bc8c8cdc61d88ecc8113ef125e50a1aa251db92ab57ba8"
+      ],
+      "recording_groups": [
+        "cfrep_m4"
+      ],
+      "split": "train",
+      "levels": [],
+      "items": [],
+      "family": "CFRep_reviewed",
+      "origin": "re_reviewed_return_failure",
+      "view": "diagonal",
+      "whole_attempt_observed": true,
+      "reference_total_allowed": false,
+      "label_origin": "dense_chronological_review_nonexpert",
+      "reviewed_label": {
+        "criterion": "standing_height_return",
+        "grade": 1,
+        "frames": [
+          448,
+          486
+        ],
+        "previous_status": "withdrawn_after_pelvis_only_target_audit",
+        "reason": "Dense review against the prior full standing frame376 confirms shoulder height remains below initial at the upper turnaround and another descent follows. Pelvis height alone must not stand for the two-channel initial standing-height target. Trunk angle alone is not a label.",
+        "expert_verified": false
+      }
+    }
+  ],
+  "original_Test_kept_byte_identical_in": "original-test-inputs.frozen.json",
+  "new_Test_feature_augmentation": "same51IDs/source roles/existing targets; only append the corrected bank for three already-reviewed side diagnostic rows",
+  "final_Test_opened": false,
+  "production_replacement": false
+}

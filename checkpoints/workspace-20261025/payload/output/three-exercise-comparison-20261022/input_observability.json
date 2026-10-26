@@ -1,0 +1,77 @@
+{
+  "schema_version": "manual-item-observation-v2",
+  "review_method": "원본 시간순 검토판에서 직접 확인한 항목별 관측 제한. 관절을 통째로 제거하지 않으며 참조 등급·점수는 입력으로 읽지 않음.",
+  "automatic_crop_detection": false,
+  "reviewed_after_development_predictions": true,
+  "records": [
+    {
+      "id": "subject_010_shoulder_good_front",
+      "video_sha256": "ac67d1932ac47c1969b0a400891831fefc30c6556726dab10fb67eb128dbf8d8",
+      "segment": {
+        "start_frame": 16,
+        "end_frame": 63,
+        "fps": 15.0
+      },
+      "view": "primary",
+      "unobservable_joints": [],
+      "criterion_holds": [
+        "overhead_reach"
+      ],
+      "evidence": "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/observation_audit_subject_010_shoulder_good_front.jpg",
+      "evidence_sha256": "1f6acf2b7fc8bfb82ed07124e3df7ca545a921fd20cf3b869813e248cac3af5c",
+      "reason_ko": "시간순 원본 장면에서 상단 최대 도달 시 손목이 화면 위 경계 밖인 것을 직접 확인했다. 상단 도달만 보류하고 보이는 하단 복귀·동시 움직임·몸통 항목을 보존한다."
+    },
+    {
+      "id": "subject_013_shoulder_bad_front",
+      "video_sha256": "9dc51a01f6d6a6e2fd35596fa74f8d1914de483a99c915484d512b1cf00082a8",
+      "segment": {
+        "start_frame": 0,
+        "end_frame": 47,
+        "fps": 15.0
+      },
+      "view": "primary",
+      "unobservable_joints": [],
+      "criterion_holds": [
+        "overhead_reach"
+      ],
+      "evidence": "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/observation_audit_subject_013_shoulder_bad_front.jpg",
+      "evidence_sha256": "013efe6f181d975a86d9aee07903eb80ef867bfc5e0c79430cb138bcf8336b10",
+      "reason_ko": "시간순 원본 장면에서 상단 최대 도달 시 손목이 화면 위 경계 밖인 것을 직접 확인했다. 상단 도달만 보류하고 보이는 하단 복귀·동시 움직임·몸통 항목을 보존한다."
+    },
+    {
+      "id": "subject_018_shoulder_bad_front",
+      "video_sha256": "de52da931d823b12fd1f824c2d4505b32705df507671b95b79f5635afc02dab0",
+      "segment": {
+        "start_frame": 0,
+        "end_frame": 31,
+        "fps": 15.0
+      },
+      "view": "primary",
+      "unobservable_joints": [],
+      "criterion_holds": [
+        "overhead_reach"
+      ],
+      "evidence": "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/observation_audit_subject_018_shoulder_bad_front.jpg",
+      "evidence_sha256": "88b1d76564bf85d3b4f82d5efb435397514aa91e6902083778cb0a331d7edc2e",
+      "reason_ko": "시간순 원본 장면에서 상단 최대 도달 시 손목이 화면 위 경계 밖인 것을 직접 확인했다. 상단 도달만 보류하고 보이는 하단 복귀·동시 움직임·몸통 항목을 보존한다."
+    },
+    {
+      "id": "subject_026_shoulder_bad_front",
+      "video_sha256": "5f6360e40d82cd09cc86237b311d46d3d86edff74782320d8e4f489a2ddbf754",
+      "segment": {
+        "start_frame": 0,
+        "end_frame": 41,
+        "fps": 15.0
+      },
+      "view": "primary",
+      "unobservable_joints": [],
+      "criterion_holds": [
+        "overhead_reach"
+      ],
+      "evidence": "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/observation_audit_subject_026_shoulder_bad_front.jpg",
+      "evidence_sha256": "a4624f4bc2bebba5a2d8f4a076814be480a99e46763fb7184634bf5f1f3d7cac",
+      "reason_ko": "시간순 원본 장면에서 상단 최대 도달 시 손목이 화면 위 경계 밖인 것을 직접 확인했다. 상단 도달만 보류하고 보이는 하단 복귀·동시 움직임·몸통 항목을 보존한다."
+    }
+  ],
+  "retracted_policy": "framing_audit_retraction.json"
+}

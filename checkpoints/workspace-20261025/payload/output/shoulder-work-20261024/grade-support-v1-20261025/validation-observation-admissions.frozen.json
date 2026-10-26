@@ -1,0 +1,314 @@
+[
+  {
+    "id": "subject_012_shoulder_bad_front",
+    "split": "validation",
+    "features": {
+      "status": "features_ready",
+      "version": "shoulder-anatomical-lower-turn-v1",
+      "criterion": "observed_anatomical_lower_turn",
+      "bank": "shoulder-anatomical-lower-turn-v1/front/seated/bilateral",
+      "feature_names": [
+        "left_elbow_turn_deg",
+        "right_elbow_turn_deg",
+        "left_upper_arm_turn_elevation_deg",
+        "right_upper_arm_turn_elevation_deg",
+        "left_wrist_turn_height_fixed_event_torso",
+        "right_wrist_turn_height_fixed_event_torso"
+      ],
+      "features": [
+        103.73415990492936,
+        97.79322227891733,
+        143.01119208988322,
+        135.03774899794328,
+        0.7359750351218751,
+        0.7594699887168411
+      ],
+      "observed_event_ticks": {
+        "peak_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "turn_frames": [
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "next_ascent_frames": [
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      "fixed_event_torso_scale": 326.22309836182905,
+      "coverage": 1.0,
+      "quality": {
+        "schema": "shoulder-frontal-topology-screen-v1",
+        "flags": [],
+        "passed": true,
+        "semantics": "tracking_or_view_uncertainty_not_posture_error",
+        "anatomical_correctness_guaranteed": false
+      },
+      "ready_reference_used": false,
+      "grade": null,
+      "score": null,
+      "label_inferred": false,
+      "tracking_QA_proven": false,
+      "production_approved": false
+    },
+    "observation_receipt": {
+      "status": "passed",
+      "source_sha256": "7e0e409c90051d744e55d4cf724779c32f190b3482ab02c86a5a1fc0674268ae",
+      "feature_schema": "shoulder-anatomical-lower-turn-v1",
+      "target_person_tracking_QA": true,
+      "actual_10Hz_slots_80pct_and_2pct_border": true,
+      "no_interpolation_or_tracking_break": true,
+      "posture": "seated",
+      "view": "front",
+      "event_frames": [
+        [
+          0,
+          12
+        ],
+        [
+          27,
+          36
+        ],
+        [
+          39,
+          45
+        ]
+      ],
+      "review_scope": "all_actual_10Hz_context_frames_AI_visual_review_not_expert_adjudicated",
+      "reviewed_native_frames": [
+        0,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        18,
+        20,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        30,
+        32,
+        33,
+        34,
+        36,
+        38,
+        39,
+        40,
+        42,
+        44,
+        45
+      ],
+      "reviewed_overlay_sha256": {
+        "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/subject_012_shoulder_bad_front-all-chain-1.jpg": "3824a8abc2ce8abd193f021b345f7ddec8db655103a539092cbd91cd95a3d023",
+        "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/subject_012_shoulder_bad_front-all-chain-2.jpg": "bd028014c823d3300dd58df2ca7ef105643eedec97b82e2951f362b9af1a3ead",
+        "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/subject_012_shoulder_bad_front-all-chain-3.jpg": "81cff9cd188b679683ef5bd457a0452c64ba883cdd396014a2cd99e4d737805b"
+      },
+      "limitations": [
+        "anatomical landmark precision is visually approximate",
+        "same exposed validation person; not final accuracy"
+      ]
+    },
+    "admission": {
+      "version": "return-target-admission-v1",
+      "criterion": "observed_anatomical_lower_turn",
+      "feature_schema": "shoulder-anatomical-lower-turn-v1",
+      "bank": "shoulder-anatomical-lower-turn-v1/front/seated/bilateral",
+      "visual_label_eligible": true,
+      "visual_label_holds": [],
+      "training_eligible": false,
+      "training_holds": [
+        "canonical_validation_not_training"
+      ],
+      "evaluation_input_eligible": true,
+      "evaluation_holds": [],
+      "manual_grade": 1,
+      "feature_holds": [],
+      "grade_created": false,
+      "score": null,
+      "production_approved": false,
+      "source_role_changed": false,
+      "expert_adjudicated": false
+    }
+  },
+  {
+    "id": "subject_012_shoulder_good_front",
+    "split": "validation",
+    "features": {
+      "status": "features_ready",
+      "version": "shoulder-anatomical-lower-turn-v1",
+      "criterion": "observed_anatomical_lower_turn",
+      "bank": "shoulder-anatomical-lower-turn-v1/front/seated/bilateral",
+      "feature_names": [
+        "left_elbow_turn_deg",
+        "right_elbow_turn_deg",
+        "left_upper_arm_turn_elevation_deg",
+        "right_upper_arm_turn_elevation_deg",
+        "left_wrist_turn_height_fixed_event_torso",
+        "right_wrist_turn_height_fixed_event_torso"
+      ],
+      "features": [
+        68.71898580746597,
+        66.84453191879439,
+        85.06832723722049,
+        88.49804243386126,
+        0.3711908538850339,
+        0.39310542891357864
+      ],
+      "observed_event_ticks": {
+        "peak_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "turn_frames": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "next_ascent_frames": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ]
+      },
+      "fixed_event_torso_scale": 314.4144378838116,
+      "coverage": 1.0,
+      "quality": {
+        "schema": "shoulder-frontal-topology-screen-v1",
+        "flags": [],
+        "passed": true,
+        "semantics": "tracking_or_view_uncertainty_not_posture_error",
+        "anatomical_correctness_guaranteed": false
+      },
+      "ready_reference_used": false,
+      "grade": null,
+      "score": null,
+      "label_inferred": false,
+      "tracking_QA_proven": false,
+      "production_approved": false
+    },
+    "observation_receipt": {
+      "status": "passed",
+      "source_sha256": "f39f511bff8af8222867356458b5f5fb9e33b088e9e54004784b36cdd9b535a9",
+      "feature_schema": "shoulder-anatomical-lower-turn-v1",
+      "target_person_tracking_QA": true,
+      "actual_10Hz_slots_80pct_and_2pct_border": true,
+      "no_interpolation_or_tracking_break": true,
+      "posture": "seated",
+      "view": "front",
+      "event_frames": [
+        [
+          0,
+          9
+        ],
+        [
+          24,
+          30
+        ],
+        [
+          33,
+          42
+        ]
+      ],
+      "review_scope": "all_actual_10Hz_context_frames_AI_visual_review_not_expert_adjudicated",
+      "reviewed_native_frames": [
+        0,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        18,
+        20,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        30,
+        32,
+        33,
+        34,
+        36,
+        38,
+        39,
+        40,
+        42
+      ],
+      "reviewed_overlay_sha256": {
+        "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/subject_012_shoulder_good_front-all-chain-1.jpg": "0346a8b291cde48b08dda053ef6246c1bb34703ed84885e4e994ea20bf7b27d8",
+        "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/subject_012_shoulder_good_front-all-chain-2.jpg": "75c5967faf6a38d09f16c06728d8ae0b91dcb55f6e47502037abe3e881ffd500",
+        "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/subject_012_shoulder_good_front-all-chain-3.jpg": "ac956c8faab0f108d901cca9671157eff43177c8ea6471430251b00c99087c17"
+      },
+      "limitations": [
+        "anatomical landmark precision is visually approximate",
+        "same exposed validation person; not final accuracy"
+      ]
+    },
+    "admission": {
+      "version": "return-target-admission-v1",
+      "criterion": "observed_anatomical_lower_turn",
+      "feature_schema": "shoulder-anatomical-lower-turn-v1",
+      "bank": "shoulder-anatomical-lower-turn-v1/front/seated/bilateral",
+      "visual_label_eligible": true,
+      "visual_label_holds": [],
+      "training_eligible": false,
+      "training_holds": [
+        "canonical_validation_not_training"
+      ],
+      "evaluation_input_eligible": true,
+      "evaluation_holds": [],
+      "manual_grade": 2,
+      "feature_holds": [],
+      "grade_created": false,
+      "score": null,
+      "production_approved": false,
+      "source_role_changed": false,
+      "expert_adjudicated": false
+    }
+  }
+]

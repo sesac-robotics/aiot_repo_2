@@ -1,0 +1,166 @@
+{
+  "predictions": [
+    {
+      "id": "dvids_navy773312_2997_3087",
+      "held_person": "dvids_773312_single_performer",
+      "target": 0,
+      "probability": 0.20311013494619173,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "dvids_navy773312_3656_3746",
+      "held_person": "dvids_773312_single_performer",
+      "target": 0,
+      "probability": 0.18434802466064393,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "dvids_fao947417_background_5430_5520",
+      "held_person": "dvids_947417_background_black_beanie",
+      "target": 0,
+      "probability": 0.2925058788725093,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    },
+    {
+      "id": "dvids_airforce_300_390",
+      "held_person": "dvids_airforce_target_performer",
+      "target": 0,
+      "probability": 0.09045117573662108,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "dvids_gates640237_side_75_165",
+      "held_person": "dvids_gysgt_gates",
+      "target": 0,
+      "probability": 0.08929797767575856,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "dvids_navy805472_599_689",
+      "held_person": "dvids_navy805472_performer",
+      "target": 0,
+      "probability": 0.14040501096389382,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "upper_qevd_00185879",
+      "held_person": "qevd_2212",
+      "target": 0,
+      "probability": 0.7097274785318873,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    },
+    {
+      "id": "upper_qevd_00268443",
+      "held_person": "qevd_260",
+      "target": 1,
+      "probability": 0.4050104996441271,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    },
+    {
+      "id": "upper_qevd_00224536",
+      "held_person": "qevd_717",
+      "target": 1,
+      "probability": 0.4885160095596868,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    },
+    {
+      "id": "error_review_pannell_normal_core",
+      "held_person": "youtube_channel_UC4gfY04USI_IuTEqBzp5grg",
+      "target": 0,
+      "probability": 0.20474668560606066,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "support_pannell_stop",
+      "held_person": "youtube_channel_UC4gfY04USI_IuTEqBzp5grg",
+      "target": 1,
+      "probability": 0.3928216314935064,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    },
+    {
+      "id": "youtube_avid_normal",
+      "held_person": "youtube_channel_UC7_LFnyBTIbN9e6p98YgIgw",
+      "target": 0,
+      "probability": 0.08125779200474323,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "youtube_jonple_error",
+      "held_person": "youtube_channel_UCIjeq5EDjLxytQBHkv_erMw",
+      "target": 0,
+      "probability": 0.08270519383184884,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "youtube_jonple_normal",
+      "held_person": "youtube_channel_UCIjeq5EDjLxytQBHkv_erMw",
+      "target": 0,
+      "probability": 0.11794887661020356,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    },
+    {
+      "id": "error_review_colossus_forward_core",
+      "held_person": "youtube_channel_UCqV2z4XYLcOLT27AmGT0M6w",
+      "target": 1,
+      "probability": 0.45668670565410086,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    },
+    {
+      "id": "youtube_chris_basic",
+      "held_person": "youtube_chris_ellerby_hemmings",
+      "target": 0,
+      "probability": 0.2203095693110865,
+      "inner_selected_threshold": 0.25,
+      "event": false
+    }
+  ],
+  "metrics": {
+    "TP": 4,
+    "FN": 0,
+    "FP": 2,
+    "TN": 10
+  },
+  "final_training_only_threshold": 0.25,
+  "threshold_candidates": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "baseline_fixed_threshold_metrics": {
+    "ai_event": {
+      "TP": 0,
+      "FN": 4,
+      "FP": 0,
+      "TN": 12
+    },
+    "rule_event": {
+      "TP": 3,
+      "FN": 1,
+      "FP": 1,
+      "TN": 11
+    }
+  },
+  "training_records": 16,
+  "person_groups": 13,
+  "outer_labels_used_to_select_threshold": false,
+  "designed_after_prior_development_diagnostic": true,
+  "independent_final_test": false,
+  "expert_validated": false,
+  "adopted": false,
+  "model_sha256": "5a85116abb14c537f62acf2e6667fb6cf03d3e6029c91dcbe3493482e07ddd98"
+}

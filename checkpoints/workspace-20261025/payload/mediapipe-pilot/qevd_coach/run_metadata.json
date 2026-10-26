@@ -1,0 +1,36 @@
+{
+  "time": "2026-10-19 17:25:41 +0900",
+  "frames_per_clip": 12,
+  "max_image_edge_px": 640,
+  "coverage_min": 0.35,
+  "visibility_min": 0.3,
+  "inference_delegate": "GPU",
+  "model_order": [
+    "heavy"
+  ],
+  "packages": {
+    "mediapipe": "1.1.1",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "opencv-contrib-python": "5.0.0.93"
+  },
+  "worker_counts": {
+    "train": 474,
+    "validation": 103,
+    "test": 23
+  },
+  "checks": [
+    "disjoint_worker_ids",
+    "unique_clip_ids",
+    "reference_policy"
+  ],
+  "model_hashes": {
+    "heavy": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "full": "5134a3aad27a58b93da0088d431f366da362b44e3ccfbe3462b3827a839011b1",
+    "lite": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a"
+  },
+  "manifest_sha256": "ffc8950f425a876df112fe505cffee4200b6c08053e1f2dcdd9adb4b52fc906a",
+  "min_valid_frames": 6,
+  "artifact_version": 2,
+  "scope_change": "사용자 요청으로 Heavy만 실행. Full·Lite 실행 제외."
+}

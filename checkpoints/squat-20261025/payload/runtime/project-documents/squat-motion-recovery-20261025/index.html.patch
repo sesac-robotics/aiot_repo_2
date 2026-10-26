@@ -1,0 +1,11 @@
+--- index.html.before
++++ index.html
+@@ -48,7 +48,7 @@
+  return points==null?'미평가':points.toFixed(1)+'점'+(i.estimated?' · 추정':'');
+ }
+ function appendItems(tbody,s){tbody.textContent='';for(let i of s&&s.items||[]){let tr=tbody.insertRow();for(let value of [i.title,i.weight+'점',itemPoints(i,'ai'),itemPoints(i,'rule')])tr.insertCell().textContent=value;let cell=tr.insertCell(),detail=document.createElement('details'),sum=document.createElement('summary');sum.textContent=i.comparison&&i.comparison.difference_points!=null?'AI Model '+(i.comparison.difference_points>0?'+':'')+i.comparison.difference_points.toFixed(1)+'점 · 이유':'평가 사유 보기';detail.append(sum);for(let text of [i.comparison&&i.comparison.explanation,...i.reasons].filter(Boolean)){let p=document.createElement('p');p.textContent=text;detail.append(p)}cell.append(detail)}}
+-function exerciseGuide(ex){return ex==='shoulder'?'골반·양어깨·팔꿈치·손목이 화면 안쪽에 보이도록 맞추세요. 팔꿈치를 굽힌 하단에서 잠시 준비하고, 양팔을 머리 위로 올렸다가 하단으로 돌아오세요.':ex==='squats'?'어깨·골반·무릎이 보이도록 서서 잠시 준비한 뒤 진행하세요.':ex==='ytw'?'현재 YTW 자동 반복 구분은 미지원입니다.':'선택한 운동의 준비 자세와 필요한 관절이 화면 안쪽에 보이도록 맞춰 주세요.';}
++function exerciseGuide(ex){return ex==='shoulder'?'골반·양어깨·팔꿈치·손목이 화면 안쪽에 보이도록 맞추세요. 팔꿈치를 굽힌 하단에서 잠시 준비하고, 양팔을 머리 위로 올렸다가 하단으로 돌아오세요.':ex==='squats'?'어깨·골반·한쪽 이상 무릎이 보이도록 서서 준비하세요. 양쪽 무릎이 보이면 무릎 간격도 평가합니다.':ex==='ytw'?'현재 YTW 자동 반복 구분은 미지원입니다.':'선택한 운동의 준비 자세와 필요한 관절이 화면 안쪽에 보이도록 맞춰 주세요.';}
+ function selectedObservation(){if(!latestState)return null;let ex=latestState.collecting||review?latestState.exercise:el('exercise').value,v=latestState.collecting||review?latestState.view:el('view').value;return latestState.observation_options?.[ex]?.[v]||latestState.movement?.observation;}
+ function updateFraming(){
+  let o=selectedObservation(),r=latestState?.start_reservation,pending=!!r?.request_id,running=!!latestState?.collecting;

@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "completed_at": "2026-10-20T18:16:04.229640+09:00",
+  "source": "/run/media/jayden/T9/Data/QEVD",
+  "destination": "/home/jayden/SeSACPAI-Mid/data/qevd-selected",
+  "source_preserved": true,
+  "primary_exercises": [
+    "elbow plank",
+    "pushups",
+    "squats",
+    "standing ytw"
+  ],
+  "ytw_order_error_variants": [
+    "standing twy",
+    "standing tyw",
+    "standing wty",
+    "standing wyt",
+    "standing ywt"
+  ],
+  "video_count": 18652,
+  "video_bytes": 5391244321,
+  "exercise_counts": {
+    "elbow plank": 6477,
+    "pushups": 4270,
+    "squats": 4308,
+    "standing ytw": 2305,
+    "standing twy": 253,
+    "standing ywt": 258,
+    "standing wyt": 273,
+    "standing wty": 255,
+    "standing tyw": 253
+  },
+  "sha256_verified_files": 18652,
+  "metadata_counts": {
+    "raw/coach/fine_grained_labels.json": 18652,
+    "raw/coach/feedbacks_short_clips.json": 7107,
+    "raw/annotations/fine_grained_labels_with_worker_ids.json": 18652
+  },
+  "official_split_preserved": true,
+  "official_global_test_worker_ids_preserved": true,
+  "train_workers_also_in_global_official_test": [],
+  "excluded": [
+    "archives",
+    "other exercise videos",
+    "long-range videos",
+    "questions.json",
+    "old processed outputs"
+  ],
+  "training_code_changed": false,
+  "split_note": "원본 train/test 유지. 학습 시 참여자 중복을 배제해야 하며 공식 시험 참여자 전체 목록을 함께 보존함.",
+  "path_note": "CSV video_path는 이 폴더 기준 상대 경로. 원본 JSON video_path는 원본 영상 ID 표기를 유지함."
+}

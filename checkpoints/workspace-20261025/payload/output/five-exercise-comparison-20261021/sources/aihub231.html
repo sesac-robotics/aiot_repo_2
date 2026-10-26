@@ -1,0 +1,5243 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google Tag Manager 22.11.07 GI  -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-ND2SG5R');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Hub</title>
+<!-- css 영역 -->
+<link rel="stylesheet" href="/static/css/default.css?ver=1792566305447">
+<link rel="stylesheet" href="/static/script/slick/slick.css">
+<link rel="stylesheet" href="/static/script/slick/slick-theme.css">
+<link rel="stylesheet" href="/static/script/jquery-ui-1.13.0.custom/jquery-ui.min.css">
+<link rel="stylesheet" href="/static/css/common_new.css?ver=1792566305447"><!-- 2.0 개편 -->
+<link rel="stylesheet" href="/static/css/search.css?ver=1792566305447"> 
+
+<!-- script 영역 -->
+<script src="/static/script/jquery-3.6.0.min.js"></script>
+<script src="/static/script/jquery-ui-1.13.0.custom/jquery-ui.min.js"></script>
+<script src="/js/egovframework/com/cmm/jquery.form.js"></script>
+<script src="/static/script/jquery.ui.datepicker-ko.js"></script>
+<script src="/static/script/jquery.mask.min.js"></script>
+<script src="/static/script/slick/slick.min.js"></script>
+<script src="/static/script/commonContent.js?ver=1792566305447"></script>
+<script src="/static/script/aihub.analytics.js"></script>
+<script src="/js/egovframework/com/cmm/commonJS.js?ver=1792566305447"></script>
+<script src="/js/egovframework/com/cmm/moment.js"></script>
+
+<script src="/js/egovframework/com/cmm/aihubMain.js?ver=1792566305447"></script>
+
+<script type="text/javascript">
+(function(w, d, a){
+    w.__beusablerumclient__ = {
+        load : function(src){
+            var b = d.createElement("script");
+            b.src = src; b.async=true; b.type = "text/javascript";
+            d.getElementsByTagName("head")[0].appendChild(b);
+        }
+    };w.__beusablerumclient__.load(a + "?url=" + encodeURIComponent(d.URL));
+})(window, document, "//rum.beusable.net/load/b250425e141024u163");
+</script>
+</head>
+<body>
+	
+    
+
+
+
+
+
+
+
+<script type="text/javascript">
+$( document ).ready(function(){
+	
+	$("#headSearchInput").keyup(function(){
+		var valLength = $(this).val().length;
+		if(valLength > 0){
+			//aJaxSearchAuto($(this).val(), "head");// 통합검색 미사용 (2023-06)
+			aJaxDataSetSearchAuto("head");
+		}
+	});
+})
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- 22.11.07 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-197815234-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-197815234-1');
+</script>
+ -->
+
+    <a href="#content" class="skipNav">콘텐츠로 건너뛰기</a>
+    <a href="#gnb" class="skipNav">메뉴로 건너뛰기</a>
+    <a href="#footer" class="skipNav">푸터로 건너뛰기</a>
+
+    <header id="header">
+        <h1><a href="/"><span>AI-Hub</span></a></h1>
+        <button type="button"><span>메뉴</span></button>
+        <nav id="gnb">
+            <ul>
+            	
+            		
+            		<li>
+            			
+            				
+            				
+		            			<a href="/aihubdata/data/list.do?currMenu=115&topMenu=100">
+			               			AI 데이터찾기
+								</a>
+            				
+            			
+	            		<div>
+	            		
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/aihubdata/data/list.do?currMenu=115&topMenu=100" >
+		                                데이터 찾기
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/aihubdata/extrldata/list.do?currMenu=118&topMenu=100" >
+		                                기관 제공 데이터
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/aihubdata/wblextrldata/list.do?currMenu=520&topMenu=100" >
+		                                독자 AI모델 데이터
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/devsport/apishell/list.do?currMenu=403&topMenu=100" >
+		                                AI 허브 오픈 API
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            			</div>
+            		</li>
+            		
+            	
+            		
+            		<li>
+            			
+            				
+            				
+		            			<a href="/intrcn/intrcn.do?currMenu=150&topMenu=105">
+			               			AI 허브소개
+								</a>
+            				
+            			
+	            		<div>
+	            		
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/intrcn/intrcn.do?currMenu=150&topMenu=105" >
+		                                AI 허브란?
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/intrcn/safetyzoneintrcn.do?currMenu=306&topMenu=105" >
+		                                안심존이란?
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/intrcn/guid/usagepolicy.do?currMenu=151&topMenu=105" >
+		                                이용정책
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/intrcn/cttpc.do?currMenu=154&topMenu=105" >
+		                                연락처 안내
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            			</div>
+            		</li>
+            		
+            	
+            		
+            		<li>
+            			
+            				
+            				
+		            			<a href="/leaderboard/view.do?currMenu=500&topMenu=102">
+			               			리더보드
+								</a>
+            				
+            			
+	            		<div>
+	            		
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/leaderboard/view.do?currMenu=500&topMenu=102" >
+		                                리더보드(시범운영)
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            			</div>
+            		</li>
+            		
+            	
+            		
+            		<li>
+            			
+            				
+            					<a href="/aihubnews/notice/list.do?currMenu=132&topMenu=103">
+			               			커뮤니티
+								</a>
+            				
+            				
+            			
+	            		<div>
+	            		
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        <a href="/aihubnews/notice/list.do?currMenu=132&topMenu=103">
+		                            공지사항
+		                        </a>
+		                        
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/aihubnews/exclnccase/list.do?currMenu=142&topMenu=103" >
+		                                활용성과 우수사례
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/aihubnews/qlityguidance/list.do?currMenu=135&topMenu=103" >
+		                                품질가이드
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            			</div>
+            		</li>
+            		
+            	
+            		
+            		<li>
+            			
+            				
+            				
+		            			<a href="/devsport/aidataexchn/list.do?currMenu=523&topMenu=101">
+			               			AI 개발지원
+								</a>
+            				
+            			
+	            		<div>
+	            		
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/devsport/aidataexchn/list.do?currMenu=523&topMenu=101" >
+		                                AI데이터 거래소
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            			</div>
+            		</li>
+            		
+            	
+            		
+            		<li>
+            			
+            				
+            				
+		            			<a href="/partcptnmlrd/inqry/list.do?currMenu=143&topMenu=104">
+			               			고객지원
+								</a>
+            				
+            			
+	            		<div>
+	            		
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/partcptnmlrd/inqry/list.do?currMenu=143&topMenu=104" >
+		                                문의하기
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/aihubnews/faq/list.do?currMenu=146&topMenu=104" >
+		                                자주찾는질문
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/cstmrsport/indvdlinfosttemnt/regist.do?currMenu=147&topMenu=104" >
+		                                민원접수
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/partcptnmlrd/aiDataRegistReqst/regist.do?currMenu=517&topMenu=104" >
+		                                AI데이터등록신청
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            				
+		                        
+		                        
+		                        
+		                            <a href="/partcptnmlrd/rsltexamin/regist.do?currMenu=514&topMenu=104" >
+		                                성과조사
+		                            </a>
+		                        
+	                        
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            				
+            			
+            			</div>
+            		</li>
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            		
+            	
+            </ul>
+        </nav>
+        
+        <span class="link">
+            
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+	                
+	                    
+	                        
+	                    
+	                    
+	                
+            	
+			
+            	
+	                
+	                    
+	                        
+				           		<a href="/login/login.do?currMenu=107&topMenu=107">
+				                    로그인
+				                </a>
+	                        
+	                    
+	                    
+	                
+            	
+			
+            	
+	                
+	                    
+	                        
+				           		<a href="/join/mberSe.do?currMenu=108&topMenu=108">
+				                    회원가입
+				                </a>
+	                        
+	                    
+	                    
+	                
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+            	
+			
+			<a href="#menuAll" class="menuAll"><span>전체메뉴</span></a>
+        </span>
+        
+       	<div class="headSearch searchWrap">
+        <form action="/aihubdata/data/list.do?currMenu=115&topMenu=100" method="GET" name="dataSearchHeaderForm" id="dataSearchHeaderForm">
+        	<input type="text" id="headSearchInput" name="searchKeyword" title="검색어" data-placeholder="찾으시는 데이터를 입력해주세요">
+            <button type="button" onclick="dataSetSearchHeaderBtnClick()"><span>검색</span></button>
+        </form>
+
+        <ul id="headSearchDataSetUL">
+        </ul>
+        </div>
+    </header>
+    
+    <div id="menuAll">
+        <ol>
+        	
+           		
+           		<li>
+           			<strong>
+           			<a href="/aihubdata/data/list.do?currMenu=115&topMenu=100">
+               			AI 데이터찾기
+					</a>
+					</strong>
+            		<div>
+            		
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/aihubdata/data/list.do?currMenu=115&topMenu=100" >
+	                                데이터 찾기
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/aihubdata/extrldata/list.do?currMenu=118&topMenu=100" >
+	                                기관 제공 데이터
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/aihubdata/wblextrldata/list.do?currMenu=520&topMenu=100" >
+	                                독자 AI모델 데이터
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/devsport/apishell/list.do?currMenu=403&topMenu=100" >
+	                                AI 허브 오픈 API
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           			</div>
+           		</li>
+           		
+           	
+           		
+           		<li>
+           			<strong>
+           			<a href="/intrcn/intrcn.do?currMenu=150&topMenu=105">
+               			AI 허브소개
+					</a>
+					</strong>
+            		<div>
+            		
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/intrcn/intrcn.do?currMenu=150&topMenu=105" >
+	                                AI 허브란?
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/intrcn/safetyzoneintrcn.do?currMenu=306&topMenu=105" >
+	                                안심존이란?
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/intrcn/guid/usagepolicy.do?currMenu=151&topMenu=105" >
+	                                이용정책
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/intrcn/cttpc.do?currMenu=154&topMenu=105" >
+	                                연락처 안내
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           			</div>
+           		</li>
+           		
+           	
+           		
+           		<li>
+           			<strong>
+           			<a href="/leaderboard/view.do?currMenu=500&topMenu=102">
+               			리더보드
+					</a>
+					</strong>
+            		<div>
+            		
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/leaderboard/view.do?currMenu=500&topMenu=102" >
+	                                리더보드(시범운영)
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           			</div>
+           		</li>
+           		
+           	
+           		
+           		<li>
+           			<strong>
+           			<a href="/aihubnews/notice/list.do?currMenu=131&topMenu=103">
+               			커뮤니티
+					</a>
+					</strong>
+            		<div>
+            		
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/aihubnews/notice/list.do?currMenu=131&topMenu=103" >
+	                                공지사항
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/aihubnews/exclnccase/list.do?currMenu=142&topMenu=103" >
+	                                활용성과 우수사례
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/aihubnews/qlityguidance/list.do?currMenu=135&topMenu=103" >
+	                                품질가이드
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           			</div>
+           		</li>
+           		
+           	
+           		
+           		<li>
+           			<strong>
+           			<a href="/devsport/aidataexchn/list.do?currMenu=523&topMenu=101">
+               			AI 개발지원
+					</a>
+					</strong>
+            		<div>
+            		
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/devsport/aidataexchn/list.do?currMenu=523&topMenu=101" >
+	                                AI데이터 거래소
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           			</div>
+           		</li>
+           		
+           	
+           		
+           		<li>
+           			<strong>
+           			<a href="/partcptnmlrd/inqry/list.do?currMenu=143&topMenu=104">
+               			고객지원
+					</a>
+					</strong>
+            		<div>
+            		
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/partcptnmlrd/inqry/list.do?currMenu=143&topMenu=104" >
+	                                문의하기
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/aihubnews/faq/list.do?currMenu=146&topMenu=104" >
+	                                자주찾는질문
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/cstmrsport/indvdlinfosttemnt/regist.do?currMenu=147&topMenu=104" >
+	                                민원접수
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/partcptnmlrd/aiDataRegistReqst/regist.do?currMenu=517&topMenu=104" >
+	                                AI데이터등록신청
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           				
+	                        
+	                        
+	                            <a href="/partcptnmlrd/rsltexamin/regist.do?currMenu=514&topMenu=104" >
+	                                성과조사
+	                            </a>
+	                        
+                        
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           				
+           			
+           			</div>
+           		</li>
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+           		
+           	
+        </ol>
+    </div>
+    
+    <!-- loading bar  -->
+	<div class="loader">
+	    <div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	    </div>
+	    <span>데이터를 불러오고 있습니다</span>
+	</div>
+	
+    <!-- saveLoading bar  -->
+	<div class="saveLoader">
+	    <div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	    </div>
+	    <span>데이터를 저장하고 있습니다</span>
+	</div>
+	<div class="pageDisabled"></div>
+    
+
+
+
+
+
+
+<script>
+$(function () {
+	var currMenu = $.urlParam('currMenu');
+    if (currMenu) {
+    	aihub.ajax("/menu/navigation.do;jsessionid=79011BFA108FA3E9CEC47EC8F42079CA.0ca6d28be00600041", null, null, { menuSn: currMenu }, function (data) {
+            if (data && data.list && data.list.length > 0) {
+                $('#menuTitle').text(data.list[data.list.length-1].emplyrMenuNm);
+                if(data.list[data.list.length-1].menuSn == 117){
+                	$('#menuTitle').append("<sup>Beta</sup>");
+                }
+            	var vh = '<li><span>홈</span></li>';
+            	var title = "";
+                $.each(data.list, function (index, v) {
+                	vh += '<li>'+v.emplyrMenuNm+'</li>';
+//                 	title += ' - ' + v.emplyrMenuNm;
+                });
+                $.each(data.list.reverse(), function (index, v) {
+                	title += v.emplyrMenuNm + ' - ' ;
+                });
+                
+                title += "AI-Hub";
+                
+                $('#menuNavi').html(vh);
+                $(document).attr("title", title);
+            }
+        });
+    }
+});
+</script>
+
+
+    
+    
+    
+    
+        <div id="location">
+            <div class="contentWrap">
+	            <h2 id="menuTitle"></h2>
+	            <ol id="menuNavi"></ol>
+            </div>
+        </div>
+    
+
+    <section id="content">
+	   
+
+
+
+
+
+<script src="/js/egovframework/com/cmm/aihubDownload.js?ver=1792566305452"></script><!-- 이노릭스 다운로드 -->
+<!-- 퍼블 스크립트 -->
+<script>
+	$(function(){
+		$('a.qLink').on('click', function(e){
+			e.preventDefault();
+			$(e.currentTarget).focus();
+		}).on('mouseleave', function(e){
+			$(e.currentTarget).blur();
+		});
+		
+		$('ul.fold h3 button').on('click', function(){
+			var target = $(this).parents('li:first');
+		
+			target.hasClass('on') ? target.removeClass('on') : target.addClass('on');
+		});
+		
+		//$('ul.fold h3 button').trigger('click'); // 아코디언 전체 열기 주석처리
+		
+		// 연관 데이터
+		$('.dataConnection .swiperBox').slick({
+			slidesToShow: 4,
+			slidesToScroll: 4,
+			arrows:true,
+			responsive: [
+				{
+					breakpoint: 1440,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 4,
+					}
+				},
+				{
+					breakpoint: 1023,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						adaptiveHeight: true
+					}
+				}
+			]
+		});
+	});
+</script>
+<script>
+	var param =  '?currMenu=115&topMenu=100';
+	var key = '';
+	var aihubDataSe = 'data';
+	var dataPckageYn = 'N';
+	var dataSetSn = '231';
+	var dataPckageSn = '';
+	var s3FileSize = '1141214883973';
+	
+	$(document).ready(function(){
+		pageInitView();
+		
+		// Back Forward Cache로 브라우저가 로딩될 경우 혹은 브라우저 뒤로가기 했을 경우
+		window.onpageshow = function(event) {
+			if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+				location.reload(true);
+			}
+		}
+		
+		// TAB Click
+		$('.dataHeadLink>a').click(function(){
+			var clickTab = $(this).attr('data-tab');
+			$(this).attr('title','선택됨').siblings().removeAttr('title');
+			fnTabChg(clickTab);
+		});
+		
+		fnTabChg('TAB001');
+		
+		if(s3FileSize > 0){
+			$("#s3FileSize").text(getfileSize(s3FileSize));
+		}
+		
+		findSearchKeyword();
+	});
+	
+	function pageInitView(){
+		alertData();
+		
+		
+		
+		
+	}
+	
+	function alertData(){
+		// 데이터 신청 error alert
+		
+		
+		// data_set_sn 없는 경우 alert
+		
+		
+		
+		if(dataPckageYn == 'N'){
+			// 다운로드 중지 데이터
+			
+		
+			// 다운로드 이벤트 대상 데이터셋 & 이벤트 미신청 회원인 경우
+			
+			
+		}else{
+			
+		}
+	}
+	
+	// 아코디언 focus
+	function fnAccordionFocusOn(key) {
+		  if (!key) return;
+
+		  var items = $('ul.fold > li');
+		  items.removeClass('on');
+
+		  var target = items.filter('[data-accordion-key="' + key + '"]');
+
+		  if (target.length) {
+			 target.addClass('on');
+			 target[0].scrollIntoView({
+				  behavior: 'smooth',
+				  block: 'center'
+				});
+			 
+		  }
+		}
+	
+	// TAB Click
+	function fnTabChg(clickTab){
+		$('[class*=tabDiv]').hide();
+		var lastChar = clickTab.slice(-1);
+		$('.tabDiv' + lastChar).show();
+		
+		$('.linkList.dataHeadLink a').attr('class','');
+		$('.linkList.dataHeadLink a[data-tab="'+clickTab+'"]').attr('class','on');
+	}
+	
+	// 다운로드 신청하기 - 미신청·접수·반려
+	function fnDwldReqst() {
+		// s3파일 존재 유무(PROCSS004 :: 한국인 안면 이미지 제외)
+		var s3FileCnt = '49';
+		var indvdlzConfmCode = '';
+		var trgtParam = param;
+		if(!isEmpty(dataPckageSn)){
+			trgtParam += '&dataPckageSn=' + dataPckageSn;
+		}else{
+			trgtParam += '&dataSetSn=' + dataSetSn;
+		}
+		
+		if(s3FileCnt == 0 && indvdlzConfmCode != 'PROCSS004'){
+			alert('데이터 준비중입니다.');
+		
+		}else{
+			var uri = '/aihubdata/data/dwld.do' + trgtParam;
+			location.href = uri;
+		}
+	}
+
+	// innorix 다운로드 - 데이터셋(승인완료)
+	function fnDwld() {
+		var s3FileCnt = '49';
+		var dataSe = 'aidata';
+		var dwldTkn = '';
+		
+		checkDownload(dataSetSn, dataSe, '', s3FileCnt, dwldTkn, dataPckageSn);
+	}
+
+	// innorix 다운로드 - 저작도구, AI모델
+	function fnDwldTool(dataSe, autoolCode) {
+		var dwldTkn = '';
+		checkDownload(dataSetSn, dataSe, autoolCode, '', dwldTkn, dataPckageSn);
+	}
+	
+	// 관심데이터 등록/취소
+	function fnIntrstData(str){
+		var dataPckageYnStr = '관심데이터'; 
+		
+		var msg = dataPckageYnStr + "를 "+str+" 하시겠습니까?";
+		var result = true;
+		
+		var data = {};
+		data.dataPckageYn = dataPckageYn;
+		data.dataSetSn = '231';
+		data.dataPckageSn = '';
+		
+		result = confirm(msg);
+		if(result){
+			showLoader();
+			aihub.ajax("/aihubdata/data/aJaxRegistIntrstData.do;jsessionid=79011BFA108FA3E9CEC47EC8F42079CA.0ca6d28be00600041", null, null, data, function (data){
+				hideLoader();
+				if (data.success) {
+					alert(data.msg);
+					location.reload();
+				} else {
+					if(data.code == 'NOT_LOGIN'){// 비로그인
+						fnLoginLink();
+					}else{
+						alert(data.msg);
+					}
+				}
+			});
+		}
+	}
+	
+	// 페이지 이동 - 다른 메뉴 이동
+	function fnGoLink(menu){
+		var path = '';
+		var targetParam = '';
+		
+		// 문의하기
+		if(menu == 'inqry'){
+			path = $('#gnb ul a[href*="/partcptnmlrd/inqry/"]').attr('href').replace('list','regist');
+			
+			if(!isEmpty(dataPckageSn)){
+				targetParam += '&inqrySeCode=INQRY005&dataPckageSn=' + dataPckageSn; 
+			}else{
+				targetParam += '&inqrySeCode=INQRY001&dataSetSn=' + dataSetSn;
+			}
+			
+		}
+		var uri = path + targetParam;
+		location.href = uri;
+	}
+	
+	// 페이지 이동 - 목록
+	function fnList(kwrd) {
+		showLoader();
+		if(isEmpty(aihubDataSe)){
+			aihubDataSe = 'data';
+		}
+		
+		var path = '/aihubdata/'+aihubDataSe+'/list.do';
+		var removeKeys = ['aihubDataSe', 'dataSetSn', 'dataPckageSn','accordionFocusOnKey'];
+		var targetParam = removeParamsByCondition(removeKeys);
+		
+		// 태그 검색
+		if(!isEmpty(kwrd)){
+			removeKeys.push('searchKeyword');
+			targetParam = removeParamsByCondition(removeKeys);
+			targetParam += '&searchKeyword=' + kwrd;
+		}
+		 
+		var uri = path + targetParam;
+		location.href = uri;
+	}
+	
+	// 로그인 이동
+	function fnLoginLink(){
+		alert('로그인 후 이용이 가능합니다.');
+		var uri = '/login/login.do?currMenu=107&topMenu=107';
+		var referer = location.pathname + location.search;
+		
+		$('#referer').val(referer);
+		$('#loginForm').attr('action',uri);
+		$('#loginForm').submit();
+	}
+
+	function getfileSize(x) {
+		var s = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
+		var e = Math.floor(Math.log(x) / Math.log(1024));
+		return x != 0 ? (x / Math.pow(1024, e)).toFixed(2) + " " + s[e]:0;
+	};
+	
+	// 검색어 하이라이트 표시 및 탭 오픈
+	function findSearchKeyword() {
+		var srchOptnCnd = '';
+		var searchKeyword = '';
+		var lowerCaseKeywordList = searchKeyword.toLowerCase().split(' ');
+		
+		if (searchKeyword != '' && (srchOptnCnd == 'OPTNCND001' || srchOptnCnd == 'OPTNCND003')) { // 전체 및 본문내용
+			$('.srchKwrdHighlight').each(function() {
+				// 한 단어 검색어
+				if (lowerCaseKeywordList.length == 1) {
+					if ($(this).text().includes(searchKeyword)) {
+						var regex = new RegExp(searchKeyword + `(?![^<]*>)|&nbsp;`, 'gi'); // 태그 제외 검색
+						
+						$(this).html($(this).html().replace(regex, '<span style="color: #f76659">$&</span>'));
+						$(this).closest('li').addClass('on');
+					}
+					
+				// 공백 포함 검색어(검색 단어 모두 포함되는 경우만 표시)
+				} else {
+					var lowerCaseText = $(this).text().toLowerCase();
+					var offset = 0;
+					
+					while (offset < lowerCaseText.length) {
+						var keywordsExist = true;
+						var highlightKeywords = [];
+						
+						for (var i = 0; i < lowerCaseKeywordList.length; i++) {
+							var keywordIdx = i;
+							if (keywordIdx == 0) {
+								keywordIdx = lowerCaseText.indexOf(lowerCaseKeywordList[i], offset);
+							} else {
+								keywordIdx = lowerCaseText.indexOf(lowerCaseKeywordList[i], highlightKeywords[i - 1] + lowerCaseKeywordList[i - 1].length);
+							}
+							
+							if (keywordIdx == -1) {
+								keywordsExist = false;
+								break;
+							}
+							
+							highlightKeywords.push(keywordIdx);
+						}
+						
+						if (keywordsExist) {
+							for (var i = 0; i < highlightKeywords.length; i++) {
+								highlightIndex(this, highlightKeywords[i], lowerCaseKeywordList[i].length);
+							}
+							$(this).closest('li').addClass('on');
+							
+							offset =  highlightKeywords[highlightKeywords.length - 1] + 1;
+						} else {
+							break;
+						}
+					}
+				}
+			});
+		}
+	}
+	
+	// 검색어 하이라이트 표시(태그 제외)
+	function highlightIndex(target, highlightIdx, strLen) {
+		var currentIdx = 0;
+		
+		function searchAndChangeNode(target) {
+			if (target.nodeType === target.TEXT_NODE) {
+				var textLength = target.textContent.length;
+				
+				if (currentIdx + textLength > highlightIdx) {
+					var offset = highlightIdx - currentIdx;
+					var text = target.textContent;
+					
+					var before = text.slice(0, offset);
+					var highilight = text.slice(offset, offset + strLen);
+					var after = text.slice(offset + strLen);
+					
+					var span = $('<span>').css('color','#f76659').text(highilight);
+					
+					var frag = document.createDocumentFragment();
+					if (before) {
+						frag.appendChild(document.createTextNode(before));
+					}
+					frag.appendChild(span[0]);
+					if (after) {
+						frag.appendChild(document.createTextNode(after));
+					}
+					
+					target.replaceWith(frag);
+					
+					return true;
+				}
+				currentIdx += textLength;
+				
+			} else if (target.nodeType === target.ELEMENT_NODE) {
+				for (var i = 0; i < target.childNodes.length; i++) {
+					if (searchAndChangeNode(target.childNodes[i])) {
+						return true;
+					}
+				}
+			}
+			
+			return false;
+		}
+		
+		searchAndChangeNode(target);
+	}
+	
+	function alertDataGuide(type){
+		if(type == 'indvdlzReqstTrgter'){
+			alert("재외국민 또는 핸드폰 미인증 회원은 데이터 신청 시 사용신청서 첨부가 필요합니다.\n데이터패키지의 각 데이터별로 데이터 신청해주세요.");
+			return false;
+		}
+		
+		if(type == 'notS3FileSize'){
+			alert('데이터 준비중입니다.');
+			return false;
+		}
+	}
+	
+	$(document).on('click', '#upcyBtn', function(e){
+		e.preventDefault();
+
+		var sn = $(this).data('sn');
+		
+		var data = {
+			dataSetSn : sn
+		};
+		
+		aihub.ajax("/aihubdata/data/upcyDataCheckUseAt.do;jsessionid=79011BFA108FA3E9CEC47EC8F42079CA.0ca6d28be00600041", null, null, data, function (data){
+			if(data.success){
+				if(data.useAt === 'N'){
+					alert("해당 데이터는 보완중이므로 추후 이용 가능합니다.");
+				} else {
+					if(isEmpty(aihubDataSe)){
+						aihubDataSe = 'data';
+					}
+					var url = "/aihubdata/data/view.do" + param + "&aihubDataSe=" + aihubDataSe + "&dataSetSn=" + sn;
+					window.open(url, "_blank");
+				}
+			} else {
+				alert(data.msg);
+			}
+		});
+	});
+</script>
+<body>
+
+
+
+
+<!-- 변경이력 -->
+<!-- 히스토리 -->
+
+
+<form name="loginForm" id="loginForm" method="post">
+	<input type="hidden" name="referer" id="referer" value="" />
+	<input type="hidden" name="currMenu" value="115" />
+</form>
+<form name="viewForm" id="viewForm" method="post">
+	<input type="hidden" name="currMenu" value="115" />
+	<input type="hidden" name="topMenu" value="100" />
+	<input type="hidden" name="dataSetSn" value="231">
+	<input type="hidden" name="beforeSn" value="8051">
+	<input type="hidden" name="intrstDataAt" value="N"><!-- 관심데이터 여부 -->
+	<input type="hidden" name="reloadYn" value="N">
+	<input type="hidden" name="accordionFocusOnKey" value="" />
+</form>
+		
+		<!-- ---------- head ------------>
+		<div class="dataHead">
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="contentWrap">
+				<!-- 주요 키워드 -->
+				<span class="tag">
+					
+						
+							
+							
+								<a href="javascript:fnList('자세 인식');">#자세 인식</a>
+							
+								<a href="javascript:fnList(' AI모델');"># AI모델</a>
+							
+								<a href="javascript:fnList(' 동작영상');"># 동작영상</a>
+							
+								<a href="javascript:fnList(' 인간 행동 인식');"># 인간 행동 인식</a>
+							
+								<a href="javascript:fnList(' 운동 상태');"># 운동 상태</a>
+							
+						
+					
+				</span>
+				
+				<h3>
+					
+					
+					
+					피트니스 자세 이미지
+				</h3>
+				
+				<!-- 썸네일 아이콘 -->
+				<div class="info">
+					<span class="icon">
+						
+							
+								<img src="/web-nas/aihub21/files/public/DATA_SET202205200422258490" alt="피트니스 자세 이미지">
+							
+							
+						
+					</span>
+				</div>
+				
+				
+				
+				<div class="content">
+					<ul>
+						<!-- 데이터 분야 -->
+						<li><em>분야</em>헬스케어</li>
+						<!-- 데이터 승인 -->
+						
+						<!-- 데이터 유형 -->
+						<li><em>유형</em>
+							
+							
+								이미지
+						 		
+							
+						</li>
+						<!-- 데이터 생성 방식 -->
+						
+					</ul>
+					
+					<span class="date">
+						
+							<em>구축년도 : 2020</em>
+						
+						
+							<em>갱신년월 : 2022-02</em>
+						
+						<em><strong>조회수 :</strong> 54,232</em>
+						<em><strong>다운로드 :</strong> 5,852</em>
+						
+							<em><strong>용량 :</strong> <font id="s3FileSize"></font></em> 
+						
+					</span>
+					
+					
+					
+					
+					
+					
+					
+					<div class="function">
+						<div class="button">
+							
+								
+								
+									
+									
+									
+										<div class="subText">
+											
+												
+													<button type="button" class="orange" onclick="fnDwldReqst();">
+														다운로드
+													</button>
+													
+												
+												
+										
+										
+										
+										</div>
+									
+								
+									
+									
+										<div class="subText">
+											
+												
+													<a href="javascript:fnLoginLink();" class="button white down">샘플(경량) 데이터</a>
+												
+												
+											
+											
+											
+												<a href="#aSampleData" aria-describedby="aSampleData" class="qLink"  aria-label="자세한설명보기">?</a>
+												<div id="aSampleData" role="tooltip">
+													<p><span>※</span>샘플(경량) 데이터는 데이터의 이해를 돕기 위해 별도로 가공하여 제공하는 정보로써 원본 데이터와 차이가 있을 수 있으며, 데이터에 따라서 민감한 정보는 일부 마스킹(*) 처리가 되어 있을 수 있습니다.</p>
+												</div>
+											
+										</div>
+									
+								
+								
+								
+							
+						</div>
+						
+						<span class="info">
+							<!-- 관심데이터 -->
+							<button type="button" class="" onclick="fnIntrstData('등록');">
+								<em>관심 데이터 등록</em>
+								<span class="like"><em>관심</em> 250</span>
+							</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- ---------- content ------------>
+		<div class="contentWrap">
+			
+			
+				
+            
+            
+			<!-- TAB -->
+			
+			
+			
+			
+				<div class="linkList dataHeadLink type2">
+					<a href="#" data-tab="TAB001" class="on" title="선택됨">소개</a>
+					
+					
+						<a href="#" data-tab="TAB003">파일 목록 (API 다운로드)</a>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</div>
+			
+			
+			
+			<div class="tabDiv1">
+				<!-- 안내문구 여부 -->
+				
+				
+				<div class="mt-20">
+					<p class="dataNotice">※ 내국인만 데이터 신청이 가능합니다.</p>
+					
+					<div class="btnGroup topButtonBox">
+						<!-- 개방 데이터일 때만 노출(외부데이터 비노출) -->
+						
+		  					<a href="javascript:fnGoLink('inqry');" class="button large">문의하기</a>
+						
+						
+						<a href="javascript:fnList('');" class="button white large">목록</a>
+					</div>
+				</div>
+				
+				
+					
+					
+						<ul class="fold dataContent">
+							<!-- 1. 데이터 개요  -->
+							
+								<li data-accordion-key="content">
+									<h3><button type="button">데이터 개요</button></h3>
+									<div>
+			 							
+											<h4>데이터 변경이력</h4>
+											<table class="data">
+												<caption>데이터 변경이력</caption>
+												<thead>
+													<tr>
+														<th scope="col">버전</th>
+														<th scope="col">일자</th>
+														<th scope="col">변경내용</th>
+														<th scope="col">비고</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+														<tr>
+															<td><span>1.2</span></td>
+															<td><span>2022-02-07</span></td>
+															<td><span>데이터 보완</span></td>
+															<td><span>데이터 품질 보완</span></td>
+														</tr>
+													
+														<tr>
+															<td><span>1.1</span></td>
+															<td><span>2022-01-11</span></td>
+															<td><span>데이터 변경</span></td>
+															<td><span>데이터 추가</span></td>
+														</tr>
+													
+														<tr>
+															<td><span>1.0</span></td>
+															<td><span>2021-06-18</span></td>
+															<td><span>데이터 개방</span></td>
+															<td><span>데이터 최초 개방</span></td>
+														</tr>
+													
+												</tbody>
+											</table>
+										
+										
+											<h4>데이터 히스토리</h4>
+											<table class="data">
+												<caption>데이터 히스토리</caption>
+												<thead>
+													<tr>
+														<th scope="col">일자</th>
+														<th scope="col">변경내용</th>
+														<th scope="col">비고</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+														<tr>
+															<td><span>2024-05-20</span></td>
+															<td><span>산출물 변경</span></td>
+															<td><span>저작도구 매뉴얼 수정</span></td>
+														</tr>
+													
+												</tbody>
+											</table>
+										
+										
+											<h4>소개</h4>
+												<pre class="srchKwrdHighlight">다양한 자세와 체형을 가신 사람들로부터 홈트레이닝(운동자세 분석 및 추천), AR/MR 서비스(5G 기반 증강현실 컨텐츠), 피트니스 수집 플랫폼(머신러닝 모델 적용), 의료분야(재활치료 및 재활운동 자세 교정, 원격치료) 등과 같은 세밀한 행동을 인식할 수 있는 AI모델 개발을 통해 데이터 인프라 구축</pre>
+												<!-- 2017년 - 2020년 개방 데이터 -->
+												
+													
+														<pre class="srchKwrdHighlight">- 데이터 영역 : 헬스케어</pre>
+													
+													
+														<pre class="srchKwrdHighlight">- 데이터 유형 : 이미지 </pre>
+													
+													
+													
+													
+													
+													
+													
+														<pre class="srchKwrdHighlight">- 구축년도 : 2020년</pre>
+													
+													
+														<pre class="srchKwrdHighlight">- 구축량 : 200,000만 클립</pre>
+													
+												
+										
+										
+											<h4>구축목적</h4>
+											<pre class="srchKwrdHighlight">피트니스 데이터 구축을 통해서 Untact시대에 적합한 홈트레이닝 서비스를 만들 수 있는 기초를 만들고, 국가차원의 인공지능 경쟁력을 강화시키기 위함</pre>
+										
+									</div>
+								</li>
+							
+							<!-- //1. 데이터 개요  -->
+							<!-- 2. 메타데이터 구조표  -->
+							
+							<!-- //2. 메타데이터 구조표  -->
+							<!-- 3. 데이터 통계  -->
+							
+								<li data-accordion-key="stats">
+									<h3><button type="button">데이터 통계 </button></h3>
+									<div class="srchKwrdHighlight">
+										<p>구축 내용 및 제공 데이터량</p>
+
+<table>
+	<caption>구축 내용 및 제공 데이터량</caption>
+	<thead>
+		<tr>
+			<th scope="col">동작</th>
+			<th scope="col">수집피사체</th>
+			<th scope="col">촬영 Clip</th>
+			<th scope="col">기본 정보</th>
+			<th scope="col">주요 특징</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		</tr>
+		<tr>
+			<td>30종의 동작(5개의 운동상태)</td>
+			<td>성별, 체형, 키크기 등 다양한 형태</td>
+			<td>200,000 만 Clip (5개 Multiview로 40,000만 Clip수집)</td>
+			<td>COCO 17 Skeleton keypoint</td>
+			<td>정자세, 오류자세를 구분하여 취득</td>
+		</tr>
+	</tbody>
+</table>
+									</div>
+								</li>
+							
+							<!-- //3. 데이터 통계  -->
+							<!-- 4. 교육활용 동영상  -->
+							
+								<li data-accordion-key="mvp">
+									<h3><button type="button">교육활용 동영상</button></h3>
+									<div class="video">
+										<div class="videoWrap"> 
+											<iframe width="560" height="315" id="iframe" src="https://www.youtube.com/embed/jneTpg73hXs" title="피트니스 자세 이미지 교육활용 동영상 보기" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>
+										 
+									</div>
+								</li>
+							
+							<!-- 〓〓〓〓〓〓22.08.09 본부장 긴급요청으로 하드코딩 수정 START〓〓〓〓〓  -->
+							
+							<!-- 〓〓〓〓〓22.08.09 본부장 긴급요청으로 하드코딩 수정 END〓〓〓〓〓  -->
+							<!-- //4. 교육활용 동영상  -->
+							<!-- 5. 저작도구  -->
+							
+								<li data-accordion-key="autool">
+									<h3><button type="button">저작도구</button></h3>
+									<div>
+										<h4>저작도구 설명서 및 저작도구 다운로드</h4>
+										
+											<a onclick="javascript:fnDwldTool('aifile', 'AUTOOL001');" class="button large" target="_blank" title="새창열림" href="#">저작도구 설명서 다운로드</a>
+										
+										
+											<a onclick="javascript:fnDwldTool('aifile', 'AUTOOL002');" class="button large" target="_blank" title="새창열림" href="#">저작도구 다운로드</a>
+										
+									</div>
+								</li>
+							
+							<!-- //5. 저작도구  -->
+							<!-- 기존: 첨부파일 -->
+							<!-- 신규: s3 -->
+							<!-- 6. 활용 AI 모델 및 코드  -->
+							
+								<li data-accordion-key="prcuseAi">
+									<h3><button type="button">활용 AI 모델 및 코드</button></h3>
+									<div>
+										<!-- 기존 -->
+										
+											<h4>AI 모델 상세 설명서 다운로드</h4>
+											
+											
+												<a href="/file/down.do?fileSn=8608&aiModelFileSn=8608&dataSetSn=231" class="button large" title="다운로드" >AI 모델 다운로드</a>
+											
+										
+										<!-- 신규 -->
+										
+										<div class="srchKwrdHighlight">
+											
+										</div>
+									</div>
+								</li>
+							
+							<!-- 7. 성능지표  -->
+							
+								<li data-accordion-key="prfomnc">
+									<h3><button type="button">데이터 성능 지표</button></h3>
+									<div>
+										<h4>데이터 성능 점수</h4>
+											<div class="chartLegend">
+												<div>
+													<i style="background-color: rgb(55, 138, 255); border-radius: 50%;"></i>
+													<span>측정값 (%)</span>
+												</div>
+												<div>
+													<i style="background-color: rgb(220, 57, 18);"></i>
+													<span>기준값 (%)</span>
+												</div>	
+											</div>
+											
+											<div class="dataDetailChart">
+												<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+												<div id="chart_div" style="height: 280px;"></div>
+											</div>
+											<script>
+												$(function(){
+													$(".truncFun").each(function(index){
+														var val = $(this).html();
+														$(this).html(truncFun(val));
+													})
+													
+													$(".hoverAction").click(function(){
+														$("#prfomncScoreList tr").each(function(){
+															if($(this).hasClass('on')){
+																$(this).removeClass('on');
+															}
+														});
+														
+														$(this).toggleClass('on');
+														
+														var pageDataRows = [];
+														
+														chartLegendChange(this);
+														pageDataRows = getOneDataRows(this);
+														corechartBox(pageDataRows, getCdNm(this));
+													})
+													
+													$(window).resize(function(){
+														$("#prfomncScoreList tr.hoverAction")[0].click();
+													})
+													
+													// 첫번째 
+													$("ul.dataContent > li > h3 button").click(function(){
+														$("#prfomncScoreList tr.hoverAction")[0].click();
+													});
+													
+												});
+												
+												const corechartBox = function(pageDataRows, cdNm) {
+													if(!cdNm){
+														cdNm = {};
+														cdNm.idxStdrCdNm = "";
+														cdNm.idxMesureCdNm = "";
+														cdNm.stdrCdNm = "";
+														cdNm.mesureIem = "";
+													}
+													
+													google.charts.load('current', {'packages':['corechart', 'scatter']});
+													google.charts.setOnLoadCallback(drawStuff);
+													let chartArea = { left:'40', width: '94%', height: '70%'};
+													
+													if($(window).outerWidth() < 768){
+														chartArea = { left:'40', width: '90%', height: '70%'};
+													}
+													
+													function drawStuff() {
+														var chartDiv = document.getElementById('chart_div');
+														
+														var data = new google.visualization.DataTable();
+														
+														data.addColumn('number', '항목');
+														data.addColumn('number', cdNm.idxStdrCdNm);
+														data.addColumn({type: 'string', role: 'tooltip'});
+														data.addColumn({type: 'string', role: 'style'});
+														
+														var dataRows = []; 
+														if(pageDataRows){
+															dataRows = pageDataRows; 
+														}
+														
+														data.addRows(dataRows);
+														
+														var materialOptions = {
+															height: 280,
+															//legend: { position: 'top', alignment: 'end' },
+															legend: { position: 'hidden'},
+															chartArea: chartArea,
+															pointSize: 10,
+															hAxis: {title: cdNm.mesureIem, minValue: 0, maxValue: dataRows.length, format: '', textPosition:'none'}	
+															//, vAxis: {title: '점수'}
+														};
+												
+														function drawMaterialChart() {
+															var materialChart = new google.visualization.ScatterChart(chartDiv);
+															materialChart.draw(data, materialOptions);
+														}
+														drawMaterialChart();
+													}
+												}
+												
+												function chartLegendChange(target) {
+													var stdrValue = $($(target).children("td")[5]).children("input")[1].value;
+													var mesureValue = $($(target).children("td")[6]).children("input")[1].value;
+													
+													var charLegendHtml1 = '<div>';
+													charLegendHtml1 += '<i style="background-color: rgb(55, 138, 255); border-radius: 50%;"></i>';
+													charLegendHtml1 += '<span>측정값 ('+stdrValue+')</span></div>';
+													var charLegendHtml2 = '<div>';
+													charLegendHtml2 += '<i style="background-color: rgb(220, 57, 18);"></i>';
+													charLegendHtml2 += '<span>기준값 ('+mesureValue+')</span></div>';
+													
+													$(".chartLegend").html(charLegendHtml1+" "+charLegendHtml2);
+												}
+												
+												function getOneDataRows(target) {
+													var oneDataRows = [];
+													var stdrValue = $($(target).children("td")[5]).children("input")[0].value;
+													var mesureValue = $($(target).children("td")[6]).children("input")[0].value;
+													var indNm = $($(target).children("td")[4]).html();
+													var oneDataRow = [];
+													
+													stdrValue = truncFun(stdrValue);
+													
+													oneDataRow = [];
+													oneDataRow.push(1);
+													oneDataRow.push(stdrValue*1);
+													oneDataRow.push(indNm+", "+stdrValue*1);
+													oneDataRow.push("point {size:5; shape-type:square; color:rgb(220, 57, 18)}");
+													
+													oneDataRows.push(oneDataRow);
+													
+													mesureValue = truncFun(mesureValue);
+													
+													oneDataRow = [];
+													oneDataRow.push(1);
+													oneDataRow.push(mesureValue*1);
+													oneDataRow.push(indNm+", "+mesureValue*1);
+													oneDataRow.push("point {size:5; shape-type:circle; color:rgb(55, 138, 255)}");
+													
+													oneDataRows.push(oneDataRow);
+													
+													return oneDataRows;
+												}
+												
+												function truncFun(value){
+													var result = "";
+													if(value) {
+														var resultList = value.split(".");
+														if(resultList.length > 1) {
+															if(resultList[1].length > 4){
+																result = resultList[0]+"."+ resultList[1].substring(0, 4);
+																return result;
+															} else {
+																return value;
+															}
+														} else {
+															return value;
+														}
+													} else {
+														return value;
+													}
+												}
+												
+												function getCdNm(target){
+													var cdNm = {};
+													cdNm.mesureIem = $($(target).children("td")[1]).html();
+													cdNm.idxStdrCdNm = $($(target).children("td")[4]).html();
+													cdNm.idxMesureCdNm = $($(target).children("td")[6]).html();
+													cdNm.stdrCdNm = $($(target).children("td")[5]).children("input")[1].value;
+													//cdNm.mesureCdNm = $($(target).children("td")[7]).children("input")[1].value;
+													
+													return cdNm;
+												}
+												
+												//사용안함
+												function isNotOneIdx(){
+													var result = false;
+													
+													var idxCdNmTr = $("#prfomncScoreList tr")[2];
+													var idxCdNmFirst = $(idxCdNmTr).children("td.idxCdNm").html()
+													var idxCdNmCnt = 0;
+													
+													$("#prfomncScoreList tr").each(function(){
+														var currCdNm = $(this).children("td.idxCdNm").html();
+														
+														if(currCdNm && idxCdNmFirst != $(this).children("td.idxCdNm").html()){
+															result = true;		
+														}
+													});
+													
+													return result;
+												}
+												
+												function getPageDataRows(target) {
+													var idxCdNm = $(target).children("td.idxCdNm").html();
+													var trList = [];
+													var dataRows = [];
+													
+													$("#prfomncScoreList tr").each(function(){
+														if($(this).children("td.idxCdNm").html() == idxCdNm){
+															trList.push(this);	
+														};
+													});
+													
+													$(trList).each(function(index){
+														var dataIdx = [];
+														var iemOrdr = index+1;
+														var stdrValue = $(this).children("td")[5];
+														var mesureValue = $(this).children("td")[6]; 
+														
+														stdrValue = $(stdrValue).children("input")[0].value;
+														mesureValue = $(mesureValue).children("input")[0].value;
+														
+														dataIdx.push(iemOrdr);
+														dataIdx.push(stdrValue*1);
+														dataIdx.push(mesureValue*1);
+														
+														dataRows.push(dataIdx);
+													});
+													
+													return dataRows;
+												}
+											</script>
+											
+											<div class="dataDetailTable">
+												<h4>데이터 성능 지표</h4>
+												<div class="tableWrap">
+													<table class="data company" id="prfomncScoreList">
+														<caption>데이터 성능 지표</caption>
+														<colgroup>
+															<col style="width:6%;">
+															<col>
+															<col style="width:18%;">
+															<col style="width:16%;">
+															<col style="width:12%;">
+															<col style="width:12%;">
+															<col style="width:12%;">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col" >번호</th>
+																<th scope="col" >측정항목</th>
+																<th scope="col" >AI TASK</th>
+																<th scope="col" >학습모델</th>
+																<th scope="col" >지표명</th>
+																<th scope="col" >기준값 점수</th>
+																<th scope="col" >측정값 점수</th>
+															</tr>
+														</thead>
+														<tbody>
+															
+															<tr class="hoverAction">
+																<td>1</td>
+																<td class="content">운동 종류 추정 정확도</td>
+																<td class="content">Estimation</td>
+																<td>ResNet with TSM(Temporal Shift Module for Efficient Video Understanding)</td>
+																<td class="idxCdNm">mAP</td>
+																<td>
+																	<span class="truncFun">70</span>
+																	 %
+																	<input type="hidden" value="70" />
+																	<input type="hidden" value="%" />
+																</td>
+																<td>
+																	<span class="truncFun">95.89</span>
+																	%
+																	<input type="hidden" value="95.89" />
+																	<input type="hidden" value="%" />
+																</td>
+															</tr>
+															
+															<tr class="hoverAction">
+																<td>2</td>
+																<td class="content">운동 상태 추정 정확도</td>
+																<td class="content">Estimation</td>
+																<td>ResNet with TSM(Temporal Shift Module for Efficient Video Understanding)</td>
+																<td class="idxCdNm">mAP</td>
+																<td>
+																	<span class="truncFun">70</span>
+																	 %
+																	<input type="hidden" value="70" />
+																	<input type="hidden" value="%" />
+																</td>
+																<td>
+																	<span class="truncFun">80.43</span>
+																	%
+																	<input type="hidden" value="80.43" />
+																	<input type="hidden" value="%" />
+																</td>
+															</tr>
+															
+														</tbody>
+													</table>
+												</div>
+												<br/>
+												<p>※ 데이터 성능 지표가 여러 개일 경우 각 항목을 클릭하면 해당 지표의 값이 그래프에 표기됩니다. </p>
+												<p>※ AI모델 평가 지표에 따라 측정값의 범위, 판단 기준이 달라질 수 있습니다. (ex. 오류율의 경우, 낮을수록 좋은 성능을 내는 것으로 평가됩니다) </p>
+												
+											</div>
+									</div>
+								</li>
+							
+							<!-- 8. 품질점수  -->
+							
+							<!-- //6. 활용 AI 모델 및 코드  -->
+							<!-- 9. 어노테이션 포맷 및 데이터 구조  -->
+							
+								<li data-accordion-key="annotation">
+									<h3><button type="button">어노테이션 포맷 및 데이터 구조</button></h3>
+									<div>
+										
+											<h4>설명서 및 활용가이드 다운로드</h4>
+											
+												<a href="/file/down.do?fileSn=8602&dataMnlFileSn=8602&dataSetSn=231" class="button large">데이터 설명서 다운로드</a>
+											
+											
+												<a href="/file/down.do?fileSn=8603&cnstcPrcuseFileSn=8603&dataSetSn=231" class="button large">구축활용가이드 다운로드</a>
+											
+										
+										<div class="srchKwrdHighlight">
+											<p><strong>※&nbsp;</strong><strong>이 데이터에 포함된 인물의 얼굴 등에 대해서는 개인정보 및 초상권의 이용 동의를 받아 제공합니다</strong><strong>.</strong></p>
+
+<p>&nbsp;</p>
+
+<p>데이터 변경이력</p>
+
+<table>
+	<caption>데이터 변경이력</caption>
+	<thead>
+		<tr>
+			<th scope="col">버전</th>
+			<th scope="col">일자</th>
+			<th scope="col">변경내용</th>
+			<th scope="col">비고</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1.2</td>
+			<td>2022.02.07</td>
+			<td>데이터 품질 보완</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>1.1</td>
+			<td>2022.01.11</td>
+			<td>데이터 추가 개방</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>1.0</td>
+			<td>2021.06.18</td>
+			<td>데이터 최초 개방</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>구축목적</p>
+
+<ul>
+	<li>피트니스 데이터 구축을 통해서 Untact시대에 적합한 홈트레이닝 서비스를 만들 수 있는 기초를 만들고, 국가차원의 인공지능 경쟁력을 강화시키기 위함</li>
+</ul>
+
+<p>활용 분야</p>
+
+<ul>
+	<li>홈트레이닝(운동자세 분석 및 추천), AR/MR 서비스(5G 기반 증강현실 컨텐츠), 피트니스 수집 플랫폼(머신러닝 모델 적용), 의료분야(재활치료 및 재활운동 자세 교정, 원격치료) 등</li>
+</ul>
+
+<p>소개</p>
+
+<ul>
+	<li>다양한 자세와 체형을 가진 사람들로부터 3D human pose를 capture하는 것을 넘어서 사람의 다양하고 세밀한 운동 종류 및 상태를 추가적으로 capture하는 것을 통해, 일상생활의 행동을 인식할 뿐만 아니라 운동 동작 및 자세 등과 같은 세밀한 행동을 인식할 수 있는 AI모델을 개발하여 데이터 인프라를 구축하고자 함</li>
+</ul>
+
+<p>구축 내용 및 제공 데이터량</p>
+
+<table>
+	<caption>구축 내용 및 제공 데이터량</caption>
+	<thead>
+		<tr>
+			<th scope="col">동작</th>
+			<th scope="col">수집피사체</th>
+			<th scope="col">촬영 Clip</th>
+			<th scope="col">기본 정보</th>
+			<th scope="col">주요 특징</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		</tr>
+		<tr>
+			<td>30종의 동작(5개의 운동상태)</td>
+			<td>성별, 체형, 키크기 등 다양한 형태</td>
+			<td>200,000 만 Clip (5개 Multiview로 40,000만 Clip수집)</td>
+			<td>COCO 17 Skeleton keypoint</td>
+			<td>정자세, 오류자세를 구분하여 취득</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>대표도면</p>
+
+<p>&nbsp;</p>
+
+<p><img alt="피트니스 자세 이미지-대표도면-데이터 구축 도면" src="https://aihub.or.kr/web-nas/aihub21/files/public/2020-09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B01.PNG" /></p>
+
+<p><strong>데이터 구축 도면</strong></p>
+
+<p>&nbsp;<img alt="피트니스 자세 이미지-대표도면-AI모델링 도면" src="https://aihub.or.kr/web-nas/aihub21/files/public/2020-09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B02_0.PNG" /></p>
+
+<p><strong>AI모델링 도면</strong></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>필요성</p>
+
+<ul>
+	<li>인간 자세 인식은 로봇과 인간의 상호작용과 CCTV를 통한 범죄 및 위험상황 감시를 위해 반드시 필요한 연구분야이며, 많은 컴퓨터 비젼 연구자들에 의해서 오랫동안 연구되어 왔음, 다양성이 높은 비디오들을 모두 포함하는 큰 규모의 데이터 셋 취득의 어려움 때문에 꼭 연구되어야 하는 분야임, 뿐만 아니라, 최근 Untact 시대의 도래로 인하여, 집에서도 운동 동작에 대한 정확한 코칭이 가능한 서비스에 대한 수요가 증대되는 만큼 해당 데이터셋은 무궁무진한 활용 가능성을 품고 있음</li>
+</ul>
+
+<p>데이터 구조</p>
+
+<ul>
+	<li>총 30가지 운동, 운동 별 32개의 운동상태가 정의되어 960개의 Status표현</li>
+</ul>
+
+<table>
+	<caption>데이터 구조</caption>
+	<thead>
+		<tr>
+			<th scope="col">구분</th>
+			<th scope="col">설명</th>
+			<th scope="col">비고</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		</tr>
+		<tr>
+			<td>Annotation<br />
+			No1.</td>
+			<td>운동상태 정의</td>
+			<td>운동 마다 5개의 운동 상태)</td>
+		</tr>
+		<tr>
+			<td>Annotation<br />
+			No2..</td>
+			<td>3D Keypoint Coordinate</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+										</div> 
+									</div>
+								</li>
+							
+							<!-- //7. 어노테이션 포맷 및 데이터 구조  -->
+							<!-- 10. 구축 업체  -->
+							
+								<li data-accordion-key="cnstcEntrps">
+									<h3><button type="button">구축 업체</button></h3>
+									<div>
+										
+											<h4>데이터셋 구축 담당자</h4>
+											<h5 class="srchKwrdHighlight">수행기관(주관) : 슬릭코퍼레이션</h5>
+											
+											
+												<table class="data company">
+													<caption>수행기관(주관)</caption>
+													<thead>
+														<tr>
+															<th scope="col">책임자명</th>
+															<th scope="col">전화번호</th>
+															<th scope="col">대표이메일</th>
+															<th scope="col">담당업무</th>
+														</tr>
+													</thead>
+													<tbody>
+														
+															<tr>
+																<td><span>이대형</span></td>
+																<td><span>02-2135-2556</span></td>
+																<td><span>daehyung@sleek.kr</span></td>
+																<td><span>· 피트니스 자세 이미지 구축 PM/데이터 획득</span></td>
+															</tr>
+														
+													</tbody>
+												</table>
+											
+										
+										
+										
+											<h5>수행기관(참여)</h5>
+											<table class="data company sub">
+												<caption>수행기관(참여)</caption>
+												<thead>
+													<tr>
+														<th scope="col">기관명</th>
+														<th scope="col">담당업무</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+														<tr>
+															<td>데이터연구소</td>
+															<td class="content">· 어노테이션 및 레이블링</td>
+														</tr>
+													
+														<tr>
+															<td>서울대연구소</td>
+															<td class="content">· 데이터 획득/AI 모델링</td>
+														</tr>
+													
+														<tr>
+															<td>위힐드</td>
+															<td class="content">· 응용 서비스 어플리케이션 개발</td>
+														</tr>
+													
+												</tbody>
+											</table>
+										
+										
+										
+										
+											
+												
+													<h5>데이터 관련 문의처</h5>
+													<table class="company">
+														<caption>데이터 관련 문의처</caption>
+														<thead>
+															<tr>
+																<th scope="col">담당자명</th>
+																<th scope="col">전화번호</th>
+																<th scope="col">이메일</th>
+															</tr>
+														</thead>
+														<tbody>
+												
+															<tr>
+																<td><span>이대형(슬릭코퍼레이션)</span></td>
+																<td><span>02-2135-2556(*오후에만 응대가능)</span></td>
+																<td><span>daehyung@sleek.kr</span></td>
+															</tr>
+												
+														</tbody>
+													</table>
+												
+											
+										
+									</div>
+								</li>
+							
+							<!-- //10. 구축 업체  -->
+						</ul>
+					
+					
+					
+				
+			
+			</div>
+			
+			 
+			
+
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".safetyZoneBtn").on("click", function(e){
+			e.preventDefault();
+			if('' == ''){
+				alert("로그인 후 이용가능합니다.");
+                
+                var uri = '/login/login.do?currMenu=107&topMenu=107';
+        		var referer = location.pathname + location.search;
+        		
+        		$('#referer').val(referer);
+                $('#loginForm').attr('action',uri);
+                $('#loginForm').submit();
+			}else{
+				var safeZoneWin;
+		    	var url = $(this).attr("href");
+				
+				if(safeZoneWin != null){
+					safeZoneWin.close();
+				}
+				
+				safeZoneWin = window.open(url ,"safeZoneWin");
+				safeZoneWin.focus();
+			}
+		});
+	});
+</script>
+
+
+
+<div class="tabDiv2 safetyZone">  
+	    <div class="health ">  
+	        <span>보건의료 데이터 개방 안내</span>
+	        <p>보건의료 데이터는 온라인 및 오프라인 안심존을 통해 개방됩니다.</p>  
+            <a href="/intrcn/safetyzoneintrcn.do?currMenu=306&topMenu=105" class="button white large">안심존이란</a>
+	        <a href="/web-nas/aihub21/files/docs/safezone/헬스케어_안심존_통합_사용자_매뉴얼.pdf" class="button white large" target="_blank" title="새 창 열림 - 안심존 이용메뉴얼">안심존 이용메뉴얼</a>
+	        <a href="https://safezone.aihub.or.kr/Request/Resource?datasetSn=" class="safetyZoneBtn button blue large safetyZone" target="_blank" title="새 창 열림 - 안심존 이용신청">안심존 이용신청</a>
+	        <a href="https://safezone.aihub.or.kr/pages/View/ViewRequestResource" class="safetyZoneBtn button blue large" target="_blank" title="새 창 열림 - 데이터 열람신청">데이터 열람신청</a>
+	    </div>
+	
+	    <ul class="fold safetyZone">
+	        <li>
+	            <h3><button type="button">안심존 소개</button></h3>
+	            <div>
+	                <p>
+	                    인터넷과 물리적으로 분리된 온라인·오프라인 공간으로 의료 데이터를 포함하여 보안 조치가 요구되는 데이터를 다운로드 없이 접근하고 분석 가능<br>
+	                    * 온라인 안심존 : 보안이 보장된 온라인 네트워크를 통해 집, 연구실, 사무실 등 어디서나 접속하여 데이터에 접근하고 분석<br>
+	                    * 오프라인 안심존 : 추가적인 보안이 필요한 데이터를 대상으로 지정된 물리적 공간에서만 접속하여 데이터에 접근하고 분석
+	                </p>
+	            </div>
+	        </li>
+	        <li>
+	            <h3><button type="button">안심존 이용절차</button></h3>
+	            <div>
+	                <ol>
+	                    <li><span>AI 허브 접속</span><br><em>신청자</em></li>
+	                    <li><span>안심존<br>사용신청</span><em>신청자<b>신청서류 제출*</b></em></li>
+	                    <li><span>심사</span><em>구축기관</em></li>
+	                    <li><span>승인</span><em>구축기관</em></li>
+	                    <li><span>데이터 분석 활용</span><em>신청자</em></li>
+	                    <li><span>분석모델반출</span><em>신청자</em></li>
+	                </ol>
+	            </div>
+	        </li>
+	        <li>
+	            <h3><button type="button">안심존사용신청서 및 첨부서류목록</button></h3>
+	            <div>
+	                <p>
+	                    1. 기관생명윤리위원회(IRB) 심의 결과 통지서 <span><a href="/web-nas/aihub21/files/docs/safezone/irb.pdf" target="_blank" title="새창열림">[IRB 알아보기]</a></span>
+	                    <span><a href="/web-nas/aihub21/files/docs/safezone/안심존_공용_기관생명윤리위원회(IRB)_심의신청_가이드라인_v4.0.pdf" target="_blank" title="새창열림">[공용IRB 심의신청 가이드라인]</a></span>
+	                    <br>
+	                    2. 기관생명윤리위원회(IRB) 승인된 연구계획서<br>
+	                    3. 신청자 소속 증빙 서류 (재직증명서, 재학증명서, 근로계약서 등 택1)<br>
+	                    4. 안심존 이용 신청서 <a href="/web-nas/aihub21/files/docs/safezone/safezone_application.hwp" title="다운로드">[다운로드]</a><br>
+	                    5. 보안서약서 <a href="/web-nas/aihub21/files/docs/safezone/security_pledge.hwp"  title="다운로드">[다운로드]</a><br>
+	                    <strong>※ 상기 신청서 및 첨부 서류를 완비한 후 신청을 진행하셔야 정상적으로 절차가 이루어집니다.</strong>
+	                </p>
+	            </div>
+	        </li>
+	        <li>
+	            <h3><button type="button">안심존 이용문의</button></h3>
+	            <div>
+	                <p>
+	                    신청 및 이용관련 문의는 <b>safezone1@aihub.kr</b> <span>또는 <b>02-525-7708, 7709</b>로 문의</span>
+	                </p>
+	            </div>
+	        </li>
+	    </ul>
+</div>
+
+			
+			
+			
+
+
+
+
+ 
+<!-- 퍼블 스크립트 -->
+<script>
+$(function(){
+	$(document).on('click','.fileTreeBox .treeBox a:not(.btn)',function(){
+		$(this).toggleClass('on');
+		if($(this).hasClass('on')){
+			$(this).siblings('ul').slideDown();
+		} else {
+			$(this).siblings('ul').slideUp();
+		}
+		return false;
+	})
+})
+</script>
+<script>
+$(document).ready(function() {
+	pageInitViewApiDwld();
+});
+
+function pageInitViewApiDwld(){
+	ajaxS3FileList();
+}
+
+// S3 파일 목록 조회 AJAX
+function ajaxS3FileList(){
+	var dataSetSn = '231';
+	var dataPckageSn = '';
+	
+	var params = {};
+	params.dataSetSn = dataSetSn;
+	params.dataPckageSn = dataPckageSn;
+	
+	aihub.ajax("/aihubdata/data/aJaxS3FileList.do;jsessionid=79011BFA108FA3E9CEC47EC8F42079CA.0ca6d28be00600041", null, null, params , function (result){
+		if (result.success) {
+			
+			// 리스트 추가
+			if(result.list.length > 0){
+				appendListDom(result.list);
+			
+			}else{
+				appendEmptyListMsg();
+			}
+			
+		}else{
+			console.log('error msg :: ' + result.msg);
+			appendEmptyListMsg();
+		}
+	});
+}
+
+// 리스트 미존재 메시지 출력
+function appendEmptyListMsg(){
+	var html = '<li>파일 목록이 존재하지 않습니다.</li>';
+	$('.treeBox').append(html);
+	$('#btnTotalDown').hide();
+}
+
+function appendListDom(list) {
+	var roots = {};
+	var rootOrder = [];
+	
+	for (var i = 0; i < list.length; i++) {
+		var data = list[i];
+		var keys = data.fileStreCours.split("/");
+		
+		var rootName = keys[0];
+		
+		if (!roots[rootName]) {
+			roots[rootName] = { name: rootName, children: {}, childOrder: [], files: [] };
+			rootOrder.push(rootName);
+		}
+		
+		var node = roots[rootName];
+		for (var k = 1; k < keys.length - 1; k++) {
+			var part = keys[k];
+			
+			if (!node.children[part]) {
+				node.children[part] = { name: part, children: {}, childOrder: [], files: [] };
+				node.childOrder.push(part);
+			}
+			node = node.children[part];
+		}
+		
+		// 파일
+		var filename = keys[keys.length - 1];
+		node.files.push({ name: filename, fileSize: data.fileSize, fileSn: data.fileSn });
+	}
+	
+	renderTreeDom(roots, rootOrder);
+}
+
+function renderTreeDom(roots, rootOrder) {
+	var html = "";
+	for (var r = 0 ; r < rootOrder.length ; r++) {
+		var rname = rootOrder[r];
+		var rnode = roots[rname];
+		html += '<li><a href="#" class="on">' + rname + '</a>';
+		html += renderChildren(rnode);
+		html += '</li>';
+	}
+	
+	$(".treeBox").html(html);
+}
+
+function renderChildren(node) {
+	var html = "";
+	if (node.childOrder.length > 0 || node.files.length > 0) {
+		html += "<ul>";
+		// 폴더
+		for (var i = 0; i < node.childOrder.length; i++) {
+			var cname = node.childOrder[i];
+			var child = node.children[cname];
+			html += '<li><a href="#" class="on">' + cname + '</a>';
+			html += renderChildren(child);
+			html += '</li>';
+		}
+		
+		// 파일
+		for (var j = 0; j < node.files.length; j++) {
+			html += renderFileDom(node.files[j]);
+		}
+		html += '</ul>';
+	}
+	return html;
+}
+
+function renderFileDom(file) {
+	var html = '';
+	html += '<li>';
+	html += file.name + ' l ' + getfileSize(file.fileSize) + ' l key: ' + file.fileSn;
+	html += '	<div>';
+	html += '		<a href="javascript:copyToClipboard(' + file.fileSn + ')" class="btn line">파일키 복사</a> ';
+	html += '		<a href="javascript:aJaxCheckApiDwld(' + file.fileSn + ')" class="btn red">다운로드</a>';
+	html += '	</div>';
+	html += '</li>';	
+	return html;
+}
+
+// 파일키 클립보드 복사
+function copyToClipboard(str) {
+	var tempInput = $("<input>");
+	$("body").append(tempInput);
+	tempInput.val(str).select();
+
+	document.execCommand("copy");
+	
+	tempInput.remove();
+	alert("파일키가 복사되었습니다.");
+}
+
+// 다운로드 신청하기 - 미신청·접수·반려
+function aJaxCheckApiDwld(fileSn) {
+	var dataSetSn = '231';
+	var dataPckageSn = '';
+	var realmDataSetList = '[egovframework.com.dataset.service.DataSetVO@57ff4249[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=71664,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=무릎 관절염 켈그렌-로렌스 분류(K-L grade) 데이터,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=21238,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202404111051538120,fileNm=무릎 관절염 켈그렌-로렌스 분류(K-L grade) 데이터.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=], egovframework.com.dataset.service.DataSetVO@4941da59[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=202,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=구강 질환 진단 의료 영상,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=8485,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202205200934526190,fileNm=34106_구강-질환-진단-의료-영상.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=], egovframework.com.dataset.service.DataSetVO@6cb06cc7[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=242,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=건강관리를 위한 음식 이미지,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=7740,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202204270938457160,fileNm=27674_건강관리를-위한-음식-이미지.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=], egovframework.com.dataset.service.DataSetVO@1c9234e8[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=638,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=수면장애 진단을 위한 적외선 수면 동영상 데이터,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=10027,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202207110338578580,fileNm=수면장애-진단을-위한-적외선-수면-동영상-데이터.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=], egovframework.com.dataset.service.DataSetVO@132798a4[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=71400,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=자가 수면 검사 데이터,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=17828,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202305030406580620,fileNm=자가 수면 검사 데이터.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=], egovframework.com.dataset.service.DataSetVO@1e28a40c[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=71982,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=네일 및 페디큐어 데이터,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=27853,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202606250533257890,fileNm=네일 및 페디큐어 데이터.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=], egovframework.com.dataset.service.DataSetVO@4eb06fc1[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=243,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=치매 진단 의료 영상,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=8583,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202205200226570370,fileNm=34102_치매-진단-의료-영상.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=], egovframework.com.dataset.service.DataSetVO@3ab52655[tableNm=DATA_SET,srchdataClCode=<null>,srchDataClDetailCode=<null>,srchDataRealmCode=<null>,srchDataTy=<null>,srchDataCnstcYear=<null>,srchOneDataTy=<null>,srchOneDataCnstcYear=<null>,srchOptnCnd=<null>,srchOrder=<null>,srchDetailCnd=<null>,srchPagePer=<null>,dataSetSnByUpperDCSearchList=<null>,dataPckageSnByUpperDCSearchList=<null>,srchEliteTeamCode=<null>,modifyYn=N,reloadYn=Y,intrstDataAt=<null>,reDataReqstAt=<null>,dataPckageYn=N,aihubDataSe=<null>,fileSeCode=<null>,excInsttList=<null>,mnnstList=<null>,dataSetRefrncList=<null>,prcuseCaseSns=<null>,dataTy=<null>,dataTys=<null>,dataTyList=<null>,aiLrnDataMainKwrd=<null>,aiLrnDataMainKwrds=<null>,aiLrnDataMainKwrdList=<null>,addItemNm=<null>,addItem=<null>,dataSetIemList=<null>,dataChghstList=<null>,dataSetHistList=<null>,s3ArrayList=<null>,nfsDataRefrncList=<null>,dataSetSnList=<null>,tmprAsisUrlSn=<null>,requstUrl=<null>,requstDt=<null>,emplyrSn=<null>,rnum=<null>,dataSetSn=71551,beforeSn=<null>,menuSn=<null>,dataOid=<null>,dataNm=고막 내시경 검사 이미지 데이터,dataClCode=<null>,dataClNm=<null>,dataClDetailCode=<null>,dataClDetailNm=<null>,dataRealmCode=<null>,dataRealmNm=<null>,safetySpceAt=<null>,atmcConfmAt=<null>,indvdlzConfmCode=<null>,indvdlzConfmNm=<null>,dataIntrcn=<null>,cnstcPurps=<null>,reprsntImageFileSn=18377,reprsntImageFileNm=<null>,reprsntImageText=<null>,dataRelmCode=<null>,dataRelmNm=<null>,dataTyCode=<null>,dataTyNm=<null>,dataTyText=<null>,dataFom=<null>,dataOrigin=<null>,lblTy=<null>,lblFom=<null>,dataPrcuseSvc=<null>,dataCnstcYear=<null>,dataCnstcQy=<null>,dataMnlFileSn=<null>,dataMnlFileNm=<null>,cnstcPrcuseFileSn=<null>,cnstcPrcuseFileNm=<null>,smpleFileSn=<null>,smpleFileNm=<null>,detailDataDc=<null>,dataStatsDc=<null>,aiModelDcFileSn=<null>,aiModelDcFileNm=<null>,aiModelFileSn=<null>,aiModelFileNm=<null>,autoolDcFileSn=<null>,autoolDcFileNm=<null>,autoolFileSn=<null>,autoolFileNm=<null>,prcuseAiModelDc=<null>,mvpUrl=<null>,mvpDc=<null>,mvpImageFileSn=<null>,mvpAltrtvText=<null>,mnnstNm=<null>,rdcnt=<null>,dwldCo=<null>,useAt=<null>,useAtChgDtMan=<null>,useAtUpdusrId=<null>,frstRegistPnttm=<null>,frstRegisterId=<null>,lastUpdtPnttm=<null>,lastUpdtYm=<null>,lastUpdusrId=<null>,metaViewAt=<null>,statsViewAt=<null>,edcActMvpViewAt=<null>,autoolViewAt=<null>,prcuseAiViewAt=<null>,detailViewAt=<null>,cnstcEntrpsInfoViewAt=<null>,prcuseCaseViewAt=<null>,dwldStpgeAt=<null>,dwldStpgeWords=<null>,safetyZoneDataSetKey=<null>,dwldCnt=<null>,intrstDataCnt=<null>,filePath=/web-nas/aihub21/files/public/DATA_SET202307100527342980,fileNm=고막-내시경-검사-이미지-데이터.png,newAt=<null>,tmprAt=<null>,genAiAt=<null>,s3FileCnt=<null>,s3FileSize=0,gdccAt=<null>,gdccAtWords=<null>,eventTrgetDataSetYn=<null>,randomSize=0,reqstSttusCd=<null>,safetyZoneKbigAt=<null>,dataCreatMthdSe=<null>,dataCreatMthdSeNm=<null>,nfsDataAt=<null>,nfsDataAtWords=<null>,codeEtc=<null>,dataTyListStr=<null>,dataPckageSn=<null>,upcyDataAt=<null>,upcyDataSn=<null>,upcyDataNm=<null>,upcyDataCnstcYear=<null>,brdcstVidoDataAt=<null>,eliteTeamCode=<null>,searchCondition=,searchKeyword=,searchUseYn=,pageIndex=1,pageUnit=10,pageSize=10,firstIndex=1,lastIndex=1,recordCountPerPage=10,searchKeywordFrom=,searchKeywordTo=,fromDate=,toDate=]]';
+	
+	var data = {};
+	data.dataSetSn = dataSetSn;
+	data.dataPckageSn = dataPckageSn;
+	
+	if(!isEmpty(fileSn)){
+		data.fileSn = fileSn;
+	}
+	
+	showLoader();
+	aihub.ajax("/apishell/aJaxCheckApiDwld.do;jsessionid=79011BFA108FA3E9CEC47EC8F42079CA.0ca6d28be00600041", null, null, data, function (data){
+		hideLoader();
+		if (data.success) {
+			var uri = '/apishell/dwld.do';
+				$('#fileSn').val(fileSn);
+				$('#apiForm').attr('action',uri);
+				$('#apiForm').attr('target','_blank');
+				$('#apiForm').submit();
+			
+		} else {
+			alert(data.msg);
+			if(data.code == 'NOT_LOGIN'){// 비로그인
+				var uri = '/login/login.do?currMenu=107&topMenu=107';
+				var referer = location.pathname + location.search;
+				
+				$('#referer').val(referer);
+				$('#loginForm').attr('action',uri);
+				$('#loginForm').submit();
+				
+			}else if(data.code == 'NOT_DATA_REQST'){// 데이터 미신청
+				var uri = '/aihubdata/data/dwld.do' + param;
+				var referer = location.pathname + location.search;
+				
+				$('#apiReferer').val(referer);
+				$('#apiForm').attr('action',uri);
+				$('#apiForm').attr('target','');
+				$('#apiForm').submit();
+			}
+		}
+	});
+}
+</script>
+<form name="apiForm" id="apiForm" method="post">
+	<input type="hidden" name="dataSetSn" value="231">
+	<input type="hidden" name="dataPckageSn" value="">
+	<input type="hidden" name="referer" id="apiReferer" />
+	<input type="hidden" name="fileSn" id="fileSn">
+</form>
+<div class="tabDiv3">
+		<div class="contentWrap">
+			<div class="grayBox">
+				<p>데이터셋 다운로드 승인이 완료 된 후 API 다운로드 서비스를 이용하실 수 있습니다.</p>
+				<p>API 다운로드 파일은 분할 압축되어 다운로드 됩니다. 분할 압축 해제를 위해서는 분할 압축 파일들의 병합이 필요하며 리눅스 명령어 사용이 필요합니다.</p>
+				<p>리눅스 OS 계열에서 다운로드 받으시길 권장하며 윈도우에서 파일 다운로드 시 wsl(리눅스용 윈도우 하위 시스템) 설치가 필요합니다.</p>
+				<p>※ 파일 병합 리눅스 명령어</p>
+				<p>find "폴더경로" -name "파일명.zip.part*" -print0 | sort -zt'.' -k2V | xargs -0 cat > "파일명.zip" </p>
+				<p> - 해당 명령어 실행 시, 실행 경로 위치에 병합 압축 파일이 생성됩니다.</p>
+				<p> - 병합된 파일 용량이 0일 경우, 제대로 병합이 되지 않은 상태이니 "폴더경로"가 제대로 입력되었는지 확인 부탁드립니다.</p>
+				<p>※ 데이터셋 소개 페이지에서 다운로드 버튼 클릭하여 승인이 필요합니다.</p>
+			</div>
+		</div>
+
+		<div class="fileTreeBox pt0">
+			<div class="contentWrap">
+				<div class="flex">
+				<h3>파일 목록</h3> 
+					<a href="javascript:aJaxCheckApiDwld('')" class="button" id="btnTotalDown" title="다운로드"><i class="icoDown"></i>전체 다운로드</a>
+					<a href="https://api.aihub.or.kr/api/aihubshell.do" class="button blue" title="다운로드">AI 허브 Shell 다운로드</a>
+					
+					<a href="/devsport/apishell/list.do?currMenu=403&topMenu=100" class="button white">AI 허브 오픈 API 이용안내</a>
+				</div>
+				<ul class="treeBox">
+				</ul>
+			</div>
+		</div>
+</div>
+			
+			
+			
+
+
+
+
+
+<div class="tabDiv4">
+	<div class="offlineUseBox">
+		<i></i>
+		 <h3>오프라인 데이터 이용 안내</h3>
+		 <p class="tit">본 데이터는 <strong>K-ICT 빅데이터센터</strong>에서도 이용하실 수 있습니다.</p>
+		 <div class="grayBox">
+		 	K-ICT 빅데이터센터는 데이터 안심구역으로 지정되어 <br />
+		 	다양한 데이터(미개방 데이터 포함)를 분석할 수 있는 오프라인 분석공간을 제공하고 있습니다.
+		 </div>
+		 <p class="text">데이터 안심구역 이용절차 및 신청은 K-ICT빅데이터센터 홈페이지를 참고하시기 바랍니다.</p>
+		 
+		 <div class="buttonBox">
+		 	<a href="https://kbig.kr/portal/kbig/safezone.page" class="button large2 white blue" target="_blank" title="새 창 열림 - K-ICT 빅데이터센터 이동">K-ICT 빅데이터센터 이동</a>
+		 </div>
+	</div>
+</div>
+			
+			
+			
+
+
+
+
+
+<div class="tabDiv5">
+	<div class="imgInfoBox">
+		<p class="img"><img src="../../static/image/search/img_national_1.png" alt="국방데이터 이용신청 탭 이미지" /></p>
+		<h4>국방데이터 개방 안내</h4>
+			
+				
+				
+					<p class="text">본 데이터는 국방데이터로 군사 보안에 따라 AI허브에서 데이터를 제공하지 않으며, <br />군 담당자를 통한 별도의 사용 신청이 필요합니다.</p>
+			 	
+			
+	</div>
+	
+	
+	
+	
+	
+</div>
+			
+			
+			
+
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".safetyZoneBtn").on("click", function(e){
+			e.preventDefault();
+			if('' == ''){
+				alert("로그인 후 이용가능합니다.");
+                
+                var uri = '/login/login.do?currMenu=107&topMenu=107';
+        		var referer = location.pathname + location.search;
+        		
+        		$('#referer').val(referer);
+                $('#loginForm').attr('action',uri);
+                $('#loginForm').submit();
+			}else{
+				var safeZoneWin;
+		    	var url = $(this).attr("href");
+				
+				if(safeZoneWin != null){
+					safeZoneWin.close();
+				}
+				
+				safeZoneWin = window.open(url ,"safeZoneWin");
+				safeZoneWin.focus();
+			}
+		});
+	});
+</script>
+<div class="tabDiv6 safetyZone">
+	    <div class="health">
+	        <span>방송영상 데이터 개방 안내</span>
+	        <p>방송영상 데이터는 열람서비스를 통해 개방됩니다.</p>
+	        <a href="/intrcn/safetyzoneintrcn.do?currMenu=306&topMenu=105" class="button white large">안심존이란</a>
+	        <a href="/web-nas/aihub21/files/docs/safezone/헬스케어_안심존_통합_사용자_매뉴얼.pdf" class="button white large" target="_blank" title="새 창 열림 - 안심존 이용메뉴얼">안심존 이용메뉴얼</a>
+	        <a href="https://safezone.aihub.or.kr/pages/View/ViewRequestResource" class="safetyZoneBtn button blue large" target="_blank" title="새 창 열림 - 데이터 열람신청">데이터 열람신청</a>
+	    </div>
+	
+	    <ul class="fold safetyZone">
+	        <li>
+	            <h3><button type="button">안심존 소개</button></h3>
+	            <div>
+	                <p>
+	                    인터넷과 물리적으로 분리된 온라인·오프라인 공간으로 의료 데이터를 포함하여 보안 조치가 요구되는 데이터를 다운로드 없이 접근하고 분석 가능<br>
+	                    * 온라인 안심존 : 보안이 보장된 온라인 네트워크를 통해 집, 연구실, 사무실 등 어디서나 접속하여 데이터에 접근하고 분석<br>
+	                    * 오프라인 안심존 : 추가적인 보안이 필요한 데이터를 대상으로 지정된 물리적 공간에서만 접속하여 데이터에 접근하고 분석
+	                </p>
+	            </div>
+	        </li>
+	        <li>
+	            <h3><button type="button">안심존 이용절차</button></h3>
+	            <div>
+	                <ol>
+	                    <li><span>AI 허브 접속</span><br><em>신청자</em></li>
+	                    <li><span>안심존<br>사용신청</span><em>신청자<b>신청서류 제출*</b></em></li>
+	                    <li><span>심사</span><em>구축기관</em></li>
+	                    <li><span>승인</span><em>구축기관</em></li>
+	                    <li><span>데이터 분석 활용</span><em>신청자</em></li>
+	                    <li><span>분석모델반출</span><em>신청자</em></li>
+	                </ol>
+	            </div>
+	        </li>
+	        <li>
+	            <h3><button type="button">안심존사용신청서 및 첨부서류목록</button></h3>
+	            <div>
+	                <p>
+	                    1. 기관생명윤리위원회(IRB) 심의 결과 통지서 <span><a href="/web-nas/aihub21/files/docs/safezone/irb.pdf" target="_blank" title="새창열림">[IRB 알아보기]</a></span>
+	                    <span><a href="/web-nas/aihub21/files/docs/safezone/안심존_공용_기관생명윤리위원회(IRB)_심의신청_가이드라인_v4.0.pdf" target="_blank" title="새창열림">[공용IRB 심의신청 가이드라인]</a></span>
+	                    <br>
+	                    2. 기관생명윤리위원회(IRB) 승인된 연구계획서<br>
+	                    3. 신청자 소속 증빙 서류 (재직증명서, 재학증명서, 근로계약서 등 택1)<br>
+	                    4. 안심존 이용 신청서 <a href="/web-nas/aihub21/files/docs/safezone/safezone_application.hwp" title="다운로드">[다운로드]</a><br>
+	                    5. 보안서약서 <a href="/web-nas/aihub21/files/docs/safezone/security_pledge.hwp"  title="다운로드">[다운로드]</a><br>
+	                    <strong>※ 상기 신청서 및 첨부 서류를 완비한 후 신청을 진행하셔야 정상적으로 절차가 이루어집니다.</strong>
+	                </p>
+	            </div>
+	        </li>
+	        <li>
+	            <h3><button type="button">안심존 이용문의</button></h3>
+	            <div>
+	                <p>
+	                    신청 및 이용관련 문의는 <b>safezone1@aihub.kr</b> <span>또는 <b>02-525-7708, 7709</b>로 문의</span>
+	                </p>
+	            </div>
+	        </li>
+	    </ul>
+</div>
+
+		</div>
+		
+		<!-- ---------- connection ------------>
+		<div class="tabDiv1">
+			<div class="dataConnection">
+				
+					<div class="contentWrap">
+						<h3>연관 데이터</h3>
+						<div class="swiperBox">
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71664" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202404111051538120" alt="무릎 관절염 켈그렌-로렌스 분류(K-L grade) 데이터"></span>
+										
+										
+									
+									<p class="text">무릎 관절염 켈그렌-로렌스 분류(K-L grade) 데이터</p>
+								</a>
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=202" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202205200934526190" alt="구강 질환 진단 의료 영상"></span>
+										
+										
+									
+									<p class="text">구강 질환 진단 의료 영상</p>
+								</a>
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=242" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202204270938457160" alt="건강관리를 위한 음식 이미지"></span>
+										
+										
+									
+									<p class="text">건강관리를 위한 음식 이미지</p>
+								</a>
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=638" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202207110338578580" alt="수면장애 진단을 위한 적외선 수면 동영상 데이터"></span>
+										
+										
+									
+									<p class="text">수면장애 진단을 위한 적외선 수면 동영상 데이터</p>
+								</a>
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71400" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202305030406580620" alt="자가 수면 검사 데이터"></span>
+										
+										
+									
+									<p class="text">자가 수면 검사 데이터</p>
+								</a>
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71982" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202606250533257890" alt="네일 및 페디큐어 데이터"></span>
+										
+										
+									
+									<p class="text">네일 및 페디큐어 데이터</p>
+								</a>
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=243" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202205200226570370" alt="치매 진단 의료 영상"></span>
+										
+										
+									
+									<p class="text">치매 진단 의료 영상</p>
+								</a>
+							
+								<a href="/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=71551" class="list">
+									
+										
+												<span class="img"><img src="/web-nas/aihub21/files/public/DATA_SET202307100527342980" alt="고막 내시경 검사 이미지 데이터"></span>
+										
+										
+									
+									<p class="text">고막 내시경 검사 이미지 데이터</p>
+								</a>
+							
+						</div>
+					</div>
+				
+				<div class="buttonBox">
+					<a href="javascript:fnList('');" class="button large white">목록</a>
+				</div>
+			</div>
+		</div>
+</body>
+
+
+	</section>
+    
+
+
+
+
+
+
+<footer id="footer">
+	<div class="footerTop">
+            <div class="contentWrap">
+                <span class="link">
+                    <a href="https://www.msit.go.kr" title="새 창 열림" target="_blank" class="btnMist"><span>과학기술정보통신부</span></a>
+                    <a href="https://www.nia.or.kr" title="새 창 열림" target="_blank" class="btnNia"><span>NIA - 한국지능정보사회진흥원</span></a>
+                </span>
+                
+                <span class="media">
+		            <strong>SOCIAL MEDIA</strong>
+		            
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+			            	
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+		            			<!-- a태그에 클래스 추가해주세요 icoSns1 ~3  - 퍼블요청 -->
+								<a href="https://www.facebook.com/Al-Hub-108519080826852/" title="페이스북 새 창 열림" target="_blank" class="icoSns1">
+			             			<span>페이스북</span>
+								</a>
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+		            			<!-- a태그에 클래스 추가해주세요 icoSns1 ~3  - 퍼블요청 -->
+								<a href="https://www.youtube.com/channel/UCmMgn0-i7HfHNsxUYANXclw" title="유튜브 새 창 열림" target="_blank" class="icoSns2">
+			             			<span>유튜브</span>
+								</a>
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+		            			<!-- a태그에 클래스 추가해주세요 icoSns1 ~3  - 퍼블요청 -->
+								<a href="https://blog.naver.com/nia-aidata" title="블로그 새 창 열림" target="_blank" class="icoSns3">
+			             			<span>블로그</span>
+								</a>
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            		
+							
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		            	
+					
+		        </span>
+            </div>
+    </div>
+    <div class="contentWrap">
+        <p class="text">개인정보보호 책임자 : 양현수 안전경영관리단장</p>
+        <address>
+            <strong>CONTACT.</strong>
+            한국지능정보사회진흥원 : 대구광역시 동구 첨단로 53 (41068)
+        </address>
+
+        <span class="site">
+        	
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+            	<a href="/useStplat.do?currMenu=110&topMenu=110">
+             		이용약관
+				</a>
+        		
+			
+        		
+            	<a href="/indvdlinfoProcessPolcy.do?currMenu=111&topMenu=111">
+             		개인정보처리방침
+				</a>
+        		
+			
+        		
+            	<a href="/siteMapng.do?currMenu=112&topMenu=112">
+             		사이트맵
+				</a>
+        		
+			
+        		
+            	<a href="/dwldPrgmInstall.do?currMenu=229&topMenu=229">
+             		다운로드 프로그램 설치
+				</a>
+        		
+			
+        		
+			
+        		
+			
+        		
+            	<a href="/intrcn/cttpc.do?currMenu=236&topMenu=105">
+             		연락처 안내
+				</a>
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        		
+			
+        </span>
+
+		<div class="right">
+			<a href="http://www.i-award.or.kr/Web/Prize/2022/Awarded01.aspx" target="_black" title="새창열림" class="webAward">
+					웹 어워드 코리아 2022년 부문별 통합대상 화면으로 이동
+				</a>
+			<a href="https://www.webwatch.or.kr/watch/certify/wa/list" target="_black" title="새창열림" class="icoWA">
+				웹접근성 인증마크 - 웹와치(webwatch) : 2023.11.7 ~ 2024.11.6
+			</a>
+	        <span class="family">
+	            <a href="#family">Family Site</a>
+	            <span id="family">
+	            	
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+							<a href="https://www.msit.go.kr/index.do" title="과학기술정보통신부 새 창 열림" target="_blank">
+		             			과학기술정보통신부
+							</a>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+							<a href="https://www.nia.or.kr/site/nia_kor/main.do" title="한국지능정보사회진흥원 새 창 열림" target="_blank">
+		             			한국지능정보사회진흥원
+							</a>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+							<a href="https://www.nipa.kr" title="정보통신산업진흥원 새 창 열림" target="_blank">
+		             			정보통신산업진흥원
+							</a>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+							<a href="https://www.etri.re.kr/kor/main/main.etri" title="한국전자통신연구원 새 창 열림" target="_blank">
+		             			한국전자통신연구원
+							</a>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+	            </span>
+	        </span>
+	    </div>
+    </div>
+</footer>
+</body>
+<script type="text/javascript">
+	/* 22.12.19 garden - currMenu, topMenu 없는 값일 경우 메인 페이지 이동  */
+	const menuCheckVal= 'true';
+	if(!JSON.parse(menuCheckVal)){
+		alert('');
+		const serverName = 'aihub.or.kr';
+		let returnServer;
+		switch(serverName){
+			case 'localhost' : returnServer = 'http://'+ serverName+ ':80';break;
+			case '27.96.150.88' : returnServer = 'http://'+serverName+ ':80';break;
+			default : returnServer = "https://aihub.or.kr";
+		}
+		location.href = returnServer;
+	}
+
+</script>
+    <!-- Google Tag Manager (noscript) 22.11.07 GI -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND2SG5R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+</html>

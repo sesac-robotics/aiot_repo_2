@@ -1,0 +1,3287 @@
+{
+  "scope": "all_v2_references_and_v7_hyperparameter_selection_previously_exposed; recheck_not_independent_final",
+  "selection_sha256": "e70e18f567ad567892f04cf93513c5fcec5699607f9c99367528b78e07040a4c",
+  "checks": {
+    "baseline": {
+      "summary": {
+        "reference_attempts": 7,
+        "matched_attempts": 7,
+        "natural_negative_episodes": 8,
+        "false_completions": 0,
+        "invalid_phase_windows": 0,
+        "Y_definite_within_0_2": 2,
+        "Y_worst_error_sum": 2.2,
+        "Y_minimum_error_gt_0_2": 2,
+        "phase_definite_within_0_2": 10,
+        "phase_comparisons": 21,
+        "terminal_definite_within_0_2": 4,
+        "terminal_comparisons": 7,
+        "source_event_counts": {
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "positive": [
+        {
+          "id": "V39_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 4.2,
+              "reference": [
+                4.3,
+                4.5
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 6.4,
+              "reference": [
+                6.3,
+                6.5
+              ],
+              "min_error": 0,
+              "worst_error": 0.1,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 7.6,
+              "reference": [
+                7.7,
+                7.8
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 8.0,
+            "reference": [
+              8.1,
+              8.2
+            ],
+            "min_error": 0.1,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            42,
+            80
+          ]
+        },
+        {
+          "id": "V39_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 9.2,
+              "reference": [
+                9.3,
+                9.5
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 10.8,
+              "reference": [
+                10.9,
+                11.0
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 11.9,
+              "reference": [
+                12,
+                12.1
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 12.3,
+            "reference": [
+              12.4,
+              12.5
+            ],
+            "min_error": 0.1,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            92,
+            123
+          ]
+        },
+        {
+          "id": "V39_review_cycle3",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 13.4,
+              "reference": [
+                13.3,
+                13.5
+              ],
+              "min_error": 0,
+              "worst_error": 0.1,
+              "definite_within_0_2": true
+            },
+            "T": {
+              "predicted": 15.2,
+              "reference": [
+                15.3,
+                15.4
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 16.2,
+              "reference": [
+                16.4,
+                16.6
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 16.6,
+            "reference": [
+              16.8,
+              17.0
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            134,
+            166
+          ]
+        },
+        {
+          "id": "V41_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 3.2,
+              "reference": [
+                3.5,
+                3.7
+              ],
+              "min_error": 0.3,
+              "worst_error": 0.5,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 5.0,
+              "reference": [
+                5.1,
+                5.3
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 5.8,
+              "reference": [
+                6,
+                6.2
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 6.2,
+            "reference": [
+              6.4,
+              6.6
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            32,
+            62
+          ]
+        },
+        {
+          "id": "V41_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 7.5,
+              "reference": [
+                7.8,
+                8
+              ],
+              "min_error": 0.3,
+              "worst_error": 0.5,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 8.6,
+              "reference": [
+                8.8,
+                9
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 9.5,
+              "reference": [
+                9.7,
+                9.9
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 9.9,
+            "reference": [
+              10.1,
+              10.3
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            75,
+            99
+          ]
+        },
+        {
+          "id": "V43_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 5.7,
+              "reference": [
+                5.7,
+                5.9
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "T": {
+              "predicted": 7.0,
+              "reference": [
+                7.2,
+                7.4
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 8.2,
+              "reference": [
+                8.2,
+                8.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 8.6,
+            "reference": [
+              8.6,
+              8.8
+            ],
+            "min_error": 0.0,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            57,
+            86
+          ]
+        },
+        {
+          "id": "V43_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 9.9,
+              "reference": [
+                10,
+                10.2
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 11.2,
+              "reference": [
+                11.2,
+                11.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 12.2,
+              "reference": [
+                12.2,
+                12.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 12.6,
+            "reference": [
+              12.6,
+              12.8
+            ],
+            "min_error": 0.0,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            99,
+            126
+          ]
+        }
+      ],
+      "negative": [
+        {
+          "id": "V40_negative_06",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V40_negative_07",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V40_negative_08",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_09",
+          "kind": "T_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_10",
+          "kind": "T_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_11",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_12",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V43_negative_13",
+          "kind": "arms_down_wait",
+          "false_completion": false
+        }
+      ],
+      "invalid_windows": [],
+      "replays": [
+        {
+          "source_id": "V39",
+          "candidate": "baseline",
+          "events": [
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  8
+                ],
+                "T": [
+                  9,
+                  19
+                ],
+                "W": [
+                  20,
+                  24
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 0,
+              "end_tick": 24,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  21
+                ],
+                "T": [
+                  22,
+                  33
+                ],
+                "W": [
+                  34,
+                  38
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 42,
+              "end_tick": 80,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  15
+                ],
+                "T": [
+                  16,
+                  26
+                ],
+                "W": [
+                  27,
+                  31
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 92,
+              "end_tick": 123,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  17
+                ],
+                "T": [
+                  18,
+                  27
+                ],
+                "W": [
+                  28,
+                  32
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 134,
+              "end_tick": 166,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  15
+                ],
+                "T": [
+                  16,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 178,
+              "end_tick": 208,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  14
+                ],
+                "T": [
+                  15,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 215,
+              "end_tick": 245,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            }
+          ],
+          "final": {
+            "version": "ytw-ordered-dwell-candidate-v1",
+            "phase": "stream_ended_incomplete",
+            "count": 6,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V40",
+          "candidate": "baseline",
+          "events": [],
+          "final": {
+            "version": "ytw-ordered-dwell-candidate-v1",
+            "phase": "stream_ended_incomplete",
+            "count": 0,
+            "active": false,
+            "expected": "Y",
+            "rejected": [
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 0,
+                "end_tick": 60,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 61,
+                "end_tick": 115,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 116,
+                "end_tick": 153,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 154,
+                "end_tick": 200,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "required_joints_unobserved",
+                "start_tick": 201,
+                "end_tick": 243,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 262,
+                "end_tick": 285,
+                "counted": false,
+                "grade": null
+              }
+            ],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V41",
+          "candidate": "baseline",
+          "events": [
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  8
+                ],
+                "T": [
+                  9,
+                  17
+                ],
+                "W": [
+                  18,
+                  22
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 0,
+              "end_tick": 22,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  17
+                ],
+                "T": [
+                  18,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 32,
+              "end_tick": 62,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  10
+                ],
+                "T": [
+                  11,
+                  19
+                ],
+                "W": [
+                  20,
+                  24
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 75,
+              "end_tick": 99,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  12
+                ],
+                "T": [
+                  13,
+                  20
+                ],
+                "W": [
+                  21,
+                  25
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 111,
+              "end_tick": 136,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  9
+                ],
+                "T": [
+                  10,
+                  16
+                ],
+                "W": [
+                  17,
+                  21
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 148,
+              "end_tick": 169,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            }
+          ],
+          "final": {
+            "version": "ytw-ordered-dwell-candidate-v1",
+            "phase": "stream_ended_incomplete",
+            "count": 5,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V43",
+          "candidate": "baseline",
+          "events": [
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  18
+                ],
+                "T": [
+                  19,
+                  36
+                ],
+                "W": [
+                  37,
+                  41
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 0,
+              "end_tick": 41,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  12
+                ],
+                "T": [
+                  13,
+                  24
+                ],
+                "W": [
+                  25,
+                  29
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 57,
+              "end_tick": 86,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  12
+                ],
+                "T": [
+                  13,
+                  22
+                ],
+                "W": [
+                  23,
+                  27
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 99,
+              "end_tick": 126,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  19
+                ],
+                "T": [
+                  20,
+                  30
+                ],
+                "W": [
+                  31,
+                  35
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 134,
+              "end_tick": 169,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  13
+                ],
+                "T": [
+                  14,
+                  24
+                ],
+                "W": [
+                  25,
+                  29
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 180,
+              "end_tick": 209,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ordered-dwell-candidate-v1",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  14
+                ],
+                "T": [
+                  15,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 219,
+              "end_tick": 249,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            }
+          ],
+          "final": {
+            "version": "ytw-ordered-dwell-candidate-v1",
+            "phase": "stream_ended_incomplete",
+            "count": 6,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V44",
+          "candidate": "baseline",
+          "events": [],
+          "final": {
+            "version": "ytw-ordered-dwell-candidate-v1",
+            "phase": "stream_ended_incomplete",
+            "count": 0,
+            "active": false,
+            "expected": "Y",
+            "rejected": [
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 0,
+                "end_tick": 26,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 35,
+                "end_tick": 76,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 86,
+                "end_tick": 123,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 124,
+                "end_tick": 155,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "stream_ended_incomplete",
+                "start_tick": 156,
+                "end_tick": 251,
+                "counted": false,
+                "grade": null
+              }
+            ],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        }
+      ]
+    },
+    "ready_origin_fix": {
+      "summary": {
+        "reference_attempts": 7,
+        "matched_attempts": 7,
+        "natural_negative_episodes": 8,
+        "false_completions": 0,
+        "invalid_phase_windows": 0,
+        "Y_definite_within_0_2": 2,
+        "Y_worst_error_sum": 2.2,
+        "Y_minimum_error_gt_0_2": 2,
+        "phase_definite_within_0_2": 10,
+        "phase_comparisons": 21,
+        "terminal_definite_within_0_2": 4,
+        "terminal_comparisons": 7,
+        "source_event_counts": {
+          "V39": 6,
+          "V40": 0,
+          "V41": 5,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "positive": [
+        {
+          "id": "V39_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 4.2,
+              "reference": [
+                4.3,
+                4.5
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 6.4,
+              "reference": [
+                6.3,
+                6.5
+              ],
+              "min_error": 0,
+              "worst_error": 0.1,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 7.6,
+              "reference": [
+                7.7,
+                7.8
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 8.0,
+            "reference": [
+              8.1,
+              8.2
+            ],
+            "min_error": 0.1,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            42,
+            80
+          ]
+        },
+        {
+          "id": "V39_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 9.2,
+              "reference": [
+                9.3,
+                9.5
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 10.8,
+              "reference": [
+                10.9,
+                11.0
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 11.9,
+              "reference": [
+                12,
+                12.1
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 12.3,
+            "reference": [
+              12.4,
+              12.5
+            ],
+            "min_error": 0.1,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            92,
+            123
+          ]
+        },
+        {
+          "id": "V39_review_cycle3",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 13.4,
+              "reference": [
+                13.3,
+                13.5
+              ],
+              "min_error": 0,
+              "worst_error": 0.1,
+              "definite_within_0_2": true
+            },
+            "T": {
+              "predicted": 15.2,
+              "reference": [
+                15.3,
+                15.4
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 16.2,
+              "reference": [
+                16.4,
+                16.6
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 16.6,
+            "reference": [
+              16.8,
+              17.0
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            134,
+            166
+          ]
+        },
+        {
+          "id": "V41_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 3.2,
+              "reference": [
+                3.5,
+                3.7
+              ],
+              "min_error": 0.3,
+              "worst_error": 0.5,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 5.0,
+              "reference": [
+                5.1,
+                5.3
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 5.8,
+              "reference": [
+                6,
+                6.2
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 6.2,
+            "reference": [
+              6.4,
+              6.6
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            32,
+            62
+          ]
+        },
+        {
+          "id": "V41_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 7.5,
+              "reference": [
+                7.8,
+                8
+              ],
+              "min_error": 0.3,
+              "worst_error": 0.5,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 8.6,
+              "reference": [
+                8.8,
+                9
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 9.5,
+              "reference": [
+                9.7,
+                9.9
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 9.9,
+            "reference": [
+              10.1,
+              10.3
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            75,
+            99
+          ]
+        },
+        {
+          "id": "V43_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 5.7,
+              "reference": [
+                5.7,
+                5.9
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "T": {
+              "predicted": 7.0,
+              "reference": [
+                7.2,
+                7.4
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 8.2,
+              "reference": [
+                8.2,
+                8.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 8.6,
+            "reference": [
+              8.6,
+              8.8
+            ],
+            "min_error": 0.0,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            57,
+            86
+          ]
+        },
+        {
+          "id": "V43_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 9.9,
+              "reference": [
+                10,
+                10.2
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 11.2,
+              "reference": [
+                11.2,
+                11.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 12.2,
+              "reference": [
+                12.2,
+                12.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 12.6,
+            "reference": [
+              12.6,
+              12.8
+            ],
+            "min_error": 0.0,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            99,
+            126
+          ]
+        }
+      ],
+      "negative": [
+        {
+          "id": "V40_negative_06",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V40_negative_07",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V40_negative_08",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_09",
+          "kind": "T_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_10",
+          "kind": "T_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_11",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_12",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V43_negative_13",
+          "kind": "arms_down_wait",
+          "false_completion": false
+        }
+      ],
+      "invalid_windows": [],
+      "replays": [
+        {
+          "source_id": "V39",
+          "candidate": "ready_origin_fix",
+          "events": [
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  8
+                ],
+                "T": [
+                  9,
+                  19
+                ],
+                "W": [
+                  20,
+                  24
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 0,
+              "end_tick": 24,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  21
+                ],
+                "T": [
+                  22,
+                  33
+                ],
+                "W": [
+                  34,
+                  38
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 42,
+              "end_tick": 80,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  15
+                ],
+                "T": [
+                  16,
+                  26
+                ],
+                "W": [
+                  27,
+                  31
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 92,
+              "end_tick": 123,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  17
+                ],
+                "T": [
+                  18,
+                  27
+                ],
+                "W": [
+                  28,
+                  32
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 134,
+              "end_tick": 166,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  15
+                ],
+                "T": [
+                  16,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 178,
+              "end_tick": 208,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  14
+                ],
+                "T": [
+                  15,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 215,
+              "end_tick": 245,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            }
+          ],
+          "final": {
+            "version": "ytw-ready-run-origin-fix-v2-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 6,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V40",
+          "candidate": "ready_origin_fix",
+          "events": [],
+          "final": {
+            "version": "ytw-ready-run-origin-fix-v2-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 0,
+            "active": false,
+            "expected": "Y",
+            "rejected": [
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 0,
+                "end_tick": 60,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 61,
+                "end_tick": 115,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 116,
+                "end_tick": 153,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 154,
+                "end_tick": 200,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "required_joints_unobserved",
+                "start_tick": 201,
+                "end_tick": 243,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 262,
+                "end_tick": 285,
+                "counted": false,
+                "grade": null
+              }
+            ],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V41",
+          "candidate": "ready_origin_fix",
+          "events": [
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  8
+                ],
+                "T": [
+                  9,
+                  17
+                ],
+                "W": [
+                  18,
+                  22
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 0,
+              "end_tick": 22,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  17
+                ],
+                "T": [
+                  18,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 32,
+              "end_tick": 62,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  10
+                ],
+                "T": [
+                  11,
+                  19
+                ],
+                "W": [
+                  20,
+                  24
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 75,
+              "end_tick": 99,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  12
+                ],
+                "T": [
+                  13,
+                  20
+                ],
+                "W": [
+                  21,
+                  25
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 111,
+              "end_tick": 136,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  9
+                ],
+                "T": [
+                  10,
+                  16
+                ],
+                "W": [
+                  17,
+                  21
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 148,
+              "end_tick": 169,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            }
+          ],
+          "final": {
+            "version": "ytw-ready-run-origin-fix-v2-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 5,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V43",
+          "candidate": "ready_origin_fix",
+          "events": [
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  18
+                ],
+                "T": [
+                  19,
+                  36
+                ],
+                "W": [
+                  37,
+                  41
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 0,
+              "end_tick": 41,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  12
+                ],
+                "T": [
+                  13,
+                  24
+                ],
+                "W": [
+                  25,
+                  29
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 57,
+              "end_tick": 86,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  12
+                ],
+                "T": [
+                  13,
+                  22
+                ],
+                "W": [
+                  23,
+                  27
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 99,
+              "end_tick": 126,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  19
+                ],
+                "T": [
+                  20,
+                  30
+                ],
+                "W": [
+                  31,
+                  35
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 134,
+              "end_tick": 169,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  13
+                ],
+                "T": [
+                  14,
+                  24
+                ],
+                "W": [
+                  25,
+                  29
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 180,
+              "end_tick": 209,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            },
+            {
+              "version": "ytw-ready-run-origin-fix-v2-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  14
+                ],
+                "T": [
+                  15,
+                  25
+                ],
+                "W": [
+                  26,
+                  30
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 219,
+              "end_tick": 249,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false
+            }
+          ],
+          "final": {
+            "version": "ytw-ready-run-origin-fix-v2-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 6,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        },
+        {
+          "source_id": "V44",
+          "candidate": "ready_origin_fix",
+          "events": [],
+          "final": {
+            "version": "ytw-ready-run-origin-fix-v2-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 0,
+            "active": false,
+            "expected": "Y",
+            "rejected": [
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 0,
+                "end_tick": 26,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 35,
+                "end_tick": 76,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 86,
+                "end_tick": 123,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 124,
+                "end_tick": 155,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "stream_ended_incomplete",
+                "start_tick": 156,
+                "end_tick": 251,
+                "counted": false,
+                "grade": null
+              }
+            ],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity"
+          }
+        }
+      ]
+    },
+    "stable_0.10": {
+      "summary": {
+        "reference_attempts": 7,
+        "matched_attempts": 7,
+        "natural_negative_episodes": 8,
+        "false_completions": 0,
+        "invalid_phase_windows": 0,
+        "Y_definite_within_0_2": 3,
+        "Y_worst_error_sum": 1.8,
+        "Y_minimum_error_gt_0_2": 0,
+        "phase_definite_within_0_2": 11,
+        "phase_comparisons": 21,
+        "terminal_definite_within_0_2": 4,
+        "terminal_comparisons": 7,
+        "source_event_counts": {
+          "V39": 6,
+          "V40": 0,
+          "V41": 4,
+          "V43": 6,
+          "V44": 0
+        }
+      },
+      "positive": [
+        {
+          "id": "V39_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 4.5,
+              "reference": [
+                4.3,
+                4.5
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "T": {
+              "predicted": 6.4,
+              "reference": [
+                6.3,
+                6.5
+              ],
+              "min_error": 0,
+              "worst_error": 0.1,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 7.6,
+              "reference": [
+                7.7,
+                7.8
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 8.0,
+            "reference": [
+              8.1,
+              8.2
+            ],
+            "min_error": 0.1,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            45,
+            80
+          ]
+        },
+        {
+          "id": "V39_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 9.5,
+              "reference": [
+                9.3,
+                9.5
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "T": {
+              "predicted": 10.8,
+              "reference": [
+                10.9,
+                11.0
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 11.9,
+              "reference": [
+                12,
+                12.1
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 12.3,
+            "reference": [
+              12.4,
+              12.5
+            ],
+            "min_error": 0.1,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            95,
+            123
+          ]
+        },
+        {
+          "id": "V39_review_cycle3",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 13.7,
+              "reference": [
+                13.3,
+                13.5
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 15.2,
+              "reference": [
+                15.3,
+                15.4
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 16.2,
+              "reference": [
+                16.4,
+                16.6
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 16.6,
+            "reference": [
+              16.8,
+              17.0
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            137,
+            166
+          ]
+        },
+        {
+          "id": "V41_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 3.4,
+              "reference": [
+                3.5,
+                3.7
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 5.0,
+              "reference": [
+                5.1,
+                5.3
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 5.8,
+              "reference": [
+                6,
+                6.2
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 6.2,
+            "reference": [
+              6.4,
+              6.6
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            34,
+            62
+          ]
+        },
+        {
+          "id": "V41_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 7.9,
+              "reference": [
+                7.8,
+                8
+              ],
+              "min_error": 0,
+              "worst_error": 0.1,
+              "definite_within_0_2": true
+            },
+            "T": {
+              "predicted": 8.6,
+              "reference": [
+                8.8,
+                9
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 9.5,
+              "reference": [
+                9.7,
+                9.9
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            }
+          },
+          "terminal_error": {
+            "predicted": 9.9,
+            "reference": [
+              10.1,
+              10.3
+            ],
+            "min_error": 0.2,
+            "worst_error": 0.4,
+            "definite_within_0_2": false
+          },
+          "event_ticks": [
+            79,
+            99
+          ]
+        },
+        {
+          "id": "V43_review_cycle1",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 6.0,
+              "reference": [
+                5.7,
+                5.9
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 7.0,
+              "reference": [
+                7.2,
+                7.4
+              ],
+              "min_error": 0.2,
+              "worst_error": 0.4,
+              "definite_within_0_2": false
+            },
+            "W": {
+              "predicted": 8.2,
+              "reference": [
+                8.2,
+                8.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 8.6,
+            "reference": [
+              8.6,
+              8.8
+            ],
+            "min_error": 0.0,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            60,
+            86
+          ]
+        },
+        {
+          "id": "V43_review_cycle2",
+          "matched": true,
+          "phase_errors": {
+            "Y": {
+              "predicted": 10.3,
+              "reference": [
+                10,
+                10.2
+              ],
+              "min_error": 0.1,
+              "worst_error": 0.3,
+              "definite_within_0_2": false
+            },
+            "T": {
+              "predicted": 11.2,
+              "reference": [
+                11.2,
+                11.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            },
+            "W": {
+              "predicted": 12.2,
+              "reference": [
+                12.2,
+                12.4
+              ],
+              "min_error": 0.0,
+              "worst_error": 0.2,
+              "definite_within_0_2": true
+            }
+          },
+          "terminal_error": {
+            "predicted": 12.6,
+            "reference": [
+              12.6,
+              12.8
+            ],
+            "min_error": 0.0,
+            "worst_error": 0.2,
+            "definite_within_0_2": true
+          },
+          "event_ticks": [
+            103,
+            126
+          ]
+        }
+      ],
+      "negative": [
+        {
+          "id": "V40_negative_06",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V40_negative_07",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V40_negative_08",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_09",
+          "kind": "T_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_10",
+          "kind": "T_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_11",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V44_negative_12",
+          "kind": "W_hold_omitted",
+          "false_completion": false
+        },
+        {
+          "id": "V43_negative_13",
+          "kind": "arms_down_wait",
+          "false_completion": false
+        }
+      ],
+      "invalid_windows": [],
+      "replays": [
+        {
+          "source_id": "V39",
+          "candidate": "stable_0.10",
+          "events": [
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  7
+                ],
+                "T": [
+                  8,
+                  18
+                ],
+                "W": [
+                  19,
+                  23
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 1,
+              "end_tick": 24,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  18
+                ],
+                "T": [
+                  19,
+                  30
+                ],
+                "W": [
+                  31,
+                  35
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 45,
+              "end_tick": 80,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  12
+                ],
+                "T": [
+                  13,
+                  23
+                ],
+                "W": [
+                  24,
+                  28
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 95,
+              "end_tick": 123,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  14
+                ],
+                "T": [
+                  15,
+                  24
+                ],
+                "W": [
+                  25,
+                  29
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 137,
+              "end_tick": 166,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  13
+                ],
+                "T": [
+                  14,
+                  23
+                ],
+                "W": [
+                  24,
+                  28
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 180,
+              "end_tick": 208,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  11
+                ],
+                "T": [
+                  12,
+                  22
+                ],
+                "W": [
+                  23,
+                  27
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 218,
+              "end_tick": 245,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            }
+          ],
+          "final": {
+            "version": "ytw-causal-stable-Y-entry-v3-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 6,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity",
+            "Y_entry_max_step": 0.1,
+            "Y_entry_last_step": null
+          }
+        },
+        {
+          "source_id": "V40",
+          "candidate": "stable_0.10",
+          "events": [],
+          "final": {
+            "version": "ytw-causal-stable-Y-entry-v3-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 0,
+            "active": false,
+            "expected": "Y",
+            "rejected": [
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 1,
+                "end_tick": 60,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 62,
+                "end_tick": 115,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 154,
+                "end_tick": 200,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "required_joints_unobserved",
+                "start_tick": 202,
+                "end_tick": 243,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 264,
+                "end_tick": 285,
+                "counted": false,
+                "grade": null
+              }
+            ],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity",
+            "Y_entry_max_step": 0.1,
+            "Y_entry_last_step": null
+          }
+        },
+        {
+          "source_id": "V41",
+          "candidate": "stable_0.10",
+          "events": [
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  7
+                ],
+                "T": [
+                  8,
+                  16
+                ],
+                "W": [
+                  17,
+                  21
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 1,
+              "end_tick": 22,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  15
+                ],
+                "T": [
+                  16,
+                  23
+                ],
+                "W": [
+                  24,
+                  28
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 34,
+              "end_tick": 62,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  6
+                ],
+                "T": [
+                  7,
+                  15
+                ],
+                "W": [
+                  16,
+                  20
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 79,
+              "end_tick": 99,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  10
+                ],
+                "T": [
+                  11,
+                  18
+                ],
+                "W": [
+                  19,
+                  23
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 113,
+              "end_tick": 136,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            }
+          ],
+          "final": {
+            "version": "ytw-causal-stable-Y-entry-v3-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 4,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity",
+            "Y_entry_max_step": 0.1,
+            "Y_entry_last_step": null
+          }
+        },
+        {
+          "source_id": "V43",
+          "candidate": "stable_0.10",
+          "events": [
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  17
+                ],
+                "T": [
+                  18,
+                  35
+                ],
+                "W": [
+                  36,
+                  40
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 1,
+              "end_tick": 41,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  9
+                ],
+                "T": [
+                  10,
+                  21
+                ],
+                "W": [
+                  22,
+                  26
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 60,
+              "end_tick": 86,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  8
+                ],
+                "T": [
+                  9,
+                  18
+                ],
+                "W": [
+                  19,
+                  23
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 103,
+              "end_tick": 126,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  17
+                ],
+                "T": [
+                  18,
+                  28
+                ],
+                "W": [
+                  29,
+                  33
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 136,
+              "end_tick": 169,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  11
+                ],
+                "T": [
+                  12,
+                  22
+                ],
+                "W": [
+                  23,
+                  27
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 182,
+              "end_tick": 209,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            },
+            {
+              "version": "ytw-causal-stable-Y-entry-v3-candidate",
+              "auto_phase_windows": {
+                "Y": [
+                  0,
+                  11
+                ],
+                "T": [
+                  12,
+                  22
+                ],
+                "W": [
+                  23,
+                  27
+                ]
+              },
+              "observation_coverage": 1.0,
+              "temporal_slot_coverage": 1.0,
+              "start_tick": 222,
+              "end_tick": 249,
+              "width": 1080,
+              "height": 1920,
+              "ordered_attempt_complete": true,
+              "complete_attempt_reviewed": false,
+              "projection_reviewed": false,
+              "phase_windows_reviewed": null,
+              "grade": null,
+              "quality_verified": false,
+              "Y_entry_gate": {
+                "max_step_torso_ratio": 0.1,
+                "coordinate": "arm_joint_relative_to_shoulder_normalized_by_torso",
+                "causal": true,
+                "quality_grade": null
+              }
+            }
+          ],
+          "final": {
+            "version": "ytw-causal-stable-Y-entry-v3-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 6,
+            "active": false,
+            "expected": "Y",
+            "rejected": [],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity",
+            "Y_entry_max_step": 0.1,
+            "Y_entry_last_step": null
+          }
+        },
+        {
+          "source_id": "V44",
+          "candidate": "stable_0.10",
+          "events": [],
+          "final": {
+            "version": "ytw-causal-stable-Y-entry-v3-candidate",
+            "phase": "stream_ended_incomplete",
+            "count": 0,
+            "active": false,
+            "expected": "Y",
+            "rejected": [
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 1,
+                "end_tick": 26,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 39,
+                "end_tick": 76,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 92,
+                "end_tick": 123,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "out_of_order_phase",
+                "start_tick": 125,
+                "end_tick": 155,
+                "counted": false,
+                "grade": null
+              },
+              {
+                "reason": "stream_ended_incomplete",
+                "start_tick": 157,
+                "end_tick": 251,
+                "counted": false,
+                "grade": null
+              }
+            ],
+            "grade": null,
+            "scope": "development_ordered_attempts_not_quality_or_severity",
+            "Y_entry_max_step": 0.1,
+            "Y_entry_last_step": null
+          }
+        }
+      ]
+    }
+  },
+  "production_replacement": false
+}

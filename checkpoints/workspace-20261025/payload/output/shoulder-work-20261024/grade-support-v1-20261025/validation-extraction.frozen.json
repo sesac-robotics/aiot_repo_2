@@ -1,0 +1,76 @@
+[
+  {
+    "id": "subject_012_shoulder_bad_front",
+    "split": "validation",
+    "source_sha256": "7e0e409c90051d744e55d4cf724779c32f190b3482ab02c86a5a1fc0674268ae",
+    "extraction": {
+      "id": "subject_012_shoulder_bad_front",
+      "view": "primary",
+      "config": {
+        "schema": "heavy-observed-sequence-v2-sequential",
+        "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+        "source_sha256": "7e0e409c90051d744e55d4cf724779c32f190b3482ab02c86a5a1fc0674268ae",
+        "segment": {
+          "start_frame": 0,
+          "end_frame": 48,
+          "fps": 15.0
+        },
+        "required_views": [
+          "front"
+        ],
+        "sample_hz": 10,
+        "max_edge": 640,
+        "min_visibility": 0.5,
+        "min_presence": 0.5,
+        "delegate": "GPU",
+        "num_poses": 1,
+        "decoding": "one_initial_seek_then_sequential_grab"
+      },
+      "fingerprint": "4b0a135616b55af066bc1f8c9ed6e4dca52f76453887833bf5d7baad8b1a0a66",
+      "cache": "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/observations/subject_012_shoulder_bad_front/primary.npz",
+      "frames": 33,
+      "observed_joint_fraction": 0.9990817263544536,
+      "extract_seconds": 1.653817981001339,
+      "reused": false,
+      "synchronization_visually_verified": false,
+      "score_generated": false
+    }
+  },
+  {
+    "id": "subject_012_shoulder_good_front",
+    "split": "validation",
+    "source_sha256": "f39f511bff8af8222867356458b5f5fb9e33b088e9e54004784b36cdd9b535a9",
+    "extraction": {
+      "id": "subject_012_shoulder_good_front",
+      "view": "primary",
+      "config": {
+        "schema": "heavy-observed-sequence-v2-sequential",
+        "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+        "source_sha256": "f39f511bff8af8222867356458b5f5fb9e33b088e9e54004784b36cdd9b535a9",
+        "segment": {
+          "start_frame": 0,
+          "end_frame": 48,
+          "fps": 15.0
+        },
+        "required_views": [
+          "front"
+        ],
+        "sample_hz": 10,
+        "max_edge": 640,
+        "min_visibility": 0.5,
+        "min_presence": 0.5,
+        "delegate": "GPU",
+        "num_poses": 1,
+        "decoding": "one_initial_seek_then_sequential_grab"
+      },
+      "fingerprint": "bc020800a97e16d314191f71eda33259b2e25943d7e42b856b6e6ae1d74e8faf",
+      "cache": "/home/jayden/SeSACPAI-Mid/output/shoulder-work-20261024/grade-support-v1-20261025/observations/subject_012_shoulder_good_front/primary.npz",
+      "frames": 33,
+      "observed_joint_fraction": 1.0,
+      "extract_seconds": 1.2571850300009828,
+      "reused": false,
+      "synchronization_visually_verified": false,
+      "score_generated": false
+    }
+  }
+]

@@ -1,0 +1,504 @@
+{
+  "reports": {
+    "frontal_trunk_hold/seated": {
+      "status": "held_reference_fit",
+      "reason": "fewer_than_three_Train_people",
+      "rows": 4,
+      "people": [
+        "shoulder_011",
+        "shoulder_023"
+      ]
+    },
+    "frontal_trunk_hold/standing": {
+      "status": "normal_reference_fitted",
+      "rows": 8,
+      "people": [
+        "shoulder_001",
+        "shoulder_006",
+        "shoulder_010",
+        "shoulder_013",
+        "shoulder_016",
+        "shoulder_018",
+        "shoulder_026"
+      ],
+      "comparison": {
+        "svm": {
+          "normal_inliers": 2,
+          "normal_rows": 8,
+          "leave_person_out": [
+            {
+              "id": "subject_001_shoulder_bad_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_001",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_006_shoulder_bad_front_event_2_frontal_trunk_hold",
+              "person": "shoulder_006",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_010_shoulder_bad_front_event_2_frontal_trunk_hold",
+              "person": "shoulder_010",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_013_shoulder_bad_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_013",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_bad_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_016",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_good_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_016",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_018_shoulder_good_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_018",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_026_shoulder_good_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_026",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018"
+              ]
+            }
+          ],
+          "error_examples": 0,
+          "error_detection_accuracy": null
+        },
+        "isolation_forest": {
+          "normal_inliers": 7,
+          "normal_rows": 8,
+          "leave_person_out": [
+            {
+              "id": "subject_001_shoulder_bad_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_001",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_006_shoulder_bad_front_event_2_frontal_trunk_hold",
+              "person": "shoulder_006",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_010_shoulder_bad_front_event_2_frontal_trunk_hold",
+              "person": "shoulder_010",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_013_shoulder_bad_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_013",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_bad_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_016",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_good_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_016",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_018_shoulder_good_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_018",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_026_shoulder_good_front_event_1_frontal_trunk_hold",
+              "person": "shoulder_026",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_001",
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018"
+              ]
+            }
+          ],
+          "error_examples": 0,
+          "error_detection_accuracy": null
+        }
+      },
+      "grade_prediction_enabled": false
+    },
+    "lower_return/seated": {
+      "status": "held_reference_fit",
+      "reason": "fewer_than_three_Train_people",
+      "rows": 4,
+      "people": [
+        "shoulder_011",
+        "shoulder_023"
+      ]
+    },
+    "lower_return/standing": {
+      "status": "normal_reference_fitted",
+      "rows": 6,
+      "people": [
+        "shoulder_010",
+        "shoulder_013",
+        "shoulder_016",
+        "shoulder_018",
+        "shoulder_026"
+      ],
+      "comparison": {
+        "svm": {
+          "normal_inliers": 0,
+          "normal_rows": 6,
+          "leave_person_out": [
+            {
+              "id": "subject_010_shoulder_bad_front_event_2_lower_return",
+              "person": "shoulder_010",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_013_shoulder_bad_front_event_1_lower_return",
+              "person": "shoulder_013",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_bad_front_event_1_lower_return",
+              "person": "shoulder_016",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_good_front_event_1_lower_return",
+              "person": "shoulder_016",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_018_shoulder_good_front_event_1_lower_return",
+              "person": "shoulder_018",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_026_shoulder_good_front_event_1_lower_return",
+              "person": "shoulder_026",
+              "normal_reference_inlier": false,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018"
+              ]
+            }
+          ],
+          "error_examples": 0,
+          "error_detection_accuracy": null
+        },
+        "isolation_forest": {
+          "normal_inliers": 6,
+          "normal_rows": 6,
+          "leave_person_out": [
+            {
+              "id": "subject_010_shoulder_bad_front_event_2_lower_return",
+              "person": "shoulder_010",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_013_shoulder_bad_front_event_1_lower_return",
+              "person": "shoulder_013",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_016",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_bad_front_event_1_lower_return",
+              "person": "shoulder_016",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_016_shoulder_good_front_event_1_lower_return",
+              "person": "shoulder_016",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_018",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_018_shoulder_good_front_event_1_lower_return",
+              "person": "shoulder_018",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_026"
+              ]
+            },
+            {
+              "id": "subject_026_shoulder_good_front_event_1_lower_return",
+              "person": "shoulder_026",
+              "normal_reference_inlier": true,
+              "training_people": [
+                "shoulder_010",
+                "shoulder_013",
+                "shoulder_016",
+                "shoulder_018"
+              ]
+            }
+          ],
+          "error_examples": 0,
+          "error_detection_accuracy": null
+        }
+      },
+      "grade_prediction_enabled": false
+    }
+  },
+  "grade_capabilities": [
+    {
+      "item": "frontal_trunk_hold",
+      "posture": "seated",
+      "grade_counts": {
+        "2": 4
+      },
+      "grade_prediction_enabled": false,
+      "points": null,
+      "blocked_reason": "normal_only_no_observed_error_grades",
+      "training_ids": [
+        "subject_023_shoulder_good_front_event_1_frontal_trunk_hold",
+        "subject_011_shoulder_bad_front_event_1_frontal_trunk_hold",
+        "subject_011_shoulder_good_front_event_1_frontal_trunk_hold",
+        "subject_011_shoulder_good_front_event_2_frontal_trunk_hold"
+      ]
+    },
+    {
+      "item": "frontal_trunk_hold",
+      "posture": "standing",
+      "grade_counts": {
+        "2": 8
+      },
+      "grade_prediction_enabled": false,
+      "points": null,
+      "blocked_reason": "normal_only_no_observed_error_grades",
+      "training_ids": [
+        "subject_013_shoulder_bad_front_event_1_frontal_trunk_hold",
+        "subject_016_shoulder_bad_front_event_1_frontal_trunk_hold",
+        "subject_016_shoulder_good_front_event_1_frontal_trunk_hold",
+        "subject_018_shoulder_good_front_event_1_frontal_trunk_hold",
+        "subject_026_shoulder_good_front_event_1_frontal_trunk_hold",
+        "subject_001_shoulder_bad_front_event_1_frontal_trunk_hold",
+        "subject_006_shoulder_bad_front_event_2_frontal_trunk_hold",
+        "subject_010_shoulder_bad_front_event_2_frontal_trunk_hold"
+      ]
+    },
+    {
+      "item": "lower_return",
+      "posture": "seated",
+      "grade_counts": {
+        "2": 4
+      },
+      "grade_prediction_enabled": false,
+      "points": null,
+      "blocked_reason": "normal_only_no_observed_error_grades",
+      "training_ids": [
+        "subject_023_shoulder_bad_front_event_1_lower_return",
+        "subject_023_shoulder_good_front_event_1_lower_return",
+        "subject_011_shoulder_bad_front_event_1_lower_return",
+        "subject_011_shoulder_good_front_event_2_lower_return"
+      ]
+    },
+    {
+      "item": "lower_return",
+      "posture": "standing",
+      "grade_counts": {
+        "2": 6
+      },
+      "grade_prediction_enabled": false,
+      "points": null,
+      "blocked_reason": "normal_only_no_observed_error_grades",
+      "training_ids": [
+        "subject_013_shoulder_bad_front_event_1_lower_return",
+        "subject_016_shoulder_bad_front_event_1_lower_return",
+        "subject_016_shoulder_good_front_event_1_lower_return",
+        "subject_018_shoulder_good_front_event_1_lower_return",
+        "subject_026_shoulder_good_front_event_1_lower_return",
+        "subject_010_shoulder_bad_front_event_2_lower_return"
+      ]
+    }
+  ],
+  "independent_final_test": false,
+  "Test_inference": false,
+  "validation_sources_used_for_fit": false,
+  "hyperparameters": "fixed SVM nu=.1 gamma=scale; IF 128 trees contamination=.1 seed20261025; no score selection",
+  "new_movement_grade_models_fitted": 0,
+  "normal_reference_banks_fitted": 2,
+  "research_models_fitted": 4,
+  "deployment_changed": false
+}

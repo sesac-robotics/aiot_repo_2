@@ -1,0 +1,993 @@
+{
+  "train_n": 268,
+  "validation_n": 59,
+  "grade_counts": {
+    "2": 266,
+    "1": 2
+  },
+  "source_exercise_counts": {
+    "shoulder": 100,
+    "squats": 140,
+    "ytw": 28
+  },
+  "selected": {
+    "name": "ridge1",
+    "dims": 7,
+    "metrics": {
+      "balanced_group_MAE": 0.473615232008814,
+      "n": 268,
+      "groups": 68,
+      "MAE": 0.09195862110013492,
+      "group_MAE": 0.10585451146286895,
+      "error_n": 2,
+      "normal_n": 266,
+      "error_recall": 0.5,
+      "normal_false_alarm": 0.02631578947368421
+    },
+    "constant_baseline": {
+      "balanced_group_MAE": 0.5013169446883231,
+      "n": 268,
+      "groups": 68,
+      "MAE": 0.014851117546595401,
+      "group_MAE": 0.01488879133743051,
+      "error_n": 2,
+      "normal_n": 266,
+      "error_recall": 0.0,
+      "normal_false_alarm": 0.0
+    }
+  },
+  "group_cv": {
+    "balanced_group_MAE": 0.473615232008814,
+    "n": 268,
+    "groups": 68,
+    "MAE": 0.09195862110013492,
+    "group_MAE": 0.10585451146286895,
+    "error_n": 2,
+    "normal_n": 266,
+    "error_recall": 0.5,
+    "normal_false_alarm": 0.02631578947368421
+  },
+  "fixed_development_validation": {
+    "balanced_group_MAE": 0.27019380194399556,
+    "n": 59,
+    "groups": 15,
+    "MAE": 0.09056328699911324,
+    "group_MAE": 0.0728362605695685,
+    "error_n": 1,
+    "normal_n": 58,
+    "error_recall": 1.0,
+    "normal_false_alarm": 0.0
+  },
+  "acceptance": {
+    "passed": false,
+    "reasons": [
+      "development_requires_at_least_three_normal_and_error_segments",
+      "development_requires_at_least_two_normal_and_error_person_source_groups",
+      "training_group_cv_error_recall_below_65_percent_or_unknown"
+    ],
+    "validation_support": {
+      "n": 59,
+      "normal_n": 58,
+      "error_n": 1,
+      "normal_groups": 15,
+      "error_groups": 1
+    },
+    "independent_final_test_required": true,
+    "production_replacement": false
+  },
+  "validation_predictions": [
+    {
+      "id": "subject_002_shoulder_bad_front",
+      "person": "shoulder_002",
+      "group": "2",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9299766446411404
+    },
+    {
+      "id": "subject_015_shoulder_bad_front",
+      "person": "shoulder_015",
+      "group": "23",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.8633380713513756
+    },
+    {
+      "id": "subject_017_shoulder_good_front",
+      "person": "shoulder_017",
+      "group": "26",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9060096924005911
+    },
+    {
+      "id": "subject_015_shoulder_good_front",
+      "person": "shoulder_015",
+      "group": "23",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9170763134864757
+    },
+    {
+      "id": "subject_002_shoulder_good_front",
+      "person": "shoulder_002",
+      "group": "2",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.928463980495013
+    },
+    {
+      "id": "subject_004_shoulder_good_front",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9405709829841666
+    },
+    {
+      "id": "subject_017_shoulder_bad_front",
+      "person": "shoulder_017",
+      "group": "26",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9463270302054507
+    },
+    {
+      "id": "subject_004_shoulder_bad_front",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9253567645649825
+    },
+    {
+      "id": "youtube_U9ZRi5VwSo8_rep1",
+      "person": "youtube_channel_UCwL6i80ui6Po2Jov2jVRlbQ",
+      "group": "74",
+      "family": "other_reviewed",
+      "target": 2,
+      "prediction": 1.967297091466729
+    },
+    {
+      "id": "youtube_U9ZRi5VwSo8_rep2",
+      "person": "youtube_channel_UCwL6i80ui6Po2Jov2jVRlbQ",
+      "group": "74",
+      "family": "other_reviewed",
+      "target": 2,
+      "prediction": 1.9510589984300493
+    },
+    {
+      "id": "youtube_OOe_HrNnQWw_peak_cropped",
+      "person": "youtube_channel_UCwL6i80ui6Po2Jov2jVRlbQ",
+      "group": "74",
+      "family": "other_reviewed",
+      "target": 2,
+      "prediction": 1.9680248799206597
+    },
+    {
+      "id": "qevd_00003948",
+      "person": "qevd_410",
+      "group": "454",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 1.940018771549882
+    },
+    {
+      "id": "qevd_00014005",
+      "person": "qevd_39",
+      "group": "455",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 1.9767117722245646
+    },
+    {
+      "id": "qevd_00023973",
+      "person": "qevd_2470",
+      "group": "456",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 1.963108296238366
+    },
+    {
+      "id": "qevd_00032130",
+      "person": "qevd_695",
+      "group": "457",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 1.9773792699424575
+    },
+    {
+      "id": "qevd_00010352",
+      "person": "qevd_1563",
+      "group": "458",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 1.935000827758472
+    },
+    {
+      "id": "qevd_00241717_existing_review",
+      "person": "qevd_244",
+      "group": "469",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 1.9562137996950417
+    },
+    {
+      "id": "qevd_00039770_existing_review",
+      "person": "qevd_2496",
+      "group": "470",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 1.8902696950657498
+    },
+    {
+      "id": "subject_002_squat_bad_paired_direct_rep0",
+      "person": "shoulder_002",
+      "group": "2",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.916912282793969
+    },
+    {
+      "id": "subject_004_squat_good_paired_direct_rep0",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9095927055123045
+    },
+    {
+      "id": "subject_004_squat_bad_paired_direct_rep0",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9196963955751132
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.8855375483239276
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep1",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.906421686351881
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep0",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9054241406209138
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.897760779262955
+    },
+    {
+      "id": "r2d2_V17_000000_004500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.741935243173909
+    },
+    {
+      "id": "r2d2_V17_004500_008250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.565516652485254
+    },
+    {
+      "id": "r2d2_V17_008250_012750",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.909107737159816
+    },
+    {
+      "id": "r2d2_V17_012750_016750",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.6094070768205848
+    },
+    {
+      "id": "r2d2_V17_016750_021750",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.5286479470241743
+    },
+    {
+      "id": "r2d2_V18_002000_007500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.8846336014070073
+    },
+    {
+      "id": "r2d2_V18_007500_011500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9428070446368657
+    },
+    {
+      "id": "r2d2_V18_011500_016000",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9632503212252008
+    },
+    {
+      "id": "r2d2_V18_016000_018650",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.971428557432871
+    },
+    {
+      "id": "r2d2_V26_000000_004250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9425129271347232
+    },
+    {
+      "id": "r2d2_V26_004250_008500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9749061389567975
+    },
+    {
+      "id": "r2d2_V26_008500_012250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9624079343191545
+    },
+    {
+      "id": "r2d2_V26_012250_016134",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9333429344316377
+    },
+    {
+      "id": "r2d2_V27_000000_004000",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.958107056583335
+    },
+    {
+      "id": "r2d2_V27_004000_007750",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9686565497153388
+    },
+    {
+      "id": "r2d2_V27_007750_010500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9676560756045587
+    },
+    {
+      "id": "r2d2_V27_010500_013750",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.919732167928402
+    },
+    {
+      "id": "r2d2_V27_013750_017250",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9654333792144107
+    },
+    {
+      "id": "r2d2_V27_020000_022150",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9136938967821326
+    },
+    {
+      "id": "r2d2_V43_005500_009500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9679434762409445
+    },
+    {
+      "id": "r2d2_V43_009500_013500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.958827755569712
+    },
+    {
+      "id": "r2d2_V43_013500_017500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9492021808001305
+    },
+    {
+      "id": "r2d2_V43_017500_021500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9553606420558598
+    },
+    {
+      "id": "r2d2_V43_021500_025750",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.962548692657208
+    },
+    {
+      "id": "r2d2_V44_003500_008500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9596803330614583
+    },
+    {
+      "id": "r2d2_V44_008500_011500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.924134449990484
+    },
+    {
+      "id": "r2d2_V44_011500_014500",
+      "person": "r2d2_P04",
+      "group": "615",
+      "family": "R2D2",
+      "target": 2,
+      "prediction": 1.9713445693667133
+    },
+    {
+      "id": "enrich_E003_000",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9658599271865844
+    },
+    {
+      "id": "enrich_E003_001",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9347177509891473
+    },
+    {
+      "id": "enrich_E016_005",
+      "person": "shoulder_017",
+      "group": "26",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 1.9403540938739143
+    },
+    {
+      "id": "enrich_R013",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 2,
+      "prediction": 1.9612128152421335
+    },
+    {
+      "id": "enrich_R014",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 2,
+      "prediction": 1.9682296841613072
+    },
+    {
+      "id": "enrich_R015",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 2,
+      "prediction": 1.8649322507405761
+    },
+    {
+      "id": "enrich_R016",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 1,
+      "prediction": 1.4743142177822604
+    }
+  ],
+  "candidate_cv": [
+    {
+      "name": "tree2",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.499931228667114,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.038076855009196976,
+        "group_MAE": 0.0316894783551998,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.03007518796992481
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "tree4",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.4500923007642561,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.1717020340155937,
+        "group_MAE": 0.1708572696974094,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.03383458646616541
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.473615232008814,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.09195862110013492,
+        "group_MAE": 0.10585451146286895,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.02631578947368421
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge10",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.5119227233868238,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.16712562638678957,
+        "group_MAE": 0.1824711420871604,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03383458646616541
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ordinal1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.27330743142315794,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.11202029957044166,
+        "group_MAE": 0.11667854608481229,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03383458646616541
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade0.1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.2704916449338356,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.048507462686567165,
+        "group_MAE": 0.04465976045590651,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.045112781954887216
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.26632497826716894,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.03731343283582089,
+        "group_MAE": 0.03632642712257317,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03383458646616541
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade10",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.2655896841495219,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.033582089552238806,
+        "group_MAE": 0.03485583888727905,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03007518796992481
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "tree2",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.4715232527285442,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.03204734319588529,
+        "group_MAE": 0.025812731225450008,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.022556390977443608
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "tree4",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.3949888423216795,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.10260295011511934,
+        "group_MAE": 0.1026494107516522,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.041353383458646614
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.4899504475727594,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.08174145470764867,
+        "group_MAE": 0.09203781400799114,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03007518796992481
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge10",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.5192848727298696,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.1591026389288409,
+        "group_MAE": 0.171244822410289,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03007518796992481
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ordinal1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.2801014388811535,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.10277012309780763,
+        "group_MAE": 0.10370195321990713,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03759398496240601
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade0.1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.26926615473775717,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.04477611940298507,
+        "group_MAE": 0.042208780063749646,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.041353383458646614
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.26779556650246306,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.041044776119402986,
+        "group_MAE": 0.03926760359316141,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03759398496240601
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade10",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.2655896841495219,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.033582089552238806,
+        "group_MAE": 0.03485583888727905,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03007518796992481
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5013169446883231,
+        "n": 268,
+        "groups": 68,
+        "MAE": 0.014851117546595401,
+        "group_MAE": 0.01488879133743051,
+        "error_n": 2,
+        "normal_n": 266,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    }
+  ],
+  "excluded": [
+    "subject_019_shoulder_bad_front_round1_late_round1_score",
+    "subject_019_shoulder_good_front_held2_score",
+    "subject_009_shoulder_good_front_held2_score",
+    "subject_013_squat_bad_batch2_rep0",
+    "subject_015_squat_good_batch2_rep0",
+    "subject_015_squat_bad_batch2_rep0",
+    "subject_015_squat_bad_batch2_rep1",
+    "qevd_00144112_held3_score",
+    "qevd_00265669_held3_score",
+    "qevd_00264509_held3_score",
+    "subject_023_shoulder_bad_front_held3_score",
+    "subject_016_shoulder_bad_front_held3_score",
+    "subject_001_shoulder_bad_front_held3_score",
+    "subject_005_shoulder_good_front_held3_score",
+    "qevd_00146521_held3_score",
+    "qevd_00165807_held3_score",
+    "qevd_00133899_held3_score",
+    "qevd_00151214_held3_score"
+  ],
+  "labels_are_existing_direct_item_grades_not_provider_errors": true,
+  "final_test_used": false,
+  "production_replacement": false
+}

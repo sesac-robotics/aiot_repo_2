@@ -1,0 +1,111 @@
+{
+  "exercise": "pushups",
+  "label_source": "Codex_project_rubric_drafts",
+  "expert_accuracy": null,
+  "counts": {
+    "train": 21,
+    "validation": 7,
+    "test": 6
+  },
+  "feature_dimensions": 1836,
+  "learning_curve": [
+    {
+      "train_samples": 8,
+      "validation_MAE_mean": 16.810952380952386,
+      "validation_MAE_std": 3.3514727023170585,
+      "validation_MAE_runs": [
+        21.553571428571427,
+        14.207142857142856,
+        17.003571428571465,
+        19.11904761904761,
+        12.171428571428573
+      ],
+      "mean_baseline_MAE": 14.535714285714286
+    },
+    {
+      "train_samples": 14,
+      "validation_MAE_mean": 14.28428571428572,
+      "validation_MAE_std": 4.397141181141839,
+      "validation_MAE_runs": [
+        19.35595238095239,
+        12.430952380952377,
+        19.579761904761913,
+        11.29880952380952,
+        8.755952380952392
+      ],
+      "mean_baseline_MAE": 15.3265306122449
+    },
+    {
+      "train_samples": 21,
+      "validation_MAE_mean": 15.492380952380952,
+      "validation_MAE_std": 0.26092956973637466,
+      "validation_MAE_runs": [
+        15.797619047619042,
+        15.227380952380951,
+        15.778571428571427,
+        15.18452380952382,
+        15.473809523809527
+      ],
+      "mean_baseline_MAE": 14.21768707482993
+    }
+  ],
+  "selected_training_samples": 14,
+  "selection_policy": "검증 평균 MAE 최저값에서 2점 이내인 가장 작은 표본 수. 시험 자료는 선택에 사용하지 않음.",
+  "plateau": {
+    "improvements": [
+      2.5266666666666673,
+      -1.2080952380952326
+    ],
+    "status": "inconclusive_small_validation_set",
+    "reason": "검증 참여자·점수 범위가 작으므로 성능 정체를 확정하거나 전체 데이터가 불필요하다고 단정할 수 없음."
+  },
+  "test_MAE_points": 10.148611111111109,
+  "test_RMSE_points": 12.532845273446407,
+  "test_mean_baseline_MAE_points": 12.261904761904765,
+  "test_predictions": [
+    {
+      "id": "subject_003_push_up_bad_side",
+      "person": "shoulder_003",
+      "draft_label": 60.0,
+      "model_prediction": 78.24166666666663
+    },
+    {
+      "id": "subject_021_push_up_good_side",
+      "person": "shoulder_021",
+      "draft_label": 100.0,
+      "model_prediction": 84.61666666666665
+    },
+    {
+      "id": "subject_021_push_up_bad_side",
+      "person": "shoulder_021",
+      "draft_label": 60.0,
+      "model_prediction": 78.18333333333331
+    },
+    {
+      "id": "subject_022_push_up_good_side",
+      "person": "shoulder_022",
+      "draft_label": 85.0,
+      "model_prediction": 79.60833333333329
+    },
+    {
+      "id": "subject_022_push_up_bad_side",
+      "person": "shoulder_022",
+      "draft_label": 70.0,
+      "model_prediction": 70.04166666666667
+    },
+    {
+      "id": "subject_024_push_up_bad_side",
+      "person": "shoulder_024",
+      "draft_label": 70.0,
+      "model_prediction": 73.64999999999998
+    }
+  ],
+  "model_path": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/expanded/models/pushups_direct_draft.joblib",
+  "fit_seconds": 0.11457141800019599,
+  "limitations": [
+    "독립 전문가 점수 검증 없음",
+    "정지 장면의 시각적 판단과 제안 배점에 의존",
+    "사람별·촬영 환경별 표본 부족",
+    "실험 모델이며 기존 웹에 자동 배포하지 않음"
+  ]
+}

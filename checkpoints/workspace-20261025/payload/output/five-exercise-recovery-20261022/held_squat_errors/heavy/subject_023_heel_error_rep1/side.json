@@ -1,0 +1,33 @@
+{
+  "id": "subject_023_heel_error_rep1",
+  "view": "side",
+  "config": {
+    "schema": "heavy-observed-sequence-v2-sequential",
+    "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "source_sha256": "8d77c0590d9d2bb7ab81628460de1d1da410abc1b8168811181d8bcd61c4d65e",
+    "segment": {
+      "start_frame": 68,
+      "end_frame": 96,
+      "fps": 15.0
+    },
+    "required_views": [
+      "side",
+      "synchronized_front"
+    ],
+    "sample_hz": 10,
+    "max_edge": 640,
+    "min_visibility": 0.5,
+    "min_presence": 0.5,
+    "delegate": "GPU",
+    "num_poses": 1,
+    "decoding": "one_initial_seek_then_sequential_grab"
+  },
+  "fingerprint": "e648590280bf685216bff18eb4f0f668b0e3e31356829ab058b580423778bd05",
+  "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/held_squat_errors/heavy/subject_023_heel_error_rep1/side.npz",
+  "frames": 19,
+  "observed_joint_fraction": 0.7272727272727273,
+  "extract_seconds": 8.548863620999327,
+  "reused": false,
+  "synchronization_visually_verified": false,
+  "score_generated": false
+}

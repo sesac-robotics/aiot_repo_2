@@ -1,0 +1,337 @@
+{
+  "schema": "squat-observation-checklist-v2",
+  "reviewed_repetitions": 41,
+  "train_repetitions": 31,
+  "validation_repetitions": 10,
+  "train_people": [
+    "Petra",
+    "Terka",
+    "Vasil"
+  ],
+  "validation_people": [
+    "Mima"
+  ],
+  "test_opened": false,
+  "expert_validated": false,
+  "source_preserved": true,
+  "model_sha256": "a9a6eddc58305acec521944e8a55cf7cd1232f439d76c055eb2b9909274e732c",
+  "items": {
+    "knee_inward": {
+      "trained": true,
+      "train_support": {
+        "0": 4,
+        "1": 0,
+        "2": 26
+      },
+      "observed_train": 30,
+      "validation_cases": 10,
+      "error_people": [
+        "Petra",
+        "Terka",
+        "Vasil"
+      ],
+      "boundaries": [
+        0.8929185525450496,
+        0.8748053564315995
+      ],
+      "ai_grade_MAE": 0.9645354808590103,
+      "rule_grade_MAE": 0.0,
+      "predictions": [
+        {
+          "id": "Mima_01",
+          "target": 2,
+          "ai": 1.0350653594771242,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_02",
+          "target": 0,
+          "ai": 1.393207282913165,
+          "rule": 0,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_03",
+          "target": 2,
+          "ai": 1.0799533146591969,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_04",
+          "target": 2,
+          "ai": 1.2609056956115778,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_05",
+          "target": 2,
+          "ai": 0.9632866479925303,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_06",
+          "target": 2,
+          "ai": 1.1321755368814193,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_07",
+          "target": 2,
+          "ai": 1.0505415499533146,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_08",
+          "target": 2,
+          "ai": 0.9988422035480858,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_09",
+          "target": 2,
+          "ai": 1.0172082166199814,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_10",
+          "target": 2,
+          "ai": 1.209873949579832,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        }
+      ]
+    },
+    "descent_range": {
+      "trained": false,
+      "train_support": {
+        "0": 1,
+        "1": 20,
+        "2": 9
+      },
+      "reason": "관측된 정상·오류 각각 2명 이상 필요",
+      "observed_train": 30,
+      "observed_validation": 10
+    },
+    "standing_return": {
+      "trained": false,
+      "train_support": {
+        "0": 0,
+        "1": 0,
+        "2": 31
+      },
+      "reason": "관측된 정상·오류 각각 2명 이상 필요",
+      "observed_train": 31,
+      "observed_validation": 10
+    },
+    "trunk_balance": {
+      "trained": true,
+      "train_support": {
+        "0": 2,
+        "1": 1,
+        "2": 28
+      },
+      "observed_train": 31,
+      "validation_cases": 10,
+      "error_people": [
+        "Petra",
+        "Terka",
+        "Vasil"
+      ],
+      "boundaries": [
+        2.4582148166256323,
+        6.220322199174765
+      ],
+      "ai_grade_MAE": 0.4056805555555557,
+      "rule_grade_MAE": 0.7,
+      "predictions": [
+        {
+          "id": "Mima_01",
+          "target": 2,
+          "ai": 1.95,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_02",
+          "target": 2,
+          "ai": 1.2275095785440615,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_03",
+          "target": 1,
+          "ai": 0.06356321839080466,
+          "rule": 0,
+          "baseline_observation_rule": 1
+        },
+        {
+          "id": "Mima_04",
+          "target": 2,
+          "ai": 1.7837164750957855,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_05",
+          "target": 2,
+          "ai": 1.3944444444444442,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_06",
+          "target": 2,
+          "ai": 1.8864367816091951,
+          "rule": 2,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_07",
+          "target": 2,
+          "ai": 1.6246743295019153,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_08",
+          "target": 2,
+          "ai": 1.71095785440613,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_09",
+          "target": 2,
+          "ai": 1.6725431034482758,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        },
+        {
+          "id": "Mima_10",
+          "target": 2,
+          "ai": 1.6293486590038313,
+          "rule": 1,
+          "baseline_observation_rule": 2
+        }
+      ]
+    },
+    "heel_support": {
+      "trained": true,
+      "train_support": {
+        "0": 3,
+        "1": 0,
+        "2": 8
+      },
+      "observed_train": 11,
+      "validation_cases": 10,
+      "error_people": [
+        "Petra",
+        "Vasil"
+      ],
+      "boundaries": [
+        0.07292213237409143,
+        0.13822973306851655
+      ],
+      "ai_grade_MAE": 0.686351362463518,
+      "rule_grade_MAE": 0.9,
+      "predictions": [
+        {
+          "id": "Mima_01",
+          "target": 2,
+          "ai": 1.8822163053896455,
+          "rule": 2,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_02",
+          "target": 2,
+          "ai": 1.6883577051573744,
+          "rule": 1,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_03",
+          "target": 2,
+          "ai": 0.8729701325506283,
+          "rule": 2,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_04",
+          "target": 2,
+          "ai": 1.199053853806141,
+          "rule": 0,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_05",
+          "target": 0,
+          "ai": 0.24109930835159546,
+          "rule": 0,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_06",
+          "target": 2,
+          "ai": 0.7577659750182624,
+          "rule": 0,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_07",
+          "target": 2,
+          "ai": 1.6202659750182624,
+          "rule": 1,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_08",
+          "target": 2,
+          "ai": 1.1455904534062433,
+          "rule": 2,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_09",
+          "target": 2,
+          "ai": 1.3702659750182624,
+          "rule": 1,
+          "baseline_observation_rule": null
+        },
+        {
+          "id": "Mima_10",
+          "target": 2,
+          "ai": 0.8410993083515957,
+          "rule": 0,
+          "baseline_observation_rule": null
+        }
+      ]
+    },
+    "spine_control": {
+      "trained": false,
+      "train_support": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "reason": "관측된 정상·오류 각각 2명 이상 필요",
+      "observed_train": 0,
+      "observed_validation": 0
+    }
+  },
+  "limitations": [
+    "기존 개발 자료 재사용 검증이며 독립 최종 시험이 아님",
+    "정면·측면 시각 표본 초안이며 제공자 오류명을 직접 정답으로 쓰지 않음",
+    "새 항목은 합산 배점·총점 없음",
+    "검증 한 사람·항목별 최대5사례로 일반화 성능 확정 불가"
+  ]
+}

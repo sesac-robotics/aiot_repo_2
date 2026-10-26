@@ -1,0 +1,28 @@
+{
+  "model": "heavy",
+  "dataset": "REHAB26",
+  "input_split": "train (proposed fold_0; not official)",
+  "frames": 180,
+  "warmup_frames_excluded_from_latency": 5,
+  "detected_frames": 180,
+  "detected_rate": 1.0,
+  "valid_angle_frames": {
+    "left_elbow": 180,
+    "right_elbow": 180,
+    "left_knee": 180,
+    "right_knee": 180,
+    "left_hip": 180,
+    "right_hip": 180,
+    "left_shoulder": 180,
+    "right_shoulder": 180
+  },
+  "init_ms": 100.1365470001474,
+  "pose_mean_ms": 46.63880285740431,
+  "pose_p95_ms": 50.4530744976364,
+  "pose_fps_equivalent": 21.441373678853797,
+  "pipeline_mean_ms_decode_resize_pose_angles": 55.56880118250514,
+  "preview_throughput_fps_including_csv_json_drawing_encoding": 16.663600156903364,
+  "process_cpu_pct_one_core_mean": 254.30505350563078,
+  "inference_delegate": "CPU",
+  "video_verified_frames": 180
+}

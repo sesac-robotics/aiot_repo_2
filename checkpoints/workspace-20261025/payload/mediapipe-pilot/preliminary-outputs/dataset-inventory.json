@@ -1,0 +1,54 @@
+{
+  "REHAB26": {
+    "videos": 45,
+    "exercise_counts": {
+      "ex1": 15,
+      "ex6": 15,
+      "ex7": 15
+    },
+    "split_counts_fold_0": {
+      "test": 9,
+      "val": 9,
+      "train": 27
+    },
+    "split_policy": {
+      "type": "proposed_leave_one_subject_out",
+      "subjects": [
+        "Honza",
+        "Mima",
+        "Petra",
+        "Terka",
+        "Vasil"
+      ],
+      "folds": 5,
+      "policy": "For fold k, subject k is test, next subject is validation, all others train. All cameras and repetitions of a person remain together. Select a fold before training."
+    },
+    "exercise_names": {
+      "ex1": "Arm abduction",
+      "ex6": "Squat",
+      "ex7": "Shoulder extension"
+    }
+  },
+  "QEVD": {
+    "short_clip_manifest_rows": 298089,
+    "official_split_counts": {
+      "train": 281660,
+      "test": 16429
+    },
+    "split_policy": {
+      "short_clips": "Preserve official split field. No new validation split created.",
+      "long_videos": "Keep coach, benchmark and competition separate. Do not train on benchmark or competition.",
+      "paths": "Manifest video_path values are relative to QEVD root; short clips remain in four part folders.",
+      "workers": "Anonymized worker IDs retained for leakage audits."
+    }
+  },
+  "Pose-Estimation-Model-Comparison": {
+    "videos": [
+      "jj.mp4",
+      "lunges.mp4",
+      "pushup.mp4",
+      "squat.mp4"
+    ],
+    "split": "unassigned"
+  }
+}

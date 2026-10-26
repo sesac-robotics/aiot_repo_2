@@ -1,0 +1,10 @@
+"""Use verified pre-exercise standing, plus bounded post-interval context."""
+from pathlib import Path
+B=Path(__file__).resolve().parents[2];s=(B/'tools/return-discrimination/prepare.py').read_text().replace("O=B/'output/return-discrimination-v1-20261024'","O=B/'output/return-initial-context-20261024'").replace("P=B/'output/mild-return-calibrated-20261024'","P=B/'output/return-discrimination-ensemble-20261024'")
+s=s.replace("first=369 if 'diag_m4' in stem else min(a['last_frame'] for a in normal)-6;end=first+8", "first=369 if 'diag_m4' in stem else 0;end=378 if 'diag_m4' in stem else 2 if 'front_m4' in stem else 6")
+s=s.replace("z['frame_numbers']<=d['last_frame'])","z['frame_numbers']<=d['last_frame']+round(.4*d['fps']))").replace("(t<d['end'])","(t<d['end']+.4)")
+s=s.replace("seq=z['image_xy'][mask]\n elif", "seq=z['image_xy'][mask]\n  if 'front_m4' in stem:rx=np.load(B/'output/return-recheck-20261024/m4-front-initial-reference.npz')['image_xy']\n elif")
+s=s.replace("f=geom.extract(seq,rx,base);g=next", "original_end=d['last_frame'] if r['id'].startswith(('return_squat_','reviewed_return_squat_')) else d['end']*float(Fraction(inv[sid]['fps']));base=base if base and frames[base['bottom_index']]<=original_end else None;f=geom.extract(seq,rx,base);g=next")
+s=s.replace("new_bank='standing_support_extension_v1'", "new_bank='standing_initial_context_v1',context_seconds=.4,reference_policy='visually verified initial standing:0..6; front_m4 dense actual frames0..2; diag_m4 begins bent, keep verified past369..378 for later attempts only',original_labels_unchanged=True")
+s=s.replace("bank='standing_support_extension_v1'","bank='standing_initial_context_v1'").replace("feature_version=geom.VERSION","feature_version='standing-initial-bounded-context-v1'").replace("reference_before_attempt=True,return_source_frame","reference_before_attempt=True,original_attempt_end_frame=float(original_end),context_seconds=.4,context_end_frame=int(frames[-1]),return_source_frame")
+exec(compile(s,str(Path(__file__)), 'exec'))

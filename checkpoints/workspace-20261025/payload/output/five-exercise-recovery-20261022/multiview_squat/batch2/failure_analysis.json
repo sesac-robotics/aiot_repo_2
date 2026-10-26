@@ -1,0 +1,198 @@
+{
+  "comparison_sha256": "7929d1a2b8add7ee10d0b8d868dcf4fbf8fadd286d352ba2753e88d7ac516593",
+  "automatic_analysis_not_direct_review": true,
+  "validation_total_coverage": {
+    "submitted": 8,
+    "paired_total": 5,
+    "ratio": 0.625
+  },
+  "failures": [
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "person": "shoulder_012",
+      "reference_score": 85.0,
+      "ai_error_points": 2.0205927210297006,
+      "rule_error_points": -15.0,
+      "reference_knee_foot": 2,
+      "ai_knee_foot": 1.369654440416686,
+      "rule_knee_foot": 1,
+      "relative_heel_change": 0.05138443506167977
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep1",
+      "person": "shoulder_012",
+      "reference_score": 85.0,
+      "ai_error_points": -2.5337402368936353,
+      "rule_error_points": -15.0,
+      "reference_knee_foot": 2,
+      "ai_knee_foot": 1.3414096111264098,
+      "rule_knee_foot": 1,
+      "relative_heel_change": 0.046313488592242415
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "person": "shoulder_012",
+      "reference_score": 100.0,
+      "ai_error_points": -9.64432960667358,
+      "rule_error_points": -15.0,
+      "reference_knee_foot": 2,
+      "ai_knee_foot": 1.3628317299254658,
+      "rule_knee_foot": 1,
+      "relative_heel_change": 0.05001755874650633
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep0",
+      "person": "shoulder_015",
+      "reference_score": 70.0,
+      "ai_error_points": 27.7633453666041,
+      "rule_error_points": 0.0,
+      "reference_knee_foot": 0,
+      "ai_knee_foot": 1.8508896911069397,
+      "rule_knee_foot": 0,
+      "relative_heel_change": 0.08895374386491024
+    },
+    {
+      "id": "subject_015_squat_bad_batch2_rep1",
+      "person": "shoulder_015",
+      "reference_score": 70.0,
+      "ai_error_points": 26.713431177721617,
+      "rule_error_points": 15.0,
+      "reference_knee_foot": 0,
+      "ai_knee_foot": 1.7808954118481075,
+      "rule_knee_foot": 1,
+      "relative_heel_change": 0.048011087026789745
+    }
+  ],
+  "same_reference_repetition_variation": [
+    {
+      "source_group": "subject_012_squat_good_batch2",
+      "reference_levels": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "segments": 2,
+      "ai_range_points": 4.554332957923336,
+      "rule_range_points": 0.0,
+      "not_independent_people": true
+    },
+    {
+      "source_group": "subject_015_squat_bad_batch2",
+      "reference_levels": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "segments": 2,
+      "ai_range_points": 1.0499141888824823,
+      "rule_range_points": 15.0,
+      "not_independent_people": true
+    }
+  ],
+  "item_grade_distribution": [
+    {
+      "split": "train",
+      "item": "descent_range",
+      "eligible_grade_counts": {
+        "1": 18,
+        "2": 35,
+        "0": 5
+      },
+      "grade_metadata_groups": {
+        "1": 7,
+        "2": 12,
+        "0": 5
+      }
+    },
+    {
+      "split": "train",
+      "item": "return_extension",
+      "eligible_grade_counts": {
+        "2": 70
+      },
+      "grade_metadata_groups": {
+        "2": 32
+      }
+    },
+    {
+      "split": "train",
+      "item": "knee_foot",
+      "eligible_grade_counts": {
+        "2": 34,
+        "0": 16
+      },
+      "grade_metadata_groups": {
+        "2": 11,
+        "0": 7
+      }
+    },
+    {
+      "split": "train",
+      "item": "trunk_balance",
+      "eligible_grade_counts": {
+        "2": 81
+      },
+      "grade_metadata_groups": {
+        "2": 37
+      }
+    },
+    {
+      "split": "validation",
+      "item": "descent_range",
+      "eligible_grade_counts": {
+        "0": 4,
+        "2": 7,
+        "1": 2
+      },
+      "grade_metadata_groups": {
+        "0": 4,
+        "2": 4,
+        "1": 1
+      }
+    },
+    {
+      "split": "validation",
+      "item": "return_extension",
+      "eligible_grade_counts": {
+        "2": 15
+      },
+      "grade_metadata_groups": {
+        "2": 10
+      }
+    },
+    {
+      "split": "validation",
+      "item": "knee_foot",
+      "eligible_grade_counts": {
+        "2": 4,
+        "0": 2
+      },
+      "grade_metadata_groups": {
+        "2": 2,
+        "0": 1
+      }
+    },
+    {
+      "split": "validation",
+      "item": "trunk_balance",
+      "eligible_grade_counts": {
+        "2": 17
+      },
+      "grade_metadata_groups": {
+        "2": 11
+      }
+    }
+  ],
+  "observations_ko": [
+    "검증 015의 뒤꿈치 들림 2구간을 AI가 95점 이상으로 예측한다. 안정적인 추적이 있어도 현재 특징과 학습 분포가 오류를 잘 구분하지 못한다.",
+    "발 지지가 정상인 012 구간의 상대 뒤꿈치 변화량 약 0.046~0.051과 오류 015의 한 구간 약 0.048이 겹친다. 단일 상대 높이 경계로 완전히 구별할 수 없다.",
+    "현재 상대 뒤꿈치 특징은 첫 세 관측 표본을 기준으로 계산하므로 시작 자세와 발 투영·관절 흔들림의 영향을 받는다. 이 설명은 저장 특징·구현에 근거한 원인 가설이며 인과 검증은 추가로 필요하다.",
+    "복귀 신전과 정면 몸통 균형의 학습 가능 라벨은 정상 등급에만 몰려 있다. 해당 항목의 0 오차를 오류 검출 능력으로 설명할 수 없다.",
+    "뒤꿈치 네 경계 보정은 학습 손실을 줄였지만 현재 개발 검증 총점 오차는 보정 전과 같았다. 기존 첫 후보보다 Rule 총점 오차가 커져 공통 모델로 승격하지 않는다.",
+    "후속 특징 개선은 학습 그룹 내부에서 지면 기준 발뒤꿈치·발끝 기울기·정지 구간 기준 높이를 비교하고, 새로 보지 않은 참여자·원본을 확보한 뒤 확정 시험한다. 현재 검증에 맞춘 숫자 수동 변경은 하지 않는다."
+  ],
+  "promoted": false,
+  "independent_final_test": false
+}

@@ -1,0 +1,343 @@
+{
+  "date": "2026-10-24",
+  "status": "completed_experimental_training",
+  "exercises": [
+    {
+      "exercise": "squats",
+      "segments": 301,
+      "people": 76,
+      "training_segments": 216,
+      "validation_segments": 51,
+      "trained_heads": 5,
+      "gate_passed": 1,
+      "unsupported_heads": [
+        [
+          "knee_gap",
+          "front_gap_v1"
+        ],
+        [
+          "return_extension",
+          "front"
+        ],
+        [
+          "return_extension",
+          "side"
+        ],
+        [
+          "trunk_balance",
+          "front"
+        ]
+      ]
+    },
+    {
+      "exercise": "pushups",
+      "segments": 176,
+      "people": 86,
+      "training_segments": 123,
+      "validation_segments": 25,
+      "trained_heads": 5,
+      "gate_passed": 1,
+      "unsupported_heads": [
+        [
+          "return_extension",
+          "side"
+        ]
+      ]
+    },
+    {
+      "exercise": "shoulder",
+      "segments": 143,
+      "people": 25,
+      "training_segments": 93,
+      "validation_segments": 15,
+      "trained_heads": 2,
+      "gate_passed": 0,
+      "unsupported_heads": [
+        [
+          "bilateral_timing",
+          "front_oblique"
+        ],
+        [
+          "frontal_trunk_hold",
+          "front"
+        ],
+        [
+          "frontal_trunk_hold",
+          "front_seated"
+        ],
+        [
+          "lower_return",
+          "front"
+        ],
+        [
+          "lower_return",
+          "front_oblique"
+        ],
+        [
+          "overhead_reach",
+          "front_oblique"
+        ]
+      ]
+    },
+    {
+      "exercise": "plank",
+      "segments": 152,
+      "people": 24,
+      "training_segments": 121,
+      "validation_segments": 22,
+      "trained_heads": 4,
+      "gate_passed": 0,
+      "unsupported_heads": [
+        [
+          "support_continuity",
+          "front_visible_interruption"
+        ]
+      ]
+    },
+    {
+      "exercise": "ytw",
+      "segments": 149,
+      "people": 87,
+      "training_segments": 132,
+      "validation_segments": 14,
+      "trained_heads": 8,
+      "gate_passed": 1,
+      "unsupported_heads": [
+        [
+          "t_reach",
+          "front_projected"
+        ],
+        [
+          "upright_trunk_hold",
+          "upright_temporal_v1"
+        ],
+        [
+          "w_shape",
+          "front_projected"
+        ],
+        [
+          "y_reach",
+          "front_projected"
+        ]
+      ]
+    }
+  ],
+  "score_input_count": 921,
+  "actual_score_training_segments": 685,
+  "source_families_actually_fit": {
+    "MultiView": 117,
+    "other_reviewed": 28,
+    "US_Navy": 53,
+    "QEVD": 169,
+    "REHAB24": 43,
+    "R2D2": 193,
+    "CFRep_reviewed": 82
+  },
+  "source_families": {
+    "MultiView": 177,
+    "other_reviewed": 45,
+    "US_Navy": 53,
+    "QEVD": 237,
+    "REHAB24": 43,
+    "R2D2": 265,
+    "CFRep_reviewed": 101
+  },
+  "native_tasks": {
+    "qevd": 14,
+    "rehab26": 2,
+    "aihub": 10
+  },
+  "models": [
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-Y_only-joints24-0ff688d0.joblib",
+      "sha256": "bc008fb3028e66c9890c1855e4a36f314656339e50e1b80d393393fefa39a4d1",
+      "bytes": 2443169
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-Y_only-joints24-e7fde283.joblib",
+      "sha256": "4c7f37de6c9522a2e9bcd3f6b111e0aa71590503b0f2babbe7db33c51f0545b6",
+      "bytes": 4236929
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-plank-joints24-25a5dffb.joblib",
+      "sha256": "2a0850c754344ff1a31e52462b7838f0967f516917da261723085b51438dd846",
+      "bytes": 3247698
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-plank-joints24-33dd81c6.joblib",
+      "sha256": "3f361ae46c42dc870c11dae0887f0ca11fe3dcf973f805c984b26889cadb28e6",
+      "bytes": 4326738
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-plank-joints24-77d9283a.joblib",
+      "sha256": "7fbd4156decb1b9165c0ed960f88975a3aa41c51e3c61b419f388b5e3a2e9bdf",
+      "bytes": 3980658
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-pushups-joints24-3a8aec03.joblib",
+      "sha256": "f8fadcdf1b6f16a0389928d5456a260a7150282b4bc63eec09b8782e5b25bb5b",
+      "bytes": 13141943
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-pushups-joints24-6a879c85.joblib",
+      "sha256": "482cd96c24efe2094e1a0b60805c916140f8e6cb5dbbf44352f9aa575ef9b6b9",
+      "bytes": 13729303
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-pushups-joints24-99476459.joblib",
+      "sha256": "107ed16e0e1dd843612356115eac4348e077708969a5d681059f14f032e1268b",
+      "bytes": 14917783
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-pushups-joints24-9bfe5912.joblib",
+      "sha256": "f21bb0565e56cc248df3d4e814f33cbd1cb7427daa06ffd018b2867e2508880f",
+      "bytes": 10979063
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/aihub-pushups-joints24-ec9b4c2d.joblib",
+      "sha256": "45710d7e04d401493b9d39c1e2c4d436a1c279bdffdae5c8638453c29ccacd36",
+      "bytes": 14697463
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-plank-00.joblib",
+      "sha256": "33f788a51bdac85c8dc574a01e656bc38838c61ba3bacc785758a71dad3ae084",
+      "bytes": 1433498
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-plank-01.joblib",
+      "sha256": "33af9785cc3213820e660052d3fa791a7be37acf81f3302483bdb500c7add79c",
+      "bytes": 3079030
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-plank-02.joblib",
+      "sha256": "ea79ea5c046c59b1b9ffc0cd30beb957b61135014ac2f7f62d8bc3f719279c63",
+      "bytes": 887332
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-plank-03.joblib",
+      "sha256": "fc3ab2751fd882c4c19442da5653590a2faefded7d2f9745e2305d2ff957ad70",
+      "bytes": 2032802
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-plank-04.joblib",
+      "sha256": "d00ac52f7f57c38aacba3efca8597c7c316faeaf36df7cd97b3a3b984933aa9a",
+      "bytes": 2137225
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-plank-05.joblib",
+      "sha256": "a70f37816b70cc76fa592c9f1a59ccc32d66d62641f8f704a1797e7c89a259cf",
+      "bytes": 1194761
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-plank-06.joblib",
+      "sha256": "b4491b9a5ecd49622cd3c2e4608c2de9309a64b39115ea6db266c141b3ed529b",
+      "bytes": 2883657
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-pushups-00.joblib",
+      "sha256": "46010c2c645126e3214cf972cba4d79898603c85a8cd5351e0637dcff580ee09",
+      "bytes": 777901
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-pushups-01.joblib",
+      "sha256": "f0593a9365405564f0d7d933f169c433253317eafc17463583f21332cc0432b2",
+      "bytes": 970976
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-pushups-02.joblib",
+      "sha256": "f7e0bf12f6aa04036c803d66cc0dbcb0819b8c4b2d6cfe72da3d483cdeb4f13d",
+      "bytes": 484424
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-pushups-03.joblib",
+      "sha256": "5694a580dc59f95de016f89df01a28f04ccc7055b4867b4ce9063275620e5c23",
+      "bytes": 589743
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-pushups-04.joblib",
+      "sha256": "259f159ebbb2d127d9f0ac92b93f5a847538ea49f09e9120bd84f628f61f4d68",
+      "bytes": 1402245
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-squats-00.joblib",
+      "sha256": "abd61981938f25eea80f82dae38f8973ed7e54ebd65b8b52c4b9ccf05ecf38d5",
+      "bytes": 2867097
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/qevd-squats-01.joblib",
+      "sha256": "517752a065e823843778a5d94285cc5307ae930cf0f82934850f08101b7afa12",
+      "bytes": 3740737
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/rehab26-error_type.joblib",
+      "sha256": "169ba8f97761ea3ee54a37768c47a2d04e97987bd02a776542e645c63678b260",
+      "bytes": 4746281
+    },
+    {
+      "path": "output/integrated-five-20261024/native-models/rehab26-normal_error.joblib",
+      "sha256": "5bf9dd8957946a4ea2496ae91a735ad5eb83ed5139a09f0b859bd0ac7f16d777",
+      "bytes": 2129643
+    },
+    {
+      "path": "output/integrated-five-20261024/return-neural-candidate.joblib",
+      "sha256": "4893640fc9aae22c0fe92a7865604ed33405c8417b9801c9fee8def499d26a27",
+      "bytes": 36768
+    },
+    {
+      "path": "output/integrated-five-20261024/score-candidates.joblib",
+      "sha256": "efaadd76e96b58684fd2f86ade8aaf50fdde691aea3e25924a7306ff70213557",
+      "bytes": 4288130
+    }
+  ],
+  "input_provenance": [
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/data/r2d2-team-20261023/annotations/labels.frozen.json",
+      "sha256": "6b340faf5a330ef0dd9deb5fbf1a16faa27f5124d47c94d1570fa9b559051ef9"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/squat-return-20261023/labels.frozen.json",
+      "sha256": "b518d44b49b782faac2a445ef172b211523b2c12d83d83000e134d66f4c701f1"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/held_round2/candidate_input_manifest.json",
+      "sha256": "94c13e54320eb88e3061030f1b60a790e10bf6e7c1de60c7b3a1a6d84c54b8fa"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/squat_partial_top_trial/candidate_input_manifest.json",
+      "sha256": "23d313ff660c966e6740bb41baf2da7d9761e1ea8cf9d934487c6af618813add"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261023/new_feature_rows.json",
+      "sha256": "40891ec3d30abb2db4ca7f992cc5f57db58f7651b04cc3c8aede35800d1d4a10"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/score-inputs.frozen.json",
+      "sha256": "4b95e369f394ede681a12ea66ae86785be6c5bd98eb81bacb2af53226fa70cfb"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/qevd-native-inputs.json",
+      "sha256": "94077155b31058c0a24e7549476253c873801fd1987e52a3cc9592d400b13356"
+    },
+    {
+      "path": "/home/jayden/SeSACPAI-Mid/output/integrated-five-20261024/aihub-native-inputs.json",
+      "sha256": "411d9102d8569e41e398e00479c5d1bf7eadcde09ed4b8f37510307d3fe5b7a8"
+    }
+  ],
+  "versions": {
+    "python": "3.14.4",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  },
+  "training_method": "160-tree regressors/classifiers and 80-iteration boosting candidates. Neural height-return comparison uses up to 80 epochs and person-separated stopping.",
+  "neural_epochs": 18,
+  "production_models_replaced": false,
+  "final_test_used": false,
+  "limitations": [
+    "Project score labels remain nonexpert visual drafts.",
+    "All comparisons are development evaluation; no new independent final accuracy claimed.",
+    "AI-Hub training uses supplied 2D joints and conditions; original training-image matching and pixel-network training are not complete.",
+    "No confirmed severe standing-return grade 0 examples.",
+    "Not every criterion has sufficient normal/error participant groups.",
+    "Runtime remains on existing models; candidate gates do not establish prospective performance."
+  ]
+}

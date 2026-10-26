@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HistoryDetailWindow</class>
+ <widget class="QMainWindow" name="HistoryDetailWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+      <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Workout History &amp; Calendar</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #F8FAFC; }
+#historyTitle { font-size: 22px; font-weight: 800; color: #0284C7; background: transparent; }
+#recordCard, #analysisCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 12px; }
+#videoPreviewLabel { background-color: #0F172A; color: #94A3B8; font-weight: bold; border-radius: 16px; font-size: 14px; }
+#openCalendarButton { background-color: #0284C7; color: #FFFFFF; font-size: 13px; font-weight: 800; border-radius: 10px; }
+#openCalendarButton:hover { background-color: #0369A1; }
+#backDashboardButton { background-color: #FFFFFF; color: #64748B; font-size: 13px; font-weight: 700; border: 1px solid #CBD5E1; border-radius: 12px; min-height: 42px; }
+#backDashboardButton:hover { background-color: #F1F5F9; color: #0F172A; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="historyTitle">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>15</y>
+      <width>450</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>📅 Performance Timeline</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>55</y>
+      <width>315</width>
+      <height>40</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="openCalendarButton">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>55</y>
+      <width>125</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>📅 Calendar</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="recordCard">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>103</y>
+      <width>450</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="recordLabel">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>8</y>
+       <width>426</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>✅ Completed: Day 1 - Shoulder Mobility (Score: 92)</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="videoPreviewLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>163</y>
+      <width>450</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Recorded Session Playback / GIF</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="analysisCard">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>371</y>
+      <width>450</width>
+      <height>225</height>
+     </rect>
+    </property>
+    <widget class="QPlainTextEdit" name="analysisContent">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>10</y>
+       <width>426</width>
+       <height>205</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string>달력에서 날짜를 선택하고 확인을 누르면 운동 리포트가 여기에 표시됩니다.</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="backDashboardButton">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>606</y>
+      <width>450</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Back to Dashboard</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

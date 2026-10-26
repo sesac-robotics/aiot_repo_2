@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QEVD 4종 Heavy 운동 교정 실험</title>
+<style>
+body{max-width:1100px;margin:auto;padding:28px;background:#101a24;color:#e8f2fa;font:17px system-ui}a{color:#76e0cb}section{padding:20px;margin:20px 0;background:#1c2c3b;border-radius:14px}select{padding:12px;font:inherit;background:#294357;color:white;border-radius:8px}video{width:100%;max-height:460px;background:#000}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px;text-align:left;border-bottom:1px solid #496077}.warning{color:#ffcf9b}p{line-height:1.7}.muted{color:#adc3d3}
+</style>
+<h1>QEVD 4종 Heavy 운동 교정 실험</h1>
+<p><a href="/selected-exercise.html">이전 3개 데이터셋 비교로 돌아가기</a></p>
+<section><b>학습 진행</b><p id="progress">진행 상태를 확인 중입니다.</p></section>
+<section>
+<label>운동 <select id="exercise"><option value="pushups">푸시업</option><option value="squats">스쿼트</option><option value="plank">팔꿈치 플랭크</option><option value="bird_dog">버드독 대응 동작</option></select></label>
+<label>관절 추출기 <select id="model"><option value="heavy">Heavy</option></select></label>
+<p class="warning">연구용 클립 평가입니다. 0~100점 품질 모델·실시간 반복 교정·의료적 안전 판정이 아닙니다.</p>
+<p class="muted">MediaPipe를 재학습하지 않고, 각 모델의 관절로 별도 오류 분류기를 학습합니다. 클립 전체의 균등한 12시점·640px 이하 영상, 추정 3D 관절을 사용합니다. 가시성 0.3·존재 신뢰도 0.5 이상 관절만 특징으로 사용하고, 관측 비율 35% 이상인 시점이 6개 미만이면 제외합니다. 원본 전체 중 명시 기준군 또는 지원 오류 라벨이 있는 자료만 사용합니다.</p>
+<div id="summary"></div>
+</section>
+<section><h2>학습에서 제외한 시험 영상</h2><select id="sample"></select><p id="no-demo"></p><video id="video" controls preload="metadata" hidden></video><p id="truth"></p><div id="prediction"></div></section>
+<section><h2>오류별 시험 결과</h2><p>표본은 클립 수입니다. 정답은 원본 클립 라벨이며 반복별 정답이 아닙니다. 확률은 모델 출력으로, 정확도나 자세 점수가 아닙니다. 오류별 지표는 해당 오류와 명시 기준군 비교에 한정됩니다. 다른 오류 유형 사이의 구분 성능까지 검증한 수치가 아닙니다.</p><div id="metrics"></div></section>
+<script>
+// 화면은 저장된 결과를 표시하며 원본 라벨을 추론 입력으로 사용하지 않는다.
+let results={},current=null,lastKey='',sampleVersion=0;
+const el=id=>document.getElementById(id);
+const pct=v=>Number.isFinite(v)?(v*100).toFixed(1)+'%':'—';
+function node(tag,text,parent){const n=document.createElement(tag);n.textContent=text;parent.append(n);return n;}
+async function showSample(){
+ const version=++sampleVersion;
+ const r=current?.demos?.[Number(el('sample').value)];
+ el('prediction').replaceChildren();el('truth').textContent='';
+ el('video').pause();
+ el('video').hidden=true;
+ if(!r){el('video').removeAttribute('src');return;}
+ try{
+  const overlays=await(await fetch('/qevd-api/overlays.json')).json();
+  if(version!==sampleVersion)return;
+  if(!overlays[r.id]){
+   node('p','Heavy 관절 표시 영상을 생성 중입니다. 준비되면 자동으로 표시합니다.',el('prediction'));
+   setTimeout(()=>{if(version===sampleVersion)showSample();},3000);return;
+  }
+  el('video').hidden=false;
+  el('video').src='/qevd-video/'+r.id;
+  node('p','초록 선·노란 점은 Heavy가 관측한 관절입니다. 관측되지 않은 관절은 생략합니다. '+overlays[r.id].detected_frames+' / '+overlays[r.id].frames+' 프레임에 관절 표시.',el('prediction'));
+ }catch(error){node('p','관절 영상을 불러오지 못했습니다.',el('prediction'));return;}
+ el('truth').textContent='제공자 라벨: '+r.labels.join(' / ');
+ node('p','전체 클립을 사용한 저장 판정입니다. 영상 종료 후 예측을 확인할 수 있습니다.',el('prediction'));
+ el('video').onended=()=>{
+  el('prediction').replaceChildren();let detected=0;
+  for(const p of r.predictions){
+   if(p.detected&&p.usable){detected++;node('p',p.name+' · 오류 모델 출력 '+pct(p.probability)+' — '+p.advice,el('prediction'));}
+  }
+  if(!detected)node('p','지원 오류 예측 없음 또는 검증 성능 부족으로 판정 보류. 정상임을 보장하지 않습니다.',el('prediction'));
+ };
+}
+function render(){
+ current=results[el('model').value]?.[el('exercise').value];
+ el('summary').replaceChildren();el('metrics').replaceChildren();el('sample').replaceChildren();
+ if(!current){node('p','이 옵션은 아직 학습·평가가 완료되지 않았습니다.',el('summary'));el('no-demo').textContent='완료 시 시험 사례가 나타납니다.';showSample();return;}
+ node('p','관절 품질 필터 통과 클립: '+JSON.stringify(current.valid_clips||{}),el('summary'));
+ el('no-demo').textContent='사례는 원본 ID 순으로 오류별 첫 시험 클립을 선택했습니다. 정답 일치 여부로 고르지 않았습니다.';
+ (current.demos||[]).forEach((r,i)=>{const o=node('option',r.id+' · '+(r.reference?'기준 속성 비교군':r.errors.join(', ')),el('sample'));o.value=i;});
+ const table=node('table','',el('metrics'));const head=node('tr','',table);
+ ['오류','상태','학습 기준/오류','검증 기준/오류','시험 기준/오류','오류 Precision','오류 Recall','Macro F1'].forEach(t=>node('th',t,head));
+ for(const r of Object.values(current.errors)){
+  const tr=node('tr','',table);const counts=s=>r.counts?.[s]?r.counts[s]['0']+' / '+r.counts[s]['1']:'—';
+  [r.name,r.status==='experimental'?'연구용 예측':r.status==='low_validation'?'검증 성능 부족·보류':'표본 부족·미지원',counts('train'),counts('validation'),counts('test'),pct(r.test?.['1']?.precision),pct(r.test?.['1']?.recall),pct(r.test?.['macro avg']?.['f1-score'])].forEach(t=>node('td',t,tr));
+ }
+ showSample();
+}
+async function refresh(){
+ try{
+  const p=await(await fetch('/qevd-api/progress.json')).json();
+  el('progress').textContent=p.stage==='complete'?'Heavy 4종 전체 실행 완료':p.stage==='failed'?'학습 중단: '+p.error_type+' · '+p.message:p.model?`${p.model.toUpperCase()} 관절 추출 ${p.done} / ${p.total} 클립 · 완료 운동부터 결과 표시`:'라벨 조사 중';
+  const r=await(await fetch('/qevd-api/results.json')).json();const key=JSON.stringify(r);
+  if(key!==lastKey){results=r;lastKey=key;render();}
+ }catch(error){el('progress').textContent='진행 파일을 읽지 못했습니다. 서버·학습 로그 확인이 필요합니다.';}
+}
+el('exercise').onchange=render;el('model').onchange=render;el('sample').onchange=showSample;
+render();refresh();setInterval(refresh,15000);
+</script></html>

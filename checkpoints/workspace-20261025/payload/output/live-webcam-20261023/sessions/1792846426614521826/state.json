@@ -1,0 +1,288 @@
+{
+  "status": "실시간 관절 추출 중 · 얼굴 모자이크 적용",
+  "collecting": false,
+  "result": null,
+  "tick": 1028,
+  "visible": 15,
+  "exercise": "ytw",
+  "view": "front",
+  "live_result": {
+    "schema": "posture-score-local-v1",
+    "exercise": "ytw",
+    "model_version": "2026.10.22-reviewed-clip.1",
+    "feature_version": "observed-pixel-10hz-held-v2",
+    "assessment_scope": "reviewed_clip",
+    "items": [
+      {
+        "id": "y_reach",
+        "weight": 30,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": false,
+        "bank": "front_projected",
+        "measured": null,
+        "feature": null,
+        "reasons": [
+          "projection_view_review_required",
+          "finite_required_geometry_unavailable"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 2,
+          "1": 54,
+          "2": 3
+        },
+        "unseen_training_grades": [],
+        "window": null
+      },
+      {
+        "id": "t_reach",
+        "weight": 25,
+        "ai_grade": 1.9867294520547945,
+        "rule_grade": 2,
+        "ai_minus_rule": -0.013270547945205546,
+        "observed": true,
+        "bank": "front_projected",
+        "measured": null,
+        "feature": [
+          80.46094598882372,
+          92.32367786718318,
+          94.72859447940745,
+          135.2103286832786,
+          171.54586163046275,
+          172.49050386045397
+        ],
+        "reasons": [
+          "training_grades_missing_0"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 11,
+          "2": 74
+        },
+        "unseen_training_grades": [
+          0
+        ],
+        "window": {
+          "start_index": 1,
+          "end_index": 15,
+          "anchor_index": 8,
+          "samples": 15
+        }
+      },
+      {
+        "id": "w_shape",
+        "weight": 25,
+        "ai_grade": 1.6310550228682086,
+        "rule_grade": 2,
+        "ai_minus_rule": -0.3689449771317914,
+        "observed": true,
+        "bank": "front_projected",
+        "measured": null,
+        "feature": [
+          126.14299738502768,
+          0.28639176946494604,
+          -0.8271183827150818,
+          110.51279734159102,
+          0.2992342453416326,
+          -0.8883073844062708,
+          15.630200043436659
+        ],
+        "reasons": [],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 12,
+          "1": 45,
+          "2": 26
+        },
+        "unseen_training_grades": [],
+        "window": {
+          "start_index": 22,
+          "end_index": 24,
+          "anchor_index": 23,
+          "samples": 3
+        }
+      },
+      {
+        "id": "hinge_and_trunk_hold",
+        "weight": 20,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": false,
+        "bank": "front_projected",
+        "measured": null,
+        "feature": null,
+        "reasons": [
+          "projection_view_review_required"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 13,
+          "1": 38,
+          "2": 48
+        },
+        "unseen_training_grades": [],
+        "window": null
+      }
+    ],
+    "ai_score": null,
+    "rule_score": null,
+    "ai_minus_rule": null,
+    "complete_attempt_reviewed": false,
+    "requires_manual_view_review": true,
+    "ytw_projection_proxy": true,
+    "expert_validated": false,
+    "independent_final_test": false,
+    "timing_ms": {
+      "features": 4.429747998074163,
+      "ai": 9.685955999884754,
+      "rule": 0.09448699711356312
+    },
+    "limitations": [
+      "Y and hinge are projection proxies; manual view and phase review required for totals.",
+      "W stage and grade errors remain.",
+      "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+    ],
+    "score_100": {
+      "version": "squat-core100-observation-v3",
+      "items": [
+        {
+          "id": "y_reach",
+          "title": "y_reach",
+          "weight": 30,
+          "ai_points": null,
+          "rule_points": null,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "t_reach",
+          "title": "t_reach",
+          "weight": 25,
+          "ai_points": 24.8,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -0.2,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -0.2점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "w_shape",
+          "title": "w_shape",
+          "weight": 25,
+          "ai_points": 20.4,
+          "rule_points": 25.0,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": -4.6,
+            "explanation": "같은 항목·배점에서 AI Model과 Rule Base의 차이는 -4.6점입니다. 학습된 특징 조합과 규칙 경계가 다릅니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        },
+        {
+          "id": "hinge_and_trunk_hold",
+          "title": "hinge_and_trunk_hold",
+          "weight": 20,
+          "ai_points": null,
+          "rule_points": null,
+          "estimated": false,
+          "reasons": [],
+          "comparison": {
+            "difference_points": null,
+            "explanation": "양쪽이 같은 기준으로 평가된 경우에만 점수 차이를 계산합니다.",
+            "automatic": true,
+            "gpt_used": false
+          }
+        }
+      ],
+      "ai": {
+        "total": null,
+        "maximum": 100,
+        "earned_subtotal": 45.2,
+        "assessed_weight": 50,
+        "full_score": false,
+        "estimated": false,
+        "status": "일부 항목 미평가"
+      },
+      "rule": {
+        "total": null,
+        "maximum": 100,
+        "earned_subtotal": 50.0,
+        "assessed_weight": 50,
+        "full_score": false,
+        "estimated": false,
+        "status": "일부 항목 미평가"
+      },
+      "expert_validated": false,
+      "total_renormalized": false,
+      "scope": "프로젝트 맨몸 스쿼트 목표 범위·정렬·복귀·좌우 안정; 100점은 의학적으로 검증된 안전 점수가 아님"
+    },
+    "provisional": true,
+    "window_seconds": 5.9,
+    "updated_at": 1792846425.850564
+  },
+  "live_error": null,
+  "generation": 8,
+  "started_at": 26332.424394476,
+  "movement": {
+    "detection_version": "front-hysteresis-v2",
+    "standing_state_version": "initial-standing-state-v1",
+    "uncertain_attempts": [],
+    "phase": "YTW 자동 반복 구분은 아직 미지원",
+    "count": null,
+    "angle": null,
+    "hip_drop": null,
+    "active": false,
+    "movement_seconds": 0.0,
+    "hold_seconds": 0.0,
+    "scope": "experimental_2d_motion_boundaries"
+  },
+  "repetitions": [],
+  "last_rep": null,
+  "item_observation_version": "front-item-observation-v1",
+  "standing_state_version": "initial-standing-state-v1",
+  "standing_state_model_sha256": "144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57",
+  "source_commit": "55fae6974bee80a71c50c8acbf2ce5fa782c58a6",
+  "source_dirty": true,
+  "loaded_code_model_sha256": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "update_available": false,
+  "source_check_error": null,
+  "extraction_delegate": "CPU",
+  "camera_at": 26382.076579318,
+  "sample_cadence": {
+    "actual_hz": 10.0,
+    "observed_slot_fraction": 1.0,
+    "required_hz": 10,
+    "minimum_observed_fraction": 0.8
+  },
+  "width": 640,
+  "height": 480,
+  "front_squat_observation": {
+    "visible": 4,
+    "required": 6,
+    "missing": [
+      "왼쪽 무릎",
+      "오른쪽 무릎"
+    ]
+  },
+  "coaching": null,
+  "finalizing": true,
+  "saved_session_folder": "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792846306613620500"
+}

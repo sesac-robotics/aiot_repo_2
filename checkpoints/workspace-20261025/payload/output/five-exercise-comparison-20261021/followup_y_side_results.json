@@ -1,0 +1,120 @@
+{
+  "records": [
+    {
+      "id": "followup_josh_Y_side",
+      "extraction": {
+        "id": "followup_josh_Y_side",
+        "view": "primary",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "677cf24f4286c83a7ab41e0170195c2e01de66e7c5da274a394c83a9c4e777be",
+          "segment": {
+            "start_frame": 2458,
+            "end_frame": 2546,
+            "fps": 29.97002997002997
+          },
+          "required_views": [
+            "directly_verified_side_Y_component_only"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "CPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "b3cd1c6e847cb72f08285bc0da931f10730508332a58b9fbcefeed845f8512eb",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_y_side_CPU_cache/followup_josh_Y_side/primary.npz",
+        "frames": 30,
+        "observed_joint_fraction": 0.6060606060606061,
+        "extract_seconds": 27.319775318999746,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "direct_hinge_grade": 2,
+      "direct_Y_sagittal_grade": 2,
+      "rule": {
+        "hinge_grade": 2,
+        "y_sagittal_component_grade": 2,
+        "full_y_grade": null,
+        "total_score": null,
+        "expert_validated": false,
+        "side_verified": true,
+        "selected_side": "left",
+        "selected_arm_side": "left",
+        "trunk_tilt_p10_p90_deg": [
+          60.2308412116468,
+          68.03458708555482
+        ],
+        "trunk_tilt_median_deg": 65.39220061854388,
+        "arm_reach_p90_deg": 176.5906731476935,
+        "elbow_extension_at_reach_p10_deg": 169.68658149340737,
+        "hold_reason": null
+      }
+    },
+    {
+      "id": "followup_josh_hinge_transition",
+      "extraction": {
+        "id": "followup_josh_hinge_transition",
+        "view": "primary",
+        "config": {
+          "schema": "heavy-observed-sequence-v2-sequential",
+          "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+          "source_sha256": "677cf24f4286c83a7ab41e0170195c2e01de66e7c5da274a394c83a9c4e777be",
+          "segment": {
+            "start_frame": 3282,
+            "end_frame": 3326,
+            "fps": 29.97002997002997
+          },
+          "required_views": [
+            "directly_verified_side_Y_component_only"
+          ],
+          "sample_hz": 10,
+          "max_edge": 640,
+          "min_visibility": 0.5,
+          "min_presence": 0.5,
+          "delegate": "CPU",
+          "num_poses": 1,
+          "decoding": "one_initial_seek_then_sequential_grab"
+        },
+        "fingerprint": "c6d8c7e18c87546d8b5c9c0545b5af32c065d8ae4966f8724218903ffcbfce05",
+        "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_y_side_CPU_cache/followup_josh_hinge_transition/primary.npz",
+        "frames": 15,
+        "observed_joint_fraction": 0.4888888888888889,
+        "extract_seconds": 14.350078710998787,
+        "reused": false,
+        "synchronization_visually_verified": false,
+        "score_generated": false
+      },
+      "direct_hinge_grade": 1,
+      "direct_Y_sagittal_grade": null,
+      "rule": {
+        "hinge_grade": 1,
+        "y_sagittal_component_grade": null,
+        "full_y_grade": null,
+        "total_score": null,
+        "expert_validated": false,
+        "side_verified": true,
+        "selected_side": "left",
+        "selected_arm_side": "left",
+        "trunk_tilt_p10_p90_deg": [
+          3.445842827462399,
+          50.738608932966486
+        ],
+        "trunk_tilt_median_deg": 26.59697277529365,
+        "arm_reach_p90_deg": null,
+        "elbow_extension_at_reach_p10_deg": null,
+        "hold_reason": null
+      }
+    }
+  ],
+  "direct_sha256": "ae3fbd944961d933633a698fb9d27e13468dd5dee26e78dce78a9a5a81fc8044",
+  "delegate": "CPU",
+  "full_Y_or_YTW_total_created": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "learning_status": "new_observed_components_only_not_enough_people_for_Y_AI"
+}

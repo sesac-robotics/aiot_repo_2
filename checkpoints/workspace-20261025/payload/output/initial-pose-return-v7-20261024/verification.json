@@ -1,0 +1,95 @@
+{
+  "status": "mixed_source_state_training_and_guarded_return_grade_API_development",
+  "state_training_frames": 237,
+  "state_label_anchors": 242,
+  "unobserved_anchors": 5,
+  "actual_training_sources": 24,
+  "training_people": 6,
+  "external_added_frames": 32,
+  "external_added_people": 2,
+  "state_heads": 11,
+  "state_development_gate_passed_heads": 11,
+  "plank_frame_development": {
+    "n": 67,
+    "balanced_accuracy": 0.949343339587242,
+    "confusion_matrix": [
+      [
+        40,
+        1
+      ],
+      [
+        2,
+        24
+      ]
+    ],
+    "classes": [
+      0,
+      1
+    ],
+    "ready_n": 26,
+    "nonready_n": 41,
+    "ready_missed": 2,
+    "nonready_called_ready": 1
+  },
+  "plank_original_team_frame_comparison": {
+    "same_original_team_frame_ids": true,
+    "frames": 37,
+    "old_nonready_false_ready": 6,
+    "new_nonready_false_ready": 1,
+    "nonready_frames": 25,
+    "old_ready_missed": 0,
+    "new_ready_missed": 0,
+    "ready_frames": 12,
+    "development_only": true
+  },
+  "plank_constant_window_development": {
+    "windows": 10,
+    "nonready_windows": 6,
+    "ready_windows": 4,
+    "false_initial_ready": 0,
+    "missed_initial_ready": 0,
+    "passed": true
+  },
+  "plank_candidate_blocked": false,
+  "state_and_temporal_selection_use_Train_person_excluded_development": true,
+  "independent_final_Test_opened": false,
+  "original_score_models_unchanged": true,
+  "original_Test_inputs_unchanged": true,
+  "source_partition_unchanged": true,
+  "exact_80_20_achieved": false,
+  "missing_person_exercise_normal_error_split_cells": 37,
+  "return_grade_training_finished": false,
+  "new_confirmed_completed_return_failure_labels": 0,
+  "additional_shoulder_sources_screened": 8,
+  "service_API": "ScoringEngine.score_with_initial_return",
+  "real_combined_service_checks": 5,
+  "tests": {
+    "state-tests.log": 20,
+    "service-tests.log": 55
+  },
+  "total_tests": 75,
+  "live_service_replaced": false,
+  "overall_five_exercise_ready": false,
+  "production_replacement": false,
+  "files": {
+    "state-labels-v3.frozen.json": "3c6d6d62f6a987782cf820dbb26225447d649d79ad6d2ebf9a9578a75be01b6d",
+    "state-inputs.frozen.json": "81a06b66d03f704e0a509cb0bff1a26ac5a0040185eafc0c86dedbc993a4076a",
+    "state-training.json": "350c4deb7e5e2b8dd69b3e6aedd072dff00e2b13f9b02e67f3993d84769acd75",
+    "initial-pose-state-candidates.joblib": "35e90add8a53e81fec2817dbe6c740635077412ca0060ba2fde237eb776a8eb9",
+    "initial-pose-return-bundle.joblib": "fc18ccb7f3ab9a8a9b23d1683be07de83530ffebcf657046b81d69549a6e0439",
+    "stream-oof-v2-evaluation.json": "2b866c95302dc553f80deea2e5b5a5cb0aa10fd400de31e22657ab3ec0b2625d",
+    "service-model-freeze.json": "3cdb15547a2de68e91382ffe9c30a056f958dd43ce2e1994ec6fd1015f6efab3",
+    "plank-temporal-development.frozen.json": "276e69def56fe56d8d22ff56fcc7e84ac38959f1ee95b1b4eeabfaa3f66638cb",
+    "return-grade-and-split-audit.json": "00f91613c505c33f8fe82ba7ca0c1c13c22b41cbff40948bf2816a6c6db90222",
+    "new-shoulder-return-screen.frozen.json": "fbec9620f3a112f707624e1b9496e292ccab6e254a5d91a7d08283476e8eaa57",
+    "service-integration-development.json": "f354ff7de64ee7350e45423bcb7737a102d5586e190e683ee1e93384495f6769",
+    "state-tests.log": "54199e2dadb5d523cc9d7bd36bdf5253d24e96643abcbd9f039973455aacc68c",
+    "service-tests.log": "19e65f0bbccf19d6c7379cd607f763507547df27d0c5e59f275fadd4fb65f147"
+  },
+  "implementation_hashes": {
+    "team-posture-scoring/Server/AIService/app/scoring/initial_pose_return.py": "a6e4a6b326c7b8c47aceca5b6d98c52bd598514ec7abf870a39f1dfef13b9e77",
+    "team-posture-scoring/Server/AIService/app/scoring/return_scoring.py": "b72f90469b88c59426866c3496ff8cb2d4aa2667d03e4bc3145f76e98c1faffa",
+    "team-posture-scoring/Server/AIService/app/scoring/engine.py": "917cd93a56f4e33169784a0f0ac00855f2b348bb9ff41209129760c38c507988"
+  },
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809"
+}

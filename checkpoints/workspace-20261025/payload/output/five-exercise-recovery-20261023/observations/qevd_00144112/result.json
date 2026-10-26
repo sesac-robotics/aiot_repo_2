@@ -1,0 +1,128 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "squats",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "descent_range",
+      "weight": 30,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": 0.7273167454193346,
+      "feature": null,
+      "reasons": [
+        "item_not_reviewed_as_observable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "return_extension",
+      "weight": 20,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "finite_required_geometry_unavailable",
+        "item_not_reviewed_as_observable",
+        "single_grade_training_error_discrimination_unverified"
+      ],
+      "single_grade_training": true,
+      "window": null
+    },
+    {
+      "id": "knee_foot",
+      "weight": 30,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "side_heel_and_toe_missing",
+        "item_requires_side_view",
+        "finite_required_geometry_unavailable",
+        "item_not_reviewed_as_observable",
+        "unsupported_model_view_bank"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "trunk_balance",
+      "weight": 20,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "front",
+      "measured": 4.875523178244153,
+      "feature": [
+        0.35122594725760137,
+        0.40996820411319934,
+        0.9970577048242348,
+        1.2002897537492518,
+        4.131366462984673,
+        4.875523178244153,
+        5.124754205624263,
+        1.0
+      ],
+      "reasons": [
+        "single_grade_training_error_discrimination_unverified"
+      ],
+      "single_grade_training": true,
+      "window": null
+    }
+  ],
+  "ai_score": null,
+  "rule_score": null,
+  "ai_minus_rule": null,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 28.712424000104875,
+    "ai": 119.9178040001243,
+    "rule": 0.021555000103035127
+  },
+  "limitations": [
+    "Heel/knee errors can still receive excessive AI scores.",
+    "Full assessment requires reviewed synchronized front and side views.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00144112.mp4",
+    "labels": [
+      "squats - shallow",
+      "squats - wide",
+      "squats - no obvious issue"
+    ],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 8.550940088000061,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

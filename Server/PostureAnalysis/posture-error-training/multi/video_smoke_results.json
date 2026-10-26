@@ -1,0 +1,115 @@
+{
+  "pushups": {
+    "video_id": "00281820",
+    "processed_frames": 154,
+    "at_least_one_prediction": true,
+    "last_result": {
+      "status": "ok",
+      "exercise": "pushups",
+      "scores": {
+        "shallow": 0.026965776458382607,
+        "butt sinking": 0.0010905660456046462,
+        "elevated hips": 0.0012919361470267177,
+        "head down": 0.00021139961609151214,
+        "moving head": 7.991094025783241e-05,
+        "side to side": 0.02301033027470112
+      },
+      "detected_errors": [],
+      "feedbacks": [],
+      "any_selected_error_score": 0.09091610461473465,
+      "any_selected_error": false,
+      "valid_frame_ratio": 1.0,
+      "normal_assessment": "unavailable",
+      "scope": "Six selected QEVD error annotations; absent labels do not certify normal form.",
+      "partial_window_at_file_end": true
+    }
+  },
+  "elbow_plank": {
+    "video_id": "00281704",
+    "processed_frames": 153,
+    "at_least_one_prediction": true,
+    "last_result": {
+      "status": "ok",
+      "exercise": "elbow_plank",
+      "scores": {
+        "arms facing inward": 0.0007456365856342018,
+        "arms too wide": 0.28715479373931885,
+        "butt sinking": 0.433749794960022,
+        "head down": 0.7732943892478943,
+        "head up": 7.028072104731109e-06,
+        "high hips": 0.9140298962593079,
+        "legs and hips on the floor": 1.4753071809536777e-05,
+        "shoulders shrugged up toward the ears": 0.12398172914981842
+      },
+      "detected_errors": [
+        "head down",
+        "high hips"
+      ],
+      "feedbacks": [
+        "Bring your head into line with your torso, following the reference neck position.",
+        "Lower your hips toward the straight body line shown in the reference."
+      ],
+      "any_selected_error_score": 0.6028034687042236,
+      "any_selected_error": true,
+      "valid_frame_ratio": 1.0,
+      "normal_assessment": "unavailable",
+      "scope": "Eight selected QEVD errors; other annotations include supported variants and timing, not verified normal controls.",
+      "partial_window_at_file_end": true
+    }
+  },
+  "ytw": {
+    "video_id": "00282660",
+    "processed_frames": 184,
+    "at_least_one_prediction": true,
+    "last_result": {
+      "status": "ok",
+      "exercise": "ytw",
+      "scores": {
+        "arms too low": 0.3736889958381653,
+        "wrong order": 0.7738314270973206,
+        "too fast": 0.64332115650177,
+        "too slow": 5.754408789471199e-07
+      },
+      "detected_errors": [
+        "wrong order"
+      ],
+      "feedbacks": [
+        "Perform the positions in the intended Y, then T, then W order."
+      ],
+      "any_selected_error_score": 0.7241750359535217,
+      "any_selected_error": true,
+      "valid_frame_ratio": 1.0,
+      "normal_assessment": "unavailable",
+      "scope": "Exploratory source-label reproduction. Upright/bent torso variants not reviewed; no verified upright normal controls."
+    }
+  },
+  "shoulder_press": {
+    "video_id": "90000003",
+    "processed_frames": 492,
+    "at_least_one_prediction": true,
+    "last_result": {
+      "status": "ok",
+      "exercise": "shoulder_press",
+      "scores": {
+        "arms too wide at the top": 0.5476784706115723,
+        "incomplete upward range": 0.4008950889110565,
+        "hands move behind the head": 0.3911254405975342,
+        "forearms tilt inward": 0.5610212683677673,
+        "elbow path narrower than reference": 0.40078598260879517,
+        "uneven arm height and timing": 0.2938421070575714
+      },
+      "detected_errors": [
+        "forearms tilt inward"
+      ],
+      "feedbacks": [
+        "Avoid moving only your hands inward as you lower; match wrist and elbow alignment to the reference."
+      ],
+      "any_selected_error_score": 0.5079224109649658,
+      "any_selected_error": true,
+      "valid_frame_ratio": 1.0,
+      "normal_assessment": "unverified_draft_candidate_only",
+      "scope": "Unverified visual/source-binary drafts; small pilot only. Source test has one positive video.",
+      "normal_candidate": false
+    }
+  }
+}

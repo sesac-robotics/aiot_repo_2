@@ -1,0 +1,122 @@
+{
+  "recorded_at": "2026-10-21T18:36:51.813980+09:00",
+  "reviews": [
+    {
+      "id": "youtube_jonple_error",
+      "source_id": "HLopT0cN8j0",
+      "source_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/youtube_HLopT0cN8j0.mp4",
+      "source_sha256": "3a45fe70d4779f1d6ff6f05224afcdc0ff9f72f76e038fe17668b24954b9db11",
+      "source_group": "youtube_HLopT0cN8j0_all_segments",
+      "person_group": "UCIjeq5EDjLxytQBHkv_erMw",
+      "split": "train",
+      "start_frame": 150,
+      "end_frame_exclusive": 225,
+      "kind": "basic_elbow_plank_development",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "creator": "Jonple",
+      "source_url": "https://www.youtube.com/watch?v=HLopT0cN8j0",
+      "crop_xyxy": null,
+      "score": null,
+      "independent_final_test": false,
+      "synchronized_multiview": false,
+      "draft_levels": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "total_score": 40.0,
+      "note_ko": "몸통·골반이 크게 처지고 골반·몸통이 매트에 닿아 추가 지지함. 팔꿈치는 대체로 어깨 아래이며 선택 구간에서 이 잘못된 지지를 지속한다. 목 젖힘은 이번 네 항목에 포함하지 않음.",
+      "evidence_sheet": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/jonple_error_6_9.jpg",
+      "labeler": "assistant_direct_visual_review_nonexpert",
+      "expert_validated": false,
+      "rule_generated_label": false,
+      "before_new_joint_extraction": true
+    },
+    {
+      "id": "youtube_jonple_normal",
+      "source_id": "HLopT0cN8j0",
+      "source_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/youtube_HLopT0cN8j0.mp4",
+      "source_sha256": "3a45fe70d4779f1d6ff6f05224afcdc0ff9f72f76e038fe17668b24954b9db11",
+      "source_group": "youtube_HLopT0cN8j0_all_segments",
+      "person_group": "UCIjeq5EDjLxytQBHkv_erMw",
+      "split": "train",
+      "start_frame": 300,
+      "end_frame_exclusive": 375,
+      "kind": "basic_elbow_plank_development",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "creator": "Jonple",
+      "source_url": "https://www.youtube.com/watch?v=HLopT0cN8j0",
+      "crop_xyxy": null,
+      "score": null,
+      "independent_final_test": false,
+      "synchronized_multiview": false,
+      "draft_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_score": 100.0,
+      "note_ko": "어깨·골반의 큰 꺾임 없이 무릎을 펴고 팔꿈치·발끝 지지를 지속한다. 영상의 화살표·문자열 대신 실제 원본 자세를 검토함.",
+      "evidence_sheet": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/jonple_normal_12_15.jpg",
+      "labeler": "assistant_direct_visual_review_nonexpert",
+      "expert_validated": false,
+      "rule_generated_label": false,
+      "before_new_joint_extraction": true
+    },
+    {
+      "id": "youtube_avid_normal",
+      "source_id": "WEIcNQqcZqY",
+      "source_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/youtube_WEIcNQqcZqY.mp4",
+      "source_sha256": "f32e2ad19bbbafc6d9c0d9489ec63db0db76ad8d48db5d9a2b482acd02d1f8da",
+      "source_group": "youtube_WEIcNQqcZqY_all_segments",
+      "person_group": "UC7_LFnyBTIbN9e6p98YgIgw",
+      "split": "train",
+      "start_frame": 390,
+      "end_frame_exclusive": 480,
+      "kind": "basic_elbow_plank_development",
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "creator": "Avid Fitness",
+      "source_url": "https://www.youtube.com/watch?v=WEIcNQqcZqY",
+      "crop_xyxy": [
+        30,
+        450,
+        850,
+        720
+      ],
+      "score": null,
+      "independent_final_test": false,
+      "synchronized_multiview": false,
+      "draft_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_score": 100.0,
+      "note_ko": "전신 측면 유지 구간에서 큰 몸통 꺾임·무릎 추가 지지·지지 변경이 보이지 않음. 벽의 인쇄 인물은 고정 ROI로 제외하되 수행자의 머리·발·팔꿈치를 남김.",
+      "evidence_sheet": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/review/avid_side_normal.jpg",
+      "labeler": "assistant_direct_visual_review_nonexpert",
+      "expert_validated": false,
+      "rule_generated_label": false,
+      "before_new_joint_extraction": true
+    }
+  ],
+  "criterion_ids": [
+    "trunk_line",
+    "elbow_sagittal_position",
+    "leg_and_body_support",
+    "support_continuity"
+  ],
+  "weights": [
+    40,
+    25,
+    20,
+    15
+  ],
+  "review_scope": "4 source overview sheets x48; 4 new dense sheets x36 and Jonple2/Avid1 original-size frames; no all-frame expert review",
+  "normal_error_same_source_same_person_same_split": true,
+  "expert_validated": false,
+  "independent_final_test": false
+}

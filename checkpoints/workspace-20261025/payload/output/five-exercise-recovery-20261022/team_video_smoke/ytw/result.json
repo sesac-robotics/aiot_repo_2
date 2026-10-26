@@ -1,0 +1,143 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "ytw",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "y_reach",
+      "weight": 30,
+      "ai_grade": 1.8430642373936836,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.8430642373936836,
+      "observed": true,
+      "bank": "front_projected",
+      "measured": null,
+      "feature": [
+        72.21568569092908,
+        103.31001507751705,
+        114.5147819048896,
+        140.99671774440037,
+        145.28949797735146,
+        153.1249846952454
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": {
+        "start_index": 2,
+        "end_index": 11,
+        "anchor_index": 6,
+        "samples": 10,
+        "median_lateral_span": 1.2082389872076171
+      }
+    },
+    {
+      "id": "t_reach",
+      "weight": 25,
+      "ai_grade": 1.8432944827638846,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.15670551723611537,
+      "observed": true,
+      "bank": "front_projected",
+      "measured": null,
+      "feature": [
+        69.25687381265723,
+        73.02685991821184,
+        73.71972839342052,
+        160.34293615268277,
+        161.10944462085826,
+        162.2804479532757
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": {
+        "start_index": 15,
+        "end_index": 20,
+        "anchor_index": 17,
+        "samples": 6,
+        "median_lateral_span": 2.141026584018597
+      }
+    },
+    {
+      "id": "w_shape",
+      "weight": 25,
+      "ai_grade": 0.09115425322443585,
+      "rule_grade": 0,
+      "ai_minus_rule": 0.09115425322443585,
+      "observed": true,
+      "bank": "front_projected",
+      "measured": null,
+      "feature": [
+        17.024024136551276,
+        -0.22953535913117656,
+        -0.9866415835945626,
+        12.007254750505382,
+        -0.14076667394687192,
+        -0.5547403405751555,
+        5.016769386045894
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": {
+        "start_index": 24,
+        "end_index": 28,
+        "anchor_index": 26,
+        "samples": 5,
+        "median_lateral_span": 0.45996273708956903
+      }
+    },
+    {
+      "id": "hinge_and_trunk_hold",
+      "weight": 20,
+      "ai_grade": 1.5112307711227544,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.5112307711227544,
+      "observed": true,
+      "bank": "front_projected",
+      "measured": null,
+      "feature": [
+        0.7808595688210868,
+        0.9127953658785735,
+        1.085397255175843,
+        -6.368021090487803,
+        -4.919711805206939,
+        -3.735151198343803
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": 66.9388804719868,
+  "rule_score": 50.0,
+  "ai_minus_rule": 16.938880471986806,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": true,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 10.55871899734484,
+    "ai": 89.02512899658177,
+    "rule": 0.21797599765704945
+  },
+  "limitations": [
+    "Y and hinge are projection proxies; manual view and phase review required for totals.",
+    "W stage and grade errors remain."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00150534.mp4",
+    "labels": [],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 19.274439008004265,
+    "delegate": "CPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

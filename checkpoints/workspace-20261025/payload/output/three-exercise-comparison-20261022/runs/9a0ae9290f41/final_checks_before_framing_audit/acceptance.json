@@ -1,0 +1,143 @@
+{
+  "model_version": "9a0ae9290f41",
+  "preserved_sha256_checks": {
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/labels.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/supplemental_labels.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_experimental.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/ytw_experimental.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_W_model/model.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_plank_model/model.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_results.html": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/followup_iteration_verification.json": true,
+    "/home/jayden/SeSACPAI-Mid/five-exercise-comparison/rule_score.py": true
+  },
+  "plank_and_YTW_preserved": true,
+  "split_audit_passed": true,
+  "json_export": {
+    "videos": 173,
+    "scored_segments": 220,
+    "exact_base_keys": [
+      "video_path",
+      "labels",
+      "labels_descriptive",
+      "split"
+    ],
+    "base_split_values": [
+      "train",
+      "test"
+    ],
+    "local_validation_must_follow": "development_splits.json",
+    "original_QEVD_values_preserved": true,
+    "references_resolve": true,
+    "expert_validated": false,
+    "source_sha256": {
+      "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/coach/fine_grained_labels.json": "9058eac1487b3ab34a7a58c6545acddd71654ce7662cd2491a791236ae7308bb",
+      "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/annotations/fine_grained_labels_with_worker_ids.json": "2c3d7bc22e4278dacf409366b92e19560b2e47c36259b9dab6e7c76e9454d732",
+      "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/score_annotations.json": "06b1c3681b420e6637c50b1896b023146e589f6b509330f3f262a37c2f2ebf58",
+      "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/additional_score_annotations.json": "f9a6dc27aeef0bda312fa61d1e5bd466604910d494e546137aa0b27e7e006e1e"
+    },
+    "warning_ko": "기본 train에는 로컬 validation이 포함되므로 학습·검증은 반드시 development_splits.json으로 분리한다. 점수 초안은 전문가 정답이 아니다."
+  },
+  "exercises": [
+    {
+      "exercise": "pushups",
+      "checks": {
+        "training_people": true,
+        "training_segments": true,
+        "fixed_development_validation_people": true,
+        "fixed_development_validation_segments": true,
+        "independent_final_exam": false,
+        "paired_development_MAE": false,
+        "paired_development_P90": false,
+        "normal_and_error_subgroup_MAE": false,
+        "development_assessable_fraction": false,
+        "AI_beats_same_paired_train_mean": true,
+        "error_learning_available_for_every_item": false,
+        "same_input_repeat": true,
+        "runtime_measured": true,
+        "guarded_end_to_end_factor": false
+      },
+      "complete": false,
+      "pending_or_failed": [
+        "independent_final_exam",
+        "paired_development_MAE",
+        "paired_development_P90",
+        "normal_and_error_subgroup_MAE",
+        "development_assessable_fraction",
+        "error_learning_available_for_every_item",
+        "guarded_end_to_end_factor"
+      ],
+      "final_exam_metrics": null,
+      "engineering_targets_not_expert_standard": true
+    },
+    {
+      "exercise": "squats",
+      "checks": {
+        "training_people": true,
+        "training_segments": true,
+        "fixed_development_validation_people": false,
+        "fixed_development_validation_segments": false,
+        "independent_final_exam": false,
+        "paired_development_MAE": false,
+        "paired_development_P90": false,
+        "normal_and_error_subgroup_MAE": false,
+        "development_assessable_fraction": false,
+        "AI_beats_same_paired_train_mean": false,
+        "error_learning_available_for_every_item": false,
+        "same_input_repeat": true,
+        "runtime_measured": true,
+        "guarded_end_to_end_factor": false
+      },
+      "complete": false,
+      "pending_or_failed": [
+        "fixed_development_validation_people",
+        "fixed_development_validation_segments",
+        "independent_final_exam",
+        "paired_development_MAE",
+        "paired_development_P90",
+        "normal_and_error_subgroup_MAE",
+        "development_assessable_fraction",
+        "AI_beats_same_paired_train_mean",
+        "error_learning_available_for_every_item",
+        "guarded_end_to_end_factor"
+      ],
+      "final_exam_metrics": null,
+      "engineering_targets_not_expert_standard": true
+    },
+    {
+      "exercise": "shoulder",
+      "checks": {
+        "training_people": true,
+        "training_segments": true,
+        "fixed_development_validation_people": true,
+        "fixed_development_validation_segments": true,
+        "independent_final_exam": false,
+        "paired_development_MAE": false,
+        "paired_development_P90": false,
+        "normal_and_error_subgroup_MAE": false,
+        "development_assessable_fraction": false,
+        "AI_beats_same_paired_train_mean": false,
+        "error_learning_available_for_every_item": false,
+        "same_input_repeat": true,
+        "runtime_measured": true,
+        "guarded_end_to_end_factor": false
+      },
+      "complete": false,
+      "pending_or_failed": [
+        "independent_final_exam",
+        "paired_development_MAE",
+        "paired_development_P90",
+        "normal_and_error_subgroup_MAE",
+        "development_assessable_fraction",
+        "AI_beats_same_paired_train_mean",
+        "error_learning_available_for_every_item",
+        "guarded_end_to_end_factor"
+      ],
+      "final_exam_metrics": null,
+      "engineering_targets_not_expert_standard": true
+    }
+  ],
+  "all_three_complete": false,
+  "expert_reference": false,
+  "independent_final_exam_completed": false
+}

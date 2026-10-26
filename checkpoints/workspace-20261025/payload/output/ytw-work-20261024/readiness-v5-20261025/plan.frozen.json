@@ -1,0 +1,30 @@
+{
+  "schema": "ytw-readiness-v5-plan",
+  "frozen_at_utc": "2026-10-24T15:45:47.380636+00:00",
+  "change": "add current observation vs historical readiness vs timing-confirmation receipts; same v4.1 parameters/model/boundaries",
+  "models_changed": false,
+  "thresholds_changed": false,
+  "source_roles_changed": false,
+  "source_ids": [
+    "V37",
+    "V38",
+    "V39",
+    "V40",
+    "V41",
+    "V43",
+    "V44"
+  ],
+  "reference_sha256": "969768c9842f9da3b379e6c9d77fc71304ec6dae1107d4b5f10a27145bd44de6",
+  "parent_boundary_code_sha256": "a0d3b0ece473a9e50326ea2bc1c817ee65fb9b498a718d4b7a0369529745b4c6",
+  "selection": "no parameter search; exact semantic event equality to v4.1 required",
+  "exposure": "all existing video references and fold choices exposed development; not independent accuracy",
+  "tests": [
+    "missing slots must hide current_ready without creating grade0",
+    "phase candidate and confirmation timestamps distinguished",
+    "unknown phase/source must hold",
+    "confirmed windows/dense/input permissions checked",
+    "entire7source event equality"
+  ],
+  "production_replacement": false,
+  "camera_access": false
+}

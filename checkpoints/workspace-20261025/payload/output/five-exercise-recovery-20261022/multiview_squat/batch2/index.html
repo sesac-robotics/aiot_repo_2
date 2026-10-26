@@ -1,0 +1,2315 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>보유 스쿼트 12묶음 검토·재학습 비교</title>
+<style>body{font:16px sans-serif;max-width:1260px;margin:28px auto;padding:16px;color:#213047;background:#f5f7fa}p{line-height:1.65}table{width:100%;border-collapse:collapse;background:white}td,th{padding:9px;border:1px solid #cbd4df;text-align:left;overflow-wrap:anywhere}video{width:46%;max-height:570px}img{max-width:100%}details{padding:12px;background:white;margin:12px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<h1>보유 MultiView 스쿼트: 12묶음 후속 검토</h1><p><a href="../../index.html">5종 기준 결과</a> · <a href="../index.html">첫 MultiView 실험</a></p>
+<p>12개 원본 묶음의 24개 시점 검토판과 선택 구간 확대 표본을 직접 대조했습니다. 10묶음에서 20개 반복 구간을 라벨 초안으로 기록했습니다(학습 12, 기존 개발 검증 8). 두 시점의 준비 동작·반복 대응을 확정하지 못한 017의 2묶음은 결합 총점에서 보류했습니다. 전체 연속 영상을 모두 검토했다는 뜻은 아닙니다.</p>
+<p>라벨은 AI의 시간순 표본 직접 검토 초안이며 전문가 정답이 아닙니다. 제공자 good/bad 문자열을 점수로 바꾸지 않았고, 같은 원본의 반복도 자세가 다르면 등급을 다르게 기록했습니다. 원본당 QEVD 기본 4필드 JSON을 하나씩 유지하고 구간별 점수·배점·근거는 확장 JSON에서 연결합니다.</p>
+<p>측면의 하강·복귀·발 지지와 정면의 몸통 균형을 결합합니다. 시차는 선택 반복의 사건 대조 결과이며 하드웨어 동기화 인증이 아닙니다. 관절 신뢰도가 높아도 발을 종아리에 잡거나 흐림 처리 안의 몸통을 추정한 입력은 항목·프레임별로 제외했습니다. 보이지 않는 점수를 채우거나 부분 배점을 100점으로 환산하지 않았습니다.</p>
+<p>학습과 개발 검증은 원본·기존 참여자 메타 그룹으로 분리했고 연결 그룹 교차검증을 적용했습니다. 참여자 메타 ID는 실제 사람의 신원을 인증하지 않습니다. 이번 개발 검증 8구간은 012·015의 2개 메타 그룹이며 독립 최종 시험이 아닙니다. 같은 반복의 두 시점·다른 반복은 새로운 참여자가 아닙니다.</p>
+<p>MediaPipe Heavy는 공통 관절 추출기입니다. 별도 AI 모델과 각도·정렬 Rule Base를 같은 관측 항목과 점수 초안으로 비교했습니다. 뒤꿈치 규칙 경계는 학습 역할만으로 보정했으며 검증 점수를 선택에 사용하지 않았습니다. 기존 5종 모델·플랭크·YTW·첫 실험 결과는 보존했고 이번 후보는 공통 모델로 자동 반영하지 않았습니다.</p>
+<h2>확보와 실제 사용 수</h2><pre>{
+  &quot;added&quot;: {
+    &quot;annotations&quot;: 20,
+    &quot;train_segments&quot;: 12,
+    &quot;validation_segments&quot;: 8,
+    &quot;train_eligible_item_labels&quot;: 33,
+    &quot;validation_eligible_item_labels&quot;: 26,
+    &quot;four_item_observed_segments&quot;: 9
+  },
+  &quot;training_effective_segments&quot;: 85,
+  &quot;training_four_item_observed_segments&quot;: 47,
+  &quot;training_metadata_groups&quot;: 40
+}</pre>
+<h2>같은 개발 검증 입력 비교</h2><table><tr><th>자료</th><th>모델</th><th>전체 / 공통 총점 수</th><th>총점 AI MAE / Rule MAE (점)</th></tr>
+<tr><td>existing_development</td><td>baseline</td><td>7 / 0</td><td>None / None</td></tr>
+<tr><td>existing_development</td><td>candidate</td><td>7 / 0</td><td>None / None</td></tr>
+<tr><td>batch1</td><td>baseline</td><td>3 / 0</td><td>None / None</td></tr>
+<tr><td>batch1</td><td>candidate</td><td>3 / 0</td><td>None / None</td></tr>
+<tr><td>batch2</td><td>baseline</td><td>8 / 5</td><td>14.976663030128606 / 6.0</td></tr>
+<tr><td>batch2</td><td>candidate</td><td>8 / 5</td><td>13.735087821784527 / 12.0</td></tr>
+</table><p>총점이 없는 기존 개발 자료의 오차는 항목별로만 비교합니다. 새 검증의 총점 표본 수와 판정 가능 비율을 함께 봐야 하며, 작은 평균 오차만으로 완료나 일반화를 주장하지 않습니다.</p><h2>항목별 비교 (등급 0~2)</h2><table><tr><th>자료·후보</th><th>항목</th><th>공통 수</th><th>AI MAE / Rule MAE</th></tr>
+<tr><td>existing_development / baseline</td><td>descent_range</td><td>5</td><td>0.3973557692307693 / 0.2</td></tr>
+<tr><td>existing_development / baseline</td><td>trunk_balance</td><td>7</td><td>0.0 / 0.0</td></tr>
+<tr><td>existing_development / candidate</td><td>descent_range</td><td>5</td><td>0.3973557692307693 / 0.2</td></tr>
+<tr><td>existing_development / candidate</td><td>trunk_balance</td><td>7</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch1 / baseline</td><td>trunk_balance</td><td>3</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch1 / baseline</td><td>descent_range</td><td>2</td><td>0.1613374505926055 / 0.0</td></tr>
+<tr><td>batch1 / baseline</td><td>return_extension</td><td>1</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch1 / candidate</td><td>trunk_balance</td><td>3</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch1 / candidate</td><td>descent_range</td><td>2</td><td>0.3178775375559384 / 0.5</td></tr>
+<tr><td>batch1 / candidate</td><td>return_extension</td><td>1</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch2 / baseline</td><td>descent_range</td><td>6</td><td>0.28002353195941615 / 0.3333333333333333</td></tr>
+<tr><td>batch2 / baseline</td><td>return_extension</td><td>7</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch2 / baseline</td><td>knee_foot</td><td>6</td><td>0.9766762223608861 / 0.8333333333333334</td></tr>
+<tr><td>batch2 / baseline</td><td>trunk_balance</td><td>7</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch2 / candidate</td><td>descent_range</td><td>6</td><td>0.29494529169849376 / 0.16666666666666666</td></tr>
+<tr><td>batch2 / candidate</td><td>return_extension</td><td>7</td><td>0.0 / 0.0</td></tr>
+<tr><td>batch2 / candidate</td><td>knee_foot</td><td>6</td><td>0.9263148869144143 / 0.8333333333333334</td></tr>
+<tr><td>batch2 / candidate</td><td>trunk_balance</td><td>7</td><td>0.0 / 0.0</td></tr>
+</table><h2>구간별 초안·두 점수·차이·근거</h2><table><tr><th>구간</th><th>초안 등급 / 총점</th><th>AI 등급 / 총점</th><th>Rule 등급 / 총점</th><th>AI−Rule</th></tr>
+<tr><td>subject_012_squat_good_batch2_rep0</td><td>[1, 2, 2, 2] / 85.0</td><td>[1.765051740985294, 2.0, 1.369654440416686, 2.0] / 87.0205927210297</td><td>[1, 2, 1, 2] / 70.0</td><td>17.0205927210297</td></tr>
+<tr><td colspan="5">측면 최저점에서도 허벅지가 수평보다 위에 남는다. 서기 복귀와 발 접지, 정면 무릎·몸통의 큰 좌우 이탈 없음은 확인된다. 제공자 good를 만점으로 변환하지 않았다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}]</td></tr>
+<tr><td>subject_012_squat_good_batch2_rep1</td><td>[1, 2, 2, 2] / 85.0</td><td>[1.4896743730806812, 2.0, 1.3414096111264098, 2.0] / 82.46625976310636</td><td>[1, 2, 1, 2] / 70.0</td><td>12.466259763106365</td></tr>
+<tr><td colspan="5">측면 최저점에서도 허벅지가 수평보다 위에 남는다. 서기 복귀와 발 접지, 정면 무릎·몸통의 큰 좌우 이탈 없음은 확인된다. 제공자 good를 만점으로 변환하지 않았다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}]</td></tr>
+<tr><td>subject_012_squat_bad_batch2_rep0</td><td>[1, 2, 2, 2] / 85.0</td><td>[None, None, None, 2.0] / None</td><td>[None, None, None, 2] / None</td><td>판정 불가</td></tr>
+<tr><td colspan="5">첫 선택 반복은 수평에 미치지 않는 부분 하강이며 서기로 복귀한다. 발 접지와 정면 좌우 정렬은 유지된다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: False, &#x27;holds&#x27;: [&#x27;required_joints_not_simultaneously_observed_in_80_percent&#x27;, &#x27;required_measurement_unavailable&#x27;, &#x27;direct_sample_review_unreliable_target_geometry&#x27;]}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: False, &#x27;holds&#x27;: [&#x27;required_joints_not_simultaneously_observed_in_80_percent&#x27;, &#x27;required_measurement_unavailable&#x27;, &#x27;direct_sample_review_unreliable_target_geometry&#x27;]}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: False, &#x27;holds&#x27;: [&#x27;required_measurement_unavailable&#x27;, &#x27;side_heel_and_toe_missing&#x27;, &#x27;direct_sample_review_unreliable_target_geometry&#x27;]}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}]</td></tr>
+<tr><td>subject_012_squat_bad_batch2_rep1</td><td>[2, 2, 2, 2] / 100.0</td><td>[1.994212962962963, 2.0, 1.3628317299254658, 2.0] / 90.35567039332642</td><td>[2, 2, 1, 2] / 85.0</td><td>5.35567039332642</td></tr>
+<tr><td colspan="5">같은 원본의 후반 선택 반복에서는 수평 부근보다 깊게 내려갔다가 서기로 돌아온다. 앞 반복의 얕은 하강 등급을 이 구간에 복사하지 않았다. 발 지지·정면 좌우 정렬에 큰 이탈은 보이지 않는다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}]</td></tr>
+<tr><td>subject_015_squat_good_batch2_rep0</td><td>[None, 2, 2, 2] / None</td><td>[None, 2.0, 2.0, 2.0] / None</td><td>[None, 2, 1, 2] / None</td><td>판정 불가</td></tr>
+<tr><td colspan="5">측면의 최저점 부근이 제공 영상의 흐림 처리로 가려 하강 등급을 비운다. 서기 복귀, 발 접지, 정면 무릎·좌우 몸통은 관측 가능하다. 정면만 보고 측면 깊이에 만점을 채우지 않았다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: False, &#x27;holds&#x27;: [&#x27;direct_video_review_item_not_observable&#x27;]}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}]</td></tr>
+<tr><td>subject_015_squat_good_batch2_rep1</td><td>[2, 2, 2, 2] / 100.0</td><td>[1.4908414009120494, 2.0, None, None] / None</td><td>[1, 2, None, None] / None</td><td>판정 불가</td></tr>
+<tr><td colspan="5">하단에서 깊이 내려갔다가 서기로 돌아오며 발 접지가 유지된다. 정면의 큰 무릎 안쪽 붕괴·좌우 몸통 이탈은 보이지 않는다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: False, &#x27;holds&#x27;: [&#x27;required_joints_not_simultaneously_observed_in_80_percent&#x27;]}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: False, &#x27;holds&#x27;: [&#x27;required_joints_not_simultaneously_observed_in_80_percent&#x27;]}]</td></tr>
+<tr><td>subject_015_squat_bad_batch2_rep0</td><td>[2, 2, 0, 2] / 70.0</td><td>[2.0, 2.0, 1.8508896911069397, 2.0] / 97.7633453666041</td><td>[2, 2, 0, 2] / 70.0</td><td>27.7633453666041</td></tr>
+<tr><td colspan="5">깊은 하강과 서기 복귀는 보이나 하단에서 뒤꿈치를 명확히 들어 앞꿈치에 의존한다. 큰 좌우 몸통 흔들림은 보이지 않는다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}]</td></tr>
+<tr><td>subject_015_squat_bad_batch2_rep1</td><td>[2, 2, 0, 2] / 70.0</td><td>[2.0, 2.0, 1.7808954118481075, 2.0] / 96.71343117772162</td><td>[2, 2, 1, 2] / 85.0</td><td>11.713431177721617</td></tr>
+<tr><td colspan="5">깊은 하강과 서기 복귀는 보이나 하단에서 뒤꿈치를 명확히 들어 앞꿈치에 의존한다. 큰 좌우 몸통 흔들림은 보이지 않는다.<br>[{&#x27;item&#x27;: &#x27;descent_range&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;return_extension&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;knee_foot&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}, {&#x27;item&#x27;: &#x27;trunk_balance&#x27;, &#x27;eligible&#x27;: True, &#x27;holds&#x27;: []}]</td></tr>
+</table><h2>정상·오류·최대 오차 예시의 관절 영상</h2><p>표시 점수는 측면·정면 결합 반복의 점수이며 프레임별 점수가 아닙니다. 두 영상에 같은 결합 점수를 표시합니다.</p>
+<h3>subject_012_squat_bad_batch2_rep1</h3>
+<video controls preload="metadata" src="previews/subject_012_squat_bad_batch2_rep1/side/overlay.mp4"></video>
+<video controls preload="metadata" src="previews/subject_012_squat_bad_batch2_rep1/front/overlay.mp4"></video>
+<h3>subject_012_squat_good_batch2_rep0</h3>
+<video controls preload="metadata" src="previews/subject_012_squat_good_batch2_rep0/side/overlay.mp4"></video>
+<video controls preload="metadata" src="previews/subject_012_squat_good_batch2_rep0/front/overlay.mp4"></video>
+<h3>subject_015_squat_bad_batch2_rep0</h3>
+<video controls preload="metadata" src="previews/subject_015_squat_bad_batch2_rep0/side/overlay.mp4"></video>
+<video controls preload="metadata" src="previews/subject_015_squat_bad_batch2_rep0/front/overlay.mp4"></video>
+<h2>학습 내부 교차검증·규칙 보정 대조</h2><p>교차검증은 연결된 참여자·원본 그룹을 통째로 제외하고 매번 재학습합니다. 아래 수치는 학습 자료 내부 평가이며 독립 최종 시험이 아닙니다.</p><pre>{
+  &quot;group_cross_validation&quot;: {
+    &quot;submitted&quot;: 85,
+    &quot;paired_total_records&quot;: 47,
+    &quot;paired_total_MAE_points&quot;: {
+      &quot;ai_score&quot;: 9.428578448440545,
+      &quot;rule_score&quot;: 17.127659574468087
+    },
+    &quot;items&quot;: {
+      &quot;descent_range&quot;: {
+        &quot;paired_records&quot;: 54,
+        &quot;ai_MAE_grade_units&quot;: 0.27976803858420346,
+        &quot;rule_MAE_grade_units&quot;: 0.24074074074074073
+      },
+      &quot;return_extension&quot;: {
+        &quot;paired_records&quot;: 49,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.04081632653061224
+      },
+      &quot;knee_foot&quot;: {
+        &quot;paired_records&quot;: 50,
+        &quot;ai_MAE_grade_units&quot;: 0.5876791763657666,
+        &quot;rule_MAE_grade_units&quot;: 0.88
+      },
+      &quot;trunk_balance&quot;: {
+        &quot;paired_records&quot;: 81,
+        &quot;ai_MAE_grade_units&quot;: 0.0,
+        &quot;rule_MAE_grade_units&quot;: 0.12345679012345678
+      }
+    },
+    &quot;ai_total_available&quot;: 47,
+    &quot;rule_total_available&quot;: 47
+  },
+  &quot;heads&quot;: [
+    {
+      &quot;exercise&quot;: &quot;squats&quot;,
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 51,
+      &quot;metadata_groups&quot;: 12,
+      &quot;grade_counts&quot;: {
+        &quot;1&quot;: 18,
+        &quot;2&quot;: 33
+      },
+      &quot;error_metadata_groups&quot;: 7,
+      &quot;rule_boundary&quot;: [
+        0.3,
+        0.8
+      ],
+      &quot;heel_calibration&quot;: null
+    },
+    {
+      &quot;exercise&quot;: &quot;squats&quot;,
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 49,
+      &quot;metadata_groups&quot;: 11,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 49
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;rule_boundary&quot;: [
+        160,
+        140
+      ],
+      &quot;heel_calibration&quot;: null
+    },
+    {
+      &quot;exercise&quot;: &quot;squats&quot;,
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;records&quot;: 50,
+      &quot;metadata_groups&quot;: 12,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 34,
+        &quot;0&quot;: 16
+      },
+      &quot;error_metadata_groups&quot;: 7,
+      &quot;rule_boundary&quot;: [
+        0.15,
+        0.35,
+        0.04,
+        0.06
+      ],
+      &quot;heel_calibration&quot;: {
+        &quot;previous_boundary&quot;: [
+          0.15,
+          0.35,
+          0.025,
+          0.08
+        ],
+        &quot;selected_boundary&quot;: [
+          0.15,
+          0.35,
+          0.04,
+          0.06
+        ],
+        &quot;training_weighted_MAE_before&quot;: 0.8244588744588744,
+        &quot;training_weighted_MAE_after&quot;: 0.6034632034632035,
+        &quot;candidate_policies&quot;: 409,
+        &quot;training_only&quot;: true,
+        &quot;numeric_grid_reused_from_existing_three_training&quot;: true
+      }
+    },
+    {
+      &quot;exercise&quot;: &quot;squats&quot;,
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 81,
+      &quot;metadata_groups&quot;: 37,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 81
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;rule_boundary&quot;: [
+        8,
+        15
+      ],
+      &quot;heel_calibration&quot;: null
+    },
+    {
+      &quot;exercise&quot;: &quot;squats&quot;,
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 7,
+      &quot;metadata_groups&quot;: 7,
+      &quot;grade_counts&quot;: {
+        &quot;0&quot;: 5,
+        &quot;2&quot;: 2
+      },
+      &quot;error_metadata_groups&quot;: 5,
+      &quot;rule_boundary&quot;: [
+        0,
+        0.5
+      ],
+      &quot;heel_calibration&quot;: null
+    },
+    {
+      &quot;exercise&quot;: &quot;squats&quot;,
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;records&quot;: 21,
+      &quot;metadata_groups&quot;: 21,
+      &quot;grade_counts&quot;: {
+        &quot;2&quot;: 21
+      },
+      &quot;error_metadata_groups&quot;: 0,
+      &quot;rule_boundary&quot;: null,
+      &quot;heel_calibration&quot;: null
+    }
+  ],
+  &quot;rule_calibration_ablation&quot;: {
+    &quot;existing_development&quot;: {
+      &quot;prior_heel_boundaries&quot;: {
+        &quot;submitted&quot;: 7,
+        &quot;paired_total_records&quot;: 0,
+        &quot;paired_total_MAE_points&quot;: {
+          &quot;ai_score&quot;: null,
+          &quot;rule_score&quot;: null
+        },
+        &quot;items&quot;: {
+          &quot;descent_range&quot;: {
+            &quot;paired_records&quot;: 5,
+            &quot;ai_MAE_grade_units&quot;: 0.3973557692307693,
+            &quot;rule_MAE_grade_units&quot;: 0.2
+          },
+          &quot;trunk_balance&quot;: {
+            &quot;paired_records&quot;: 7,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          }
+        },
+        &quot;ai_total_available&quot;: 0,
+        &quot;rule_total_available&quot;: 0
+      },
+      &quot;calibrated&quot;: {
+        &quot;submitted&quot;: 7,
+        &quot;paired_total_records&quot;: 0,
+        &quot;paired_total_MAE_points&quot;: {
+          &quot;ai_score&quot;: null,
+          &quot;rule_score&quot;: null
+        },
+        &quot;items&quot;: {
+          &quot;descent_range&quot;: {
+            &quot;paired_records&quot;: 5,
+            &quot;ai_MAE_grade_units&quot;: 0.3973557692307693,
+            &quot;rule_MAE_grade_units&quot;: 0.2
+          },
+          &quot;trunk_balance&quot;: {
+            &quot;paired_records&quot;: 7,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          }
+        },
+        &quot;ai_total_available&quot;: 0,
+        &quot;rule_total_available&quot;: 0
+      }
+    },
+    &quot;batch1&quot;: {
+      &quot;prior_heel_boundaries&quot;: {
+        &quot;submitted&quot;: 3,
+        &quot;paired_total_records&quot;: 0,
+        &quot;paired_total_MAE_points&quot;: {
+          &quot;ai_score&quot;: null,
+          &quot;rule_score&quot;: null
+        },
+        &quot;items&quot;: {
+          &quot;trunk_balance&quot;: {
+            &quot;paired_records&quot;: 3,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          },
+          &quot;descent_range&quot;: {
+            &quot;paired_records&quot;: 2,
+            &quot;ai_MAE_grade_units&quot;: 0.3178775375559384,
+            &quot;rule_MAE_grade_units&quot;: 0.5
+          },
+          &quot;return_extension&quot;: {
+            &quot;paired_records&quot;: 1,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          }
+        },
+        &quot;ai_total_available&quot;: 0,
+        &quot;rule_total_available&quot;: 0
+      },
+      &quot;calibrated&quot;: {
+        &quot;submitted&quot;: 3,
+        &quot;paired_total_records&quot;: 0,
+        &quot;paired_total_MAE_points&quot;: {
+          &quot;ai_score&quot;: null,
+          &quot;rule_score&quot;: null
+        },
+        &quot;items&quot;: {
+          &quot;trunk_balance&quot;: {
+            &quot;paired_records&quot;: 3,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          },
+          &quot;descent_range&quot;: {
+            &quot;paired_records&quot;: 2,
+            &quot;ai_MAE_grade_units&quot;: 0.3178775375559384,
+            &quot;rule_MAE_grade_units&quot;: 0.5
+          },
+          &quot;return_extension&quot;: {
+            &quot;paired_records&quot;: 1,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          }
+        },
+        &quot;ai_total_available&quot;: 0,
+        &quot;rule_total_available&quot;: 0
+      }
+    },
+    &quot;batch2&quot;: {
+      &quot;prior_heel_boundaries&quot;: {
+        &quot;submitted&quot;: 8,
+        &quot;paired_total_records&quot;: 5,
+        &quot;paired_total_MAE_points&quot;: {
+          &quot;ai_score&quot;: 13.735087821784527,
+          &quot;rule_score&quot;: 12.0
+        },
+        &quot;items&quot;: {
+          &quot;descent_range&quot;: {
+            &quot;paired_records&quot;: 6,
+            &quot;ai_MAE_grade_units&quot;: 0.29494529169849376,
+            &quot;rule_MAE_grade_units&quot;: 0.16666666666666666
+          },
+          &quot;return_extension&quot;: {
+            &quot;paired_records&quot;: 7,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          },
+          &quot;knee_foot&quot;: {
+            &quot;paired_records&quot;: 6,
+            &quot;ai_MAE_grade_units&quot;: 0.9263148869144143,
+            &quot;rule_MAE_grade_units&quot;: 0.8333333333333334
+          },
+          &quot;trunk_balance&quot;: {
+            &quot;paired_records&quot;: 7,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          }
+        },
+        &quot;ai_total_available&quot;: 5,
+        &quot;rule_total_available&quot;: 5
+      },
+      &quot;calibrated&quot;: {
+        &quot;submitted&quot;: 8,
+        &quot;paired_total_records&quot;: 5,
+        &quot;paired_total_MAE_points&quot;: {
+          &quot;ai_score&quot;: 13.735087821784527,
+          &quot;rule_score&quot;: 12.0
+        },
+        &quot;items&quot;: {
+          &quot;descent_range&quot;: {
+            &quot;paired_records&quot;: 6,
+            &quot;ai_MAE_grade_units&quot;: 0.29494529169849376,
+            &quot;rule_MAE_grade_units&quot;: 0.16666666666666666
+          },
+          &quot;return_extension&quot;: {
+            &quot;paired_records&quot;: 7,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          },
+          &quot;knee_foot&quot;: {
+            &quot;paired_records&quot;: 6,
+            &quot;ai_MAE_grade_units&quot;: 0.9263148869144143,
+            &quot;rule_MAE_grade_units&quot;: 0.8333333333333334
+          },
+          &quot;trunk_balance&quot;: {
+            &quot;paired_records&quot;: 7,
+            &quot;ai_MAE_grade_units&quot;: 0.0,
+            &quot;rule_MAE_grade_units&quot;: 0.0
+          }
+        },
+        &quot;ai_total_available&quot;: 5,
+        &quot;rule_total_available&quot;: 5
+      }
+    }
+  }
+}</pre>
+<h2>일관성·계산 시간</h2><p>동일 관측 특징 3회 재계산 결과 일치와 중앙값 밀리초입니다. CPU 25%·메모리 3GiB 제한 환경이며 공통 Heavy 관절 추출·특징 계산·디코딩 시간을 제외했습니다. 반복 간 강건성이나 서비스 전체 지연을 측정한 것은 아닙니다.</p><pre>[
+  {
+    &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep0&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 90.35458200014546,
+    &quot;rule_grading_median_ms&quot;: 0.013231998309493065,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep1&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 99.88249799789628,
+    &quot;rule_grading_median_ms&quot;: 0.01251299909199588,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_012_squat_bad_batch2_rep0&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 40.322038999875076,
+    &quot;rule_grading_median_ms&quot;: 0.011126998288091272,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_012_squat_bad_batch2_rep1&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 88.84276599928853,
+    &quot;rule_grading_median_ms&quot;: 0.012119999155402184,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_squat_good_batch2_rep0&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 129.6660250009154,
+    &quot;rule_grading_median_ms&quot;: 0.02136699913535267,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_squat_good_batch2_rep1&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 73.10124099967652,
+    &quot;rule_grading_median_ms&quot;: 0.008961000276030973,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep0&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 80.31146400026046,
+    &quot;rule_grading_median_ms&quot;: 0.011403997632442042,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  },
+  {
+    &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep1&quot;,
+    &quot;exercise&quot;: &quot;squats&quot;,
+    &quot;common_item_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;ai_grading_median_ms&quot;: 291.5101420003339,
+    &quot;rule_grading_median_ms&quot;: 0.04699900091509335,
+    &quot;repeated_same_features_consistent&quot;: true,
+    &quot;repeats&quot;: 3,
+    &quot;shared_Heavy_and_feature_cost_excluded&quot;: true,
+    &quot;not_end_to_end_latency&quot;: true
+  }
+]</pre>
+<h2>실패 원인·남은 부족 항목</h2><p>저장 특징·예측의 자동 집계이며 새 직접 라벨이 아닙니다. 후보 승격을 보류합니다.</p><pre>{
+  &quot;comparison_sha256&quot;: &quot;7929d1a2b8add7ee10d0b8d868dcf4fbf8fadd286d352ba2753e88d7ac516593&quot;,
+  &quot;automatic_analysis_not_direct_review&quot;: true,
+  &quot;validation_total_coverage&quot;: {
+    &quot;submitted&quot;: 8,
+    &quot;paired_total&quot;: 5,
+    &quot;ratio&quot;: 0.625
+  },
+  &quot;failures&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep0&quot;,
+      &quot;person&quot;: &quot;shoulder_012&quot;,
+      &quot;reference_score&quot;: 85.0,
+      &quot;ai_error_points&quot;: 2.0205927210297006,
+      &quot;rule_error_points&quot;: -15.0,
+      &quot;reference_knee_foot&quot;: 2,
+      &quot;ai_knee_foot&quot;: 1.369654440416686,
+      &quot;rule_knee_foot&quot;: 1,
+      &quot;relative_heel_change&quot;: 0.05138443506167977
+    },
+    {
+      &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep1&quot;,
+      &quot;person&quot;: &quot;shoulder_012&quot;,
+      &quot;reference_score&quot;: 85.0,
+      &quot;ai_error_points&quot;: -2.5337402368936353,
+      &quot;rule_error_points&quot;: -15.0,
+      &quot;reference_knee_foot&quot;: 2,
+      &quot;ai_knee_foot&quot;: 1.3414096111264098,
+      &quot;rule_knee_foot&quot;: 1,
+      &quot;relative_heel_change&quot;: 0.046313488592242415
+    },
+    {
+      &quot;id&quot;: &quot;subject_012_squat_bad_batch2_rep1&quot;,
+      &quot;person&quot;: &quot;shoulder_012&quot;,
+      &quot;reference_score&quot;: 100.0,
+      &quot;ai_error_points&quot;: -9.64432960667358,
+      &quot;rule_error_points&quot;: -15.0,
+      &quot;reference_knee_foot&quot;: 2,
+      &quot;ai_knee_foot&quot;: 1.3628317299254658,
+      &quot;rule_knee_foot&quot;: 1,
+      &quot;relative_heel_change&quot;: 0.05001755874650633
+    },
+    {
+      &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep0&quot;,
+      &quot;person&quot;: &quot;shoulder_015&quot;,
+      &quot;reference_score&quot;: 70.0,
+      &quot;ai_error_points&quot;: 27.7633453666041,
+      &quot;rule_error_points&quot;: 0.0,
+      &quot;reference_knee_foot&quot;: 0,
+      &quot;ai_knee_foot&quot;: 1.8508896911069397,
+      &quot;rule_knee_foot&quot;: 0,
+      &quot;relative_heel_change&quot;: 0.08895374386491024
+    },
+    {
+      &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep1&quot;,
+      &quot;person&quot;: &quot;shoulder_015&quot;,
+      &quot;reference_score&quot;: 70.0,
+      &quot;ai_error_points&quot;: 26.713431177721617,
+      &quot;rule_error_points&quot;: 15.0,
+      &quot;reference_knee_foot&quot;: 0,
+      &quot;ai_knee_foot&quot;: 1.7808954118481075,
+      &quot;rule_knee_foot&quot;: 1,
+      &quot;relative_heel_change&quot;: 0.048011087026789745
+    }
+  ],
+  &quot;same_reference_repetition_variation&quot;: [
+    {
+      &quot;source_group&quot;: &quot;subject_012_squat_good_batch2&quot;,
+      &quot;reference_levels&quot;: [
+        1,
+        2,
+        2,
+        2
+      ],
+      &quot;segments&quot;: 2,
+      &quot;ai_range_points&quot;: 4.554332957923336,
+      &quot;rule_range_points&quot;: 0.0,
+      &quot;not_independent_people&quot;: true
+    },
+    {
+      &quot;source_group&quot;: &quot;subject_015_squat_bad_batch2&quot;,
+      &quot;reference_levels&quot;: [
+        2,
+        2,
+        0,
+        2
+      ],
+      &quot;segments&quot;: 2,
+      &quot;ai_range_points&quot;: 1.0499141888824823,
+      &quot;rule_range_points&quot;: 15.0,
+      &quot;not_independent_people&quot;: true
+    }
+  ],
+  &quot;item_grade_distribution&quot;: [
+    {
+      &quot;split&quot;: &quot;train&quot;,
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;1&quot;: 18,
+        &quot;2&quot;: 35,
+        &quot;0&quot;: 5
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;1&quot;: 7,
+        &quot;2&quot;: 12,
+        &quot;0&quot;: 5
+      }
+    },
+    {
+      &quot;split&quot;: &quot;train&quot;,
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;2&quot;: 70
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 32
+      }
+    },
+    {
+      &quot;split&quot;: &quot;train&quot;,
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;2&quot;: 34,
+        &quot;0&quot;: 16
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 11,
+        &quot;0&quot;: 7
+      }
+    },
+    {
+      &quot;split&quot;: &quot;train&quot;,
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;2&quot;: 81
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 37
+      }
+    },
+    {
+      &quot;split&quot;: &quot;validation&quot;,
+      &quot;item&quot;: &quot;descent_range&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;0&quot;: 4,
+        &quot;2&quot;: 7,
+        &quot;1&quot;: 2
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;0&quot;: 4,
+        &quot;2&quot;: 4,
+        &quot;1&quot;: 1
+      }
+    },
+    {
+      &quot;split&quot;: &quot;validation&quot;,
+      &quot;item&quot;: &quot;return_extension&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;2&quot;: 15
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 10
+      }
+    },
+    {
+      &quot;split&quot;: &quot;validation&quot;,
+      &quot;item&quot;: &quot;knee_foot&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;2&quot;: 4,
+        &quot;0&quot;: 2
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 2,
+        &quot;0&quot;: 1
+      }
+    },
+    {
+      &quot;split&quot;: &quot;validation&quot;,
+      &quot;item&quot;: &quot;trunk_balance&quot;,
+      &quot;eligible_grade_counts&quot;: {
+        &quot;2&quot;: 17
+      },
+      &quot;grade_metadata_groups&quot;: {
+        &quot;2&quot;: 11
+      }
+    }
+  ],
+  &quot;observations_ko&quot;: [
+    &quot;검증 015의 뒤꿈치 들림 2구간을 AI가 95점 이상으로 예측한다. 안정적인 추적이 있어도 현재 특징과 학습 분포가 오류를 잘 구분하지 못한다.&quot;,
+    &quot;발 지지가 정상인 012 구간의 상대 뒤꿈치 변화량 약 0.046~0.051과 오류 015의 한 구간 약 0.048이 겹친다. 단일 상대 높이 경계로 완전히 구별할 수 없다.&quot;,
+    &quot;현재 상대 뒤꿈치 특징은 첫 세 관측 표본을 기준으로 계산하므로 시작 자세와 발 투영·관절 흔들림의 영향을 받는다. 이 설명은 저장 특징·구현에 근거한 원인 가설이며 인과 검증은 추가로 필요하다.&quot;,
+    &quot;복귀 신전과 정면 몸통 균형의 학습 가능 라벨은 정상 등급에만 몰려 있다. 해당 항목의 0 오차를 오류 검출 능력으로 설명할 수 없다.&quot;,
+    &quot;뒤꿈치 네 경계 보정은 학습 손실을 줄였지만 현재 개발 검증 총점 오차는 보정 전과 같았다. 기존 첫 후보보다 Rule 총점 오차가 커져 공통 모델로 승격하지 않는다.&quot;,
+    &quot;후속 특징 개선은 학습 그룹 내부에서 지면 기준 발뒤꿈치·발끝 기울기·정지 구간 기준 높이를 비교하고, 새로 보지 않은 참여자·원본을 확보한 뒤 확정 시험한다. 현재 검증에 맞춘 숫자 수동 변경은 하지 않는다.&quot;
+  ],
+  &quot;promoted&quot;: false,
+  &quot;independent_final_test&quot;: false
+}</pre><p><a href="failure_analysis.json">실패 분석 JSON</a></p>
+<h2>20구간의 직접 검토 근거</h2>
+<details><summary>subject_010_squat_good_batch2_rep0 / train</summary><p>측면에서 허벅지가 수평 부근까지 내려가고 서기 높이로 돌아온다. 발 지지와 정면 무릎·몸통의 큰 좌우 이탈은 보이지 않는다. 시작이 이미 하강 초입이므로 완결 반복 총점 자료로 세지 않고 보이는 항목만 사용한다. 인접 반복과 공유되던 상단 경계 한 프레임을 제외했다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: false,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_010_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;61d84a906d9d6e0822793f55a2e49dd0dc64c441ff67055a83051e380e6d47af&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        2,
+        5,
+        6,
+        10,
+        11,
+        14,
+        16,
+        18,
+        20,
+        23,
+        24,
+        28
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_010_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;4224517e84141c9dac81210c231da537f1efbee7d31035de87584ca949836198&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        0,
+        3,
+        4,
+        8,
+        9,
+        12,
+        14,
+        16,
+        18,
+        21,
+        22,
+        26
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_010_squat_good_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_010_squat_good_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_010_squat_good_batch2_rep1 / train</summary><p>측면에서 허벅지가 수평 부근까지 내려가고 서기 높이로 돌아온다. 발 지지와 정면 무릎·몸통의 큰 좌우 이탈은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_010_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;20eec1e5ff8963d77b1f92b84ffa2078be83eec1ce87e9e0d236882721466072&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        29,
+        32,
+        34,
+        36,
+        40,
+        41,
+        44,
+        46,
+        48,
+        52,
+        53,
+        56
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_010_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;bbb9c2b3f644772dc27c65e548ef8bcba2b52bc9cc235bd8c7892f1e339ac7bf&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        27,
+        30,
+        32,
+        34,
+        38,
+        39,
+        42,
+        44,
+        46,
+        50,
+        51,
+        54
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_010_squat_good_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_010_squat_good_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_010_squat_bad_batch2_rep0 / train</summary><p>제공자의 bad 표시와 달리 이 구간의 깊이·복귀·발 지지·좌우 균형은 현재 네 항목에서 큰 오류가 보이지 않는다. 전방 몸통 기울기만으로 좌우 균형을 감점하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_010_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;d6fa2a7201a547d3d0c360bde6a14f4b5738ce45332ecad621f293da4b9c9319&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        10,
+        13,
+        14,
+        18,
+        20,
+        22,
+        25,
+        26,
+        30,
+        32,
+        34,
+        37
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_010_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;65dcf8d8dd1ea310b66bfa04944ee3094afc2618cd01011afdb91ee02a3dd4f9&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        0,
+        3,
+        4,
+        8,
+        10,
+        12,
+        15,
+        16,
+        20,
+        22,
+        24,
+        27
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_010_squat_bad_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_010_squat_bad_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_010_squat_bad_batch2_rep1 / train</summary><p>제공자의 bad 표시와 달리 이 구간의 깊이·복귀·발 지지·좌우 균형은 현재 네 항목에서 큰 오류가 보이지 않는다. 전방 몸통 기울기만으로 좌우 균형을 감점하지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_010_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;e3c224516520b5a035c3eebae956f092e2b73938e4ba2b471fe2175e73b6c9bd&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        39,
+        42,
+        44,
+        46,
+        50,
+        51,
+        54,
+        56,
+        58,
+        62,
+        63,
+        66
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          45,
+          49
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_010_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;3659b71f3441a3217c94c360090bbfea4f82a9dd71aff75a0f496b5b411c060d&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        29,
+        32,
+        34,
+        36,
+        40,
+        41,
+        44,
+        46,
+        48,
+        52,
+        53,
+        56
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_010_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_010_squat_bad_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_010_squat_bad_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_011_squat_good_batch2_rep0 / train</summary><p>하강 시 허벅지가 수평보다 위에 남고 뒤꿈치가 들리는 표본이 보인다. 선택 구간 끝에서 완전한 서기 복귀를 확인하기 어려워 복귀 등급과 총점은 비운다. 어두운 측면 입력의 관절 신뢰도는 별도로 확인해야 한다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    null,
+    0,
+    2
+  ],
+  &quot;observed&quot;: [
+    false,
+    false,
+    false,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: false,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_011_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;313c026170a5b7e7dad81d2367e7c1529f3a34b1e06e7d1290fba8b4d7408b67&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        26,
+        29,
+        32,
+        36,
+        40,
+        42,
+        46,
+        48,
+        52,
+        56,
+        59,
+        62
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [
+        0,
+        1,
+        2
+      ],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 측면 필수 다리 좌표의 반복 누락 또는 종아리·무릎 쪽 잘못된 발 연결이 있어 지정 항목은 사용하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_011_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;d476588644b80626e2b7ac48a6247600951370db0fc4acbcffdb5178d45f4c44&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        37,
+        40,
+        43,
+        48,
+        50,
+        54,
+        56,
+        60,
+        62,
+        67,
+        70,
+        73
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_011_squat_good_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_011_squat_good_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_011_squat_good_batch2_rep1 / train</summary><p>하강 시 허벅지가 수평보다 위에 남고 뒤꿈치가 들리는 표본이 보인다. 선택 구간 끝에서 완전한 서기 복귀를 확인하기 어려워 복귀 등급과 총점은 비운다. 어두운 측면 입력의 관절 신뢰도는 별도로 확인해야 한다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    null,
+    0,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    false,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: false,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_011_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;d3800df99233d8b960dee1f8e9737e6e8a6776dd1cf915adaa068914f90d3f42&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        64,
+        67,
+        70,
+        73,
+        76,
+        79,
+        82,
+        85,
+        88,
+        91,
+        94,
+        97
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_011_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;cb2e6400fe5165845d1adcbaf58d38493b921c34a1da1a58228e47dc02e64836&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        75,
+        78,
+        81,
+        84,
+        87,
+        90,
+        93,
+        96,
+        99,
+        102,
+        105,
+        108
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_011_squat_good_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_011_squat_good_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_011_squat_bad_batch2_rep0 / train</summary><p>하강 범위가 수평에 미치지 않고 하단에서 뒤꿈치가 들린다. 선택 구간의 서기 높이로 복귀하며 정면 몸통의 큰 좌우 흔들림은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    0,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    false,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_011_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;444eba5aba2fcfcd351a402f4a1f9d6fc363446c9df57ef4383d62ad84a6ab5f&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        12,
+        15,
+        18,
+        20,
+        22,
+        26,
+        28,
+        32,
+        34,
+        36,
+        39,
+        42
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_011_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;fbcc2ba9485a3e183af82be46af6c2a45e6548e16af82954c25659e20ef06461&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        27,
+        30,
+        33,
+        34,
+        38,
+        40,
+        44,
+        46,
+        50,
+        51,
+        54,
+        57
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_011_squat_bad_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_011_squat_bad_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_011_squat_bad_batch2_rep1 / train</summary><p>하강 범위가 수평에 미치지 않고 하단에서 뒤꿈치가 들린다. 선택 구간의 서기 높이로 복귀하며 정면 몸통의 큰 좌우 흔들림은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    0,
+    2
+  ],
+  &quot;observed&quot;: [
+    false,
+    false,
+    false,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_011_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;87376ce1be031bdd94e1033ed990f6fed867cd0c8306357994039056fbd2e324&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        44,
+        46,
+        48,
+        50,
+        53,
+        54,
+        58,
+        59,
+        62,
+        64,
+        66,
+        68
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [
+        0,
+        1,
+        2
+      ],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 측면 필수 다리 좌표의 반복 누락 또는 종아리·무릎 쪽 잘못된 발 연결이 있어 지정 항목은 사용하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_011_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;9383a24e4688e9286f5b959d698c80785890cd43978736d4525e29093de4e6e8&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        59,
+        60,
+        64,
+        65,
+        68,
+        70,
+        72,
+        74,
+        77,
+        78,
+        82,
+        83
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_011_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_011_squat_bad_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_011_squat_bad_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_013_squat_good_batch2_rep0 / train</summary><p>확대 표본의 하단에서 허벅지가 수평 부근까지 내려가며 서기로 돌아온다. 측면 발 접지와 정면 무릎·몸통의 큰 좌우 이탈은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    false,
+    true,
+    false,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_013_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;b5f9e5b64beed64f29de6bbdf410d136d17fd5b3d304f93e5c66bcc546a41474&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34,
+        37,
+        40,
+        43
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [
+        0,
+        2
+      ],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 측면 필수 다리 좌표의 반복 누락 또는 종아리·무릎 쪽 잘못된 발 연결이 있어 지정 항목은 사용하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_013_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;de98e525dae560e7e93e080bfe4b8aa6644a0d86f5c23c28b738cb135d08c554&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        36,
+        39,
+        42,
+        45,
+        48,
+        51
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_013_squat_good_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_013_squat_good_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_013_squat_good_batch2_rep1 / train</summary><p>확대 표본의 하단에서 허벅지가 수평 부근까지 내려가며 서기로 돌아온다. 측면 발 접지와 정면 무릎·몸통의 큰 좌우 이탈은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    false,
+    false,
+    false,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_013_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;c7356c932d4e9693973329c0cbdecadd4c043c6cd8b073454da5133aca695f32&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        46,
+        49,
+        52,
+        55,
+        58,
+        61,
+        64,
+        67,
+        70,
+        73,
+        76,
+        79
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [
+        0,
+        1,
+        2
+      ],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 측면 필수 다리 좌표의 반복 누락 또는 종아리·무릎 쪽 잘못된 발 연결이 있어 지정 항목은 사용하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_013_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;db1be0784f3eb80e8ef445b772d57212a6563616c694ebfdf953e51ab28a3ed0&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        54,
+        57,
+        60,
+        63,
+        66,
+        69,
+        72,
+        75,
+        78,
+        81,
+        84,
+        87
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_013_squat_good_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_013_squat_good_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_013_squat_bad_batch2_rep0 / train</summary><p>허벅지가 수평보다 위에 남는 부분 하강이다. 이후 서기로 돌아오며 발 지지·정면 무릎·좌우 몸통에 큰 이탈은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_013_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;8501dec4a52b9f982b03a8433a37fb665fda68aa9b0fed624c61030d6338e2b4&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        18,
+        21,
+        24,
+        26,
+        28,
+        32,
+        34,
+        38,
+        40,
+        42,
+        45,
+        48
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          31,
+          33
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_013_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;2036ea705e26de67a69d788e4611b64c2994acccd294244c7a3e88c28d310c0c&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        30,
+        33,
+        36,
+        38,
+        40,
+        44,
+        46,
+        50,
+        52,
+        54,
+        57,
+        60
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          39,
+          41
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_013_squat_bad_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_013_squat_bad_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_013_squat_bad_batch2_rep1 / train</summary><p>허벅지가 수평보다 위에 남는 부분 하강이다. 이후 서기로 돌아오며 발 지지·정면 무릎·좌우 몸통에 큰 이탈은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    false,
+    false,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_013_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;b17bc12be8d1210f1f4faad1af53372bd2f5233f3250a6feabe2800a54b9af30&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        53,
+        56,
+        59,
+        62,
+        65,
+        68,
+        70,
+        72,
+        76,
+        78,
+        82,
+        84
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_013_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;3b3eee5a9f4c8061e14ce17307ec75c77b60dd92c2ef5d3c458a9c4b3bb3264b&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        65,
+        68,
+        71,
+        74,
+        77,
+        80,
+        82,
+        84,
+        88,
+        90,
+        94,
+        96
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_013_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_013_squat_bad_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_013_squat_bad_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_012_squat_good_batch2_rep0 / validation</summary><p>측면 최저점에서도 허벅지가 수평보다 위에 남는다. 서기 복귀와 발 접지, 정면 무릎·몸통의 큰 좌우 이탈 없음은 확인된다. 제공자 good를 만점으로 변환하지 않았다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;cd94f7bd4141fc28bb6054620b3356aba6a34765d5c327b15d67fb267a006738&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        14,
+        17,
+        22,
+        24,
+        28,
+        32,
+        35,
+        40,
+        42,
+        46,
+        50,
+        53
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;fdcab2d1e62f4d7238c20592f3f620cb0be1c1dadcb004b47f3a7d5c74f7b4c5&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        36,
+        39,
+        44,
+        46,
+        50,
+        54,
+        57,
+        62,
+        64,
+        68,
+        72,
+        75
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_012_squat_good_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_012_squat_good_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_012_squat_good_batch2_rep1 / validation</summary><p>측면 최저점에서도 허벅지가 수평보다 위에 남는다. 서기 복귀와 발 접지, 정면 무릎·몸통의 큰 좌우 이탈 없음은 확인된다. 제공자 good를 만점으로 변환하지 않았다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;1d8baee639cfe348745bd3533a725d800bc9dd2f8f76ed605496a9545529fcce&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        54,
+        57,
+        60,
+        64,
+        68,
+        70,
+        74,
+        76,
+        80,
+        84,
+        87,
+        90
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_012_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;1126a894dc74cf2ffea2ccbdeb7772e320ada612215359d4e0d584c15939d4e6&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        76,
+        79,
+        82,
+        86,
+        90,
+        92,
+        96,
+        98,
+        102,
+        106,
+        109,
+        112
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_012_squat_good_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_012_squat_good_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_012_squat_bad_batch2_rep0 / validation</summary><p>첫 선택 반복은 수평에 미치지 않는 부분 하강이며 서기로 복귀한다. 발 접지와 정면 좌우 정렬은 유지된다.</p><pre>{
+  &quot;levels&quot;: [
+    1,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    false,
+    false,
+    false,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_012_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;3dfbfdc8321844d72162245a19728ed3471b5c1e902da6641c1967334a42d009&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        16,
+        19,
+        20,
+        24,
+        26,
+        30,
+        31,
+        34,
+        37,
+        40,
+        42,
+        44
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [
+        0,
+        1,
+        2
+      ],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 측면 필수 다리 좌표의 반복 누락 또는 종아리·무릎 쪽 잘못된 발 연결이 있어 지정 항목은 사용하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_012_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;7d869a40bdf206973527714e136d0e3fcced8693e416441e054712168bd39f0b&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        29,
+        32,
+        34,
+        36,
+        40,
+        42,
+        44,
+        47,
+        50,
+        53,
+        54,
+        58
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_012_squat_bad_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_012_squat_bad_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_012_squat_bad_batch2_rep1 / validation</summary><p>같은 원본의 후반 선택 반복에서는 수평 부근보다 깊게 내려갔다가 서기로 돌아온다. 앞 반복의 얕은 하강 등급을 이 구간에 복사하지 않았다. 발 지지·정면 좌우 정렬에 큰 이탈은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_012_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;286e25f0313d5d5e8b09a3dd0726a2506624f6c5693c82292d89d76dbe3546c2&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        84,
+        87,
+        90,
+        92,
+        94,
+        98,
+        100,
+        104,
+        106,
+        108,
+        111,
+        114
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_012_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;cbc9cca1e0d89c5f27032ff4ba9f3bf754c7e43b94f095896c461fdede7fbf19&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        97,
+        100,
+        103,
+        104,
+        108,
+        110,
+        114,
+        116,
+        120,
+        121,
+        124,
+        127
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_012_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_012_squat_bad_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_012_squat_bad_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_015_squat_good_batch2_rep0 / validation</summary><p>측면의 최저점 부근이 제공 영상의 흐림 처리로 가려 하강 등급을 비운다. 서기 복귀, 발 접지, 정면 무릎·좌우 몸통은 관측 가능하다. 정면만 보고 측면 깊이에 만점을 채우지 않았다.</p><pre>{
+  &quot;levels&quot;: [
+    null,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    false,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: false,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_015_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;1b3880a81f91a5d2037a72532b7bd2583eb9bb2de9527d1b3892084026078130&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        29,
+        32,
+        35,
+        38,
+        41,
+        44,
+        48,
+        52,
+        54,
+        58,
+        60,
+        64
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          43,
+          45
+        ],
+        [
+          51,
+          53
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_015_squat_good_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;6566dbf8b5c32884e2813fcf8f1c3f7b65952c965c9f208d36606899fdad684e&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        47,
+        50,
+        53,
+        56,
+        59,
+        62,
+        66,
+        70,
+        72,
+        76,
+        78,
+        82
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          55,
+          57
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_015_squat_good_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_015_squat_good_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_015_squat_good_batch2_rep1 / validation</summary><p>하단에서 깊이 내려갔다가 서기로 돌아오며 발 접지가 유지된다. 정면의 큰 무릎 안쪽 붕괴·좌우 몸통 이탈은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    2,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    false,
+    false
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_015_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;2a1053e85ecc6d2c36c96d21cd1bc84516aa00f8cf83312e036b81635124369e&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        65,
+        68,
+        71,
+        74,
+        77,
+        80,
+        83,
+        86,
+        89,
+        92,
+        95,
+        98
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          79,
+          83
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_015_squat_good_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;29b3e032937dca77f9691084c1801129fdc570a3d4d6c55e0e3429219c1e6153&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        83,
+        86,
+        89,
+        92,
+        95,
+        98,
+        101,
+        104,
+        107,
+        110,
+        113,
+        116
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          85,
+          96
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_good_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_015_squat_good_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_015_squat_good_batch2_rep1_joints_pair.jpg">
+</details>
+<details><summary>subject_015_squat_bad_batch2_rep0 / validation</summary><p>깊은 하강과 서기 복귀는 보이나 하단에서 뒤꿈치를 명확히 들어 앞꿈치에 의존한다. 큰 좌우 몸통 흔들림은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    0,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep0_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;de999729597c5c4f137c75916b747d027bffe7023631c9cdf37a1b0d815f91b2&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        38,
+        40,
+        44,
+        46,
+        50,
+        52
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep0&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep0_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;7627c686cfbba26f637731fae306f05f3a0535cd6d7cd59cb92fe4317dd8a3ca&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        33,
+        36,
+        39,
+        42,
+        45,
+        48,
+        52,
+        56,
+        58,
+        62,
+        64,
+        68
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          41,
+          43
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep0_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_015_squat_bad_batch2_rep0_paired.jpg">
+<img loading="lazy" src="review/subject_015_squat_bad_batch2_rep0_joints_pair.jpg">
+</details>
+<details><summary>subject_015_squat_bad_batch2_rep1 / validation</summary><p>깊은 하강과 서기 복귀는 보이나 하단에서 뒤꿈치를 명확히 들어 앞꿈치에 의존한다. 큰 좌우 몸통 흔들림은 보이지 않는다.</p><pre>{
+  &quot;levels&quot;: [
+    2,
+    2,
+    0,
+    2
+  ],
+  &quot;observed&quot;: [
+    true,
+    true,
+    true,
+    true
+  ],
+  &quot;total_reference_allowed&quot;: true,
+  &quot;tracking&quot;: [
+    {
+      &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;side&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep1_side_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;c88574c13b69645480ddbb0b7a50194d4f5ba3894528441f31ea52eae3937d39&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        58,
+        61,
+        66,
+        68,
+        72,
+        74,
+        79,
+        82,
+        85,
+        88,
+        92,
+        96
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;subject_015_squat_bad_batch2_rep1&quot;,
+      &quot;view&quot;: &quot;front&quot;,
+      &quot;evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep1_front_joints.jpg&quot;,
+      &quot;fingerprint&quot;: &quot;ec77b17b51ea14f7fac3bc4ec491853ea08711f58abd32f02c22d9c07a5fcc90&quot;,
+      &quot;reviewed_sample_frames&quot;: [
+        73,
+        76,
+        80,
+        84,
+        86,
+        90,
+        94,
+        97,
+        100,
+        103,
+        108,
+        110
+      ],
+      &quot;directly_reviewed_temporal_samples&quot;: true,
+      &quot;all_frames_directly_reviewed&quot;: false,
+      &quot;blocked_item_indices&quot;: [],
+      &quot;unreliable_frame_intervals&quot;: [
+        [
+          83,
+          89
+        ]
+      ],
+      &quot;paired_evidence_image&quot;: &quot;/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/batch2/review/subject_015_squat_bad_batch2_rep1_joints_pair.jpg&quot;,
+      &quot;reviewer&quot;: &quot;assistant_direct_temporal_sample_review&quot;,
+      &quot;expert_reference&quot;: false,
+      &quot;observations&quot;: &quot;시간순 관절 표시 표본에서 전경 운동자의 필요한 몸통·다리 추적을 대조했다. 머리·손의 단독 오차로 전체 항목을 제외하지 않으며 나머지 자동 관측 보류는 유지한다. 제공자 흐림 처리로 몸통·다리 위치를 직접 확인할 수 없는 표본 주변 원본 프레임만 제외한다. 숨은 좌표를 보간하지 않는다.&quot;
+    }
+  ]
+}</pre>
+<img loading="lazy" src="review/subject_015_squat_bad_batch2_rep1_paired.jpg">
+<img loading="lazy" src="review/subject_015_squat_bad_batch2_rep1_joints_pair.jpg">
+</details>
+<p><a href="comparison.json">comparison.json</a></p>
+<p><a href="score_annotations.json">score_annotations.json</a></p>
+<p><a href="fine_grained_labels.json">fine_grained_labels.json</a></p>
+<p><a href="qevd_assessment_index.json">qevd_assessment_index.json</a></p>
+<p><a href="manual_decisions.json">manual_decisions.json</a></p>
+<p><a href="subject_tracking_review.json">subject_tracking_review.json</a></p>
+<p><a href="fit_input_manifest.json">fit_input_manifest.json</a></p>
+<p><a href="preparation.json">preparation.json</a></p>

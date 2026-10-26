@@ -1,0 +1,134 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "pushups",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "side",
+      "measured": 175.95035870142743,
+      "feature": [
+        175.3091034943379,
+        175.95035870142743,
+        177.60681827875555,
+        178.09011868873546,
+        178.64623844553023,
+        179.2873389713811,
+        179.4717499736745,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "descent_range",
+      "weight": 30,
+      "ai_grade": 1.5128745688348022,
+      "rule_grade": 1,
+      "ai_minus_rule": 0.5128745688348022,
+      "observed": true,
+      "bank": "side",
+      "measured": 130.37433601214155,
+      "feature": [
+        111.34657887778233,
+        130.37433601214155,
+        164.1375103282974,
+        171.5060674685425,
+        173.0527296756412,
+        175.86911800932575,
+        177.45406469147414,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "return_extension",
+      "weight": 20,
+      "ai_grade": 2.0,
+      "rule_grade": 2,
+      "ai_minus_rule": 0.0,
+      "observed": true,
+      "bank": "side",
+      "measured": 172.1753717321434,
+      "feature": [
+        170.40759655022296,
+        170.51158332563003,
+        170.82354365185128,
+        171.3434775288867,
+        171.86341140592214,
+        172.1753717321434,
+        172.27935850755046,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support",
+      "weight": 10,
+      "ai_grade": 1.8916735734823291,
+      "rule_grade": 2,
+      "ai_minus_rule": -0.10832642651767088,
+      "observed": true,
+      "bank": "side",
+      "measured": 0.3027854147444972,
+      "feature": [
+        0.2990625499060598,
+        0.3027854147444972,
+        0.30654222426166,
+        0.368886688542223,
+        0.4024758627303645,
+        0.4124841047307262,
+        0.4130569649993218,
+        1.0
+      ],
+      "reasons": [],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": 92.15148639993367,
+  "rule_score": 85.0,
+  "ai_minus_rule": 7.151486399933674,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 9.36697399993136,
+    "ai": 120.67016499986494,
+    "rule": 0.024846999622241128
+  },
+  "limitations": [
+    "Development-only labels; trunk and support require side view.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_014_push_up_bad_side.mp4",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 5.971443585000088,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

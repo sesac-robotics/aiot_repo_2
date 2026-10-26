@@ -1,0 +1,71 @@
+{
+  "status": "paired_test_verified_experimental_not_all_five_reliable",
+  "frozen_at": "2026-10-24T05:54:20.707417+00:00",
+  "training_candidate_rows": 948,
+  "test_rows": 51,
+  "trained_heads": 54,
+  "refitted_heads": 1,
+  "unchanged_heads_copied": 53,
+  "development_gate_passed_heads": 3,
+  "actual_unique_trained_rows": 787,
+  "actual_trained_families": {
+    "QEVD": 229,
+    "R2D2": 208,
+    "other_reviewed": 30,
+    "MultiView": 130,
+    "REHAB24": 43,
+    "CFRep_reviewed": 82,
+    "US_Navy": 53,
+    "REHAB26": 12
+  },
+  "actual_trained_team_rows": {
+    "r2d2_P02": 53,
+    "r2d2_P04": 53,
+    "r2d2_P03": 51,
+    "r2d2_P01": 51
+  },
+  "new_sources_direct_reviewed": 22,
+  "new_return_labeled_sources": 16,
+  "new_sources_used_by_refitted_head": 11,
+  "new_verified_failure_examples": 0,
+  "new_labelled_only_visible_arm_return": true,
+  "all_test_predictions_unchanged": false,
+  "train_test_source_overlap": 0,
+  "person_normal_error_train_test_assignments_unchanged": true,
+  "exact_80_20_achieved": false,
+  "protected_final_test_opened": false,
+  "historical_test_exposure": true,
+  "independent_final_test": false,
+  "production_replacement": false,
+  "all_five_reliable": false,
+  "test_counts_are_criterion_items_not_independent_people_or_videos": true,
+  "tests": {
+    "passed": true,
+    "paired_geometry_and_cohort": 9,
+    "training_split_and_contracts": 16,
+    "pushup_semantic_invariants": 4,
+    "label_observation_and_protection": 6,
+    "total": 35,
+    "service_changed": false,
+    "new_terminal_phase_regression_passed": true,
+    "test_implementations_sha256": {
+      "tools/paired-evaluation/test_thresholds.py": "4bcc50c963b7f337ab6e282995f5f3c1db60c7f417fc701ffedfddbc1fec8f14",
+      "tools/error-enrichment/test_contracts.py": "ba3f50232e5e3aab401360932fd28371958a8308b64ffc3ff87c5aa54ad5f308",
+      "tools/pushup-repair/test_semantic.py": "998844ce451d1147b9dac65e7a5cc324c7ccd9cc01d031644129e30fc3bf4e2e",
+      "tools/label-recheck/test_recheck.py": "c9dc640d8e21c656da8c50a27710d80ffd2c65f774761c2f77abe6cbca34e431"
+    }
+  },
+  "files": {
+    "score-inputs.frozen.json": "932d74a6fc179861a4d6da1befbaa68031a7880a8e62debf2ce48a0fd29a9e8b",
+    "test-inputs.frozen.json": "b55fd62cf2d0c4a71b4bc51285a368276b27aebf418b3e0f390e45e8706dc1a0",
+    "score-candidates.joblib": "a0267ce3e1994ebbb6be219e40953c8849648acc6da8b40960c2ea6247cd5508",
+    "score-training.json": "22d2d584458578f73d5dcf7c2066fb7feb8ba1180da5c5fbc6734bbc1a7f4147",
+    "rules.frozen.json": "af0c7bb887da23d190cad804f1857916f107bd4f84dfcf3fec837d551bbba32b",
+    "comparison.frozen.json": "f5de1c4db56649c38d779e8eda81eaa076f705571e25f4571cf0fd8b1bd4a668",
+    "test-evaluation.json": "3ee9fd3528b5b1c962804e03d382ea850cad26930d2174177fa1f62bb85cb058",
+    "MODEL_SELECTION_PROTOCOL.frozen.json": "7a8968e28255c74e0d68c0ce7a543748cd82644a55a993fb78d284b750094678",
+    "model-freeze-before-test.json": "5913bf7e3722424c35ef3c8980d6497b62e5c29d56aabbce7fe70dbe1c040e31"
+  },
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "review_sha256": "58652f3ad2279794683590ac442aa58e02d349d34e9a78cb1ba9912b264e5c61"
+}

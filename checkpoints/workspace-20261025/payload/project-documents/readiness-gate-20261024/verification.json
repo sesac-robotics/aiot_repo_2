@@ -1,0 +1,34 @@
+{
+  "updated_at_utc": "2026-10-24T13:29:01.475830+00:00",
+  "tests_passed": 65,
+  "status": "readiness_gate_deployed_no_capture_started",
+  "collecting": false,
+  "source_digest": "c76334937f21ef24a27aa1c1687de6c9577bf6249e5cac606151a328893746f7",
+  "shoulder_framing": {
+    "version": "live-observation-border2-v1",
+    "ready": false,
+    "missing": [
+      "왼쪽 골반",
+      "오른쪽 골반",
+      "왼쪽 팔꿈치",
+      "오른쪽 팔꿈치",
+      "왼쪽 손목",
+      "오른쪽 손목"
+    ],
+    "edge_joints": [],
+    "message": "관측 대기 · 왼쪽 골반·오른쪽 골반·왼쪽 팔꿈치·오른쪽 팔꿈치·왼쪽 손목·오른쪽 손목이 화면 안쪽에 보이도록 구도를 맞춰 주세요.",
+    "ready_frames": 0,
+    "required_ready_frames": 6,
+    "start_ready": false,
+    "supported": true
+  },
+  "raw_failure_evidence": "output/shoulder-work-20261024/retest-1792848383011095301/analysis.json",
+  "raw_pose_sha256": "26b607b6435139bcf0988c83f0e8e0b75effb7e14324b3fa7d48a66898e06d69",
+  "ui_screenshot": "project-documents/readiness-gate-20261024/ready-gate.png",
+  "limitations": [
+    "골반원시좌표0/762; 실제화면밖/가림/추적실패는영상없어구분불가",
+    "상단/복귀문턱성능미검증",
+    "실제재테스트아직대기",
+    "모델/라벨/분할변경없음"
+  ]
+}

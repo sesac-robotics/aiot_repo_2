@@ -1,0 +1,54 @@
+[
+  {
+    "exercise": "squats",
+    "model": "cnn",
+    "binary_accuracy": 0.8666666666666667,
+    "macro_f1_all_targets": 0.7263736263736265,
+    "coverage": "2/2",
+    "scope": "기존 스쿼트 1차 모델: 두 오류, 정상 후보 대 선택 오류 정확도"
+  },
+  {
+    "exercise": "pushups",
+    "model": "cnn",
+    "binary_accuracy": 0.7366255144032922,
+    "macro_f1_all_targets": 0.4176466790179972,
+    "macro_f1_supported": 0.4176466790179972,
+    "coverage": "6/6",
+    "test_videos": 243,
+    "test_selected_error_positives": 75,
+    "scope": "Six selected QEVD error annotations; absent labels do not certify normal form."
+  },
+  {
+    "exercise": "elbow_plank",
+    "model": "cnn",
+    "binary_accuracy": 0.8374384236453202,
+    "macro_f1_all_targets": 0.5869345319712966,
+    "macro_f1_supported": 0.5869345319712966,
+    "coverage": "8/8",
+    "test_videos": 203,
+    "test_selected_error_positives": 170,
+    "scope": "Eight selected QEVD errors; other annotations include supported variants and timing, not verified normal controls."
+  },
+  {
+    "exercise": "ytw",
+    "model": "cnn",
+    "binary_accuracy": 0.8364485981308412,
+    "macro_f1_all_targets": 0.7059121621621622,
+    "macro_f1_supported": 0.7059121621621622,
+    "coverage": "4/4",
+    "test_videos": 214,
+    "test_selected_error_positives": 136,
+    "scope": "Exploratory source-label reproduction. Upright/bent torso variants not reviewed; no verified upright normal controls."
+  },
+  {
+    "exercise": "shoulder_press",
+    "model": "gru",
+    "binary_accuracy": 0.3333333333333333,
+    "macro_f1_all_targets": null,
+    "macro_f1_supported": 0.0,
+    "coverage": "1/6",
+    "test_videos": 9,
+    "test_selected_error_positives": 1,
+    "scope": "Unverified visual/source-binary drafts; small pilot only. Source test has one positive video."
+  }
+]

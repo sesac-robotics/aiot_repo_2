@@ -1,0 +1,84 @@
+{
+  "recorded_at": "2026-10-21T19:23:18.283959+09:00",
+  "labeler": "assistant_direct_visual_review_nonexpert",
+  "before_new_joint_predictions": true,
+  "criterion_ids": [
+    "trunk_line",
+    "elbow_sagittal_position",
+    "leg_and_body_support",
+    "support_continuity"
+  ],
+  "weights": [
+    40,
+    25,
+    20,
+    15
+  ],
+  "reviews": [
+    {
+      "id": "climber_prospective",
+      "source_id": "-M3CieFLUxY",
+      "source_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/youtube_-M3CieFLUxY.mp4",
+      "source_sha256": "4de01e724c9799e9d7aaef9293c08a9f5ebd2e7fed54eb86c7cea6faa34f1fb3",
+      "source_group": "youtube_-M3CieFLUxY_all_segments",
+      "person_group": "UCfIS-wKaQBzc1eUFdrMKg-g",
+      "split": "validation",
+      "start_frame": 525,
+      "end_frame_exclusive": 600,
+      "crop_xyxy": [
+        150,
+        230,
+        900,
+        530
+      ],
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "creator": "FatOldClimber",
+      "source_url": "https://www.youtube.com/watch?v=-M3CieFLUxY",
+      "draft_levels": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_score": 100,
+      "view_contract": "side",
+      "note_ko": "측면에 가까운 구도에서 몸통에 큰 꺾임 없이 팔꿈치·발 지지를 유지. 정상 문자열을 점수로 변환하지 않고 시간순 장면과 원본 24초 장면을 직접 확인.",
+      "expert_validated": false,
+      "rule_generated_label": false,
+      "independent_final_test": false
+    },
+    {
+      "id": "gotti_prospective",
+      "source_id": "e01KZX7-aAk",
+      "source_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/sources/youtube_e01KZX7-aAk.mp4",
+      "source_sha256": "9948d8e23be425b96b3e079cadb4edd48b6a804ee930fc609f87eb1c7ee346af",
+      "source_group": "youtube_e01KZX7-aAk_all_segments",
+      "person_group": "UCZVLDRx4ZeMVTe03Uc_StfA",
+      "split": "validation",
+      "start_frame": 982,
+      "end_frame_exclusive": 1058,
+      "crop_xyxy": [
+        100,
+        300,
+        800,
+        610
+      ],
+      "license": "Creative Commons Attribution license (reuse allowed)",
+      "creator": "Gotti Fitness",
+      "source_url": "https://www.youtube.com/watch?v=e01KZX7-aAk",
+      "draft_levels": [
+        1,
+        null,
+        2,
+        2
+      ],
+      "total_score": null,
+      "view_contract": "oblique_item_only",
+      "note_ko": "사선에서 골반이 어깨–다리 선보다 약간 올라간 꺾임이 지속되어 몸통 1등급 초안. 뚜렷한 심한 들림 0으로 단정하지 않음. 발·팔꿈치 지지를 유지하며 무릎을 바닥에 두지 않음. 팔꿈치의 전후 위치 미세 등급은 사선 투영 때문에 보류. 비전문가 초안으로 경계 불확실성 존재.",
+      "expert_validated": false,
+      "rule_generated_label": false,
+      "independent_final_test": false
+    }
+  ],
+  "review_scope": "4 new YouTube overviews x48; climber 18-30sec/Gotti37-46/Corpus87-100 dense x36; climber21-24/Gotti39.3-42.3 dense x36; raw climber24/Gotti41.52/Pannell20.5 directly viewed. DVIDS190-202sec36 overview directly viewed; not all frames."
+}

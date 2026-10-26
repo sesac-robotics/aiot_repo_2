@@ -1,0 +1,603 @@
+{
+  "feature_schema": "shoulder-ready-return-relative-v1",
+  "fixed_current_run": "/home/jayden/SeSACPAI-Mid/output/squat-fixed-reference-combined-v3-20261024",
+  "support": {
+    "lower_return": [
+      {
+        "split": "train",
+        "bank": "front",
+        "grade": 2,
+        "count": 104
+      },
+      {
+        "split": "validation",
+        "bank": "front",
+        "grade": 2,
+        "count": 11
+      },
+      {
+        "split": "train",
+        "bank": "front_oblique",
+        "grade": 2,
+        "count": 5
+      }
+    ],
+    "frontal_trunk_hold": [
+      {
+        "split": "train",
+        "bank": "front",
+        "grade": 2,
+        "count": 75
+      },
+      {
+        "split": "validation",
+        "bank": "front",
+        "grade": 2,
+        "count": 11
+      },
+      {
+        "split": "train",
+        "bank": "front_seated",
+        "grade": 2,
+        "count": 35
+      },
+      {
+        "split": "validation",
+        "bank": "front_seated",
+        "grade": 2,
+        "count": 3
+      }
+    ]
+  },
+  "live_records": [
+    {
+      "number": 1,
+      "features": {
+        "status": "features_ready",
+        "version": "shoulder-ready-return-relative-v1",
+        "coverage": 1.0,
+        "reference_ticks": [
+          876,
+          877,
+          878,
+          879,
+          880,
+          881
+        ],
+        "top_tick": 888,
+        "return_ticks": [
+          904,
+          905,
+          906
+        ],
+        "closure": "rack_observed",
+        "feature_names": [
+          "left_elbow_return_deficit_deg",
+          "right_elbow_return_deficit_deg",
+          "left_elevation_return_deficit_deg",
+          "right_elevation_return_deficit_deg",
+          "left_wrist_return_height_delta_torso",
+          "right_wrist_return_height_delta_torso"
+        ],
+        "return_features": [
+          29.758705270414268,
+          14.68644713511901,
+          22.72894182172479,
+          23.595262377854382,
+          0.14305751960817836,
+          0.18776065076357384
+        ],
+        "trunk_feature_names": [
+          "absolute_tilt_p50_deg",
+          "absolute_tilt_p90_deg",
+          "absolute_tilt_p95_deg",
+          "ready_relative_tilt_p50_deg",
+          "ready_relative_tilt_p90_deg",
+          "ready_relative_tilt_p95_deg"
+        ],
+        "trunk_features": [
+          0.9547648155426488,
+          1.0337823270655357,
+          1.0684099916811418,
+          0.7583968878089842,
+          0.837414399331871,
+          0.8720420639474771
+        ],
+        "grade": null,
+        "score": null,
+        "label_inferred": false
+      },
+      "legacy_window_ticks": [
+        902,
+        903,
+        904,
+        905,
+        906
+      ],
+      "new_return_ticks": [
+        904,
+        905,
+        906
+      ],
+      "legacy_measurement": 120.20324293179586,
+      "replicated_legacy_median": 120.20324293179586,
+      "actual_three_return_median": 113.75510016889805,
+      "reference_elbow_elevation": [
+        70.75506342270162,
+        91.02615834717326
+      ],
+      "inferred_quality_label": null
+    },
+    {
+      "number": 2,
+      "features": {
+        "status": "features_ready",
+        "version": "shoulder-ready-return-relative-v1",
+        "coverage": 1.0,
+        "reference_ticks": [
+          917,
+          918,
+          919,
+          920,
+          921,
+          922
+        ],
+        "top_tick": 928,
+        "return_ticks": [
+          938,
+          939,
+          940
+        ],
+        "closure": "rack_observed",
+        "feature_names": [
+          "left_elbow_return_deficit_deg",
+          "right_elbow_return_deficit_deg",
+          "left_elevation_return_deficit_deg",
+          "right_elevation_return_deficit_deg",
+          "left_wrist_return_height_delta_torso",
+          "right_wrist_return_height_delta_torso"
+        ],
+        "return_features": [
+          30.788113889214785,
+          17.785467898167127,
+          23.571251730181956,
+          18.644856945021715,
+          0.1910621549452819,
+          0.14581348451027942
+        ],
+        "trunk_feature_names": [
+          "absolute_tilt_p50_deg",
+          "absolute_tilt_p90_deg",
+          "absolute_tilt_p95_deg",
+          "ready_relative_tilt_p50_deg",
+          "ready_relative_tilt_p90_deg",
+          "ready_relative_tilt_p95_deg"
+        ],
+        "trunk_features": [
+          1.2905391842133414,
+          1.638524452133992,
+          1.850892446544786,
+          0.5417538549230733,
+          0.889739122843724,
+          1.102107117254518
+        ],
+        "grade": null,
+        "score": null,
+        "label_inferred": false
+      },
+      "legacy_window_ticks": [
+        937,
+        938,
+        939,
+        940
+      ],
+      "new_return_ticks": [
+        938,
+        939,
+        940
+      ],
+      "legacy_measurement": 108.44943411360045,
+      "replicated_legacy_median": 108.44943411360045,
+      "actual_three_return_median": 102.10558491114122,
+      "reference_elbow_elevation": [
+        54.82925865945603,
+        78.53433318095927
+      ],
+      "inferred_quality_label": null
+    },
+    {
+      "number": 3,
+      "features": {
+        "status": "features_ready",
+        "version": "shoulder-ready-return-relative-v1",
+        "coverage": 1.0,
+        "reference_ticks": [
+          953,
+          954,
+          955,
+          956,
+          957,
+          958
+        ],
+        "top_tick": 963,
+        "return_ticks": [
+          975,
+          976,
+          977
+        ],
+        "closure": "rack_observed",
+        "feature_names": [
+          "left_elbow_return_deficit_deg",
+          "right_elbow_return_deficit_deg",
+          "left_elevation_return_deficit_deg",
+          "right_elevation_return_deficit_deg",
+          "left_wrist_return_height_delta_torso",
+          "right_wrist_return_height_delta_torso"
+        ],
+        "return_features": [
+          5.16375897235384,
+          8.866000732865295,
+          0.19235021977308975,
+          5.705890210876717,
+          0.005480663471214009,
+          0.06300290024875832
+        ],
+        "trunk_feature_names": [
+          "absolute_tilt_p50_deg",
+          "absolute_tilt_p90_deg",
+          "absolute_tilt_p95_deg",
+          "ready_relative_tilt_p50_deg",
+          "ready_relative_tilt_p90_deg",
+          "ready_relative_tilt_p95_deg"
+        ],
+        "trunk_features": [
+          1.6102405075497546,
+          2.2252335602293902,
+          2.297315509244352,
+          0.6130370262104949,
+          1.2280300788901304,
+          1.3001120279050922
+        ],
+        "grade": null,
+        "score": null,
+        "label_inferred": false
+      },
+      "legacy_window_ticks": [
+        974,
+        975,
+        976,
+        977
+      ],
+      "new_return_ticks": [
+        975,
+        976,
+        977
+      ],
+      "legacy_measurement": 86.63975748662777,
+      "replicated_legacy_median": 86.63975748662777,
+      "actual_three_return_median": 79.45973150550893,
+      "reference_elbow_elevation": [
+        58.15200853506134,
+        79.26738128573584
+      ],
+      "inferred_quality_label": null
+    },
+    {
+      "number": 4,
+      "features": {
+        "status": "features_ready",
+        "version": "shoulder-ready-return-relative-v1",
+        "coverage": 1.0,
+        "reference_ticks": [
+          985,
+          986,
+          987,
+          988,
+          989,
+          990
+        ],
+        "top_tick": 995,
+        "return_ticks": [
+          1005,
+          1006,
+          1007
+        ],
+        "closure": "rack_observed",
+        "feature_names": [
+          "left_elbow_return_deficit_deg",
+          "right_elbow_return_deficit_deg",
+          "left_elevation_return_deficit_deg",
+          "right_elevation_return_deficit_deg",
+          "left_wrist_return_height_delta_torso",
+          "right_wrist_return_height_delta_torso"
+        ],
+        "return_features": [
+          12.539081232789115,
+          13.248041043796341,
+          10.130216967599893,
+          15.86107475026131,
+          0.06507166986885798,
+          0.09899311742553202
+        ],
+        "trunk_feature_names": [
+          "absolute_tilt_p50_deg",
+          "absolute_tilt_p90_deg",
+          "absolute_tilt_p95_deg",
+          "ready_relative_tilt_p50_deg",
+          "ready_relative_tilt_p90_deg",
+          "ready_relative_tilt_p95_deg"
+        ],
+        "trunk_features": [
+          1.4563829632077128,
+          1.958000927388963,
+          2.4297484416162822,
+          0.4385285195669477,
+          0.5633795521611932,
+          0.6290210151184773
+        ],
+        "grade": null,
+        "score": null,
+        "label_inferred": false
+      },
+      "legacy_window_ticks": [
+        1005,
+        1006,
+        1007
+      ],
+      "new_return_ticks": [
+        1005,
+        1006,
+        1007
+      ],
+      "legacy_measurement": 86.87263260419935,
+      "replicated_legacy_median": 86.87263260419935,
+      "actual_three_return_median": 86.87263260419935,
+      "reference_elbow_elevation": [
+        51.88580600788762,
+        76.74241563659946
+      ],
+      "inferred_quality_label": null
+    },
+    {
+      "number": 5,
+      "features": {
+        "status": "features_ready",
+        "version": "shoulder-ready-return-relative-v1",
+        "coverage": 1.0,
+        "reference_ticks": [
+          1037,
+          1038,
+          1039,
+          1040,
+          1041,
+          1042
+        ],
+        "top_tick": 1047,
+        "return_ticks": [
+          1054,
+          1055,
+          1056
+        ],
+        "closure": "rack_observed",
+        "feature_names": [
+          "left_elbow_return_deficit_deg",
+          "right_elbow_return_deficit_deg",
+          "left_elevation_return_deficit_deg",
+          "right_elevation_return_deficit_deg",
+          "left_wrist_return_height_delta_torso",
+          "right_wrist_return_height_delta_torso"
+        ],
+        "return_features": [
+          15.2200973538691,
+          15.587018224119419,
+          11.624061428294524,
+          22.309932531324137,
+          0.09798348655284517,
+          0.14447658673299912
+        ],
+        "trunk_feature_names": [
+          "absolute_tilt_p50_deg",
+          "absolute_tilt_p90_deg",
+          "absolute_tilt_p95_deg",
+          "ready_relative_tilt_p50_deg",
+          "ready_relative_tilt_p90_deg",
+          "ready_relative_tilt_p95_deg"
+        ],
+        "trunk_features": [
+          2.121701398391045,
+          2.5321872457839225,
+          2.5727499578283517,
+          0.24436854347818526,
+          0.4028181649196911,
+          0.549062179238067
+        ],
+        "grade": null,
+        "score": null,
+        "label_inferred": false
+      },
+      "legacy_window_ticks": [
+        1054,
+        1055,
+        1056
+      ],
+      "new_return_ticks": [
+        1054,
+        1055,
+        1056
+      ],
+      "legacy_measurement": 93.15352570953904,
+      "replicated_legacy_median": 93.15352570953904,
+      "actual_three_return_median": 93.15352570953904,
+      "reference_elbow_elevation": [
+        63.27738016298354,
+        79.84186077647902
+      ],
+      "inferred_quality_label": null
+    },
+    {
+      "number": 6,
+      "features": {
+        "status": "features_ready",
+        "version": "shoulder-ready-return-relative-v1",
+        "coverage": 1.0,
+        "reference_ticks": [
+          1072,
+          1073,
+          1074,
+          1075,
+          1076,
+          1077
+        ],
+        "top_tick": 1080,
+        "return_ticks": [
+          1092,
+          1093,
+          1094
+        ],
+        "closure": "rack_observed",
+        "feature_names": [
+          "left_elbow_return_deficit_deg",
+          "right_elbow_return_deficit_deg",
+          "left_elevation_return_deficit_deg",
+          "right_elevation_return_deficit_deg",
+          "left_wrist_return_height_delta_torso",
+          "right_wrist_return_height_delta_torso"
+        ],
+        "return_features": [
+          15.31831668325632,
+          24.296342406390835,
+          13.667403443349315,
+          15.740013660410341,
+          0.1370866189756938,
+          0.12339580780366388
+        ],
+        "trunk_feature_names": [
+          "absolute_tilt_p50_deg",
+          "absolute_tilt_p90_deg",
+          "absolute_tilt_p95_deg",
+          "ready_relative_tilt_p50_deg",
+          "ready_relative_tilt_p90_deg",
+          "ready_relative_tilt_p95_deg"
+        ],
+        "trunk_features": [
+          2.0474998330701437,
+          2.1936532814964815,
+          2.2214308879133706,
+          0.11434923815781417,
+          0.2069475391361346,
+          0.2996260443560788
+        ],
+        "grade": null,
+        "score": null,
+        "label_inferred": false
+      },
+      "legacy_window_ticks": [
+        1092,
+        1093,
+        1094
+      ],
+      "new_return_ticks": [
+        1092,
+        1093,
+        1094
+      ],
+      "legacy_measurement": 94.65123657160194,
+      "replicated_legacy_median": 94.65123657160194,
+      "actual_three_return_median": 94.65123657160194,
+      "reference_elbow_elevation": [
+        61.348425059959204,
+        80.98383312825263
+      ],
+      "inferred_quality_label": null
+    },
+    {
+      "number": 7,
+      "features": {
+        "status": "features_ready",
+        "version": "shoulder-ready-return-relative-v1",
+        "coverage": 1.0,
+        "reference_ticks": [
+          1104,
+          1105,
+          1106,
+          1107,
+          1108,
+          1109
+        ],
+        "top_tick": 1113,
+        "return_ticks": [
+          1126,
+          1127,
+          1128
+        ],
+        "closure": "rack_observed",
+        "feature_names": [
+          "left_elbow_return_deficit_deg",
+          "right_elbow_return_deficit_deg",
+          "left_elevation_return_deficit_deg",
+          "right_elevation_return_deficit_deg",
+          "left_wrist_return_height_delta_torso",
+          "right_wrist_return_height_delta_torso"
+        ],
+        "return_features": [
+          11.171946222677327,
+          13.53607525781576,
+          5.908777501325318,
+          6.435705733495226,
+          0.017468682651878564,
+          0.05731685639817696
+        ],
+        "trunk_feature_names": [
+          "absolute_tilt_p50_deg",
+          "absolute_tilt_p90_deg",
+          "absolute_tilt_p95_deg",
+          "ready_relative_tilt_p50_deg",
+          "ready_relative_tilt_p90_deg",
+          "ready_relative_tilt_p95_deg"
+        ],
+        "trunk_features": [
+          1.9790175248321948,
+          2.215512829861388,
+          2.4133170413676424,
+          0.11285692131531722,
+          0.26724264040041434,
+          0.3384873091346557
+        ],
+        "grade": null,
+        "score": null,
+        "label_inferred": false
+      },
+      "legacy_window_ticks": [
+        1125,
+        1126,
+        1127,
+        1128
+      ],
+      "new_return_ticks": [
+        1126,
+        1127,
+        1128
+      ],
+      "legacy_measurement": 98.65082181926988,
+      "replicated_legacy_median": 98.65082181926988,
+      "actual_three_return_median": 84.62071003086476,
+      "reference_elbow_elevation": [
+        58.79142456836649,
+        78.9938481331206
+      ],
+      "inferred_quality_label": null
+    }
+  ],
+  "live_feature_ready": 7,
+  "existing_roles_preserved": true,
+  "training_performed": false,
+  "grade_prediction_enabled": false,
+  "source_hashes": {
+    "/home/jayden/SeSACPAI-Mid/data/r2d2-team-20261023/annotations/per-person-stratified-80-20.frozen.json": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+    "/home/jayden/SeSACPAI-Mid/output/squat-fixed-reference-combined-v3-20261024/score-inputs.frozen.json": "c34d573263aa94602c314db0495d7df2169b9ffb5d9255d108cbea793f142273",
+    "/home/jayden/SeSACPAI-Mid/output/squat-fixed-reference-combined-v3-20261024/test-inputs.frozen.json": "c6e177298a7410802ab317cbdbdf474ab86b0b31cad4a832ad5df6c6d391ffe9",
+    "/home/jayden/SeSACPAI-Mid/output/label-recheck-20261024/team-labels-reviewed.frozen.json": "fa4e5913e3b48790562702e3ff8751aee159f1435ae4b6e633b3e7a27e678667",
+    "/home/jayden/SeSACPAI-Mid/output/live-webcam-20261023/sessions/1792849624147364792/pose.npz": "12c727fd3bab887623a306a6559e3501a4e4b45ff0ba9c107fe03907a007a277",
+    "/home/jayden/SeSACPAI-Mid/tools/shoulder-work/phase_features_v1.py": "891447fd98346b9b1061b720088eaf275420b8acf48d4f853342333dbfdefaa2"
+  }
+}

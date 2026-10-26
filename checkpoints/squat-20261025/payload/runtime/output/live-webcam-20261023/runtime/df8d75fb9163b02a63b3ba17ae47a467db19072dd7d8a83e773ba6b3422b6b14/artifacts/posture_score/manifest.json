@@ -1,0 +1,112 @@
+{
+  "schema": "posture-score-bundle-v1",
+  "version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "mediapipe_heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+  "required_packages": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "exercises": {
+    "pushups": {
+      "file": "pushups.joblib",
+      "sha256": "e5889469628d9e2ce397279276a0495a4564c2a37690804c4b41db23bc163ecb",
+      "training_segments": 85,
+      "total_reference_training_segments": 28,
+      "training_unit": "at_least_one_observed_criterion_per_segment",
+      "limitations": [
+        "Development-only labels; trunk and support require side view.",
+        "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+      ],
+      "release_status": "experimental_reviewed_clip",
+      "source_experiment": "held_round2"
+    },
+    "squats": {
+      "file": "squats.joblib",
+      "sha256": "114c48708182f773f156f3dea5cc18b607d0dab581cd122e4b55230a756a3716",
+      "training_segments": 97,
+      "total_reference_training_segments": 47,
+      "training_unit": "at_least_one_observed_criterion_per_segment",
+      "limitations": [
+        "Heel/knee errors can still receive excessive AI scores.",
+        "Full assessment requires reviewed synchronized front and side views.",
+        "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+      ],
+      "release_status": "experimental_reviewed_clip",
+      "source_experiment": "team_refinement"
+    },
+    "shoulder": {
+      "file": "shoulder.joblib",
+      "sha256": "8facb894061d9d22406f604665bb232b152f4baef822ec9185fbee7022f48d9c",
+      "training_segments": 82,
+      "total_reference_training_segments": 46,
+      "training_unit": "at_least_one_observed_criterion_per_segment",
+      "limitations": [
+        "Frontal projection does not assess sagittal lumbar arch.",
+        "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+      ],
+      "release_status": "experimental_reviewed_clip",
+      "source_experiment": "held_round2"
+    },
+    "plank": {
+      "file": "plank.joblib",
+      "sha256": "33431a21ff87a15ac01918c3f7dcd726b801f95574afd67927208770457c32b3",
+      "training_segments": 79,
+      "total_reference_training_segments": 63,
+      "training_unit": "at_least_one_observed_criterion_per_segment",
+      "limitations": [
+        "79-segment candidate remains experimental; 17-segment baseline scored better on two reused total-score cases.",
+        "Repeated hold windows are concentrated in few source recordings.",
+        "Joint geometry does not certify body contact or load.",
+        "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+      ],
+      "release_status": "experimental_reviewed_clip",
+      "source_experiment": "held_round2"
+    },
+    "ytw": {
+      "file": "ytw.joblib",
+      "sha256": "59a5d6f89b708ef3636108b68ea01590b0704f781b0f00cdf7240f81c3d4e26a",
+      "training_segments": 101,
+      "total_reference_training_segments": 48,
+      "training_unit": "at_least_one_observed_criterion_per_segment",
+      "limitations": [
+        "Y and hinge are projection proxies; manual view and phase review required for totals.",
+        "W stage and grade errors remain.",
+        "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+      ],
+      "release_status": "experimental_reviewed_clip",
+      "source_experiment": "held_round2"
+    }
+  },
+  "independent_final_test": false,
+  "expert_validated": false,
+  "automatic_view_or_rep_detection_validated": false,
+  "usage_scope": "noncommercial_educational_research_only",
+  "source_data_not_included": true,
+  "data_attribution": [
+    {
+      "name": "QEVD",
+      "role": "held exercise videos; independent score drafts"
+    },
+    {
+      "name": "REHAB24-6",
+      "url": "https://doi.org/10.5281/zenodo.13305826",
+      "citation": "Cernek et al., SISAP 2024",
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "name": "Multi-View Fitness Exercise Video Dataset",
+      "role": "held multi-view exercise videos; provider quality strings not score targets"
+    },
+    {
+      "name": "DVIDS and held instructional exercise sources",
+      "role": "independently reviewed experimental plank clips; source media not redistributed"
+    }
+  ],
+  "validated_extractor_delegate": "GPU",
+  "cpu_extraction_requires_separate_validation": true,
+  "label_provenance": "AI direct temporal sampled-frame review drafts; not expert reference or Rule output",
+  "train_validation_partition_unit": "connected participant metadata, original source hash and recording groups",
+  "training_target": "independent visual criterion grades 0, 1, 2"
+}

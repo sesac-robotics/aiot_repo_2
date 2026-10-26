@@ -1,0 +1,1182 @@
+{
+  "status": "실시간 관절 추출 중 · 얼굴 모자이크 적용",
+  "collecting": false,
+  "result": null,
+  "tick": 703,
+  "visible": 33,
+  "exercise": "squats",
+  "view": "front",
+  "live_result": {
+    "schema": "posture-score-local-v1",
+    "exercise": "squats",
+    "model_version": "2026.10.22-reviewed-clip.1",
+    "feature_version": "observed-pixel-10hz-held-v2",
+    "assessment_scope": "reviewed_clip",
+    "items": [
+      {
+        "id": "descent_range",
+        "weight": 30,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": true,
+        "bank": "front",
+        "measured": 0.9707355101434352,
+        "feature": [
+          0.9680018331526574,
+          0.9707355101434352,
+          0.9797374453900668,
+          0.9989200310637528,
+          0.9996521483097033,
+          0.999974852192956,
+          0.9999951454747986,
+          1.0
+        ],
+        "reasons": [
+          "frontal_sagittal_measurement_unvalidated"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 12,
+          "1": 1,
+          "2": 5
+        },
+        "unseen_training_grades": [],
+        "window": null,
+        "raw_grades": {
+          "ai_grade": 0.03058155080213904,
+          "rule_grade": null
+        }
+      },
+      {
+        "id": "return_extension",
+        "weight": 20,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": true,
+        "bank": "front",
+        "measured": 148.57540962076604,
+        "feature": [
+          148.01053445675234,
+          148.07017843022064,
+          148.24911035062553,
+          148.25417730987493,
+          148.47925866628108,
+          148.57540962076604,
+          148.6074599389277,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified",
+          "frontal_sagittal_measurement_unvalidated",
+          "single_grade_ai_withheld"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 29
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null,
+        "raw_grades": {
+          "ai_grade": 2.0,
+          "rule_grade": null
+        }
+      },
+      {
+        "id": "knee_foot",
+        "weight": 30,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": false,
+        "bank": "front",
+        "measured": 0.1933387677156378,
+        "feature": null,
+        "reasons": [
+          "item_requires_side_view",
+          "unsupported_model_view_bank"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": null,
+        "unseen_training_grades": null,
+        "window": null,
+        "raw_grades": {
+          "ai_grade": null,
+          "rule_grade": null
+        }
+      },
+      {
+        "id": "trunk_balance",
+        "weight": 20,
+        "ai_grade": null,
+        "rule_grade": 2,
+        "ai_minus_rule": null,
+        "observed": true,
+        "bank": "front",
+        "measured": 3.4199057195567315,
+        "feature": [
+          1.758559259919501,
+          1.775408380842552,
+          2.247259792486904,
+          2.510973533094757,
+          2.9245045787952595,
+          3.4199057195567315,
+          3.5857812086684464,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified",
+          "single_grade_ai_withheld"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 93
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null,
+        "raw_grades": {
+          "ai_grade": 2.0,
+          "rule_grade": 2
+        }
+      }
+    ],
+    "ai_score": null,
+    "rule_score": null,
+    "ai_minus_rule": null,
+    "complete_attempt_reviewed": false,
+    "requires_manual_view_review": true,
+    "ytw_projection_proxy": false,
+    "expert_validated": false,
+    "independent_final_test": false,
+    "timing_ms": {
+      "features": 2.0006830000056652,
+      "ai": 13.808902999699058,
+      "rule": 0.006389000191120431
+    },
+    "limitations": [
+      "Heel/knee errors can still receive excessive AI scores.",
+      "Full assessment requires reviewed synchronized front and side views.",
+      "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+    ],
+    "assessment_policy_version": "front-observation-policy-v1",
+    "frontal_motion_observations": {
+      "status": "observed_proxy_only",
+      "joint_coverage": {
+        "11": 1.0,
+        "12": 1.0,
+        "23": 1.0,
+        "24": 1.0,
+        "25": 1.0,
+        "26": 1.0
+      },
+      "all_six_fraction": 1.0,
+      "hip_vertical_range_torso_ratio": 0.253,
+      "return_height_delta_torso_ratio": 0.148,
+      "grade": null,
+      "limitation": "화면 골반 이동·복귀 높이 대리값. 실제 깊이·신전 각도·정답 점수가 아님."
+    },
+    "front_candidate": {
+      "version": "front-squat-observable70-experimental-v2",
+      "experimental": true,
+      "ai_depth_grade": 0.675,
+      "rule_depth_grade": 1,
+      "return_height_grade": 1,
+      "trunk_grade": 2,
+      "ai_depth_points": 10.1,
+      "rule_points": 45.0,
+      "ai_assisted_points": 40.1,
+      "maximum": 70,
+      "pure_ai_total": null,
+      "features": [
+        0.2532396933841898,
+        0.1082523369974753,
+        0.6036083223580521,
+        0.6393925882416652,
+        0.9707355101434352,
+        0.9989200310637528,
+        3.4199057195567315,
+        0.11589197772269585
+      ],
+      "torso_features": [
+        0.21980100913349152,
+        3.4199057195567315,
+        3.7530791615120784,
+        0.9470576512230217
+      ],
+      "body_ai_diagnostic_grade": 2.0,
+      "body_ai_used_in_total": false,
+      "methods": {
+        "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+        "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+        "return": "상단 세 관측 중앙값과 기존 정상 학습 구간의 복귀 허용 범위",
+        "trunk": "기존 정상·오류 학습 구간으로 보정한 좌우 기울기 경계"
+      },
+      "limitations": [
+        "정면 관측 점수이며 기존 100점 총점과 다름",
+        "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+        "복귀 실패 라벨 없음: 정상 허용 범위만 보정",
+        "몸통 오류는 학습 1구간뿐: AI 진단 후보를 합계에 사용하지 않음",
+        "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+      ]
+    },
+    "coaching": {
+      "version": "front-coach-observation-v1",
+      "messages": [
+        "시작 대비 무릎 간격 감소가 관측됐습니다. 무릎과 발의 방향을 함께 확인하세요.",
+        "하강 범위 추정이 작습니다. 구도와 동작 범위를 함께 확인하세요. 더 깊게 하라는 확정 지시는 아닙니다.",
+        "종료 높이가 시작과 달랐습니다. 다음 반복 전 편안한 선 자세로 돌아왔는지 확인하세요."
+      ],
+      "evidence": {
+        "trunk_tilt_change_deg": 1.01,
+        "knee_spacing_relative_to_start": 0.551
+      },
+      "method": "정면 투영 관측 규칙 + 실험 하강 추정",
+      "not_model_diagnosis": true,
+      "limitations": [
+        "무릎 간격 감소는 발 방향을 확인한 실제 무릎 안쪽 붕괴 진단이 아님",
+        "정확한 깊이·뒤꿈치·앞뒤 무릎 이동은 정면에서 확정하지 않음",
+        "관측 안내를 점수의 추가 감점으로 중복 적용하지 않음"
+      ]
+    },
+    "provisional": true,
+    "window_seconds": 5.9,
+    "updated_at": 1792722399.4748735
+  },
+  "live_error": null,
+  "generation": 1,
+  "started_at": 6299.913783182,
+  "movement": {
+    "phase": "하강 확인 · 복귀 대기",
+    "count": 3,
+    "angle": 177.026879288901,
+    "hip_drop": 0.12218718996078272,
+    "active": true,
+    "movement_seconds": 11.0,
+    "hold_seconds": 0.0,
+    "scope": "experimental_2d_motion_boundaries"
+  },
+  "repetitions": [
+    {
+      "number": 1,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 2.4,
+      "ai": {
+        "earned": 0,
+        "maximum": 0,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "return_extension",
+          "trunk_balance"
+        ]
+      },
+      "rule": {
+        "earned": 20.0,
+        "maximum": 20,
+        "full_score": false,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "descent_range",
+          "weight": 30,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.9965360597095456,
+          "feature": [
+            0.9964335040576091,
+            0.9965360597095456,
+            0.9970395880808499,
+            0.9977888067741135,
+            0.9986072367219635,
+            0.9999259063550348,
+            0.9999686441422787,
+            1.0
+          ],
+          "reasons": [
+            "frontal_sagittal_measurement_unvalidated"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 12,
+            "1": 1,
+            "2": 5
+          },
+          "unseen_training_grades": [],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 0.008522727272727274,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "return_extension",
+          "weight": 20,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 176.407217539838,
+          "feature": [
+            171.65919047960767,
+            172.09940309952972,
+            173.42004095929587,
+            174.61651626519597,
+            175.55355875287316,
+            176.407217539838,
+            176.6917704688263,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified",
+            "frontal_sagittal_measurement_unvalidated",
+            "single_grade_ai_withheld"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 29
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 2.0,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "knee_foot",
+          "weight": 30,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": false,
+          "bank": "front",
+          "measured": 0.0,
+          "feature": null,
+          "reasons": [
+            "item_requires_side_view",
+            "unsupported_model_view_bank"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": null,
+          "unseen_training_grades": null,
+          "window": null,
+          "raw_grades": {
+            "ai_grade": null,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "trunk_balance",
+          "weight": 20,
+          "ai_grade": null,
+          "rule_grade": 2,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 6.823676348878778,
+          "feature": [
+            1.535567251429625,
+            1.7074586794175466,
+            3.2462815042044326,
+            5.2594804768561705,
+            6.348288964240687,
+            6.823676348878778,
+            6.851489944670964,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified",
+            "single_grade_ai_withheld"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 93
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 2.0,
+            "rule_grade": 2
+          }
+        }
+      ],
+      "front_candidate": {
+        "version": "front-squat-observable70-experimental-v2",
+        "experimental": true,
+        "ai_depth_grade": 1.01,
+        "rule_depth_grade": 1,
+        "return_height_grade": 2,
+        "trunk_grade": 2,
+        "ai_depth_points": 15.1,
+        "rule_points": 55.0,
+        "ai_assisted_points": 55.1,
+        "maximum": 70,
+        "pure_ai_total": null,
+        "features": [
+          0.24570179856893243,
+          0.25503055953304815,
+          0.5846352019110747,
+          0.6409972725192987,
+          0.9965360597095456,
+          0.9977888067741135,
+          6.823676348878778,
+          0.08812859777860645
+        ],
+        "torso_features": [
+          0.08812859777860645,
+          6.823676348878778,
+          4.865192864682616,
+          5.068946256871366
+        ],
+        "body_ai_diagnostic_grade": 2.0,
+        "body_ai_used_in_total": false,
+        "methods": {
+          "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+          "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+          "return": "상단 세 관측 중앙값과 기존 정상 학습 구간의 복귀 허용 범위",
+          "trunk": "기존 정상·오류 학습 구간으로 보정한 좌우 기울기 경계"
+        },
+        "limitations": [
+          "정면 관측 점수이며 기존 100점 총점과 다름",
+          "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+          "복귀 실패 라벨 없음: 정상 허용 범위만 보정",
+          "몸통 오류는 학습 1구간뿐: AI 진단 후보를 합계에 사용하지 않음",
+          "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+        ]
+      },
+      "coaching": {
+        "version": "front-coach-observation-v1",
+        "messages": [
+          "정면 관측 범위에서 뚜렷한 교정 신호가 확인되지 않았습니다."
+        ],
+        "evidence": {
+          "trunk_tilt_change_deg": 3.93,
+          "knee_spacing_relative_to_start": 1.024
+        },
+        "method": "정면 투영 관측 규칙 + 실험 하강 추정",
+        "not_model_diagnosis": true,
+        "limitations": [
+          "무릎 간격 감소는 발 방향을 확인한 실제 무릎 안쪽 붕괴 진단이 아님",
+          "정확한 깊이·뒤꿈치·앞뒤 무릎 이동은 정면에서 확정하지 않음",
+          "관측 안내를 점수의 추가 감점으로 중복 적용하지 않음"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 4.7,
+      "ai": {
+        "earned": 0,
+        "maximum": 0,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "return_extension",
+          "trunk_balance"
+        ]
+      },
+      "rule": {
+        "earned": 20.0,
+        "maximum": 20,
+        "full_score": false,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "descent_range",
+          "weight": 30,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.9956533222150464,
+          "feature": [
+            0.9954871977419306,
+            0.9956533222150464,
+            0.9960041891081473,
+            0.9971231619795232,
+            0.9994777289818885,
+            0.9998765222790085,
+            0.9999567505203587,
+            1.0
+          ],
+          "reasons": [
+            "frontal_sagittal_measurement_unvalidated"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 12,
+            "1": 1,
+            "2": 5
+          },
+          "unseen_training_grades": [],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 0.0,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "return_extension",
+          "weight": 20,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 179.15118931385325,
+          "feature": [
+            174.51157030029302,
+            174.6183266866276,
+            174.93859584563128,
+            177.3726568940003,
+            178.85394240800696,
+            179.15118931385325,
+            179.250271615802,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified",
+            "frontal_sagittal_measurement_unvalidated",
+            "single_grade_ai_withheld"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 29
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 2.0,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "knee_foot",
+          "weight": 30,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": false,
+          "bank": "front",
+          "measured": 0.022403884913254034,
+          "feature": null,
+          "reasons": [
+            "item_requires_side_view",
+            "unsupported_model_view_bank"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": null,
+          "unseen_training_grades": null,
+          "window": null,
+          "raw_grades": {
+            "ai_grade": null,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "trunk_balance",
+          "weight": 20,
+          "ai_grade": null,
+          "rule_grade": 2,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 3.7584454995286762,
+          "feature": [
+            1.8607177461995599,
+            2.1282628100656296,
+            2.421260954617546,
+            2.8100246797605664,
+            3.4058407706737173,
+            3.7584454995286762,
+            4.501322929353456,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified",
+            "single_grade_ai_withheld"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 93
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 2.0,
+            "rule_grade": 2
+          }
+        }
+      ],
+      "front_candidate": {
+        "version": "front-squat-observable70-experimental-v2",
+        "experimental": true,
+        "ai_depth_grade": 1.114,
+        "rule_depth_grade": 1,
+        "return_height_grade": 2,
+        "trunk_grade": 2,
+        "ai_depth_points": 16.7,
+        "rule_points": 55.0,
+        "ai_assisted_points": 56.7,
+        "maximum": 70,
+        "pure_ai_total": null,
+        "features": [
+          0.39674079211157265,
+          0.4146411649975847,
+          0.6499056925517622,
+          0.6819813922269536,
+          0.9956533222150464,
+          0.9971231619795232,
+          3.7584454995286762,
+          0.06769674747657815
+        ],
+        "torso_features": [
+          0.06769674747657815,
+          3.7584454995286762,
+          3.530234425115651,
+          3.769114120346543
+        ],
+        "body_ai_diagnostic_grade": 2.0,
+        "body_ai_used_in_total": false,
+        "methods": {
+          "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+          "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+          "return": "상단 세 관측 중앙값과 기존 정상 학습 구간의 복귀 허용 범위",
+          "trunk": "기존 정상·오류 학습 구간으로 보정한 좌우 기울기 경계"
+        },
+        "limitations": [
+          "정면 관측 점수이며 기존 100점 총점과 다름",
+          "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+          "복귀 실패 라벨 없음: 정상 허용 범위만 보정",
+          "몸통 오류는 학습 1구간뿐: AI 진단 후보를 합계에 사용하지 않음",
+          "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+        ]
+      },
+      "coaching": {
+        "version": "front-coach-observation-v1",
+        "messages": [
+          "정면 관측 범위에서 뚜렷한 교정 신호가 확인되지 않았습니다."
+        ],
+        "evidence": {
+          "trunk_tilt_change_deg": 2.26,
+          "knee_spacing_relative_to_start": 1.052
+        },
+        "method": "정면 투영 관측 규칙 + 실험 하강 추정",
+        "not_model_diagnosis": true,
+        "limitations": [
+          "무릎 간격 감소는 발 방향을 확인한 실제 무릎 안쪽 붕괴 진단이 아님",
+          "정확한 깊이·뒤꿈치·앞뒤 무릎 이동은 정면에서 확정하지 않음",
+          "관측 안내를 점수의 추가 감점으로 중복 적용하지 않음"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "status": "자동 구간 평가 · 실험",
+      "duration": 3.9,
+      "ai": {
+        "earned": 0,
+        "maximum": 0,
+        "full_score": false,
+        "excluded_unvalidated_items": [
+          "return_extension",
+          "trunk_balance"
+        ]
+      },
+      "rule": {
+        "earned": 20.0,
+        "maximum": 20,
+        "full_score": false,
+        "excluded_unvalidated_items": []
+      },
+      "items": [
+        {
+          "id": "descent_range",
+          "weight": 30,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 0.9993078647027518,
+          "feature": [
+            0.9992577458276172,
+            0.9993078647027518,
+            0.999752976260888,
+            0.9998173673441932,
+            0.9999118614032692,
+            0.9999894653219932,
+            0.9999951844772162,
+            1.0
+          ],
+          "reasons": [
+            "frontal_sagittal_measurement_unvalidated"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": {
+            "0": 12,
+            "1": 1,
+            "2": 5
+          },
+          "unseen_training_grades": [],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 0.0,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "return_extension",
+          "weight": 20,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 179.4246812314838,
+          "feature": [
+            175.50215750975786,
+            175.67311619870347,
+            176.18599226554025,
+            177.8724010619612,
+            178.56945238325517,
+            179.4246812314838,
+            179.70975751422668,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified",
+            "frontal_sagittal_measurement_unvalidated",
+            "single_grade_ai_withheld"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 29
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 2.0,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "knee_foot",
+          "weight": 30,
+          "ai_grade": null,
+          "rule_grade": null,
+          "ai_minus_rule": null,
+          "observed": false,
+          "bank": "front",
+          "measured": 0.0016773782750793183,
+          "feature": null,
+          "reasons": [
+            "item_requires_side_view",
+            "unsupported_model_view_bank"
+          ],
+          "single_grade_training": false,
+          "training_grade_counts": null,
+          "unseen_training_grades": null,
+          "window": null,
+          "raw_grades": {
+            "ai_grade": null,
+            "rule_grade": null
+          }
+        },
+        {
+          "id": "trunk_balance",
+          "weight": 20,
+          "ai_grade": null,
+          "rule_grade": 2,
+          "ai_minus_rule": null,
+          "observed": true,
+          "bank": "front",
+          "measured": 3.506693977184381,
+          "feature": [
+            1.747766994942341,
+            1.7920519373882968,
+            1.9525070156428666,
+            2.26590122572808,
+            3.0880549549945355,
+            3.506693977184381,
+            3.5302095144230696,
+            1.0
+          ],
+          "reasons": [
+            "single_grade_training_error_discrimination_unverified",
+            "single_grade_ai_withheld"
+          ],
+          "single_grade_training": true,
+          "training_grade_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 93
+          },
+          "unseen_training_grades": [
+            0,
+            1
+          ],
+          "window": null,
+          "raw_grades": {
+            "ai_grade": 2.0,
+            "rule_grade": 2
+          }
+        }
+      ],
+      "front_candidate": {
+        "version": "front-squat-observable70-experimental-v2",
+        "experimental": true,
+        "ai_depth_grade": 1.069,
+        "rule_depth_grade": 1,
+        "return_height_grade": 2,
+        "trunk_grade": 2,
+        "ai_depth_points": 16.0,
+        "rule_points": 55.0,
+        "ai_assisted_points": 56.0,
+        "maximum": 70,
+        "pure_ai_total": null,
+        "features": [
+          0.3312518132522622,
+          0.31130281575129215,
+          0.6924758567820708,
+          0.7130793306472271,
+          0.9993078647027518,
+          0.9998173673441932,
+          3.506693977184381,
+          0.011520075581403166
+        ],
+        "torso_features": [
+          0.046525510460519615,
+          3.506693977184381,
+          4.002886064252623,
+          1.6504967800760262
+        ],
+        "body_ai_diagnostic_grade": 2.0,
+        "body_ai_used_in_total": false,
+        "methods": {
+          "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+          "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+          "return": "상단 세 관측 중앙값과 기존 정상 학습 구간의 복귀 허용 범위",
+          "trunk": "기존 정상·오류 학습 구간으로 보정한 좌우 기울기 경계"
+        },
+        "limitations": [
+          "정면 관측 점수이며 기존 100점 총점과 다름",
+          "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+          "복귀 실패 라벨 없음: 정상 허용 범위만 보정",
+          "몸통 오류는 학습 1구간뿐: AI 진단 후보를 합계에 사용하지 않음",
+          "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+        ]
+      },
+      "coaching": {
+        "version": "front-coach-observation-v1",
+        "messages": [
+          "정면 관측 범위에서 뚜렷한 교정 신호가 확인되지 않았습니다."
+        ],
+        "evidence": {
+          "trunk_tilt_change_deg": 1.71,
+          "knee_spacing_relative_to_start": 1.013
+        },
+        "method": "정면 투영 관측 규칙 + 실험 하강 추정",
+        "not_model_diagnosis": true,
+        "limitations": [
+          "무릎 간격 감소는 발 방향을 확인한 실제 무릎 안쪽 붕괴 진단이 아님",
+          "정확한 깊이·뒤꿈치·앞뒤 무릎 이동은 정면에서 확정하지 않음",
+          "관측 안내를 점수의 추가 감점으로 중복 적용하지 않음"
+        ]
+      }
+    }
+  ],
+  "last_rep": {
+    "number": 3,
+    "status": "자동 구간 평가 · 실험",
+    "duration": 3.9,
+    "ai": {
+      "earned": 0,
+      "maximum": 0,
+      "full_score": false,
+      "excluded_unvalidated_items": [
+        "return_extension",
+        "trunk_balance"
+      ]
+    },
+    "rule": {
+      "earned": 20.0,
+      "maximum": 20,
+      "full_score": false,
+      "excluded_unvalidated_items": []
+    },
+    "items": [
+      {
+        "id": "descent_range",
+        "weight": 30,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": true,
+        "bank": "front",
+        "measured": 0.9993078647027518,
+        "feature": [
+          0.9992577458276172,
+          0.9993078647027518,
+          0.999752976260888,
+          0.9998173673441932,
+          0.9999118614032692,
+          0.9999894653219932,
+          0.9999951844772162,
+          1.0
+        ],
+        "reasons": [
+          "frontal_sagittal_measurement_unvalidated"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": {
+          "0": 12,
+          "1": 1,
+          "2": 5
+        },
+        "unseen_training_grades": [],
+        "window": null,
+        "raw_grades": {
+          "ai_grade": 0.0,
+          "rule_grade": null
+        }
+      },
+      {
+        "id": "return_extension",
+        "weight": 20,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": true,
+        "bank": "front",
+        "measured": 179.4246812314838,
+        "feature": [
+          175.50215750975786,
+          175.67311619870347,
+          176.18599226554025,
+          177.8724010619612,
+          178.56945238325517,
+          179.4246812314838,
+          179.70975751422668,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified",
+          "frontal_sagittal_measurement_unvalidated",
+          "single_grade_ai_withheld"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 29
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null,
+        "raw_grades": {
+          "ai_grade": 2.0,
+          "rule_grade": null
+        }
+      },
+      {
+        "id": "knee_foot",
+        "weight": 30,
+        "ai_grade": null,
+        "rule_grade": null,
+        "ai_minus_rule": null,
+        "observed": false,
+        "bank": "front",
+        "measured": 0.0016773782750793183,
+        "feature": null,
+        "reasons": [
+          "item_requires_side_view",
+          "unsupported_model_view_bank"
+        ],
+        "single_grade_training": false,
+        "training_grade_counts": null,
+        "unseen_training_grades": null,
+        "window": null,
+        "raw_grades": {
+          "ai_grade": null,
+          "rule_grade": null
+        }
+      },
+      {
+        "id": "trunk_balance",
+        "weight": 20,
+        "ai_grade": null,
+        "rule_grade": 2,
+        "ai_minus_rule": null,
+        "observed": true,
+        "bank": "front",
+        "measured": 3.506693977184381,
+        "feature": [
+          1.747766994942341,
+          1.7920519373882968,
+          1.9525070156428666,
+          2.26590122572808,
+          3.0880549549945355,
+          3.506693977184381,
+          3.5302095144230696,
+          1.0
+        ],
+        "reasons": [
+          "single_grade_training_error_discrimination_unverified",
+          "single_grade_ai_withheld"
+        ],
+        "single_grade_training": true,
+        "training_grade_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 93
+        },
+        "unseen_training_grades": [
+          0,
+          1
+        ],
+        "window": null,
+        "raw_grades": {
+          "ai_grade": 2.0,
+          "rule_grade": 2
+        }
+      }
+    ],
+    "front_candidate": {
+      "version": "front-squat-observable70-experimental-v2",
+      "experimental": true,
+      "ai_depth_grade": 1.069,
+      "rule_depth_grade": 1,
+      "return_height_grade": 2,
+      "trunk_grade": 2,
+      "ai_depth_points": 16.0,
+      "rule_points": 55.0,
+      "ai_assisted_points": 56.0,
+      "maximum": 70,
+      "pure_ai_total": null,
+      "features": [
+        0.3312518132522622,
+        0.31130281575129215,
+        0.6924758567820708,
+        0.7130793306472271,
+        0.9993078647027518,
+        0.9998173673441932,
+        3.506693977184381,
+        0.011520075581403166
+      ],
+      "torso_features": [
+        0.046525510460519615,
+        3.506693977184381,
+        4.002886064252623,
+        1.6504967800760262
+      ],
+      "body_ai_diagnostic_grade": 2.0,
+      "body_ai_used_in_total": false,
+      "methods": {
+        "depth_ai": "기존 동기화 측면 시각 라벨로 학습한 정면 입력 회귀",
+        "depth_rule": "같은 학습 라벨로 독립 보정한 단일 특징 경계",
+        "return": "상단 세 관측 중앙값과 기존 정상 학습 구간의 복귀 허용 범위",
+        "trunk": "기존 정상·오류 학습 구간으로 보정한 좌우 기울기 경계"
+      },
+      "limitations": [
+        "정면 관측 점수이며 기존 100점 총점과 다름",
+        "AI 보조 합계는 AI 하강+규칙 복귀·몸통이며 순수 AI 총점이 아님",
+        "복귀 실패 라벨 없음: 정상 허용 범위만 보정",
+        "몸통 오류는 학습 1구간뿐: AI 진단 후보를 합계에 사용하지 않음",
+        "몸통과 한쪽 이상 무릎의 동시 관측 80% 필요; 양쪽 무릎 대칭 점수는 계산하지 않음"
+      ]
+    },
+    "coaching": {
+      "version": "front-coach-observation-v1",
+      "messages": [
+        "정면 관측 범위에서 뚜렷한 교정 신호가 확인되지 않았습니다."
+      ],
+      "evidence": {
+        "trunk_tilt_change_deg": 1.71,
+        "knee_spacing_relative_to_start": 1.013
+      },
+      "method": "정면 투영 관측 규칙 + 실험 하강 추정",
+      "not_model_diagnosis": true,
+      "limitations": [
+        "무릎 간격 감소는 발 방향을 확인한 실제 무릎 안쪽 붕괴 진단이 아님",
+        "정확한 깊이·뒤꿈치·앞뒤 무릎 이동은 정면에서 확정하지 않음",
+        "관측 안내를 점수의 추가 감점으로 중복 적용하지 않음"
+      ]
+    }
+  },
+  "source_commit": "55fae6974bee80a71c50c8acbf2ce5fa782c58a6",
+  "source_dirty": false,
+  "loaded_code_model_sha256": "c850c28b43de189e32b2419147567247d08385c717c8ca90a6bc2c6d1f58d891",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "update_available": false,
+  "source_check_error": null,
+  "extraction_delegate": "CPU",
+  "camera_at": 6321.263385008,
+  "sample_cadence": {
+    "actual_hz": 10.0,
+    "observed_slot_fraction": 1.0,
+    "required_hz": 10,
+    "minimum_observed_fraction": 0.8
+  },
+  "width": 640,
+  "height": 480,
+  "front_squat_observation": {
+    "visible": 6,
+    "required": 6,
+    "missing": []
+  },
+  "coaching": {
+    "status": "뚜렷한 관측 경고 없음",
+    "messages": [
+      "현재 관측 범위에서 동작을 확인 중입니다."
+    ],
+    "version": "front-coach-observation-v1",
+    "validated": false,
+    "method": "시작 기준 대비 25% 무릎 간격 감소 또는 10도 몸통 변화가 0.5초 지속된 실험 규칙"
+  }
+}

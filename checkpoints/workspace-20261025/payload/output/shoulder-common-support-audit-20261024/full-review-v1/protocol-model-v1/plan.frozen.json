@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-24T14:14:26.729410+00:00",
+  "criterion": "observed_side_arm_movement_protocol_only",
+  "classes": [
+    "shoulder_press",
+    "non_press_arm_extension"
+  ],
+  "not_a_return_or_trunk_severity_model": true,
+  "source_roles_preserved": true,
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "features": "highest_observation_coverage_single_arm_chain; elevation/elbow/wrist-up q10/q50/q90/span; no visibility, provider labels, duration, identity or trunk feature",
+  "observation": "actual10Hz source frames, required single chain>=80percent and>=10observed, image2percent border, no missing interpolation",
+  "estimator": "Train-only StandardScaler+LogisticRegression C1 max_iter2000 fixed probabilitycutoff.5",
+  "sample_weights": "equal group influence then balance observed protocol classes; normalize average1",
+  "validation": "LeaveOneGroupOut Train; historical development/Test only after frozen candidate; final Test remains unopened",
+  "rule": "single upperarm elevation q10 cutoff, Train-only equal-group balanced error minimization; per-fold calibration excludes held group",
+  "no_numeric_selection_on_development_or_Test": true,
+  "production_changes": false
+}

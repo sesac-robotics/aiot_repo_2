@@ -1,0 +1,132 @@
+{
+  "previous_model_version": "2900a950c7dc",
+  "decisions": [
+    {
+      "id": "subject_026_shoulder_good_front",
+      "before": {
+        "criterion_ids": [
+          "overhead_reach",
+          "lower_return",
+          "bilateral_timing",
+          "frontal_trunk_hold"
+        ],
+        "criterion_weights": [
+          30,
+          25,
+          25,
+          20
+        ],
+        "criterion_levels": [
+          null,
+          2,
+          2,
+          2
+        ],
+        "score": null,
+        "rubric_version": "project-other-three-core-v1",
+        "unit": "observable_project_core_points_0_100",
+        "label_source": "codex_direct_temporal_frame_review",
+        "review_method": "36장 시간순 장면 직접 검토. 연속 재생·전 프레임 검토 아님.",
+        "expert_validated": false,
+        "note_ko": "어깨 높이 하단에서 위로 올렸다가 함께 내리는 움직임과 정면 몸통을 관찰한다. 상단 잘림으로 총점을 보류한다."
+      },
+      "after": {
+        "criterion_ids": [
+          "overhead_reach",
+          "lower_return",
+          "bilateral_timing",
+          "frontal_trunk_hold"
+        ],
+        "criterion_weights": [
+          30,
+          25,
+          25,
+          20
+        ],
+        "criterion_levels": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "score": 100.0,
+        "rubric_version": "project-other-three-core-v1",
+        "unit": "observable_project_core_points_0_100",
+        "label_source": "codex_direct_temporal_frame_review",
+        "review_method": "개발 결과 확인 후 원본 시간순 검토판과 확대 없는 원본 장면 직접 재검토. 비전문가 실험 초안이며 블라인드·독립 시험 아님.",
+        "expert_validated": false,
+        "note_ko": "새 큰 시간순 원본 검토판과 원본 상단 프레임 40에서 손·팔꿈치가 관측되고 양팔을 머리 위로 거의 펴 올림을 확인했다. 보이지 않는다고 일괄 제외했던 상단 항목을 등급 2로 보강한다."
+      },
+      "evidence": [
+        "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/observation_audit_subject_026_shoulder_good_front.jpg",
+        "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/native_subject_026_shoulder_good_front_40.jpg"
+      ]
+    },
+    {
+      "id": "subject_018_shoulder_good_front",
+      "before": {
+        "criterion_ids": [
+          "overhead_reach",
+          "lower_return",
+          "bilateral_timing",
+          "frontal_trunk_hold"
+        ],
+        "criterion_weights": [
+          30,
+          25,
+          25,
+          20
+        ],
+        "criterion_levels": [
+          null,
+          2,
+          2,
+          2
+        ],
+        "score": null,
+        "rubric_version": "project-other-three-core-v1",
+        "unit": "observable_project_core_points_0_100",
+        "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+        "review_method": "36장 시간순 표본을 직접 검토. 연속 재생·전 프레임 검토가 아님.",
+        "expert_validated": false,
+        "note_ko": "상승·복귀는 보이나 손의 최대 도달이 잘려 총점을 보류한다."
+      },
+      "after": {
+        "criterion_ids": [
+          "overhead_reach",
+          "lower_return",
+          "bilateral_timing",
+          "frontal_trunk_hold"
+        ],
+        "criterion_weights": [
+          30,
+          25,
+          25,
+          20
+        ],
+        "criterion_levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 85.0,
+        "rubric_version": "project-other-three-core-v1",
+        "unit": "observable_project_core_points_0_100",
+        "label_source": "Codex_direct_36_temporal_sample_review_provisional",
+        "review_method": "개발 결과 확인 후 원본 시간순 검토판과 확대 없는 원본 장면 직접 재검토. 비전문가 실험 초안이며 블라인드·독립 시험 아님.",
+        "expert_validated": false,
+        "note_ko": "새 큰 시간순 원본 검토판과 상단 원본 프레임 22·24·27에서 양손이 보이며, 상단에서도 양팔꿈치의 굽힘이 남는다. 제공자 good과 독립으로 도달 등급 1을 부여한다."
+      },
+      "evidence": [
+        "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/observation_audit_subject_018_shoulder_good_front.jpg",
+        "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/native_subject_018_shoulder_good_front_22.jpg",
+        "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/native_subject_018_shoulder_good_front_24.jpg",
+        "/home/jayden/SeSACPAI-Mid/output/three-exercise-comparison-20261022/review/native_subject_018_shoulder_good_front_27.jpg"
+      ]
+    }
+  ],
+  "expert_validated": false,
+  "independent_or_blind": false,
+  "metric_change_not_pure_algorithm_gain": true
+}

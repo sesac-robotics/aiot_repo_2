@@ -1,0 +1,485 @@
+{
+  "reports": {
+    "body_logistic": {
+      "item": "frontal_trunk_hold",
+      "rows": 12,
+      "people": [
+        "r2d2_P01",
+        "r2d2_P03",
+        "r2d2_P04",
+        "shoulder_011",
+        "shoulder_023"
+      ],
+      "grades": {
+        "2": 10,
+        "1": 2
+      },
+      "leave_person_out": [
+        {
+          "id": "V20-review-1_frontal_trunk_hold",
+          "person": "r2d2_P01",
+          "truth": 2,
+          "prediction": 2,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V21-review-2_frontal_trunk_hold",
+          "person": "r2d2_P01",
+          "truth": 2,
+          "prediction": 2,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V24-review-3_frontal_trunk_hold",
+          "person": "r2d2_P03",
+          "truth": 2,
+          "prediction": 1,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V25-review-4_frontal_trunk_hold",
+          "person": "r2d2_P03",
+          "truth": 2,
+          "prediction": 2,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V26-review-5_frontal_trunk_hold",
+          "person": "r2d2_P04",
+          "truth": 2,
+          "prediction": null,
+          "status": "abstained_training_fold_missing_error_class",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V27-review-6_frontal_trunk_hold",
+          "person": "r2d2_P04",
+          "truth": 2,
+          "prediction": null,
+          "status": "abstained_training_fold_missing_error_class",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V27-review-7_frontal_trunk_hold",
+          "person": "r2d2_P04",
+          "truth": 1,
+          "prediction": null,
+          "status": "abstained_training_fold_missing_error_class",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V27-review-8_frontal_trunk_hold",
+          "person": "r2d2_P04",
+          "truth": 1,
+          "prediction": null,
+          "status": "abstained_training_fold_missing_error_class",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_011_shoulder_bad_front_event_1_frontal_trunk_hold",
+          "person": "shoulder_011",
+          "truth": 2,
+          "prediction": 2,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_011_shoulder_good_front_event_1_frontal_trunk_hold",
+          "person": "shoulder_011",
+          "truth": 2,
+          "prediction": 2,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_011_shoulder_good_front_event_2_frontal_trunk_hold",
+          "person": "shoulder_011",
+          "truth": 2,
+          "prediction": 2,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_023_shoulder_good_front_event_1_frontal_trunk_hold",
+          "person": "shoulder_023",
+          "truth": 2,
+          "prediction": 2,
+          "status": "research_grade_prediction",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011"
+          ]
+        }
+      ],
+      "source_overlap": false,
+      "production_eligible": false,
+      "independent_final_test": false,
+      "covered_rows": 8,
+      "all_rows": 12,
+      "covered_correct": 7,
+      "normal_false_error": 1,
+      "normal_covered": 8,
+      "error_rows": 2,
+      "error_rows_with_valid_multiclass_fold": 0,
+      "independent_error_recall": null,
+      "grade0_supported": false,
+      "adoption_blockers": [
+        "only_one_error_person",
+        "all_error_rows_abstained_in_person_excluded_validation",
+        "no_independent_final_test",
+        "severe_grade0_untrained",
+        "no_live_event_detector_validation"
+      ]
+    },
+    "lower_svm": {
+      "item": "lower_return",
+      "rows": 9,
+      "people": [
+        "r2d2_P01",
+        "r2d2_P03",
+        "r2d2_P04",
+        "shoulder_011",
+        "shoulder_023"
+      ],
+      "grades": {
+        "2": 9
+      },
+      "leave_person_out": [
+        {
+          "id": "V20-review-1_lower_return",
+          "person": "r2d2_P01",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V21-review-2_lower_return",
+          "person": "r2d2_P01",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V24-review-3_lower_return",
+          "person": "r2d2_P03",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V26-review-5_lower_return",
+          "person": "r2d2_P04",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V27-review-6_lower_return",
+          "person": "r2d2_P04",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_011_shoulder_bad_front_event_1_lower_return",
+          "person": "shoulder_011",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_011_shoulder_good_front_event_2_lower_return",
+          "person": "shoulder_011",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_023_shoulder_bad_front_event_1_lower_return",
+          "person": "shoulder_023",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011"
+          ]
+        },
+        {
+          "id": "subject_023_shoulder_good_front_event_1_lower_return",
+          "person": "shoulder_023",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011"
+          ]
+        }
+      ],
+      "source_overlap": false,
+      "production_eligible": false,
+      "independent_final_test": false,
+      "normal_inliers": 1,
+      "normal_rows": 9,
+      "error_detection_accuracy": null,
+      "grade_prediction_enabled": false
+    },
+    "lower_isolation_forest": {
+      "item": "lower_return",
+      "rows": 9,
+      "people": [
+        "r2d2_P01",
+        "r2d2_P03",
+        "r2d2_P04",
+        "shoulder_011",
+        "shoulder_023"
+      ],
+      "grades": {
+        "2": 9
+      },
+      "leave_person_out": [
+        {
+          "id": "V20-review-1_lower_return",
+          "person": "r2d2_P01",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V21-review-2_lower_return",
+          "person": "r2d2_P01",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V24-review-3_lower_return",
+          "person": "r2d2_P03",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P04",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V26-review-5_lower_return",
+          "person": "r2d2_P04",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "V27-review-6_lower_return",
+          "person": "r2d2_P04",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "shoulder_011",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_011_shoulder_bad_front_event_1_lower_return",
+          "person": "shoulder_011",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_011_shoulder_good_front_event_2_lower_return",
+          "person": "shoulder_011",
+          "truth": 2,
+          "prediction": -1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_023"
+          ]
+        },
+        {
+          "id": "subject_023_shoulder_bad_front_event_1_lower_return",
+          "person": "shoulder_023",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011"
+          ]
+        },
+        {
+          "id": "subject_023_shoulder_good_front_event_1_lower_return",
+          "person": "shoulder_023",
+          "truth": 2,
+          "prediction": 1,
+          "status": "normal_reference_inlier_indicator_not_grade",
+          "training_people": [
+            "r2d2_P01",
+            "r2d2_P03",
+            "r2d2_P04",
+            "shoulder_011"
+          ]
+        }
+      ],
+      "source_overlap": false,
+      "production_eligible": false,
+      "independent_final_test": false,
+      "normal_inliers": 8,
+      "normal_rows": 9,
+      "error_detection_accuracy": null,
+      "grade_prediction_enabled": false
+    }
+  },
+  "selection": "fixed hyperparameters; no model winner selected or deployed",
+  "model_fits": 3,
+  "movement_grade_research_fits": 1,
+  "normal_reference_fits": 2,
+  "validation_type": "Train_leave_person_out_with_same_source_group_exclusion",
+  "Test_inference": false,
+  "independent_final_test": false,
+  "deployment_changed": false,
+  "severe_grade0_supported": false
+}

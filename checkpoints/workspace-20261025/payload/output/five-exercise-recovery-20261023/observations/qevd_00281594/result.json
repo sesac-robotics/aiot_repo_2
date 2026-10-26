@@ -1,0 +1,118 @@
+{
+  "schema": "posture-score-local-v1",
+  "exercise": "pushups",
+  "model_version": "2026.10.22-reviewed-clip.1",
+  "feature_version": "observed-pixel-10hz-held-v2",
+  "assessment_scope": "reviewed_clip",
+  "items": [
+    {
+      "id": "trunk_line",
+      "weight": 40,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "item_requires_side_view",
+        "finite_required_geometry_unavailable",
+        "item_not_reviewed_as_observable",
+        "unsupported_model_view_bank"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "descent_range",
+      "weight": 30,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": 171.5060879813857,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "return_extension",
+      "weight": 20,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "finite_required_geometry_unavailable"
+      ],
+      "single_grade_training": false,
+      "window": null
+    },
+    {
+      "id": "support",
+      "weight": 10,
+      "ai_grade": null,
+      "rule_grade": null,
+      "ai_minus_rule": null,
+      "observed": false,
+      "bank": "front",
+      "measured": null,
+      "feature": null,
+      "reasons": [
+        "required_joints_not_simultaneously_observed_in_80_percent",
+        "required_measurement_unavailable",
+        "item_requires_side_view",
+        "finite_required_geometry_unavailable",
+        "item_not_reviewed_as_observable",
+        "unsupported_model_view_bank"
+      ],
+      "single_grade_training": false,
+      "window": null
+    }
+  ],
+  "ai_score": null,
+  "rule_score": null,
+  "ai_minus_rule": null,
+  "complete_attempt_reviewed": true,
+  "requires_manual_view_review": true,
+  "ytw_projection_proxy": false,
+  "expert_validated": false,
+  "independent_final_test": false,
+  "timing_ms": {
+    "features": 19.43045699999857,
+    "ai": 0.0,
+    "rule": 0.0
+  },
+  "limitations": [
+    "Development-only labels; trunk and support require side view.",
+    "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+  ],
+  "qevd": {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00281594.mp4",
+    "labels": [
+      "pushups - early stopping"
+    ],
+    "labels_descriptive": [],
+    "split": "train"
+  },
+  "extraction": {
+    "extraction_seconds": 8.062916797999947,
+    "delegate": "GPU",
+    "heavy_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+    "score_generated": false
+  },
+  "synthetic_input": false,
+  "output_complete": true
+}

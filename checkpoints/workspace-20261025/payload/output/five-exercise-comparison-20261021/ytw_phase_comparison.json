@@ -1,0 +1,681 @@
+{
+  "summary_by_role": {
+    "design_training": {
+      "records": 3,
+      "previous_complete": 3,
+      "new_complete": 3,
+      "previous_anchors_inside_core": 4,
+      "phase_anchors": 9,
+      "anchors_inside_direct_core": 7,
+      "anchors_within_uncertainty": 9,
+      "mean_sample_interval_IoU": 0.6326177258766885
+    },
+    "exposed_development_validation": {
+      "records": 4,
+      "previous_complete": 1,
+      "new_complete": 3,
+      "previous_anchors_inside_core": 1,
+      "phase_anchors": 9,
+      "anchors_inside_direct_core": 9,
+      "anchors_within_uncertainty": 9,
+      "mean_sample_interval_IoU": 0.7780269818313297
+    }
+  },
+  "rows": [
+    {
+      "previous_anchor_matches": [
+        {
+          "phase": "Y_attempt",
+          "frame": 12,
+          "anchor_inside_core": true
+        },
+        {
+          "phase": "T_attempt",
+          "frame": 15,
+          "anchor_inside_core": false
+        },
+        {
+          "phase": "W_attempt",
+          "frame": 90,
+          "anchor_inside_core": false
+        }
+      ],
+      "id": "qevd_00015905",
+      "role": "design_training",
+      "person": "qevd_191",
+      "detected": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 6,
+            "end_index": 8,
+            "anchor_index": 7,
+            "samples": 3,
+            "median_lateral_span": 1.2062533155170396
+          },
+          "T_attempt": {
+            "start_index": 12,
+            "end_index": 18,
+            "anchor_index": 15,
+            "samples": 7,
+            "median_lateral_span": 1.778482219113158
+          },
+          "W_attempt": {
+            "start_index": 23,
+            "end_index": 29,
+            "anchor_index": 26,
+            "samples": 7,
+            "median_lateral_span": 0.8991813913461986
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.7798735899182143,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "phase_comparisons": [
+        {
+          "phase": "Y_attempt",
+          "detected_frames": [
+            18,
+            21,
+            24
+          ],
+          "direct_core_frames": [
+            9,
+            18
+          ],
+          "anchor_inside_core": false,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.0625
+        },
+        {
+          "phase": "T_attempt",
+          "detected_frames": [
+            36,
+            45,
+            54
+          ],
+          "direct_core_frames": [
+            36,
+            55
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.95
+        },
+        {
+          "phase": "W_attempt",
+          "detected_frames": [
+            69,
+            78,
+            87
+          ],
+          "direct_core_frames": [
+            73,
+            82
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.5263157894736842
+        }
+      ],
+      "previous_anchor_frames": [
+        12,
+        15,
+        90
+      ],
+      "previous_complete_sequence": true
+    },
+    {
+      "previous_anchor_matches": [
+        {
+          "phase": "Y_attempt",
+          "frame": 33,
+          "anchor_inside_core": true
+        },
+        {
+          "phase": "T_attempt",
+          "frame": 42,
+          "anchor_inside_core": false
+        },
+        {
+          "phase": "W_attempt",
+          "frame": 90,
+          "anchor_inside_core": false
+        }
+      ],
+      "id": "qevd_00014884",
+      "role": "design_training",
+      "person": "qevd_1207",
+      "detected": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 8,
+            "end_index": 13,
+            "anchor_index": 10,
+            "samples": 6,
+            "median_lateral_span": 0.4356216749170445
+          },
+          "T_attempt": {
+            "start_index": 14,
+            "end_index": 29,
+            "anchor_index": 21,
+            "samples": 16,
+            "median_lateral_span": 1.5383414706343141
+          },
+          "W_attempt": {
+            "start_index": 30,
+            "end_index": 36,
+            "anchor_index": 33,
+            "samples": 7,
+            "median_lateral_span": 0.27626664304210896
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.6210855900482142,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "phase_comparisons": [
+        {
+          "phase": "Y_attempt",
+          "detected_frames": [
+            24,
+            30,
+            39
+          ],
+          "direct_core_frames": [
+            27,
+            38
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.75
+        },
+        {
+          "phase": "T_attempt",
+          "detected_frames": [
+            42,
+            63,
+            87
+          ],
+          "direct_core_frames": [
+            43,
+            87
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.9782608695652174
+        },
+        {
+          "phase": "W_attempt",
+          "detected_frames": [
+            90,
+            99,
+            108
+          ],
+          "direct_core_frames": [
+            94,
+            101
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.42105263157894735
+        }
+      ],
+      "previous_anchor_frames": [
+        33,
+        42,
+        90
+      ],
+      "previous_complete_sequence": true
+    },
+    {
+      "previous_anchor_matches": [
+        {
+          "phase": "Y_attempt",
+          "frame": 65,
+          "anchor_inside_core": false
+        },
+        {
+          "phase": "T_attempt",
+          "frame": 68,
+          "anchor_inside_core": true
+        },
+        {
+          "phase": "W_attempt",
+          "frame": 86,
+          "anchor_inside_core": true
+        }
+      ],
+      "id": "qevd_00035657",
+      "role": "design_training",
+      "person": "qevd_2005",
+      "detected": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 3,
+            "end_index": 9,
+            "anchor_index": 6,
+            "samples": 7,
+            "median_lateral_span": 0.815996955707418
+          },
+          "T_attempt": {
+            "start_index": 10,
+            "end_index": 19,
+            "anchor_index": 14,
+            "samples": 10,
+            "median_lateral_span": 1.8546616280510353
+          },
+          "W_attempt": {
+            "start_index": 20,
+            "end_index": 25,
+            "anchor_index": 22,
+            "samples": 6,
+            "median_lateral_span": 0.9807316469021469
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.8682349561823934,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "phase_comparisons": [
+        {
+          "phase": "Y_attempt",
+          "detected_frames": [
+            32,
+            41,
+            50
+          ],
+          "direct_core_frames": [
+            32,
+            40
+          ],
+          "anchor_inside_core": false,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.47368421052631576
+        },
+        {
+          "phase": "T_attempt",
+          "detected_frames": [
+            53,
+            65,
+            80
+          ],
+          "direct_core_frames": [
+            57,
+            74
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.6428571428571429
+        },
+        {
+          "phase": "W_attempt",
+          "detected_frames": [
+            83,
+            89,
+            98
+          ],
+          "direct_core_frames": [
+            83,
+            100
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.8888888888888888
+        }
+      ],
+      "previous_anchor_frames": [
+        65,
+        68,
+        86
+      ],
+      "previous_complete_sequence": true
+    },
+    {
+      "previous_anchor_matches": [],
+      "id": "qevd_00196196",
+      "role": "exposed_development_validation",
+      "person": "qevd_547",
+      "detected": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 2,
+            "end_index": 6,
+            "anchor_index": 4,
+            "samples": 5,
+            "median_lateral_span": 0.9641288592796542
+          },
+          "T_attempt": {
+            "start_index": 7,
+            "end_index": 17,
+            "anchor_index": 12,
+            "samples": 11,
+            "median_lateral_span": 1.675661572307047
+          },
+          "W_attempt": {
+            "start_index": 18,
+            "end_index": 22,
+            "anchor_index": 20,
+            "samples": 5,
+            "median_lateral_span": 0.8432850913472402
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.724168589499665,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "phase_comparisons": [
+        {
+          "phase": "Y_attempt",
+          "detected_frames": [
+            81,
+            87,
+            93
+          ],
+          "direct_core_frames": [
+            85,
+            90
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.46153846153846156
+        },
+        {
+          "phase": "T_attempt",
+          "detected_frames": [
+            96,
+            111,
+            126
+          ],
+          "direct_core_frames": [
+            96,
+            126
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 1.0
+        },
+        {
+          "phase": "W_attempt",
+          "detected_frames": [
+            129,
+            135,
+            141
+          ],
+          "direct_core_frames": [
+            131,
+            141
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.8461538461538461
+        }
+      ],
+      "previous_anchor_frames": [],
+      "previous_complete_sequence": false
+    },
+    {
+      "previous_anchor_matches": [],
+      "id": "qevd_00265931",
+      "role": "exposed_development_validation",
+      "person": "qevd_149",
+      "detected": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 10,
+            "end_index": 15,
+            "anchor_index": 12,
+            "samples": 6,
+            "median_lateral_span": 1.1897521474406263
+          },
+          "T_attempt": {
+            "start_index": 16,
+            "end_index": 31,
+            "anchor_index": 23,
+            "samples": 16,
+            "median_lateral_span": 1.7922275542875998
+          },
+          "W_attempt": {
+            "start_index": 32,
+            "end_index": 37,
+            "anchor_index": 34,
+            "samples": 6,
+            "median_lateral_span": 1.0440064933494324
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.9784748852582141,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "phase_comparisons": [
+        {
+          "phase": "Y_attempt",
+          "detected_frames": [
+            30,
+            36,
+            45
+          ],
+          "direct_core_frames": [
+            30,
+            42
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.8125
+        },
+        {
+          "phase": "T_attempt",
+          "detected_frames": [
+            48,
+            69,
+            93
+          ],
+          "direct_core_frames": [
+            54,
+            90
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.8043478260869565
+        },
+        {
+          "phase": "W_attempt",
+          "detected_frames": [
+            96,
+            102,
+            111
+          ],
+          "direct_core_frames": [
+            96,
+            109
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.875
+        }
+      ],
+      "previous_anchor_frames": [],
+      "previous_complete_sequence": false
+    },
+    {
+      "previous_anchor_matches": [
+        {
+          "phase": "Y_attempt",
+          "frame": 30,
+          "anchor_inside_core": true
+        },
+        {
+          "phase": "T_attempt",
+          "frame": 54,
+          "anchor_inside_core": false
+        },
+        {
+          "phase": "W_attempt",
+          "frame": 87,
+          "anchor_inside_core": false
+        }
+      ],
+      "id": "qevd_00265212",
+      "role": "exposed_development_validation",
+      "person": "qevd_1810",
+      "detected": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {
+          "Y_attempt": {
+            "start_index": 10,
+            "end_index": 15,
+            "anchor_index": 12,
+            "samples": 6,
+            "median_lateral_span": 0.8046086837559061
+          },
+          "T_attempt": {
+            "start_index": 16,
+            "end_index": 28,
+            "anchor_index": 22,
+            "samples": 13,
+            "median_lateral_span": 1.2738969943281304
+          },
+          "W_attempt": {
+            "start_index": 29,
+            "end_index": 36,
+            "anchor_index": 32,
+            "samples": 8,
+            "median_lateral_span": 0.6670113601572187
+          }
+        },
+        "complete_attempt_sequence": true,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": null,
+        "lateral_span_p90": 1.2808055870352988,
+        "thresholds": {
+          "active_hand_height_torso_ratio": 0.6,
+          "wide_enter_relative_span": 0.85,
+          "wide_exit_relative_span": 0.7,
+          "min_samples": 3
+        }
+      },
+      "phase_comparisons": [
+        {
+          "phase": "Y_attempt",
+          "detected_frames": [
+            30,
+            36,
+            45
+          ],
+          "direct_core_frames": [
+            30,
+            45
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 1.0
+        },
+        {
+          "phase": "T_attempt",
+          "detected_frames": [
+            48,
+            66,
+            84
+          ],
+          "direct_core_frames": [
+            55,
+            80
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.7027027027027027
+        },
+        {
+          "phase": "W_attempt",
+          "detected_frames": [
+            87,
+            96,
+            108
+          ],
+          "direct_core_frames": [
+            91,
+            101
+          ],
+          "anchor_inside_core": true,
+          "anchor_within_uncertainty": true,
+          "sample_based_interval_IoU": 0.5
+        }
+      ],
+      "previous_anchor_frames": [
+        30,
+        54,
+        87
+      ],
+      "previous_complete_sequence": true
+    },
+    {
+      "previous_anchor_matches": [],
+      "id": "qevd_00105254",
+      "role": "exposed_development_validation",
+      "person": "qevd_956",
+      "detected": {
+        "version": "ytw-width-hysteresis-dwell-attempts-v3",
+        "phases": {},
+        "complete_attempt_sequence": false,
+        "canonical_Y_depth_confirmed": false,
+        "sample_hz": 10,
+        "hold_reason": "ordered_three_dwell_windows_not_observed"
+      },
+      "phase_comparisons": [],
+      "previous_anchor_frames": [],
+      "previous_complete_sequence": false
+    }
+  ],
+  "independent_final_test": false,
+  "expert_validated": false,
+  "score_labels_modified": false,
+  "annotation_sha256": "c78aa5239e678297ae1cb80647d1b033548dd6ef3f892db3a1669ac1ad65ff83",
+  "detector_sha256": "2986d84428d5fa3422eae1eca3e5be6ea6461427dc311ac178cf94c0efa30d80",
+  "scope_ko": "이미 노출된 개발 자료. 단계 시도 인식의 회귀 진단이며 자세 점수 정확도 또는 새로운 독립 시험이 아님."
+}

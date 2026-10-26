@@ -1,0 +1,114 @@
+{
+  "label_sha256": "9b0617ec628b2e88a56b4bc9b35cbbe062e1071491247b13592e814ac73eaf86",
+  "automated_audit_not_direct_review": true,
+  "full_totals_created": 0,
+  "duplicate_image_hashes": [],
+  "person_overlap_across_folds": false,
+  "coverage_by_draft_grade": {
+    "0": {
+      "images": 19,
+      "observable": 9,
+      "coverage": 0.47368421052631576,
+      "ai_oof_grade_mae": 1.1148917704013228,
+      "rule_grade_mae": 0.8888888888888888,
+      "train_mean_grade_mae": 0.9980562016157124
+    },
+    "1": {
+      "images": 28,
+      "observable": 22,
+      "coverage": 0.7857142857142857,
+      "ai_oof_grade_mae": 0.20046430853987304,
+      "rule_grade_mae": 0.36363636363636365,
+      "train_mean_grade_mae": 0.1076747350131919
+    },
+    "2": {
+      "images": 7,
+      "observable": 6,
+      "coverage": 0.8571428571428571,
+      "ai_oof_grade_mae": 1.0384920027784366,
+      "rule_grade_mae": 1.0,
+      "train_mean_grade_mae": 1.1340996168582376
+    },
+    "None": {
+      "images": 2,
+      "observable": 1,
+      "coverage": 0.5
+    }
+  },
+  "equal_grade_weight_mae": {
+    "ai_oof_grade": 0.7846160272398773,
+    "rule_grade": 0.7508417508417509,
+    "train_mean_grade": 0.7466101844957139
+  },
+  "coverage_by_person": {
+    "Z115": {
+      "images": 8,
+      "observable": 7,
+      "common_evaluated": 7
+    },
+    "Z3": {
+      "images": 8,
+      "observable": 8,
+      "common_evaluated": 8
+    },
+    "Z56": {
+      "images": 8,
+      "observable": 0,
+      "common_evaluated": 0
+    },
+    "Z59": {
+      "images": 8,
+      "observable": 4,
+      "common_evaluated": 4
+    },
+    "Z61": {
+      "images": 8,
+      "observable": 8,
+      "common_evaluated": 8
+    },
+    "Z62": {
+      "images": 8,
+      "observable": 4,
+      "common_evaluated": 4
+    },
+    "Z84": {
+      "images": 8,
+      "observable": 7,
+      "common_evaluated": 6
+    }
+  },
+  "repeat_extraction": {
+    "independent_process": true,
+    "images": 56,
+    "same_observation_mask": true,
+    "maximum_observed_coordinate_delta_px": 0.0,
+    "exact_finite_coordinates_equal": true,
+    "not_temporal_or_recapture_consistency": true
+  },
+  "direct_overlay_review": {
+    "images": 7,
+    "ids": [
+      "555-1-2-26-Z56",
+      "553-1-2-26-Z59",
+      "556-1-2-26-Z59",
+      "553-1-2-26-Z115",
+      "554-1-2-26-Z59",
+      "558-1-2-26-Z59",
+      "554-1-2-26-Z61"
+    ],
+    "findings_ko": [
+      "Z56의 큰 골반 상승 장면은 다리 관절 미관측이며 기구 기둥·밴드가 겹침",
+      "554-Z59는 실제 다리 대신 굽힌 다리처럼 관절이 추정되어 골반 내각 126.7도로 계산됨",
+      "558-Z59의 직접 몸통 이탈 초안과 175도 화면 대리값이 불일치; 사선 투영과 옷·요추 굴곡은 단일 골반 내각으로 충분히 설명되지 않음",
+      "554-Z61은 높은 정렬 등급 초안인데 다른 참여자만 학습한 AI가 약 0.54등급으로 예측함"
+    ],
+    "labels_changed_after_result": false
+  },
+  "conclusions_ko": [
+    "낮은 정렬 등급의 관측 손실이 커 전체 실패를 제외한 오차만으로 성능을 평가하면 낙관적일 수 있음",
+    "Z56 참여자 8장은 전부 관절 관측 실패하여 참여자 분리 비교에 들어가지 못함",
+    "AI가 학습 평균 기준선을 넘지 못하므로 현재 모델을 공통 총점 모델로 채택하지 않음",
+    "같은 이미지 재실행은 일치하나 가림·구도·참여자 일반화와 동작 시간 검증은 해결되지 않음",
+    "GPU 최초 실행 로그의 Tensor 경고를 숨기지 않음; 별도 재실행은 정상 종료하고 좌표가 일치함"
+  ]
+}

@@ -1,0 +1,777 @@
+{
+  "train_n": 280,
+  "validation_n": 32,
+  "grade_counts": {
+    "2": 278,
+    "1": 2
+  },
+  "source_exercise_counts": {
+    "shoulder": 103,
+    "squats": 146,
+    "ytw": 31
+  },
+  "selected": {
+    "name": "grade10",
+    "dims": 10,
+    "metrics": {
+      "balanced_group_MAE": 0.25821256038647344,
+      "n": 280,
+      "groups": 69,
+      "MAE": 0.02857142857142857,
+      "group_MAE": 0.02004830917874396,
+      "error_n": 2,
+      "normal_n": 278,
+      "error_recall": 0.5,
+      "normal_false_alarm": 0.025179856115107913
+    },
+    "constant_baseline": {
+      "balanced_group_MAE": 0.5011387163561076,
+      "n": 280,
+      "groups": 69,
+      "MAE": 0.014217687074829908,
+      "group_MAE": 0.014216701173222887,
+      "error_n": 2,
+      "normal_n": 278,
+      "error_recall": 0.0,
+      "normal_false_alarm": 0.0
+    }
+  },
+  "group_cv": {
+    "balanced_group_MAE": 0.25821256038647344,
+    "n": 280,
+    "groups": 69,
+    "MAE": 0.02857142857142857,
+    "group_MAE": 0.02004830917874396,
+    "error_n": 2,
+    "normal_n": 278,
+    "error_recall": 0.5,
+    "normal_false_alarm": 0.025179856115107913
+  },
+  "fixed_development_validation": {
+    "balanced_group_MAE": 0.0,
+    "n": 32,
+    "groups": 14,
+    "MAE": 0.0,
+    "group_MAE": 0.0,
+    "error_n": 1,
+    "normal_n": 31,
+    "error_recall": 1.0,
+    "normal_false_alarm": 0.0
+  },
+  "acceptance": {
+    "passed": false,
+    "reasons": [
+      "development_requires_at_least_three_normal_and_error_segments",
+      "development_requires_at_least_two_normal_and_error_person_source_groups",
+      "training_group_cv_error_recall_below_65_percent_or_unknown"
+    ],
+    "validation_support": {
+      "n": 32,
+      "normal_n": 31,
+      "error_n": 1,
+      "normal_groups": 14,
+      "error_groups": 1
+    },
+    "independent_final_test_required": true,
+    "production_replacement": false
+  },
+  "validation_predictions": [
+    {
+      "id": "subject_002_shoulder_bad_front",
+      "person": "shoulder_002",
+      "group": "2",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_015_shoulder_bad_front",
+      "person": "shoulder_015",
+      "group": "23",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_017_shoulder_good_front",
+      "person": "shoulder_017",
+      "group": "26",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_015_shoulder_good_front",
+      "person": "shoulder_015",
+      "group": "23",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_002_shoulder_good_front",
+      "person": "shoulder_002",
+      "group": "2",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_004_shoulder_good_front",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_017_shoulder_bad_front",
+      "person": "shoulder_017",
+      "group": "26",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_004_shoulder_bad_front",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "youtube_U9ZRi5VwSo8_rep1",
+      "person": "youtube_channel_UCwL6i80ui6Po2Jov2jVRlbQ",
+      "group": "74",
+      "family": "other_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "youtube_U9ZRi5VwSo8_rep2",
+      "person": "youtube_channel_UCwL6i80ui6Po2Jov2jVRlbQ",
+      "group": "74",
+      "family": "other_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "youtube_OOe_HrNnQWw_peak_cropped",
+      "person": "youtube_channel_UCwL6i80ui6Po2Jov2jVRlbQ",
+      "group": "74",
+      "family": "other_reviewed",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "qevd_00003948",
+      "person": "qevd_410",
+      "group": "454",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "qevd_00014005",
+      "person": "qevd_39",
+      "group": "455",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "qevd_00023973",
+      "person": "qevd_2470",
+      "group": "456",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "qevd_00032130",
+      "person": "qevd_695",
+      "group": "457",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "qevd_00010352",
+      "person": "qevd_1563",
+      "group": "458",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "qevd_00241717_existing_review",
+      "person": "qevd_244",
+      "group": "469",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "qevd_00039770_existing_review",
+      "person": "qevd_2496",
+      "group": "470",
+      "family": "QEVD",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_002_squat_bad_paired_direct_rep0",
+      "person": "shoulder_002",
+      "group": "2",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_004_squat_good_paired_direct_rep0",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_004_squat_bad_paired_direct_rep0",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep0",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_012_squat_good_batch2_rep1",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep0",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "subject_012_squat_bad_batch2_rep1",
+      "person": "shoulder_012",
+      "group": "20",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "enrich_E003_000",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "enrich_E003_001",
+      "person": "shoulder_004",
+      "group": "4",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "enrich_E016_005",
+      "person": "shoulder_017",
+      "group": "26",
+      "family": "MultiView",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "enrich_R013",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "enrich_R014",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "enrich_R015",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 2,
+      "prediction": 2.0
+    },
+    {
+      "id": "enrich_R016",
+      "person": "rehab_Mima",
+      "group": "964",
+      "family": "REHAB26",
+      "target": 1,
+      "prediction": 1.0
+    }
+  ],
+  "candidate_cv": [
+    {
+      "name": "tree2",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.5013499135674352,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.05606200900011726,
+        "group_MAE": 0.05537658409293558,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.014388489208633094
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "tree4",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.4705222253849234,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.21137931443361954,
+        "group_MAE": 0.20951009742564083,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.050359712230215826
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.22359874579806635,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.09052135490197966,
+        "group_MAE": 0.09051366654842045,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03597122302158273
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge10",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.2572874454570442,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.1625223624700903,
+        "group_MAE": 0.1667864888788148,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.039568345323741004
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ordinal1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.27922734773159263,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.12276744603764439,
+        "group_MAE": 0.12964636355770284,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.050359712230215826
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade0.1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.2752166244919868,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.06428571428571428,
+        "group_MAE": 0.05405643738977073,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.06115107913669065
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade1",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.2771489916417453,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.05357142857142857,
+        "group_MAE": 0.057921171689287634,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.050359712230215826
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade10",
+      "dims": 7,
+      "metrics": {
+        "balanced_group_MAE": 0.26666666666666666,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.03571428571428571,
+        "group_MAE": 0.03695652173913043,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03237410071942446
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "tree2",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.51142356940209,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.03469690284488822,
+        "group_MAE": 0.031633370688238044,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.025179856115107913
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "tree4",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.4704703046746066,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.16467805021992069,
+        "group_MAE": 0.15937207763069258,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.050359712230215826
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.2373839318391904,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.08282358298705383,
+        "group_MAE": 0.08458392914053924,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.03237410071942446
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ridge10",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.2618733639843639,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.14970360739090002,
+        "group_MAE": 0.1520034891178955,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.039568345323741004
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "ordinal1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.2841818164793437,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.1086151721031005,
+        "group_MAE": 0.1142443182479993,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.0539568345323741
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade0.1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.2752166244919868,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.06428571428571428,
+        "group_MAE": 0.05405643738977073,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.06115107913669065
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade1",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.2785982670040641,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.05714285714285714,
+        "group_MAE": 0.06081972241392532,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.0539568345323741
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    },
+    {
+      "name": "grade10",
+      "dims": 10,
+      "metrics": {
+        "balanced_group_MAE": 0.25821256038647344,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.02857142857142857,
+        "group_MAE": 0.02004830917874396,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.5,
+        "normal_false_alarm": 0.025179856115107913
+      },
+      "constant_baseline": {
+        "balanced_group_MAE": 0.5011387163561076,
+        "n": 280,
+        "groups": 69,
+        "MAE": 0.014217687074829908,
+        "group_MAE": 0.014216701173222887,
+        "error_n": 2,
+        "normal_n": 278,
+        "error_recall": 0.0,
+        "normal_false_alarm": 0.0
+      }
+    }
+  ],
+  "excluded": [
+    "subject_019_shoulder_bad_front_round1_late_round1_score",
+    "subject_019_shoulder_good_front_held2_score",
+    "subject_009_shoulder_good_front_held2_score",
+    "subject_013_squat_bad_batch2_rep0",
+    "subject_015_squat_good_batch2_rep0",
+    "subject_015_squat_bad_batch2_rep0",
+    "subject_015_squat_bad_batch2_rep1",
+    "qevd_00144112_held3_score",
+    "qevd_00265669_held3_score",
+    "qevd_00264509_held3_score",
+    "subject_023_shoulder_bad_front_held3_score",
+    "subject_016_shoulder_bad_front_held3_score",
+    "subject_001_shoulder_bad_front_held3_score",
+    "subject_005_shoulder_good_front_held3_score",
+    "qevd_00146521_held3_score",
+    "qevd_00165807_held3_score",
+    "qevd_00133899_held3_score",
+    "qevd_00151214_held3_score"
+  ],
+  "labels_are_existing_direct_item_grades_not_provider_errors": true,
+  "final_test_used": false,
+  "production_replacement": false
+}

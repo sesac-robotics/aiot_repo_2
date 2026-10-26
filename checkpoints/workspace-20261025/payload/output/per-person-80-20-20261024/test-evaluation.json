@@ -1,0 +1,2429 @@
+{
+  "frozen_fingerprints": {
+    "model_sha256": "c37893dbb5da2f5e1ff6b4ecd6190277cdc851cbccf8b62ea949340712b7c198",
+    "training_inputs_sha256": "31660db6616534d8121a1e6c10e4bdf6b0bf403f01519da2c73276c3b01136fe",
+    "test_inputs_sha256": "8027ecf8ee4382fbaf5bf532f9a1ddb4ccda1d01d9f21d9a597260bcc36ebd65"
+  },
+  "head_selection": "training_group_CV_only_per_observable_criterion",
+  "previously_trained_test_rows_in_new_model": 0,
+  "source_overlap_with_training": 0,
+  "people_overlap_expected": true,
+  "independent_new_person_test": false,
+  "historical_exposure": "Some test samples trained old models; all were previously reviewed. New estimator fits exclude every test source.",
+  "test_rows": 55,
+  "predicted_item_count": 142,
+  "held_item_count": 78,
+  "by_exercise": {
+    "plank": {
+      "balanced_group_MAE": 0.3343839625754292,
+      "n": 26,
+      "groups": 3,
+      "MAE": 0.1180130324984483,
+      "group_MAE": 0.12718931034002698,
+      "error_n": 8,
+      "normal_n": 18,
+      "error_recall": 1.0,
+      "normal_false_alarm": 0.0
+    },
+    "pushups": {
+      "balanced_group_MAE": 0.270326251973342,
+      "n": 48,
+      "groups": 3,
+      "MAE": 0.31618871979978286,
+      "group_MAE": 0.30255380060571957,
+      "error_n": 20,
+      "normal_n": 28,
+      "error_recall": 0.7,
+      "normal_false_alarm": 0.17857142857142858
+    },
+    "shoulder": {
+      "balanced_group_MAE": 0.46132072568158833,
+      "n": 24,
+      "groups": 2,
+      "MAE": 0.36557206968385286,
+      "group_MAE": 0.3655720696838528,
+      "error_n": 20,
+      "normal_n": 4,
+      "error_recall": 0.9,
+      "normal_false_alarm": 0.25
+    },
+    "squats": {
+      "balanced_group_MAE": 0.5915120872442451,
+      "n": 20,
+      "groups": 2,
+      "MAE": 0.14351646994943956,
+      "group_MAE": 0.26969298040538536,
+      "error_n": 1,
+      "normal_n": 19,
+      "error_recall": 1.0,
+      "normal_false_alarm": 0.05263157894736842
+    },
+    "ytw": {
+      "balanced_group_MAE": 0.6510543725075151,
+      "n": 24,
+      "groups": 2,
+      "MAE": 0.3926860141157104,
+      "group_MAE": 0.3926860141157104,
+      "error_n": 8,
+      "normal_n": 16,
+      "error_recall": 0.5,
+      "normal_false_alarm": 0.1875
+    }
+  },
+  "by_criterion": {
+    "plank/elbow_sagittal_position": {
+      "balanced_group_MAE": 0.0,
+      "n": 8,
+      "groups": 3,
+      "MAE": 0.0,
+      "group_MAE": 0.0,
+      "error_n": 0,
+      "normal_n": 8,
+      "error_recall": null,
+      "normal_false_alarm": 0.0
+    },
+    "plank/leg_and_body_support": {
+      "balanced_group_MAE": 0.0,
+      "n": 5,
+      "groups": 2,
+      "MAE": 0.0,
+      "group_MAE": 0.0,
+      "error_n": 0,
+      "normal_n": 5,
+      "error_recall": null,
+      "normal_false_alarm": 0.0
+    },
+    "plank/support_continuity": {
+      "balanced_group_MAE": 0.013135862040161836,
+      "n": 5,
+      "groups": 2,
+      "MAE": 0.013667768991931162,
+      "group_MAE": 0.013135862040161836,
+      "error_n": 0,
+      "normal_n": 5,
+      "error_recall": null,
+      "normal_false_alarm": 0.0
+    },
+    "plank/trunk_line": {
+      "balanced_group_MAE": 0.5,
+      "n": 8,
+      "groups": 3,
+      "MAE": 0.375,
+      "group_MAE": 0.3333333333333333,
+      "error_n": 8,
+      "normal_n": 0,
+      "error_recall": 1.0,
+      "normal_false_alarm": null
+    },
+    "pushups/descent_range": {
+      "balanced_group_MAE": 0.4692135779726321,
+      "n": 19,
+      "groups": 3,
+      "MAE": 0.43037150265208296,
+      "group_MAE": 0.415572047395063,
+      "error_n": 6,
+      "normal_n": 13,
+      "error_recall": 0.16666666666666666,
+      "normal_false_alarm": 0.3076923076923077
+    },
+    "pushups/support": {
+      "balanced_group_MAE": 0.2,
+      "n": 10,
+      "groups": 2,
+      "MAE": 0.2,
+      "group_MAE": 0.2,
+      "error_n": 0,
+      "normal_n": 10,
+      "error_recall": null,
+      "normal_false_alarm": 0.1
+    },
+    "pushups/trunk_line": {
+      "balanced_group_MAE": 0.2380952380952381,
+      "n": 19,
+      "groups": 3,
+      "MAE": 0.2631578947368421,
+      "group_MAE": 0.1851851851851852,
+      "error_n": 14,
+      "normal_n": 5,
+      "error_recall": 0.9285714285714286,
+      "normal_false_alarm": 0.0
+    },
+    "shoulder/bilateral_timing": {
+      "balanced_group_MAE": 0.5376191318082676,
+      "n": 12,
+      "groups": 2,
+      "MAE": 0.7311441393677057,
+      "group_MAE": 0.7311441393677056,
+      "error_n": 8,
+      "normal_n": 4,
+      "error_recall": 0.75,
+      "normal_false_alarm": 0.25
+    },
+    "shoulder/overhead_reach": {
+      "balanced_group_MAE": 0.0,
+      "n": 12,
+      "groups": 2,
+      "MAE": 0.0,
+      "group_MAE": 0.0,
+      "error_n": 12,
+      "normal_n": 0,
+      "error_recall": 1.0,
+      "normal_false_alarm": null
+    },
+    "squats/descent_range": {
+      "balanced_group_MAE": 0.5,
+      "n": 5,
+      "groups": 2,
+      "MAE": 0.2,
+      "group_MAE": 0.5,
+      "error_n": 1,
+      "normal_n": 4,
+      "error_recall": 1.0,
+      "normal_false_alarm": 0.0
+    },
+    "squats/knee_gap": {
+      "balanced_group_MAE": 0.0,
+      "n": 4,
+      "groups": 1,
+      "MAE": 0.0,
+      "group_MAE": 0.0,
+      "error_n": 0,
+      "normal_n": 4,
+      "error_recall": null,
+      "normal_false_alarm": 0.0
+    },
+    "squats/standing_height_return": {
+      "balanced_group_MAE": 0.009596399524906513,
+      "n": 5,
+      "groups": 2,
+      "MAE": 0.01535423923985042,
+      "group_MAE": 0.009596399524906513,
+      "error_n": 0,
+      "normal_n": 5,
+      "error_recall": null,
+      "normal_false_alarm": 0.0
+    },
+    "squats/trunk_balance": {
+      "balanced_group_MAE": 0.3391883575980066,
+      "n": 6,
+      "groups": 2,
+      "MAE": 0.2989263671315899,
+      "group_MAE": 0.3391883575980066,
+      "error_n": 0,
+      "normal_n": 6,
+      "error_recall": null,
+      "normal_false_alarm": 0.16666666666666666
+    },
+    "ytw/t_reach": {
+      "balanced_group_MAE": 0.3923540088383837,
+      "n": 8,
+      "groups": 2,
+      "MAE": 0.3923540088383837,
+      "group_MAE": 0.3923540088383837,
+      "error_n": 0,
+      "normal_n": 8,
+      "error_recall": null,
+      "normal_false_alarm": 0.375
+    },
+    "ytw/w_shape": {
+      "balanced_group_MAE": 0.3027818661279336,
+      "n": 8,
+      "groups": 2,
+      "MAE": 0.30278186612793356,
+      "group_MAE": 0.3027818661279336,
+      "error_n": 4,
+      "normal_n": 4,
+      "error_recall": 1.0,
+      "normal_false_alarm": 0.0
+    },
+    "ytw/y_reach": {
+      "balanced_group_MAE": 0.48292216738081384,
+      "n": 8,
+      "groups": 2,
+      "MAE": 0.48292216738081384,
+      "group_MAE": 0.48292216738081384,
+      "error_n": 4,
+      "normal_n": 4,
+      "error_recall": 0.0,
+      "normal_false_alarm": 0.0
+    }
+  },
+  "predictions": [
+    {
+      "id": "r2d2_V02_000000_003500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "descent_range",
+      "bank": "front",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_000000_003500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "standing_height_return",
+      "bank": "height_v4",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_000000_003500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "knee_gap",
+      "bank": "front_gap_relative_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_000000_003500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "trunk_balance",
+      "bank": "front_trunk_relative_v2",
+      "target": 2,
+      "prediction": 1.814599300961726,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_003500_006750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "descent_range",
+      "bank": "front",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_003500_006750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "standing_height_return",
+      "bank": "height_v4",
+      "target": 2,
+      "prediction": 1.9711764333664408,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_003500_006750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "knee_gap",
+      "bank": "front_gap_relative_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_003500_006750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "trunk_balance",
+      "bank": "front_trunk_relative_v2",
+      "target": 2,
+      "prediction": 1.9006175949488457,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_006750_010000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "descent_range",
+      "bank": "front",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_006750_010000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "standing_height_return",
+      "bank": "height_v4",
+      "target": 2,
+      "prediction": 1.9747060504925846,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_006750_010000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "knee_gap",
+      "bank": "front_gap_relative_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_006750_010000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "trunk_balance",
+      "bank": "front_trunk_relative_v2",
+      "target": 2,
+      "prediction": 1.6981777794810413,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_010000_013750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "descent_range",
+      "bank": "front",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_010000_013750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "standing_height_return",
+      "bank": "height_v4",
+      "target": 2,
+      "prediction": 1.9773463199417225,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_010000_013750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "knee_gap",
+      "bank": "front_gap_relative_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V02_010000_013750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "squats",
+      "criterion": "trunk_balance",
+      "bank": "front_trunk_relative_v2",
+      "target": 2,
+      "prediction": 1.7129957798133613,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V13_000000_002250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "squats",
+      "criterion": "standing_height_return",
+      "bank": "height_v4",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V13_000000_002250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "squats",
+      "criterion": "trunk_balance",
+      "bank": "front_trunk_relative_v2",
+      "target": 2,
+      "prediction": 1.8280901933624534,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V13_002500_004750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "squats",
+      "criterion": "descent_range",
+      "bank": "front",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V13_002500_004750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "squats",
+      "criterion": "trunk_balance",
+      "bank": "front_trunk_relative_v2",
+      "target": 2,
+      "prediction": 1.251961148643033,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_001250_006750",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_001250_006750",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 0,
+      "prediction": 1.7272032021988175,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_007000_011250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_007000_011250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 0,
+      "prediction": 1.5938684294687173,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_011250_015250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_011250_015250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 0,
+      "prediction": 1.2610736309295842,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_015250_019250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_015250_019250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 0,
+      "prediction": 0.19754639131452612,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_019250_021250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_019250_021250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.665368352222771,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_021250_023900",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V23_021250_023900",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.5319880225562783,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_000000_004000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_000000_004000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.5848609136770522,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_004000_007750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_004000_007750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.4861329130234795,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_007750_010500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_007750_010500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.24650254287081,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_010500_013750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_010500_013750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 0,
+      "prediction": 0.2351846896676446,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_013750_017250",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_013750_017250",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 0,
+      "prediction": 1.0956652962947253,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_020000_022150",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "bank": "front_press_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V27_020000_022150",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "bank": "front_press_arm_pose_v2",
+      "target": 0,
+      "prediction": 0.6850356911472225,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_001000_004250",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_001000_004250",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_001000_004250",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_004250_007000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_004250_007000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_004250_007000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_007000_010000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_007000_010000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_007000_010000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_010000_012750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_010000_012750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_010000_012750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_012750_015500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_012750_015500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V28_012750_015500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_003000_006500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_003000_006500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 1.2544968028846202,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_003000_006500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_006500_010000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_006500_010000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 1.288125287774658,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_006500_010000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_010000_013750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_010000_013750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 1,
+      "prediction": 0.5575085509828033,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_010000_013750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_013750_016500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_013750_016500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 1.4191494540704273,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_013750_016500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_016500_019750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_016500_019750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 0.6764864926910892,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V34_016500_019750",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "pushups",
+      "criterion": "support",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_001000_004250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_001000_004250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 1,
+      "prediction": 1.9542373338583243,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_004250_009250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_004250_009250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_009250_012750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_009250_012750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_012750_015750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_012750_015750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 1,
+      "prediction": 1.8696455617772265,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_015750_018250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 1.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_015750_018250",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 1,
+      "prediction": 1.630975637088215,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_018250_020500",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_018250_020500",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 1,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_020500_023750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_020500_023750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 1,
+      "prediction": 1.9031918466142845,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_026000_030000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_026000_030000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 1.9904812474098634,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_030000_032750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "trunk_line",
+      "bank": "side_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V36_030000_032750",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "pushups",
+      "criterion": "descent_range",
+      "bank": "side",
+      "target": 2,
+      "prediction": 1.9947439931350115,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_002750_007250",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_002750_007250",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.9822916666666668,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_002750_007250",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_007250_012000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_007250_012000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.971875,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_007250_012000",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_012000_016750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_012000_016750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.9770833333333333,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_012000_016750",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_016750_021500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_016750_021500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.965625,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V37_016750_021500",
+      "person": "r2d2_P01",
+      "group": "r2d2_P01",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.9903749999999998,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_005250_010500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.9677009147763052,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_005250_010500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.0651325757575762,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_005250_010500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 0,
+      "prediction": 0.5243482950872655,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_010500_014250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 1,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_010500_014250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.0322474747474748,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_010500_014250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 0,
+      "prediction": 0.44375550989626644,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_014250_019250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 1,
+      "prediction": 1.8956764242702053,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_014250_019250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.3458459595959598,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_014250_019250",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 0,
+      "prediction": 0.6150061754161892,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_019250_024750",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 1,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_019250_024750",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "bank": "upright_arm_pose_v2",
+      "target": 2,
+      "prediction": 1.5210669191919195,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V40_019250_024750",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "bank": "upright_arm_pose_v2",
+      "target": 0,
+      "prediction": 0.8295199486237472,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_000500_003500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_000500_003500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_000500_003500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "bank": "side_support_clearance_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_000500_003500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 1.9972776755839297,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_003500_006500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_003500_006500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_003500_006500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "bank": "side_support_clearance_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_003500_006500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 1.9754743639152603,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_006500_009500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_006500_009500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_006500_009500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "bank": "side_support_clearance_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V52_006500_009500",
+      "person": "r2d2_P02",
+      "group": "r2d2_P02",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 1.9798617701037846,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_002000_005000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_002000_005000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_002000_005000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 1.9839412822183895,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_005000_008000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_005000_008000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_005000_008000",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 1.99510606321898,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_008000_010500",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 1,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V54_008000_010500",
+      "person": "r2d2_P03",
+      "group": "r2d2_P03",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V57_000500_003000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V57_000500_003000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V57_000500_003000",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "bank": "side_support_clearance_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V57_003000_005500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "plank",
+      "criterion": "trunk_line",
+      "bank": "side_video_aihub_transfer_v1",
+      "target": 0,
+      "prediction": 0.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V57_003000_005500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "plank",
+      "criterion": "elbow_sagittal_position",
+      "bank": "side_video",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    },
+    {
+      "id": "r2d2_V57_003000_005500",
+      "person": "r2d2_P04",
+      "group": "r2d2_P04",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "bank": "side_support_clearance_v1",
+      "target": 2,
+      "prediction": 2.0,
+      "experimental": true,
+      "production_replacement": false
+    }
+  ],
+  "held": [
+    {
+      "id": "r2d2_V13_000000_002250",
+      "exercise": "squats",
+      "criterion": "descent_range",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V13_000000_002250",
+      "exercise": "squats",
+      "criterion": "knee_gap",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V13_002500_004750",
+      "exercise": "squats",
+      "criterion": "standing_height_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V13_002500_004750",
+      "exercise": "squats",
+      "criterion": "knee_gap",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_001250_006750",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_001250_006750",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_007000_011250",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_007000_011250",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_011250_015250",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_011250_015250",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_015250_019250",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_015250_019250",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_019250_021250",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_019250_021250",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_021250_023900",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V23_021250_023900",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_000000_004000",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_000000_004000",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_004000_007750",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_004000_007750",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_007750_010500",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_007750_010500",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_010500_013750",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_010500_013750",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_013750_017250",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_013750_017250",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_017250_020000",
+      "exercise": "shoulder",
+      "criterion": "overhead_reach",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_017250_020000",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_017250_020000",
+      "exercise": "shoulder",
+      "criterion": "bilateral_timing",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_017250_020000",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_020000_022150",
+      "exercise": "shoulder",
+      "criterion": "lower_return",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V27_020000_022150",
+      "exercise": "shoulder",
+      "criterion": "frontal_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V28_001000_004250",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V28_004250_007000",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V28_007000_010000",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V28_010000_012750",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V28_012750_015500",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V34_003000_006500",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V34_006500_010000",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V34_010000_013750",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V34_013750_016500",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V34_016500_019750",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_001000_004250",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_001000_004250",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_004250_009250",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_004250_009250",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_009250_012750",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_009250_012750",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_012750_015750",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_012750_015750",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_015750_018250",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_015750_018250",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_018250_020500",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_018250_020500",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_020500_023750",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_020500_023750",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_026000_030000",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_026000_030000",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_030000_032750",
+      "exercise": "pushups",
+      "criterion": "return_extension",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V36_030000_032750",
+      "exercise": "pushups",
+      "criterion": "support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V37_002750_007250",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V37_007250_012000",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V37_012000_016750",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V37_016750_021500",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_005250_010500",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_010500_014250",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_014250_019250",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_019250_024750",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_024750_030750",
+      "exercise": "ytw",
+      "criterion": "y_reach",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_024750_030750",
+      "exercise": "ytw",
+      "criterion": "t_reach",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_024750_030750",
+      "exercise": "ytw",
+      "criterion": "w_shape",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V40_024750_030750",
+      "exercise": "ytw",
+      "criterion": "upright_trunk_hold",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V54_002000_005000",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V54_005000_008000",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V54_008000_010500",
+      "exercise": "plank",
+      "criterion": "leg_and_body_support",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V54_008000_010500",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V57_000500_003000",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    },
+    {
+      "id": "r2d2_V57_003000_005500",
+      "exercise": "plank",
+      "criterion": "support_continuity",
+      "reason": "label_or_observation_or_trained_head_unavailable"
+    }
+  ],
+  "test_results_must_not_select_this_run": true,
+  "production_replacement": false
+}

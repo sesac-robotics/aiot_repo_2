@@ -1,0 +1,3478 @@
+[
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_006_push_up_good_side.mp4",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "상승 시 어깨–엉덩이–발목의 큰 꺾임이 보이지 않는다.",
+      "2.33초에 상완이 바닥에 가까운 방향까지 내려간다.",
+      "1.67·3.00초에 팔을 편 상단 자세로 돌아온다.",
+      "선택한 구간에서 손과 발로 지지하고 무릎을 바닥에 대지 않는다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_006_push_up_good_side",
+    "exercise": "pushups",
+    "person": "shoulder_006",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "good"
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_seconds": 1.67,
+      "end_seconds": 3.0,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 2,
+        "weight": 40,
+        "evidence_ko": "상승 시 어깨–엉덩이–발목의 큰 꺾임이 보이지 않는다.",
+        "evidence_times_seconds": [
+          1.67,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "2.33초에 상완이 바닥에 가까운 방향까지 내려간다.",
+        "evidence_times_seconds": [
+          1.67,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.67·3.00초에 팔을 편 상단 자세로 돌아온다.",
+        "evidence_times_seconds": [
+          1.67,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택한 구간에서 손과 발로 지지하고 무릎을 바닥에 대지 않는다.",
+        "evidence_times_seconds": [
+          1.67,
+          2.33,
+          3.0
+        ]
+      }
+    ],
+    "score": 100.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/01.jpg",
+      "sha256": "128a93bff478b0569e8a9eb5922eb99609352362faf8e2ae40424d9985693d49",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/01.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_006_push_up_good_side.mp4",
+          "fps": 15.0,
+          "frames": 328,
+          "times": [
+            0.0,
+            1.933,
+            3.933,
+            5.933,
+            7.867,
+            9.867,
+            11.867,
+            13.867,
+            15.8,
+            17.8,
+            19.8,
+            21.8
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/front/subject_006_push_up_good_front.mp4",
+          "fps": 15.0,
+          "frames": 341,
+          "times": [
+            0.0,
+            2.0,
+            4.067,
+            6.133,
+            8.2,
+            10.267,
+            12.333,
+            14.4,
+            16.467,
+            18.533,
+            20.6,
+            22.667
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/diagonal/subject_006_push_up_good_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 316,
+          "times": [
+            0.0,
+            1.867,
+            3.8,
+            5.667,
+            7.6,
+            9.533,
+            11.4,
+            13.333,
+            15.267,
+            17.133,
+            19.067,
+            21.0
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_014_push_up_good_side.mp4",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "몸통과 다리가 함께 높이를 바꾼다.",
+      "1.33초에 팔이 충분히 굽혀진 하단 자세가 보인다.",
+      "0.67·1.67초에 팔을 편 자세가 보인다.",
+      "손·발 지지가 유지된다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_014_push_up_good_side",
+    "exercise": "pushups",
+    "person": "shoulder_014",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "good"
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_seconds": 0.67,
+      "end_seconds": 1.67,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 2,
+        "weight": 40,
+        "evidence_ko": "몸통과 다리가 함께 높이를 바꾼다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.33,
+          1.67
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "1.33초에 팔이 충분히 굽혀진 하단 자세가 보인다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.33,
+          1.67
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "0.67·1.67초에 팔을 편 자세가 보인다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.33,
+          1.67
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "손·발 지지가 유지된다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.33,
+          1.67
+        ]
+      }
+    ],
+    "score": 100.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/02.jpg",
+      "sha256": "0475ff89becfb9a0b5e47f59cb0e72e6ff1711c163964c9663d5034510a8fc89",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/02.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_014_push_up_good_side.mp4",
+          "fps": 15.0,
+          "frames": 330,
+          "times": [
+            0.0,
+            1.933,
+            3.933,
+            5.933,
+            7.933,
+            9.933,
+            11.933,
+            13.933,
+            15.933,
+            17.933,
+            19.933,
+            21.933
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/front/subject_014_push_up_good_front.mp4",
+          "fps": 15.0,
+          "frames": 331,
+          "times": [
+            0.0,
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0,
+            12.0,
+            14.0,
+            16.0,
+            18.0,
+            20.0,
+            22.0
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/diagonal/subject_014_push_up_good_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 339,
+          "times": [
+            0.0,
+            2.0,
+            4.067,
+            6.133,
+            8.133,
+            10.2,
+            12.267,
+            14.333,
+            16.333,
+            18.4,
+            20.467,
+            22.533
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_018_push_up_good_side.mp4",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "선택 구간에서 엉덩이의 뚜렷한 들림·처짐이 보이지 않는다.",
+      "1.67초의 팔 굽힘과 흉부 하강이 확인된다.",
+      "0.67·2.33초의 팔 펴기가 확인된다.",
+      "선택 구간의 무릎은 바닥에 닿지 않는다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_018_push_up_good_side",
+    "exercise": "pushups",
+    "person": "shoulder_018",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "good"
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_seconds": 0.67,
+      "end_seconds": 2.33,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 2,
+        "weight": 40,
+        "evidence_ko": "선택 구간에서 엉덩이의 뚜렷한 들림·처짐이 보이지 않는다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.67,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "1.67초의 팔 굽힘과 흉부 하강이 확인된다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.67,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "0.67·2.33초의 팔 펴기가 확인된다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.67,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택 구간의 무릎은 바닥에 닿지 않는다.",
+        "evidence_times_seconds": [
+          0.67,
+          1.67,
+          2.33
+        ]
+      }
+    ],
+    "score": 100.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/03.jpg",
+      "sha256": "644d304a489c283e29fd7fa0a1bd5e61dad745eda8f3f5cc446acaf20b5c3010",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/03.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_018_push_up_good_side.mp4",
+          "fps": 15.0,
+          "frames": 249,
+          "times": [
+            0.0,
+            1.467,
+            3.0,
+            4.467,
+            6.0,
+            7.467,
+            9.0,
+            10.467,
+            12.0,
+            13.467,
+            15.0,
+            16.533
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/front/subject_018_push_up_good_front.mp4",
+          "fps": 15.0,
+          "frames": 367,
+          "times": [
+            0.0,
+            2.2,
+            4.4,
+            6.6,
+            8.867,
+            11.067,
+            13.267,
+            15.467,
+            17.733,
+            19.933,
+            22.133,
+            24.4
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/diagonal/subject_018_push_up_good_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 230,
+          "times": [
+            0.0,
+            1.333,
+            2.733,
+            4.133,
+            5.533,
+            6.933,
+            8.267,
+            9.667,
+            11.067,
+            12.467,
+            13.867,
+            15.267
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_023_push_up_good_side.mp4",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "몸통·다리 정렬이 대체로 유지된다.",
+      "1.67초에 가슴을 낮춘 자세가 보인다.",
+      "1.00·2.33초에 팔을 편 상단 자세가 보인다.",
+      "선택 구간의 손·발 지지가 유지된다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_023_push_up_good_side",
+    "exercise": "pushups",
+    "person": "shoulder_023",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "good"
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_seconds": 1.0,
+      "end_seconds": 2.33,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 2,
+        "weight": 40,
+        "evidence_ko": "몸통·다리 정렬이 대체로 유지된다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.67,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "1.67초에 가슴을 낮춘 자세가 보인다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.67,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.00·2.33초에 팔을 편 상단 자세가 보인다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.67,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택 구간의 손·발 지지가 유지된다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.67,
+          2.33
+        ]
+      }
+    ],
+    "score": 100.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/04.jpg",
+      "sha256": "dac6a529db2176cfc6304f8adc2d965c1da0e91792d5875281d53f2cea8db050",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/04.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_023_push_up_good_side.mp4",
+          "fps": 15.0,
+          "frames": 290,
+          "times": [
+            0.0,
+            1.733,
+            3.467,
+            5.2,
+            7.0,
+            8.733,
+            10.467,
+            12.2,
+            14.0,
+            15.733,
+            17.467,
+            19.267
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/front/subject_023_push_up_good_front.mp4",
+          "fps": 15.0,
+          "frames": 250,
+          "times": [
+            0.0,
+            1.467,
+            3.0,
+            4.467,
+            6.0,
+            7.533,
+            9.0,
+            10.533,
+            12.067,
+            13.533,
+            15.067,
+            16.6
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/diagonal/subject_023_push_up_good_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 291,
+          "times": [
+            0.0,
+            1.733,
+            3.467,
+            5.267,
+            7.0,
+            8.733,
+            10.533,
+            12.267,
+            14.0,
+            15.8,
+            17.533,
+            19.333
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_024_push_up_good_side.mp4",
+    "labels": [
+      "good"
+    ],
+    "labels_descriptive": [
+      "선택한 가림이 적은 구간에서 어깨–엉덩이–발목 정렬이 유지된다.",
+      "7.33초에 팔 굽힘과 흉부 하강이 보인다.",
+      "6.67·7.67초 상단 자세의 팔 펴기가 보인다.",
+      "선택 구간의 무릎은 바닥에 닿지 않는다."
+    ],
+    "split": "test",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_024_push_up_good_side",
+    "exercise": "pushups",
+    "person": "shoulder_024",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "good"
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_seconds": 6.67,
+      "end_seconds": 7.67,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 2,
+        "weight": 40,
+        "evidence_ko": "선택한 가림이 적은 구간에서 어깨–엉덩이–발목 정렬이 유지된다.",
+        "evidence_times_seconds": [
+          6.67,
+          7.33,
+          7.67
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "7.33초에 팔 굽힘과 흉부 하강이 보인다.",
+        "evidence_times_seconds": [
+          6.67,
+          7.33,
+          7.67
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "6.67·7.67초 상단 자세의 팔 펴기가 보인다.",
+        "evidence_times_seconds": [
+          6.67,
+          7.33,
+          7.67
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택 구간의 무릎은 바닥에 닿지 않는다.",
+        "evidence_times_seconds": [
+          6.67,
+          7.33,
+          7.67
+        ]
+      }
+    ],
+    "score": 100.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/05.jpg",
+      "sha256": "2fb330d81f82e74aef94eacc6c9b01a3dc78da1b0ba0529973451859cdac9b6f",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/05.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/side/subject_024_push_up_good_side.mp4",
+          "fps": 15.0,
+          "frames": 290,
+          "times": [
+            0.0,
+            1.733,
+            3.467,
+            5.2,
+            7.0,
+            8.733,
+            10.467,
+            12.2,
+            14.0,
+            15.733,
+            17.467,
+            19.267
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/front/subject_024_push_up_good_front.mp4",
+          "fps": 15.0,
+          "frames": 264,
+          "times": [
+            0.0,
+            1.533,
+            3.133,
+            4.733,
+            6.333,
+            7.933,
+            9.533,
+            11.133,
+            12.733,
+            14.333,
+            15.933,
+            17.533
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/good/diagonal/subject_024_push_up_good_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 262,
+          "times": [
+            0.0,
+            1.533,
+            3.133,
+            4.733,
+            6.267,
+            7.867,
+            9.467,
+            11.067,
+            12.6,
+            14.2,
+            15.8,
+            17.4
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_006_push_up_bad_side.mp4",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "상단과 하단에서 엉덩이가 어깨–발목 선보다 뚜렷하게 높다.",
+      "2.33초 팔 굽힘과 흉부 하강이 있다.",
+      "1.33·3.00초 팔 펴기가 보인다.",
+      "손·발 지지가 유지된다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_006_push_up_bad_side",
+    "exercise": "pushups",
+    "person": "shoulder_006",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "bad"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_seconds": 1.33,
+      "end_seconds": 3.0,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 0,
+        "weight": 40,
+        "evidence_ko": "상단과 하단에서 엉덩이가 어깨–발목 선보다 뚜렷하게 높다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "2.33초 팔 굽힘과 흉부 하강이 있다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.33·3.00초 팔 펴기가 보인다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "손·발 지지가 유지된다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      }
+    ],
+    "score": 60.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [
+      "hips_high"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/06.jpg",
+      "sha256": "9a8ab58d416891c9c69533e44409b45f8cf390199deff212ea1482ba92edbc2c",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/06.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_006_push_up_bad_side.mp4",
+          "fps": 15.0,
+          "frames": 272,
+          "times": [
+            0.0,
+            1.6,
+            3.267,
+            4.867,
+            6.533,
+            8.2,
+            9.8,
+            11.467,
+            13.133,
+            14.733,
+            16.4,
+            18.067
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/front/subject_006_push_up_bad_front.mp4",
+          "fps": 15.0,
+          "frames": 281,
+          "times": [
+            0.0,
+            1.667,
+            3.333,
+            5.067,
+            6.733,
+            8.467,
+            10.133,
+            11.867,
+            13.533,
+            15.267,
+            16.933,
+            18.667
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/diagonal/subject_006_push_up_bad_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 277,
+          "times": [
+            0.0,
+            1.667,
+            3.333,
+            5.0,
+            6.667,
+            8.333,
+            10.0,
+            11.667,
+            13.333,
+            15.0,
+            16.667,
+            18.4
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_014_push_up_bad_side.mp4",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "선택 구간 몸통·다리에 뚜렷한 큰 꺾임이 보이지 않는다.",
+      "2.33초에 팔을 굽혀 충분히 낮아진다.",
+      "1.33·3.33초 상단에서도 팔꿈치 굽힘이 남아 보인다.",
+      "선택 구간의 손·발 지지가 유지된다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_014_push_up_bad_side",
+    "exercise": "pushups",
+    "person": "shoulder_014",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "bad"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_seconds": 1.33,
+      "end_seconds": 3.33,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 2,
+        "weight": 40,
+        "evidence_ko": "선택 구간 몸통·다리에 뚜렷한 큰 꺾임이 보이지 않는다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.33
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "2.33초에 팔을 굽혀 충분히 낮아진다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.33
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 1,
+        "weight": 20,
+        "evidence_ko": "1.33·3.33초 상단에서도 팔꿈치 굽힘이 남아 보인다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.33
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택 구간의 손·발 지지가 유지된다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.33
+        ]
+      }
+    ],
+    "score": 90.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [
+      "incomplete_extension"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/07.jpg",
+      "sha256": "1f65c1406f8d0ec6fbd62a160b54f6f9b04bfe8cbfcd93f32f8a00e9325417a9",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/07.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_014_push_up_bad_side.mp4",
+          "fps": 15.0,
+          "frames": 253,
+          "times": [
+            0.0,
+            1.467,
+            3.0,
+            4.533,
+            6.067,
+            7.6,
+            9.133,
+            10.667,
+            12.2,
+            13.733,
+            15.267,
+            16.8
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/front/subject_014_push_up_bad_front.mp4",
+          "fps": 15.0,
+          "frames": 304,
+          "times": [
+            0.0,
+            1.8,
+            3.667,
+            5.467,
+            7.333,
+            9.133,
+            11.0,
+            12.8,
+            14.667,
+            16.467,
+            18.333,
+            20.2
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/diagonal/subject_014_push_up_bad_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 236,
+          "times": [
+            0.0,
+            1.4,
+            2.8,
+            4.267,
+            5.667,
+            7.067,
+            8.533,
+            9.933,
+            11.333,
+            12.8,
+            14.2,
+            15.667
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": null,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_018_push_up_bad_side.mp4",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "상단에서 어깨–엉덩이–발목 선이 엉덩이에서 뚜렷하게 꺾인다.",
+      "5.00초에 흉부가 낮아진다.",
+      "3.67·5.67초에 팔이 펴진다.",
+      "선택 구간 손·발 지지가 유지된다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_018_push_up_bad_side",
+    "exercise": "pushups",
+    "person": "shoulder_018",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "bad"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_seconds": 3.67,
+      "end_seconds": 5.67,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 0,
+        "weight": 40,
+        "evidence_ko": "상단에서 어깨–엉덩이–발목 선이 엉덩이에서 뚜렷하게 꺾인다.",
+        "evidence_times_seconds": [
+          3.67,
+          5.0,
+          5.67
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "5.00초에 흉부가 낮아진다.",
+        "evidence_times_seconds": [
+          3.67,
+          5.0,
+          5.67
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "3.67·5.67초에 팔이 펴진다.",
+        "evidence_times_seconds": [
+          3.67,
+          5.0,
+          5.67
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택 구간 손·발 지지가 유지된다.",
+        "evidence_times_seconds": [
+          3.67,
+          5.0,
+          5.67
+        ]
+      }
+    ],
+    "score": 60.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [
+      "hips_high"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/08.jpg",
+      "sha256": "bc5cf3b8a1e1e542a1dc42e8cc13c7810c02c0ef7dc6f9ffca14cb10290b5fa7",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/08.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_018_push_up_bad_side.mp4",
+          "fps": 15.0,
+          "frames": 235,
+          "times": [
+            0.0,
+            1.4,
+            2.8,
+            4.2,
+            5.667,
+            7.067,
+            8.467,
+            9.867,
+            11.333,
+            12.733,
+            14.133,
+            15.6
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/front/subject_018_push_up_bad_front.mp4",
+          "fps": 15.0,
+          "frames": 243,
+          "times": [
+            0.0,
+            1.467,
+            2.933,
+            4.4,
+            5.867,
+            7.333,
+            8.8,
+            10.267,
+            11.733,
+            13.2,
+            14.667,
+            16.133
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/diagonal/subject_018_push_up_bad_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 201,
+          "times": [
+            0.0,
+            1.2,
+            2.4,
+            3.6,
+            4.8,
+            6.0,
+            7.267,
+            8.467,
+            9.667,
+            10.867,
+            12.067,
+            13.333
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_023_push_up_bad_side.mp4",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "하강 구간에서 몸통·골반 선이 상단보다 아래로 꺾여 보인다. 경미한 처짐 초안이다.",
+      "2.33초에 흉부 하강과 팔 굽힘이 보인다.",
+      "1.33·3.00초 팔을 편 자세로 돌아온다.",
+      "선택 구간 손·발 지지가 유지된다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_023_push_up_bad_side",
+    "exercise": "pushups",
+    "person": "shoulder_023",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "bad"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_seconds": 1.33,
+      "end_seconds": 3.0,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": null,
+        "weight": 40,
+        "evidence_ko": "하강 구간에서 몸통·골반 선이 상단보다 아래로 꺾여 보인다. 경미한 처짐 초안이다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "2.33초에 흉부 하강과 팔 굽힘이 보인다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.33·3.00초 팔을 편 자세로 돌아온다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택 구간 손·발 지지가 유지된다.",
+        "evidence_times_seconds": [
+          1.33,
+          2.33,
+          3.0
+        ]
+      }
+    ],
+    "score": null,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [
+      "possible_hips_sag"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": false,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/09.jpg",
+      "sha256": "b52d3fcc61a972632c1a50786661acadfab4b1799a18b6d7144f75f6c2050e0b",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/09.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_023_push_up_bad_side.mp4",
+          "fps": 15.0,
+          "frames": 207,
+          "times": [
+            0.0,
+            1.2,
+            2.467,
+            3.733,
+            4.933,
+            6.2,
+            7.467,
+            8.733,
+            9.933,
+            11.2,
+            12.467,
+            13.733
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/front/subject_023_push_up_bad_front.mp4",
+          "fps": 15.0,
+          "frames": 250,
+          "times": [
+            0.0,
+            1.467,
+            3.0,
+            4.467,
+            6.0,
+            7.533,
+            9.0,
+            10.533,
+            12.067,
+            13.533,
+            15.067,
+            16.6
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/diagonal/subject_023_push_up_bad_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 202,
+          "times": [
+            0.0,
+            1.2,
+            2.4,
+            3.6,
+            4.867,
+            6.067,
+            7.267,
+            8.467,
+            9.733,
+            10.933,
+            12.133,
+            13.4
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음.",
+      "경미한 정렬 이탈의 정도가 애매해 독립 재검토 전 학습 후보로 승인하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_024_push_up_bad_side.mp4",
+    "labels": [
+      "bad"
+    ],
+    "labels_descriptive": [
+      "어깨–엉덩이–발목 선에 뚜렷한 큰 꺾임이 보이지 않는다.",
+      "1.33초 전후 하강에서도 팔 굽힘·흉부 하강 범위가 작다.",
+      "1.00·2.33초 상단에서 팔 펴기가 보인다.",
+      "선택 구간 손·발 지지가 유지된다."
+    ],
+    "split": "test",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "subject_024_push_up_bad_side",
+    "exercise": "pushups",
+    "person": "shoulder_024",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "MultiView_provider",
+      "labels": [
+        "bad"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_seconds": 1.0,
+      "end_seconds": 2.33,
+      "time_basis": "original_video_seconds",
+      "selection": "상단–하단–상단 전환의 수동 선택 구간",
+      "boundary_precision_seconds": 0.3333333333333333
+    },
+    "items": [
+      {
+        "criterion_id": "trunk_line",
+        "name_ko": "몸통·골반 정렬",
+        "level": 2,
+        "weight": 40,
+        "evidence_ko": "어깨–엉덩이–발목 선에 뚜렷한 큰 꺾임이 보이지 않는다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.33,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "팔 굽힘·하강 범위",
+        "level": 0,
+        "weight": 30,
+        "evidence_ko": "1.33초 전후 하강에서도 팔 굽힘·흉부 하강 범위가 작다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.33,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "상단 팔 펴기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.00·2.33초 상단에서 팔 펴기가 보인다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.33,
+          2.33
+        ]
+      },
+      {
+        "criterion_id": "support",
+        "name_ko": "손·발 지지",
+        "level": 2,
+        "weight": 10,
+        "evidence_ko": "선택 구간 손·발 지지가 유지된다.",
+        "evidence_times_seconds": [
+          1.0,
+          1.33,
+          2.33
+        ]
+      }
+    ],
+    "score": 70.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "측면에서 관측 가능한 핵심 수행 품질. 좌우 대칭·팔 벌림·머리 정렬·속도는 포함하지 않음.",
+    "observed_errors": [
+      "shallow"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/10.jpg",
+      "sha256": "553ba68d4ab2ead05d88ea8eec4da8bb6d98db4ac69bb860a107d805a51d6a8e",
+      "dense_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/dense/10.jpg",
+      "sample_rate_fps": 3,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "side",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/side/subject_024_push_up_bad_side.mp4",
+          "fps": 15.0,
+          "frames": 319,
+          "times": [
+            0.0,
+            1.867,
+            3.8,
+            5.733,
+            7.667,
+            9.6,
+            11.533,
+            13.467,
+            15.4,
+            17.333,
+            19.267,
+            21.2
+          ]
+        },
+        {
+          "view": "front",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/front/subject_024_push_up_bad_front.mp4",
+          "fps": 15.0,
+          "frames": 311,
+          "times": [
+            0.0,
+            1.867,
+            3.733,
+            5.6,
+            7.467,
+            9.333,
+            11.267,
+            13.133,
+            15.0,
+            16.867,
+            18.733,
+            20.667
+          ]
+        },
+        {
+          "view": "diagonal",
+          "path": "/home/jayden/SeSACPAI-Mid/data/A Multi-View Raw Video Dataset of Seven Fitness Ex/Dataset Exercise-wise/push_up/bad/diagonal/subject_024_push_up_bad_diagonal.mp4",
+          "fps": 15.0,
+          "frames": 318,
+          "times": [
+            0.0,
+            1.867,
+            3.8,
+            5.733,
+            7.667,
+            9.6,
+            11.467,
+            13.4,
+            15.333,
+            17.267,
+            19.2,
+            21.133
+          ]
+        }
+      ],
+      "synchronization": "relative_progress_only"
+    },
+    "previous_auto_score": null,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "다른 카메라는 동기화가 확인되지 않아 별도 수행으로 취급. 총점은 주 측면 영상 구간만 사용.",
+      "이 총점은 좌우 대칭·팔 벌림·머리 정렬을 평가하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4",
+    "labels": [
+      "1",
+      ""
+    ],
+    "labels_descriptive": [
+      "cam3 1.33초에서 허벅지가 수평에 이르기 전 하강이 끝나 보인다.",
+      "2.97초 무릎·엉덩이를 펴고 서기로 돌아온다.",
+      "cam2에서 뚜렷한 무릎의 안쪽 붕괴가 보이지 않고 발이 유지된다.",
+      "cam2에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Petra_5596_5685",
+    "exercise": "squats",
+    "person": "rehab_Petra",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "1",
+        ""
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_frame": 5596,
+      "end_frame": 5685,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 1,
+        "weight": 30,
+        "evidence_ko": "cam3 1.33초에서 허벅지가 수평에 이르기 전 하강이 끝나 보인다.",
+        "evidence_times_seconds": [
+          0,
+          1.33,
+          2.97
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "2.97초 무릎·엉덩이를 펴고 서기로 돌아온다.",
+        "evidence_times_seconds": [
+          0,
+          1.33,
+          2.97
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam2에서 뚜렷한 무릎의 안쪽 붕괴가 보이지 않고 발이 유지된다.",
+        "evidence_times_seconds": [
+          0,
+          1.33,
+          2.97
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam2에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          1.33,
+          2.97
+        ]
+      }
+    ],
+    "score": 85.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "limited_depth_project_criterion"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/11.jpg",
+      "sha256": "95baa1407f9d250bc066828cfed8de532864de893fc53b727342d77e2a7df1d1",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam1.mp4",
+          "fps": 30.0,
+          "frames": 15488,
+          "times": [
+            0.0,
+            0.267,
+            0.533,
+            0.8,
+            1.067,
+            1.333,
+            1.6,
+            1.867,
+            2.133,
+            2.4,
+            2.667,
+            2.967
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam2.mp4",
+          "fps": 30.0,
+          "frames": 15653,
+          "times": [
+            0.0,
+            0.267,
+            0.533,
+            0.8,
+            1.067,
+            1.333,
+            1.6,
+            1.867,
+            2.133,
+            2.4,
+            2.667,
+            2.967
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4",
+          "fps": 30.0,
+          "frames": 15662,
+          "times": [
+            0.0,
+            0.267,
+            0.533,
+            0.8,
+            1.067,
+            1.333,
+            1.6,
+            1.867,
+            2.133,
+            2.4,
+            2.667,
+            2.967
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "제공자는 재활 과제 정상으로 분류했지만 프로젝트의 근력 운동 하강 기준은 다름. 임상적으로 잘못됐다는 뜻이 아님."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4",
+    "labels": [
+      "1",
+      ""
+    ],
+    "labels_descriptive": [
+      "cam1 0.67초에서 허벅지가 수평에 가까운 높이까지 내려간다.",
+      "1.50초 다시 선다.",
+      "cam3에서 무릎·발의 정렬이 대체로 유지된다.",
+      "cam3에서 좌우 몸통 균형이 대체로 유지된다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Vasil_7597_7642",
+    "exercise": "squats",
+    "person": "rehab_Vasil",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "1",
+        ""
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_frame": 7597,
+      "end_frame": 7642,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam1 0.67초에서 허벅지가 수평에 가까운 높이까지 내려간다.",
+        "evidence_times_seconds": [
+          0,
+          0.67,
+          1.5
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.50초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          0.67,
+          1.5
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam3에서 무릎·발의 정렬이 대체로 유지된다.",
+        "evidence_times_seconds": [
+          0,
+          0.67,
+          1.5
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam3에서 좌우 몸통 균형이 대체로 유지된다.",
+        "evidence_times_seconds": [
+          0,
+          0.67,
+          1.5
+        ]
+      }
+    ],
+    "score": 100.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/12.jpg",
+      "sha256": "81a96c8282d05902d3d008cc4d7a07ba1df3e7b12d27b79abc2fbe13cac00a61",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4",
+          "fps": 30.0,
+          "frames": 11502,
+          "times": [
+            0.0,
+            0.133,
+            0.267,
+            0.4,
+            0.533,
+            0.667,
+            0.8,
+            0.933,
+            1.067,
+            1.2,
+            1.333,
+            1.5
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam2.mp4",
+          "fps": 30.0,
+          "frames": 11290,
+          "times": [
+            0.0,
+            0.133,
+            0.267,
+            0.4,
+            0.533,
+            0.667,
+            0.8,
+            0.933,
+            1.067,
+            1.2,
+            1.333,
+            1.5
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam3.mp4",
+          "fps": 30.0,
+          "frames": 11155,
+          "times": [
+            0.0,
+            0.133,
+            0.267,
+            0.4,
+            0.533,
+            0.667,
+            0.8,
+            0.933,
+            1.067,
+            1.2,
+            1.333,
+            1.5
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam3.mp4",
+    "labels": [
+      "1",
+      ""
+    ],
+    "labels_descriptive": [
+      "cam3 0.93초에서 허벅지가 수평보다 위에 있어 보인다.",
+      "2.07초 다시 선다.",
+      "cam2에서 뚜렷한 안쪽 무릎 붕괴·발 이동이 보이지 않는다.",
+      "cam2에서 좌우 몸통 기울기가 뚜렷하지 않다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Terka_3280_3342",
+    "exercise": "squats",
+    "person": "rehab_Terka",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "1",
+        ""
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_frame": 3280,
+      "end_frame": 3342,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 1,
+        "weight": 30,
+        "evidence_ko": "cam3 0.93초에서 허벅지가 수평보다 위에 있어 보인다.",
+        "evidence_times_seconds": [
+          0,
+          0.93,
+          2.07
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "2.07초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          0.93,
+          2.07
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam2에서 뚜렷한 안쪽 무릎 붕괴·발 이동이 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          0.93,
+          2.07
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam2에서 좌우 몸통 기울기가 뚜렷하지 않다.",
+        "evidence_times_seconds": [
+          0,
+          0.93,
+          2.07
+        ]
+      }
+    ],
+    "score": 85.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "limited_depth_project_criterion"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/13.jpg",
+      "sha256": "31da2c2d46fa0c111423476f66710bb1117071290663259e4550fc37df5cfd6a",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4",
+          "fps": 30.0,
+          "frames": 12244,
+          "times": [
+            0.0,
+            0.167,
+            0.367,
+            0.533,
+            0.733,
+            0.933,
+            1.1,
+            1.3,
+            1.5,
+            1.667,
+            1.867,
+            2.067
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam2.mp4",
+          "fps": 30.0,
+          "frames": 12019,
+          "times": [
+            0.0,
+            0.167,
+            0.367,
+            0.533,
+            0.733,
+            0.933,
+            1.1,
+            1.3,
+            1.5,
+            1.667,
+            1.867,
+            2.067
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam3.mp4",
+          "fps": 30.0,
+          "frames": 12019,
+          "times": [
+            0.0,
+            0.167,
+            0.367,
+            0.533,
+            0.733,
+            0.933,
+            1.1,
+            1.3,
+            1.5,
+            1.667,
+            1.867,
+            2.067
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": null,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "제공자는 재활 과제 정상으로 분류했지만 프로젝트의 근력 운동 하강 기준은 다름. 임상적으로 잘못됐다는 뜻이 아님."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam3.mp4",
+    "labels": [
+      "1",
+      ""
+    ],
+    "labels_descriptive": [
+      "cam3 1.00초에서 허벅지가 수평보다 위에 있어 보인다.",
+      "2.27초 다시 선다.",
+      "cam1에서 뚜렷한 무릎의 안쪽 붕괴가 보이지 않는다.",
+      "cam1에서 좌우 몸통 기울기가 뚜렷하지 않다."
+    ],
+    "split": "validation",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Mima_2010_2078",
+    "exercise": "squats",
+    "person": "rehab_Mima",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "1",
+        ""
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_frame": 2010,
+      "end_frame": 2078,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 1,
+        "weight": 30,
+        "evidence_ko": "cam3 1.00초에서 허벅지가 수평보다 위에 있어 보인다.",
+        "evidence_times_seconds": [
+          0,
+          1.0,
+          2.27
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "2.27초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          1.0,
+          2.27
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam1에서 뚜렷한 무릎의 안쪽 붕괴가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          1.0,
+          2.27
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam1에서 좌우 몸통 기울기가 뚜렷하지 않다.",
+        "evidence_times_seconds": [
+          0,
+          1.0,
+          2.27
+        ]
+      }
+    ],
+    "score": 85.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "limited_depth_project_criterion"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/14.jpg",
+      "sha256": "7fe5fdc9e3c1fbf70ef6d80fff9add7021f0369983e84592c7b2d34da5cb6351",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam1.mp4",
+          "fps": 30.0,
+          "frames": 15645,
+          "times": [
+            0.0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1.0,
+            1.233,
+            1.433,
+            1.633,
+            1.833,
+            2.033,
+            2.267
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam2.mp4",
+          "fps": 30.0,
+          "frames": 15479,
+          "times": [
+            0.0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1.0,
+            1.233,
+            1.433,
+            1.633,
+            1.833,
+            2.033,
+            2.267
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam3.mp4",
+          "fps": 30.0,
+          "frames": 15365,
+          "times": [
+            0.0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1.0,
+            1.233,
+            1.433,
+            1.633,
+            1.833,
+            2.033,
+            2.267
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": null,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "제공자는 재활 과제 정상으로 분류했지만 프로젝트의 근력 운동 하강 기준은 다름. 임상적으로 잘못됐다는 뜻이 아님."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam3.mp4",
+    "labels": [
+      "1",
+      ""
+    ],
+    "labels_descriptive": [
+      "cam3 1.60초에서 허벅지가 수평보다 위에 있어 보인다.",
+      "3.57초 다시 선다.",
+      "cam2에서 뚜렷한 안쪽 무릎 붕괴가 보이지 않는다.",
+      "cam2에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다."
+    ],
+    "split": "test",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Honza_5876_5983",
+    "exercise": "squats",
+    "person": "rehab_Honza",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "1",
+        ""
+      ],
+      "reference": true
+    },
+    "segment": {
+      "start_frame": 5876,
+      "end_frame": 5983,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 1,
+        "weight": 30,
+        "evidence_ko": "cam3 1.60초에서 허벅지가 수평보다 위에 있어 보인다.",
+        "evidence_times_seconds": [
+          0,
+          1.6,
+          3.57
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "3.57초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          1.6,
+          3.57
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam2에서 뚜렷한 안쪽 무릎 붕괴가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          1.6,
+          3.57
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam2에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          1.6,
+          3.57
+        ]
+      }
+    ],
+    "score": 85.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "limited_depth_project_criterion"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/15.jpg",
+      "sha256": "38bb7e190e1684218ee8d1f5d9136f76cc7a60b456085e01d032b8b2673ba6d7",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam1.mp4",
+          "fps": 30.0,
+          "frames": 17556,
+          "times": [
+            0.0,
+            0.3,
+            0.633,
+            0.967,
+            1.267,
+            1.6,
+            1.933,
+            2.267,
+            2.567,
+            2.9,
+            3.233,
+            3.567
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam2.mp4",
+          "fps": 30.0,
+          "frames": 17340,
+          "times": [
+            0.0,
+            0.3,
+            0.633,
+            0.967,
+            1.267,
+            1.6,
+            1.933,
+            2.267,
+            2.567,
+            2.9,
+            3.233,
+            3.567
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam3.mp4",
+          "fps": 30.0,
+          "frames": 17354,
+          "times": [
+            0.0,
+            0.3,
+            0.633,
+            0.967,
+            1.267,
+            1.6,
+            1.933,
+            2.267,
+            2.567,
+            2.9,
+            3.233,
+            3.567
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": null,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "제공자는 재활 과제 정상으로 분류했지만 프로젝트의 근력 운동 하강 기준은 다름. 임상적으로 잘못됐다는 뜻이 아님."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam3.mp4",
+    "labels": [
+      "5",
+      "ERR_KNEES_INSIDE"
+    ],
+    "labels_descriptive": [
+      "cam3 0.90초에 허벅지가 수평에 가까워진다.",
+      "2.00초 다시 선다.",
+      "cam2 0.70–1.07초에서 두 무릎이 발의 방향보다 안쪽으로 뚜렷하게 모인다.",
+      "cam2에서 뚜렷한 좌우 몸통 기울기는 보이지 않는다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Vasil_4032_4092",
+    "exercise": "squats",
+    "person": "rehab_Vasil",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "5",
+        "ERR_KNEES_INSIDE"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_frame": 4032,
+      "end_frame": 4092,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam3 0.90초에 허벅지가 수평에 가까워진다.",
+        "evidence_times_seconds": [
+          0,
+          0.9,
+          2.0
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "2.00초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          0.9,
+          2.0
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 0,
+        "weight": 30,
+        "evidence_ko": "cam2 0.70–1.07초에서 두 무릎이 발의 방향보다 안쪽으로 뚜렷하게 모인다.",
+        "evidence_times_seconds": [
+          0,
+          0.9,
+          2.0
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam2에서 뚜렷한 좌우 몸통 기울기는 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          0.9,
+          2.0
+        ]
+      }
+    ],
+    "score": 70.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "knees_in"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/16.jpg",
+      "sha256": "a33d72524093ef0a15cecd03b664299c87b24f5e6b0f58f5fb1e1024a5017d0f",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4",
+          "fps": 30.0,
+          "frames": 11502,
+          "times": [
+            0.0,
+            0.167,
+            0.333,
+            0.533,
+            0.7,
+            0.9,
+            1.067,
+            1.267,
+            1.433,
+            1.633,
+            1.8,
+            2.0
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam2.mp4",
+          "fps": 30.0,
+          "frames": 11290,
+          "times": [
+            0.0,
+            0.167,
+            0.333,
+            0.533,
+            0.7,
+            0.9,
+            1.067,
+            1.267,
+            1.433,
+            1.633,
+            1.8,
+            2.0
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam3.mp4",
+          "fps": 30.0,
+          "frames": 11155,
+          "times": [
+            0.0,
+            0.167,
+            0.333,
+            0.533,
+            0.7,
+            0.9,
+            1.067,
+            1.267,
+            1.433,
+            1.633,
+            1.8,
+            2.0
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4",
+    "labels": [
+      "5",
+      "ERR_TORSO_TO_SIDE"
+    ],
+    "labels_descriptive": [
+      "cam3 하단에서 허벅지가 수평보다 위에 있어 보인다.",
+      "2.67초 다시 선다.",
+      "cam2에서 뚜렷한 무릎 붕괴는 확인되지 않는다.",
+      "cam2 0.70–1.43초에서 어깨선·몸통이 한쪽으로 기울어진다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Petra_4656_4736",
+    "exercise": "squats",
+    "person": "rehab_Petra",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "5",
+        "ERR_TORSO_TO_SIDE"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_frame": 4656,
+      "end_frame": 4736,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 1,
+        "weight": 30,
+        "evidence_ko": "cam3 하단에서 허벅지가 수평보다 위에 있어 보인다.",
+        "evidence_times_seconds": [
+          0,
+          1.2,
+          2.67
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "2.67초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          1.2,
+          2.67
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam2에서 뚜렷한 무릎 붕괴는 확인되지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          1.2,
+          2.67
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 0,
+        "weight": 20,
+        "evidence_ko": "cam2 0.70–1.43초에서 어깨선·몸통이 한쪽으로 기울어진다.",
+        "evidence_times_seconds": [
+          0,
+          1.2,
+          2.67
+        ]
+      }
+    ],
+    "score": 65.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "trunk_lateral_tilt",
+      "limited_depth_project_criterion"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/17.jpg",
+      "sha256": "19687b7562f221d240cf1aa0a8bd6c51cbc0764614de7584bceaf0b832af1476",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam1.mp4",
+          "fps": 30.0,
+          "frames": 15488,
+          "times": [
+            0.0,
+            0.233,
+            0.467,
+            0.7,
+            0.967,
+            1.2,
+            1.433,
+            1.667,
+            1.933,
+            2.167,
+            2.4,
+            2.667
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam2.mp4",
+          "fps": 30.0,
+          "frames": 15653,
+          "times": [
+            0.0,
+            0.233,
+            0.467,
+            0.7,
+            0.967,
+            1.2,
+            1.433,
+            1.667,
+            1.933,
+            2.167,
+            2.4,
+            2.667
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4",
+          "fps": 30.0,
+          "frames": 15662,
+          "times": [
+            0.0,
+            0.233,
+            0.467,
+            0.7,
+            0.967,
+            1.2,
+            1.433,
+            1.667,
+            1.933,
+            2.167,
+            2.4,
+            2.667
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4",
+    "labels": [
+      "5",
+      "ERR_TORSO_TO_SIDE"
+    ],
+    "labels_descriptive": [
+      "cam1 1.23초 하단에서 허벅지가 수평보다 위에 있어 보인다.",
+      "2.73초 다시 선다.",
+      "cam3에서 뚜렷한 안쪽 무릎 붕괴가 보이지 않는다.",
+      "cam3 0.97–1.73초에 몸통의 한쪽 기울기가 보인다. 정도는 재검토한다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Terka_9218_9300",
+    "exercise": "squats",
+    "person": "rehab_Terka",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "5",
+        "ERR_TORSO_TO_SIDE"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_frame": 9218,
+      "end_frame": 9300,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 1,
+        "weight": 30,
+        "evidence_ko": "cam1 1.23초 하단에서 허벅지가 수평보다 위에 있어 보인다.",
+        "evidence_times_seconds": [
+          0,
+          1.23,
+          2.73
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "2.73초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          1.23,
+          2.73
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam3에서 뚜렷한 안쪽 무릎 붕괴가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          1.23,
+          2.73
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": null,
+        "weight": 20,
+        "evidence_ko": "cam3 0.97–1.73초에 몸통의 한쪽 기울기가 보인다. 정도는 재검토한다.",
+        "evidence_times_seconds": [
+          0,
+          1.23,
+          2.73
+        ]
+      }
+    ],
+    "score": null,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "possible_trunk_lateral_tilt",
+      "limited_depth_project_criterion"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": false,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/18.jpg",
+      "sha256": "bed99c4b8b961ff39cc01aa40f06da76409c690edfcbfd5826d2e5b2cbd9c7f0",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4",
+          "fps": 30.0,
+          "frames": 12244,
+          "times": [
+            0.0,
+            0.233,
+            0.467,
+            0.733,
+            0.967,
+            1.233,
+            1.467,
+            1.733,
+            1.967,
+            2.233,
+            2.467,
+            2.733
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam2.mp4",
+          "fps": 30.0,
+          "frames": 12019,
+          "times": [
+            0.0,
+            0.233,
+            0.467,
+            0.733,
+            0.967,
+            1.233,
+            1.467,
+            1.733,
+            1.967,
+            2.233,
+            2.467,
+            2.733
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam3.mp4",
+          "fps": 30.0,
+          "frames": 12019,
+          "times": [
+            0.0,
+            0.233,
+            0.467,
+            0.733,
+            0.967,
+            1.233,
+            1.467,
+            1.733,
+            1.967,
+            2.233,
+            2.467,
+            2.733
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": 95,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음.",
+      "경미한 정렬 이탈의 정도가 애매해 독립 재검토 전 학습 후보로 승인하지 않음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4",
+    "labels": [
+      "5",
+      "ERR_SHALLOW_SQUAT"
+    ],
+    "labels_descriptive": [
+      "cam1 0.37–0.73초에서 하강 범위가 작고 허벅지가 수평에서 크게 떨어져 있다.",
+      "1.40초 다시 선다.",
+      "cam3에서 무릎·발의 뚜렷한 붕괴가 보이지 않는다.",
+      "cam3에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Terka_10334_10376",
+    "exercise": "squats",
+    "person": "rehab_Terka",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "5",
+        "ERR_SHALLOW_SQUAT"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_frame": 10334,
+      "end_frame": 10376,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 0,
+        "weight": 30,
+        "evidence_ko": "cam1 0.37–0.73초에서 하강 범위가 작고 허벅지가 수평에서 크게 떨어져 있다.",
+        "evidence_times_seconds": [
+          0,
+          0.63,
+          1.4
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.40초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          0.63,
+          1.4
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam3에서 무릎·발의 뚜렷한 붕괴가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          0.63,
+          1.4
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam3에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          0.63,
+          1.4
+        ]
+      }
+    ],
+    "score": 70.0,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "shallow"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": true,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/19.jpg",
+      "sha256": "a63c84103a80a5600304ab874c0586bc17f337cdf8b48bf23926b27659768835",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4",
+          "fps": 30.0,
+          "frames": 12244,
+          "times": [
+            0.0,
+            0.1,
+            0.233,
+            0.367,
+            0.5,
+            0.633,
+            0.733,
+            0.867,
+            1.0,
+            1.133,
+            1.267,
+            1.4
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam2.mp4",
+          "fps": 30.0,
+          "frames": 12019,
+          "times": [
+            0.0,
+            0.1,
+            0.233,
+            0.367,
+            0.5,
+            0.633,
+            0.733,
+            0.867,
+            1.0,
+            1.133,
+            1.267,
+            1.4
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam3.mp4",
+          "fps": 30.0,
+          "frames": 12019,
+          "times": [
+            0.0,
+            0.1,
+            0.233,
+            0.367,
+            0.5,
+            0.633,
+            0.733,
+            0.867,
+            1.0,
+            1.133,
+            1.267,
+            1.4
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": null,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음."
+    ]
+  },
+  {
+    "video_path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4",
+    "labels": [
+      "5",
+      "ERR_KNEES_FORWARD"
+    ],
+    "labels_descriptive": [
+      "cam1 0.83초에서 허벅지가 수평에 가까워진다.",
+      "1.53초 다시 선다.",
+      "원본 오류는 무릎의 전방 이동이다. 전방 이동만으로 이 항목을 감점하지 않으며 발 접지의 미세 변화는 이 자료로 확정하지 않는다.",
+      "cam3에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다."
+    ],
+    "split": "train",
+    "schema_version": "qevd-extended-posture-score-v1",
+    "id": "rehab_Vasil_9477_9523",
+    "exercise": "squats",
+    "person": "rehab_Vasil",
+    "label_source": "codex_direct_sampled_frame_review",
+    "reviewer": "Codex",
+    "review_status": "AI_reviewed_project_rubric_draft",
+    "rubric_version": "project-core-form-v1",
+    "provider": {
+      "dataset": "REHAB26_provider",
+      "labels": [
+        "5",
+        "ERR_KNEES_FORWARD"
+      ],
+      "reference": false
+    },
+    "segment": {
+      "start_frame": 9477,
+      "end_frame": 9523,
+      "fps": 30,
+      "time_basis": "evidence_seconds_relative_to_segment",
+      "selection": "제공자 반복 구간"
+    },
+    "items": [
+      {
+        "criterion_id": "descent_range",
+        "name_ko": "하강 범위",
+        "level": 2,
+        "weight": 30,
+        "evidence_ko": "cam1 0.83초에서 허벅지가 수평에 가까워진다.",
+        "evidence_times_seconds": [
+          0,
+          0.83,
+          1.53
+        ]
+      },
+      {
+        "criterion_id": "return_extension",
+        "name_ko": "다시 일어서기",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "1.53초 다시 선다.",
+        "evidence_times_seconds": [
+          0,
+          0.83,
+          1.53
+        ]
+      },
+      {
+        "criterion_id": "knee_foot",
+        "name_ko": "무릎·발 정렬과 접지",
+        "level": null,
+        "weight": 30,
+        "evidence_ko": "원본 오류는 무릎의 전방 이동이다. 전방 이동만으로 이 항목을 감점하지 않으며 발 접지의 미세 변화는 이 자료로 확정하지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          0.83,
+          1.53
+        ]
+      },
+      {
+        "criterion_id": "trunk_balance",
+        "name_ko": "몸통 좌우 균형",
+        "level": 2,
+        "weight": 20,
+        "evidence_ko": "cam3에서 뚜렷한 좌우 몸통 기울기가 보이지 않는다.",
+        "evidence_times_seconds": [
+          0,
+          0.83,
+          1.53
+        ]
+      }
+    ],
+    "score": null,
+    "score_unit": "project_core_form_0_to_100",
+    "score_scope": "동기화된 세 카메라로 관측한 반복의 핵심 수행 품질. 재활 개인 목표·통증·속도 평가는 아님.",
+    "observed_errors": [
+      "provider_definition_requires_resolution"
+    ],
+    "source_aware_review": true,
+    "expert_validated": false,
+    "eligible_for_training": false,
+    "experimental_candidate": false,
+    "training_hold_reason": "첫 표본의 기준·반복 일관성 검증 전. 기존 자동 학습 경로에 투입하지 않음.",
+    "evidence": {
+      "multiview_image": "/home/jayden/SeSACPAI-Mid/output/label-review-20261021/multiview/20.jpg",
+      "sha256": "dcd2e5352278e1b3e85b7b4f038361cd2b942da6c960b13d287d13d3197f3e18",
+      "dense_image": null,
+      "sample_rate_fps": null,
+      "sampled_points_per_camera": 12,
+      "full_video_playback_reviewed": false,
+      "cameras": [
+        {
+          "view": "cam1",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4",
+          "fps": 30.0,
+          "frames": 11502,
+          "times": [
+            0.0,
+            0.133,
+            0.267,
+            0.4,
+            0.533,
+            0.667,
+            0.833,
+            0.967,
+            1.1,
+            1.233,
+            1.367,
+            1.533
+          ]
+        },
+        {
+          "view": "cam2",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam2.mp4",
+          "fps": 30.0,
+          "frames": 11290,
+          "times": [
+            0.0,
+            0.133,
+            0.267,
+            0.4,
+            0.533,
+            0.667,
+            0.833,
+            0.967,
+            1.1,
+            1.233,
+            1.367,
+            1.533
+          ]
+        },
+        {
+          "view": "cam3",
+          "path": "/home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam3.mp4",
+          "fps": 30.0,
+          "frames": 11155,
+          "times": [
+            0.0,
+            0.133,
+            0.267,
+            0.4,
+            0.533,
+            0.667,
+            0.833,
+            0.967,
+            1.1,
+            1.233,
+            1.367,
+            1.533
+          ]
+        }
+      ],
+      "synchronization": "provider_frame_sync"
+    },
+    "previous_auto_score": null,
+    "limitations_ko": [
+      "미검토 자동 점수가 아닌 Codex 직접 장면 검토 초안이지만 전문가 정답은 아님.",
+      "샘플 장면 사이의 순간 자세는 관측하지 못할 수 있음."
+    ]
+  }
+]

@@ -1,0 +1,127 @@
+{
+  "version": "front-observation100-consistent-v1",
+  "replayed_reps": 7,
+  "segments": [
+    {
+      "number": 1,
+      "start_tick": 7622,
+      "end_tick": 7667,
+      "duration": 4.5
+    },
+    {
+      "number": 2,
+      "start_tick": 7691,
+      "end_tick": 7716,
+      "duration": 2.5
+    },
+    {
+      "number": 3,
+      "start_tick": 7728,
+      "end_tick": 7756,
+      "duration": 2.8
+    },
+    {
+      "number": 4,
+      "start_tick": 7772,
+      "end_tick": 7816,
+      "duration": 4.4
+    },
+    {
+      "number": 5,
+      "start_tick": 7832,
+      "end_tick": 7866,
+      "duration": 3.4
+    },
+    {
+      "number": 6,
+      "start_tick": 7877,
+      "end_tick": 7912,
+      "duration": 3.5
+    },
+    {
+      "number": 7,
+      "start_tick": 7925,
+      "end_tick": 7956,
+      "duration": 3.1
+    }
+  ],
+  "uncertain_attempts": [
+    {
+      "start_tick": 7975,
+      "end_tick": 8090,
+      "reason": "관측 중단 · 준비 자세 재확인",
+      "counted": false
+    }
+  ],
+  "models_preserved": {
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/pushups.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/shoulder.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/manifest.json": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/development_round3.json": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/plank.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/squats.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/ytw.joblib": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/validation.json": true,
+    "team-posture-scoring/Server/AIService/artifacts/posture_score/training_support.json": true,
+    "output/live-webcam-20261023/front-candidate/model-v1.joblib": true,
+    "output/live-webcam-20261023/front-candidate/torso-model.joblib": true,
+    "output/live-webcam-20261023/front-candidate/model.joblib": true,
+    "output/squat-relabel-20261023/candidate.joblib": true,
+    "output/squat-relabel-expanded-20261023/candidate.joblib": true
+  },
+  "team_source_digest": "c850c28b43de189e32b2419147567247d08385c717c8ca90a6bc2c6d1f58d891",
+  "model_retrained": false,
+  "labels_changed": false,
+  "no_new_capture": true,
+  "raw_pose_sha256": "e4b9b88887e9b07e228b6debac165e0f470d6fb58159fed23b9ae56ee8ee26af",
+  "raw_session_unchanged": true,
+  "active_prefix_checks": [
+    {
+      "number": 1,
+      "rule_return_pending": true,
+      "coaching_same_contract": true
+    },
+    {
+      "number": 2,
+      "rule_return_pending": true,
+      "coaching_same_contract": true
+    },
+    {
+      "number": 3,
+      "rule_return_pending": true,
+      "coaching_same_contract": true
+    },
+    {
+      "number": 4,
+      "rule_return_pending": true,
+      "coaching_same_contract": true
+    },
+    {
+      "number": 5,
+      "rule_return_pending": true,
+      "coaching_same_contract": true
+    },
+    {
+      "number": 6,
+      "rule_return_pending": true,
+      "coaching_same_contract": true
+    },
+    {
+      "number": 7,
+      "rule_return_pending": true,
+      "coaching_same_contract": true
+    }
+  ],
+  "saved_vs_recomputed_item_points_equal": true,
+  "independent_accuracy_improvement_verified": false,
+  "criterion_change": "기존 관절 신전·발 정렬 종합 평가와 정면 관측 평가를 구분. 동일한 30/20/30/20 배점이지만 평가 대상이 다르므로 전후 합계의 증가는 정확도 향상이 아님.",
+  "remaining": [
+    "복귀 AI 정상 라벨만 존재: AI 80점분만 평가, 총점 미산출",
+    "무릎 AI의 기존 미검출 오류 미해결. 검증 중인 모델을 그대로 보존해 연결",
+    "정면 Rule Base 합계는 실제 깊이·관절 신전·발끝 정렬·운동 안전성의 종합 점수가 아님",
+    "동일 인물 동일 저장 세션의 연결·회귀 검증이며 사람별 독립 정확도 검증 아님"
+  ],
+  "regression_tests_passed": 64,
+  "served_item_points_comparisons_and_coaching_match_replay": true,
+  "adapter_applied": true
+}

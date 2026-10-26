@@ -1,0 +1,22 @@
+--- original/core/models/walk.py
++++ runtime/core/models/walk.py
+@@ -85,7 +85,7 @@
+         x = x.transpose(1,2).contiguous() # bs, n, c
+ 
+         flatten_x = x.view(bn * tot_points, -1)
+-        batch_offset = torch.arange(0, bn, device=torch.device('cuda')).detach() * tot_points
++        batch_offset = torch.arange(0, bn, device=x.device).detach() * tot_points
+ 
+         # indices of neighbors for the starting points
+         tmp_adj = (adj + batch_offset.view(-1,1,1)).view(adj.size(0)*adj.size(1),-1) #bs, n, k
+--- original/core/models/curvenet_util.py
++++ runtime/core/models/curvenet_util.py
+@@ -219,7 +219,7 @@
+         if idx is None:
+             idx = knn(xyz, k=self.k)[:,:,:self.k]  # (batch_size, num_points, k)
+ 
+-        idx_base = torch.arange(0, batch_size, device=self.device).view(-1, 1, 1) * num_points
++        idx_base = torch.arange(0, batch_size, device=x.device).view(-1, 1, 1) * num_points
+         idx = idx + idx_base
+         idx = idx.view(-1)
+ 

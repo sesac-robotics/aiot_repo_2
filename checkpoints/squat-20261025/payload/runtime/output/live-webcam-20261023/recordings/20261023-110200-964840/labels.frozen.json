@@ -1,0 +1,236 @@
+{
+  "rubric_version": "front-squat-visual-draft-v1",
+  "video_sha256": "fbef5d17f4880894d56364c30c9cb869e55fe713140c4612ee022a49984eb072",
+  "label_origin": "direct_visual_draft",
+  "expert_validated": false,
+  "frozen": true,
+  "model_outputs_accessed_before_freeze": false,
+  "inspection": "관절선·점수 없는 blind.avi에서 전체 1초 간격 및 회차별 0.5초 간격 프레임을 직접 시각 검토. 연속 재생·전 프레임 정밀 검토는 아님.",
+  "limitations": [
+    "5회 모두 비슷한 수행으로 오류 등급 데이터가 없음",
+    "카메라가 위에서 아래를 향해 정면 투영 왜곡 존재",
+    "100은 네 정면 관찰 항목의 초안 점수이며 전체 스쿼트 자세·깊이·안전성 만점을 뜻하지 않음",
+    "학습 정답 사용 전 전문가 재검토 권장"
+  ],
+  "excluded_frames": [
+    [
+      0,
+      34
+    ],
+    [
+      251,
+      259
+    ],
+    [
+      326,
+      395
+    ]
+  ],
+  "repetitions": [
+    {
+      "number": 1,
+      "start_frame": 35,
+      "end_frame": 85,
+      "bottom_frame_range": [
+        55,
+        65
+      ],
+      "boundary_tolerance_frames": 5,
+      "complete_attempt": true,
+      "items": {
+        "lateral_trunk": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "시작 자세 대비 뚜렷한 옆 기울임이나 좌우 몸통 이동이 확인되지 않음."
+        },
+        "bilateral_motion": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "양 무릎이 함께 굽혀지고 펴지며, 뚜렷한 한쪽 지연이나 좌우 높이 변화가 확인되지 않음. 카메라 원근 차이는 감점하지 않음."
+        },
+        "standing_return": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강 후 골반 높이와 선 몸통 자세가 시작 상태로 돌아옴. 정확한 무릎 신전 각도는 판정하지 않음."
+        },
+        "motion_control": {
+          "grade": 2,
+          "confidence": "low",
+          "evidence": "0.5초 간격 시각 검토에서 뚜렷한 무너짐·재시도는 확인되지 않음. 짧은 반동 및 미세 떨림은 확인 한계; 하단 유지 시간은 감점하지 않음."
+        }
+      },
+      "provisional_front_quality_score": 100,
+      "legacy_visual_truth": {
+        "descent_range": null,
+        "return_extension": null,
+        "knee_foot": null,
+        "trunk_balance": null
+      },
+      "legacy_truth_reason": "기존 항목은 실제 깊이·신전·발 정렬 또는 다른 정의를 사용하므로 정면 전용 새 라벨을 정답으로 치환하지 않음."
+    },
+    {
+      "number": 2,
+      "start_frame": 85,
+      "end_frame": 140,
+      "bottom_frame_range": [
+        110,
+        120
+      ],
+      "boundary_tolerance_frames": 5,
+      "complete_attempt": true,
+      "items": {
+        "lateral_trunk": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "시작 자세 대비 뚜렷한 옆 기울임이나 좌우 몸통 이동이 확인되지 않음."
+        },
+        "bilateral_motion": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "양 무릎이 함께 굽혀지고 펴지며, 뚜렷한 한쪽 지연이나 좌우 높이 변화가 확인되지 않음. 카메라 원근 차이는 감점하지 않음."
+        },
+        "standing_return": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강 후 골반 높이와 선 몸통 자세가 시작 상태로 돌아옴. 정확한 무릎 신전 각도는 판정하지 않음."
+        },
+        "motion_control": {
+          "grade": 2,
+          "confidence": "low",
+          "evidence": "0.5초 간격 시각 검토에서 뚜렷한 무너짐·재시도는 확인되지 않음. 짧은 반동 및 미세 떨림은 확인 한계; 하단 유지 시간은 감점하지 않음."
+        }
+      },
+      "provisional_front_quality_score": 100,
+      "legacy_visual_truth": {
+        "descent_range": null,
+        "return_extension": null,
+        "knee_foot": null,
+        "trunk_balance": null
+      },
+      "legacy_truth_reason": "기존 항목은 실제 깊이·신전·발 정렬 또는 다른 정의를 사용하므로 정면 전용 새 라벨을 정답으로 치환하지 않음."
+    },
+    {
+      "number": 3,
+      "start_frame": 140,
+      "end_frame": 195,
+      "bottom_frame_range": [
+        160,
+        175
+      ],
+      "boundary_tolerance_frames": 5,
+      "complete_attempt": true,
+      "items": {
+        "lateral_trunk": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "시작 자세 대비 뚜렷한 옆 기울임이나 좌우 몸통 이동이 확인되지 않음."
+        },
+        "bilateral_motion": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "양 무릎이 함께 굽혀지고 펴지며, 뚜렷한 한쪽 지연이나 좌우 높이 변화가 확인되지 않음. 카메라 원근 차이는 감점하지 않음."
+        },
+        "standing_return": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강 후 골반 높이와 선 몸통 자세가 시작 상태로 돌아옴. 정확한 무릎 신전 각도는 판정하지 않음."
+        },
+        "motion_control": {
+          "grade": 2,
+          "confidence": "low",
+          "evidence": "0.5초 간격 시각 검토에서 뚜렷한 무너짐·재시도는 확인되지 않음. 짧은 반동 및 미세 떨림은 확인 한계; 하단 유지 시간은 감점하지 않음."
+        }
+      },
+      "provisional_front_quality_score": 100,
+      "legacy_visual_truth": {
+        "descent_range": null,
+        "return_extension": null,
+        "knee_foot": null,
+        "trunk_balance": null
+      },
+      "legacy_truth_reason": "기존 항목은 실제 깊이·신전·발 정렬 또는 다른 정의를 사용하므로 정면 전용 새 라벨을 정답으로 치환하지 않음."
+    },
+    {
+      "number": 4,
+      "start_frame": 195,
+      "end_frame": 250,
+      "bottom_frame_range": [
+        220,
+        235
+      ],
+      "boundary_tolerance_frames": 5,
+      "complete_attempt": true,
+      "items": {
+        "lateral_trunk": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "시작 자세 대비 뚜렷한 옆 기울임이나 좌우 몸통 이동이 확인되지 않음."
+        },
+        "bilateral_motion": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "양 무릎이 함께 굽혀지고 펴지며, 뚜렷한 한쪽 지연이나 좌우 높이 변화가 확인되지 않음. 카메라 원근 차이는 감점하지 않음."
+        },
+        "standing_return": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강 후 골반 높이와 선 몸통 자세가 시작 상태로 돌아옴. 정확한 무릎 신전 각도는 판정하지 않음."
+        },
+        "motion_control": {
+          "grade": 2,
+          "confidence": "low",
+          "evidence": "0.5초 간격 시각 검토에서 뚜렷한 무너짐·재시도는 확인되지 않음. 짧은 반동 및 미세 떨림은 확인 한계; 하단 유지 시간은 감점하지 않음."
+        }
+      },
+      "provisional_front_quality_score": 100,
+      "legacy_visual_truth": {
+        "descent_range": null,
+        "return_extension": null,
+        "knee_foot": null,
+        "trunk_balance": null
+      },
+      "legacy_truth_reason": "기존 항목은 실제 깊이·신전·발 정렬 또는 다른 정의를 사용하므로 정면 전용 새 라벨을 정답으로 치환하지 않음."
+    },
+    {
+      "number": 5,
+      "start_frame": 260,
+      "end_frame": 325,
+      "bottom_frame_range": [
+        285,
+        305
+      ],
+      "boundary_tolerance_frames": 5,
+      "complete_attempt": true,
+      "items": {
+        "lateral_trunk": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "시작 자세 대비 뚜렷한 옆 기울임이나 좌우 몸통 이동이 확인되지 않음."
+        },
+        "bilateral_motion": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "양 무릎이 함께 굽혀지고 펴지며, 뚜렷한 한쪽 지연이나 좌우 높이 변화가 확인되지 않음. 카메라 원근 차이는 감점하지 않음."
+        },
+        "standing_return": {
+          "grade": 2,
+          "confidence": "medium",
+          "evidence": "하강 후 골반 높이와 선 몸통 자세가 시작 상태로 돌아옴. 정확한 무릎 신전 각도는 판정하지 않음."
+        },
+        "motion_control": {
+          "grade": 2,
+          "confidence": "low",
+          "evidence": "0.5초 간격 시각 검토에서 뚜렷한 무너짐·재시도는 확인되지 않음. 짧은 반동 및 미세 떨림은 확인 한계; 하단 유지 시간은 감점하지 않음."
+        }
+      },
+      "provisional_front_quality_score": 100,
+      "legacy_visual_truth": {
+        "descent_range": null,
+        "return_extension": null,
+        "knee_foot": null,
+        "trunk_balance": null
+      },
+      "legacy_truth_reason": "기존 항목은 실제 깊이·신전·발 정렬 또는 다른 정의를 사용하므로 정면 전용 새 라벨을 정답으로 치환하지 않음."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+YTW 독립 후보 통합 계약 — 배포 보류
+
+현 통합 결정
+통합 담당은 기존배포와 다른 개발상태 bundle을 신규활성화하지 않고 YTW factory 미지원을 유지한다.
+이 문서는 독립 후보 검증과 향후 검토 계약이다. 공통앱/서비스/카메라는 수정하지 않았다.
+
+인터페이스
+LearnedPhaseSource(bundle): 호출자가 신뢰해 로드한 개발 상태모델. 학습/파일쓰기 없음.
+YTWTracker(source, view='front', protocol='upright_Y_T_W_v1').push(tick,xy,width,height)
+tick: 실제 10Hz 정수 슬롯. xy: 33x2 원본 픽셀 관절. 누락은 NaN. 반환: event 또는 None.
+status(): 순서시도 count, 현재단계, 미완료사유. finish(): 미완료를 닫으며 실패등급을 만들지 않음.
+
+event['samples']는 첫 Y부터 W 종료까지 dense 10Hz list[(tick,points)]이다. 빠진 슬롯은 NaN.
+필요관절은 양어깨/팔꿈치/손목/골반8개. 경계2% 제외와 실제슬롯 분모80% 적용.
+event['auto_phase_windows']는 segment-relative 10Hz 인덱스의 Y/T/W 자동창이다.
+수동 phase_windows(y_reach/t_reach/w_shape, 원본 frame interval)와 의미·키가 다르다.
+자동창의 이름만 바꿔 수동승인으로 넘기지 않는다.
+
+score_event(engine,event)는 같은 dense PoseSequence로 기존 AI/Rule를 함께 호출한다.
+kwargs: view='front', complete_attempt=False, phase_windows=None, projection_reviewed=False.
+완료/투영 수동승인을 만들지 않으므로 총점은 None이다. T/W 일부항목 점수만 나올 수 있다.
+기존 scoring 자동기하창과 상태모델 자동창은 불일치할 수 있으며 기존추출기를 그대로 유지한다.
+관측부족/미학습/모델지원부족을 0점이나 만점으로 채우지 않는다.
+single_grade_training, training_grade_counts, unseen_training_grades, reasons를 유지해야 한다.
+
+시작/종료
+기존 READY_MEANING은 protocol_defined_Y_start_phase_not_forced_arms_down이다.
+기존 YTWPhaseTracker는 Y→T→W를 순서시도로 종료한다. 따라서 W 종료유지를 사용하고
+기립/팔내림 복귀를 발명하지 않았다. Y 준비판정 및 단계별5연속 실제슬롯(0.4초)을 요구한다.
+W 이후 새 Y 준비가 있어야 다음시도. 한자세유지/대기/중간종료/순서오류는 완료가 아니다.
+연속4슬롯 누락, 슬롯간격>3, 시도30초 초과시 미완료폐기. 짧은누락도 dwell을 끊는다.
+시간/문턱은 공학초안이며 독립검증된 운동/임상기준이 아니다.
+
+개발모델과 현배포 구분
+개발 bundle: output/initial-pose-return-v7-20261024/initial-pose-return-bundle.joblib
+SHA256 fc18ccb7f3ab9a8a9b23d1683be07de83530ffebcf657046b81d69549a6e0439
+schema reviewed_initial_ready_and_return_state_v3, feature_schema observed_chain_height_anchor_v3.
+('ytw','x','phase')와 ('ytw','x','target') head의 state_gate_passed=True를 요구한다.
+개발게이트는 독립최종평가/운동심각도 승인이 아니다. bundle production_replacement=False.
+특징구현 initial_pose_return.py SHA256 a6e4a6b326c7b8c47aceca5b6d98c52bd598514ec7abf870a39f1dfef13b9e77
+와 bundle feature_implementation_sha256 일치를 생성자에서 강제한다.
+기존 analyzer처럼 class 결정을 사용하며 미보정 확률에 보편적 신뢰도문턱을 붙이지 않는다.
+현배포 standing-state/model.joblib SHA256 144c511ed538b67266870cc2f81c7b7e25b572d2b56c43ee791744d1eda8ae57
+및 posture score bundle과는 별개다. 현재 server는 이 개발bundle을 YTW source로 로드하지 않는다.
+따라서 현재배포모델만으로 즉시연결할 수 없고 별도 개발상태모델 신규활성화에 해당한다.
+default factory에 조용히 연결하지 않는다. 통합담당의 현재 미지원유지 결정을 따른다.
+
+다음 검토게이트
+별도 영상동반·미학습사람의 Y/T/W/대기/순서오류/가림/중간종료 연속자료에서 경계를 검토해야 한다.
+기존 Train 재생횟수는 정확도검증이 아니다. 저장497표본도 영상없어 실제횟수/정상오류 미확인.
+AUTO창을 수동검토창으로 받지 않는 기존 scoring 승인을 유지하거나 새 자동시도계약을 검증해야 한다.
+준비/순서 상태와 Y깊이/전경/항목별 실제오류·0/1/2 학습지원은 별도다.
+독립 미사용 최종Test는 열지 않았다. 미학습0 지원과 5종전체 신뢰성을 주장하지 않는다.

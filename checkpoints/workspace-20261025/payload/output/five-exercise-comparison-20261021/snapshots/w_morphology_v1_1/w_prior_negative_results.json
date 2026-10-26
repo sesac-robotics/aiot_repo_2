@@ -1,0 +1,110 @@
+{
+  "id": "qevd_00221486",
+  "draft_grade": 0,
+  "automatic": {
+    "version": "W-visible-morphology-v1.1-development",
+    "grade": 2,
+    "policy": {
+      "observed_fraction": 0.8,
+      "minimum_samples": 3,
+      "bend_good_deg": 20.0,
+      "bend_partial_deg": 8.0,
+      "hand_good_torso_ratio": 0.05,
+      "hand_partial_torso_ratio": -0.05,
+      "symmetry_good_deg": 35.0
+    },
+    "arms": {
+      "left": {
+        "observed_fraction": 1.0,
+        "projected_bend_deg": 53.304229149850514,
+        "hand_above_elbow_torso_ratio": 0.12960423431742826,
+        "bend_grade": 2,
+        "hand_grade": 2,
+        "grade": 2
+      },
+      "right": {
+        "observed_fraction": 1.0,
+        "projected_bend_deg": 86.51911748719075,
+        "hand_above_elbow_torso_ratio": 0.1589849572460266,
+        "bend_grade": 2,
+        "hand_grade": 2,
+        "grade": 2
+      }
+    },
+    "independent_validated": false,
+    "scope": "visible_projected_W_shape_only",
+    "hold_reason": null,
+    "bilateral_bend_difference_deg": 33.21488833734024,
+    "bilateral_shape_grade": 2
+  },
+  "phase_detection": {
+    "version": "ytw-width-dwell-attempts-v2",
+    "phases": {
+      "Y_attempt": {
+        "start_index": 3,
+        "end_index": 7,
+        "anchor_index": 5,
+        "samples": 5,
+        "median_lateral_span": 0.6103188819648596
+      },
+      "T_attempt": {
+        "start_index": 8,
+        "end_index": 13,
+        "anchor_index": 10,
+        "samples": 6,
+        "median_lateral_span": 1.4628351313518753
+      },
+      "W_attempt": {
+        "start_index": 14,
+        "end_index": 18,
+        "anchor_index": 16,
+        "samples": 5,
+        "median_lateral_span": 0.17012677164449844
+      }
+    },
+    "complete_attempt_sequence": true,
+    "canonical_Y_depth_confirmed": false,
+    "sample_hz": 10,
+    "hold_reason": null,
+    "lateral_span_p90": 1.494654100887912,
+    "thresholds": {
+      "active_hand_height_torso_ratio": 0.6,
+      "wide_relative_span": 0.85,
+      "min_samples": 3
+    }
+  },
+  "extraction": {
+    "id": "qevd_00221486",
+    "view": "primary",
+    "config": {
+      "schema": "heavy-observed-sequence-v2-sequential",
+      "model_sha256": "64437af838a65d18e5ba7a0d39b465540069bc8aae8308de3e318aad31fcbc7b",
+      "source_sha256": "3b3b7f827abe29e10ed5a48e1b86c25e4ad8c6ae303c077ff85e48f5113f11e8",
+      "segment": {
+        "start_frame": 0,
+        "end_frame": 61,
+        "fps": 30.0
+      },
+      "required_views": [
+        "W_projected_shape_only_Y_cropped"
+      ],
+      "sample_hz": 10,
+      "max_edge": 640,
+      "min_visibility": 0.5,
+      "min_presence": 0.5,
+      "delegate": "GPU",
+      "num_poses": 1,
+      "decoding": "one_initial_seek_then_sequential_grab"
+    },
+    "fingerprint": "87028d52c8c5cbd192c36a456fd3e14749e636cdc9e1b3326ea9e5c317e7731d",
+    "cache": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/w_prior_negative_cache/qevd_00221486/primary.npz",
+    "frames": 21,
+    "observed_joint_fraction": 1.0,
+    "extract_seconds": 2.4718339499995636,
+    "reused": false,
+    "synchronization_visually_verified": false,
+    "score_generated": false
+  },
+  "independent_final_test": false,
+  "exposed_training_negative": true
+}

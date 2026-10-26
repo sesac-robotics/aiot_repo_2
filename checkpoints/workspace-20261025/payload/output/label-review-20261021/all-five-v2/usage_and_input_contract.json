@@ -1,0 +1,18 @@
+{
+  "purpose": "비상업 교육 프로젝트의 자세 점수 학습 실험 자료 준비",
+  "model_input_restriction": "관절 위치·동작 특징만 입력 후보. 제공자 정상·오류 문자열, 영상 자막·타이틀, 직접 점수·판정 메모·출처 이름을 예측 입력에 넣지 않음.",
+  "source_group_split": "같은 사람·원본 영상·반복 시범은 같은 분할로 묶음. 기존 validation/test를 train으로 옮기지 않음.",
+  "external_sources": [
+    {
+      "url": "https://www.dvidshub.net/video/825280/forearm-plank",
+      "creator": "Staff Sgt. Randall Moose / 301st Fighter Wing",
+      "terms_url": "https://www.dvidshub.net/about/copyright"
+    },
+    {
+      "url": "https://www.dvidshub.net/video/871026/plank-instructional-video",
+      "creator": "Cpl. Caden Phillips / Marine Corps Base Quantico",
+      "terms_url": "https://www.dvidshub.net/about/copyright"
+    }
+  ],
+  "training_status": "이번 단계에서 모델 학습은 실행하지 않음. 라벨의 전문가 정확도와 모델 정확도는 미검증."
+}

@@ -1,0 +1,64 @@
+{
+  "updated_at": "2026-10-21T19:29:10.344874+09:00",
+  "plank_full_model_training_records": 10,
+  "plank_full_model_training_people": 8,
+  "partial_training_segments_used": 2,
+  "additional_item_labels": 5,
+  "partial_label_revision_count": 1,
+  "revision_after_predictions_seen": true,
+  "new_validation_sources": 2,
+  "new_validation_full_normal_drafts": 1,
+  "new_validation_partial_mild_deviation_drafts": 1,
+  "new_validation_full_error_drafts": 0,
+  "new_sources_used_for_fitting": false,
+  "independent_final_tests": 0,
+  "expert_labels": 0,
+  "all_five_completed": false,
+  "common_labels_sha256": "72efa9a365a3683a05e6c0761edfa6c54dbc334e99e1931b1c6a484db85fbe20",
+  "common_model_sha256": "c0bf7e753187d31874fe631d9145e6a553349cbeb52b26cdecf25e8cf2ef734a",
+  "common_rule_sha256": "f5d5b6469cd118811e5b2034b99c97ab3382dca10c8784361b30cf0c654aba5a",
+  "common_model_written": false,
+  "common_rule_modified": false,
+  "common_labels_modified": false,
+  "web": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_partial_items.html",
+  "limitations_ko": [
+    "항목별 AI는 필요 관절만 쓰는 별도 미검증 모델이며 기존 총점 AI와 다름.",
+    "관절 대리값만으로 실제 바닥 접촉·하중을 확정하지 않음.",
+    "팔꿈치·지지 지속성의 학습 등급이 하나뿐이므로 상수 기준선; 오류 분류 모델 완성 아님.",
+    "새 정상에서 골반 높이 보정 규칙이 10점 과감점해 공통 채택하지 않음.",
+    "부분 자료 재검토는 이미 모델 출력을 본 기존 학습 출처이며 독립 검증 아님."
+  ],
+  "checks": {
+    "unit_tests_passed": 64,
+    "black_files": 129,
+    "compileall_passed": true,
+    "links": {
+      "index.html": {
+        "references": 35,
+        "missing": []
+      },
+      "plank_partial_items.html": {
+        "references": 11,
+        "missing": []
+      }
+    },
+    "render": {
+      "decoded_overlay_frames": {
+        "climber_prospective": 30,
+        "gotti_prospective": 31
+      },
+      "local_browser_visual_check": false
+    },
+    "resource_end": {
+      "cpu_c": 48.0,
+      "gpu_c": 35.0,
+      "available_mib": 7117.5078125,
+      "ac_connected": true
+    },
+    "free_disk_bytes": 115190353920,
+    "git_changes": [
+      "preexisting aiot_repo_2/README.md only"
+    ]
+  },
+  "source_screening": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_prospective_source_screening.json"
+}

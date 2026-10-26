@@ -1,0 +1,312 @@
+<!doctype html><meta charset="utf-8"><title>자세 점수 라벨 재검토</title><style>body{font:16px sans-serif;max-width:1300px;margin:32px auto;background:#16212a;color:#e5f0f4}a{color:#63d8c6}table{border-collapse:collapse;width:100%}td,th{padding:9px;border:1px solid #62717a}details{padding:10px;border:1px solid #62717a;margin:8px}img{width:100%}video{max-width:720px;width:100%}</style><h1>스쿼트·푸시업 점수 라벨 재검토</h1><p>기존 71개 총점 초안을 직접 재검토했습니다. 시간순 표본 프레임 검토이며 연속 영상 재생·전문가 검증과 구별합니다. 정상·오류 제목을 정답으로 복사하지 않습니다.</p><pre>{
+  &quot;reviewed&quot;: 71,
+  &quot;new_video_labels&quot;: 0,
+  &quot;expert_validated&quot;: false,
+  &quot;continuous_playback_reviewed&quot;: false,
+  &quot;source_aware&quot;: true,
+  &quot;all_test_material_previously_seen&quot;: true,
+  &quot;production_ready&quot;: false,
+  &quot;model_retrained&quot;: true,
+  &quot;exercises&quot;: {
+    &quot;pushups&quot;: {
+      &quot;reviewed&quot;: 38,
+      &quot;numeric_drafts&quot;: 33,
+      &quot;training_eligible_candidates&quot;: 28,
+      &quot;eligible_by_split&quot;: {
+        &quot;train&quot;: 17,
+        &quot;validation&quot;: 6,
+        &quot;test&quot;: 5
+      },
+      &quot;held&quot;: 10,
+      &quot;people&quot;: 21,
+      &quot;item_grades&quot;: {
+        &quot;trunk_line&quot;: {
+          &quot;2&quot;: 24,
+          &quot;0&quot;: 8,
+          &quot;1&quot;: 2,
+          &quot;None&quot;: 4
+        },
+        &quot;descent_range&quot;: {
+          &quot;2&quot;: 31,
+          &quot;1&quot;: 3,
+          &quot;None&quot;: 1,
+          &quot;0&quot;: 3
+        },
+        &quot;return_extension&quot;: {
+          &quot;2&quot;: 35,
+          &quot;None&quot;: 1,
+          &quot;1&quot;: 2
+        },
+        &quot;support&quot;: {
+          &quot;2&quot;: 38
+        }
+      }
+    },
+    &quot;squats&quot;: {
+      &quot;reviewed&quot;: 33,
+      &quot;numeric_drafts&quot;: 31,
+      &quot;training_eligible_candidates&quot;: 31,
+      &quot;eligible_by_split&quot;: {
+        &quot;train&quot;: 17,
+        &quot;validation&quot;: 7,
+        &quot;test&quot;: 7
+      },
+      &quot;held&quot;: 2,
+      &quot;people&quot;: 5,
+      &quot;item_grades&quot;: {
+        &quot;descent_range&quot;: {
+          &quot;1&quot;: 23,
+          &quot;2&quot;: 6,
+          &quot;0&quot;: 4
+        },
+        &quot;return_extension&quot;: {
+          &quot;2&quot;: 33
+        },
+        &quot;knee_foot&quot;: {
+          &quot;2&quot;: 27,
+          &quot;0&quot;: 6
+        },
+        &quot;trunk_balance&quot;: {
+          &quot;2&quot;: 30,
+          &quot;0&quot;: 1,
+          &quot;None&quot;: 2
+        }
+      }
+    }
+  },
+  &quot;changed_or_held&quot;: 19,
+  &quot;boundary_changes&quot;: 5,
+  &quot;grade_changes&quot;: 10,
+  &quot;new_model_version&quot;: &quot;audited-total-score-regression-v6&quot;,
+  &quot;active_web_model_changed&quot;: false
+}</pre><section><h2>재검토한 점수로 총점을 직접 예측한 실험</h2><p>학습 정답은 위에서 직접 재검토한 프로젝트 점수 초안입니다. 모델은 총점을 직접 예측하며 추론 때 관절각 규칙으로 점수를 대체하지 않습니다. 기존 웹의 활성 모델은 바꾸지 않았습니다.</p><table><tr><th>운동·입력</th><th>학습 / 검증 반복 수</th><th>사람별 교차검증 평균 오차</th><th>같은 교차검증 중앙값 기준</th><th>기존 검증 오차</th></tr>
+<tr><td>푸시업·측면</td><td>17 / 6</td><td>15.1점</td><td>18.5점</td><td>12.4점</td></tr>
+<tr><td>스쿼트·정면+측면</td><td>17 / 7</td><td>13.9점</td><td>14.0점</td><td>5.6점</td></tr>
+</table><p>오차는 AI가 검토한 초안과의 차이입니다. 실제 전문가 정확도·정답률이 아닙니다. 검증 사람을 반복 사용했으므로 독립 최종 시험으로 해석하지 않습니다. 소규모 학습 곡선만으로 충분한 학습량·포화점을 확정하지 않습니다.</p><h2>다음 보충 순서</h2><ol><li>완료된 반복뿐 아니라 시작·하강·복귀 실패가 보이는 미완료 시도도 별도로 기록합니다. 영상 잘림·가림을 실패 0점으로 처리하지 않습니다. 기존 자료에서 일반 푸시업의 복귀 부분 미달·실패와 스쿼트 복귀 실패를 선별합니다. 무릎 푸시업은 별도 변형으로 표시합니다.</li><li>정상·부분 미달·명확한 미달을 여러 사람으로 보충합니다. 반복 수만 늘려 참여자 부족을 가리지 않습니다.</li><li>스쿼트의 정면·측면 총점과 측면 단독으로 가능한 항목 점수를 분리합니다.</li><li>새로운 사람의 독립 평가 자료를 확보한 뒤 점수 공개 여부를 판단합니다.</li></ol><p>보충 후보: <a href="https://www.youtube.com/watch?v=lnR_kb5Wjf8">FitnessFAQs 푸시업 오류</a> · <a href="https://www.youtube.com/watch?v=T0ek1FssRBU">CrossFit 스쿼트 수행 요점·오류</a>. 후보를 찾은 상태이며 아직 해당 영상을 내려받아 라벨링하거나 학습하지 않았습니다.</p></section><p>배점은 프로젝트 기준입니다. 항목 미관측 시 총점은 비우고, 반복 경계가 바뀌면 기존 관절 특징은 재사용하지 않습니다. 스쿼트 총점에는 동기화 정면·측면 입력이 필요합니다.</p>
+<details><summary>001 subject_001_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>선택 구간에서 팔을 편 상단, 가슴 하강, 상단 복귀가 보인다. 손·발 지지와 큰 꺾임 없는 몸통을 유지한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_001.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_001.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_001_push_up_good_side.mp4#t=2.6666666666666665,4.666666666666667"> </video></details>
+<details><summary>002 subject_001_push_up_bad_side | 이전 60.0 → 초안 60.0 | 학습 후보</summary><p>가슴을 먼저 들어 올리며 골반이 낮게 남는 처짐이 보인다. 하강과 팔 펴기는 확인된다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_002.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_002.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_001_push_up_bad_side.mp4#t=3.3333333333333335,5.0"> </video></details>
+<details><summary>003 subject_002_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>기존 종료 프레임은 다음 반복의 하강을 포함한다. f10–28로 줄이면 상단–하단–상단 한 주기이다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_003.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_003.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_003.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_003.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_002_push_up_good_side.mp4#t=0.6666666666666666,1.8666666666666667"> </video></details>
+<details><summary>004 subject_002_push_up_bad_side | 이전 60.0 → 초안 60.0 | 학습 후보</summary><p>기존 구간은 하강 중간부터 시작했다. f0–45에서 하단과 복귀가 보이며 골반이 낮게 남는 꺾임이 확인된다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_004.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_004.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_004.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_004.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_002_push_up_bad_side.mp4#t=0.0,3.0"> </video></details>
+<details><summary>005 subject_003_push_up_good_side | 이전 100.0 → 초안 100.0 | 총점 학습 보류</summary><p>손잡이를 사용한 변형이다. 손바닥을 바닥에 댄 일반 푸시업 모델의 총점 학습에서는 분리한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_005.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_005.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_003_push_up_good_side.mp4#t=0.6666666666666666,1.6666666666666667"> </video></details>
+<details><summary>006 subject_003_push_up_bad_side | 이전 60.0 → 초안 60.0 | 총점 학습 보류</summary><p>기존 구간에는 여러 하강·상승이 섞여 있고 손잡이를 사용한다. 정확한 단일 반복 경계와 도메인 분리 전 총점 학습을 보류한다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_006.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_006.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_003_push_up_bad_side.mp4#t=2.6666666666666665,5.666666666666667"> </video></details>
+<details><summary>007 subject_004_push_up_good_side | 이전 80.0 → 초안 80.0 | 학습 후보</summary><p>손발을 유지하며 하강·복귀한다. 몸통에 경미한 처짐이 보인다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_007.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_007.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_004_push_up_good_side.mp4#t=2.3333333333333335,4.0"> </video></details>
+<details><summary>008 subject_004_push_up_bad_side | 이전 80.0 → 초안 80.0 | 학습 후보</summary><p>상단과 하단에서 허리·골반의 경미한 처짐이 보인다. 손발 지지는 유지된다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_008.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_008.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_004_push_up_bad_side.mp4#t=2.3333333333333335,4.333333333333333"> </video></details>
+<details><summary>009 subject_005_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>하강 후 상단으로 돌아오며 큰 몸통 꺾임이 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_009.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_009.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_005_push_up_good_side.mp4#t=1.3333333333333333,3.6666666666666665"> </video></details>
+<details><summary>010 subject_005_push_up_bad_side | 이전 70.0 → 초안 85.0 | 학습 후보</summary><p>확대 근거 f36–40에서 팔 굽힘은 분명하지만 상완이 바닥에 가까운 방향까지 내려가지는 않는다. 작은 움직임 0보다 부분 하강 1로 정정한다.</p><p>[2, 1, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_010.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_010.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_010.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_010.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_005_push_up_bad_side.mp4#t=1.6666666666666667,3.6666666666666665"> </video></details>
+<details><summary>011 subject_006_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>몸통 정렬을 대체로 유지하며 하단까지 내려가고 팔을 펴 복귀한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_011.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_011.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_006_push_up_good_side.mp4#t=1.6666666666666667,3.0"> </video></details>
+<details><summary>012 subject_006_push_up_bad_side | 이전 60.0 → 초안 60.0 | 학습 후보</summary><p>상단·하단에서 엉덩이가 어깨–발목 선보다 뚜렷하게 높다. 하강과 팔 펴기 자체는 보인다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_012.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_012.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_006_push_up_bad_side.mp4#t=1.3333333333333333,3.0"> </video></details>
+<details><summary>013 subject_007_push_up_good_side | 이전 100.0 → 초안 None | 총점 학습 보류</summary><p>선택 구간 상단에서 얼굴·어깨·팔에 영상 블러가 겹친다. 완전한 정렬·팔 펴기 판정과 반복 경계를 보수적으로 보류한다.</p><p>[None, 2, None, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_013.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_013.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_013.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_013.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_007_push_up_good_side.mp4#t=5.333333333333333,6.333333333333333"> </video></details>
+<details><summary>014 subject_007_push_up_bad_side | 이전 60.0 → 초안 60.0 | 학습 후보</summary><p>엉덩이가 높은 꺾임이 상단에서도 보인다. 가슴 하강과 상단 복귀는 확인된다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_014.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_014.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_007_push_up_bad_side.mp4#t=1.0,3.0"> </video></details>
+<details><summary>015 subject_008_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>가슴이 낮아지고 상단으로 복귀한다. 몸통·다리에 뚜렷한 꺾임은 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_015.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_015.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_008_push_up_good_side.mp4#t=2.6666666666666665,4.666666666666667"> </video></details>
+<details><summary>016 subject_008_push_up_bad_side | 이전 70.0 → 초안 None | 총점 학습 보류</summary><p>하단에서 상완·어깨에 블러가 겹친다. 하강 범위 0 판정을 확정할 수 없어 미관측으로 수정한다.</p><p>[2, None, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_016.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_016.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_016.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_016.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_008_push_up_bad_side.mp4#t=2.6666666666666665,4.666666666666667"> </video></details>
+<details><summary>017 subject_009_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>기존 시작 부분에 앞선 상승이 포함되었다. f40–64의 상단–하단–상단으로 경계를 좁힌다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_017.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_017.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_017.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_017.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_009_push_up_good_side.mp4#t=2.6666666666666665,4.266666666666667"> </video></details>
+<details><summary>018 subject_009_push_up_bad_side | 이전 30.0 → 초안 30.0 | 학습 후보</summary><p>엉덩이 들림과 작은 가슴 하강이 함께 보인다. 상단 복귀와 손발 지지는 유지된다.</p><p>[0, 0, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_018.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_018.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_009_push_up_bad_side.mp4#t=1.3333333333333333,3.3333333333333335"> </video></details>
+<details><summary>019 subject_010_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>몸통·다리 정렬을 유지하며 가슴을 낮추고 상단으로 복귀한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_019.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_019.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_010_push_up_good_side.mp4#t=1.6666666666666667,3.6666666666666665"> </video></details>
+<details><summary>020 subject_010_push_up_bad_side | 이전 60.0 → 초안 60.0 | 학습 후보</summary><p>골반이 낮게 남고 상체를 먼저 올리는 처짐이 보인다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_020.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_020.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_010_push_up_bad_side.mp4#t=1.3333333333333333,3.3333333333333335"> </video></details>
+<details><summary>021 subject_011_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>상단–하단–상단이 확인되고 몸통과 다리가 함께 움직인다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_021.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_021.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_011_push_up_good_side.mp4#t=2.3333333333333335,3.6666666666666665"> </video></details>
+<details><summary>022 subject_011_push_up_bad_side | 이전 60.0 → 초안 60.0 | 학습 후보</summary><p>상체를 먼저 들어 올리고 골반이 늦게 따라오는 꺾임이 보인다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_022.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_022.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_011_push_up_bad_side.mp4#t=4.333333333333333,7.666666666666667"> </video></details>
+<details><summary>023 subject_012_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>가슴을 낮추고 상단으로 돌아오며 몸통에 큰 꺾임은 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_023.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_023.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_012_push_up_good_side.mp4#t=1.3333333333333333,2.6666666666666665"> </video></details>
+<details><summary>027 subject_014_push_up_good_side | 이전 100.0 → 초안 100.0 | 총점 학습 보류</summary><p>연속 원본 프레임 f10–25에서 하강과 복귀를 확인했다. 손잡이를 사용하므로 바닥 손바닥 지지 도메인의 총점 학습에서는 분리한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_027.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_027.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_027.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_027.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_014_push_up_good_side.mp4#t=0.6666666666666666,1.6666666666666667"> </video></details>
+<details><summary>028 subject_014_push_up_bad_side | 이전 90.0 → 초안 90.0 | 학습 후보</summary><p>기존 구간은 반복이 여러 번 들어 있다. f33–50 한 주기로 좁힌다. 하단 범위는 충분하나 상단 팔 굽힘이 남는다.</p><p>[2, 2, 1, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_028.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_028.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_028.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_028.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_014_push_up_bad_side.mp4#t=2.2,3.3333333333333335"> </video></details>
+<details><summary>029 subject_015_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>가슴을 낮추고 팔을 펴 복귀한다. 큰 몸통 꺾임과 지지 변경이 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_029.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_029.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_015_push_up_good_side.mp4#t=1.6666666666666667,3.6666666666666665"> </video></details>
+<details><summary>031 subject_016_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>선택 구간에서 가슴 하강과 상단 복귀, 손발 지지가 확인된다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_031.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_031.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_016_push_up_good_side.mp4#t=1.0,2.3333333333333335"> </video></details>
+<details><summary>032 subject_016_push_up_bad_side | 이전 70.0 → 초안 70.0 | 총점 학습 보류</summary><p>팔 굽힘과 하강이 작다. 기존 구간은 한 주기의 상단 경계와 맞지 않아 재분할 전 총점 학습을 보류한다.</p><p>[2, 0, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_032.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_032.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_032.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_032.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_016_push_up_bad_side.mp4#t=2.3333333333333335,3.6666666666666665"> </video></details>
+<details><summary>033 subject_017_push_up_good_side | 이전 100.0 → 초안 None | 총점 학습 보류</summary><p>인물이 화면에서 작고 기존 구간에서 하강·복귀는 보인다. 미세한 정렬 판정의 해상도가 부족해 총점 확정은 보류한다.</p><p>[None, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_033.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_033.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_017_push_up_good_side.mp4#t=0.6,2.066666666666667"> </video></details>
+<details><summary>035 subject_018_push_up_good_side | 이전 100.0 → 초안 None | 총점 학습 보류</summary><p>원경·세로 영상에서 하강과 복귀는 보이나 인물이 작아 정렬 판정이 불확실하다. 총점 확정은 보류한다.</p><p>[None, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_035.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_035.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_018_push_up_good_side.mp4#t=0.6666666666666666,2.3333333333333335"> </video></details>
+<details><summary>036 subject_018_push_up_bad_side | 이전 60.0 → 초안 None | 총점 학습 보류</summary><p>원경·세로 영상에서 엉덩이가 높은 양상은 보이지만 지지·정렬 전체를 일관되게 판정하기 어렵다. 총점 확정은 보류한다.</p><p>[None, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_036.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_036.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_018_push_up_bad_side.mp4#t=3.6666666666666665,5.666666666666667"> </video></details>
+<details><summary>041 subject_021_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>가슴 하강과 상단 복귀가 보이며 몸통과 다리의 큰 꺾임은 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_041.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_041.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_021_push_up_good_side.mp4#t=1.0,2.3333333333333335"> </video></details>
+<details><summary>042 subject_021_push_up_bad_side | 이전 60.0 → 초안 90.0 | 총점 학습 보류</summary><p>확대 및 연속 원본 프레임에서 가슴이 충분히 낮아지는 하강이 반복 확인된다. 하강 범위 0은 잘못된 초안으로 2로 수정한다. 상단 팔 굽힘은 남는다. 기존 구간은 다중 반복으로 재분할 전 총점 학습을 보류한다.</p><p>[2, 2, 1, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_042.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_042.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_042.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_042.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_042.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_042.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_021_push_up_bad_side.mp4#t=1.6666666666666667,3.6666666666666665"> </video></details>
+<details><summary>043 subject_022_push_up_good_side | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>상단 팔 펴기는 보이며 하강은 있으나 범위가 부분적이다.</p><p>[2, 1, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_043.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_043.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_022_push_up_good_side.mp4#t=1.0,2.3333333333333335"> </video></details>
+<details><summary>044 subject_022_push_up_bad_side | 이전 70.0 → 초안 85.0 | 학습 후보</summary><p>확대 f22–25에서 분명한 팔 굽힘·하강이 있으나 하단 범위가 부분적이다. 하강 범위 0을 1로 수정한다.</p><p>[2, 1, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_044.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_044.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_044.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_044.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_022_push_up_bad_side.mp4#t=1.0,2.3333333333333335"> </video></details>
+<details><summary>045 subject_023_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>몸통과 다리의 큰 꺾임 없이 하강하고 팔을 펴 복귀한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_045.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_045.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_023_push_up_good_side.mp4#t=1.0,2.3333333333333335"> </video></details>
+<details><summary>047 subject_024_push_up_good_side | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>기존 시작 f100은 이미 하단에 가깝다. f95–115로 넓히면 상단–하단–상단이다. 일부 블러 구간을 포함하므로 실험 라벨로만 유지한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_047.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_047.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_047.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/dense_047.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/good/side/subject_024_push_up_good_side.mp4#t=6.333333333333333,7.666666666666667"> </video></details>
+<details><summary>048 subject_024_push_up_bad_side | 이전 70.0 → 초안 70.0 | 학습 후보</summary><p>팔꿈치 굽힘과 가슴 하강이 작고, 손발 지지 및 상단 복귀가 유지된다.</p><p>[2, 0, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_048.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_048.jpg">
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_048.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/detail_048.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/push_up/bad/side/subject_024_push_up_bad_side.mp4#t=1.0,2.3333333333333335"> </video></details>
+<details><summary>049 rehab_Petra_5596_5685 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>하단 허벅지가 수평보다 위에 있다. 정면에서 큰 안쪽 붕괴·좌우 기울기는 보이지 않으며 서기로 복귀한다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_049.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_049.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4#t=186.53333333333333,189.5"> </video></details>
+<details><summary>050 rehab_Terka_3280_3342 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>분명히 내려가지만 수평보다 얕다. 정면의 큰 정렬 붕괴 없이 서기로 복귀한다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_050.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_050.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam3.mp4#t=109.33333333333333,111.4"> </video></details>
+<details><summary>051 rehab_Vasil_7597_7642 | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>측면에서 허벅지가 수평에 가까워진다. 정면의 큰 좌우 균형 이탈 없이 복귀한다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_051.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_051.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4#t=253.23333333333332,254.73333333333332"> </video></details>
+<details><summary>052 rehab_Petra_220_303 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>하강은 분명하지만 허벅지가 수평보다 위에 있다. 정면 무릎과 몸통의 큰 이탈은 보이지 않는다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_052.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_052.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4#t=7.333333333333333,10.1"> </video></details>
+<details><summary>053 rehab_Terka_4672_4722 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>구간 시작에 약한 굽힘이 있으나 하강·서기 복귀는 구분된다. 하단이 수평보다 높고 큰 정면 이탈은 보이지 않는다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_053.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_053.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam3.mp4#t=155.73333333333332,157.4"> </video></details>
+<details><summary>054 rehab_Vasil_7496_7538 | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>측면에서 수평에 가까운 하강과 서기 복귀가 보인다. 정면에서 큰 무릎 붕괴가 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_054.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_054.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4#t=249.86666666666667,251.26666666666668"> </video></details>
+<details><summary>055 rehab_Petra_11563_11654 | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>측면에서 수평에 가까운 하강이 보인다. 동기화 정면에서 큰 무릎 붕괴·좌우 기울기는 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_055.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_055.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam1.mp4#t=385.43333333333334,388.46666666666664"> </video></details>
+<details><summary>056 rehab_Terka_10012_10059 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>구간 시작은 약간 굽힌 자세이나 하강과 서기 복귀가 보인다. 하단 허벅지는 수평보다 위에 있다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_056.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_056.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4#t=333.73333333333335,335.3"> </video></details>
+<details><summary>057 rehab_Vasil_6523_6567 | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>하단 허벅지가 수평에 가까워지고 서기로 복귀한다. 정면에서 큰 비대칭은 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_057.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_057.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Vasil_cam1.mp4#t=217.43333333333334,218.9"> </video></details>
+<details><summary>058 rehab_Petra_5481_5569 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>측면의 하강 깊이가 수평보다 얕다. 정면의 큰 이탈 없이 서기로 복귀한다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_058.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_058.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4#t=182.7,185.63333333333333"> </video></details>
+<details><summary>060 rehab_Petra_4555_4636 | 이전 55.0 → 초안 55.0 | 학습 후보</summary><p>하단 정면에서 양 무릎이 안쪽으로 모이는 붕괴가 보인다. 하강 깊이는 부분적이고 서기로 복귀한다.</p><p>[1, 2, 0, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_060.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_060.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4#t=151.83333333333334,154.53333333333333"> </video></details>
+<details><summary>061 rehab_Petra_15050_15148 | 이전 70.0 → 초안 70.0 | 학습 후보</summary><p>측면 하단은 수평에 가깝지만 정면에서 양 무릎이 안쪽으로 모인다. 서기로 복귀한다.</p><p>[2, 2, 0, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_061.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_061.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam1.mp4#t=501.6666666666667,504.93333333333334"> </video></details>
+<details><summary>062 rehab_Petra_2176_2253 | 이전 70.0 → 초안 70.0 | 학습 후보</summary><p>하강 자체가 작으며 서기 자세로 돌아온다. 정면의 큰 좌우 이탈은 보이지 않는다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_062.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_062.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4#t=72.53333333333333,75.1"> </video></details>
+<details><summary>063 rehab_Petra_4656_4736 | 이전 65.0 → 초안 65.0 | 학습 후보</summary><p>하단 정면에서 어깨선과 몸통이 한쪽으로 기운다. 부분 하강 후 서기로 복귀한다.</p><p>[1, 2, 2, 0]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_063.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_063.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Petra_cam3.mp4#t=155.2,157.86666666666667"> </video></details>
+<details><summary>065 rehab_Terka_3510_3577 | 이전 55.0 → 초안 55.0 | 학습 후보</summary><p>하강 중 정면 양 무릎의 안쪽 모임이 확인된다. 측면 깊이는 부분적이며 서기로 복귀한다.</p><p>[1, 2, 0, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_065.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_065.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam3.mp4#t=117.0,119.23333333333333"> </video></details>
+<details><summary>066 rehab_Terka_7394_7454 | 이전 55.0 → 초안 55.0 | 학습 후보</summary><p>측면 깊이는 수평보다 위에 있고 정면 하단에서 양 무릎이 안쪽으로 모인다. 서기로 복귀한다.</p><p>[1, 2, 0, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_066.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_066.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4#t=246.46666666666667,248.46666666666667"> </video></details>
+<details><summary>067 rehab_Terka_10334_10376 | 이전 70.0 → 초안 70.0 | 학습 후보</summary><p>하강 범위가 작다. 정면의 큰 무릎 붕괴 없이 다시 선다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_067.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_067.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Terka_cam1.mp4#t=344.46666666666664,345.8666666666667"> </video></details>
+<details><summary>069 rehab_Mima_2010_2078 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>측면 하단은 수평보다 위에 있고 복귀가 보인다. 정면의 큰 비대칭은 보이지 않는다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_069.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_069.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam3.mp4#t=67.0,69.26666666666667"> </video></details>
+<details><summary>070 rehab_Mima_5584_5655 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>측면의 하단이 수평보다 높다. 큰 정면 이탈 없이 서기로 복귀한다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_070.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_070.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam1.mp4#t=186.13333333333333,188.5"> </video></details>
+<details><summary>071 rehab_Mima_5503_5564 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>부분 하강과 서기로의 복귀가 구분된다. 정면 큰 무릎 붕괴가 보이지 않는다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_071.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_071.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam1.mp4#t=183.43333333333334,185.46666666666667"> </video></details>
+<details><summary>072 rehab_Mima_265_337 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>분명한 하강이나 허벅지는 수평보다 높다. 큰 정면 이탈 없이 서기로 복귀한다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_072.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_072.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam3.mp4#t=8.833333333333334,11.233333333333333"> </video></details>
+<details><summary>073 rehab_Mima_6174_6241 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>측면 부분 하강과 복귀가 보인다. 정면 큰 무릎 붕괴가 보이지 않는다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_073.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_073.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam1.mp4#t=205.8,208.03333333333333"> </video></details>
+<details><summary>075 rehab_Mima_3648_3718 | 이전 55.0 → 초안 55.0 | 학습 후보</summary><p>정면 하단에서 양 무릎이 안쪽으로 모이는 붕괴가 보인다. 측면 하강 깊이는 부분적이며 복귀한다.</p><p>[1, 2, 0, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_075.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_075.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam3.mp4#t=121.6,123.93333333333334"> </video></details>
+<details><summary>077 rehab_Mima_14792_14851 | 이전 70.0 → 초안 70.0 | 학습 후보</summary><p>하강 범위가 작고 서기로 복귀한다. 정면에서 큰 무릎 붕괴가 보이지 않는다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_077.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_077.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam1.mp4#t=493.06666666666666,495.03333333333336"> </video></details>
+<details><summary>078 rehab_Mima_451_525 | 이전 75.0 → 초안 None | 총점 학습 보류</summary><p>부분 하강과 복귀는 보인다. 정면 몸통의 경미한 기울기 정도가 작은 근거에서 불확실하므로 해당 항목을 보류한다.</p><p>[1, 2, 2, None]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_078.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_078.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Mima_cam3.mp4#t=15.033333333333333,17.5"> </video></details>
+<details><summary>079 rehab_Honza_5876_5983 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>측면 부분 하강 후 다시 선다. 정면의 큰 무릎 붕괴·비대칭은 보이지 않는다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_079.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_079.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam3.mp4#t=195.86666666666667,199.43333333333334"> </video></details>
+<details><summary>080 rehab_Honza_11895_12000 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>측면 하강은 분명하지만 수평보다 위에 있다. 정면의 큰 붕괴 없이 서기로 복귀한다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_080.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_080.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam1.mp4#t=396.5,400.0"> </video></details>
+<details><summary>081 rehab_Honza_1402_1518 | 이전 100.0 → 초안 100.0 | 학습 후보</summary><p>측면 허벅지가 수평에 가까워지고 서기로 복귀한다. 정면 큰 무릎 붕괴가 보이지 않는다.</p><p>[2, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_081.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_081.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam3.mp4#t=46.733333333333334,50.6"> </video></details>
+<details><summary>082 rehab_Honza_15967_16066 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>측면 하단이 수평보다 위에 있다. 정면의 큰 좌우 이탈 없이 복귀한다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_082.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_082.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam1.mp4#t=532.2333333333333,535.5333333333333"> </video></details>
+<details><summary>083 rehab_Honza_15420_15517 | 이전 85.0 → 초안 85.0 | 학습 후보</summary><p>부분 하강 후 서기 자세로 복귀한다. 정면의 큰 무릎 붕괴가 보이지 않는다.</p><p>[1, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_083.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_083.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam1.mp4#t=514.0,517.2333333333333"> </video></details>
+<details><summary>085 rehab_Honza_11185_11292 | 이전 55.0 → 초안 55.0 | 학습 후보</summary><p>정면 하단에서 양 무릎이 안쪽으로 모인다. 측면의 부분 하강과 복귀가 확인된다.</p><p>[1, 2, 0, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_085.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_085.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam1.mp4#t=372.8333333333333,376.4"> </video></details>
+<details><summary>087 rehab_Honza_14862_14947 | 이전 70.0 → 초안 70.0 | 학습 후보</summary><p>하강 범위가 작고 다시 선다. 정면의 큰 비대칭은 보이지 않는다.</p><p>[0, 2, 2, 2]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_087.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_087.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam1.mp4#t=495.4,498.23333333333335"> </video></details>
+<details><summary>088 rehab_Honza_3709_3819 | 이전 65.0 → 초안 None | 총점 학습 보류</summary><p>하단 정면에서 옆으로 기우는 양상은 보이나 0과 1의 정도 판단이 작은 근거에서 불확실하다. 몸통 균형 등급을 보류한다.</p><p>[1, 2, 2, None]</p>
+<a href="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_088.jpg">근거 확대</a><img src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/review-v6/case_088.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/rehab26-squat/raw/videos/ex6/ex6_Honza_cam3.mp4#t=123.63333333333334,127.3"> </video></details>

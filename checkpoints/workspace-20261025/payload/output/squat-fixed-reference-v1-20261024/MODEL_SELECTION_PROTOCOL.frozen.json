@@ -1,0 +1,21 @@
+{
+  "frozen_at": "2026-10-24T13:10:57.764951+00:00",
+  "parent_run": "/home/jayden/SeSACPAI-Mid/output/return-cycle-aligned-v1-20261024",
+  "policy_sha256": "7aded6fa543285e7e8926b690317c2cc53e1bc96c7f9ca1c181f3077be23f809",
+  "bank": "standing_fixed_initial_height_v2",
+  "feature_names": [
+    "hip_height_deficit_mean",
+    "hip_height_deficit_max",
+    "shoulder_height_deficit_mean",
+    "shoulder_height_deficit_max"
+  ],
+  "feature_code_sha256": "1b7b7774fdac5bc78f610c3b0bd07108fe71afb09b37eff31f96d8f360359391",
+  "hypothesis": "Re-normalizing by the shortened projected return leg can cancel genuine standing-height loss. Use initial scale for both support-relative heights.",
+  "timing_and_reference_windows_unchanged": true,
+  "source_roles_and_labels_unchanged": true,
+  "new_failure_labels_this_ablation": 0,
+  "selection": "same Train-only nested group CV and C grid/cutoff rules as initial-context model; no Test numerical selection",
+  "diagnostic_development_previously_exposed": true,
+  "independent_final_Test_opened": false,
+  "production_replacement": false
+}

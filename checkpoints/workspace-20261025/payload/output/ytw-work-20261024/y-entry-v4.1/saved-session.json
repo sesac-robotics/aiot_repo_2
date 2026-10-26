@@ -1,0 +1,658 @@
+{
+  "scope": "unlabelled_no_video_observational_diagnostic_not_ground_truth",
+  "source_sha256": "5525f4fcebd04cfc40c4e9d61635b1ab6d945e79ec5f012498e8e0a00e226bcd",
+  "state_bundle_sha256": "fc18ccb7f3ab9a8a9b23d1683be07de83530ffebcf657046b81d69549a6e0439",
+  "state_bundle_activated_in_live": false,
+  "candidate_code_sha256": "a0d3b0ece473a9e50326ea2bc1c817ee65fb9b498a718d4b7a0369529745b4c6",
+  "results": [
+    {
+      "candidate": "baseline",
+      "events": [
+        {
+          "version": "ytw-ordered-dwell-candidate-v1",
+          "auto_phase_windows": {
+            "Y": [
+              0,
+              9
+            ],
+            "T": [
+              10,
+              27
+            ],
+            "W": [
+              28,
+              32
+            ]
+          },
+          "observation_coverage": 1.0,
+          "temporal_slot_coverage": 1.0,
+          "start_tick": 948,
+          "end_tick": 980,
+          "width": 640,
+          "height": 480,
+          "ordered_attempt_complete": true,
+          "complete_attempt_reviewed": false,
+          "projection_reviewed": false,
+          "phase_windows_reviewed": null,
+          "grade": null,
+          "quality_verified": false,
+          "same_dense_AI_Rule_result": {
+            "schema": "posture-score-local-v1",
+            "exercise": "ytw",
+            "model_version": "2026.10.22-reviewed-clip.1",
+            "feature_version": "observed-pixel-10hz-held-v2",
+            "assessment_scope": "reviewed_clip",
+            "items": [
+              {
+                "id": "y_reach",
+                "weight": 30,
+                "ai_grade": null,
+                "rule_grade": null,
+                "ai_minus_rule": null,
+                "observed": false,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": null,
+                "reasons": [
+                  "projection_view_review_required",
+                  "finite_required_geometry_unavailable"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 2,
+                  "1": 54,
+                  "2": 3
+                },
+                "unseen_training_grades": [],
+                "window": null
+              },
+              {
+                "id": "t_reach",
+                "weight": 25,
+                "ai_grade": 1.6993347838065795,
+                "rule_grade": 2,
+                "ai_minus_rule": -0.30066521619342046,
+                "observed": true,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": [
+                  88.41931589981175,
+                  94.7606717554983,
+                  136.69245902521527,
+                  147.44626339246923,
+                  171.64194040015823,
+                  175.81756085197438
+                ],
+                "reasons": [
+                  "training_grades_missing_0"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 0,
+                  "1": 11,
+                  "2": 74
+                },
+                "unseen_training_grades": [
+                  0
+                ],
+                "window": {
+                  "start_index": 1,
+                  "end_index": 28,
+                  "anchor_index": 14,
+                  "samples": 28
+                }
+              },
+              {
+                "id": "w_shape",
+                "weight": 25,
+                "ai_grade": 1.5990323580330439,
+                "rule_grade": 2,
+                "ai_minus_rule": -0.4009676419669561,
+                "observed": true,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": [
+                  125.35500994902242,
+                  0.2876651522844208,
+                  -0.8415641260231516,
+                  106.01391701544715,
+                  0.29015997637850943,
+                  -0.8619050097686963,
+                  19.34109293357527
+                ],
+                "reasons": [],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 12,
+                  "1": 45,
+                  "2": 26
+                },
+                "unseen_training_grades": [],
+                "window": {
+                  "start_index": 30,
+                  "end_index": 32,
+                  "anchor_index": 31,
+                  "samples": 3
+                }
+              },
+              {
+                "id": "hinge_and_trunk_hold",
+                "weight": 20,
+                "ai_grade": null,
+                "rule_grade": null,
+                "ai_minus_rule": null,
+                "observed": false,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": null,
+                "reasons": [
+                  "projection_view_review_required"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 13,
+                  "1": 38,
+                  "2": 48
+                },
+                "unseen_training_grades": [],
+                "window": null
+              }
+            ],
+            "ai_score": null,
+            "rule_score": null,
+            "ai_minus_rule": null,
+            "complete_attempt_reviewed": false,
+            "requires_manual_view_review": true,
+            "ytw_projection_proxy": true,
+            "expert_validated": false,
+            "independent_final_test": false,
+            "timing_ms": {
+              "features": 3.4490969992475584,
+              "ai": 9.51433500085841,
+              "rule": 0.13053500151727349
+            },
+            "limitations": [
+              "Y and hinge are projection proxies; manual view and phase review required for totals.",
+              "W stage and grade errors remain.",
+              "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+            ]
+          }
+        }
+      ],
+      "final": {
+        "version": "ytw-ordered-dwell-candidate-v1",
+        "phase": "stream_ended_incomplete",
+        "count": 1,
+        "active": false,
+        "expected": "Y",
+        "rejected": [
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 638,
+            "end_tick": 675,
+            "counted": false,
+            "grade": null
+          },
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 684,
+            "end_tick": 699,
+            "counted": false,
+            "grade": null
+          },
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 700,
+            "end_tick": 710,
+            "counted": false,
+            "grade": null
+          }
+        ],
+        "grade": null,
+        "scope": "development_ordered_attempts_not_quality_or_severity"
+      }
+    },
+    {
+      "candidate": "ready_origin_fix",
+      "events": [
+        {
+          "version": "ytw-ready-run-origin-fix-v2-candidate",
+          "auto_phase_windows": {
+            "Y": [
+              0,
+              9
+            ],
+            "T": [
+              10,
+              27
+            ],
+            "W": [
+              28,
+              32
+            ]
+          },
+          "observation_coverage": 1.0,
+          "temporal_slot_coverage": 1.0,
+          "start_tick": 948,
+          "end_tick": 980,
+          "width": 640,
+          "height": 480,
+          "ordered_attempt_complete": true,
+          "complete_attempt_reviewed": false,
+          "projection_reviewed": false,
+          "phase_windows_reviewed": null,
+          "grade": null,
+          "quality_verified": false,
+          "same_dense_AI_Rule_result": {
+            "schema": "posture-score-local-v1",
+            "exercise": "ytw",
+            "model_version": "2026.10.22-reviewed-clip.1",
+            "feature_version": "observed-pixel-10hz-held-v2",
+            "assessment_scope": "reviewed_clip",
+            "items": [
+              {
+                "id": "y_reach",
+                "weight": 30,
+                "ai_grade": null,
+                "rule_grade": null,
+                "ai_minus_rule": null,
+                "observed": false,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": null,
+                "reasons": [
+                  "projection_view_review_required",
+                  "finite_required_geometry_unavailable"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 2,
+                  "1": 54,
+                  "2": 3
+                },
+                "unseen_training_grades": [],
+                "window": null
+              },
+              {
+                "id": "t_reach",
+                "weight": 25,
+                "ai_grade": 1.6993347838065795,
+                "rule_grade": 2,
+                "ai_minus_rule": -0.30066521619342046,
+                "observed": true,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": [
+                  88.41931589981175,
+                  94.7606717554983,
+                  136.69245902521527,
+                  147.44626339246923,
+                  171.64194040015823,
+                  175.81756085197438
+                ],
+                "reasons": [
+                  "training_grades_missing_0"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 0,
+                  "1": 11,
+                  "2": 74
+                },
+                "unseen_training_grades": [
+                  0
+                ],
+                "window": {
+                  "start_index": 1,
+                  "end_index": 28,
+                  "anchor_index": 14,
+                  "samples": 28
+                }
+              },
+              {
+                "id": "w_shape",
+                "weight": 25,
+                "ai_grade": 1.5990323580330439,
+                "rule_grade": 2,
+                "ai_minus_rule": -0.4009676419669561,
+                "observed": true,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": [
+                  125.35500994902242,
+                  0.2876651522844208,
+                  -0.8415641260231516,
+                  106.01391701544715,
+                  0.29015997637850943,
+                  -0.8619050097686963,
+                  19.34109293357527
+                ],
+                "reasons": [],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 12,
+                  "1": 45,
+                  "2": 26
+                },
+                "unseen_training_grades": [],
+                "window": {
+                  "start_index": 30,
+                  "end_index": 32,
+                  "anchor_index": 31,
+                  "samples": 3
+                }
+              },
+              {
+                "id": "hinge_and_trunk_hold",
+                "weight": 20,
+                "ai_grade": null,
+                "rule_grade": null,
+                "ai_minus_rule": null,
+                "observed": false,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": null,
+                "reasons": [
+                  "projection_view_review_required"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 13,
+                  "1": 38,
+                  "2": 48
+                },
+                "unseen_training_grades": [],
+                "window": null
+              }
+            ],
+            "ai_score": null,
+            "rule_score": null,
+            "ai_minus_rule": null,
+            "complete_attempt_reviewed": false,
+            "requires_manual_view_review": true,
+            "ytw_projection_proxy": true,
+            "expert_validated": false,
+            "independent_final_test": false,
+            "timing_ms": {
+              "features": 3.0187160009518266,
+              "ai": 9.520995001366828,
+              "rule": 0.10104800094268285
+            },
+            "limitations": [
+              "Y and hinge are projection proxies; manual view and phase review required for totals.",
+              "W stage and grade errors remain.",
+              "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+            ]
+          }
+        }
+      ],
+      "final": {
+        "version": "ytw-ready-run-origin-fix-v2-candidate",
+        "phase": "stream_ended_incomplete",
+        "count": 1,
+        "active": false,
+        "expected": "Y",
+        "rejected": [
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 638,
+            "end_tick": 675,
+            "counted": false,
+            "grade": null
+          },
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 684,
+            "end_tick": 699,
+            "counted": false,
+            "grade": null
+          },
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 700,
+            "end_tick": 710,
+            "counted": false,
+            "grade": null
+          }
+        ],
+        "grade": null,
+        "scope": "development_ordered_attempts_not_quality_or_severity"
+      }
+    },
+    {
+      "candidate": "hold_onset_v4.1",
+      "events": [
+        {
+          "version": "ytw-causal-Y-boundary-refinement-v4.1-candidate",
+          "auto_phase_windows": {
+            "Y": [
+              0,
+              7
+            ],
+            "T": [
+              8,
+              25
+            ],
+            "W": [
+              26,
+              30
+            ]
+          },
+          "observation_coverage": 1.0,
+          "temporal_slot_coverage": 1.0,
+          "start_tick": 950,
+          "end_tick": 980,
+          "width": 640,
+          "height": 480,
+          "ordered_attempt_complete": true,
+          "complete_attempt_reviewed": false,
+          "projection_reviewed": false,
+          "phase_windows_reviewed": null,
+          "grade": null,
+          "quality_verified": false,
+          "coarse_phase_windows": {
+            "Y": [
+              0,
+              9
+            ],
+            "T": [
+              10,
+              27
+            ],
+            "W": [
+              28,
+              32
+            ]
+          },
+          "coarse_start_tick": 948,
+          "Y_boundary_evidence": {
+            "confirmed": true,
+            "confirmed_tick": 950,
+            "max_step_torso_ratio": 0.1,
+            "stable_steps": 2,
+            "causal": true,
+            "backdated": false,
+            "quality_grade": null,
+            "reason": "causal_stable_Y_tick"
+          },
+          "same_dense_AI_Rule_result": {
+            "schema": "posture-score-local-v1",
+            "exercise": "ytw",
+            "model_version": "2026.10.22-reviewed-clip.1",
+            "feature_version": "observed-pixel-10hz-held-v2",
+            "assessment_scope": "reviewed_clip",
+            "items": [
+              {
+                "id": "y_reach",
+                "weight": 30,
+                "ai_grade": null,
+                "rule_grade": null,
+                "ai_minus_rule": null,
+                "observed": false,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": null,
+                "reasons": [
+                  "projection_view_review_required",
+                  "finite_required_geometry_unavailable"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 2,
+                  "1": 54,
+                  "2": 3
+                },
+                "unseen_training_grades": [],
+                "window": null
+              },
+              {
+                "id": "t_reach",
+                "weight": 25,
+                "ai_grade": 1.7079202666108124,
+                "rule_grade": 2,
+                "ai_minus_rule": -0.2920797333891876,
+                "observed": true,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": [
+                  87.52927351611564,
+                  94.72314138778313,
+                  136.37037872504038,
+                  145.594487058467,
+                  171.5655949384103,
+                  175.5858647567307
+                ],
+                "reasons": [
+                  "training_grades_missing_0"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 0,
+                  "1": 11,
+                  "2": 74
+                },
+                "unseen_training_grades": [
+                  0
+                ],
+                "window": {
+                  "start_index": 1,
+                  "end_index": 26,
+                  "anchor_index": 13,
+                  "samples": 26
+                }
+              },
+              {
+                "id": "w_shape",
+                "weight": 25,
+                "ai_grade": 1.5990323580330439,
+                "rule_grade": 2,
+                "ai_minus_rule": -0.4009676419669561,
+                "observed": true,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": [
+                  125.35500994902242,
+                  0.2876651522844208,
+                  -0.8415641260231516,
+                  106.01391701544715,
+                  0.29015997637850943,
+                  -0.8619050097686963,
+                  19.34109293357527
+                ],
+                "reasons": [],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 12,
+                  "1": 45,
+                  "2": 26
+                },
+                "unseen_training_grades": [],
+                "window": {
+                  "start_index": 28,
+                  "end_index": 30,
+                  "anchor_index": 29,
+                  "samples": 3
+                }
+              },
+              {
+                "id": "hinge_and_trunk_hold",
+                "weight": 20,
+                "ai_grade": null,
+                "rule_grade": null,
+                "ai_minus_rule": null,
+                "observed": false,
+                "bank": "front_projected",
+                "measured": null,
+                "feature": null,
+                "reasons": [
+                  "projection_view_review_required"
+                ],
+                "single_grade_training": false,
+                "training_grade_counts": {
+                  "0": 13,
+                  "1": 38,
+                  "2": 48
+                },
+                "unseen_training_grades": [],
+                "window": null
+              }
+            ],
+            "ai_score": null,
+            "rule_score": null,
+            "ai_minus_rule": null,
+            "complete_attempt_reviewed": false,
+            "requires_manual_view_review": true,
+            "ytw_projection_proxy": true,
+            "expert_validated": false,
+            "independent_final_test": false,
+            "timing_ms": {
+              "features": 2.8589909998117946,
+              "ai": 9.019573000841774,
+              "rule": 0.08417799836024642
+            },
+            "limitations": [
+              "Y and hinge are projection proxies; manual view and phase review required for totals.",
+              "W stage and grade errors remain.",
+              "Training caches use Heavy GPU; CPU extraction can change joint tracking and needs separate validation."
+            ]
+          }
+        }
+      ],
+      "final": {
+        "version": "ytw-causal-Y-boundary-refinement-v4.1-candidate",
+        "phase": "stream_ended_incomplete",
+        "count": 1,
+        "active": false,
+        "expected": "Y",
+        "rejected": [
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 638,
+            "end_tick": 675,
+            "counted": false,
+            "grade": null
+          },
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 684,
+            "end_tick": 699,
+            "counted": false,
+            "grade": null
+          },
+          {
+            "reason": "required_joints_unobserved",
+            "start_tick": 700,
+            "end_tick": 710,
+            "counted": false,
+            "grade": null
+          }
+        ],
+        "grade": null,
+        "scope": "development_ordered_attempts_not_quality_or_severity",
+        "Y_stable_tick": null,
+        "Y_last_step": null,
+        "Y_boundary_not_quality": true
+      }
+    }
+  ]
+}

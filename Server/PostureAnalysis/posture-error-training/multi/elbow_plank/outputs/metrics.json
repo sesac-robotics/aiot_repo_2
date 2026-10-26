@@ -1,0 +1,428 @@
+{
+  "validation_split_candidate": 0,
+  "validation_split_policy": "First seed42 candidate retaining every available source-train target in train; validation binary has both classes; test is never inspected.",
+  "exercise": "elbow_plank",
+  "targets": [
+    "arms facing inward",
+    "arms too wide",
+    "butt sinking",
+    "head down",
+    "head up",
+    "high hips",
+    "legs and hips on the floor",
+    "shoulders shrugged up toward the ears"
+  ],
+  "selected_model": "cnn",
+  "selection_basis": "Validation score only; shoulder uses selected-error auxiliary validation F1 due to sparse class support.",
+  "models": {
+    "cnn": {
+      "precision_macro_supported": 0.5434212450659819,
+      "recall_macro_supported": 0.6784506959451571,
+      "macro_f1_supported": 0.5869345319712966,
+      "evaluated_targets": 8,
+      "total_targets": 8,
+      "macro_f1_all_targets": 0.5869345319712966,
+      "exact_match_accuracy": 0.4187192118226601,
+      "per_target": {
+        "arms facing inward": {
+          "positive_support": 43,
+          "negative_support": 160,
+          "train_positive_support": 834,
+          "validation_positive_support": 213,
+          "evaluable": true,
+          "precision": 0.9459459459459459,
+          "recall": 0.813953488372093,
+          "f1": 0.875,
+          "reason": null
+        },
+        "arms too wide": {
+          "positive_support": 9,
+          "negative_support": 194,
+          "train_positive_support": 256,
+          "validation_positive_support": 65,
+          "evaluable": true,
+          "precision": 0.3333333333333333,
+          "recall": 0.6666666666666666,
+          "f1": 0.4444444444444444,
+          "reason": null
+        },
+        "butt sinking": {
+          "positive_support": 17,
+          "negative_support": 186,
+          "train_positive_support": 373,
+          "validation_positive_support": 87,
+          "evaluable": true,
+          "precision": 0.3157894736842105,
+          "recall": 0.7058823529411765,
+          "f1": 0.43636363636363634,
+          "reason": null
+        },
+        "head down": {
+          "positive_support": 27,
+          "negative_support": 176,
+          "train_positive_support": 358,
+          "validation_positive_support": 89,
+          "evaluable": true,
+          "precision": 0.6060606060606061,
+          "recall": 0.7407407407407407,
+          "f1": 0.6666666666666666,
+          "reason": null
+        },
+        "head up": {
+          "positive_support": 23,
+          "negative_support": 180,
+          "train_positive_support": 346,
+          "validation_positive_support": 95,
+          "evaluable": true,
+          "precision": 0.7368421052631579,
+          "recall": 0.6086956521739131,
+          "f1": 0.6666666666666666,
+          "reason": null
+        },
+        "high hips": {
+          "positive_support": 24,
+          "negative_support": 179,
+          "train_positive_support": 367,
+          "validation_positive_support": 93,
+          "evaluable": true,
+          "precision": 0.5357142857142857,
+          "recall": 0.625,
+          "f1": 0.5769230769230769,
+          "reason": null
+        },
+        "legs and hips on the floor": {
+          "positive_support": 24,
+          "negative_support": 179,
+          "train_positive_support": 570,
+          "validation_positive_support": 143,
+          "evaluable": true,
+          "precision": 0.4,
+          "recall": 0.6666666666666666,
+          "f1": 0.5,
+          "reason": null
+        },
+        "shoulders shrugged up toward the ears": {
+          "positive_support": 15,
+          "negative_support": 188,
+          "train_positive_support": 378,
+          "validation_positive_support": 93,
+          "evaluable": true,
+          "precision": 0.47368421052631576,
+          "recall": 0.6,
+          "f1": 0.5294117647058824,
+          "reason": null
+        }
+      },
+      "selected_error_vs_other": {
+        "accuracy": 0.8374384236453202,
+        "precision": 0.8374384236453202,
+        "recall": 1.0,
+        "macro_f1": 0.45576407506702415,
+        "positive_support": 170,
+        "negative_support": 33,
+        "confusion_matrix": [
+          [
+            0,
+            33
+          ],
+          [
+            0,
+            170
+          ]
+        ],
+        "evaluable": true
+      },
+      "validation_selection_score": 0.653845613738222,
+      "best_epoch": 36,
+      "thresholds": {
+        "arms facing inward": 0.8500000000000002,
+        "arms too wide": 0.8500000000000002,
+        "butt sinking": 0.7500000000000002,
+        "head down": 0.6500000000000001,
+        "head up": 0.8500000000000002,
+        "high hips": 0.7500000000000002,
+        "legs and hips on the floor": 0.6000000000000002,
+        "shoulders shrugged up toward the ears": 0.8000000000000002,
+        "any_selected_error": 0.1
+      }
+    },
+    "gru": {
+      "precision_macro_supported": 0.5677797408036379,
+      "recall_macro_supported": 0.681418947199147,
+      "macro_f1_supported": 0.6047274042413624,
+      "evaluated_targets": 8,
+      "total_targets": 8,
+      "macro_f1_all_targets": 0.6047274042413624,
+      "exact_match_accuracy": 0.4876847290640394,
+      "per_target": {
+        "arms facing inward": {
+          "positive_support": 43,
+          "negative_support": 160,
+          "train_positive_support": 834,
+          "validation_positive_support": 213,
+          "evaluable": true,
+          "precision": 0.972972972972973,
+          "recall": 0.8372093023255814,
+          "f1": 0.9,
+          "reason": null
+        },
+        "arms too wide": {
+          "positive_support": 9,
+          "negative_support": 194,
+          "train_positive_support": 256,
+          "validation_positive_support": 65,
+          "evaluable": true,
+          "precision": 0.29411764705882354,
+          "recall": 0.5555555555555556,
+          "f1": 0.38461538461538464,
+          "reason": null
+        },
+        "butt sinking": {
+          "positive_support": 17,
+          "negative_support": 186,
+          "train_positive_support": 373,
+          "validation_positive_support": 87,
+          "evaluable": true,
+          "precision": 0.3333333333333333,
+          "recall": 0.7647058823529411,
+          "f1": 0.4642857142857143,
+          "reason": null
+        },
+        "head down": {
+          "positive_support": 27,
+          "negative_support": 176,
+          "train_positive_support": 358,
+          "validation_positive_support": 89,
+          "evaluable": true,
+          "precision": 0.71875,
+          "recall": 0.8518518518518519,
+          "f1": 0.7796610169491526,
+          "reason": null
+        },
+        "head up": {
+          "positive_support": 23,
+          "negative_support": 180,
+          "train_positive_support": 346,
+          "validation_positive_support": 95,
+          "evaluable": true,
+          "precision": 0.6666666666666666,
+          "recall": 0.6086956521739131,
+          "f1": 0.6363636363636364,
+          "reason": null
+        },
+        "high hips": {
+          "positive_support": 24,
+          "negative_support": 179,
+          "train_positive_support": 367,
+          "validation_positive_support": 93,
+          "evaluable": true,
+          "precision": 0.5185185185185185,
+          "recall": 0.5833333333333334,
+          "f1": 0.5490196078431373,
+          "reason": null
+        },
+        "legs and hips on the floor": {
+          "positive_support": 24,
+          "negative_support": 179,
+          "train_positive_support": 570,
+          "validation_positive_support": 143,
+          "evaluable": true,
+          "precision": 0.5833333333333334,
+          "recall": 0.5833333333333334,
+          "f1": 0.5833333333333334,
+          "reason": null
+        },
+        "shoulders shrugged up toward the ears": {
+          "positive_support": 15,
+          "negative_support": 188,
+          "train_positive_support": 378,
+          "validation_positive_support": 93,
+          "evaluable": true,
+          "precision": 0.45454545454545453,
+          "recall": 0.6666666666666666,
+          "f1": 0.5405405405405406,
+          "reason": null
+        }
+      },
+      "selected_error_vs_other": {
+        "accuracy": 0.8374384236453202,
+        "precision": 0.8374384236453202,
+        "recall": 1.0,
+        "macro_f1": 0.45576407506702415,
+        "positive_support": 170,
+        "negative_support": 33,
+        "confusion_matrix": [
+          [
+            0,
+            33
+          ],
+          [
+            0,
+            170
+          ]
+        ],
+        "evaluable": true
+      },
+      "validation_selection_score": 0.6459134875349147,
+      "best_epoch": 35,
+      "thresholds": {
+        "arms facing inward": 0.7000000000000002,
+        "arms too wide": 0.9000000000000002,
+        "butt sinking": 0.7000000000000002,
+        "head down": 0.6000000000000002,
+        "head up": 0.8500000000000002,
+        "high hips": 0.8000000000000002,
+        "legs and hips on the floor": 0.7500000000000002,
+        "shoulders shrugged up toward the ears": 0.8000000000000002,
+        "any_selected_error": 0.1
+      }
+    }
+  },
+  "majority_baseline": {
+    "precision_macro_supported": 0.0,
+    "recall_macro_supported": 0.0,
+    "macro_f1_supported": 0.0,
+    "evaluated_targets": 8,
+    "total_targets": 8,
+    "macro_f1_all_targets": 0.0,
+    "exact_match_accuracy": 0.1625615763546798,
+    "per_target": {
+      "arms facing inward": {
+        "positive_support": 43,
+        "negative_support": 160,
+        "train_positive_support": 834,
+        "validation_positive_support": 213,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "arms too wide": {
+        "positive_support": 9,
+        "negative_support": 194,
+        "train_positive_support": 256,
+        "validation_positive_support": 65,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "butt sinking": {
+        "positive_support": 17,
+        "negative_support": 186,
+        "train_positive_support": 373,
+        "validation_positive_support": 87,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "head down": {
+        "positive_support": 27,
+        "negative_support": 176,
+        "train_positive_support": 358,
+        "validation_positive_support": 89,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "head up": {
+        "positive_support": 23,
+        "negative_support": 180,
+        "train_positive_support": 346,
+        "validation_positive_support": 95,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "high hips": {
+        "positive_support": 24,
+        "negative_support": 179,
+        "train_positive_support": 367,
+        "validation_positive_support": 93,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "legs and hips on the floor": {
+        "positive_support": 24,
+        "negative_support": 179,
+        "train_positive_support": 570,
+        "validation_positive_support": 143,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      },
+      "shoulders shrugged up toward the ears": {
+        "positive_support": 15,
+        "negative_support": 188,
+        "train_positive_support": 378,
+        "validation_positive_support": 93,
+        "evaluable": true,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "reason": null
+      }
+    },
+    "selected_error_vs_other": {
+      "accuracy": 0.8374384236453202,
+      "precision": 0.8374384236453202,
+      "recall": 1.0,
+      "macro_f1": 0.45576407506702415,
+      "positive_support": 170,
+      "negative_support": 33,
+      "confusion_matrix": [
+        [
+          0,
+          33
+        ],
+        [
+          0,
+          170
+        ]
+      ],
+      "evaluable": true
+    }
+  },
+  "trainable_targets": {
+    "arms facing inward": true,
+    "arms too wide": true,
+    "butt sinking": true,
+    "head down": true,
+    "head up": true,
+    "high hips": true,
+    "legs and hips on the floor": true,
+    "shoulders shrugged up toward the ears": true,
+    "any_selected_error": true
+  },
+  "split_sizes": {
+    "train": 4064,
+    "validation": 1030,
+    "test": 203
+  },
+  "worker_overlap": 0,
+  "elapsed_seconds": 223.58017206192017,
+  "limitations": [
+    "Eight selected QEVD errors; other annotations include supported variants and timing, not verified normal controls.",
+    "Source clip labels; not frame-level or expert-verified error truth.",
+    "Unlisted selected labels treated as negative (closed-world assumption).",
+    "All models use same source test and group-disjoint validation; no test tuning.",
+    "Invisible joints are masked, but occlusion, camera view and annotation bias remain.",
+    "Selected-error auxiliary negative is not a comprehensive normal class.",
+    "No validated rule baseline for these four tasks; squat proxy comparison remains separate."
+  ],
+  "dataset_sha256": "75a50af5fb878e10a86bfc7a151ab3b940d62f22ebd2442f21f036f0a24cbb1b",
+  "pipeline_version": "multi_v2_109_visibility_masked_6fps"
+}

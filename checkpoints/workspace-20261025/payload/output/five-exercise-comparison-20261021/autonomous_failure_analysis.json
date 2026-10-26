@@ -1,0 +1,157 @@
+{
+  "prospective_result_sha256": "08bc3f7345db34e2036a3172c881cfa247a914736d62ef61722b5678272f2ffb",
+  "posthoc_only": true,
+  "threshold_or_model_modified": false,
+  "records": [
+    {
+      "id": "auto_italo_initial",
+      "frozen_rule": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "score": 70.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 167.2900702208825,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.19280908195532798,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 161.8436639944858,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 3.693567551460518,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      },
+      "item_version_differences": [],
+      "note_ko": "초기 골반·넓적다리 바닥 접촉 초안과 달리 관절 각도 대리값은 부분 등급을 부여했다. 관절 기하만으로 실제 접촉을 확정할 수 없다."
+    },
+    {
+      "id": "auto_italo_later",
+      "frozen_rule": {
+        "version": "geometric-proxy-rules-v4-W-morphology-unvalidated",
+        "criterion_ids": [
+          "trunk_line",
+          "elbow_sagittal_position",
+          "leg_and_body_support",
+          "support_continuity"
+        ],
+        "levels": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "score": 80.0,
+        "evidence": {
+          "trunk_line": {
+            "channel": "right_line_deg",
+            "percentile": 10,
+            "measured": 161.81005736823684,
+            "good_threshold": 168,
+            "partial_threshold": 155,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "elbow_sagittal_position": {
+            "channel": "right_elbow_offset",
+            "percentile": 90,
+            "measured": 0.12539682967212445,
+            "good_threshold": 0.2,
+            "partial_threshold": 0.4,
+            "higher_is_better": false,
+            "tail_only": false
+          },
+          "leg_and_body_support": {
+            "channel": "right_knee_deg",
+            "percentile": 10,
+            "measured": 171.7505736730368,
+            "good_threshold": 165,
+            "partial_threshold": 145,
+            "higher_is_better": true,
+            "tail_only": false
+          },
+          "support_continuity": {
+            "knee_angle_spread_deg": 7.348516205830606,
+            "warning_ko": "관절 변화 대리값이며 실제 하중 지속은 미검증."
+          }
+        },
+        "hold_items": [],
+        "expert_validated": false,
+        "thresholds_validated": false,
+        "limitations_ko": [
+          "모든 수치 경계는 검증 전 공학 초안이다.",
+          "관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.",
+          "등급 null은 0점이나 만점으로 채우지 않는다."
+        ]
+      },
+      "item_version_differences": [
+        {
+          "criterion_id": "trunk_line",
+          "frozen_total_rule_grade": 1,
+          "separate_item_rule_grade": 2,
+          "separate_item_side": "left"
+        }
+      ],
+      "note_ko": "동결 총점판은 공통 오른쪽 몸통 선 161.81도로 1등급을 부여했다. 별도 항목판은 관측률로 왼쪽을 선택해 2등급이었다. 이 차이를 숨기거나 시험 결과를 보고 측면을 바꾸지 않는다."
+    }
+  ],
+  "upper_event_false_positives": [
+    {
+      "id": "dvids_fao947417_background_5430_5520",
+      "held_person": "dvids_947417_background_black_beanie",
+      "target": 0,
+      "probability": 0.2925058788725093,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    },
+    {
+      "id": "upper_qevd_00185879",
+      "held_person": "qevd_2212",
+      "target": 0,
+      "probability": 0.7097274785318873,
+      "inner_selected_threshold": 0.25,
+      "event": true
+    }
+  ],
+  "event_limit_ko": "머리·몸통 회전 및 배경 대조 구간에서 오탐이 남았다. 입력에서 얼굴을 제외했어도 어깨·팔꿈치 투영 변화와 관절 추정 변동은 남는다. 원인 분리는 추가 촬영 대조 실험이 필요하며 현재 단일 원인으로 확정하지 않는다."
+}

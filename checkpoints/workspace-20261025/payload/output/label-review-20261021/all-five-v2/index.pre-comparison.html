@@ -1,0 +1,164 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>5종 추가 라벨링 — QEVD 검토 범위</title><style>body{font:16px sans-serif;max-width:1200px;margin:32px auto;background:#16212a;color:#e8f3f5;line-height:1.7}a{color:#70dfcb}table{border-collapse:collapse;width:100%}td,th{padding:9px;border:1px solid #536d7d}details{padding:12px;border:1px solid #536d7d;margin:10px 0}img{max-width:100%}video{max-width:800px;width:100%}</style><h1>5종 자세 점수 라벨링 — 추가 검토 결과</h1><p><strong>QEVD 관련 영상을 모두 검토한 상태는 아닙니다.</strong> 아래 후보 수는 적합 판정을 통과한 수가 아닙니다. 구도만 본 자료와 실제 항목을 판정한 자료를 구분합니다.</p><h2>QEVD에서 실제로 확인한 범위</h2><table><tr><th>종목</th><th>로컬 후보 영상</th><th>항목 직접 검토 영상</th><th>구도만 확인한 추가 영상</th><th>아직 미검토</th></tr>
+<tr><td>푸시업</td><td>4270</td><td>40</td><td>0</td><td>4230</td></tr>
+<tr><td>스쿼트</td><td>4308</td><td>22</td><td>0</td><td>4286</td></tr>
+<tr><td>기본 팔꿈치 플랭크</td><td>6477</td><td>16</td><td>180</td><td>6281</td></tr>
+<tr><td>맨몸 전경 Y–T–W 레이즈</td><td>2305</td><td>32</td><td>0</td><td>2273</td></tr>
+<tr><td>덤벨 숄더 프레스</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table><p>숄더 프레스는 QEVD가 아닌 보유 다중 시점 데이터셋으로 진행합니다. 후보 영상의 제공자 정상·오류명은 표집·출처 정보이며, 0~100 점수로 자동 변환하지 않습니다.</p><h2>점수 라벨 증가</h2><table><tr><th>종목</th><th>누적 제한 점수 라벨</th><th>이번 추가</th><th>train 분할 후보</th><th>참고용</th><th>참여자</th></tr>
+<tr><td>푸시업</td><td>28</td><td>+0</td><td>17</td><td>0</td><td>18</td></tr>
+<tr><td>스쿼트</td><td>31</td><td>+0</td><td>17</td><td>0</td><td>5</td></tr>
+<tr><td>기본 팔꿈치 플랭크</td><td>5</td><td>+2</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td>맨몸 전경 Y–T–W 레이즈</td><td>18</td><td>+8</td><td>18</td><td>0</td><td>18</td></tr>
+<tr><td>덤벨 숄더 프레스</td><td>12</td><td>+2</td><td>12</td><td>0</td><td>8</td></tr>
+</table><p>이번에는 보유 영상 32개를 36장씩 시간순으로 검토하고, 외부 플랭크 12구간을 확대 24장씩 검토했습니다. 플랭크 새 참여자 60명은 3장씩 구도만 확인했으며 라벨 수에 넣지 않았습니다. 검토는 연속 재생·전 프레임 확인이나 전문가 검증과 구별됩니다.</p><h2>적합성 판정 결과</h2><ul><li>Y–T–W: 새 참여자의 완결 시도·팔 전체·몸통이 확인된 구간은 점수 라벨을 추가했습니다. 시작·복귀 누락, 손 잘림, 역광으로 관측하지 못한 항목은 null입니다.</li><li>숄더 프레스: 새 참여자 2명의 정면 영상 4개를 추가 확인했습니다. 최대 도달에서 손이 잘린 영상은 총점을 보류합니다. 정면 점수는 허리 젖힘까지 포함한 전체 자세 점수가 아닙니다.</li><li>QEVD 푸시업·스쿼트: 새 영상 각 8개에서 판정 가능한 항목을 라벨링했습니다. 정면에서 몸통·하체가 겹치거나 측면이 없어 총점 기준을 충족하지 못한 영상은 총점이 없습니다. 정상·오류명으로 빈 항목을 채우지 않았습니다.</li><li>QEVD 플랭크: 기존 16개 직접 검토와 120명 구도 확인에 더해 새 60명의 세 시점을 확인했습니다. 이번 표본에서는 측면 전신·지지 접점을 함께 확인하지 못했습니다. 전체 6,477개가 부적합하다는 뜻은 아닙니다.</li><li>외부 플랭크: DVIDS 공식 시범 두 영상에서 측면 전신 대표 정상 구간 1개씩을 추가했습니다. 같은 사람·같은 자세 반복 구간은 독립 표본 수로 늘리지 않았습니다. 다른 행사 영상도 확인했으나 구간 짧음·가림·다수 수행자 때문에 총점 자료로 채택하지 않았습니다.</li></ul><h2>아직 필요한 자료</h2><p>현재 플랭크의 새 학습 후보는 정상 점수뿐입니다. 여러 참여자의 정상·중간·오류 점수가 더 있어야 회귀 모델의 판별 능력을 평가할 수 있습니다. Y–T–W와 프레스도 참여자·등급 분포를 더 확보해야 합니다. 총점은 관측한 핵심 항목의 실험 라벨이며 전체 자세·안전·정확도 보증이 아닙니다. 이번 단계에서 모델을 재학습하거나 서비스 모델을 바꾸지는 않았습니다.</p><p>보유 데이터의 적합 후보를 계속 선별하면서, 구도·등급이 부족한 부분을 같은 기준의 외부 영상으로 보충하는 순서가 맞습니다. 외부 데이터를 섞을 때에는 촬영 방향, 운동 변형, 평가 항목, 참여자 분할과 출처 이용 조건을 함께 맞춥니다.</p><p><a href="labels.json">통합 JSON</a> · <a href="labels.jsonl">통합 JSONL</a> · <a href="new_labels.json">이번 추가 라벨</a> · <a href="rubrics.json">한글 항목·배점</a> · <a href="verification.json">검증 결과</a> · <a href="qevd_inventory.json">QEVD 검토 수량</a> · <a href="../all-five-v1/index.html">앞선 라벨 근거</a></p><h2>이번 직접 판정 근거</h2>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00236035 / 총점 보류</summary><p>Y에서 팔을 굽혀 전방으로 올리고 T에서 한 손이 화면 경계를 벗어난다. W는 부분적으로 보이나 선택 구간 끝에 하단 복귀가 보이지 않는다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, None), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 1)]</p><p>보류: T 손끝 잘림과 W 이후 복귀 미확인.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_001.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00236035.mp4#t=0.0,6.0"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00152261 / 제한 점수 초안 72.5</summary><p>Y는 팔을 굽힌 부분 올림, T는 양옆 펼침, W는 부분 굽힘이다. 분명한 전경을 유지하며 하단 복귀한다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 2)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_002.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00152261.mp4#t=0.0,4.166666666666667"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00200390 / 제한 점수 초안 62.5</summary><p>팔을 굽혀 Y로 올리고 T를 펼친 뒤 부분 W와 하단 복귀가 보인다. 몸통 전경은 얕다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 1)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_003.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00200390.mp4#t=0.0,3.566666666666667"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00110896 / 총점 보류</summary><p>Y·W의 부분 팔 모양과 전경 유지는 보인다. T 끝 범위를 추측하지 않는다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, None), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 2)]</p><p>보류: T 최대 도달 시 양손이 화면 밖으로 잘림.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_004.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00110896.mp4#t=0.0,3.566666666666667"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00064848 / 제한 점수 초안 72.5</summary><p>위에서 내려다보는 사선 구도이다. 굽힌 Y, 양옆 T와 부분 W 뒤 하단 복귀가 보인다. 전경 몸통을 유지한다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 2)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_005.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part1/00064848.mp4#t=0.0,2.7"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00139632 / 총점 보류</summary><p>Y와 T 모두 짧게 올리는 부분 범위이며 몸통은 얕게 전경한다. W는 어두운 몸통과 겹쳐 판단을 보류한다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 1), (&#x27;W 단계 팔 굽힘&#x27;, None), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 1)]</p><p>보류: 역광·흐림과 몸통 겹침으로 W 모양을 구별하기 어려움.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_006.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00139632.mp4#t=0.0,2.7"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00221486 / 제한 점수 초안 40</summary><p>몸통이 거의 직립한 변형이다. 굽힌 Y 뒤 T는 펼치지만 W 모양을 만들지 않고 팔을 아래로 내린다. 목표 전경 Y–T–W 기준의 항목 라벨이다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 0), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 0)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_007.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00221486.mp4#t=0.0,2.033333333333333"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00194940 / 제한 점수 초안 62.5</summary><p>굽힌 Y, 양옆 T, 부분 W와 하단 복귀가 보인다. 목표보다 얕은 전경 자세이다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 1)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_008.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00194940.mp4#t=0.0,3.066666666666667"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00101081 / 제한 점수 초안 62.5</summary><p>어두운 영상이나 양팔 윤곽은 구분된다. Y에서 팔이 굽혀지고 T는 펼치며 W는 부분 모양이다. 얕은 전경을 유지하고 복귀한다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 1)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_009.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00101081.mp4#t=0.0,3.6333333333333333"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00137555 / 제한 점수 초안 62.5</summary><p>굽힌 Y, 충분한 양옆 T, 부분 W를 거쳐 하단으로 복귀한다. 몸통 전경이 얕게 보인다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 1)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_010.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00137555.mp4#t=0.0,4.666666666666667"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00202123 / 제한 점수 초안 62.5</summary><p>빠르게 수행하지만 첫 Y·T·W와 복귀가 시간순으로 구분된다. 굽힌 Y, 충분한 T, 부분 W와 얕은 전경으로 판정한다. 빠르다는 제공자 분류 자체는 점수로 바꾸지 않는다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 1)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_011.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00202123.mp4#t=0.0,3.1666666666666665"></video></details>
+<details><summary>맨몸 전경 Y–T–W 레이즈 / qevd_00192842 / 총점 보류</summary><p>굽힌 Y와 양옆 T, 부분 W 및 전경 유지는 보인다. 끝이 W 상태라 전체 시도 총점을 보류한다.</p><p>[(&#x27;Y 단계 팔 도달&#x27;, 1), (&#x27;T 단계 팔 펼침&#x27;, 2), (&#x27;W 단계 팔 굽힘&#x27;, 1), (&#x27;전경 자세와 큰 몸통 흔들림&#x27;, 2)]</p><p>보류: 마지막 W 이후 하단 복귀가 영상 안에 확인되지 않음.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_012.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00192842.mp4#t=0.0,5.966666666666667"></video></details>
+<details><summary>푸시업 / qevd_00266448 / 총점 보류</summary><p>충분한 팔 굽힘과 상단에서 팔을 다시 펴는 움직임이 보인다. 정면의 보이지 않는 몸통·지지를 채우지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, 2), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 정면 구도로 몸통·하체 정렬과 전체 지지를 판정하기 어려움.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_013.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00266448.mp4#t=0.0,4.1"></video></details>
+<details><summary>푸시업 / qevd_00100481 / 총점 보류</summary><p>첫 상단–하단–상단의 팔 굽힘·다시 펴기는 보이나 몸통 전체는 중첩된다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, 2), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 몸통·골반과 하체 접점이 정면에서 가려짐.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_014.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00100481.mp4#t=0.0,1.7"></video></details>
+<details><summary>푸시업 / qevd_00159459 / 총점 보류</summary><p>팔을 충분히 굽힌 뒤 상단으로 돌아오며 펴는 것은 보인다. 제공자 골반 오류명으로 몸통 점수를 대체하지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, 2), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 정면에서 골반 높이와 하체 추가 지지를 확정하기 어려움.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_015.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00159459.mp4#t=0.0,2.1333333333333333"></video></details>
+<details><summary>푸시업 / qevd_00276627 / 총점 보류</summary><p>상단 복귀에서 팔 펴기는 보이지만 최대 굽힘 범위와 몸통·하체 접점은 불명확하다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, None), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 손목이 화면 아래에 잘리고 역광으로 깊이·몸통·지지 판정이 어려움.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_016.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00276627.mp4#t=0.0,1.9333333333333333"></video></details>
+<details><summary>푸시업 / qevd_00127027 / 총점 보류</summary><p>첫 반복에서 팔을 조금 굽히는 얕은 하강과 다시 펴기가 보인다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, 1), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 정면에서 몸통·하체 지지 전체를 관찰할 수 없음.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_017.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00127027.mp4#t=0.0,3.4"></video></details>
+<details><summary>푸시업 / qevd_00126616 / 총점 보류</summary><p>선택 상단에서 충분히 팔을 굽힌 뒤 다시 팔을 펴며 복귀한다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, 2), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 정면 사선에서도 골반·하체가 가려 전체 정렬과 추가 지지를 확정할 수 없음.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_018.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00126616.mp4#t=0.5666666666666667,2.533333333333333"></video></details>
+<details><summary>푸시업 / qevd_00056756 / 총점 보류</summary><p>팔꿈치를 일부만 굽히는 짧은 하강과 상단 펴기가 보인다. 몸통·지지는 판단하지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, 1), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 정면의 몸통·하체 가림.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_019.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part1/00056756.mp4#t=0.0,1.6666666666666667"></video></details>
+<details><summary>푸시업 / qevd_00265061 / 총점 보류</summary><p>팔 굽힘과 상단 펴기는 보인다. 제공자 골반 처짐 문구를 몸통 0점으로 복사하지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;팔 굽힘·하강 범위&#x27;, 2), (&#x27;상단 팔 펴기&#x27;, 2), (&#x27;손·발 지지&#x27;, None)]</p><p>보류: 정면 구도에서 몸통·발 접점의 전체 정렬 확인 불가.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_020.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00265061.mp4#t=0.0,3.2333333333333334"></video></details>
+<details><summary>스쿼트 / qevd_00254232 / 총점 보류</summary><p>정면에서 서기 복귀와 큰 좌우 기울기 없는 몸통을 관찰한다. 무릎·발 앞뒤 접지는 미관측이다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, 2)]</p><p>보류: 깊이와 앞뒤 접지 판정을 위한 동기화 측면이 없음.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_021.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00254232.mp4#t=0.0,3.3666666666666667"></video></details>
+<details><summary>스쿼트 / qevd_00187133 / 총점 보류</summary><p>무릎을 굽혔다가 원래 서기 자세로 돌아오며 큰 좌우 몸통 기울기는 보이지 않는다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, 2)]</p><p>보류: 작게 찍힌 정면 한 시점으로 깊이와 무릎·발 정렬·접지를 확정하기 어려움.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_022.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00187133.mp4#t=0.0,2.7"></video></details>
+<details><summary>스쿼트 / qevd_00058440 / 총점 보류</summary><p>정면에서 서기 복귀·몸통 좌우 유지는 보인다. 좁은 발 간격 그 자체를 오류로 채점하지 않는다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, 2)]</p><p>보류: 측면이 없어 깊이와 앞뒤 접지 판정 보류.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_023.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part1/00058440.mp4#t=0.0,1.7"></video></details>
+<details><summary>스쿼트 / qevd_00265037 / 총점 보류</summary><p>상체와 무릎 일부만 보인다. 서기 복귀와 정면 좌우 몸통 유지를 판정하고 나머지는 보류한다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, 2)]</p><p>보류: 발과 하체 끝이 화면 아래에 잘리며 측면 없음.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_024.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part4/00265037.mp4#t=0.0,2.6333333333333333"></video></details>
+<details><summary>스쿼트 / qevd_00096188 / 총점 보류</summary><p>하체의 굽힘 뒤 무릎을 다시 펴는 복귀만 확실한 항목으로 남긴다. 넓은 발 간격만으로 감점하지 않는다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, None)]</p><p>보류: 상체 잘림과 측면 누락으로 깊이·전체 몸통·앞뒤 접지를 확정하기 어려움.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_025.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00096188.mp4#t=0.0,2.1"></video></details>
+<details><summary>스쿼트 / qevd_00224365 / 총점 보류</summary><p>원래 서기 자세로 돌아오며 정면에서 큰 좌우 몸통 기울기는 보이지 않는다. 골반 전후 움직임은 판정하지 않는다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, 2)]</p><p>보류: 발이 잘리고 측면 영상 없음.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_026.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part3/00224365.mp4#t=0.0,3.6"></video></details>
+<details><summary>스쿼트 / qevd_00089834 / 총점 보류</summary><p>좁은 발 간격에서 반복 후 원래 서기로 복귀하며 큰 좌우 몸통 기울기는 없다. 간격 자체를 오류 정답으로 쓰지 않는다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, 2)]</p><p>보류: 동기화 측면이 없어 깊이·접지 전체 기준을 판정할 수 없음.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_027.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00089834.mp4#t=0.0,2.7"></video></details>
+<details><summary>스쿼트 / qevd_00112237 / 총점 보류</summary><p>첫 반복 후 원래 서기로 복귀하고 정면 좌우 균형은 대체로 유지된다.</p><p>[(&#x27;하강 범위&#x27;, None), (&#x27;다시 일어서기&#x27;, 2), (&#x27;무릎·발 정렬과 접지&#x27;, None), (&#x27;몸통 좌우 균형&#x27;, 2)]</p><p>보류: 정면 영상만 있어 깊이와 앞뒤 접지 기준 미관측.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_028.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/qevd-selected/raw/fit/part2/00112237.mp4#t=0.0,2.6333333333333333"></video></details>
+<details><summary>덤벨 숄더 프레스 / subject_019_shoulder_bad_front / 제한 점수 초안 100</summary><p>첫 프레스에서 양팔을 머리 위로 거의 펴 올린 후 어깨 높이로 함께 내린다. 큰 정면 좌우 흔들림은 보이지 않는다.</p><p>[(&#x27;머리 위 팔 올림&#x27;, 2), (&#x27;어깨 높이 하단 복귀&#x27;, 2), (&#x27;양팔 동시 움직임&#x27;, 2), (&#x27;정면 몸통 좌우 유지&#x27;, 2)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_029.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/shoulder/bad/front/subject_019_shoulder_bad_front.mp4#t=0.0,3.4"></video></details>
+<details><summary>덤벨 숄더 프레스 / subject_019_shoulder_good_front / 제한 점수 초안 100</summary><p>첫 프레스의 양손과 팔 상단 도달이 보이며 함께 하단으로 돌아온다. 정면 몸통을 유지한다.</p><p>[(&#x27;머리 위 팔 올림&#x27;, 2), (&#x27;어깨 높이 하단 복귀&#x27;, 2), (&#x27;양팔 동시 움직임&#x27;, 2), (&#x27;정면 몸통 좌우 유지&#x27;, 2)]</p><p>보류: None</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_030.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/shoulder/good/front/subject_019_shoulder_good_front.mp4#t=0.0,2.7333333333333334"></video></details>
+<details><summary>덤벨 숄더 프레스 / subject_026_shoulder_bad_front / 총점 보류</summary><p>양팔의 복귀·동시 움직임과 정면 몸통은 보인다. 최대 도달은 추측하지 않는다.</p><p>[(&#x27;머리 위 팔 올림&#x27;, None), (&#x27;어깨 높이 하단 복귀&#x27;, 2), (&#x27;양팔 동시 움직임&#x27;, 2), (&#x27;정면 몸통 좌우 유지&#x27;, 2)]</p><p>보류: 최대 도달 시 손·덤벨이 위쪽 화면 경계 밖으로 잘림.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_031.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/shoulder/bad/front/subject_026_shoulder_bad_front.mp4#t=0.0,2.7333333333333334"></video></details>
+<details><summary>덤벨 숄더 프레스 / subject_026_shoulder_good_front / 총점 보류</summary><p>어깨 높이 하단에서 위로 올렸다가 함께 내리는 움직임과 정면 몸통을 관찰한다. 상단 잘림으로 총점을 보류한다.</p><p>[(&#x27;머리 위 팔 올림&#x27;, None), (&#x27;어깨 높이 하단 복귀&#x27;, 2), (&#x27;양팔 동시 움직임&#x27;, 2), (&#x27;정면 몸통 좌우 유지&#x27;, 2)]</p><p>보류: 최대 도달 시 손·팔 끝이 위쪽 화면 밖으로 잘림.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/case_032.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/data/A%20Multi-View%20Raw%20Video%20Dataset%20of%20Seven%20Fitness%20Ex/Dataset%20Exercise-wise/shoulder/good/front/subject_026_shoulder_good_front.mp4#t=0.6666666666666666,4.466666666666667"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_airforce_300_390 / 제한 점수 초안 100</summary><p>전신이 보이는 측면에서 몸통·골반에 큰 꺾임이 없고 팔꿈치가 대체로 어깨 아래에 있다. 무릎을 펴고 발끝 지지를 3초 유지한다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, 2), (&#x27;측면 팔꿈치 전후 위치&#x27;, 2), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, 2), (&#x27;선택 구간의 지지 지속&#x27;, 2)]</p><p>보류: None</p>
+<p><a href="https://www.dvidshub.net/video/825280/forearm-plank">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/airforce_01.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/forearm_plank.mp4#t=10.0,13.0"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_airforce_2310_2400 / 총점 보류</summary><p>목 방향은 달라지지만 현재 네 핵심 항목에 목 세부는 포함하지 않는다. 같은 자세의 반복을 새 독립 표본으로 세지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, 2), (&#x27;측면 팔꿈치 전후 위치&#x27;, 2), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, 2), (&#x27;선택 구간의 지지 지속&#x27;, 2)]</p><p>보류: 같은 수행자·같은 핵심 자세의 반복 근거로 대표 1번과 묶어 표본 수 증가에서 제외.</p>
+<p><a href="https://www.dvidshub.net/video/825280/forearm-plank">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/airforce_02.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/forearm_plank.mp4#t=77.0,80.0"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_airforce_2820_2910 / 총점 보류</summary><p>고개를 내린 구간이다. 현재 몸통·팔꿈치·다리·지지 기준은 유지되며 목 자체는 채점 범위 밖이다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, 2), (&#x27;측면 팔꿈치 전후 위치&#x27;, 2), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, 2), (&#x27;선택 구간의 지지 지속&#x27;, 2)]</p><p>보류: 같은 수행자·핵심 자세의 반복 근거로 대표 제외.</p>
+<p><a href="https://www.dvidshub.net/video/825280/forearm-plank">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/airforce_03.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/forearm_plank.mp4#t=94.0,97.0"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_airforce_5340_5430 / 총점 보류</summary><p>전신 지지와 정렬은 보이나 같은 시범 반복 구간이다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, 2), (&#x27;측면 팔꿈치 전후 위치&#x27;, 2), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, 2), (&#x27;선택 구간의 지지 지속&#x27;, 2)]</p><p>보류: 같은 수행자·핵심 자세의 반복 근거로 대표 제외.</p>
+<p><a href="https://www.dvidshub.net/video/825280/forearm-plank">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/airforce_04.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/forearm_plank.mp4#t=178.0,181.0"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_1558_1648 / 제한 점수 초안 100</summary><p>앞쪽에서 흰 신발을 신고 머리를 묶은 수행자를 평가한다. 측면 전신의 큰 꺾임 없이 어깨 아래 팔꿈치, 편 무릎·발끝 지지를 유지한다. 뒤 수행자는 라벨 대상이 아니다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, 2), (&#x27;측면 팔꿈치 전후 위치&#x27;, 2), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, 2), (&#x27;선택 구간의 지지 지속&#x27;, 2)]</p><p>보류: None</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_01.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=51.98526666666667,54.98826666666667"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_1708_1798 / 총점 보류</summary><p>앞부분은 1번과 같은 정렬 시범이나 뒤에서 발만 확대된다. 누락된 몸통·팔꿈치를 채우지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;측면 팔꿈치 전후 위치&#x27;, None), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, None), (&#x27;선택 구간의 지지 지속&#x27;, None)]</p><p>보류: 전신 장면에서 발 확대 장면으로 편집되어 3초 전체의 동일 항목 관측이 안 됨.</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_02.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=56.99026666666667,59.99326666666667"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_2488_2577 / 총점 보류</summary><p>어깨 아래 팔꿈치는 보이며 몸통·지지 위치가 바뀐다. 화면 밖 무릎·발 지지 상태는 판단하지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;측면 팔꿈치 전후 위치&#x27;, 2), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, None), (&#x27;선택 구간의 지지 지속&#x27;, 1)]</p><p>보류: 다리 접점이 잘리고 골반 위치도 구간 안에 바뀌므로 전신 총점 보류.</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_03.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=83.01626666666667,85.9859"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_2757_2847 / 총점 보류</summary><p>일부 측면 팔꿈치 전후 위치만 확인한다. 편집과 변화를 단일 총점으로 합치지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;측면 팔꿈치 전후 위치&#x27;, 2), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, None), (&#x27;선택 구간의 지지 지속&#x27;, None)]</p><p>보류: 구도 전환·하체 잘림·골반 위치 변화로 단일 전신 구간이 아님.</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_04.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=91.9919,94.9949"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_2937_3027 / 총점 보류</summary><p>측면·정면 장면과 두 사람의 관측 항목을 혼합하지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;측면 팔꿈치 전후 위치&#x27;, None), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, None), (&#x27;선택 구간의 지지 지속&#x27;, None)]</p><p>보류: 측면 확대에서 정면 두 수행자로 구도가 바뀌며 전체 접점이 보이지 않음.</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_05.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=97.9979,101.0009"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_3117_3207 / 총점 보류</summary><p>두 수행자가 앞에서 찍혔고 한쪽 팔꿈치가 옆으로 나와 있다. 측면 기준 점수로 변환하지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;측면 팔꿈치 전후 위치&#x27;, None), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, None), (&#x27;선택 구간의 지지 지속&#x27;, None)]</p><p>보류: 정면 구도에서 전신 정렬·팔꿈치 전후 위치·하체 지지 확인 불가.</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_06.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=104.0039,107.0069"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_3297_3387 / 총점 보류</summary><p>앞쪽 수행자의 장면이나 자막이 겹쳐 핵심 관절 일부가 보이지 않는다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;측면 팔꿈치 전후 위치&#x27;, None), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, None), (&#x27;선택 구간의 지지 지속&#x27;, None)]</p><p>보류: 같은 수행자의 반복 시범이며 큰 자막이 몸통·팔을 가림.</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_07.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=110.0099,113.0129"></video></details>
+<details><summary>기본 팔꿈치 플랭크 / dvids_marine_3477_3566 / 총점 보류</summary><p>운동 자세 라벨 대상이 아니다.</p><p>[(&#x27;몸통·골반 정렬&#x27;, None), (&#x27;측면 팔꿈치 전후 위치&#x27;, None), (&#x27;편 다리·몸통 추가 지지 여부&#x27;, None), (&#x27;선택 구간의 지지 지속&#x27;, None)]</p><p>보류: 운동 수행 장면이 아닌 설명자 얼굴 장면.</p>
+<p><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">원본 출처</a> · <a href="https://www.dvidshub.net/about/copyright">이용 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p>
+<img loading="lazy" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/marine_08.jpg">
+<video controls preload="none" src="file:///home/jayden/SeSACPAI-Mid/output/label-review-20261021/all-five-v2/sources/marine_plank_720.mp4#t=116.0159,118.98553333333334"></video></details>
+<h2>플랭크 구도 확인 자료</h2><p>다음 장면들은 점수 라벨이 아니며, 측면 전신 후보 선별을 위해 본 자료입니다.</p>
+<details><summary>구도 확인 1</summary><img loading="lazy" src="overview_01.jpg"></details>
+<details><summary>구도 확인 2</summary><img loading="lazy" src="overview_02.jpg"></details>
+<details><summary>구도 확인 3</summary><img loading="lazy" src="overview_03.jpg"></details>
+<details><summary>구도 확인 4</summary><img loading="lazy" src="overview_04.jpg"></details>
+<details><summary>구도 확인 5</summary><img loading="lazy" src="overview_05.jpg"></details>
+<h2>외부 출처</h2><p><a href="https://www.dvidshub.net/video/825280/forearm-plank">Forearm Plank — 301st Fighter Wing / Randall Moose</a><br><a href="https://www.dvidshub.net/video/871026/plank-instructional-video">Plank Instructional Video — Marine Corps Base Quantico / Caden Phillips</a><br><a href="https://www.dvidshub.net/about/copyright">DVIDS 이용·비보증·비후원 안내</a></p><p>The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.</p></html>

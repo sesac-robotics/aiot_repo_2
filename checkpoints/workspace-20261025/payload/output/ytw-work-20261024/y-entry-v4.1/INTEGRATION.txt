@@ -1,0 +1,19 @@
+YTW v4.1 독립 경계후보 호출계약 — 미배포
+
+후보: tools/ytw-work/ytw_hold_onset_v4.py, 기반: tools/ytw-work/ytw_ready_fix_v2.py.
+기존공통파일을 import만 하며 서버/모델/카메라를 시작하지 않는다. 두파일은같은독립모듈경로로제공한다.
+phase_source, view, protocol, dwell의 의미는 기존후보와같다. 모델지원은여전히 별도개발bundle을필요로한다.
+자동활성화나라이브factory연결은하지않는다.
+
+push -> event 또는None. 이벤트 순서count는품질·등급승인과다르다.
+Y_boundary_evidence.confirmed=True일때만 auto_phase_windows가 유효한정제창이다.
+확인tick은 실제로안정을확인한tick이며 backdated=False. sample시작과Y창시작이그tick으로맞춰진다.
+coarse_start_tick/coarse_phase_windows는 정제전 원래시계열기준의출처이다.
+confirmed=False이면 auto_phase_windows=None으로보류하고 이유를표시한다.
+그 이벤트를 기존자동창검증기로곧바로넘기거나 수동 phase_windows로변환하지않는다.
+기존 ScoringEngine complete_attempt=False / projection_reviewed=False / phase_windows=None 유지.
+정제시계열에서 AI/Rule 모두같은입력을써야하고 Y/전경/총점 미승인을유지한다.
+새안정확인은운동정상모양이나심각도0/1/2 판정이아니다. 머리/발목을필수로추가하지않는다.
+
+현재 통합권고: 음수창시간관리 수정은검토가능한별도통제. 새경계정제는노출개발후보로보존.
+19/30단계경계/7/10완료경계/음성13/미학습사람0으로공통라이브활성화는여전히보류한다.

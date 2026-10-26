@@ -1,0 +1,902 @@
+<!doctype html><html lang="ko"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5종 운동 · AI / Rule Base 개발 비교</title>
+<style>body{background:#101b24;color:#edf3f6;font:16px/1.65 sans-serif;
+max-width:1180px;margin:auto;padding:28px}a{color:#8dd6ff}section{background:
+#1b2b38;padding:24px;margin:22px 0;border-radius:14px}table{width:100%;min-width:640px;
+border-collapse:collapse}td,th{text-align:left;padding:9px;border-bottom:
+1px solid #425464}video{max-width:100%;width:560px}small{color:#c4cdd5}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}h1{line-height:1.3}
+.notice{border-left:5px solid #ffd17d;padding:16px;background:#302c23}
+.table-scroll{overflow-x:auto}td:first-child{overflow-wrap:anywhere}
+@media(max-width:600px){body{padding:12px}section{padding:16px}}
+</style><h1>5종 운동 · AI / Rule Base 개발 비교</h1><p><a href="unified_status.html">최신 통합 현황</a> · <a href="followup_results.html">추가 자료·재학습 검증</a> · <a href="plank_support_enrichment.html">팔꿈치·지지 지속성 보강</a> · <a href="plank_partial_items.html">부분 영상 항목별 AI·규칙 검증</a> · <a href="plank_improvement_trial.html">최신 플랭크 오류·균형 학습·규칙 실험</a></p>
+<p class="notice">실험 진행 중 · 전문가 정답·독립 최종 시험·운영 성능 아님.<br>
+MediaPipe Heavy는 관절 추출기이며, AI 점수는 별도 ExtraTrees 회귀 모델이
+예측합니다. 규칙 출력은 AI 학습 정답으로 사용하지 않습니다.</p>
+<p>두 방식은 같은 구간·관절 입력과 항목 배점을 사용합니다. 보이지 않는
+항목은 보류합니다. 규칙의 각도·접지 대리값은 검증 전 초안입니다.</p>
+<p><a href="plank_side_progress.html">최신 플랭크 측면·AI 개발 비교</a> · <a href="plank_error_review.html">추가 플랭크 오류·W 시간 집계</a> · <a href="youtube_review.html">YouTube 구간 분리·관절 검토</a> · <a href="plank_static.html">플랭크 정지 정렬 항목 AI/규칙 비교</a> · <a href="aihub_review.html">AI-Hub 자료 검토</a> · <a href="w_analysis.html#item-errors">항목별 오차·상쇄</a> · <a href="w_inspection.html">W 추가 관절·구간 검토</a> · <a href="w_analysis.html">W 원인 분석·오류 자료 보충</a> · <a href="phases.html">Y–T–W 직접 표시·자동 단계 비교</a> · <a href="audit.json">감사 결과</a> · <a href="contracts.json">채점 기준</a>
+ · <a href="comparison.json">비교 원본</a> ·
+<a href="new_screening_decisions.json">추가 QEVD 구도 검토 16개</a></p><section><h2>푸시업</h2><p>학습 분할의 관측 통과 자료 14개 / 10명 · 개발 검증 관측 통과 4개 · 독립 최종 시험 0개</p><p>전체 분할의 라벨·구도·파일 조건 통과 후보 28개 (학습·검증·시험 합계, 관절 관측 필터 적용 전). 모델 상태: 개발 실험 모델 · 검증 미완료</p><p>학습 참여자별 제외 개발 진단 10명 / 14개: AI 평균 절대오차 20.47점 · 학습 평균 기준선 20.69점. 설정 자동 조정·독립 최종 시험에 사용하지 않았습니다.</p><p>동일 표본에서 함께 총점을 낸 비교 자료: 4개. 이 작은 개발 자료로 우열을 확정하지 않습니다.</p><p>AI 평균 절대 오차: 6.52점</p><p>규칙 평균 절대 오차: 18.75점</p><p>학습 평균 점수 기준 오차: 14.11점</p><p>AI 계산 중앙 시간: 11.94ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>규칙 계산 중앙 시간: 0.51ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>개발 검증 라벨 6개 중 AI 평가 4개 / 규칙 평가 4개</p><div class="table-scroll"><table><tr><th>자료</th><th>검토 초안</th><th>AI</th><th>규칙</th><th>AI − 규칙</th></tr><tr><td>subject_002_push_up_good_side</td><td>100.0</td><td>97.2</td><td>70.0</td><td>27.2</td></tr><tr><td>subject_004_push_up_bad_side</td><td>80.0</td><td>81.8</td><td>55.0</td><td>26.8</td></tr><tr><td>subject_012_push_up_good_side</td><td>100.0</td><td>96.2</td><td>100.0</td><td>-3.8</td></tr><tr><td>subject_015_push_up_good_side</td><td>100.0</td><td>82.3</td><td>80.0</td><td>2.3</td></tr></table></div><h3>subject_002_push_up_good_side</h3><video controls preload="metadata" src="heavy/subject_002_push_up_good_side/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;levels&quot;: [
+      2,
+      0,
+      2,
+      2
+    ],
+    &quot;score&quot;: 70.0,
+    &quot;evidence&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;channel&quot;: &quot;left_line_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 171.62711230965243,
+        &quot;good_threshold&quot;: 168,
+        &quot;partial_threshold&quot;: 155,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      },
+      &quot;descent_range&quot;: {
+        &quot;channel&quot;: &quot;left_elbow_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 156.4208420602397,
+        &quot;good_threshold&quot;: 95,
+        &quot;partial_threshold&quot;: 125,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;return_extension&quot;: {
+        &quot;channel&quot;: &quot;left_elbow_deg&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 161.02346157752118,
+        &quot;good_threshold&quot;: 160,
+        &quot;partial_threshold&quot;: 140,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: true
+      },
+      &quot;support&quot;: {
+        &quot;channel&quot;: &quot;left_knee_floor_gap&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 0.43246108365230407,
+        &quot;good_threshold&quot;: 0.15,
+        &quot;partial_threshold&quot;: 0.05,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.4722745280499824,
+    &quot;rule_std_points&quot;: 0.0,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 8,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details><h3>subject_004_push_up_bad_side</h3><video controls preload="metadata" src="heavy/subject_004_push_up_bad_side/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;support&quot;
+    ],
+    &quot;levels&quot;: [
+      1,
+      1,
+      1,
+      2
+    ],
+    &quot;score&quot;: 55.0,
+    &quot;evidence&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;channel&quot;: &quot;left_line_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 163.69493586545386,
+        &quot;good_threshold&quot;: 168,
+        &quot;partial_threshold&quot;: 155,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      },
+      &quot;descent_range&quot;: {
+        &quot;channel&quot;: &quot;left_elbow_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 116.0204844748454,
+        &quot;good_threshold&quot;: 95,
+        &quot;partial_threshold&quot;: 125,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;return_extension&quot;: {
+        &quot;channel&quot;: &quot;left_elbow_deg&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 155.54284614334668,
+        &quot;good_threshold&quot;: 160,
+        &quot;partial_threshold&quot;: 140,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: true
+      },
+      &quot;support&quot;: {
+        &quot;channel&quot;: &quot;left_knee_floor_gap&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 0.2812192623937245,
+        &quot;good_threshold&quot;: 0.15,
+        &quot;partial_threshold&quot;: 0.05,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.3887206387241264,
+    &quot;rule_std_points&quot;: 0.0,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 8,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details></section><section><h2>스쿼트</h2><p>학습 분할의 관측 통과 자료 12개 / 3명 · 개발 검증 관측 통과 6개 · 독립 최종 시험 0개</p><p>전체 분할의 라벨·구도·파일 조건 통과 후보 31개 (학습·검증·시험 합계, 관절 관측 필터 적용 전). 모델 상태: 개발 실험 모델 · 검증 미완료</p><p>학습 참여자별 제외 개발 진단 3명 / 12개: AI 평균 절대오차 15.86점 · 학습 평균 기준선 15.55점. 설정 자동 조정·독립 최종 시험에 사용하지 않았습니다.</p><p>동일 표본에서 함께 총점을 낸 비교 자료: 6개. 이 작은 개발 자료로 우열을 확정하지 않습니다.</p><p>AI 평균 절대 오차: 10.07점</p><p>규칙 평균 절대 오차: 15.00점</p><p>학습 평균 점수 기준 오차: 10.56점</p><p>AI 계산 중앙 시간: 18.59ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>규칙 계산 중앙 시간: 0.84ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>개발 검증 라벨 7개 중 AI 평가 6개 / 규칙 평가 6개</p><div class="table-scroll"><table><tr><th>자료</th><th>검토 초안</th><th>AI</th><th>규칙</th><th>AI − 규칙</th></tr><tr><td>rehab_Mima_2010_2078</td><td>85.0</td><td>73.4</td><td>55.0</td><td>18.4</td></tr><tr><td>rehab_Mima_5503_5564</td><td>85.0</td><td>74.8</td><td>70.0</td><td>4.8</td></tr><tr><td>rehab_Mima_265_337</td><td>85.0</td><td>75.1</td><td>85.0</td><td>-9.9</td></tr><tr><td>rehab_Mima_6174_6241</td><td>85.0</td><td>75.7</td><td>70.0</td><td>5.7</td></tr><tr><td>rehab_Mima_3648_3718</td><td>55.0</td><td>71.8</td><td>85.0</td><td>-13.2</td></tr><tr><td>rehab_Mima_14792_14851</td><td>70.0</td><td>72.6</td><td>70.0</td><td>2.6</td></tr></table></div><h3>rehab_Mima_2010_2078</h3><video controls preload="metadata" src="heavy/rehab_Mima_2010_2078/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;levels&quot;: [
+      1,
+      1,
+      2,
+      0
+    ],
+    &quot;score&quot;: 55.0,
+    &quot;evidence&quot;: {
+      &quot;descent_range&quot;: {
+        &quot;channel&quot;: &quot;right_hip_above_knee&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 0.43193662705482144,
+        &quot;good_threshold&quot;: 0.1,
+        &quot;partial_threshold&quot;: 0.5,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;return_extension&quot;: {
+        &quot;channel&quot;: &quot;right_knee_deg&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 162.82717898748405,
+        &quot;good_threshold&quot;: 165,
+        &quot;partial_threshold&quot;: 145,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: true
+      },
+      &quot;knee_foot&quot;: {
+        &quot;knee_ankle_offsets&quot;: [
+          0.1754349091766563,
+          0.08561171817246523
+        ],
+        &quot;heel_lift_ratio&quot;: 0.09904352024912046,
+        &quot;warning_ko&quot;: &quot;투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증.&quot;
+      },
+      &quot;trunk_balance&quot;: {
+        &quot;tilt_deg&quot;: 16.184407349621186,
+        &quot;thresholds_deg&quot;: [
+          8,
+          15
+        ]
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.2332874071245968,
+    &quot;rule_std_points&quot;: 0.0,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 8,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details><h3>rehab_Mima_5503_5564</h3><video controls preload="metadata" src="heavy/rehab_Mima_5503_5564/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;descent_range&quot;,
+      &quot;return_extension&quot;,
+      &quot;knee_foot&quot;,
+      &quot;trunk_balance&quot;
+    ],
+    &quot;levels&quot;: [
+      0,
+      2,
+      2,
+      2
+    ],
+    &quot;score&quot;: 70.0,
+    &quot;evidence&quot;: {
+      &quot;descent_range&quot;: {
+        &quot;channel&quot;: &quot;left_hip_above_knee&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 0.5523725995975434,
+        &quot;good_threshold&quot;: 0.1,
+        &quot;partial_threshold&quot;: 0.5,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;return_extension&quot;: {
+        &quot;channel&quot;: &quot;left_knee_deg&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 173.12058291254687,
+        &quot;good_threshold&quot;: 165,
+        &quot;partial_threshold&quot;: 145,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: true
+      },
+      &quot;knee_foot&quot;: {
+        &quot;knee_ankle_offsets&quot;: [
+          0.08664667004310483,
+          0.10142819458565233
+        ],
+        &quot;heel_lift_ratio&quot;: 0.12810533807385693,
+        &quot;warning_ko&quot;: &quot;투영 정렬·뒤꿈치 높이 대리값. 실제 접지 미검증.&quot;
+      },
+      &quot;trunk_balance&quot;: {
+        &quot;tilt_deg&quot;: 2.111457503692052,
+        &quot;thresholds_deg&quot;: [
+          8,
+          15
+        ]
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.35824673219775655,
+    &quot;rule_std_points&quot;: 0.0,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 8,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details></section><section><h2>팔꿈치 플랭크</h2><p>학습 분할의 관측 통과 자료 10개 / 8명 · 개발 검증 관측 통과 0개 · 독립 최종 시험 0개</p><p>전체 분할의 라벨·구도·파일 조건 통과 후보 11개 (학습·검증·시험 합계, 관절 관측 필터 적용 전). 모델 상태: 개발 실험 모델 · 검증 미완료</p><p>학습 참여자별 제외 개발 진단 8명 / 10개: AI 평균 절대오차 13.31점 · 학습 평균 기준선 20.00점. 설정 자동 조정·독립 최종 시험에 사용하지 않았습니다.</p><p>동일 표본에서 함께 총점을 낸 비교 자료: 0개. 이 작은 개발 자료로 우열을 확정하지 않습니다.</p><p>AI 평균 절대 오차: 판정 자료 없음</p><p>규칙 평균 절대 오차: 판정 자료 없음</p><p>학습 평균 점수 기준 오차: 판정 자료 없음</p><p>AI 계산 중앙 시간: 자료 없음 (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>규칙 계산 중앙 시간: 자료 없음 (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>개발 검증 라벨 0개 중 AI 평가 0개 / 규칙 평가 0개</p><p>아래는 학습 자료의 규칙 동작 확인 예시입니다. AI는 학습 자료·점수 다양성 부족으로 보류하며, 이 예시를 검증·시험 성능으로 계산하지 않습니다.</p><div class="table-scroll"><table><tr><th>자료</th><th>검토 초안</th><th>AI</th><th>규칙</th><th>AI − 규칙</th></tr><tr><td>dvids_airforce_300_390</td><td>100.0</td><td>보류</td><td>100.0</td><td>보류</td></tr><tr><td>dvids_navy805472_599_689</td><td>100.0</td><td>보류</td><td>70.0</td><td>보류</td></tr><tr><td>dvids_gates640237_side_75_165</td><td>100.0</td><td>보류</td><td>80.0</td><td>보류</td></tr><tr><td>dvids_fao947417_background_5430_5520</td><td>100.0</td><td>보류</td><td>90.0</td><td>보류</td></tr><tr><td>dvids_navy773312_2997_3087</td><td>40.0</td><td>보류</td><td>37.5</td><td>보류</td></tr><tr><td>dvids_navy773312_3656_3746</td><td>100.0</td><td>보류</td><td>100.0</td><td>보류</td></tr><tr><td>youtube_chris_basic</td><td>100.0</td><td>보류</td><td>100.0</td><td>보류</td></tr><tr><td>youtube_jonple_error</td><td>40.0</td><td>보류</td><td>80.0</td><td>보류</td></tr><tr><td>youtube_jonple_normal</td><td>100.0</td><td>보류</td><td>60.0</td><td>보류</td></tr><tr><td>youtube_avid_normal</td><td>100.0</td><td>보류</td><td>80.0</td><td>보류</td></tr></table></div><h3>youtube_jonple_normal</h3><video controls preload="metadata" src="heavy/youtube_jonple_normal/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;elbow_sagittal_position&quot;,
+      &quot;leg_and_body_support&quot;,
+      &quot;support_continuity&quot;
+    ],
+    &quot;levels&quot;: [
+      0,
+      2,
+      2,
+      2
+    ],
+    &quot;score&quot;: 60.0,
+    &quot;evidence&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;channel&quot;: &quot;right_line_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 152.8166718665375,
+        &quot;good_threshold&quot;: 168,
+        &quot;partial_threshold&quot;: 155,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      },
+      &quot;elbow_sagittal_position&quot;: {
+        &quot;channel&quot;: &quot;right_elbow_offset&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 0.04540814200953977,
+        &quot;good_threshold&quot;: 0.2,
+        &quot;partial_threshold&quot;: 0.4,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;leg_and_body_support&quot;: {
+        &quot;channel&quot;: &quot;right_knee_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 174.66161877543294,
+        &quot;good_threshold&quot;: 165,
+        &quot;partial_threshold&quot;: 145,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      },
+      &quot;support_continuity&quot;: {
+        &quot;knee_angle_spread_deg&quot;: 7.367744760851707,
+        &quot;warning_ko&quot;: &quot;관절 변화 대리값이며 실제 하중 지속은 미검증.&quot;
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: null
+}</pre></details><h3>youtube_avid_normal</h3><video controls preload="metadata" src="heavy/youtube_avid_normal/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;trunk_line&quot;,
+      &quot;elbow_sagittal_position&quot;,
+      &quot;leg_and_body_support&quot;,
+      &quot;support_continuity&quot;
+    ],
+    &quot;levels&quot;: [
+      1,
+      2,
+      2,
+      2
+    ],
+    &quot;score&quot;: 80.0,
+    &quot;evidence&quot;: {
+      &quot;trunk_line&quot;: {
+        &quot;channel&quot;: &quot;right_line_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 165.45492168928496,
+        &quot;good_threshold&quot;: 168,
+        &quot;partial_threshold&quot;: 155,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      },
+      &quot;elbow_sagittal_position&quot;: {
+        &quot;channel&quot;: &quot;right_elbow_offset&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 0.09582197916519929,
+        &quot;good_threshold&quot;: 0.2,
+        &quot;partial_threshold&quot;: 0.4,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;leg_and_body_support&quot;: {
+        &quot;channel&quot;: &quot;right_knee_deg&quot;,
+        &quot;percentile&quot;: 10,
+        &quot;measured&quot;: 165.20981533571708,
+        &quot;good_threshold&quot;: 165,
+        &quot;partial_threshold&quot;: 145,
+        &quot;higher_is_better&quot;: true,
+        &quot;tail_only&quot;: false
+      },
+      &quot;support_continuity&quot;: {
+        &quot;knee_angle_spread_deg&quot;: 5.42583464605039,
+        &quot;warning_ko&quot;: &quot;관절 변화 대리값이며 실제 하중 지속은 미검증.&quot;
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: null
+}</pre></details></section><section><h2>전경 Y–T–W</h2><p>학습 분할의 관측 통과 자료 9개 / 9명 · 개발 검증 관측 통과 3개 · 독립 최종 시험 0개</p><p>전체 분할의 라벨·구도·파일 조건 통과 후보 14개 (학습·검증·시험 합계, 관절 관측 필터 적용 전). 모델 상태: 개발 실험 모델 · 검증 미완료</p><p>학습 참여자별 제외 개발 진단 9명 / 9개: AI 평균 절대오차 10.42점 · 학습 평균 기준선 11.11점. 설정 자동 조정·독립 최종 시험에 사용하지 않았습니다.</p><p>동일 표본에서 함께 총점을 낸 비교 자료: 0개. 이 작은 개발 자료로 우열을 확정하지 않습니다.</p><p>AI 평균 절대 오차: 판정 자료 없음</p><p>규칙 평균 절대 오차: 판정 자료 없음</p><p>학습 평균 점수 기준 오차: 판정 자료 없음</p><p>AI 계산 중앙 시간: 12.50ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>규칙 계산 중앙 시간: 1.15ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>개발 검증 라벨 3개 중 AI 평가 3개 / 규칙 평가 0개</p><h3>관측 가능한 항목별 비교</h3><p><a href="ytw_w_failure_cases.json">현재 W 불일치</a> · <a href="snapshots/pre_w_contract_fix/ytw_w_failure_cases.json">이전 실패 보존본</a> · W는 화면 90도 조건 대신 굽힘·손 위치·팔꿈치 상승·좌우 모양 개발 규칙으로 항목 등급을 계산합니다. 전문가 검증 전이며 Y·전경 미관측을 채우지 않아 총점은 보류합니다. · 단계 식별 성공을 자세 등급 검증 성공으로 간주하지 않습니다.</p><p>항목 등급 오차 단위는 0~2등급입니다. 보류 항목을 제외한 값을 100점으로 환산하지 않습니다.</p><div class="table-scroll"><table><tr><th>항목</th><th>함께 평가한 수</th><th>AI 등급 오차</th><th>규칙 등급 오차</th></tr><tr><td>y_reach</td><td>0</td><td>보류</td><td>보류</td></tr><tr><td>t_reach</td><td>3</td><td>0.00</td><td>0.00</td></tr><tr><td>w_shape</td><td>3</td><td>0.59</td><td>0.67</td></tr><tr><td>hinge_and_trunk_hold</td><td>0</td><td>보류</td><td>보류</td></tr></table></div><div class="table-scroll"><table><tr><th>자료</th><th>검토 초안</th><th>AI</th><th>규칙</th><th>AI − 규칙</th></tr><tr><td>qevd_00196196</td><td>85.0</td><td>74.7</td><td>보류</td><td>보류</td></tr><tr><td>qevd_00265931</td><td>75.0</td><td>67.0</td><td>보류</td><td>보류</td></tr><tr><td>qevd_00265212</td><td>65.0</td><td>69.7</td><td>보류</td><td>보류</td></tr></table></div><h3>qevd_00196196</h3><video controls preload="metadata" src="heavy/qevd_00196196/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;y_reach&quot;,
+      &quot;t_reach&quot;,
+      &quot;w_shape&quot;,
+      &quot;hinge_and_trunk_hold&quot;
+    ],
+    &quot;levels&quot;: [
+      null,
+      2,
+      1,
+      null
+    ],
+    &quot;score&quot;: null,
+    &quot;evidence&quot;: {
+      &quot;phase_detection&quot;: {
+        &quot;version&quot;: &quot;ytw-width-hysteresis-dwell-attempts-v3&quot;,
+        &quot;phases&quot;: {
+          &quot;Y_attempt&quot;: {
+            &quot;start_index&quot;: 2,
+            &quot;end_index&quot;: 6,
+            &quot;anchor_index&quot;: 4,
+            &quot;samples&quot;: 5,
+            &quot;median_lateral_span&quot;: 0.9641288592796542
+          },
+          &quot;T_attempt&quot;: {
+            &quot;start_index&quot;: 7,
+            &quot;end_index&quot;: 17,
+            &quot;anchor_index&quot;: 12,
+            &quot;samples&quot;: 11,
+            &quot;median_lateral_span&quot;: 1.675661572307047
+          },
+          &quot;W_attempt&quot;: {
+            &quot;start_index&quot;: 18,
+            &quot;end_index&quot;: 22,
+            &quot;anchor_index&quot;: 20,
+            &quot;samples&quot;: 5,
+            &quot;median_lateral_span&quot;: 0.8432850913472402
+          }
+        },
+        &quot;complete_attempt_sequence&quot;: true,
+        &quot;canonical_Y_depth_confirmed&quot;: false,
+        &quot;sample_hz&quot;: 10,
+        &quot;hold_reason&quot;: null,
+        &quot;lateral_span_p90&quot;: 1.724168589499665,
+        &quot;thresholds&quot;: {
+          &quot;active_hand_height_torso_ratio&quot;: 0.6,
+          &quot;wide_enter_relative_span&quot;: 0.85,
+          &quot;wide_exit_relative_span&quot;: 0.7,
+          &quot;min_samples&quot;: 3
+        }
+      },
+      &quot;t_reach&quot;: {
+        &quot;measured_median_deg&quot;: 94.37560846412966,
+        &quot;target_deg&quot;: 90,
+        &quot;good_error_deg&quot;: 15,
+        &quot;partial_error_deg&quot;: 30,
+        &quot;window&quot;: {
+          &quot;start_index&quot;: 7,
+          &quot;end_index&quot;: 17,
+          &quot;anchor_index&quot;: 12,
+          &quot;samples&quot;: 11,
+          &quot;median_lateral_span&quot;: 1.675661572307047
+        }
+      },
+      &quot;w_shape&quot;: {
+        &quot;morphology&quot;: {
+          &quot;version&quot;: &quot;W-visible-morphology-v2-development&quot;,
+          &quot;grade&quot;: 1,
+          &quot;policy&quot;: {
+            &quot;observed_fraction&quot;: 0.8,
+            &quot;minimum_samples&quot;: 3,
+            &quot;bend_good_deg&quot;: 20.0,
+            &quot;bend_partial_deg&quot;: 8.0,
+            &quot;hand_good_torso_ratio&quot;: 0.05,
+            &quot;hand_partial_torso_ratio&quot;: -0.05,
+            &quot;symmetry_good_deg&quot;: 35.0,
+            &quot;elbow_up_good_arm_ratio&quot;: 0.25,
+            &quot;elbow_up_partial_arm_ratio&quot;: 0.5
+          },
+          &quot;arms&quot;: {
+            &quot;left&quot;: {
+              &quot;observed_fraction&quot;: 1.0,
+              &quot;projected_bend_deg&quot;: 26.153439387784942,
+              &quot;hand_above_elbow_torso_ratio&quot;: 0.0005812985048218383,
+              &quot;elbow_up_upper_arm_ratio&quot;: -0.3298273732336488,
+              &quot;elbow_position_grade&quot;: 2,
+              &quot;bend_grade&quot;: 2,
+              &quot;hand_grade&quot;: 1,
+              &quot;grade&quot;: 1
+            },
+            &quot;right&quot;: {
+              &quot;observed_fraction&quot;: 1.0,
+              &quot;projected_bend_deg&quot;: 34.203945586653845,
+              &quot;hand_above_elbow_torso_ratio&quot;: 0.0758042082205132,
+              &quot;elbow_up_upper_arm_ratio&quot;: -0.24746525391828858,
+              &quot;elbow_position_grade&quot;: 2,
+              &quot;bend_grade&quot;: 2,
+              &quot;hand_grade&quot;: 2,
+              &quot;grade&quot;: 2
+            }
+          },
+          &quot;independent_validated&quot;: false,
+          &quot;scope&quot;: &quot;visible_projected_W_shape_only&quot;,
+          &quot;hold_reason&quot;: null,
+          &quot;bilateral_bend_difference_deg&quot;: 8.050506198868902,
+          &quot;bilateral_shape_grade&quot;: 2
+        },
+        &quot;window&quot;: {
+          &quot;start_index&quot;: 18,
+          &quot;end_index&quot;: 22,
+          &quot;anchor_index&quot;: 20,
+          &quot;samples&quot;: 5,
+          &quot;median_lateral_span&quot;: 0.8432850913472402
+        },
+        &quot;retired_90_degree_proxy&quot;: {
+          &quot;measured_median_deg&quot;: 151.50902272711036,
+          &quot;target_deg&quot;: 90,
+          &quot;good_error_deg&quot;: 20,
+          &quot;partial_error_deg&quot;: 40,
+          &quot;window&quot;: {
+            &quot;start_index&quot;: 18,
+            &quot;end_index&quot;: 22,
+            &quot;anchor_index&quot;: 20,
+            &quot;samples&quot;: 5,
+            &quot;median_lateral_span&quot;: 0.8432850913472402
+          }
+        },
+        &quot;scope_ko&quot;: &quot;라벨에 명시한 화면상 양팔 굽힘·손 위쪽 위치·양팔 모양의 개발 규칙. 실제 3D 외회전·견갑 기능을 판정하지 않음.&quot;
+      },
+      &quot;y_reach&quot;: {
+        &quot;hold_reason_ko&quot;: &quot;정면 시도 구간은 식별해도 Y 전방 도달·펴짐을 확정할 수 없음.&quot;
+      },
+      &quot;hinge_and_trunk_hold&quot;: {
+        &quot;hold_reason_ko&quot;: &quot;정면 투영만으로 전경 깊이 규칙을 검증하지 못함.&quot;
+      }
+    },
+    &quot;hold_items&quot;: [
+      &quot;y_reach&quot;,
+      &quot;hinge_and_trunk_hold&quot;
+    ],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.22660406323364773,
+    &quot;rule_std_points&quot;: null,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 0,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details><h3>qevd_00265931</h3><video controls preload="metadata" src="heavy/qevd_00265931/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;y_reach&quot;,
+      &quot;t_reach&quot;,
+      &quot;w_shape&quot;,
+      &quot;hinge_and_trunk_hold&quot;
+    ],
+    &quot;levels&quot;: [
+      null,
+      2,
+      1,
+      null
+    ],
+    &quot;score&quot;: null,
+    &quot;evidence&quot;: {
+      &quot;phase_detection&quot;: {
+        &quot;version&quot;: &quot;ytw-width-hysteresis-dwell-attempts-v3&quot;,
+        &quot;phases&quot;: {
+          &quot;Y_attempt&quot;: {
+            &quot;start_index&quot;: 10,
+            &quot;end_index&quot;: 15,
+            &quot;anchor_index&quot;: 12,
+            &quot;samples&quot;: 6,
+            &quot;median_lateral_span&quot;: 1.1897521474406263
+          },
+          &quot;T_attempt&quot;: {
+            &quot;start_index&quot;: 16,
+            &quot;end_index&quot;: 31,
+            &quot;anchor_index&quot;: 23,
+            &quot;samples&quot;: 16,
+            &quot;median_lateral_span&quot;: 1.7922275542875998
+          },
+          &quot;W_attempt&quot;: {
+            &quot;start_index&quot;: 32,
+            &quot;end_index&quot;: 37,
+            &quot;anchor_index&quot;: 34,
+            &quot;samples&quot;: 6,
+            &quot;median_lateral_span&quot;: 1.0440064933494324
+          }
+        },
+        &quot;complete_attempt_sequence&quot;: true,
+        &quot;canonical_Y_depth_confirmed&quot;: false,
+        &quot;sample_hz&quot;: 10,
+        &quot;hold_reason&quot;: null,
+        &quot;lateral_span_p90&quot;: 1.9784748852582141,
+        &quot;thresholds&quot;: {
+          &quot;active_hand_height_torso_ratio&quot;: 0.6,
+          &quot;wide_enter_relative_span&quot;: 0.85,
+          &quot;wide_exit_relative_span&quot;: 0.7,
+          &quot;min_samples&quot;: 3
+        }
+      },
+      &quot;t_reach&quot;: {
+        &quot;measured_median_deg&quot;: 85.55146948377339,
+        &quot;target_deg&quot;: 90,
+        &quot;good_error_deg&quot;: 15,
+        &quot;partial_error_deg&quot;: 30,
+        &quot;window&quot;: {
+          &quot;start_index&quot;: 16,
+          &quot;end_index&quot;: 31,
+          &quot;anchor_index&quot;: 23,
+          &quot;samples&quot;: 16,
+          &quot;median_lateral_span&quot;: 1.7922275542875998
+        }
+      },
+      &quot;w_shape&quot;: {
+        &quot;morphology&quot;: {
+          &quot;version&quot;: &quot;W-visible-morphology-v2-development&quot;,
+          &quot;grade&quot;: 1,
+          &quot;policy&quot;: {
+            &quot;observed_fraction&quot;: 0.8,
+            &quot;minimum_samples&quot;: 3,
+            &quot;bend_good_deg&quot;: 20.0,
+            &quot;bend_partial_deg&quot;: 8.0,
+            &quot;hand_good_torso_ratio&quot;: 0.05,
+            &quot;hand_partial_torso_ratio&quot;: -0.05,
+            &quot;symmetry_good_deg&quot;: 35.0,
+            &quot;elbow_up_good_arm_ratio&quot;: 0.25,
+            &quot;elbow_up_partial_arm_ratio&quot;: 0.5
+          },
+          &quot;arms&quot;: {
+            &quot;left&quot;: {
+              &quot;observed_fraction&quot;: 1.0,
+              &quot;projected_bend_deg&quot;: 33.06089840797591,
+              &quot;hand_above_elbow_torso_ratio&quot;: 0.027042360590423947,
+              &quot;elbow_up_upper_arm_ratio&quot;: -0.4832340181036593,
+              &quot;elbow_position_grade&quot;: 2,
+              &quot;bend_grade&quot;: 2,
+              &quot;hand_grade&quot;: 1,
+              &quot;grade&quot;: 1
+            },
+            &quot;right&quot;: {
+              &quot;observed_fraction&quot;: 1.0,
+              &quot;projected_bend_deg&quot;: 29.18259931379029,
+              &quot;hand_above_elbow_torso_ratio&quot;: 0.11187262919619576,
+              &quot;elbow_up_upper_arm_ratio&quot;: -0.1606856775944554,
+              &quot;elbow_position_grade&quot;: 2,
+              &quot;bend_grade&quot;: 2,
+              &quot;hand_grade&quot;: 2,
+              &quot;grade&quot;: 2
+            }
+          },
+          &quot;independent_validated&quot;: false,
+          &quot;scope&quot;: &quot;visible_projected_W_shape_only&quot;,
+          &quot;hold_reason&quot;: null,
+          &quot;bilateral_bend_difference_deg&quot;: 3.8782990941856212,
+          &quot;bilateral_shape_grade&quot;: 2
+        },
+        &quot;window&quot;: {
+          &quot;start_index&quot;: 32,
+          &quot;end_index&quot;: 37,
+          &quot;anchor_index&quot;: 34,
+          &quot;samples&quot;: 6,
+          &quot;median_lateral_span&quot;: 1.0440064933494324
+        },
+        &quot;retired_90_degree_proxy&quot;: {
+          &quot;measured_median_deg&quot;: 147.87322839785995,
+          &quot;target_deg&quot;: 90,
+          &quot;good_error_deg&quot;: 20,
+          &quot;partial_error_deg&quot;: 40,
+          &quot;window&quot;: {
+            &quot;start_index&quot;: 32,
+            &quot;end_index&quot;: 37,
+            &quot;anchor_index&quot;: 34,
+            &quot;samples&quot;: 6,
+            &quot;median_lateral_span&quot;: 1.0440064933494324
+          }
+        },
+        &quot;scope_ko&quot;: &quot;라벨에 명시한 화면상 양팔 굽힘·손 위쪽 위치·양팔 모양의 개발 규칙. 실제 3D 외회전·견갑 기능을 판정하지 않음.&quot;
+      },
+      &quot;y_reach&quot;: {
+        &quot;hold_reason_ko&quot;: &quot;정면 시도 구간은 식별해도 Y 전방 도달·펴짐을 확정할 수 없음.&quot;
+      },
+      &quot;hinge_and_trunk_hold&quot;: {
+        &quot;hold_reason_ko&quot;: &quot;정면 투영만으로 전경 깊이 규칙을 검증하지 못함.&quot;
+      }
+    },
+    &quot;hold_items&quot;: [
+      &quot;y_reach&quot;,
+      &quot;hinge_and_trunk_hold&quot;
+    ],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.6945232240708756,
+    &quot;rule_std_points&quot;: null,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 0,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details></section><section><h2>덤벨 숄더 프레스</h2><p>학습 분할의 관측 통과 자료 8개 / 6명 · 개발 검증 관측 통과 4개 · 독립 최종 시험 0개</p><p>전체 분할의 라벨·구도·파일 조건 통과 후보 18개 (학습·검증·시험 합계, 관절 관측 필터 적용 전). 모델 상태: 개발 실험 모델 · 검증 미완료</p><p>학습 참여자별 제외 개발 진단 6명 / 8개: AI 평균 절대오차 8.36점 · 학습 평균 기준선 10.48점. 설정 자동 조정·독립 최종 시험에 사용하지 않았습니다.</p><p>동일 표본에서 함께 총점을 낸 비교 자료: 3개. 이 작은 개발 자료로 우열을 확정하지 않습니다.</p><p>AI 평균 절대 오차: 12.71점</p><p>규칙 평균 절대 오차: 17.50점</p><p>학습 평균 점수 기준 오차: 12.50점</p><p>AI 계산 중앙 시간: 12.67ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>규칙 계산 중앙 시간: 0.54ms (특징 계산 포함, 영상 읽기·Heavy 추출 제외; 11회 중앙값)</p><p>개발 검증 라벨 5개 중 AI 평가 4개 / 규칙 평가 3개</p><div class="table-scroll"><table><tr><th>자료</th><th>검토 초안</th><th>AI</th><th>규칙</th><th>AI − 규칙</th></tr><tr><td>subject_002_shoulder_bad_front</td><td>85.0</td><td>98.9</td><td>70.0</td><td>28.9</td></tr><tr><td>subject_017_shoulder_good_front</td><td>100.0</td><td>99.2</td><td>75.0</td><td>24.2</td></tr><tr><td>subject_015_shoulder_good_front</td><td>100.0</td><td>97.7</td><td>보류</td><td>보류</td></tr><tr><td>subject_004_shoulder_good_front</td><td>72.5</td><td>95.9</td><td>85.0</td><td>10.9</td></tr></table></div><h3>subject_002_shoulder_bad_front</h3><video controls preload="metadata" src="heavy/subject_002_shoulder_bad_front/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;levels&quot;: [
+      0,
+      2,
+      2,
+      2
+    ],
+    &quot;score&quot;: 70.0,
+    &quot;evidence&quot;: {
+      &quot;bilateral_timing&quot;: {
+        &quot;channel&quot;: &quot;bilateral_wrist_height_gap&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 0.14953449648211034,
+        &quot;good_threshold&quot;: 0.15,
+        &quot;partial_threshold&quot;: 0.35,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;frontal_trunk_hold&quot;: {
+        &quot;channel&quot;: &quot;frontal_tilt_deg&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 1.7530740750051814,
+        &quot;good_threshold&quot;: 8,
+        &quot;partial_threshold&quot;: 15,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;overhead_reach&quot;: {
+        &quot;left_right_proxy_grades&quot;: [
+          0,
+          1
+        ],
+        &quot;thresholds_deg&quot;: [
+          150,
+          125
+        ]
+      },
+      &quot;lower_return&quot;: {
+        &quot;left_right_proxy_grades&quot;: [
+          2,
+          2
+        ],
+        &quot;thresholds_deg&quot;: [
+          110,
+          140
+        ]
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.051674830294230284,
+    &quot;rule_std_points&quot;: 6.25,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 8,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details><h3>subject_017_shoulder_good_front</h3><video controls preload="metadata" src="heavy/subject_017_shoulder_good_front/overlay.mp4"></video><details><summary>규칙 측정값·경계·보류 근거</summary><pre>{
+  &quot;rule&quot;: {
+    &quot;version&quot;: &quot;geometric-proxy-rules-v4-W-morphology-unvalidated&quot;,
+    &quot;criterion_ids&quot;: [
+      &quot;overhead_reach&quot;,
+      &quot;lower_return&quot;,
+      &quot;bilateral_timing&quot;,
+      &quot;frontal_trunk_hold&quot;
+    ],
+    &quot;levels&quot;: [
+      2,
+      0,
+      2,
+      2
+    ],
+    &quot;score&quot;: 75.0,
+    &quot;evidence&quot;: {
+      &quot;bilateral_timing&quot;: {
+        &quot;channel&quot;: &quot;bilateral_wrist_height_gap&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 0.11751800267774914,
+        &quot;good_threshold&quot;: 0.15,
+        &quot;partial_threshold&quot;: 0.35,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;frontal_trunk_hold&quot;: {
+        &quot;channel&quot;: &quot;frontal_tilt_deg&quot;,
+        &quot;percentile&quot;: 90,
+        &quot;measured&quot;: 1.46429305705775,
+        &quot;good_threshold&quot;: 8,
+        &quot;partial_threshold&quot;: 15,
+        &quot;higher_is_better&quot;: false,
+        &quot;tail_only&quot;: false
+      },
+      &quot;overhead_reach&quot;: {
+        &quot;left_right_proxy_grades&quot;: [
+          2,
+          2
+        ],
+        &quot;thresholds_deg&quot;: [
+          150,
+          125
+        ]
+      },
+      &quot;lower_return&quot;: {
+        &quot;left_right_proxy_grades&quot;: [
+          0,
+          0
+        ],
+        &quot;thresholds_deg&quot;: [
+          110,
+          140
+        ]
+      }
+    },
+    &quot;hold_items&quot;: [],
+    &quot;expert_validated&quot;: false,
+    &quot;thresholds_validated&quot;: false,
+    &quot;limitations_ko&quot;: [
+      &quot;모든 수치 경계는 검증 전 공학 초안이다.&quot;,
+      &quot;관절 기하의 대리값으로 실제 접지·하중을 확정하지 않는다.&quot;,
+      &quot;등급 null은 0점이나 만점으로 채우지 않는다.&quot;
+    ]
+  },
+  &quot;noise_sensitivity&quot;: {
+    &quot;protocol&quot;: &quot;8_trials_Gaussian_1_pixel_std_observed_coordinates_only&quot;,
+    &quot;ai_std_points&quot;: 0.11048543456039805,
+    &quot;rule_std_points&quot;: 0.0,
+    &quot;ai_assessed&quot;: 8,
+    &quot;rule_assessed&quot;: 8,
+    &quot;real_recapture_consistency_measured&quot;: false
+  }
+}</pre></details></section><section><h2>추가 라벨과 남은 작업</h2>
+<p>QEVD 새 플랭크 후보 16개는 다섯 시점 구도만 직접 검토했으며 측면
+전신 관측 부족으로 총점을 만들지 않았습니다. 외부 플랭크 3명에서 각각 3초 구간의
+24장 시간순 표본을 검토해 실험 라벨 3개를 추가했습니다. 정상 예시 중심이며
+오류 사례·참여자·별도 검증·최종 시험은 계속 보충해야 합니다.</p>
+<p>새 참여자 Y–T–W 개발 검증 4개를 추가 직접 표본 검토해 총점 초안
+3개와 총점 보류·부분 항목 라벨 1개를 기록했습니다. 기존 시험 분할을
+새 독립 시험으로 재사용하지 않았습니다.</p>
+<p><a href="https://www.dvidshub.net/video/805472/question-day-proper-form-plank">
+외부 영상 출처: Quentin Melson / Chief of Naval Personnel</a> ·
+<a href="https://www.dvidshub.net/about/copyright">DVIDS 이용 조건</a></p>
+<p><a href="https://www.dvidshub.net/video/840093/acft-prep-plank">추가 외부 영상: William China·Bertha Smith / U.S. Army Central</a></p>
+<p><a href="https://www.dvidshub.net/video/640237/plank">추가 측면 영상: Matthew Holfinger / U.S. Marine Corps Training and Education Command</a> · 같은 수행자의 합성 패널은 하나의 시범으로 처리했습니다.</p>
+<p>숄더 프레스는 개발 검증 10개·학습 후보 6개를 각각 36장 시간순 표본으로
+검토했습니다. 앉은 변형·상단 잘림은 총점을 보류했습니다.
+QEVD 플랭크 자동 구도 선별 137개는 직접 검토·점수 라벨 수에 포함하지 않습니다.</p>
+<p>추가 육군 플랭크는 직접 검토 라벨은 있으나 Heavy 오른쪽 무릎 관측률이 77.4%로 공통 80% 기준에 못 미쳐 학습 입력을 보류했습니다.</p>
+<p><a href="observation_failure_details.json">관절별 입력 보류 자동 진단</a> · <a href="cache_parity.json">추출 변경 회귀 검사</a></p>
+<p><a href="external_source_screening.json">외부 후보·이용 조건·중복·보류 기록</a> ·
+<a href="verification.json">계산·파일 연결 검사</a></p>
+<small>The appearance of U.S. Department of War (DoW) visual information
+does not imply or constitute DoW endorsement.</small></section></html>

@@ -1,0 +1,107 @@
+{
+  "updated_at": "2026-10-21T18:43:17.862565+09:00",
+  "new_sources_screened": 4,
+  "new_source_ids": [
+    "emTPdfFbKC0",
+    "1b85PipF9Vs",
+    "HLopT0cN8j0",
+    "WEIcNQqcZqY"
+  ],
+  "screening_dispositions": {
+    "emTPdfFbKC0": "table-supported knee/prone and straight-arm variants; not basic elbow plank full labels",
+    "1b85PipF9Vs": "top oblique raised-hip segment; no complete full score; same channel retained as one conservative train identity group",
+    "HLopT0cN8j0": "one 3s collapsed-body error and one 3s normal; same person/source train",
+    "WEIcNQqcZqY": "one 3s side normal; fixed crop excludes wall printed person"
+  },
+  "new_full_score_drafts": 3,
+  "new_error_drafts": 1,
+  "labels_are_nonexpert_AI_direct_drafts": true,
+  "rule_used_as_label": false,
+  "source_pixel_checks": 9,
+  "all_frames_pixel_checked": false,
+  "plank_train_records": 10,
+  "plank_train_people": 8,
+  "train_score_distribution": {
+    "100.0": 8,
+    "40.0": 2
+  },
+  "plank_error_source_people": 2,
+  "plank_model_status": "unvalidated_development_model",
+  "plank_model_path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-comparison-20261021/plank_experimental.joblib",
+  "plank_model_sha256": "c0bf7e753187d31874fe631d9145e6a553349cbeb52b26cdecf25e8cf2ef734a",
+  "independent_validation_split_records": 0,
+  "independent_final_test_count": 0,
+  "expert_labels": 0,
+  "participant_out_development_comparison": {
+    "all": {
+      "samples": 10,
+      "ai_MAE": 13.3125,
+      "rule_MAE": 16.25
+    },
+    "normal_draft": {
+      "samples": 8,
+      "ai_MAE": 5.21484375,
+      "rule_MAE": 15.0
+    },
+    "error_draft": {
+      "samples": 2,
+      "ai_MAE": 45.703125,
+      "rule_MAE": 21.25
+    },
+    "normal_error_equal_weight": {
+      "ai_MAE": 25.458984375,
+      "rule_MAE": 18.125
+    }
+  },
+  "common_rule_modified": false,
+  "extractor_modified": false,
+  "context_trial": "plank_context_trial.json",
+  "alignment_diagnostic": "plank_alignment_diagnostic.json",
+  "label_reinspection": "plank_pannell_reinspection.json",
+  "web": "plank_side_progress.html",
+  "all_five_completed": false,
+  "checks": {
+    "unit_tests_passed": 51,
+    "black_files": 119,
+    "compileall_passed": true,
+    "structural_audit_passed": true,
+    "overlay_thumbnails_directly_viewed": 3,
+    "local_browser_visual_check": false,
+    "html_links": {
+      "index.html": {
+        "references": 33,
+        "missing": []
+      },
+      "plank_side_progress.html": {
+        "references": 17,
+        "missing": []
+      },
+      "plank_error_review.html": {
+        "references": 26,
+        "missing": []
+      },
+      "youtube_review.html": {
+        "references": 46,
+        "missing": []
+      }
+    },
+    "overlay_frames_decoded": {
+      "youtube_avid_normal": 30,
+      "youtube_jonple_error": 30,
+      "youtube_jonple_normal": 30
+    },
+    "resource_end": {
+      "cpu_c": 48.0,
+      "gpu_c": 32.0,
+      "available_mib": 8522.38671875,
+      "ac_connected": true
+    }
+  },
+  "next_priority_ko": [
+    "몸통 처짐·골반 들림·추가 지지 오류 참여자와 중간 등급 자료 확대",
+    "각도 대리값이 놓친 골반 추가 지지를 포함한 관측 가능 항목 규칙 재설계·개발 검증",
+    "AI의 두 오류 사례 고득점 오판 개선 후 참여자 제외 재비교",
+    "서로 다른 시범을 합치지 않는 Y·전경 구도 보충",
+    "개발에 노출되지 않은 참여자·원본으로 최종 시험 확보"
+  ]
+}

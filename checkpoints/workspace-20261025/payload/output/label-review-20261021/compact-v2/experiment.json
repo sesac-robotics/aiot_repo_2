@@ -1,0 +1,183 @@
+{
+  "version": "compact-kinematics-v2",
+  "label_rubric": "project-core-form-v1",
+  "new_labels_created": 0,
+  "expert_validated": false,
+  "test_split_used": false,
+  "selection_scope": "training_split_group_cross_validation_only",
+  "results": {
+    "pushups": {
+      "feature_count": 98,
+      "train_samples": 21,
+      "participants": 12,
+      "item_models": {
+        "trunk_line": {
+          "status": "experimental_only",
+          "grade_counts": {
+            "2": 14,
+            "0": 7
+          },
+          "model_trained": true,
+          "MAE_grade_0_to_2": 0.7286507936507937,
+          "mean_baseline_MAE_grade_0_to_2": 0.925170068027211,
+          "MAE_percent_of_item_range": 36.432539682539684,
+          "folds": [
+            {
+              "validation_people": [
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_018",
+                "shoulder_023"
+              ],
+              "training_grades": [
+                0.0,
+                2.0
+              ],
+              "validation_samples": 7
+            },
+            {
+              "validation_people": [
+                "shoulder_005",
+                "shoulder_009",
+                "shoulder_014",
+                "shoulder_016"
+              ],
+              "training_grades": [
+                0.0,
+                2.0
+              ],
+              "validation_samples": 7
+            },
+            {
+              "validation_people": [
+                "shoulder_001",
+                "shoulder_007",
+                "shoulder_008",
+                "shoulder_011"
+              ],
+              "training_grades": [
+                0.0,
+                2.0
+              ],
+              "validation_samples": 7
+            }
+          ]
+        },
+        "descent_range": {
+          "status": "experimental_only",
+          "grade_counts": {
+            "2": 17,
+            "0": 4
+          },
+          "model_trained": true,
+          "MAE_grade_0_to_2": 0.7331349206349209,
+          "mean_baseline_MAE_grade_0_to_2": 0.6802721088435374,
+          "MAE_percent_of_item_range": 36.656746031746046,
+          "folds": [
+            {
+              "validation_people": [
+                "shoulder_006",
+                "shoulder_010",
+                "shoulder_018",
+                "shoulder_023"
+              ],
+              "training_grades": [
+                0.0,
+                2.0
+              ],
+              "validation_samples": 7
+            },
+            {
+              "validation_people": [
+                "shoulder_005",
+                "shoulder_009",
+                "shoulder_014",
+                "shoulder_016"
+              ],
+              "training_grades": [
+                0.0,
+                2.0
+              ],
+              "validation_samples": 7
+            },
+            {
+              "validation_people": [
+                "shoulder_001",
+                "shoulder_007",
+                "shoulder_008",
+                "shoulder_011"
+              ],
+              "training_grades": [
+                0.0,
+                2.0
+              ],
+              "validation_samples": 7
+            }
+          ]
+        },
+        "return_extension": {
+          "status": "insufficient_grade_diversity",
+          "grade_counts": {
+            "2": 20,
+            "1": 1
+          },
+          "model_trained": false
+        },
+        "support": {
+          "status": "insufficient_grade_diversity",
+          "grade_counts": {
+            "2": 21
+          },
+          "model_trained": false
+        }
+      },
+      "compact_total_score_comparison": {
+        "MAE_points": 17.672619047619055,
+        "baseline_MAE_points": 19.591836734693878,
+        "purpose": "기존 좌표 모델과 동일 학습 표본·참여자 분할 비교만 수행. 스쿼트 전체 점수는 시야 불일치 때문에 배포하지 않음."
+      },
+      "excluded_from_single_side_model": [],
+      "original_coordinates_MAE_points": 19.278968253968245
+    },
+    "squats": {
+      "feature_count": 98,
+      "train_samples": 17,
+      "participants": 3,
+      "item_models": {
+        "descent_range": {
+          "status": "insufficient_grade_diversity",
+          "grade_counts": {
+            "1": 10,
+            "2": 5,
+            "0": 2
+          },
+          "model_trained": false
+        },
+        "return_extension": {
+          "status": "insufficient_grade_diversity",
+          "grade_counts": {
+            "2": 17
+          },
+          "model_trained": false
+        }
+      },
+      "compact_total_score_comparison": {
+        "MAE_points": 11.281862745098044,
+        "baseline_MAE_points": 14.411764705882353,
+        "purpose": "기존 좌표 모델과 동일 학습 표본·참여자 분할 비교만 수행. 스쿼트 전체 점수는 시야 불일치 때문에 배포하지 않음."
+      },
+      "excluded_from_single_side_model": [
+        "knee_foot",
+        "trunk_balance"
+      ],
+      "original_coordinates_MAE_points": 12.999509803921566
+    }
+  },
+  "limitations": [
+    "라벨은 Codex의 장면 검토 초안",
+    "여러 모델을 비교한 개발 검증이며 독립 최종 정확도가 아님",
+    "충분한 등급 변화가 없는 항목은 학습하지 않음",
+    "스쿼트 정면 오류는 측면 단독 모델 대상에서 제외",
+    "각도는 MediaPipe 추정 관절에서 계산되며 실제 관절각과 차이가 있을 수 있음"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "updated_at_utc": "2026-10-24T13:40:30.552700+00:00",
+  "incident": "connection_refused_server_exited_143",
+  "SIGTERM_origin": "unknown",
+  "camera_disconnect_logged": true,
+  "causal_link_between_disconnect_and_SIGTERM": "not_established",
+  "prior_active_capture_normal_save_confirmed": false,
+  "latest_normal_saved_session": "1792848383011095301",
+  "interrupted_capture_recovery": "previous_in_memory_data_not_available",
+  "repair": [
+    "preserve_active_raw_pose_on_camera_error",
+    "preserve_active_raw_pose_on_SIGTERM_SIGINT",
+    "separate_interrupted_sessions_not_failure_labels",
+    "detached_process_with_persistent_log",
+    "client_connection_loss_notice"
+  ],
+  "tests_passed": 68,
+  "server_pid": 111924,
+  "server_log": "/home/jayden/SeSACPAI-Mid/project-documents/live-incident-20261024/server-recovered.log",
+  "collecting": false,
+  "model_hashes_preserved": true,
+  "new_model_deployed": false,
+  "limitations": [
+    "강제전원종료 등 저장불가 상황까지 보존을 보장하는 것은 아님",
+    "사라진 이전 메모리 측정은 정상결과로 보고하지 않음",
+    "새 실제측정 미시작"
+  ]
+}

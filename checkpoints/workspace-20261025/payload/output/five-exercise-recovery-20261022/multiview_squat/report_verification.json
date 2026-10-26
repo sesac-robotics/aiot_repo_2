@@ -1,0 +1,92 @@
+{
+  "comparison_sha256": "6bae156d8e18b3e8f6b41d29481387052723729bd3f6fb18af122d1988535f55",
+  "fingerprints": {
+    "baseline": true,
+    "labels": true,
+    "manual_decisions": true,
+    "subject_tracking_review": true,
+    "model": true,
+    "multiview_squat_trial.py": true,
+    "multiview_squat_sync.py": true,
+    "multiview_squat_roi.py": true,
+    "recovery_features.py": true,
+    "recovery_train.py": true,
+    "three_items.py": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/comparison.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/fit_input_manifest.json": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/pushups.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/shoulder.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/plank.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/squats.joblib": true,
+    "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/models/ytw.joblib": true
+  },
+  "all_frames_decoded": true,
+  "videos": [
+    {
+      "view": "side",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/previews/subject_002_squat_bad_paired_direct_rep0/side/overlay.mp4",
+      "sha256": "f087d2c5f745312f5339b01e738647965e0ce304c5ac10ca9a364b83dfad0c18",
+      "decoded_frames": 31
+    },
+    {
+      "view": "front",
+      "path": "/home/jayden/SeSACPAI-Mid/output/five-exercise-recovery-20261022/multiview_squat/previews/subject_002_squat_bad_paired_direct_rep0/front/overlay.mp4",
+      "sha256": "daf54dbbbf3dcd5b039967b7d5f99a67260468d23c7aecb865faf313fe91db49",
+      "decoded_frames": 31
+    }
+  ],
+  "score_calculation_profile": [
+    {
+      "id": "subject_002_squat_bad_paired_direct_rep0",
+      "exercise": "squats",
+      "common_item_ids": [
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 30.24133000144502,
+      "rule_grading_median_ms": 0.009343999408883974,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_004_squat_good_paired_direct_rep0",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "return_extension",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 161.32185199967353,
+      "rule_grading_median_ms": 0.014076998922973871,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    },
+    {
+      "id": "subject_004_squat_bad_paired_direct_rep0",
+      "exercise": "squats",
+      "common_item_ids": [
+        "descent_range",
+        "trunk_balance"
+      ],
+      "ai_grading_median_ms": 149.6719579990895,
+      "rule_grading_median_ms": 0.019565999537007883,
+      "repeated_same_features_consistent": true,
+      "repeats": 3,
+      "shared_Heavy_and_feature_cost_excluded": true,
+      "not_end_to_end_latency": true
+    }
+  ],
+  "benchmark_environment": {
+    "cpu_quota_percent": 25,
+    "protected_memory_max_gib": 3,
+    "same_feature_repeats": 3,
+    "end_to_end_latency": false
+  },
+  "local_links_checked": 14,
+  "missing_local_links": [],
+  "browser_rendering_verified": false,
+  "independent_final_test": false
+}
