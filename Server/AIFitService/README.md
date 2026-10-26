@@ -20,6 +20,12 @@ python main.py
 
 `AIFIT_JWT_SECRET`은 서버가 실행되는 동안 고정되어야 합니다. 실제 운영에서는 안전한 환경 변수/비밀 관리 기능을 사용하고 개발용 기본 키를 사용하지 마세요.
 
+## 서버 진입점 (`main.py`)
+
+`main.py`는 FastAPI 애플리케이션을 만들고 기능별 라우터를 등록하는 실행 진입점입니다. 서버 시작 시 사용자·체형 분석·운동 세션 데이터베이스를 초기화하고, AI Server 영상 수신기와 운동 세션 감시 작업을 시작합니다. 서버가 종료될 때 두 백그라운드 작업을 정리합니다.
+
+GUI 연결이 끊겨 운동 세션의 heartbeat가 설정된 시간 동안 들어오지 않으면 감시 작업이 세션을 `PAUSED`로 저장하고 AI Server에도 일시정지를 요청합니다. 제한 시간은 `AIFIT_SESSION_HEARTBEAT_TIMEOUT_SECONDS`로 설정할 수 있으며 기본값은 30초입니다. GUI가 진행 중에 `/api/workout-sessions/{session_id}/live`를 주기적으로 조회하면 heartbeat 시각도 함께 갱신됩니다. 별도로 `POST /api/workout-sessions/{session_id}/heartbeat`를 호출하는 방식도 지원합니다.
+
 ## 엔드포인트
 - `GET /health`: 서버 상태 (토큰 불필요)
 - `POST /api/auth/register`: 회원가입 (토큰 불필요)
@@ -28,7 +34,8 @@ python main.py
 - `POST /body-analysis`: 인증 후 정면·좌측·우측·후면 사진과 선택 프롬프트를 업로드합니다.
 - `GET /body-analysis/{body_id}`: 해당 분석 작업의 상태, 부위 평가, 생성된 7일 루틴을 조회합니다.
 - `GET /exercise-report?date=YYYY-MM-DD`: 인증한 사용자의 날짜별 완료 운동 리포트를 조회합니다. 같은 날짜에 리포트가 여러 개면 가장 최근 리포트를 반환합니다.
-- `POST /api/workout-sessions`: 인증한 사용자의 오늘 루틴 세션과 첫 운동을 만들고 AI Server에 시작을 요청합니다.
+- `POST /api/workout-sessions`: 인증한 사용자의 오늘 루틴 세션을 시작합니다. 기존 `PAUSED` 세션이 있으면 이어서 재개합니다.
+- `POST /api/workout-sessions/{session_id}/heartbeat`: 진행 중인 세션의 GUI 연결 상태를 기록합니다.
 - `GET /api/workout-sessions/{session_id}/live`: AI Server의 현재 세션 상태를 GUI에 전달하고 목표 반복/유지 시간에 도달하면 자동 일시정지합니다.
 - `POST /api/workout-sessions/{session_id}/records`: 내부 키로 인증한 AI Server에서 1회 운동 평가 결과를 받습니다.
 - `POST /api/workout-sessions/{session_id}/pause`: GUI의 Pause 요청을 AI Server에 전달합니다.
