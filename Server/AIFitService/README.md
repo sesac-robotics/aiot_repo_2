@@ -69,9 +69,11 @@ Server에 pause를 보내고 GUI의 `start` 요청을 기다립니다. 다음 �
 
 반복별 자세 평가를 저장하려면 AI Server가 평가할 때마다 아래 주소로 결과를 보내야
 합니다. AI Server와 AIFit Server는 동일한 내부 키를 `X-Internal-API-Key`로 사용합니다.
-현재 AI Server OpenAPI 화면에는 이 callback 경로가 포함되어 있지 않으므로 AIFit Server의
-수신 기능만 준비된 상태이며, AI Server가 결과를 보내도록 연결하는 작업은 별도로
-필요합니다.
+각 요청은 `ExerciseRecord`에 반복별로 즉시 저장되며, 점수가 빠졌거나 `null`이면 0으로
+저장됩니다. 세션이 완료되고 모든 운동의 목표 세트와 반복 기록이 들어오면 `ExerciseReport`에
+평균 점수와 반복별 점수·피드백을 저장합니다. 목표 기록이 빠진 채 세션을 수동 종료하면
+완료 리포트는 만들지 않습니다. AI Server가 이 callback을 실제로 호출하도록 연결되어야
+저장이 시작됩니다.
 
 ```http
 POST /api/workout-sessions/{session_id}/records
