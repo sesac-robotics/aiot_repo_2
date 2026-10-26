@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS UserBodyInfo (
     FOREIGN KEY (routine_id) REFERENCES Routine(routine_id)   -- 추천에 쓰인 루틴은 삭제 불가
 );
 
--- 4. 운동 세션 = 루틴의 Day 1개 (완료한 세션만 남기고, 중도 종료 시 세션 삭제)
+-- 4. 사용자별 하루 운동 세션 1개 (중도 종료 세션은 PAUSED 상태로 보존)
 CREATE TABLE IF NOT EXISTS ExerciseSession (
     session_id       INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id          INTEGER NOT NULL,
@@ -67,6 +67,8 @@ CREATE TABLE IF NOT EXISTS ExerciseSession (
 );
 CREATE INDEX IF NOT EXISTS idx_session_user_started ON ExerciseSession(user_id, started_at);
 CREATE INDEX IF NOT EXISTS idx_session_user_routine_day ON ExerciseSession(user_id, routine_id, day_no);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_session_one_per_user_day
+    ON ExerciseSession(user_id, substr(started_at, 1, 10));
 
 -- 5. 세션 안의 개별 운동 (세션 시작 시 routine_plan_json의 해당 Day 운동을 복사해 저장)
 CREATE TABLE IF NOT EXISTS Exercise (
