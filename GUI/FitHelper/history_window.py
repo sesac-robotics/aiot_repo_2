@@ -19,7 +19,7 @@ from PyQt6.QtWidgets import (
 )
 
 
-SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
+SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://10.17.178.246:8000").rstrip("/")
 
 
 class _RecordCalendarWidget(QCalendarWidget):
@@ -343,18 +343,23 @@ class HistoryDetailWindow(QMainWindow):
         if selected_date is None:
             status.setText("먼저 조회할 날짜를 선택해 주세요.")
             return
+        workout_date = selected_date.toString("yyyy-MM-dd")
+        dialog.accept()
+        self.load_report_for_date(workout_date)
 
+    def load_report_for_date(self, workout_date):
+        """Load and display a report for a date without opening the calendar."""
         token = self._get_access_token()
         if not token:
-            status.setText("로그인 토큰을 찾지 못했습니다. 다시 로그인해 주세요.")
+            self._show_error("로그인 토큰을 찾지 못했습니다. 다시 로그인해 주세요.", workout_date)
             return
 
-        workout_date = selected_date.toString("yyyy-MM-dd")
         if hasattr(self, "dateEdit"):
-            self.dateEdit.setDate(selected_date)
+            selected_date = QDate.fromString(workout_date, "yyyy-MM-dd")
+            if selected_date.isValid():
+                self.dateEdit.setDate(selected_date)
         self.recordLabel.setText(f"⏳ {workout_date} 운동 리포트를 불러오는 중...")
         self.analysisContent.setPlainText("운동 리포트를 불러오는 중입니다...")
-        dialog.accept()
 
         thread = _ReportRequestThread(workout_date, token, self)
         self._report_thread = thread

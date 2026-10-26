@@ -10,7 +10,7 @@ from PyQt6.QtWidgets import (
     QSpinBox, QDoubleSpinBox
 )
 
-SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
+SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://10.17.178.246:8000").rstrip("/")
 REQUEST_TIMEOUT = 8
 
 def request_json(method, path, payload=None, token=None):

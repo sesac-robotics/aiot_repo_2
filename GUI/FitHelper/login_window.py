@@ -15,7 +15,7 @@ import login_client
 
 AIFIT_SERVER_URL = os.getenv(
     "AIFIT_SERVER_URL",
-    "http://192.168.15.118:8000"
+    "http://10.17.178.246:8000"
 ).rstrip("/")
 
 REGISTER_URL = f"{AIFIT_SERVER_URL}/api/auth/register"

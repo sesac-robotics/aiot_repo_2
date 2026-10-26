@@ -8,7 +8,7 @@ import login_client
 
 SERVER_URL = os.getenv(
     "AIFIT_SERVER_URL",
-    getattr(login_client, "SERVER_URL", "http://192.168.15.148:8000"),
+    getattr(login_client, "SERVER_URL", "http://10.17.178.246:8000"),
 ).rstrip("/")
 
 

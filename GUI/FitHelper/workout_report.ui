@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WorkoutReportWindow</class>
+ <widget class="QMainWindow" name="WorkoutReportWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>820</width><height>720</height></rect></property>
+  <property name="windowTitle"><string>운동 결과 리포트</string></property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow, QWidget#centralwidget { background-color: #F1F5F9; color: #0F172A; }
+QLabel#pageTitle { color: #0F172A; font-size: 25px; font-weight: 900; }
+QLabel#pageSubtitle { color: #64748B; font-size: 13px; }
+QFrame#summaryCard, QFrame#exerciseCard, QFrame#scoreCard, QFrame#feedbackCard { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; }
+#dateHeading, #timeHeading, #exerciseHeading, #averageScoreCaption { color: #475569; font-size: 13px; font-weight: 700; }
+#dateValue, #timeValue, #exerciseValue { color: #0F172A; font-size: 16px; font-weight: 800; }
+QLabel#averageScoreValue { color: #0284C7; font-size: 27px; font-weight: 900; }
+#scoreSectionTitle, #feedbackSectionTitle { color: #0F172A; font-size: 16px; font-weight: 800; }
+QTableWidget { background: #FFFFFF; border: none; gridline-color: #E2E8F0; selection-background-color: #E0F2FE; selection-color: #0F172A; }
+QHeaderView::section { background: #F8FAFC; color: #475569; border: none; border-bottom: 1px solid #E2E8F0; padding: 8px; font-weight: 700; }
+QPlainTextEdit#badFeedbackText { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 10px; padding: 10px; color: #78350F; font-size: 13px; }
+QPushButton#backDashboardButton { background: #0284C7; color: white; font-weight: 800; border: none; border-radius: 12px; min-height: 44px; }
+QPushButton#backDashboardButton:hover { background: #0369A1; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="leftMargin"><number>24</number></property><property name="topMargin"><number>20</number></property><property name="rightMargin"><number>24</number></property><property name="bottomMargin"><number>20</number></property><property name="spacing"><number>12</number></property>
+    <item><widget class="QLabel" name="pageTitle"><property name="text"><string>🎉 운동을 완료했어요</string></property></widget></item>
+    <item><widget class="QLabel" name="pageSubtitle"><property name="text"><string>오늘의 운동 결과를 확인해 보세요.</string></property></widget></item>
+    <item>
+     <widget class="QFrame" name="summaryCard"><layout class="QGridLayout" name="summaryLayout">
+      <property name="leftMargin"><number>16</number></property><property name="topMargin"><number>12</number></property><property name="rightMargin"><number>16</number></property><property name="bottomMargin"><number>12</number></property><property name="horizontalSpacing"><number>14</number></property><property name="verticalSpacing"><number>8</number></property>
+      <item row="0" column="0"><widget class="QLabel" name="dateHeading"><property name="text"><string>날짜</string></property></widget></item>
+      <item row="0" column="1"><widget class="QLabel" name="timeHeading"><property name="text"><string>운동 시간</string></property></widget></item>
+      <item row="1" column="0"><widget class="QLabel" name="dateValue"><property name="text"><string>날짜 정보를 불러오는 중</string></property></widget></item>
+      <item row="1" column="1"><widget class="QLabel" name="timeValue"><property name="text"><string>시간 정보를 불러오는 중</string></property></widget></item>
+     </layout></widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="exerciseCard"><layout class="QVBoxLayout" name="exerciseLayout">
+      <property name="leftMargin"><number>16</number></property><property name="topMargin"><number>12</number></property><property name="rightMargin"><number>16</number></property><property name="bottomMargin"><number>12</number></property>
+      <item><widget class="QLabel" name="exerciseHeading"><property name="text"><string>수행한 운동</string></property></widget></item>
+      <item><widget class="QLabel" name="exerciseValue"><property name="text"><string>운동 정보를 불러오는 중</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+     </layout></widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="scoreCard"><layout class="QVBoxLayout" name="scoreLayout">
+      <property name="leftMargin"><number>16</number></property><property name="topMargin"><number>12</number></property><property name="rightMargin"><number>16</number></property><property name="bottomMargin"><number>12</number></property><property name="spacing"><number>8</number></property>
+      <item><layout class="QHBoxLayout" name="scoreHeadingLayout"><item><widget class="QLabel" name="scoreSectionTitle"><property name="text"><string>rep별 점수</string></property></widget></item><item><spacer name="scoreSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item><item><widget class="QLabel" name="averageScoreCaption"><property name="text"><string>평균 점수</string></property></widget></item><item><widget class="QLabel" name="averageScoreValue"><property name="text"><string>—</string></property></widget></item></layout></item>
+      <item><widget class="QTableWidget" name="repScoreTable"><property name="minimumHeight"><number>145</number></property><property name="maximumHeight"><number>210</number></property><property name="columnCount"><number>3</number></property><property name="rowCount"><number>0</number></property><column><property name="text"><string>세트</string></property></column><column><property name="text"><string>rep</string></property></column><column><property name="text"><string>점수</string></property></column></widget></item>
+     </layout></widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="feedbackCard"><layout class="QVBoxLayout" name="feedbackLayout">
+      <property name="leftMargin"><number>16</number></property><property name="topMargin"><number>12</number></property><property name="rightMargin"><number>16</number></property><property name="bottomMargin"><number>12</number></property><property name="spacing"><number>8</number></property>
+      <item><widget class="QLabel" name="feedbackSectionTitle"><property name="text"><string>⚠️ 개선이 필요한 피드백</string></property><property name="class" stdset="0"><string>sectionTitle</string></property></widget></item>
+      <item><widget class="QPlainTextEdit" name="badFeedbackText"><property name="minimumHeight"><number>105</number></property><property name="readOnly"><bool>true</bool></property><property name="placeholderText"><string>운동 중 개선이 필요한 피드백이 없어요.</string></property></widget></item>
+     </layout></widget>
+    </item>
+    <item><widget class="QPushButton" name="backDashboardButton"><property name="text"><string>대시보드로 돌아가기</string></property></widget></item>
+   </layout>
+  </widget>
+  <resources/><connections/>
+ </widget>
+</ui>

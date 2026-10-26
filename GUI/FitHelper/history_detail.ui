@@ -18,7 +18,6 @@
 QMainWindow { background-color: #F8FAFC; }
 #historyTitle { font-size: 22px; font-weight: 800; color: #0284C7; background: transparent; }
 #recordCard, #analysisCard { background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 12px; }
-#videoPreviewLabel { background-color: #0F172A; color: #94A3B8; font-weight: bold; border-radius: 16px; font-size: 14px; }
 #openCalendarButton { background-color: #0284C7; color: #FFFFFF; font-size: 13px; font-weight: 800; border-radius: 10px; }
 #openCalendarButton:hover { background-color: #0369A1; }
 #backDashboardButton { background-color: #FFFFFF; color: #64748B; font-size: 13px; font-weight: 700; border: 1px solid #CBD5E1; border-radius: 12px; min-height: 42px; }
@@ -85,29 +84,13 @@ QMainWindow { background-color: #F8FAFC; }
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="videoPreviewLabel">
+   <widget class="QFrame" name="analysisCard">
     <property name="geometry">
      <rect>
       <x>25</x>
       <y>163</y>
       <width>450</width>
-      <height>200</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Recorded Session Playback / GIF</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QFrame" name="analysisCard">
-    <property name="geometry">
-     <rect>
-      <x>25</x>
-      <y>371</y>
-      <width>450</width>
-      <height>225</height>
+      <height>433</height>
      </rect>
     </property>
     <widget class="QPlainTextEdit" name="analysisContent">
@@ -116,7 +99,7 @@ QMainWindow { background-color: #F8FAFC; }
        <x>12</x>
        <y>10</y>
        <width>426</width>
-       <height>205</height>
+       <height>413</height>
       </rect>
      </property>
      <property name="readOnly">

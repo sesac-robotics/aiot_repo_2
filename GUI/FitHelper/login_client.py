@@ -5,7 +5,7 @@ import os
 import requests
 
 
-SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://192.168.15.118:8000").rstrip("/")
+SERVER_URL = os.getenv("AIFIT_SERVER_URL", "http://10.17.178.246:8000").rstrip("/")
 LOGIN_URL = f"{SERVER_URL}/api/auth/login"
 ME_URL = f"{SERVER_URL}/api/me"
 
