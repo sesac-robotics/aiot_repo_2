@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 
 import jwt
 from config.settings import JWT_SECRET, JWT_ALGORITHM, TOKEN_EXPIRE_MINUTES
-from Server.AIFitService.repositories import user_repository
+from repositories import user_repository
 
 class AuthError(Exception):
     def __init__(self, status_code, message):

@@ -3,7 +3,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
 from config.settings import JWT_SECRET, JWT_ALGORITHM
-from Server.AIFitService.repositories.user_repository import find_public_by_id
+from repositories.user_repository import find_public_by_id
 
 bearer_scheme = HTTPBearer(auto_error=False)
 

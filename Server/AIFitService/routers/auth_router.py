@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from models.auth_models import RegisterRequest, LoginRequest
-from Server.AIFitService.services.auth_service import AuthError, register_user, login_user
+from services.auth_service import AuthError, register_user, login_user
 
 router = APIRouter(prefix="/api/auth", tags=["Authentication"])
 
